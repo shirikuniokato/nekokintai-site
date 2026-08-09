@@ -26,28 +26,18 @@
   a:hover{color:var(--ink);}
   a:focus-visible{outline:2px solid var(--deep);outline-offset:3px;}
   img{display:block;}
-  .store-pill{display:inline-flex;align-items:center;gap:10px;border:2px solid var(--border);background:var(--paper);color:var(--muted);border-radius:8px;padding:10px 18px;font-size:13px;white-space:nowrap;box-shadow:3px 3px 0 var(--shadow);transition:transform .12s ease,box-shadow .12s ease;}
-  a.store-pill:hover{transform:translateY(-2px);box-shadow:3px 5px 0 var(--shadow);}
-  .social-btn{display:inline-flex;align-items:center;gap:16px;border:2px solid var(--border);background:var(--paper);color:var(--deep);border-radius:12px;padding:20px 34px;font-size:20px;white-space:nowrap;box-shadow:4px 4px 0 var(--shadow);transition:transform .12s ease,box-shadow .12s ease;}
-  .social-btn:hover{transform:translateY(-2px);box-shadow:4px 6px 0 var(--shadow);}
+  .social-btn{transition:transform .12s ease,box-shadow .12s ease;}
+  .social-btn:hover{transform:translateY(-2px);box-shadow:4px 6px 0 var(--shadow) !important;}
   @keyframes nk-bob{0%,49%{transform:translateY(0)}50%,100%{transform:translateY(-4px)}}
   @keyframes nk-twinkle{0%,100%{opacity:.25}50%{opacity:1}}
   @media (prefers-reduced-motion:reduce){*{animation:none !important}}
-  /* 狭い画面ではヒーローを「スクショが上・猫たちは下の地面」に組み替える（ストアスクショと同じ構図） */
-  @media (max-width:560px){
-    .hero-row{display:grid !important;grid-template-columns:1fr 1fr;align-items:end;}
-    .hero-shot{grid-row:1;grid-column:1 / -1;justify-self:center;width:min(78vw,320px) !important;margin-bottom:36px !important;}
-    .friend-l{grid-row:2;grid-column:1;justify-self:start;}
-    .friend-r{grid-row:2;grid-column:2;justify-self:end;}
-    .say-l{text-align:left;}
-    .say-r{text-align:right;}
-    .maker-span{grid-column:auto !important;}
-  }
+  /* つくった人の文はスマホの1列グリッドでは全幅に（列がつぶれるのを防ぐ実装調整） */
+  @media (max-width:560px){.maker-span{grid-column:auto !important;}}
 </style>
 </head>
 <body>
 
-<main style="max-width:880px;margin:0 auto;padding:clamp(48px,8vw,72px) 20px 0;">
+<main style="max-width:880px;margin:0 auto;padding:clamp(40px,8vw,72px) clamp(14px,4vw,20px) 0;">
 
   <p style="font-size:13px;letter-spacing:.5em;text-indent:.5em;color:var(--muted);margin:0;">NEKO KINTAI</p>
   <div style="position:relative;">
@@ -59,11 +49,11 @@
   </div>
   <p style="font-size:clamp(14px,3.5vw,17px);color:var(--deep);margin:0;">はたらいた時間を、きろくするにゃ。</p>
 
-  <!-- ストア公開したら <span> を <a class="store-pill" href="ストアURL" target="_blank" rel="noopener"> に替えて、
+  <!-- ストア公開したら <span> を <a href="ストアURL" target="_blank" rel="noopener"> に替えて、
        文言を「ダウンロード」にする -->
-  <div style="display:flex;justify-content:center;gap:12px;margin-top:28px;flex-wrap:wrap;">
-    <span class="store-pill"><span style="width:9px;height:9px;background:var(--accent);border:2px solid var(--ink);"></span><b style="color:var(--deep);font-weight:400;">App Store</b>じゅんび中</span>
-    <span class="store-pill"><span style="width:9px;height:9px;background:var(--accent);border:2px solid var(--ink);"></span><b style="color:var(--deep);font-weight:400;">Google Play</b>ちかぢか公開</span>
+  <div style="display:flex;justify-content:center;gap:clamp(7px,2.4vw,12px);margin-top:28px;flex-wrap:nowrap;">
+    <span style="display:inline-flex;align-items:center;gap:clamp(5px,2vw,10px);border:2px solid var(--border);background:var(--paper);color:var(--muted);border-radius:8px;padding:clamp(8px,2.4vw,10px) clamp(9px,3vw,18px);font-size:clamp(9.5px,2.7vw,13px);white-space:nowrap;box-shadow:3px 3px 0 var(--shadow);flex:0 1 auto;min-width:0;"><span style="width:8px;height:8px;flex:0 0 auto;background:var(--accent);border:2px solid var(--ink);"></span><span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.5;"><b style="color:var(--deep);font-weight:400;">App Store</b>じゅんび中</span></span>
+    <span style="display:inline-flex;align-items:center;gap:clamp(5px,2vw,10px);border:2px solid var(--border);background:var(--paper);color:var(--muted);border-radius:8px;padding:clamp(8px,2.4vw,10px) clamp(9px,3vw,18px);font-size:clamp(9.5px,2.7vw,13px);white-space:nowrap;box-shadow:3px 3px 0 var(--shadow);flex:0 1 auto;min-width:0;"><span style="width:8px;height:8px;flex:0 0 auto;background:var(--accent);border:2px solid var(--ink);"></span><span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.5;"><b style="color:var(--deep);font-weight:400;">Google Play</b>ちかぢか公開</span></span>
   </div>
 
   <div style="position:relative;margin:clamp(44px,6vw,64px) 0 0;">
@@ -71,14 +61,15 @@
     <span aria-hidden="true" style="position:absolute;right:8%;top:14%;font-size:16px;color:var(--shadow);animation:nk-twinkle 3.4s ease-in-out .6s infinite;">＋</span>
     <span aria-hidden="true" style="position:absolute;right:16%;top:2%;font-size:22px;color:var(--accent);animation:nk-twinkle 3.1s ease-in-out 1.1s infinite;">＋</span>
     <div style="position:absolute;left:0;right:0;bottom:26px;height:6px;background:var(--shadow);border-radius:3px;"></div>
-    <div class="hero-row" style="position:relative;display:flex;align-items:flex-end;justify-content:center;gap:clamp(6px,3vw,40px);padding-bottom:26px;">
-      <div class="friend-l" style="flex:0 0 auto;padding-bottom:6px;">
-        <div class="say-l" style="font-size:clamp(11px,2.6vw,15px);color:var(--deep);white-space:nowrap;margin-bottom:10px;">＼これが達成感かにゃ／</div>
-        <img src="assets/lp/cat-white.png" alt="歩くしろねこ" width="208" height="144" style="width:clamp(64px,14vw,104px);height:auto;image-rendering:pixelated;margin:0 auto;animation:nk-bob 1.7s steps(1,end) infinite;">
+    <div style="position:relative;display:flex;align-items:flex-end;justify-content:center;gap:clamp(2px,2vw,40px);padding-bottom:26px;">
+      <div style="flex:0 0 auto;padding-bottom:6px;position:relative;">
+        <div style="position:absolute;left:0;bottom:calc(100% + 14px);font-size:clamp(10px,2.6vw,15px);color:var(--deep);white-space:nowrap;">＼これが達成感かにゃ／</div>
+        <img src="assets/lp/cat-white.png" alt="歩くしろねこ" width="208" height="144" style="width:clamp(54px,14vw,104px);height:auto;image-rendering:pixelated;margin:0 auto;animation:nk-bob 1.7s steps(1,end) infinite;">
       </div>
-      <img src="assets/lp/screen-week.png" alt="ねこ勤怠の週の画面。目標に届いた週のおいわい" class="hero-shot" style="width:clamp(200px,56vw,360px);height:auto;flex:0 1 auto;min-width:0;margin-bottom:160px;">
-      <div class="friend-r" style="flex:0 0 auto;padding-bottom:6px;">
-        <div class="say-r" style="font-size:clamp(11px,2.6vw,15px);color:var(--deep);white-space:nowrap;margin-bottom:10px;">＼きっとそうだよ／</div><img src="assets/lp/cream-sit.png" alt="すわるバニラねこ" width="208" height="120" style="width:clamp(58px,13vw,96px);height:auto;image-rendering:pixelated;margin:0 auto;scale:-1 1;animation:nk-bob 2.3s steps(1,end) .3s infinite;">
+      <img src="assets/lp/screen-week.png" alt="ねこ勤怠の週の画面。目標に届いた週のおいわい" style="width:clamp(180px,48vw,360px);height:auto;flex:0 1 auto;margin-bottom:clamp(124px,15vw,160px);">
+      <div style="flex:0 0 auto;padding-bottom:6px;position:relative;">
+        <div style="position:absolute;right:0;bottom:calc(100% + 14px);font-size:clamp(10px,2.6vw,15px);color:var(--deep);white-space:nowrap;">＼きっとそうだよ／</div>
+        <img src="assets/lp/cream-sit.png" alt="すわるバニラねこ" width="208" height="120" style="width:clamp(50px,13vw,96px);height:auto;image-rendering:pixelated;margin:0 auto;scale:-1 1;animation:nk-bob 2.3s steps(1,end) .3s infinite;">
       </div>
     </div>
   </div>
@@ -87,17 +78,17 @@
     <span style="display:block;font-size:13px;letter-spacing:.3em;color:var(--muted);margin:0 0 18px;">とくちょう</span>
     <hr style="height:0;border:0;margin:0;border-top:2px solid var(--ink);">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px 0;padding:34px 0 18px;">
-      <div style="display:flex;align-items:flex-start;justify-content:center;gap:12px;">
-        <img src="art/happy.png" alt="" style="width:44px;height:30px;image-rendering:pixelated;margin-top:4px;flex:0 0 auto;">
-        <span style="display:block;"><span style="display:block;font-size:20px;line-height:1.5;">がんばった貯金</span><span style="display:block;font-size:13px;line-height:1.7;min-height:44px;color:var(--muted);">おやすみの日のぶんは、ぜんぶ貯金に</span></span>
+      <div style="display:flex;align-items:flex-start;justify-content:flex-start;gap:10px;width:100%;max-width:250px;margin:0 auto;">
+        <img src="art/happy.png" alt="" style="width:clamp(34px,9vw,44px);height:auto;image-rendering:pixelated;margin-top:3px;flex:0 0 auto;">
+        <span style="display:block;"><span style="display:block;font-size:clamp(15px,4.2vw,20px);line-height:1.5;">がんばった貯金</span><span style="display:block;font-size:clamp(11px,3.2vw,13px);line-height:1.7;min-height:40px;color:var(--muted);">おやすみの日のぶんは、<br>ぜんぶ貯金に</span></span>
       </div>
-      <div style="display:flex;align-items:flex-start;justify-content:center;gap:12px;">
-        <img src="art/walkA.png" alt="" style="width:44px;height:30px;image-rendering:pixelated;margin-top:4px;flex:0 0 auto;">
-        <span style="display:block;"><span style="display:block;font-size:20px;line-height:1.5;">ねこがあるく</span><span style="display:block;font-size:13px;line-height:1.7;min-height:44px;color:var(--muted);">目標まで、てくてく</span></span>
+      <div style="display:flex;align-items:flex-start;justify-content:flex-start;gap:10px;width:100%;max-width:250px;margin:max(0px, 40px - 4vw) auto 0;padding-left:max(0px, 3vw - 18px);">
+        <img src="art/walkA.png" alt="" style="width:clamp(34px,9vw,44px);height:auto;image-rendering:pixelated;margin-top:3px;flex:0 0 auto;">
+        <span style="display:block;"><span style="display:block;font-size:clamp(15px,4.2vw,20px);line-height:1.5;">ねこがあるく</span><span style="display:block;font-size:clamp(11px,3.2vw,13px);line-height:1.7;min-height:40px;color:var(--muted);">目標まで、てくてく</span></span>
       </div>
-      <div style="display:flex;align-items:flex-start;justify-content:center;gap:12px;">
-        <img src="art/sleep.png" alt="" style="width:44px;height:30px;image-rendering:pixelated;margin-top:4px;flex:0 0 auto;">
-        <span style="display:block;"><span style="display:block;font-size:20px;line-height:1.5;">ぜんぶ端末の中</span><span style="display:block;font-size:13px;line-height:1.7;min-height:44px;color:var(--muted);">アカウントなし。広告なし</span></span>
+      <div style="display:flex;align-items:flex-start;justify-content:flex-start;gap:10px;width:100%;max-width:250px;margin:0 auto;">
+        <img src="art/sleep.png" alt="" style="width:clamp(34px,9vw,44px);height:auto;image-rendering:pixelated;margin-top:3px;flex:0 0 auto;">
+        <span style="display:block;"><span style="display:block;font-size:clamp(15px,4.2vw,20px);line-height:1.5;">ぜんぶ端末の中</span><span style="display:block;font-size:clamp(11px,3.2vw,13px);line-height:1.7;min-height:40px;color:var(--muted);">アカウントなし。広告なし</span></span>
       </div>
     </div>
     <hr style="height:0;border:0;border-top:2px solid var(--ink);margin:0;">
@@ -132,16 +123,16 @@
       <div style="display:flex;align-items:flex-start;gap:14px;">
         <img src="assets/lp/mint-sit.png" alt="" style="width:52px;height:30px;image-rendering:pixelated;margin-top:4px;flex:0 0 auto;object-fit:contain;">
         <span style="display:block;">
-          <span style="display:block;font-size:20px;line-height:1.5;">c_cya</span>
+          <span style="display:block;font-size:clamp(15px,4.2vw,20px);line-height:1.5;">c_cya</span>
           <span style="display:block;font-size:13px;line-height:1.7;color:var(--muted);">ねこがすきです。</span>
         </span>
       </div>
       <p class="maker-span" style="font-size:14px;line-height:1.95;margin:0;color:var(--deep);grid-column:span 2;max-width:34em;">時間をきびしく見はるためではなく、はたらいた事実をただ数えるために作りました。カワイさと達成感がほしかったのです。なので非常にシンプル！アカウントも広告もありません。ごようぼうは <a href="mailto:support@c-cya.com" style="border-bottom: 2px dashed var(--shadow);">support@c-cya.com</a> へ。</p>
     </div>
     <hr style="height:0;border:0;margin:0;border-top:2px solid var(--ink);">
-    <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:26px;">
-      <a class="social-btn" href="https://www.instagram.com/c_cya__/" target="_blank" rel="noopener"><img src="art/sleep.png" alt="" style="width:56px;height:auto;image-rendering:pixelated;flex:0 0 auto;">Instagram</a>
-      <a class="social-btn" href="https://shop.c-cya.com" target="_blank" rel="noopener"><img src="assets/lp/mint-happy.png" alt="" style="width:56px;height:auto;image-rendering:pixelated;flex:0 0 auto;">Online shop</a>
+    <div style="display:flex;gap:clamp(8px,2.5vw,16px);flex-wrap:nowrap;justify-content:center;margin-top:26px;">
+      <a class="social-btn" href="https://www.instagram.com/c_cya__/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;gap:clamp(7px,2.5vw,16px);flex:0 1 auto;min-width:0;border:2px solid var(--border);background:var(--paper);color:var(--deep);border-radius:12px;padding:clamp(11px,3vw,20px) clamp(12px,4vw,34px);font-size:clamp(12px,3.4vw,20px);white-space:nowrap;box-shadow:4px 4px 0 var(--shadow);"><img src="art/sleep.png" alt="" style="width:clamp(28px,8vw,56px);height:auto;image-rendering:pixelated;flex:0 0 auto;">Instagram</a>
+      <a class="social-btn" href="https://shop.c-cya.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;gap:clamp(7px,2.5vw,16px);flex:0 1 auto;min-width:0;border:2px solid var(--border);background:var(--paper);color:var(--deep);border-radius:12px;padding:clamp(11px,3vw,20px) clamp(12px,4vw,34px);font-size:clamp(12px,3.4vw,20px);white-space:nowrap;box-shadow:4px 4px 0 var(--shadow);"><img src="assets/lp/mint-happy.png" alt="" style="width:clamp(28px,8vw,56px);height:auto;image-rendering:pixelated;flex:0 0 auto;">Online shop</a>
     </div>
   </section>
 
