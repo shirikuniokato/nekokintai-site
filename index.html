@@ -64,11 +64,10 @@
   </div>
   <p style="font-size:clamp(14px,3.5vw,17px);color:var(--deep);margin:0;">はたらいた時間を、きろくするにゃ。</p>
 
-  <!-- ストア公開したら <span> を <a href="ストアURL" target="_blank" rel="noopener"> に替えて、
-       文言を「ダウンロード」にする -->
-  <div style="display:flex;justify-content:center;gap:clamp(7px,2.4vw,12px);margin-top:28px;flex-wrap:nowrap;">
-    <span style="display:inline-flex;align-items:center;gap:clamp(5px,2vw,10px);border:2px solid var(--border);background:var(--paper);color:var(--muted);border-radius:8px;padding:clamp(8px,2.4vw,10px) clamp(9px,3vw,18px);font-size:clamp(9.5px,2.7vw,13px);white-space:nowrap;box-shadow:3px 3px 0 var(--shadow);flex:0 1 auto;min-width:0;"><span style="width:8px;height:8px;flex:0 0 auto;background:var(--accent);border:2px solid var(--ink);"></span><span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.5;"><b style="color:var(--deep);font-weight:400;">App Store</b>じゅんび中</span></span>
-    <span style="display:inline-flex;align-items:center;gap:clamp(5px,2vw,10px);border:2px solid var(--border);background:var(--paper);color:var(--muted);border-radius:8px;padding:clamp(8px,2.4vw,10px) clamp(9px,3vw,18px);font-size:clamp(9.5px,2.7vw,13px);white-space:nowrap;box-shadow:3px 3px 0 var(--shadow);flex:0 1 auto;min-width:0;"><span style="width:8px;height:8px;flex:0 0 auto;background:var(--accent);border:2px solid var(--ink);"></span><span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.5;"><b style="color:var(--deep);font-weight:400;">Google Play</b>ちかぢか公開</span></span>
+  <!-- ストアバッジは公式素材。規約上いかなる改変も不可なので、色・比率・枠に手を入れないこと -->
+  <div style="display:flex;justify-content:center;align-items:center;gap:clamp(7px,2.4vw,12px);margin-top:28px;flex-wrap:nowrap;">
+    <a href="https://apps.apple.com/jp/app/id6801066427" target="_blank" rel="noopener" onclick="gtag('event','store_click',{store:'ios'});" style="display:block;"><img src="/assets/badges/app-store-ja.svg" width="109" height="40" alt="App Store からダウンロード" style="height:clamp(44px,12vw,56px);width:auto;display:block;"></a>
+    <a href="https://play.google.com/store/apps/details?id=com.ccya.nekokintai" target="_blank" rel="noopener" onclick="gtag('event','store_click',{store:'android'});" style="display:block;"><img src="/assets/badges/google-play-ja.svg" width="180" height="53" alt="Google Play で手に入れよう" style="height:clamp(44px,12vw,56px);width:auto;display:block;"></a>
   </div>
 
   <div style="position:relative;margin:clamp(44px,6vw,64px) 0 0;">
