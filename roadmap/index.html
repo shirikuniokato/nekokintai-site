@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>アップデートのよてい | ねこ勤怠</title>
+<meta name="description" content="ねこ勤怠のこれからのアップデート予定と、いままでの更新内容。iOS・Android それぞれの状況をのせています。">
+<link rel="icon" type="image/png" href="/favicon.png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2J5J902MFE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2J5J902MFE');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0C3A44; --bg:#EAF4F7; --paper:#FFFFFF; --border:#DCEDF2;
+    --muted:#7FA6AF; --deep:#155C69; --accent:#FFDE59; --shadow:#C3E4EE;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"DotGothic16",system-ui,sans-serif;font-weight:400;line-height:1.9;text-align:center;}
+  a{color:var(--deep);text-decoration:none;}
+  a:hover{color:var(--ink);}
+  a:focus-visible{outline:2px solid var(--deep);outline-offset:3px;}
+  img{display:block;}
+  @keyframes nk-bob{0%,49%{transform:translateY(0)}50%,100%{transform:translateY(-4px)}}
+  @keyframes nk-twinkle{0%,100%{opacity:.25}50%{opacity:1}}
+  @media (prefers-reduced-motion:reduce){*{animation:none !important}}
+
+  .rv-osradio{position:absolute;opacity:0;pointer-events:none;}
+  .rv-tabs{display:flex;justify-content:center;gap:10px;margin:0 0 22px;}
+  .rv-tab{
+    border:2px solid var(--ink);border-radius:999px;padding:8px 26px;cursor:pointer;
+    background:var(--paper);font-size:clamp(13px,3.6vw,15px);line-height:1;
+    box-shadow:2px 2px 0 var(--shadow);color:var(--deep);
+  }
+  #os-ios:checked ~ .rv-tabs .rv-tab[for="os-ios"],
+  #os-android:checked ~ .rv-tabs .rv-tab[for="os-android"]{
+    background:var(--accent);color:var(--ink);box-shadow:none;
+  }
+  #os-ios:focus-visible ~ .rv-tabs .rv-tab[for="os-ios"],
+  #os-android:focus-visible ~ .rv-tabs .rv-tab[for="os-android"]{
+    outline:2px solid var(--deep);outline-offset:3px;
+  }
+  .rv-pane{display:none;}
+  #os-ios:checked ~ .rv-pane-ios{display:block;}
+  #os-android:checked ~ .rv-pane-android{display:block;}
+
+  .rv-card{
+    background:var(--paper);
+    border:2px solid var(--border);border-radius:12px;box-shadow:3px 3px 0 var(--shadow);
+    margin:0 0 16px;padding:clamp(16px,4vw,22px) clamp(14px,3.8vw,20px) clamp(16px,4vw,20px);
+  }
+  .rv-head{
+    display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;
+    margin:0 0 12px;
+  }
+  .rv-ver{font-size:clamp(20px,5.2vw,24px);letter-spacing:.04em;margin:0;font-weight:400;}
+  .rv-when{font-size:clamp(12px,3.2vw,13px);color:var(--muted);margin:-8px 0 12px;}
+  .rv-chip{
+    display:inline-flex;align-items:center;
+    font-size:clamp(11px,3.1vw,12px);line-height:1;
+    border:2px solid var(--ink);border-radius:999px;padding:6px 10px;
+  }
+  .rv-chip.st-live{background:var(--accent);}
+  .rv-chip.st-review{background:var(--shadow);}
+  .rv-chip.st-prep{background:var(--paper);border-style:dashed;color:var(--deep);}
+  .rv-list{list-style:none;margin:0;padding:0;}
+  .rv-list li{
+    font-size:clamp(13px,3.7vw,15px);line-height:1.9;white-space:pre-line;
+    padding:10px 2px;border-top:2px dashed var(--border);
+  }
+  .rv-list li:first-child{border-top:0;}
+  .rv-note{margin:10px 0 0;white-space:pre-line;font-size:clamp(11px,3.1vw,12px);line-height:1.8;color:var(--muted);}
+  .rv-h2{font-size:clamp(18px,4.8vw,22px);font-weight:400;letter-spacing:.06em;margin:0 0 4px;}
+  .rv-lead{font-size:clamp(13px,3.5vw,14px);color:var(--deep);margin:0 0 16px;white-space:pre-line;}
+  .rv-divider{display:flex;justify-content:center;margin:6px 0 22px;}
+</style>
+</head>
+<body>
+
+<main style="max-width:640px;margin:0 auto;padding:clamp(40px,8vw,72px) clamp(14px,4vw,20px) 0;">
+
+  <p style="font-size:13px;letter-spacing:.5em;text-indent:.5em;color:var(--muted);margin:0;"><a href="/" style="color:inherit;">NEKO KINTAI</a></p>
+  <div style="position:relative;">
+    <span aria-hidden="true" style="position:absolute;left:4%;top:-2%;font-size:30px;color:var(--accent);animation:nk-twinkle 2.6s ease-in-out infinite;">＋</span>
+    <span aria-hidden="true" style="position:absolute;left:16%;bottom:0;font-size:18px;color:var(--shadow);animation:nk-twinkle 3.3s ease-in-out .7s infinite;">＋</span>
+    <span aria-hidden="true" style="position:absolute;right:6%;top:10%;font-size:34px;color:var(--accent);animation:nk-twinkle 3s ease-in-out 1.1s infinite;">＋</span>
+    <span aria-hidden="true" style="position:absolute;right:20%;top:-10%;font-size:18px;color:var(--shadow);animation:nk-twinkle 2.9s ease-in-out .3s infinite;">＋</span>
+    <h1 style="position:relative;font-size:clamp(28px,7vw,40px);font-weight:400;line-height:1.5;letter-spacing:.04em;margin:12px 0 8px;">アップデートのよてい</h1>
+  </div>
+  <p style="font-size:clamp(14px,3.5vw,16px);color:var(--deep);margin:0 0 8px;">これから届くものと、いままでのぶんを<br>バージョンごとに まとめています。</p>
+  <p style="font-size:clamp(12px,3.2vw,13px);color:var(--muted);margin:0 0 24px;">ストアの審査にかかる時間が読めないため、<br>届くタイミングは iOS と Android でずれることがあります</p>
+
+  <div>
+    <input class="rv-osradio" type="radio" name="os" id="os-ios" checked>
+    <input class="rv-osradio" type="radio" name="os" id="os-android">
+    <div class="rv-tabs">
+      <label class="rv-tab" for="os-ios">iOS</label>
+      <label class="rv-tab" for="os-android">Android</label>
+    </div>
+
+    <section class="rv-pane rv-pane-ios" aria-label="iOS のアップデート">
+      <div class="rv-card">
+        <div class="rv-head"><h2 class="rv-ver">1.3.0</h2><span class="rv-chip st-prep">じゅんびちゅう</span></div>
+        <p class="rv-when">つぎのアップデート</p>
+        <ul class="rv-list">
+          <li>退勤のあとや休憩のあいだでも、
+別の作業カテゴリを選びなおして
+「また働く」できるようになります（不具合の修正）</li>
+        </ul>
+        <p class="rv-note">内容は、これから増えることがあります</p>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-head"><h2 class="rv-ver">1.2.0</h2><span class="rv-chip st-review">しんさちゅう</span></div>
+        <ul class="rv-list">
+          <li>ねこ1匹ずつに呼び名をつけられます</li>
+          <li>はじめての起動で、さいしょのねこを選べます</li>
+          <li>休憩が長びいたとき、
+「休憩おしまい」をねこが知らせてくれます</li>
+          <li>海外で使うと記録が日本時間になる
+不具合を修正しました</li>
+          <li>けした作業の一覧を、たためるようになります</li>
+          <li>目標時間の上限が
+週168時間・1日24時間になります</li>
+          <li>設定から、お問い合わせページをひらけます</li>
+        </ul>
+      </div>
+
+      <div class="rv-divider"><img src="/art/happy.png" alt="" style="width:52px;height:auto;image-rendering:pixelated;animation:nk-bob 1.7s steps(1,end) infinite;"></div>
+
+      <div class="rv-card">
+        <div class="rv-head"><h2 class="rv-ver">1.1.0</h2><span class="rv-chip st-live">こうかいずみ</span></div>
+        <ul class="rv-list">
+          <li>記録の手直しは「保存する」を押して
+確定する形になりました</li>
+          <li>押しまちがいで細切れになった記録を、
+ひとつにつなげて数えます</li>
+          <li>けした作業カテゴリを設定から戻せます。
+同じ名前をつけなおすこともできます</li>
+          <li>長毛のねこが2匹ふえました
+（ふわくろねこ・こげふわねこ）</li>
+          <li>週の画面から、いつでも
+「先週を画像で共有」できます</li>
+          <li>働いている途中でも、その稼働の
+「はじめ」の時刻を手直しできます</li>
+        </ul>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-head"><h2 class="rv-ver">1.0.0</h2><span class="rv-chip st-live">こうかいずみ</span></div>
+        <ul class="rv-list">
+          <li>ねこと一緒に作ったアプリを公開しました。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="rv-pane rv-pane-android" aria-label="Android のアップデート">
+      <div class="rv-card">
+        <div class="rv-head"><h2 class="rv-ver">1.3.0</h2><span class="rv-chip st-prep">じゅんびちゅう</span></div>
+        <ul class="rv-list">
+          <li>退勤のあとや休憩のあいだでも、
+別の作業カテゴリを選びなおして
+「また働く」できるようになります（不具合の修正）</li>
+        </ul>
+        <p class="rv-note">内容は、これから増えることがあります</p>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-head"><h2 class="rv-ver">1.2.0</h2><span class="rv-chip st-prep">じゅんびちゅう</span></div>
+        <ul class="rv-list">
+          <li>ねこ1匹ずつに呼び名をつけられます</li>
+          <li>はじめての起動で、さいしょのねこを選べます</li>
+          <li>休憩が長びいたとき、
+「休憩おしまい」をねこが知らせてくれます</li>
+          <li>海外で使うと記録が日本時間になる
+不具合を修正しました</li>
+          <li>「戻る」ボタンでアプリが終了してしまう
+不具合を修正しました</li>
+          <li>けした作業の一覧を、たためるようになります</li>
+          <li>目標時間の上限が
+週168時間・1日24時間になります</li>
+          <li>設定から、お問い合わせページをひらけます</li>
+        </ul>
+      </div>
+
+      <div class="rv-divider"><img src="/art/happy.png" alt="" style="width:52px;height:auto;image-rendering:pixelated;animation:nk-bob 1.7s steps(1,end) infinite;"></div>
+
+      <div class="rv-card">
+        <div class="rv-head"><h2 class="rv-ver">1.1.0</h2><span class="rv-chip st-review">しんさちゅう</span></div>
+        <ul class="rv-list">
+          <li>記録の手直しは「保存する」を押して
+確定する形になりました</li>
+          <li>押しまちがいで細切れになった記録を、
+ひとつにつなげて数えます</li>
+          <li>けした作業カテゴリを設定から戻せます。
+同じ名前をつけなおすこともできます</li>
+          <li>長毛のねこが3匹ふえました
+（ふわしろねこ・ふわくろねこ・こげふわねこ）</li>
+          <li>週がかわると「先週のふりかえり」が出て、
+画像カードで共有できます</li>
+          <li>まえの週にがんばったぶん（貯金）で
+週の目標をたっせいできるようになります</li>
+          <li>働いている途中でも、その稼働の
+「はじめ」の時刻を手直しできます</li>
+        </ul>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-head"><h2 class="rv-ver">1.0.0</h2><span class="rv-chip st-live">こうかいずみ</span></div>
+        <ul class="rv-list">
+          <li>ねこと一緒に作ったアプリを公開しました。</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <div class="rv-divider"><img src="/assets/lp/cream-sit.png" alt="" width="208" height="120" style="width:62px;height:auto;image-rendering:pixelated;animation:nk-bob 2.3s steps(1,end) infinite;"></div>
+
+  <section aria-label="そのさき やりたいこと">
+    <h2 class="rv-h2">そのさき やりたいこと</h2>
+    <p class="rv-lead">ごようぼうから いただいた声を中心に、
+やりたいと思っていることです。
+じゅんばんは、まだ決めていません。</p>
+    <div class="rv-card">
+      <ul class="rv-list">
+        <li>まえの日に さかのぼって記録をつける</li>
+        <li>お休みの曜日を、まえもって決めておく</li>
+        <li>作業カテゴリの並べかえ</li>
+        <li>目標時間のきざみを細かく</li>
+        <li>曜日ごとに、1日の目標を変える</li>
+        <li>あたらしいねこ（ハチワレ など）</li>
+        <li>ウィジェットや ロック画面のねこ</li>
+        <li>操作の効果音</li>
+        <li>記録が0時間の「けした作業」の完全削除</li>
+        <li>英語対応</li>
+      </ul>
+      <p class="rv-note">できたものから、このページの
+バージョンのところへ移していきます</p>
+    </div>
+  </section>
+
+  <p style="font-size:clamp(13px,3.6vw,15px);color:var(--deep);margin:26px 0 0;">「これもほしい」があれば、<br><a href="/contact/" style="border-bottom:2px dashed var(--shadow);">ごようぼうフォーム</a>から おしえてください。</p>
+
+  <p style="margin:24px 0 0;font-size:13px;"><a href="/" style="border-bottom:2px dashed var(--shadow);">← ねこ勤怠のページへもどる</a></p>
+
+  <div style="position:relative;margin-top:clamp(40px,7vw,64px);">
+    <div style="position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--shadow);border-radius:3px;"></div>
+    <div style="position:relative;display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:6px;">
+      <img src="/art/mike-walkA.png" alt="" style="width:clamp(56px,12vw,84px);height:auto;image-rendering:pixelated;">
+      <img src="/assets/lp/sakura-sleep.png" alt="" style="width:clamp(56px,12vw,84px);height:auto;image-rendering:pixelated;scale:-1 1;">
+    </div>
+  </div>
+
+</main>
+
+<footer style="margin-top:clamp(40px,7vw,64px);border-top:2px solid var(--border);padding:28px 20px 44px;font-size:13px;text-align:center;">
+  <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;">
+    <a href="https://shop.c-cya.com" target="_blank" rel="noopener" style="border-bottom:2px dashed var(--shadow);">Online shop</a>
+    <a href="https://www.instagram.com/c_cya__/" target="_blank" rel="noopener" style="border-bottom:2px dashed var(--shadow);">Instagram</a>
+    <a href="/qa/" style="border-bottom:2px dashed var(--shadow);">よくあるしつもん</a>
+    <a href="/contact/" style="border-bottom:2px dashed var(--shadow);">ごようぼう</a>
+    <a href="/privacy/" style="border-bottom:2px dashed var(--shadow);">プライバシーポリシー</a>
+  </div>
+  <div style="color:var(--muted);font-size:12px;margin-top:20px;">© c_cya.</div>
+</footer>
+
+<script>
+  // Android の端末では Android タブを最初に見せる
+  if (/Android/i.test(navigator.userAgent)) document.getElementById('os-android').checked = true;
+</script>
+</body>
+</html>
