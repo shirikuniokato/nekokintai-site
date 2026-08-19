@@ -55,11 +55,11 @@
   details[open] .qa-arrow{transform:rotate(180deg);}
   .qa-body{
     display:flex;align-items:flex-start;gap:12px;
-    padding:12px clamp(13px,3.6vw,18px) clamp(14px,3.8vw,18px);
+    padding:12px clamp(13px,3.6vw,18px) 12px;
     border-top:2px dashed var(--border);margin-top:-2px;
   }
   .qa-a{margin:0;font-size:clamp(14px,3.8vw,15px);line-height:1.9;color:var(--ink);padding-top:4px;}
-  .qa-note{margin:8px 0 0;font-size:clamp(11px,3.1vw,12px);line-height:1.8;color:var(--muted);}
+  .qa-note{margin:0;padding:0 clamp(13px,3.6vw,18px) clamp(14px,3.8vw,18px);font-size:clamp(11px,3.1vw,12px);line-height:1.8;color:var(--muted);text-align:center;}
 </style>
 </head>
 <body>
@@ -79,85 +79,86 @@
 
   <section aria-label="できること">
     <details class="qa-card">
-      <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">きょうだけ急にお休み、ってできますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+      <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">今日だけ急にお休み、ってできますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
       <div class="qa-body"><span class="qa-chip a">A</span><div style="min-width:0;">
-        <p class="qa-a">できます！週の画面でその日をタップすると「お休みにする」ボタンが出ます。あとから取り消しもできます。</p>
-        <p class="qa-note">先の日のぶんを前もってお休みにするのは、まだできません。こちらも検討しています</p>
+        <p class="qa-a">できます。週の画面でその日をタップすると「お休みにする」ボタンが出ます。後から取り消しもできます。</p>
       </div></div>
+      <p class="qa-note">先の日を前もってお休みにすることは、まだできません。こちらも検討しています</p>
     </details>
 
     <details class="qa-card">
-      <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">日付が変わる時刻は、真夜中0時のままなの？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+      <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">日付が変わる時刻は、真夜中0時のままですか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
       <div class="qa-body"><span class="qa-chip a">A</span><div style="min-width:0;">
-        <p class="qa-a">設定から 0時〜6時のあいだで動かせます。夜ふかしさんは「朝4時」にすると、深夜のがんばりも きょうの記録に。</p>
-        <p class="qa-note">設定 → 1日のきりかえ時刻</p>
+        <p class="qa-a">設定から 0時〜6時の間で変更できます。「朝4時」にすると、深夜の作業も同じ日の記録になります。</p>
       </div></div>
+      <p class="qa-note">設定 → 1日のきりかえ時刻</p>
     </details>
 
     <details class="qa-card">
-      <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">はたらいている途中で、作業を切り替えられない？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+      <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">働いている途中で、作業を切り替えられない？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
       <div class="qa-body"><span class="qa-chip a">A</span><div style="min-width:0;">
-        <p class="qa-a">はたらいている間の切り替えは できる作りになっています。退勤後に切り替えて「また働く」ができない件は なおしました。すこし先のアップデートで反映予定です。</p>
-        <p class="qa-note">ほかの場合もしらべています</p>
+        <p class="qa-a">働いている間の切り替えは できる作りになっています。退勤後に切り替えて「また働く」が押せない件は、修正しました。少し先のアップデートで反映予定です。</p>
       </div></div>
+      <p class="qa-note">ほかの場合も調べています</p>
     </details>
 
     <details class="qa-card">
-      <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">けした作業カテゴリを、もとに戻せないよ〜</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+      <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">消した作業カテゴリを、元に戻せない？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
       <div class="qa-body"><span class="qa-chip a">A</span><div style="min-width:0;">
-        <p class="qa-a">iOS版 1.1.0 で なおしました。Android版は審査中です。けした作業の一覧は、これから畳めるようにする予定です。</p>
-        <p class="qa-note">記録がある作業は、集計がくずれないように残しています。0時間のものは完全に消せるようにしたいです</p>
+        <p class="qa-a">iOS版 1.1.0 で修正しました。Android版は審査中です。消した作業の一覧は、今後畳めるようにする予定です。</p>
       </div></div>
+      <p class="qa-note">記録がある作業は、集計が崩れないように残しています。0時間のものは完全に削除できるようにしたいです</p>
     </details>
 
     <details class="qa-card">
-      <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">海外でつかうと、記録が日本時間になっちゃう？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+      <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">海外で使うと、記録が日本時間になってしまう？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
       <div class="qa-body"><span class="qa-chip a">A</span><div style="min-width:0;">
-        <p class="qa-a">ごめんなさい、不具合でした。もう なおしてあります。ストア審査の関係で、届くのはすこし先になりそうです。</p>
-        <p class="qa-note">アップデートが出たら、更新してつかってください</p>
+        <p class="qa-a">ごめんなさい、不具合でした。修正済みです。ストア審査の関係で、届くのは少し先になる見込みです。</p>
       </div></div>
+      <p class="qa-note">アップデート公開後に、更新してお使いください</p>
     </details>
   </section>
 
   <div style="display:flex;justify-content:center;margin:6px 0 22px;"><img src="/art/happy.png" alt="" style="width:52px;height:auto;image-rendering:pixelated;animation:nk-bob 1.7s steps(1,end) infinite;"></div>
   <section aria-label="これからのこと">
     <details class="qa-card">
-      <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">きょうより前の日にも、記録をつけたい！</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+      <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">今日より前の日にも、記録をつけたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
       <div class="qa-body"><span class="qa-chip a">A</span><div style="min-width:0;">
-        <p class="qa-a">いまはできなくて、ごめんなさい。アップデートで出したいと思って準備をすすめています。</p>
-        <p class="qa-note">ストアの審査にも時間がかかるので、すこし先になりそうです</p>
+        <p class="qa-a">今はできません。ごめんなさい。アップデートで出せるように準備を進めています。</p>
       </div></div>
+      <p class="qa-note">ストアの審査にも時間がかかるため、少し先になる見込みです</p>
     </details>
 
     <details class="qa-card">
-      <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">作業カテゴリを、ならべ替えたい！</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+      <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">作業カテゴリを、並べ替えたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
       <div class="qa-body"><span class="qa-chip a">A</span><div style="min-width:0;">
-        <p class="qa-a">作りたいです。じつは作者も ほしいです。すこし先になりますが、つくらなきゃ……！</p>
+        <p class="qa-a">作りたいです。実は作者もほしい機能です。少し先になりますが、対応する予定です。</p>
       </div></div>
+      <p class="qa-note">ご要望ありがとうございます</p>
     </details>
 
     <details class="qa-card">
-      <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">ねこさんは、これからふえますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+      <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">ねこは、これから増えますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
       <div class="qa-body"><span class="qa-chip a">A</span><div style="min-width:0;">
-        <p class="qa-a">ふやしたいと思っています。ドット絵は初挑戦で、1匹ずつ時間がかかるけれど、すこしずつ。</p>
-        <p class="qa-note">あたらしいねこは、今後は課金になるかもしれません</p>
+        <p class="qa-a">増やしたいと思っています。ドット絵は初挑戦で、1匹ずつ時間がかかりますが、少しずつ。</p>
       </div></div>
+      <p class="qa-note">新しいねこは、今後は有料になるかもしれません</p>
     </details>
 
     <details class="qa-card">
-      <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">ウィジェットやロック画面にも ねこがほしい！</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+      <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">ウィジェットやロック画面にも ねこがほしい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
       <div class="qa-body"><span class="qa-chip a">A</span><div style="min-width:0;">
-        <p class="qa-a">やりたい気持ちは満々です。ただ、いまは確実に手がまわらず、遠い未来になりそうです。</p>
-        <p class="qa-note">ｼﾁｬのもとには、ねこ社員しかいないため……</p>
+        <p class="qa-a">対応したい気持ちはあるのですが、今は手が回らず、かなり先になりそうです。</p>
       </div></div>
+      <p class="qa-note">作者のもとには、ねこ社員しかいないため……</p>
     </details>
 
     <details class="qa-card">
-      <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">メモや ごほうびみたいな機能も ほしいな！</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+      <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">メモやごほうびのような機能もほしい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
       <div class="qa-body"><span class="qa-chip a">A</span><div style="min-width:0;">
-        <p class="qa-a">ご要望、ぜんぶ読んでいます。やりたい気持ちはありつつ、手がまわらず 遠い未来になりそうです。ごめんなさい。</p>
-        <p class="qa-note">不具合のご報告は、さきに対応していきます</p>
+        <p class="qa-a">ご要望はすべて読んでいます。対応したい気持ちはありますが、手が回らず、かなり先になりそうです。ごめんなさい。</p>
       </div></div>
+      <p class="qa-note">不具合の修正を先に対応していきます</p>
     </details>
   </section>
 
@@ -166,25 +167,25 @@
     <details class="qa-card">
       <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">iPhone と iPad の2台で、同じ記録を使いたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
       <div class="qa-body"><span class="qa-chip a">A</span><div style="min-width:0;">
-        <p class="qa-a">ごめんなさい、同期はできません。記録を端末の中だけに置く作りで、ログイン機能を作る予定がないのです。</p>
-        <p class="qa-note">そのかわり、アカウントも広告もなしで使えます</p>
+        <p class="qa-a">申し訳ないのですが、同期には対応していません。記録を端末の中だけに置く方針で、ログイン機能を作る予定がないためです。</p>
       </div></div>
+      <p class="qa-note">そのかわり、アカウント登録も広告もありません</p>
     </details>
 
     <details class="qa-card">
       <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">シフトや勤務時間の設定はできますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
       <div class="qa-body"><span class="qa-chip a">A</span><div style="min-width:0;">
-        <p class="qa-a">このアプリは「お金の出ない時間」をはかるために作っているので、おしごとの勤怠には向かないかもしれません。</p>
-        <p class="qa-note">はたらく人向けの「くろねこ勤怠」もいつか出したいですが、遠い未来になりそうです</p>
+        <p class="qa-a">このアプリは「お金の出ない時間」を測るために作っているので、お仕事の勤怠管理には向かないかもしれません。</p>
       </div></div>
+      <p class="qa-note">働く人向けの「くろねこ勤怠」も、いつか出したいと考えていますが、かなり先になりそうです</p>
     </details>
 
     <details class="qa-card">
       <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">会社やチームでも使ってみたいです</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
       <div class="qa-body"><span class="qa-chip a">A</span><div style="min-width:0;">
-        <p class="qa-a">企業のみなさま、お声がけお待ちしています。</p>
-        <p class="qa-note">ごようぼうフォーム、または support@c-cya.com へ</p>
+        <p class="qa-a">企業のみなさま、お声がけをお待ちしています。</p>
       </div></div>
+      <p class="qa-note">ごようぼうフォーム、または support@c-cya.com へ</p>
     </details>
   </section>
 
