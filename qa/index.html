@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>よくあるしつもん | ねこ勤怠</title>
+<meta name="description" content="ねこ勤怠によせられた、よくあるしつもんとこたえ。できること、なおしたこと、これからやりたいこと。">
+<link rel="icon" type="image/png" href="/favicon.png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2J5J902MFE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2J5J902MFE');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0C3A44; --bg:#EAF4F7; --paper:#FFFFFF; --border:#DCEDF2;
+    --muted:#7FA6AF; --deep:#155C69; --accent:#FFDE59; --shadow:#C3E4EE;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"DotGothic16",system-ui,sans-serif;font-weight:400;line-height:1.9;text-align:center;}
+  a{color:var(--deep);text-decoration:none;}
+  a:hover{color:var(--ink);}
+  a:focus-visible{outline:2px solid var(--deep);outline-offset:3px;}
+  img{display:block;}
+  @keyframes nk-bob{0%,49%{transform:translateY(0)}50%,100%{transform:translateY(-4px)}}
+  @keyframes nk-twinkle{0%,100%{opacity:.25}50%{opacity:1}}
+  @media (prefers-reduced-motion:reduce){*{animation:none !important}}
+
+  .qa-card{
+    position:relative;text-align:left;background:var(--paper);
+    border:2px solid var(--border);border-radius:14px;box-shadow:4px 4px 0 var(--shadow);
+    padding:clamp(18px,4.5vw,26px) clamp(16px,4.5vw,26px);margin:0 0 22px;
+  }
+  .qa-row{display:flex;align-items:flex-start;gap:14px;}
+  .qa-row + .qa-row{margin-top:14px;}
+  .qa-chip{
+    flex:0 0 auto;width:34px;height:34px;border:2px solid var(--ink);border-radius:6px;
+    display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--ink);margin-top:4px;
+  }
+  .qa-chip.q{background:var(--accent);}
+  .qa-chip.a{background:var(--shadow);}
+  .qa-q{margin:0;font-size:clamp(16px,4.4vw,19px);line-height:1.7;padding-top:5px;}
+  .qa-a{margin:0;font-size:clamp(14px,3.9vw,16px);line-height:1.9;color:var(--ink);padding-top:6px;}
+  .qa-note{margin:8px 0 0;font-size:clamp(11px,3.2vw,13px);line-height:1.8;color:var(--muted);}
+</style>
+</head>
+<body>
+
+<main style="max-width:640px;margin:0 auto;padding:clamp(40px,8vw,72px) clamp(14px,4vw,20px) 0;">
+
+  <p style="font-size:13px;letter-spacing:.5em;text-indent:.5em;color:var(--muted);margin:0;"><a href="/" style="color:inherit;">NEKO KINTAI</a></p>
+  <div style="position:relative;">
+    <span aria-hidden="true" style="position:absolute;left:4%;top:-2%;font-size:30px;color:var(--accent);animation:nk-twinkle 2.6s ease-in-out infinite;">＋</span>
+    <span aria-hidden="true" style="position:absolute;left:16%;bottom:0;font-size:18px;color:var(--shadow);animation:nk-twinkle 3.3s ease-in-out .7s infinite;">＋</span>
+    <span aria-hidden="true" style="position:absolute;right:6%;top:10%;font-size:34px;color:var(--accent);animation:nk-twinkle 3s ease-in-out 1.1s infinite;">＋</span>
+    <span aria-hidden="true" style="position:absolute;right:20%;top:-10%;font-size:18px;color:var(--shadow);animation:nk-twinkle 2.9s ease-in-out .3s infinite;">＋</span>
+    <h1 style="position:relative;font-size:clamp(28px,7vw,40px);font-weight:400;line-height:1.5;letter-spacing:.04em;margin:12px 0 8px;">よくあるしつもん</h1>
+  </div>
+  <p style="font-size:clamp(14px,3.5vw,16px);color:var(--deep);margin:0 0 26px;">よせられた声への、いまのこたえです。<br>ぜんぶ読んでいます。</p>
+
+  <section aria-label="できること" style="margin-top:8px;">
+    <div class="qa-card">
+      <div class="qa-row"><span class="qa-chip q">Q</span><p class="qa-q">きょうだけ急にお休み、ってできますか？</p></div>
+      <div class="qa-row"><span class="qa-chip a">A</span><div style="min-width:0;">
+        <p class="qa-a">できます！週の画面でその日をタップすると「お休みにする」ボタンが出ます。あとから取り消しもできます。</p>
+        <p class="qa-note">先の日のぶんを前もってお休みにするのは、まだできません。こちらも検討しています</p>
+      </div></div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-row"><span class="qa-chip q">Q</span><p class="qa-q">日付が変わる時刻は、真夜中0時のままなの？</p></div>
+      <div class="qa-row"><span class="qa-chip a">A</span><div style="min-width:0;">
+        <p class="qa-a">設定から 0時〜6時のあいだで動かせます。夜ふかしさんは「朝4時」にすると、深夜のがんばりも きょうの記録に。</p>
+        <p class="qa-note">設定 → 1日のきりかえ時刻</p>
+      </div></div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-row"><span class="qa-chip q">Q</span><p class="qa-q">はたらいている途中で、作業を切り替えられない？</p></div>
+      <div class="qa-row"><span class="qa-chip a">A</span><div style="min-width:0;">
+        <p class="qa-a">はたらいている間の切り替えは できる作りになっています。退勤後に切り替えて「また働く」ができない件は、なおしました。</p>
+        <p class="qa-note">すこし先のアップデートで反映予定です。ほかの場合もしらべています</p>
+      </div></div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-row"><span class="qa-chip q">Q</span><p class="qa-q">けした作業カテゴリを、もとに戻せないよ〜</p></div>
+      <div class="qa-row"><span class="qa-chip a">A</span><div style="min-width:0;">
+        <p class="qa-a">iOS版 1.1.0 で なおしました。Android版は審査中です。けした作業の一覧は、これから畳めるようにする予定です。</p>
+        <p class="qa-note">記録がある作業は、集計がくずれないように残しています。0時間のものは完全に消せるようにしたいです</p>
+      </div></div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-row"><span class="qa-chip q">Q</span><p class="qa-q">海外でつかうと、記録が日本時間になっちゃう？</p></div>
+      <div class="qa-row"><span class="qa-chip a">A</span><div style="min-width:0;">
+        <p class="qa-a">ごめんなさい、不具合でした。もう なおしてあります。ストア審査の関係で、届くのはすこし先になりそうです。</p>
+        <p class="qa-note">アップデートが出たら、更新してつかってください</p>
+      </div></div>
+    </div>
+  </section>
+
+  <div style="position:relative;display:flex;align-items:flex-end;justify-content:center;margin:8px 0 26px;">
+    <div style="position:relative;text-align:center;">
+      <img src="/art/happy.png" alt="" style="width:56px;height:auto;image-rendering:pixelated;margin:0 auto;animation:nk-bob 1.7s steps(1,end) infinite;">
+    </div>
+  </div>
+
+  <section aria-label="これからのこと">
+    <div class="qa-card">
+      <div class="qa-row"><span class="qa-chip q">Q</span><p class="qa-q">きょうより前の日にも、記録をつけたい！</p></div>
+      <div class="qa-row"><span class="qa-chip a">A</span><div style="min-width:0;">
+        <p class="qa-a">いまはできなくて、ごめんなさい。アップデートで出したいと思って準備をすすめています。</p>
+        <p class="qa-note">ストアの審査にも時間がかかるので、すこし先になりそうです</p>
+      </div></div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-row"><span class="qa-chip q">Q</span><p class="qa-q">作業カテゴリを、ならべ替えたい！</p></div>
+      <div class="qa-row"><span class="qa-chip a">A</span><div style="min-width:0;">
+        <p class="qa-a">作りたいです。じつは作者も ほしいです。すこし先になりますが、つくらなきゃ……！</p>
+      </div></div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-row"><span class="qa-chip q">Q</span><p class="qa-q">ねこさんは、これからふえますか？</p></div>
+      <div class="qa-row"><span class="qa-chip a">A</span><div style="min-width:0;">
+        <p class="qa-a">ふやしたいと思っています。ドット絵は初挑戦で、1匹ずつ時間がかかるけれど、すこしずつ。</p>
+        <p class="qa-note">あたらしいねこは、今後は課金になるかもしれません</p>
+      </div></div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-row"><span class="qa-chip q">Q</span><p class="qa-q">ウィジェットやロック画面にも ねこがほしい！</p></div>
+      <div class="qa-row"><span class="qa-chip a">A</span><div style="min-width:0;">
+        <p class="qa-a">やりたい気持ちは満々です。ただ、いまは確実に手がまわらず、遠い未来になりそうです。</p>
+        <p class="qa-note">ｼﾁｬのもとには、ねこ社員しかいないため……</p>
+      </div></div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-row"><span class="qa-chip q">Q</span><p class="qa-q">メモや ごほうびみたいな機能も ほしいな！</p></div>
+      <div class="qa-row"><span class="qa-chip a">A</span><div style="min-width:0;">
+        <p class="qa-a">ご要望、ぜんぶ読んでいます。やりたい気持ちはありつつ、手がまわらず 遠い未来になりそうです。ごめんなさい。</p>
+        <p class="qa-note">不具合のご報告は、さきに対応していきます</p>
+      </div></div>
+    </div>
+  </section>
+
+  <div style="position:relative;display:flex;align-items:flex-end;justify-content:center;margin:8px 0 26px;">
+    <img src="/assets/lp/cream-sit.png" alt="" width="208" height="120" style="width:64px;height:auto;image-rendering:pixelated;animation:nk-bob 2.3s steps(1,end) infinite;">
+  </div>
+
+  <section aria-label="ごめんなさいのこと">
+    <div class="qa-card">
+      <div class="qa-row"><span class="qa-chip q">Q</span><p class="qa-q">iPhone と iPad の2台で、同じ記録を使いたい</p></div>
+      <div class="qa-row"><span class="qa-chip a">A</span><div style="min-width:0;">
+        <p class="qa-a">ごめんなさい、同期はできません。記録を端末の中だけに置く作りで、ログイン機能を作る予定がないのです。</p>
+        <p class="qa-note">そのかわり、アカウントも広告もなしで使えます</p>
+      </div></div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-row"><span class="qa-chip q">Q</span><p class="qa-q">シフトや勤務時間の設定はできますか？</p></div>
+      <div class="qa-row"><span class="qa-chip a">A</span><div style="min-width:0;">
+        <p class="qa-a">このアプリは「お金の出ない時間」をはかるために作っているので、おしごとの勤怠には向かないかもしれません。</p>
+        <p class="qa-note">はたらく人向けの「くろねこ勤怠」もいつか出したいですが、遠い未来になりそうです</p>
+      </div></div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-row"><span class="qa-chip q">Q</span><p class="qa-q">会社やチームでも使ってみたいです</p></div>
+      <div class="qa-row"><span class="qa-chip a">A</span><div style="min-width:0;">
+        <p class="qa-a">企業のみなさま、お声がけお待ちしています。</p>
+        <p class="qa-note">ごようぼうフォーム、または support@c-cya.com へ</p>
+      </div></div>
+    </div>
+  </section>
+
+  <p style="font-size:clamp(13px,3.6vw,15px);color:var(--deep);margin:34px 0 0;">こたえが見つからないときは、<br><a href="/contact/" style="border-bottom:2px dashed var(--shadow);">ごようぼうフォーム</a>から おしえてください。</p>
+
+  <p style="margin:24px 0 0;font-size:13px;"><a href="/" style="border-bottom:2px dashed var(--shadow);">← ねこ勤怠のページへもどる</a></p>
+
+  <div style="position:relative;margin-top:clamp(40px,7vw,64px);">
+    <div style="position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--shadow);border-radius:3px;"></div>
+    <div style="position:relative;display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:6px;">
+      <img src="/art/mike-walkA.png" alt="" style="width:clamp(56px,12vw,84px);height:auto;image-rendering:pixelated;">
+      <img src="/assets/lp/sakura-sleep.png" alt="" style="width:clamp(56px,12vw,84px);height:auto;image-rendering:pixelated;scale:-1 1;">
+    </div>
+  </div>
+
+</main>
+
+<footer style="margin-top:clamp(40px,7vw,64px);border-top:2px solid var(--border);padding:28px 20px 44px;font-size:13px;text-align:center;">
+  <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;">
+    <a href="https://shop.c-cya.com" target="_blank" rel="noopener" style="border-bottom:2px dashed var(--shadow);">Online shop</a>
+    <a href="https://www.instagram.com/c_cya__/" target="_blank" rel="noopener" style="border-bottom:2px dashed var(--shadow);">Instagram</a>
+    <a href="/contact/" style="border-bottom:2px dashed var(--shadow);">ごようぼう</a>
+    <a href="/privacy/" style="border-bottom:2px dashed var(--shadow);">プライバシーポリシー</a>
+  </div>
+  <div style="color:var(--muted);font-size:12px;margin-top:20px;">© c_cya.</div>
+</footer>
+</body>
+</html>
