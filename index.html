@@ -142,6 +142,10 @@
         <span style="display:block;">
           <span style="display:block;font-size:clamp(15px,4.2vw,20px);line-height:1.5;">c_cya</span>
           <span style="display:block;font-size:13px;line-height:1.7;color:var(--muted);">ねこがすきです。</span>
+          <span style="display:flex;gap:16px;font-size:13px;line-height:1.7;margin-top:8px;">
+            <a href="https://www.instagram.com/c_cya__/" target="_blank" rel="noopener" style="border-bottom:2px dashed var(--shadow);">Instagram</a>
+            <a href="https://shop.c-cya.com" target="_blank" rel="noopener" style="border-bottom:2px dashed var(--shadow);">Online shop</a>
+          </span>
         </span>
       </div>
       <p class="maker-span" style="font-size:14px;line-height:1.95;margin:0;color:var(--deep);grid-column:span 2;max-width:34em;">時間をきびしく見はるためではなく、はたらいた事実をただ数えるために作りました。カワイさと達成感がほしかったのです。なので非常にシンプル！アカウントも広告もありません。ごようぼうは <a href="/contact/" style="border-bottom: 2px dashed var(--shadow);">こちらのフォーム</a>から。メールでも大丈夫です（<a href="mailto:support@c-cya.com" style="border-bottom: 2px dashed var(--shadow);">support@c-cya.com</a>）。</p>
@@ -151,10 +155,11 @@
       <a class="social-btn" href="/qa/" style="display:inline-flex;align-items:center;justify-content:center;gap:clamp(7px,2.5vw,16px);flex:0 1 auto;min-width:0;border:2px solid var(--border);background:var(--paper);color:var(--deep);border-radius:12px;padding:clamp(11px,3vw,20px) clamp(12px,4vw,34px);font-size:clamp(12px,3.4vw,20px);white-space:nowrap;box-shadow:4px 4px 0 var(--shadow);"><span aria-hidden="true" style="font-size:clamp(20px,5.5vw,34px);line-height:1;color:var(--accent);animation:nk-twinkle-soft 3s ease-in-out infinite;flex:0 0 auto;">＋</span>よくあるしつもん</a>
       <a class="social-btn" href="/roadmap/" style="display:inline-flex;align-items:center;justify-content:center;gap:clamp(7px,2.5vw,16px);flex:0 1 auto;min-width:0;border:2px solid var(--border);background:var(--paper);color:var(--deep);border-radius:12px;padding:clamp(11px,3vw,20px) clamp(12px,4vw,34px);font-size:clamp(12px,3.4vw,20px);white-space:nowrap;box-shadow:4px 4px 0 var(--shadow);"><span aria-hidden="true" style="font-size:clamp(20px,5.5vw,34px);line-height:1;color:var(--shadow);animation:nk-twinkle-soft 3.4s ease-in-out .6s infinite;flex:0 0 auto;">＋</span>アップデートのよてい</a>
     </div>
-    <div style="display:flex;gap:clamp(8px,2.5vw,16px);flex-wrap:nowrap;justify-content:center;margin-top:clamp(10px,3vw,18px);">
-      <a class="social-btn" href="https://www.instagram.com/c_cya__/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;gap:clamp(7px,2.5vw,16px);flex:0 1 auto;min-width:0;border:2px solid var(--border);background:var(--paper);color:var(--deep);border-radius:12px;padding:clamp(11px,3vw,20px) clamp(12px,4vw,34px);font-size:clamp(12px,3.4vw,20px);white-space:nowrap;box-shadow:4px 4px 0 var(--shadow);"><img src="art/sleep.png" alt="" style="width:clamp(28px,8vw,56px);height:auto;image-rendering:pixelated;flex:0 0 auto;">Instagram</a>
-      <a class="social-btn" href="https://shop.c-cya.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;gap:clamp(7px,2.5vw,16px);flex:0 1 auto;min-width:0;border:2px solid var(--border);background:var(--paper);color:var(--deep);border-radius:12px;padding:clamp(11px,3vw,20px) clamp(12px,4vw,34px);font-size:clamp(12px,3.4vw,20px);white-space:nowrap;box-shadow:4px 4px 0 var(--shadow);"><img src="assets/lp/mint-happy.png" alt="" style="width:clamp(28px,8vw,56px);height:auto;image-rendering:pixelated;flex:0 0 auto;">Online shop</a>
+    <!-- 投げ銭。/tip/ で金額を選んでから Stripe Payment Link へ。アプリ内からは絶対にリンクしない（ストア規約） -->
+    <div style="display:flex;justify-content:center;margin-top:clamp(10px,3vw,18px);">
+      <a class="social-btn" href="/tip/" onclick="gtag('event','tip_click');" style="display:inline-flex;align-items:center;justify-content:center;gap:clamp(7px,2.5vw,16px);flex:0 1 auto;min-width:0;border:2px solid var(--border);background:var(--paper);color:var(--deep);border-radius:12px;padding:clamp(11px,3vw,20px) clamp(12px,4vw,34px);font-size:clamp(12px,3.4vw,20px);white-space:nowrap;box-shadow:4px 4px 0 var(--shadow);"><img src="art/happy.png" alt="" style="width:clamp(28px,8vw,56px);height:auto;image-rendering:pixelated;flex:0 0 auto;">開発をおうえんする</a>
     </div>
+    <p style="font-size:12px;line-height:1.8;color:var(--muted);margin:10px 0 0;text-align:center;">投げ銭です。アプリはこれからも無料で、おうえんしてもしなくても同じように使えます。</p>
   </section>
 
 </main>

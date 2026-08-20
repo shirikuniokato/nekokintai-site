@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>開発をおうえんする | ねこ勤怠</title>
+<meta name="description" content="ねこ勤怠の開発を投げ銭でおうえんできます。金額をえらぶと、決済ページにすすみます。アプリはこれからも無料です。">
+<link rel="icon" type="image/png" href="/favicon.png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2J5J902MFE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2J5J902MFE');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0C3A44; --bg:#EAF4F7; --paper:#FFFFFF; --border:#DCEDF2;
+    --muted:#7FA6AF; --deep:#155C69; --accent:#FFDE59; --shadow:#C3E4EE;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"DotGothic16",system-ui,sans-serif;font-weight:400;line-height:1.9;text-align:center;}
+  a{color:var(--deep);text-decoration:none;}
+  a:hover{color:var(--ink);}
+  a:focus-visible{outline:2px solid var(--deep);outline-offset:3px;}
+  img{display:block;}
+  @keyframes nk-twinkle{0%,100%{opacity:.25}50%{opacity:1}}
+  @media (prefers-reduced-motion:reduce){*{animation:none !important}}
+
+  /* 金額ボタン。トップの白ボタンと同じ様式で、2列に並べる */
+  .tip-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(10px,3vw,16px);margin:26px 0 0;}
+  .tip-btn{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+    border:2px solid var(--border);background:var(--paper);color:var(--deep);border-radius:12px;
+    padding:clamp(16px,4vw,24px) clamp(10px,3vw,20px);
+    box-shadow:4px 4px 0 var(--shadow);
+    transition:transform .12s ease,box-shadow .12s ease;
+  }
+  .tip-btn:hover{transform:translateY(-2px);box-shadow:4px 6px 0 var(--shadow);color:var(--deep);}
+  /* ねこは全員おなじドット倍率（--px = 1ドットの大きさ）で描き、足もとをそろえる。
+     art/* はどれも 26x18 の1倍キャンバスなので、幅は 26ドット×倍率で指定する */
+  .tip-btn{--px:clamp(2px,.6vw,2.6px);}
+  .tip-cat{height:calc(18 * var(--px));display:flex;align-items:flex-end;justify-content:center;margin-bottom:8px;}
+  .tip-cat img{height:auto;image-rendering:pixelated;}
+  /* ひょっこり（happy）は素材が 19x11 と小さいので 1.5 倍。上の透明部分が箱からはみ出すが見た目には影響しない */
+  .tip-yen{font-size:clamp(22px,6vw,30px);line-height:1.3;letter-spacing:.02em;color:var(--ink);}
+  .tip-sub{font-size:clamp(11px,3.1vw,13px);line-height:1.6;color:var(--muted);}
+  .tip-note{margin:0;font-size:clamp(12px,3.2vw,13px);line-height:1.9;color:var(--muted);}
+</style>
+</head>
+<body>
+
+<main style="max-width:560px;margin:0 auto;padding:clamp(40px,8vw,72px) clamp(14px,4vw,20px) 0;">
+
+  <p style="font-size:13px;letter-spacing:.5em;text-indent:.5em;color:var(--muted);margin:0;"><a href="/" style="color:inherit;">NEKO KINTAI</a></p>
+  <div style="position:relative;">
+    <span aria-hidden="true" style="position:absolute;left:6%;top:0;font-size:30px;color:var(--accent);animation:nk-twinkle 2.6s ease-in-out infinite;">＋</span>
+    <span aria-hidden="true" style="position:absolute;right:8%;top:18%;font-size:22px;color:var(--shadow);animation:nk-twinkle 3.1s ease-in-out .8s infinite;">＋</span>
+    <h1 style="position:relative;font-size:clamp(28px,7vw,40px);font-weight:400;line-height:1.5;letter-spacing:.04em;margin:12px 0 8px;">開発をおうえんする</h1>
+  </div>
+  <p style="font-size:clamp(14px,3.5vw,16px);color:var(--deep);margin:0 0 8px;">ねこ勤怠は、個人で作っています。<br>投げ銭で、開発をおうえんできます。</p>
+  <p style="font-size:clamp(12px,3.2vw,13px);color:var(--muted);margin:0;">金額をえらぶと、決済画面にすすみます。<br>アプリはこれからも無料で、おうえんしてもしなくても同じように使えます。</p>
+
+  <!-- 金額ごとに Stripe Payment Link が1本ずつ（URL パラメータで金額は渡せないため）。アプリ内からは絶対にリンクしない（ストア規約） -->
+  <nav class="tip-grid" aria-label="おうえんする金額">
+    <a class="tip-btn" href="https://donate.stripe.com/00wfZj3VZ3Gn3bdfas1RC01" target="_blank" rel="noopener" onclick="gtag('event','tip_amount',{amount:100});">
+      <span class="tip-cat"><img src="/art/sleep.png" alt="" style="width:calc(26 * var(--px));"></span>
+      <span class="tip-yen">¥100</span>
+      <span class="tip-sub">ちょこっと</span>
+    </a>
+    <a class="tip-btn" href="https://donate.stripe.com/00w4gB5037WD7rt5zS1RC02" target="_blank" rel="noopener" onclick="gtag('event','tip_amount',{amount:300});">
+      <span class="tip-cat"><img src="/art/sit.png" alt="" style="width:calc(26 * var(--px));"></span>
+      <span class="tip-yen">¥300</span>
+      <span class="tip-sub">ジュース1本</span>
+    </a>
+    <a class="tip-btn" href="https://donate.stripe.com/eVq00ldwz6Sz2793rK1RC03" target="_blank" rel="noopener" onclick="gtag('event','tip_amount',{amount:500});">
+      <span class="tip-cat"><img src="/art/walkA.png" alt="" style="width:calc(26 * var(--px));"></span>
+      <span class="tip-yen">¥500</span>
+      <span class="tip-sub">コーヒー1杯</span>
+    </a>
+    <a class="tip-btn" href="https://donate.stripe.com/dRm9AV9gjdgXbHJ9Q81RC04" target="_blank" rel="noopener" onclick="gtag('event','tip_amount',{amount:1000});">
+      <span class="tip-cat"><img src="/art/happy.png" alt="" style="width:calc(26 * 1.5 * var(--px));margin-bottom:calc(-1 * var(--px));"></span>
+      <span class="tip-yen">¥1,000</span>
+      <span class="tip-sub">ねこのごはん</span>
+    </a>
+  </nav>
+
+  <p style="font-size:clamp(13px,3.6vw,15px);color:var(--deep);margin:22px 0 0;">金額をじぶんで決めたいときは <a href="https://donate.stripe.com/8x2eVf3VZel1bHJ5zS1RC00" target="_blank" rel="noopener" onclick="gtag('event','tip_amount',{amount:'custom'});" style="border-bottom:2px dashed var(--shadow);">こちら</a>から。<br><span style="font-size:clamp(11px,3.1vw,12px);color:var(--muted);">（¥100〜¥10,000）</span></p>
+
+  <section style="margin:30px 0 0;text-align:left;">
+    <hr style="height:0;border:0;margin:0;border-top:2px solid var(--ink);">
+    <div style="padding:18px 4px;">
+      <p class="tip-note">・投げ銭です。おれいの品やアプリの追加機能はありません。そのかわり、いただいている<a href="/roadmap/" style="border-bottom:2px dashed var(--shadow);">ごようぼう</a>のために がんばります</p>
+      <p class="tip-note">・決済は ねこ勤怠をつくっている c_cya のオンラインショップ「ｼﾁｬのねこ屋さん」と同じ仕組みでおこないます。明細にはショップの名前が出ます</p>
+      <p class="tip-note">・カード・PayPay などが使えます。カード番号は決済会社があつかい、こちらには届きません</p>
+      <p class="tip-note">・いただいた分だけ、ねこ勤怠のためにがんばります</p>
+    </div>
+    <hr style="height:0;border:0;margin:0;border-top:2px solid var(--ink);">
+  </section>
+
+  <p style="margin:24px 0 0;font-size:13px;"><a href="/" style="border-bottom:2px dashed var(--shadow);">← ねこ勤怠のページへもどる</a></p>
+
+  <div style="position:relative;margin-top:clamp(40px,7vw,64px);">
+    <div style="position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--shadow);border-radius:3px;"></div>
+    <div style="position:relative;display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:6px;">
+      <img src="/art/mike-walkA.png" alt="" style="width:clamp(56px,12vw,84px);height:auto;image-rendering:pixelated;">
+      <img src="/assets/lp/sakura-sleep.png" alt="" style="width:clamp(56px,12vw,84px);height:auto;image-rendering:pixelated;scale:-1 1;">
+    </div>
+  </div>
+
+</main>
+
+<footer style="margin-top:clamp(40px,7vw,64px);border-top:2px solid var(--border);padding:28px 20px 44px;font-size:13px;text-align:center;">
+  <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;">
+    <a href="https://shop.c-cya.com" target="_blank" rel="noopener" style="border-bottom:2px dashed var(--shadow);">Online shop</a>
+    <a href="https://www.instagram.com/c_cya__/" target="_blank" rel="noopener" style="border-bottom:2px dashed var(--shadow);">Instagram</a>
+    <a href="/qa/" style="border-bottom:2px dashed var(--shadow);">よくあるしつもん</a>
+    <a href="/contact/" style="border-bottom:2px dashed var(--shadow);">ごようぼう</a>
+    <a href="/privacy/" style="border-bottom:2px dashed var(--shadow);">プライバシーポリシー</a>
+  </div>
+  <div style="color:var(--muted);font-size:12px;margin-top:20px;">© c_cya.</div>
+</footer>
+</body>
+</html>
