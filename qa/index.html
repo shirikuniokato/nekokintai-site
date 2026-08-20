@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>よくあるしつもん | ねこ勤怠</title>
-<meta name="description" content="ねこ勤怠によせられた、よくあるしつもんとこたえ。できること、なおしたこと、これからやりたいこと。">
+<meta name="description" content="ねこ勤怠によせられた、よくあるしつもんとこたえ。いま直している不具合、できること、これからやりたいこと。">
 <link rel="icon" type="image/png" href="/favicon.png">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2J5J902MFE"></script>
@@ -80,6 +80,69 @@
   <p style="font-size:clamp(14px,3.5vw,16px);color:var(--deep);margin:0 0 8px;">よせられた声への、いまのこたえです。<br>ぜんぶ読んでいます。</p>
   <p style="font-size:clamp(12px,3.2vw,13px);color:var(--muted);margin:0 0 24px;">気になるしつもんを タップすると、こたえがひらきます</p>
 
+  <section aria-label="いま なおしているところ" style="margin:0 0 26px;">
+    <div style="display:flex;align-items:flex-end;justify-content:center;gap:10px;margin:0 0 8px;">
+      <img src="/art/walkA.png" alt="" style="width:48px;height:auto;image-rendering:pixelated;animation:nk-bob 1.9s steps(1,end) infinite;">
+      <span style="font-size:13px;letter-spacing:.3em;color:var(--muted);padding-bottom:4px;">いま なおしているところ</span>
+    </div>
+    <p style="font-size:clamp(11px,3.1vw,12px);color:var(--muted);margin:0 0 10px;line-height:1.8;">つぎのアップデート（1.3.0）で直すものと、<br>原因を調べているものがあります</p>
+    <div class="qa-group">
+      <details>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">作業カテゴリを切り替えて「また働く」が押せない</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <div class="qa-body">
+          <span class="qa-chip a">A</span>
+          <p class="qa-a">退勤したあとや休憩のあいだに
+別の作業カテゴリを選びなおすと、
+「また働く」が押せなくなる不具合です。
+つぎのアップデートで直します。</p>
+        <p class="qa-note">働いている途中の切り替えは、
+今もできる作りになっています。
+届くまでは「記録の手直し」で
+時間を直してください</p>
+        </div>
+      </details>
+      <details>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">「記録を足す」で保存すると、入力が消えて何も残らない</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <div class="qa-body">
+          <span class="qa-chip a">A</span>
+          <p class="qa-a">不具合です。ごめんなさい。
+つぎのアップデートで直します。</p>
+        </div>
+      </details>
+      <details>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">「休憩にさそう時間」を1時間まで下げると、増やせなくなる</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <div class="qa-body">
+          <span class="qa-chip a">A</span>
+          <p class="qa-a">［＋］を押しても増えなくなる
+不具合です。
+つぎのアップデートで直します。</p>
+        </div>
+      </details>
+      <details>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">「週のはじまり」を月曜にすると、月の画面が切りかわらない</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <div class="qa-body">
+          <span class="qa-chip a">A</span>
+          <p class="qa-a">月の画面のカレンダーが
+日曜はじまりのままになる不具合です。
+つぎのアップデートで直します。</p>
+        </div>
+      </details>
+      <details>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">Android版が、セキュリティアプリに止められて入れられない</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <div class="qa-body">
+          <span class="qa-chip a">A</span>
+          <p class="qa-a">ウイルス対策アプリが
+インストールを止めてしまう、という
+お知らせをいただきました。
+原因を調べています。</p>
+        <p class="qa-note">同じことが起きた方は、お使いの
+セキュリティアプリの名前を
+おしえてもらえると助かります</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
   <section aria-label="できること" style="margin:0 0 26px;">
     <div style="display:flex;align-items:flex-end;justify-content:center;gap:10px;margin:0 0 10px;">
       <img src="/art/happy.png" alt="" style="width:46px;height:auto;image-rendering:pixelated;animation:nk-bob 1.7s steps(1,end) infinite;">
@@ -94,8 +157,6 @@
 週の画面でその日をタップすると
 「お休みにする」ボタンが出ます。
 後から取り消しもできます。</p>
-        <p class="qa-note">先の日を前もってお休みにすることは、
-まだできません。こちらも検討しています</p>
         </div>
       </details>
       <details>
@@ -110,17 +171,15 @@
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">働いている途中で、作業を切り替えられない？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">週の目標と1日の目標は、合計をそろえないとだめ？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">働いている間の切り替えは
-できる作りになっています。
-退勤後に切り替えて「また働く」が
-押せない件は、修正しました。
-少し先のアップデートで反映予定です。</p>
-        <p class="qa-note">アップデートが届くまでは、
-「記録の手直し」で時間を直せます。
-ほかの場合も調べています</p>
+          <p class="qa-a">そろえなくて大丈夫です。
+週の目標は1週間ぜんぶの合計、
+1日の目標は「今日はこれくらい」の目安で、
+それぞれ別のものとして見ています。</p>
+        <p class="qa-note">平日と休日で働く時間がちがっても、
+かけ算が合わないままで問題ありません</p>
         </div>
       </details>
       <details>
@@ -162,10 +221,20 @@ Android版は、つぎのアップデート（1.2.0）で届きます。</p>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
           <p class="qa-a">今はできません。ごめんなさい。
-アップデートで出せるように
-準備を進めています。</p>
-        <p class="qa-note">ストアの審査にも時間がかかるため、
-少し先になる見込みです</p>
+たくさんの声をいただいていて、
+やりたいことのひとつとして
+考えています。</p>
+        </div>
+      </details>
+      <details>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">お休みを、先の日や週ごとに決めておきたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <div class="qa-body">
+          <span class="qa-chip a">A</span>
+          <p class="qa-a">今は、その日になってから
+「お休みにする」ことだけできます。
+先に決めておく形も考えています。</p>
+        <p class="qa-note">曜日で決まらないお仕事の方から、
+多くいただいている声です</p>
         </div>
       </details>
       <details>
@@ -174,9 +243,31 @@ Android版は、つぎのアップデート（1.2.0）で届きます。</p>
           <span class="qa-chip a">A</span>
           <p class="qa-a">作りたいです。
 実は作者もほしい機能です。
-少し先になりますが、
-対応する予定です。</p>
+どんな形がいいか、考えています。</p>
         <p class="qa-note">ご要望ありがとうございます</p>
+        </div>
+      </details>
+      <details>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">時間の手直しを、もっと細かくできませんか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <div class="qa-body">
+          <span class="qa-chip a">A</span>
+          <p class="qa-a">今より細かくしたいと思っています。
+ただ、見た目と手軽さも大切にしたいので、
+どのくらいのきざみにするか
+考えているところです。</p>
+        <p class="qa-note">なによりも、続けられることを大切にしています</p>
+        </div>
+      </details>
+      <details>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">1日の目標を、曜日ごとに変えたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <div class="qa-body">
+          <span class="qa-chip a">A</span>
+          <p class="qa-a">考えています。
+ふだんの画面はそのままにして、
+必要な方だけ細かく決められる形に
+できたらと思っています。</p>
+        <p class="qa-note">設定が増えて ごちゃごちゃしないように、
+気をつけて作ります</p>
         </div>
       </details>
       <details>
@@ -186,7 +277,9 @@ Android版は、つぎのアップデート（1.2.0）で届きます。</p>
           <p class="qa-a">増やしたいと思っています。
 ドット絵は初挑戦で、1匹ずつ
 時間がかかりますが、少しずつ。</p>
-        <p class="qa-note">新しいねこは、今後は有料になるかもしれません</p>
+        <p class="qa-note">ハチワレ、茶トラ白などの声を
+いただいています。
+新しいねこは、今後は有料になるかもしれません</p>
         </div>
       </details>
       <details>
@@ -197,38 +290,20 @@ Android版は、つぎのアップデート（1.2.0）で届きます。</p>
 大きな不具合の修正を
 ひと通り終えてからになるので、
 待っていてもらえると嬉しいです。</p>
+        <p class="qa-note">多頭飼いも、今後は
+有料になるかもしれません</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">PCやブラウザからも使いたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">ねこを なでたり、ごほうびをあげたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">検討中です。
-声が多ければ取り組みたいですが、
-少し先になりそうです。</p>
-        <p class="qa-note">ほしい方は、ごようぼうフォームからおしえてください</p>
-        </div>
-      </details>
-      <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">英語対応や、海外ストアでの公開はしますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
-        <div class="qa-body">
-          <span class="qa-chip a">A</span>
-          <p class="qa-a">時間はかかりますが、
-対応したいと思っています。
-まずは日本のみなさんに
-十分なものを届けることを優先します。</p>
-        <p class="qa-note">English support is planned,
-but it will take some time.</p>
-        </div>
-      </details>
-      <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">時間の手直しを、1分単位にできませんか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
-        <div class="qa-body">
-          <span class="qa-chip a">A</span>
-          <p class="qa-a">修正したいと思っています。
-ただ、見た目と手軽さを重視して
-10分単位などになるかもしれません。</p>
-        <p class="qa-note">なによりも、続けられることを大切にしています</p>
+          <p class="qa-a">たくさんの声をいただいています。
+作者もやってみたい気持ちがあります。
+今は不具合を直すことを
+先にしています。</p>
+        <p class="qa-note">なでる、おやつ、おもちゃ、お着替え。
+いただいた案は ぜんぶ残しています</p>
         </div>
       </details>
       <details>
@@ -238,11 +313,12 @@ but it will take some time.</p>
           <p class="qa-a">対応したい気持ちはあるのですが、
 今は手が回らず、
 かなり先になりそうです。</p>
-        <p class="qa-note">作者のもとには、ねこ社員しかいないため……</p>
+        <p class="qa-note">作業のあいだ ずっとねこが見えていてほしい、
+という声を多くいただいています</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">メモやごほうびのような機能もほしい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">メモや やることリストもほしい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
           <p class="qa-a">ご要望はすべて読んでいます。
@@ -252,7 +328,36 @@ but it will take some time.</p>
         <p class="qa-note">不具合の修正を先に対応していきます</p>
         </div>
       </details>
+      <details>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">PCやブラウザからも使いたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <div class="qa-body">
+          <span class="qa-chip a">A</span>
+          <p class="qa-a">ご要望をたくさんいただいて、
+検討してみました。
+ただ、ログインがいらないことを
+大切にしているので、作るとしても
+スマホの記録とはつながりません。
+それでも使いたいか、悩んでいます。</p>
+        <p class="qa-note">「つながらなくても使いたい」
+「それなら いらない」。
+どちらでも、ごようぼうフォームから
+おしえてもらえると助かります</p>
+        </div>
+      </details>
+      <details>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">英語対応や、海外ストアでの公開はしますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <div class="qa-body">
+          <span class="qa-chip a">A</span>
+          <p class="qa-a">今は日本のストアだけで公開しています。
+時間はかかりますが、
+英語と海外での公開にも
+対応したいと思っています。</p>
+        <p class="qa-note">English support is planned,
+but it will take some time.</p>
+        </div>
+      </details>
     </div>
+    <p style="font-size:clamp(11px,3.1vw,12px);color:var(--muted);margin:10px 0 0;line-height:1.8;">どのアップデートで何が届くかは、<br><a href="/roadmap/" style="color:var(--deep);border-bottom:2px dashed var(--shadow);">アップデートのよてい</a> にまとめています</p>
   </section>
 
   <section aria-label="むずかしいかもしれないこと" style="margin:0 0 26px;">
@@ -261,17 +366,6 @@ but it will take some time.</p>
       <span style="font-size:13px;letter-spacing:.3em;color:var(--muted);padding-bottom:4px;">むずかしいかもしれないこと</span>
     </div>
     <div class="qa-group">
-      <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">曜日ごとに目標時間を変えられますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
-        <div class="qa-body">
-          <span class="qa-chip a">A</span>
-          <p class="qa-a">検討中です。
-このアプリは、ゆるく達成感を
-得られることを大切にしているので、
-細かい設定は控えめに
-するかもしれません。</p>
-        </div>
-      </details>
       <details>
         <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">iPhone と iPad の2台で、同じ記録を使いたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
