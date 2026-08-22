@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "ios": {
+    "latestVersion": "2.0.0",
+    "storeUrl": "https://apps.apple.com/app/id6801066427",
+    "notes": [
+      "アプリを新しく作りなおし、操作しやすくしました",
+      "記録はこれまでどおり端末の中に保存されます"
+    ]
+  },
+  "android": {
+    "latestVersion": "2.0.0",
+    "storeUrl": "https://play.google.com/store/apps/details?id=com.ccya.nekokintai",
+    "notes": [
+      "アプリを新しく作りなおし、操作しやすくしました",
+      "記録はこれまでどおり端末の中に保存されます"
+    ]
+  }
+}
