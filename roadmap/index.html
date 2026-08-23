@@ -77,6 +77,14 @@
     padding:10px 2px;border-top:2px dashed var(--border);
   }
   .rv-list li:first-child{border-top:0;}
+  .rv-list.is-collapsed li:nth-child(n + 4){display:none;}
+  .rv-more{
+    display:block;margin:10px auto 0;padding:5px 2px 2px;
+    border:0;border-bottom:2px dashed var(--shadow);background:transparent;
+    color:var(--deep);font:inherit;font-size:clamp(12px,3.2vw,13px);line-height:1.6;cursor:pointer;
+  }
+  .rv-more:hover{color:var(--ink);}
+  .rv-more:focus-visible{outline:2px solid var(--deep);outline-offset:3px;}
   .rv-note{margin:10px 0 0;white-space:pre-line;font-size:clamp(11px,3.1vw,12px);line-height:1.8;color:var(--muted);}
   .rv-h2{font-size:clamp(18px,4.8vw,22px);font-weight:400;letter-spacing:.06em;margin:0 0 4px;}
   .rv-lead{font-size:clamp(13px,3.5vw,14px);color:var(--deep);margin:0 0 16px;white-space:pre-line;}
@@ -360,6 +368,31 @@
 <script>
   // Android の端末では Android タブを最初に見せる
   if (/Android/i.test(navigator.userAgent)) document.getElementById('os-android').checked = true;
+
+  // 長いリリースノートは最初の3件だけ見せる。「そのさき やりたいこと」の一覧は対象外。
+  const releaseNoteVisibleCount = 3;
+  document.querySelectorAll('.rv-pane .rv-list').forEach((list, index) => {
+    const hiddenCount = list.children.length - releaseNoteVisibleCount;
+    if (hiddenCount <= 0) return;
+
+    const listId = `release-notes-${index}`;
+    list.id = listId;
+    list.classList.add('is-collapsed');
+
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'rv-more';
+    button.setAttribute('aria-controls', listId);
+    button.setAttribute('aria-expanded', 'false');
+    button.textContent = `ほかの更新内容を ${hiddenCount}件見る`;
+    button.addEventListener('click', () => {
+      const expanded = button.getAttribute('aria-expanded') === 'true';
+      list.classList.toggle('is-collapsed', expanded);
+      button.setAttribute('aria-expanded', String(!expanded));
+      button.textContent = expanded ? `ほかの更新内容を ${hiddenCount}件見る` : '更新内容をとじる';
+    });
+    list.after(button);
+  });
 </script>
 </body>
 </html>
