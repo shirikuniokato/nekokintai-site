@@ -10,11 +10,12 @@
     ]
   },
   "android": {
-    "latestVersion": "2.0.1",
+    "latestVersion": "2.0.2",
     "storeUrl": "https://play.google.com/store/apps/details?id=com.ccya.nekokintai",
     "notes": [
-      "月のページの表示まわりの不具合を修正しました。",
-      "1日の切り替え時刻を、お昼の12時まで選べるようにしました。"
+      "日本語入力時に文字が重複・崩れる問題を修正しました。",
+      "画面下のお知らせを短く表示し、下スワイプで閉じられるようにしました。",
+      "記録の追加・修正操作をわかりやすくしました。"
     ]
   }
 }
