@@ -1,6 +1,6 @@
 # nekokintai-site
 
-ねこ勤怠（https://nekokintai.c-cya.com）の公開ページ。GitHub Pages で配信。
+ねこ勤怠（https://nekokintai.com）の公開ページ。Cloudflare Pages の `nekokintai` プロジェクトで配信。
 
 ## アプリの更新案内
 

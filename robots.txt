@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nekokintai.c-cya.com/sitemap.xml
+Sitemap: https://nekokintai.com/sitemap.xml
