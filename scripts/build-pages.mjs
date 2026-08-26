@@ -17,7 +17,6 @@ const publicEntries = [
   'ogp.png',
   'robots.txt',
   'sitemap.xml',
-  'update-dev.json',
   'update.json',
 ]
 
