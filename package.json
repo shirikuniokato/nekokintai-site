@@ -1,0 +1,10 @@
+{
+  "name": "nekokintai-site",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-pages.mjs",
+    "sync-store-update": "node scripts/sync-store-update.mjs",
+    "sync-store-update:dry-run": "node scripts/sync-store-update.mjs --dry-run",
+    "test": "node --test scripts/lib/*.test.mjs"
+  }
+}

@@ -16,14 +16,20 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+
+      - name: Test store update automation
+        run: npm test
+
+      - name: Build production assets
+        run: npm run build
 
       - name: Deploy production site
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy . --project-name=nekokintai --branch=main --commit-hash=${{ github.sha }}
+          command: pages deploy .pages-dist/site --project-name=nekokintai --branch=main --commit-hash=${{ github.sha }}
 
       - name: Deploy legacy redirect
         uses: cloudflare/wrangler-action@v3
