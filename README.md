@@ -2,7 +2,7 @@
 
 ねこ勤怠（https://nekokintai.com）の公開ページ。Cloudflare Pages の `nekokintai` プロジェクトで配信。
 旧URLの `https://nekokintai.c-cya.com` は、Cloudflareの証明書が有効になったあと
-`nekokintai-legacy` プロジェクトからパスを保ったまま新URLへ一時リダイレクトする。
+`nekokintai-legacy` プロジェクトからパスを保ったまま新URLへ恒久リダイレクトする。
 
 ## デプロイ
 
