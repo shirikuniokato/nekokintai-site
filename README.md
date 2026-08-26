@@ -1,6 +1,21 @@
 # nekokintai-site
 
 ねこ勤怠（https://nekokintai.com）の公開ページ。Cloudflare Pages の `nekokintai` プロジェクトで配信。
+旧URLの `https://nekokintai.c-cya.com` は、Cloudflareの証明書が有効になったあと
+`nekokintai-legacy` プロジェクトからパスを保ったまま新URLへ一時リダイレクトする。
+
+## デプロイ
+
+Cloudflareの共通トークンを読み込み、Wranglerで直接アップロードする。
+
+```sh
+source ~/.config/cloudflare/load.sh
+pnpm dlx wrangler@4 pages deploy . --project-name=nekokintai --branch=main
+pnpm dlx wrangler@4 pages deploy cloudflare/legacy-redirect --project-name=nekokintai-legacy --branch=main
+```
+
+本体をデプロイするとき、`cloudflare/legacy-redirect` は本体サイト内にもアップロードされるが、
+`_redirects` はサブディレクトリ内なので本体のルーティングには影響しない。
 
 ## アプリの更新案内
 
