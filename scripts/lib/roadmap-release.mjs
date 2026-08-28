@@ -1,17 +1,6 @@
 const VERSION_PATTERN = /^\d+\.\d+\.\d+$/
 const PUBLISHED_MESSAGE = '公開しました。お手元に届くまで、1日ほどかかることがあります'
 
-function compareVersions(left, right) {
-  const leftParts = left.split('.').map(Number)
-  const rightParts = right.split('.').map(Number)
-
-  for (let index = 0; index < leftParts.length; index += 1) {
-    const difference = leftParts[index] - rightParts[index]
-    if (difference !== 0) return difference
-  }
-  return 0
-}
-
 function publishCard(card) {
   const statusPattern = /<span class="rv-chip st-(?:live|review|prep)">[^<]*<\/span>/
   const publishedStatus = '<span class="rv-chip st-live">こうかいずみ</span>'
@@ -38,7 +27,7 @@ function publishPlatformSection(section, platform, latestVersion) {
     const version = card.match(/<h2 class="rv-ver">(\d+\.\d+\.\d+)<\/h2>/)?.[1]
     if (!version) throw new Error(`roadmap の ${platform} バージョンを読み取れませんでした`)
     if (version === latestVersion) foundLatestVersion = true
-    return compareVersions(version, latestVersion) <= 0 ? publishCard(card) : card
+    return version === latestVersion ? publishCard(card) : card
   })
 
   if (!foundLatestVersion) {

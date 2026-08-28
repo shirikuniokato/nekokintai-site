@@ -33,15 +33,36 @@ export function normalizeReleaseNotes(text) {
   return notes
 }
 
-export function parseAppleLookup(payload) {
-  const app = payload?.results?.[0]
-  if (!app || !VERSION_PATTERN.test(app.version ?? '')) {
+export function parseAppleAppStorePage(html) {
+  const serializedDataMatch = html.match(
+    /<script[^>]*\bid=["']?serialized-server-data["']?[^>]*>([\s\S]*?)<\/script>/,
+  )
+  if (!serializedDataMatch) {
+    throw new Error('App Store の公開情報を取得できませんでした')
+  }
+
+  let payload
+  try {
+    payload = JSON.parse(serializedDataMatch[1])
+  } catch {
+    throw new Error('App Store の公開情報を読み取れませんでした')
+  }
+
+  const entries = Array.isArray(payload?.data) ? payload.data : []
+  const latestRelease = entries
+    .map((entry) => entry?.data?.shelfMapping?.mostRecentVersion?.items?.[0])
+    .find(Boolean)
+  const version =
+    typeof latestRelease?.primarySubtitle === 'string'
+      ? latestRelease.primarySubtitle.match(/(?:バージョン)?\s*(\d+\.\d+\.\d+)$/)?.[1]
+      : undefined
+  if (!VERSION_PATTERN.test(version ?? '')) {
     throw new Error('App Store の公開バージョンを取得できませんでした')
   }
-  if (typeof app.releaseNotes !== 'string') {
+  if (typeof latestRelease.text !== 'string') {
     throw new Error('App Store の更新内容を取得できませんでした')
   }
-  return { latestVersion: app.version, notes: normalizeReleaseNotes(app.releaseNotes) }
+  return { latestVersion: version, notes: normalizeReleaseNotes(latestRelease.text) }
 }
 
 export function parseGooglePlayPage(html) {

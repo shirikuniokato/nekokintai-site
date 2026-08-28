@@ -14,6 +14,10 @@ function roadmapFixture({ iosStatus = 'review', androidStatus = 'prep' } = {}) {
         <p class="rv-when">審査に出しました</p>
         <ul class="rv-list"><li>今回の更新</li></ul>
       </div>
+      <div class="rv-card">
+        <div class="rv-head"><h2 class="rv-ver">1.9.0</h2><span class="rv-chip st-prep">こうかいみおくり</span></div>
+        <p class="rv-when">この版は公開しません</p>
+      </div>
     </section>
     <section class="rv-pane rv-pane-android" aria-label="Android のアップデート">
       <div class="rv-card">
@@ -40,6 +44,8 @@ test('公開されたOSの同じバージョンを公開済みにする', () => 
     2,
   )
   assert.match(updated, /<h2 class="rv-ver">2\.1\.0<\/h2><span class="rv-chip st-prep">じゅんびちゅう<\/span>/)
+  assert.match(updated, /<h2 class="rv-ver">1\.9\.0<\/h2><span class="rv-chip st-prep">こうかいみおくり<\/span>/)
+  assert.match(updated, /<p class="rv-when">この版は公開しません<\/p>/)
 })
 
 test('公開済みカードには変更を加えない', () => {

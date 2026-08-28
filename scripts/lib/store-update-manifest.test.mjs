@@ -4,16 +4,41 @@ import {
   formatManifest,
   mergePublishedUpdates,
   normalizeReleaseNotes,
-  parseAppleLookup,
+  parseAppleAppStorePage,
   parseGooglePlayPage,
 } from './store-update-manifest.mjs'
 
-test('Apple Lookup APIから公開版と先頭3件の更新内容を読む', () => {
+function appleProductPage(latestRelease) {
+  const payload = {
+    data: [{ data: { shelfMapping: { mostRecentVersion: { items: [latestRelease] } } } }],
+  }
+  return `<script type="application/json" id="serialized-server-data">${JSON.stringify(payload)}</script>`
+}
+
+test('App Storeの商品ページから公開版と先頭3件の更新内容を読む', () => {
   assert.deepEqual(
-    parseAppleLookup({
-      results: [{ version: '2.1.0', releaseNotes: '・ひとつめ\n・ふたつめ\n・みっつめ\n・よっつめ' }],
-    }),
+    parseAppleAppStorePage(
+      appleProductPage({
+        primarySubtitle: 'バージョン2.1.0',
+        text: '・ひとつめ\n・ふたつめ\n・みっつめ\n・よっつめ',
+      }),
+    ),
     { latestVersion: '2.1.0', notes: ['ひとつめ', 'ふたつめ', 'みっつめ'] },
+  )
+})
+
+test('App Storeの商品ページに公開情報がなければ失敗する', () => {
+  assert.throws(() => parseAppleAppStorePage('<html></html>'), /公開情報を取得できませんでした/)
+  assert.throws(
+    () =>
+      parseAppleAppStorePage(
+        '<script id="serialized-server-data" type="application/json">invalid</script>',
+      ),
+    /公開情報を読み取れませんでした/,
+  )
+  assert.throws(
+    () => parseAppleAppStorePage(appleProductPage({ primarySubtitle: 'バージョン2.1.0' })),
+    /更新内容を取得できませんでした/,
   )
 })
 

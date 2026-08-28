@@ -10,12 +10,12 @@ import { execFileSync } from 'node:child_process'
 import { postSlack } from './lib/slack.mjs'
 import {
   formatManifest,
-  parseAppleLookup,
+  parseAppleAppStorePage,
   parseGooglePlayPage,
 } from './lib/store-update-manifest.mjs'
 import { createAtomicCommitInput, createStoreUpdatePlan } from './lib/store-update-plan.mjs'
 
-const APPLE_LOOKUP_URL = 'https://itunes.apple.com/lookup?id=6801066427&country=jp'
+const APPLE_APP_STORE_URL = 'https://apps.apple.com/jp/app/id6801066427'
 const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.ccya.nekokintai&hl=ja&gl=JP'
 const GITHUB_CONTENT_BASE_URL = 'https://api.github.com/repos/shirikuniokato/nekokintai-site/contents'
 const GITHUB_REF_URL =
@@ -71,13 +71,15 @@ async function readRepositoryFile(token, path, ref) {
 
 async function readPublishedStores() {
   const [appleResponse, googleResponse] = await Promise.all([
-    fetchOk(APPLE_LOOKUP_URL),
+    fetchOk(APPLE_APP_STORE_URL, {
+      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; nekokintai-update-sync/1.0)' },
+    }),
     fetchOk(GOOGLE_PLAY_URL, {
       headers: { 'User-Agent': 'Mozilla/5.0 (compatible; nekokintai-update-sync/1.0)' },
     }),
   ])
-  const [apple, googleHtml] = await Promise.all([appleResponse.json(), googleResponse.text()])
-  return { ios: parseAppleLookup(apple), android: parseGooglePlayPage(googleHtml) }
+  const [appleHtml, googleHtml] = await Promise.all([appleResponse.text(), googleResponse.text()])
+  return { ios: parseAppleAppStorePage(appleHtml), android: parseGooglePlayPage(googleHtml) }
 }
 
 async function commitRepositoryFiles(token, expectedHeadOid, files) {
