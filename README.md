@@ -7,15 +7,17 @@
 ## デプロイ
 
 `main` へのpushでGitHub Actionsがテストと公開ファイルの生成を行い、Wranglerでアップロードする。
-手元から確認・デプロイするときは次のコマンドを使う。
+本番の正本は必ず `main` とし、未コミットの作業ツリーからWranglerで直接デプロイしない。
+手元では次のコマンドで確認してから、変更をコミットして `main` へpushする。
 
 ```sh
 node --test scripts/lib/*.test.mjs
 node scripts/build-pages.mjs
-source ~/.config/cloudflare/load.sh
-pnpm dlx wrangler@4 pages deploy .pages-dist/site --project-name=nekokintai --branch=main
-pnpm dlx wrangler@4 pages deploy cloudflare/legacy-redirect --project-name=nekokintai-legacy --branch=main
+git push origin main
 ```
+
+同じ `main` を手動で再デプロイする場合だけ `npm run deploy` を使う。このコマンドは
+`main`、クリーンな作業ツリー、`origin/main` と同じHEADの3条件を満たさなければ失敗する。
 
 本体は `scripts/build-pages.mjs` の許可リストにある静的ファイルだけを配信する。
 同期スクリプト、テスト、GitHub Actions、旧ドメイン用プロジェクトのファイルは本体へアップロードしない。
@@ -27,6 +29,8 @@ pnpm dlx wrangler@4 pages deploy cloudflare/legacy-redirect --project-name=nekok
 公開できたOS側の `latestVersion` と `notes` に加え、`roadmap` の同じバージョンの状態も自動更新する。審査提出時点では先に進めない。
 ストアが一時的に古いバージョンを返しても、公開済みの更新案内は後退させない。
 `roadmap` に公開版のカードがない場合は、更新内容を推測で追加せず同期を失敗させてSlackへ通知する。
+差分がある場合は対象ファイルをGitHub上の1コミットにまとめ、pushで起動する1回のデプロイを待つ。
+差分がない場合は本番デプロイを待たず、そのまま正常終了する。
 同期処理の正本はこのリポジトリの `scripts/sync-store-update.mjs`。
 
 ```sh
