@@ -51,6 +51,13 @@
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23155C69' stroke-width='2'/%3E%3C/svg%3E");
     background-repeat:no-repeat;background-position:right 14px center;
   }
+  .nk-app-context{
+    margin:0 0 18px;padding:10px 12px;background:var(--bg);
+    border:2px solid var(--border);border-radius:10px;color:var(--deep);
+  }
+  .nk-app-context-label{display:block;font-size:12px;color:var(--muted);}
+  .nk-app-context-value{margin:2px 0 0;font-size:15px;}
+  .nk-app-context-note{display:block;margin-top:2px;font-size:11px;color:var(--muted);}
   .nk-send{
     display:inline-flex;align-items:center;justify-content:center;gap:10px;
     font-family:inherit;font-size:18px;color:var(--deep);cursor:pointer;
@@ -116,6 +123,14 @@
       <input class="nk-input" type="email" name="email" maxlength="200" autocomplete="email" placeholder="なくても だいじょうぶ">
     </label>
 
+    <div id="nk-app-context" class="nk-app-context" hidden>
+      <span class="nk-app-context-label">お問い合わせ元</span>
+      <p class="nk-app-context-value">
+        <span id="nk-app-platform"></span><span id="nk-app-version-part"> / アプリ <span id="nk-app-version"></span></span>
+      </p>
+      <small class="nk-app-context-note">この情報もいっしょに送られます</small>
+    </div>
+
     <!-- honeypot（機械よけ）: 人間には見えない欄。埋まっていたら送らない -->
     <div class="nk-hp" aria-hidden="true">
       <label>このらんには何も書かないでください<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
@@ -168,13 +183,26 @@
   <div style="color:var(--muted);font-size:12px;margin-top:20px;">© c_cya.</div>
 </footer>
 
-<script>
+<script type="module">
+import { appendAppContext, parseAppContext } from './app-context.mjs';
+
 (function(){
   var form = document.getElementById('nk-form');
   var sendBtn = document.getElementById('nk-send');
   var errorEl = document.getElementById('nk-error');
   var idleHtml = sendBtn.innerHTML; // ねこアイコンごと覚えておき、エラー後に戻す
   var sending = false;
+  var appContext = parseAppContext(window.location.search);
+
+  if (appContext) {
+    document.getElementById('nk-app-platform').textContent = appContext.platformLabel;
+    if (appContext.appVersion) {
+      document.getElementById('nk-app-version').textContent = appContext.appVersion;
+    } else {
+      document.getElementById('nk-app-version-part').hidden = true;
+    }
+    document.getElementById('nk-app-context').hidden = false;
+  }
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -193,7 +221,12 @@
     sendBtn.textContent = 'おくっています…';
     errorEl.hidden = true;
 
-    var body = { name: name, message: message, subject: '【ねこ勤怠】' + kind, category: 'support' };
+    var body = {
+      name: name,
+      message: appendAppContext(message, appContext),
+      subject: '【ねこ勤怠】' + kind,
+      category: 'support'
+    };
     if (email) body.email = email;
 
     fetch('https://api.c-cya.com/contact', {
