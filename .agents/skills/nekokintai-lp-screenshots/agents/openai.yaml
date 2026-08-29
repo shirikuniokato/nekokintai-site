@@ -1,0 +1,4 @@
+interface:
+  display_name: "ねこ勤怠 LPスクショ"
+  short_description: "LP用アプリ画面を正しい枠と余白で再生成"
+  default_prompt: "Use $nekokintai-lp-screenshots to rebuild and visually verify the Nekokintai LP screenshots."
