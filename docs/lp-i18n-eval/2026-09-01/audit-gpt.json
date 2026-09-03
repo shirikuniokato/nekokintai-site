@@ -1,0 +1,71 @@
+{
+  "generatedAt": "2026-09-01T09:21:02.608Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "summaryJapanese": "critical／high はありません。medium を9件指摘します。主な問題は「休日分の貯金」の意味の曖昧化、英語UIの長さ、韓国語の歩き方のニュアンス、台湾繁体字で「工時」を「出勤」としている点です。通常UIへの不要な猫語、責める表現、ブランド名の改変、韓国語の助詞誤りは見当たりませんでした。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "goodJobSavingsDescription",
+      "severity": "medium",
+      "replacement": "Days-off hours\ngo into savings",
+      "reasonJapanese": "「from your days off」では、実際の休日から時間が発生するように読め、「休日分を貯金に回す」という意味が曖昧です。カードUIとしても各行が長すぎます。"
+    },
+    {
+      "locale": "en",
+      "key": "catWalksDescription",
+      "severity": "medium",
+      "replacement": "Step by step to your goal",
+      "reasonJapanese": "1行の機能カード文として長く、周囲の短い説明と比べて収まりが不自然です。"
+    },
+    {
+      "locale": "ko",
+      "key": "goodJobSavingsDescription",
+      "severity": "medium",
+      "replacement": "쉬는 날 몫은\n모두 저금으로",
+      "reasonJapanese": "「쉬는 날의 시간」は「休日そのものの時間」と読めるため、「休日分として扱われる分」という意味が曖昧です。"
+    },
+    {
+      "locale": "ko",
+      "key": "catWalksDescription",
+      "severity": "medium",
+      "replacement": "목표까지, 뚜벅뚜벅",
+      "reasonJapanese": "「터벅터벅」は疲れて重い足取りで歩く印象が強く、前向きに歩みを進める「てくてく」と意味のニュアンスがずれます。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "documentTitle",
+      "severity": "medium",
+      "replacement": "ねこ勤怠 — 和貓咪一起，記錄自己的工時。",
+      "reasonJapanese": "台湾の「出勤」は主に勤務先への出勤・出席を指し、個人の作業時間を記録するアプリという意味には「工時」が適切です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "documentDescription",
+      "severity": "medium",
+      "replacement": "記錄工作時間喵。和貓咪一起持續下去，這是一款專屬於你的工時紀錄 App。",
+      "reasonJapanese": "「和貓咪一起持續」だけでは何を継続するのかが欠落して見えます。また、台湾向けの機能表現を「工時紀錄」に統一しています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ogDescription",
+      "severity": "medium",
+      "replacement": "記錄工作時間喵。和貓咪一起，記錄自己的工時。",
+      "reasonJapanese": "「出勤」は勤務先への出勤を連想させ、作業時間の記録という実際の機能とずれます。「工時」にすると他の説明とも用語がそろいます。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "heroTitle",
+      "severity": "medium",
+      "replacement": "和貓咪一起，\n記錄自己的工時。",
+      "reasonJapanese": "台湾では「自己的出勤」は個人の工時記録を表す言い方として不自然で、機能を誤解させる可能性があります。改行数は維持しています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "goodJobSavingsDescription",
+      "severity": "medium",
+      "replacement": "休息日那份時數，\n全部存進撲滿裡",
+      "reasonJapanese": "「休息日的時間」は休日中の時間そのものを貯めるように読めます。「休日分として扱われる時数」という意味を明確にする必要があります。"
+    }
+  ]
+}

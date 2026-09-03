@@ -1,0 +1,120 @@
+{
+  "generatedAt": "2026-09-03T21:04:05.398Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "summaryJapanese": "重大なブランド名違反、責める表現、通常UIへの猫語混入、韓国語の助詞誤りはありません。主な問題は、韓国語の「근태 관리」が企業向け労務管理を想起させる用語選択、非ブランド名「ねこ屋さん」の未翻訳、休日分の説明が勤務時間以外も含むように読める点、台湾向け語彙とストア表現です。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "goodJobSavingsDescription",
+      "severity": "high",
+      "replacement": "Hours worked on days off\nall go into savings",
+      "reasonJapanese": "「All your time on days off」では休日の全時間を指すように読め、貯金されるのが休日に働いた時間であることが欠落しています。"
+    },
+    {
+      "locale": "en",
+      "key": "shopScreenAlt",
+      "severity": "medium",
+      "replacement": "Cat Shop. Choose your companion cat and long-press to reorder them as you like",
+      "reasonJapanese": "ブランド名として維持する指定があるのは「ねこ勤怠」のみであり、「ねこ屋さん」が日本語のまま残っています。"
+    },
+    {
+      "locale": "ko",
+      "key": "documentTitle",
+      "severity": "medium",
+      "replacement": "ねこ勤怠 — 고양이와 함께하는 나만의 업무 시간 기록.",
+      "reasonJapanese": "「근태 관리」は韓国語では企業による出退勤・労務管理を強く想起させ、個人用の作業時間記録という位置づけとずれます。"
+    },
+    {
+      "locale": "ko",
+      "key": "documentDescription",
+      "severity": "medium",
+      "replacement": "일한 시간을 기록하는 거냥. 고양이와 함께 꾸준히 이어 가는 나만의 업무 시간 기록 앱.",
+      "reasonJapanese": "同じ製品を「작업 기록」と呼び、タイトル類の「근태 관리」と用語が揺れています。「업무 시간 기록」に統一すると機能も明確です。"
+    },
+    {
+      "locale": "ko",
+      "key": "ogDescription",
+      "severity": "medium",
+      "replacement": "일한 시간을 기록하는 거냥. 고양이와 함께하는 나만의 업무 시간 기록.",
+      "reasonJapanese": "「근태 관리」は企業向け勤怠管理の含意が強く、個人の作業時間記録という製品の意味からずれます。"
+    },
+    {
+      "locale": "ko",
+      "key": "heroTitle",
+      "severity": "medium",
+      "replacement": "고양이와 함께하는\n나만의 업무 시간 기록.",
+      "reasonJapanese": "「근태 관리」は企業向けの管理機能に聞こえます。個人が自分の時間を記録する製品であることが伝わる用語に改める必要があります。"
+    },
+    {
+      "locale": "ko",
+      "key": "weekScreenAlt",
+      "severity": "medium",
+      "replacement": "ねこ勤怠의 주간 화면. 목표를 달성한 주를 축하하는 화면",
+      "reasonJapanese": "「주 화면」は「週の画面」ではなく「主画面」と解釈される可能性があります。「주간 화면」なら週表示だと明確です。"
+    },
+    {
+      "locale": "ko",
+      "key": "featuresAriaLabel",
+      "severity": "medium",
+      "replacement": "주요 특징",
+      "reasonJapanese": "同じセクションが「추천 포인트」と「특징」の別用語で表されており、意味も「おすすめ」と「特徴」で揺れています。"
+    },
+    {
+      "locale": "ko",
+      "key": "shopScreenAlt",
+      "severity": "medium",
+      "replacement": "고양이 가게. 파트너 고양이를 고르고 길게 눌러 원하는 순서로 바꿀 수 있음",
+      "reasonJapanese": "非ブランド名の「ねこ屋さん」だけが日本語のまま残っています。"
+    },
+    {
+      "locale": "ko",
+      "key": "playStoreSoonNote",
+      "severity": "medium",
+      "replacement": "Google Play는 현재 일본에서만 이용할 수 있어요. 다른 국가와 지역에서의 출시는 준비 중이에요.",
+      "reasonJapanese": "現行文は国や地域そのものが「準備中」であるように読めます。準備中なのが各地域での配信であることを明示する必要があります。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "documentDescription",
+      "severity": "medium",
+      "replacement": "記錄工時喵。和貓咪一起持續記錄，專屬於你的工時紀錄 App。",
+      "reasonJapanese": "台湾向けでは時間記録機能に「工時」、名詞の記録には「紀錄」が自然です。現行の「工作時間」「工作記錄」は、他の見出しで使う「工時」とも揺れています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "playStoreAlt",
+      "severity": "medium",
+      "replacement": "前往 Google Play 下載",
+      "reasonJapanese": "台湾のストアCTAでは「取得」より「下載」が自然で、App Store側の表現とも統一できます。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "featuresAriaLabel",
+      "severity": "medium",
+      "replacement": "主打特色",
+      "reasonJapanese": "「推薦重點」は日本語の「おすすめポイント」を直訳したように響きます。台湾向けの紹介UIでは「主打特色」が自然です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "goodJobSavingsDescription",
+      "severity": "high",
+      "replacement": "休息日的工作時數\n全部存進撲滿裡",
+      "reasonJapanese": "「休息日的時間」では休日の全時間を指すように読めます。対象が休日に働いた時間であることを明示する必要があります。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "shopScreenAlt",
+      "severity": "medium",
+      "replacement": "貓咪商店。選擇你的夥伴貓咪，長按可以隨喜好重新排序",
+      "reasonJapanese": "ブランド名として維持する指定のない「ねこ屋さん」が日本語のまま残っています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "playStoreSoonNote",
+      "severity": "medium",
+      "replacement": "Google Play 目前僅在日本上架，其他國家與地區仍在籌備上架。",
+      "reasonJapanese": "現行文は国や地域そのものが準備中のように読めます。台湾で一般的な「上架」を使い、準備対象が配信であることを明確にします。"
+    }
+  ]
+}

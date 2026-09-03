@@ -1,0 +1,331 @@
+{
+  "generatedAt": "2026-09-03T20:39:25.046Z",
+  "provider": "gemini",
+  "model": "gemini-3.1-pro-preview",
+  "page": "privacy",
+  "sourceCount": 46,
+  "translations": [
+    {
+      "key": "documentTitle",
+      "en": "Privacy Policy | ねこ勤怠",
+      "ko": "개인정보처리방침 | ねこ勤怠",
+      "zhTW": "隱私權政策 | ねこ勤怠",
+      "notes": "ページタイトル"
+    },
+    {
+      "key": "documentDescription",
+      "en": "Privacy policy for ねこ勤怠. All records are saved locally on your device and are not sent externally.",
+      "ko": "ねこ勤怠의 개인정보처리방침. 모든 기록은 기기 내에 저장되며 외부로 전송되지 않아요.",
+      "zhTW": "ねこ勤怠的隱私權政策。所有紀錄皆儲存於您的裝置中，不會傳送至外部。",
+      "notes": "メタディスクリプション"
+    },
+    {
+      "key": "heading",
+      "en": "ねこ勤怠 Privacy Policy",
+      "ko": "ねこ勤怠 개인정보처리방침",
+      "zhTW": "ねこ勤怠 隱私權政策",
+      "notes": "ページの大見出し"
+    },
+    {
+      "key": "updatedAt",
+      "en": "Last updated: August 31, 2026",
+      "ko": "최종 업데이트: 2026년 8월 31일",
+      "zhTW": "最後更新日期：2026年8月31日",
+      "notes": "日付はそのまま"
+    },
+    {
+      "key": "languageSelector",
+      "en": "Language",
+      "ko": "언어",
+      "zhTW": "語言",
+      "notes": "サイト共通の固定訳"
+    },
+    {
+      "key": "governingLanguage",
+      "en": "The original text of this policy is in Japanese. Translations are provided for reference only.",
+      "ko": "이 방침의 원본은 일본어판이에요. 번역은 참고용으로 제공하고 있어요.",
+      "zhTW": "本政策以日文版為準。翻譯版本僅供參考。",
+      "notes": "法的文書の正文規定"
+    },
+    {
+      "key": "dataHeading",
+      "en": "Information Handled by This App",
+      "ko": "이 앱이 다루는 정보에 대하여",
+      "zhTW": "關於本應用程式處理的資訊",
+      "notes": "見出し"
+    },
+    {
+      "key": "dataIntro",
+      "en": "\"ねこ勤怠\" (hereinafter referred to as \"this app\") is an app for recording your work hours.",
+      "ko": "'ねこ勤怠'(이하 '이 앱')는 여러분이 일한 시간을 기록하기 위한 앱이에요.",
+      "zhTW": "「ねこ勤怠」（以下簡稱「本應用程式」）是一款用來記錄您工作時間的應用程式。",
+      "notes": "アプリ名の定義"
+    },
+    {
+      "key": "dataLocal",
+      "en": "All recorded data (time punches, work categories, settings, cat names, etc.) is saved only on your device.",
+      "ko": "기록되는 데이터(출퇴근 기록, 작업 카테고리, 설정, 고양이 이름 등)는 모두 여러분의 기기 안에만 저장돼요.",
+      "zhTW": "所有記錄的資料（打卡、作業類別、設定、貓咪名字等），皆僅儲存於您的裝置中。",
+      "notes": "ローカル保存の説明"
+    },
+    {
+      "key": "dataLocalRest",
+      "en": "It is not sent to any external servers.",
+      "ko": "외부 서버로는 전송되지 않아요.",
+      "zhTW": "不會傳送至外部伺服器。",
+      "notes": "外部送信なし"
+    },
+    {
+      "key": "noAccount",
+      "en": "This app does not require account registration.",
+      "ko": "이 앱은 계정 등록이 필요하지 않아요.",
+      "zhTW": "本應用程式不需要註冊帳號。",
+      "notes": "アカウント不要"
+    },
+    {
+      "key": "noPersonalInfo",
+      "en": "This app does not collect personal information.",
+      "ko": "이 앱은 개인정보를 수집하지 않아요.",
+      "zhTW": "本應用程式不會收集個人資訊。",
+      "notes": "個人情報収集なし"
+    },
+    {
+      "key": "noAds",
+      "en": "This app does not display ads and does not provide data to advertising companies.",
+      "ko": "이 앱은 광고를 표시하지 않으며, 광고 사업자에게 데이터를 제공하지도 않아요.",
+      "zhTW": "本應用程式不會顯示廣告，也不會將資料提供給廣告商。",
+      "notes": "広告なし"
+    },
+    {
+      "key": "noTrackingBeforeLink",
+      "en": "This app does not perform access analysis or behavioral tracking (for the app's promotional website, please see \"",
+      "ko": "이 앱은 접속 분석이나 행동 추적을 하지 않아요(이 앱의 소개 웹사이트에 대해서는 '",
+      "zhTW": "本應用程式不會進行流量分析或行為追蹤（關於本應用程式的介紹網站，請參閱「",
+      "notes": "リンク前のテキスト"
+    },
+    {
+      "key": "siteHeading",
+      "en": "About This Website",
+      "ko": "이 사이트에 대하여",
+      "zhTW": "關於本網站",
+      "notes": "リンクテキスト"
+    },
+    {
+      "key": "noTrackingAfterLink",
+      "en": "\").",
+      "ko": "'를 확인해 주세요).",
+      "zhTW": "」）。",
+      "notes": "リンク後のテキスト"
+    },
+    {
+      "key": "notificationsHeading",
+      "en": "About Notifications",
+      "ko": "알림에 대하여",
+      "zhTW": "關於通知",
+      "notes": "見出し"
+    },
+    {
+      "key": "notificationsBody",
+      "en": "Notifications, such as break invitations, are handled by the local notification feature on your device. No communication with external servers is made for notifications. You can disable notifications at any time from your device settings.",
+      "ko": "휴식 권유 등의 알림은 기기 내의 로컬 알림 기능으로 보내드려요. 알림을 위해 외부 서버와 통신하지 않아요. 알림은 기기 설정에서 언제든지 끌 수 있어요.",
+      "zhTW": "邀請休息等通知，是透過裝置內的本機通知功能進行。不會為了通知而與外部伺服器連線。您可以隨時從裝置設定中關閉通知。",
+      "notes": "ローカル通知の説明"
+    },
+    {
+      "key": "backupHeading",
+      "en": "About Backups",
+      "ko": "백업에 대하여",
+      "zhTW": "關於備份",
+      "notes": "見出し"
+    },
+    {
+      "key": "backupBody",
+      "en": "Files exported via \"Settings → Backup\" are saved only to the destination you choose. The developer does not receive their contents.",
+      "ko": "'설정 → 백업'에서 내보낸 파일은 여러분이 선택한 저장 위치에만 저장돼요. 개발자가 그 내용을 받는 일은 없어요.",
+      "zhTW": "透過「設定 → 備份」匯出的檔案，只會儲存在您選擇的目的地。開發者不會收到該內容。",
+      "notes": "バックアップの保存先"
+    },
+    {
+      "key": "purchaseHeading",
+      "en": "About In-App Purchases",
+      "ko": "앱 내 결제에 대하여",
+      "zhTW": "關於應用程式內購買",
+      "notes": "見出し"
+    },
+    {
+      "key": "purchaseBody1",
+      "en": "This app offers a monthly plan (auto-renewing) to support development. While supporting, you can choose a special cat as a token of our appreciation. Payments and purchase status are managed by Apple / Google systems, and the developer does not receive credit card information or similar details.",
+      "ko": "이 앱에서는 개발을 응원하기 위한 월간 플랜(자동 갱신)을 제공해요. 응원해 주시는 동안에는 감사의 표시로 특별한 고양이를 고를 수 있어요. 결제와 구매 상태 관리는 Apple / Google의 시스템으로 이루어지며, 개발자가 신용카드 정보 등을 받는 일은 없어요.",
+      "zhTW": "本應用程式提供支持開發的月費方案（自動續訂）。在支持期間，您可以選擇特別的貓咪作為回饋。付款與購買狀態的管理皆透過 Apple / Google 的機制進行，開發者不會收到信用卡等資訊。",
+      "notes": "台湾華語では「応援」を「支持」に"
+    },
+    {
+      "key": "purchaseBody2",
+      "en": "The usage status of the monthly plan is queried from the store and saved on your device. Purchase information is not sent to the developer's server. You can cancel or check your renewal status from the Apple / Google subscription management screen.",
+      "ko": "월간 플랜 이용 상태는 스토어에 확인하여 기기 내에 저장해요. 구매 정보를 개발자의 서버로 전송하지 않아요. 해지나 갱신 상태 확인은 Apple / Google의 구독 관리 화면에서 할 수 있어요.",
+      "zhTW": "月費方案的使用狀態會向商店查詢並儲存於裝置中。不會將購買資訊傳送至開發者的伺服器。您可以從 Apple / Google 的訂閱管理畫面取消訂閱或確認續訂狀態。",
+      "notes": "サブスクリプション管理"
+    },
+    {
+      "key": "siteBody",
+      "en": "The information up to this point is about the \"ねこ勤怠\" app. The app's promotional website (nekokintai.com) uses \"Google Analytics\" provided by Google LLC to understand how the site is used.",
+      "ko": "여기까지의 내용은 앱 'ねこ勤怠'에 대한 것이에요. 이 앱의 소개 웹사이트(nekokintai.com)에서는 사이트 이용 상황을 파악하기 위해 Google LLC가 제공하는 'Google 애널리틱스'를 사용하고 있어요.",
+      "zhTW": "以上的內容是關於「ねこ勤怠」應用程式。本應用程式的介紹網站（nekokintai.com）為了了解網站的使用狀況，使用了由 Google LLC 提供的「Google Analytics」。",
+      "notes": "サイトのアクセス解析"
+    },
+    {
+      "key": "recipientLabel",
+      "en": "Recipient:",
+      "ko": "전송처:",
+      "zhTW": "傳送至：",
+      "notes": "ラベル"
+    },
+    {
+      "key": "sentInfoLabel",
+      "en": "Information sent:",
+      "ko": "전송되는 정보:",
+      "zhTW": "傳送的資訊：",
+      "notes": "ラベル"
+    },
+    {
+      "key": "siteSentInfo",
+      "en": " Usage data such as viewed pages, referrers, browser/device types, and approximate location",
+      "ko": " 열람한 페이지, 유입 경로, 브라우저 및 기기 종류, 대략적인 지역 등의 이용 상황",
+      "zhTW": " 瀏覽的頁面、來源、瀏覽器與裝置類型、大約的地區等使用狀況",
+      "notes": "先頭の半角スペースを維持"
+    },
+    {
+      "key": "purposeLabel",
+      "en": "Purpose of use:",
+      "ko": "이용 목적:",
+      "zhTW": "使用目的：",
+      "notes": "ラベル"
+    },
+    {
+      "key": "sitePurpose",
+      "en": " To understand and improve the access status of this website",
+      "ko": " 이 사이트의 접속 상황 파악 및 개선",
+      "zhTW": " 了解並改善本網站的流量狀況",
+      "notes": "先頭の半角スペースを維持"
+    },
+    {
+      "key": "cookieBeforeOptOut",
+      "en": "These are collected using cookies, but they do not identify individuals. You can refuse collection by disabling cookies in your browser settings or by using the ",
+      "ko": "이 정보는 쿠키(Cookie)를 이용해 수집되지만, 개인을 식별하지는 않아요. 브라우저 설정에서 쿠키를 비활성화하거나, ",
+      "zhTW": "這些資訊是透過 Cookie 收集的，但無法識別個人身分。您可以在瀏覽器設定中停用 Cookie，或使用",
+      "notes": "英語・韓国語はリンク前のスペースを追加"
+    },
+    {
+      "key": "optOutLink",
+      "en": "Google Analytics Opt-out Browser Add-on",
+      "ko": "Google 애널리틱스 차단 브라우저 부가 기능",
+      "zhTW": "Google Analytics (分析) 不透露資訊瀏覽器外掛程式",
+      "notes": "公式のオプトアウトアドオン名"
+    },
+    {
+      "key": "cookieBetweenLinks",
+      "en": " to opt out. For information on how Google handles data, please check ",
+      "ko": "을 사용하여 수집을 거부할 수 있어요. Google의 데이터 취급에 대해서는 ",
+      "zhTW": "來拒絕收集。關於 Google 處理資料的方式，請查看",
+      "notes": "英語・韓国語はリンク前後のスペースを調整"
+    },
+    {
+      "key": "googleDataLink",
+      "en": "here",
+      "ko": "여기",
+      "zhTW": "這裡",
+      "notes": "リンクテキスト"
+    },
+    {
+      "key": "cookieAfterLinks",
+      "en": ".",
+      "ko": "를 확인해 주세요.",
+      "zhTW": "。",
+      "notes": "リンク後のテキスト"
+    },
+    {
+      "key": "contactFormHeading",
+      "en": "About the Feedback & Request Form",
+      "ko": "의견 및 건의 사항 폼에 대하여",
+      "zhTW": "關於意見與建議表單",
+      "notes": "見出し"
+    },
+    {
+      "key": "contactFormBody",
+      "en": "When you submit through the \"Requests\" form on this website, the following information is sent to the developer.",
+      "ko": "이 사이트의 '건의 사항' 폼에서 전송하면 다음 정보가 개발자에게 전달돼요.",
+      "zhTW": "透過本網站的「建議」表單送出後，下列資訊將會傳送給開發者。",
+      "notes": "フォーム送信時の説明"
+    },
+    {
+      "key": "contactSentInfo",
+      "en": " Name (nickname allowed), content of the request, email address (only if a reply is requested), and if opened from the app, the OS (iOS / Android) and app version",
+      "ko": " 호칭(닉네임 가능), 건의 내용, (답변을 원하시는 경우에만) 이메일 주소, 앱에서 열었을 경우 사용 중인 OS(iOS / Android)와 앱 버전",
+      "zhTW": " 稱呼（可使用暱稱）、建議內容、（僅限希望收到回覆時）電子郵件地址，若從應用程式開啟，則包含使用的作業系統（iOS / Android）與應用程式版本",
+      "notes": "先頭の半角スペースを維持"
+    },
+    {
+      "key": "storageLabel",
+      "en": "Recipient and storage location:",
+      "ko": "전송처 및 저장 위치:",
+      "zhTW": "傳送至與儲存位置：",
+      "notes": "ラベル"
+    },
+    {
+      "key": "contactStorage",
+      "en": " An inquiry management system on AWS managed by the developer (c_cya)",
+      "ko": " 개발자(c_cya)가 관리하는 AWS 상의 문의 관리 시스템",
+      "zhTW": " 由開發者（c_cya）管理的 AWS 上的客服管理系統",
+      "notes": "先頭の半角スペースを維持"
+    },
+    {
+      "key": "contactPurpose",
+      "en": " To reply to requests and as a reference for app improvements",
+      "ko": " 건의 사항에 대한 답변 및 앱 개선 참고용",
+      "zhTW": " 回覆建議以及作為改善應用程式的參考",
+      "notes": "先頭の半角スペースを維持"
+    },
+    {
+      "key": "emailNote",
+      "en": "Entering your email address is optional. If provided, it will only be used to reply to you and will not be shared with third parties.",
+      "ko": "이메일 주소 입력은 선택 사항이에요. 입력하신 경우에도 답장을 위해서만 사용하며, 제3자에게 제공하지 않아요.",
+      "zhTW": "輸入電子郵件地址為自由選項。即使您輸入了，我們也僅用於回覆您，不會提供給第三方。",
+      "notes": "法的文書のため丁寧な表現を使用"
+    },
+    {
+      "key": "inquiryHeading",
+      "en": "Inquiries",
+      "ko": "문의하기",
+      "zhTW": "聯絡我們",
+      "notes": ""
+    },
+    {
+      "key": "inquiryBeforeEmail",
+      "en": "Inquiries regarding this policy: ",
+      "ko": "본 정책에 관한 문의: ",
+      "zhTW": "關於本政策的聯絡方式: ",
+      "notes": "末尾の半角スペースを保持"
+    },
+    {
+      "key": "revisionHeading",
+      "en": "Revisions",
+      "ko": "개정에 대하여",
+      "zhTW": "關於修訂",
+      "notes": ""
+    },
+    {
+      "key": "revisionBody",
+      "en": "If we revise this policy, we will update this page.",
+      "ko": "본 정책을 개정할 경우에는 이 페이지를 업데이트해요.",
+      "zhTW": "若修訂本政策，我們將更新本頁面。",
+      "notes": "韓国語は해요체を使用"
+    },
+    {
+      "key": "backToTop",
+      "en": "← Back to ねこ勤怠 Top",
+      "ko": "← ねこ勤怠 메인으로",
+      "zhTW": "← 回到 ねこ勤怠 首頁",
+      "notes": "ブランド名はそのまま保持"
+    }
+  ]
+}

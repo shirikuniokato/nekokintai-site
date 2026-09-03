@@ -1,0 +1,15 @@
+{
+  "draft": "contact-gemini-initial.json",
+  "audits": {
+    "claude-fable": "contact-audit-claude-fable.json",
+    "gpt": "contact-audit-gpt.json"
+  },
+  "adopt": [
+    { "locale": "ko", "key": "errorAfterEmail", "from": "claude-fable" },
+    { "locale": "en", "key": "doneReply", "from": "claude-fable" },
+    { "locale": "en", "key": "faqHintAfterLink", "from": "claude-fable" },
+    { "locale": "ko", "key": "kindTrouble", "from": "claude-fable" }
+  ],
+  "manual": [],
+  "replace": []
+}

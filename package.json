@@ -2,10 +2,23 @@
   "name": "nekokintai-site",
   "private": true,
   "scripts": {
+    "check:i18n": "node scripts/check-lp-i18n.mjs",
+    "translate:lp-i18n": "node scripts/lp-i18n-gemini.mjs",
+    "audit:lp-i18n": "node scripts/lp-i18n-audit.mjs",
+    "apply:lp-i18n": "node scripts/apply-lp-i18n-reviewed.mjs",
+    "apply:lp-i18n:draft": "node scripts/apply-lp-i18n-draft.mjs",
+    "audit:lp-i18n:reverse": "node scripts/lp-i18n-reverse-audit.mjs",
+    "prepare:lp-screenshot-demo": "node scripts/prepare-lp-screenshot-demo.mjs",
+    "render:lp-localized-screenshots": "node scripts/render-lp-localized-screenshots.mjs",
+    "measure:lp-badges": "node scripts/measure-lp-badge-padding.mjs assets/badges/google-play-en.png assets/badges/google-play-ko.png assets/badges/google-play-zh-TW.png",
     "build": "node scripts/build-pages.mjs",
     "deploy": "node scripts/deploy-pages.mjs",
     "sync-store-update": "node scripts/sync-store-update.mjs",
     "sync-store-update:dry-run": "node scripts/sync-store-update.mjs --dry-run",
-    "test": "node --test scripts/lib/*.test.mjs"
+    "test": "node --test scripts/lib/*.test.mjs",
+    "test:browser": "node --test scripts/browser/*.test.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.62.1"
   }
 }

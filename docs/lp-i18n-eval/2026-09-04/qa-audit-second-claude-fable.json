@@ -1,0 +1,239 @@
+{
+  "generatedAt": "2026-09-03T21:21:25.191Z",
+  "reviewer": "claude-fable",
+  "model": "claude-fable-5",
+  "summaryJapanese": "3言語とも全体として原文の意味と柔らかい語り口はよく保たれており、致命的な誤訳はありません。指摘は主に4系統です。(1) リンク・メールアドレスの前後に分割されたキーの結合部: 韓国語で助詞「로/에」の前に余分なスペースがあり、メール後は「으로」にすべき点、英語で句点の前にスペースが残る点、繁体字でメールアドレスへ「寄到」の動詞が欠落し文として成立していない点。(2) UIラベルの用語揺れ: 「休憩にさそう時間」が各言語で fixedInLatest3Question と upcoming9Note で別訳、繁体字の「月」/「月份」、英語の work category / task category。(3) 姉妹アプリ名「くろねこ勤怠」が各言語で翻訳形と日本語形が混在。ブランド名「ねこ勤怠」を各言語で据え置く方針に合わせ、日本語表記に統一する前提で翻訳形3件ずつを指摘しました（逆方向に統一する場合は unlikely10Note のみを直してください）。(4) 繁体字の一人称が「我」と「我們」で混在している点、サバトラの訳語（白底虎斑→灰虎斑）、unlikely12Note の「翻訳の申し出」の意味ずれ、英語 howTo2Answer のアプリ内メッセージが二人称で責める調子に寄っている点。猫語混入や不自然な長さは見当たりませんでした。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "investigating1NoteAfterEmail",
+      "severity": "medium",
+      "replacement": ". It would be very helpful.",
+      "reasonJapanese": "メールアドレスの直後に「 . It」とピリオド前のスペースが残り、表示が不自然になるため先頭スペースを除去。"
+    },
+    {
+      "locale": "en",
+      "key": "upcomingOutroAfterLink",
+      "severity": "medium",
+      "replacement": ".",
+      "reasonJapanese": "リンク文言の直後に「Update Roadmap .」とピリオド前のスペースが表示されるため先頭スペースを除去。"
+    },
+    {
+      "locale": "en",
+      "key": "howTo2Answer",
+      "severity": "medium",
+      "replacement": "When you open Home the next day,\nit will say \"Clock Out wasn't pressed.\"\nYou can edit the previous day's record\nfrom \"Edit Time\" there.\nIf it doesn't appear, please tap the previous day\non the \"Month\" screen to edit it.",
+      "reasonJapanese": "原文「退勤がおされていませんでした」は受け身のやわらかい表現だが、\"You didn't clock out.\" は二人称で利用者を責める調子になるため受け身に戻す。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming9Question",
+      "severity": "medium",
+      "replacement": "I want regular break prompts and daily reminders.",
+      "reasonJapanese": "「休憩さそい」を fixedInLatest3Question の UIラベル訳 \"Break Prompt\" と揃える。\"break invitations\" は英語として不自然で用語も揺れている。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming9Answer",
+      "severity": "medium",
+      "replacement": "I will consider adding repeating break prompts.\nI do want to include daily morning notifications.\nI'll make it so you can toggle them on and off,\nbut it will take some time.",
+      "reasonJapanese": "「休憩さそい」の訳を \"break prompts\" に統一（用語揺れの解消）。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming9Note",
+      "severity": "high",
+      "replacement": "Currently, \"Break Prompt Time\"\nand \"Break Time\" start from 30 minutes,\nin 30-minute increments.",
+      "reasonJapanese": "同一のUIラベル「休憩にさそう時間」が fixedInLatest3Question では \"Break Prompt Time\"、ここでは \"Time to invite for a break\" と別訳になっている。設定画面で探せなくなるためラベル訳を統一。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming10Question",
+      "severity": "medium",
+      "replacement": "I want to change the theme color and task category colors.",
+      "reasonJapanese": "「作業カテゴリ」はページ全体で \"task category\" と訳されており、ここだけ \"work category\" で用語が揺れている。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming10Answer",
+      "severity": "medium",
+      "replacement": "I really want to do this.\nI'm not sure if it will turn out exactly\nas you imagine, but I want to make backgrounds\ncustomizable and cherish the excitement\nof the app's appearance.\nI will also consider adding more colors\nfor the task categories.",
+      "reasonJapanese": "「作業カテゴリ」の訳を \"task categories\" に統一（用語揺れの解消）。"
+    },
+    {
+      "locale": "en",
+      "key": "unlikely6Note",
+      "severity": "high",
+      "replacement": "I want to make \"くろねこ勤怠\"\nfor company employees.\nI'm considering it for that app.",
+      "reasonJapanese": "姉妹アプリ名が unlikely6/7/8Note では \"Black Cat Timecard\"、unlikely10Note では「くろねこ勤怠」と同一ページ内で揺れている。ブランド名「ねこ勤怠」を据え置く方針に合わせ日本語表記に統一。"
+    },
+    {
+      "locale": "en",
+      "key": "unlikely7Note",
+      "severity": "high",
+      "replacement": "I want to make \"くろねこ勤怠\"\nfor more detailed work management.\nI'm considering it for that app.",
+      "reasonJapanese": "姉妹アプリ名の表記揺れ。unlikely10Note と同じく「くろねこ勤怠」に統一。"
+    },
+    {
+      "locale": "en",
+      "key": "unlikely8Note",
+      "severity": "high",
+      "replacement": "I also want to release \"くろねこ勤怠\"\nfor working people someday,\nbut it will likely be quite a while.",
+      "reasonJapanese": "姉妹アプリ名の表記揺れ。unlikely10Note と同じく「くろねこ勤怠」に統一。"
+    },
+    {
+      "locale": "en",
+      "key": "fixedInLatest2Question",
+      "severity": "medium",
+      "replacement": "On Android, entering a name turns into \"Nekokokoko\"",
+      "reasonJapanese": "原文「ねここここ」は「ねこ」の後に「こ」が3つ重複する不具合の再現例だが、\"Nekokoko\" では1音節欠けて症状の描写がずれる。"
+    },
+    {
+      "locale": "ko",
+      "key": "investigating1NoteAfterEmail",
+      "severity": "high",
+      "replacement": "으로 보내주시면 큰 도움이 됩니다.",
+      "reasonJapanese": "メールアドレス直後の助詞に先頭スペースがあり「support@c-cya.com 로」と分かち書きされてしまう。助詞は直接付け、子音終わりの語に続くため unlikely14Note と同じ「으로」にする。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcomingOutroAfterLink",
+      "severity": "high",
+      "replacement": "에 정리해 두었어요",
+      "reasonJapanese": "リンク文言「업데이트 예정」の直後に助詞「에」が先頭スペース付きで続き、分かち書きの誤りになる。investigatingIntroAfterLink と同じくスペースなしで接続する。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcoming9Note",
+      "severity": "high",
+      "replacement": "지금의 '휴식 권유 시간'과\n'휴식 시간'은 30분부터 시작하며,\n30분 단위로 설정할 수 있어요.",
+      "reasonJapanese": "同一のUIラベル「休憩にさそう時間」が fixedInLatest3Question では '휴식 권유 시간'、ここでは '휴식에 초대할 시간' と別訳。設定画面で探せなくなるため統一。"
+    },
+    {
+      "locale": "ko",
+      "key": "unlikely6Note",
+      "severity": "high",
+      "replacement": "회사에 다니시는 분들을 위한\n'くろねこ勤怠'를 만들고 싶어요.\n그쪽에서 고려해 볼게요.",
+      "reasonJapanese": "姉妹アプリ名が unlikely6/7/8Note では '검은 고양이 근태'、unlikely10Note では 'くろねこ勤怠' と揺れている。ブランド名を据え置く方針に合わせ日本語表記に統一。"
+    },
+    {
+      "locale": "ko",
+      "key": "unlikely7Note",
+      "severity": "high",
+      "replacement": "업무를 더 세밀하게 관리할 수 있는\n'くろねこ勤怠'를 만들고 싶어요.\n그쪽에서 고려해 볼게요.",
+      "reasonJapanese": "姉妹アプリ名の表記揺れ。unlikely10Note と同じく 'くろねこ勤怠' に統一。"
+    },
+    {
+      "locale": "ko",
+      "key": "unlikely8Note",
+      "severity": "high",
+      "replacement": "일하시는 분들을 위한 'くろねこ勤怠'도\n언젠가 출시하고 싶다고 생각하지만,\n시간이 꽤 걸릴 것 같아요.",
+      "reasonJapanese": "姉妹アプリ名の表記揺れ。unlikely10Note と同じく 'くろねこ勤怠' に統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "investigating1NoteBeforeEmail",
+      "severity": "high",
+      "replacement": "如果您遇到相同的情況，請將螢幕截圖、\n裝置型號、Android版本以及關閉應用程式的方式，寄到\n",
+      "reasonJapanese": "原文の「〜へ送ってもらえると」に当たる動詞が前後どちらのキーにもなく、結合後の文が「…的方式，support@c-cya.com，這會…」と述語のない文になる。前半末尾に「寄到」を補う。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "investigating1NoteAfterEmail",
+      "severity": "medium",
+      "replacement": "，這會對我有很大的幫助。",
+      "reasonJapanese": "BeforeEmail の修正に合わせて先頭スペースを除去。またページ全体の一人称は「我」なので「我們」を「我」に揃える。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo10Answer",
+      "severity": "medium",
+      "replacement": "在「月份」畫面按一下日期，\n就能看到當天的總時間，\n以及每項工作的開始與結束時間。",
+      "reasonJapanese": "画面名「月」は howTo1/howTo2/investigating2 などで「月份」と訳されており、ここだけ「月」で用語が揺れている。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "fixedInLatest1Question",
+      "severity": "medium",
+      "replacement": "在「月份」畫面，8月的紀錄跑到7月或9月了",
+      "reasonJapanese": "画面名の訳を「月份」に統一（用語揺れの解消）。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming1Answer",
+      "severity": "medium",
+      "replacement": "我收到了很多這方面的建議。\n考量到畫面設計的平衡，\n目前正在思考\n怎樣呈現會最容易閱讀。",
+      "reasonJapanese": "個人開発者の語りとしてページ全体は「我」で統一されているが、ここは「我們」になっており声が揺れる。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming3Note",
+      "severity": "medium",
+      "replacement": "賓士貓、虎斑貓、橘貓、灰虎斑貓\n從2.1.0版開始就可以迎接囉。\n點陣圖是花時間一隻一隻畫出來的。\n今後新增的貓咪可能會需要付費。",
+      "reasonJapanese": "サバトラは灰色系の縞猫で、「白底虎斑貓」では白地に縞の別の柄を指してしまう。台湾では「灰虎斑」が通用する呼び名。賓士貓・橘貓は台湾の語彙として適切。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming5Answer",
+      "severity": "medium",
+      "replacement": "我收到了很多這方面的建議。\n我自己也很想試試看。\n不過目前會把修復錯誤\n擺在第一位。",
+      "reasonJapanese": "同じ回答内で「我們」と「作者」が混在し、他の回答の一人称「我」とも揺れる。韓国語版と同様に「我」で統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming6Note",
+      "severity": "medium",
+      "replacement": "我收到了許多希望在工作時\n能一直看到貓咪的建議。",
+      "reasonJapanese": "一人称を「我」に統一（ページ全体との声の揺れの解消）。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming9Question",
+      "severity": "medium",
+      "replacement": "我想要每隔固定時間的休息提醒，以及每日提醒。",
+      "reasonJapanese": "「休憩さそい」を fixedInLatest3Question のUIラベル訳「提醒休息」に合わせる。「休息邀請」は用語が揺れており中国語としてもやや不自然。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming9Answer",
+      "severity": "medium",
+      "replacement": "我會評估加入重複的休息提醒。\n每天早上的通知，我也希望能加進去。\n我會設計成可以自由開關，\n但這還需要一段時間。",
+      "reasonJapanese": "「休憩さそい」の訳を「休息提醒」に統一（用語揺れの解消）。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming9Note",
+      "severity": "high",
+      "replacement": "目前的「提醒休息時間」\n與「休息時間」是從 30 分鐘起跳，\n並以 30 分鐘為單位。",
+      "reasonJapanese": "同一のUIラベル「休憩にさそう時間」が fixedInLatest3Question では「提醒休息時間」、ここでは「邀請休息的時間」と別訳。設定画面で探せなくなるため統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely6Note",
+      "severity": "high",
+      "replacement": "我想為上班族製作一款\n「くろねこ勤怠」。\n我會在那邊考慮加入這個功能。",
+      "reasonJapanese": "姉妹アプリ名が unlikely6/7/8Note では「黑貓勤怠」、unlikely10Note では「くろねこ勤怠」と揺れている。ブランド名を据え置く方針に合わせ日本語表記に統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely7Note",
+      "severity": "high",
+      "replacement": "我想製作一款能更詳細管理工作的\n「くろねこ勤怠」。\n我會在那邊考慮加入這個功能。",
+      "reasonJapanese": "姉妹アプリ名の表記揺れ。unlikely10Note と同じく「くろねこ勤怠」に統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely8Note",
+      "severity": "high",
+      "replacement": "我也希望能有一天推出\n給上班族用的「くろねこ勤怠」，\n但可能還要等上好一陣子。",
+      "reasonJapanese": "姉妹アプリ名の表記揺れ。unlikely10Note と同じく「くろねこ勤怠」に統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely12Note",
+      "severity": "medium",
+      "replacement": "感謝主動提出協助翻譯\n或給予建議的朋友們。",
+      "reasonJapanese": "原文の「翻訳の申し出」は翻訳を手伝うという申し出のことだが、「提出翻譯建議」では翻訳内容への意見提出に読め、意味がずれる。"
+    }
+  ]
+}

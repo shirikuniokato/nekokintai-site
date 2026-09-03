@@ -1,0 +1,267 @@
+{
+  "generatedAt": "2026-09-03T20:47:15.366Z",
+  "reviewer": "claude-fable",
+  "model": "claude-fable-5",
+  "summaryJapanese": "「アップデートのよてい」ページの en / ko / zh-TW 全キーを監査しました。critical はありません。high は「海外のストア／海外で使う」を各言語で直訳した結果、読者にとって自国外の意味に反転している箇所（3言語）と、機能名の用語揺れ（EN「Start of Day / Daily reset time」「work / task categories」、ko「하루의 시작 시간 / 하루가 바뀌는 시간」「기록 추가 / 기록 더하기」、zh-TW「作業類別 / 作業分類」）です。medium は「不具合」の訳語揺れ（ko 문제/오류、zh-TW 問題/錯誤）、ko の「갱신 내용」（日本語由来の語で 업데이트 が自然）、ko「打刻」が「기록하기」に薄まっている点、zh-TW の 用戶（台湾では 使用者）・¥300（日圓が明確）、審査中の待ち時間を「片刻」とした短さの誤り、「どちらの時刻からでも」の曖昧化、末尾の一人称揺れ（let me / 告訴我 と we / 我們）です。責める表現、通常UIへの猫語混入はいずれの言語にもありませんでした。韓国語の助詞は引用ラベル・外来語の後を含め全て確認し、問題ありません。判断保留として、「ねこ屋さん」が3言語とも未翻訳で統一されているためグロッサリー扱いとみなし指摘していませんが、英語・韓国語・繁体字の読者には読めないため、アプリ側の画面名に合わせるか確認をおすすめします。猫の名前（ふわくろねこ等）はアプリ内の各言語名との照合ができないため対象外としました。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "ios230Item1",
+      "severity": "high",
+      "replacement": "You will be able to use the app in English, Korean, and Traditional Chinese.\nIt will also be available\nin app stores outside Japan.",
+      "reasonJapanese": "意味の欠落・反転。英語読者にとって「overseas stores」は自国外の意味になり、自分のストアで入手できるという趣旨が伝わらない。また英語文中に 한국어・繁體中文 が混在しており読めないため、英語の言語名に統一。"
+    },
+    {
+      "locale": "en",
+      "key": "ios120Item4",
+      "severity": "medium",
+      "replacement": "Fixed an issue where records were saved in Japan time\nwhen used outside Japan.",
+      "reasonJapanese": "意味の曖昧化。「overseas」は読者の国基準で解釈されるため、日本国外であることを明示。"
+    },
+    {
+      "locale": "en",
+      "key": "android201Item1",
+      "severity": "high",
+      "replacement": "You can now choose the \"Start of Day\"\nfrom 12:00 AM\nto 12:00 PM.",
+      "reasonJapanese": "用語揺れ。同じ設定名「1日のきりかえ時刻」が iOS 側では Start of Day、Android 側では Daily reset time と異なる。iOS 側に統一。"
+    },
+    {
+      "locale": "en",
+      "key": "ios201Item4",
+      "severity": "medium",
+      "replacement": "You can also add overnight hours\nfrom \"Add record\".",
+      "reasonJapanese": "用語揺れ。同じボタン名「記録を足す」が Add Record と Add record で表記が異なる。他2箇所の Add record に統一。"
+    },
+    {
+      "locale": "en",
+      "key": "ios110Item3",
+      "severity": "high",
+      "replacement": "You can restore deleted work categories from the Settings.\nYou can also reuse the same name.",
+      "reasonJapanese": "用語揺れ。「作業カテゴリ」が work category（ios201Item6・7、future9）と task category で分かれている。多数側の work categories に統一。"
+    },
+    {
+      "locale": "en",
+      "key": "android202Item1",
+      "severity": "high",
+      "replacement": "Fixes an issue where text overlaps or breaks\nwhen entering names or work categories\nin Japanese.",
+      "reasonJapanese": "用語揺れ。「作業カテゴリ」を task categories と訳しており、他キーの work categories と不一致。"
+    },
+    {
+      "locale": "en",
+      "key": "future8",
+      "severity": "medium",
+      "replacement": "Recurring break suggestions and daily reminders",
+      "reasonJapanese": "用語揺れ。「休憩にさそう」は設定名で Time to suggest a break としているのに、ここでは invitations となっている。suggest 系に統一。"
+    },
+    {
+      "locale": "en",
+      "key": "wantMoreBeforeLink",
+      "severity": "medium",
+      "replacement": "If there's something else you'd like, let us know through the ",
+      "reasonJapanese": "UIとして長すぎ（原文の約2倍）かつ一人称の揺れ。lead や futureLead は we なのにここだけ let me になっている。末尾の空白とリンク接続はそのまま。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios230Item1",
+      "severity": "high",
+      "replacement": "영어, 한국어, 번체 중국어로도\n사용할 수 있게 할게요. 일본 이외의 스토어에서도\n설치할 수 있게 할게요.",
+      "reasonJapanese": "意味の反転。韓国語読者にとって「해외 스토어」は韓国以外の意味になり、韓国のストアから入手できるという趣旨が伝わらない。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios120Item4",
+      "severity": "medium",
+      "replacement": "일본 밖에서 사용할 때 기록이 일본 시간으로 남는\n문제를 수정했어요.",
+      "reasonJapanese": "意味の曖昧化。「해외」は読者の国基準で解釈されるため、日本国外であることを明示。"
+    },
+    {
+      "locale": "ko",
+      "key": "android201Item1",
+      "severity": "high",
+      "replacement": "'하루의 시작 시간'을\n0시부터 낮 12시까지\n고를 수 있게 되었어요.",
+      "reasonJapanese": "用語揺れ。同じ設定名「1日のきりかえ時刻」が iOS 側 '하루의 시작 시간'、Android 側 '하루가 바뀌는 시간' と異なる。iOS 側に統一。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios201Item4",
+      "severity": "high",
+      "replacement": "밤부터 날짜를 넘기는 시간도\n'기록 더하기'에서 넣을 수 있어요.",
+      "reasonJapanese": "用語揺れ。同じボタン名「記録を足す」が '기록 추가' と '기록 더하기'（ios201Item13・android200Item3）で分かれている。多数側に統一。"
+    },
+    {
+      "locale": "ko",
+      "key": "documentDescription",
+      "severity": "medium",
+      "replacement": "ねこ勤怠의 앞으로의 업데이트 예정과 지금까지의 업데이트 내용. iOS와 Android 각각의 상황을 안내해 드려요.",
+      "reasonJapanese": "用語。「갱신」は日本語「更新」の直訳で、韓国語ではソフトウェアの更新に 업데이트 を使うのが自然。同文内の 업데이트 とも揺れている。"
+    },
+    {
+      "locale": "ko",
+      "key": "showMore",
+      "severity": "medium",
+      "replacement": "업데이트 내용 {{count}}건 더 보기",
+      "reasonJapanese": "用語。「갱신 내용」は不自然で、ページ全体で使っている 업데이트 に統一。「다른」も冗長でボタン文言として不自然。"
+    },
+    {
+      "locale": "ko",
+      "key": "showLess",
+      "severity": "medium",
+      "replacement": "업데이트 내용 접기",
+      "reasonJapanese": "用語。「갱신 내용」を 업데이트 に統一。折りたたみ操作なので 접기 が UI として自然。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios210Item8",
+      "severity": "medium",
+      "replacement": "긴 카테고리 이름이나 이월 표시 등의\n문제를 수정할게요.",
+      "reasonJapanese": "用語揺れ。「不具合」が他キーでは 문제 なのに、ここだけ 오류。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios201Item2",
+      "severity": "medium",
+      "replacement": "월 화면에서 이전 달의 기록이\n다음 달에 있는 것처럼 보일 수 있는\n문제를 수정할게요.",
+      "reasonJapanese": "用語揺れ。「不具合」を 오류 としており、同一バージョン内の他キー（문제）と不一致。android201Item2 の同文も 문제。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios201Item7",
+      "severity": "medium",
+      "replacement": "퇴근 후나 휴식 중에도\n다른 작업 카테고리를 다시 선택해서\n'다시 일하기'를 할 수 있게 돼요 (문제 수정).",
+      "reasonJapanese": "用語揺れ。「不具合の修正」を 오류 수정 としており、他キーの 문제 と不一致。"
+    },
+    {
+      "locale": "ko",
+      "key": "whenInReview",
+      "severity": "medium",
+      "replacement": "심사를 요청했어요. 스토어에 올라올 때까지 조금만 더 기다려 주세요.",
+      "reasonJapanese": "意味。「스토어에서 도착할 때까지」は直訳調で、ストアに掲載されるまでという意味が伝わりにくい。"
+    },
+    {
+      "locale": "ko",
+      "key": "future5",
+      "severity": "medium",
+      "replacement": "위젯이나 잠금 화면에 고양이를 띄우고 출퇴근 기록하기",
+      "reasonJapanese": "意味の欠落。「打刻」を 기록하기 だけにすると出退勤の打刻という意味が抜ける。"
+    },
+    {
+      "locale": "ko",
+      "key": "future6",
+      "severity": "medium",
+      "replacement": "Apple Watch에서 출퇴근 기록하기",
+      "reasonJapanese": "意味の欠落。「打刻」が 기록하기 に薄まり、何を記録するのか分からない。future5 と揃える。"
+    },
+    {
+      "locale": "ko",
+      "key": "android202Item3",
+      "severity": "medium",
+      "replacement": "새로운 기록은 시작과 끝을 정하면\n그대로 추가되도록 바뀌어요.\n시작과 끝 중 어느 쪽부터 입력해도 돼요.",
+      "reasonJapanese": "意味の曖昧化。「どちらの時刻からでも」は「はじめ・おわりのどちらから先に入力しても」の意味だが、'어느 시간부터든' では任意の時刻からと読める。"
+    },
+    {
+      "locale": "ko",
+      "key": "statusSkipped",
+      "severity": "medium",
+      "replacement": "공개 건너뜀",
+      "reasonJapanese": "意味。「こうかいみおくり」は公開しない（2.0.1に統合）の意味だが、보류 は後で公開する保留のニュアンスになる。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios230Item1",
+      "severity": "high",
+      "replacement": "將支援英文、韓文與繁體中文。\n日本以外的商店\n也將能下載。",
+      "reasonJapanese": "意味の反転。台湾の読者にとって「海外的商店」は台湾以外の意味になり、台湾のストアで入手できる趣旨が伝わらない。また「將…下載了」の時制混在も解消。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios120Item4",
+      "severity": "medium",
+      "replacement": "修正了在日本以外的地區使用時，\n紀錄會變成日本時間的問題。",
+      "reasonJapanese": "意味の曖昧化。「海外」は読者の国基準で解釈されるため、日本国外であることを明示。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "future9",
+      "severity": "high",
+      "replacement": "增加主題顏色與作業類別的顏色",
+      "reasonJapanese": "用語揺れ。「作業カテゴリ」は他の全キーで 作業類別 なのに、ここだけ 作業分類。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "future8",
+      "severity": "medium",
+      "replacement": "重複的休息建議與每日提醒",
+      "reasonJapanese": "用語揺れ。「休憩にさそう」は設定名で 建議休息時間 としているのに、ここでは 休息邀請 になっている。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios210Item8",
+      "severity": "medium",
+      "replacement": "修正過長的類別名稱\n與結轉顯示等問題。",
+      "reasonJapanese": "用語揺れ。「不具合」が他キーでは 問題 なのに、ここだけ 錯誤。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios201Item2",
+      "severity": "medium",
+      "replacement": "修正月畫面中，上個月的紀錄\n有時會顯示在下個月的\n問題。",
+      "reasonJapanese": "用語揺れ。「不具合」を 錯誤 としている点と、画面名が「月」畫面（括弧付き）で他キーの 月畫面 と不一致な点を統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios201Item3",
+      "severity": "medium",
+      "replacement": "在月畫面點按日期，\n就可以在事後修改或新增\n當天的紀錄。",
+      "reasonJapanese": "用語揺れ。画面名を「月」畫面と括弧付きにしており、ios201Item11・android201Item2 の 月畫面 や 週畫面 と表記が揃っていない。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios201Item7",
+      "severity": "medium",
+      "replacement": "即使在下班後或休息期間，\n也能重新選擇其他的作業類別\n並「繼續工作」了（問題修正）。",
+      "reasonJapanese": "用語揺れ。「不具合の修正」を 錯誤修正 としており、他キーの 問題 と不一致。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios201Note",
+      "severity": "medium",
+      "replacement": "您至今的紀錄將會原封不動地保留。\n只有淺色／深色外觀的設定無法繼承，\n因此使用深色外觀的使用者，請在更新後\n至設定中重新選擇。",
+      "reasonJapanese": "台湾向け地域語彙。「用戶」は中国大陸寄りの語で、台湾では 使用者 が標準。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios220Item1",
+      "severity": "medium",
+      "replacement": "新增「贊助方案」。\n透過每個月的贊助，可以支持\nねこ勤怠 的開發（每月 300 日圓）。",
+      "reasonJapanese": "台湾向け地域語彙。「¥」は台湾では人民元とも取られ通貨が曖昧。日圓 と明記するのが自然。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "whenInReview",
+      "severity": "medium",
+      "replacement": "已送交審核。在商店上架之前，請再稍等一下。",
+      "reasonJapanese": "意味。「稍候片刻」は数秒〜数分の待機を指し、審査で数日待つ文脈に合わない。また 發布 より 上架 がストア掲載の自然な語。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "android202Item3",
+      "severity": "medium",
+      "replacement": "新增紀錄時，只要設定好開始與結束時間\n就會直接加入。\n從開始或結束時間任一方輸入都可以。",
+      "reasonJapanese": "意味の曖昧化。「どちらの時刻からでも」は「はじめ・おわりのどちらから先でも」の意味だが、「從任一時間開始輸入」では任意の時刻からと読める。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "statusSkipped",
+      "severity": "medium",
+      "replacement": "略過發布",
+      "reasonJapanese": "意味。「こうかいみおくり」は公開せず2.0.1に統合の意味だが、暫緩 は後で公開する延期のニュアンスになる。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "wantMoreAfterLink",
+      "severity": "medium",
+      "replacement": "告訴我們。",
+      "reasonJapanese": "一人称の揺れ。lead・futureLead は 我們 なのに、ここだけ 告訴我 になっている。"
+    }
+  ]
+}

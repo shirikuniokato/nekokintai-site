@@ -1,0 +1,77 @@
+{
+  "template": "nekokintai-store-screenshot",
+  "frameAssets": {
+    "1": "d2b77b22-d97b-4ef1-a4b1-437b99b1a81e",
+    "2": "91aea4c1-8772-4585-8128-4f61da8ca7fc",
+    "3": "27afbefa-7d1e-4035-864e-e53de1ec7fd8",
+    "4": "6f00f7b8-8593-401c-9360-adc0ffeecbc9"
+  },
+  "locales": {
+    "en": {
+      "home": {
+        "screenAssetId": "23632e70-a90d-4286-9a1e-b34e9734586f",
+        "renderGroup": "50982441-16ae-4282-b50e-91ed0e3a228f",
+        "renderId": "c3a10556-4ca0-4ad9-af04-a18fc6e78ded"
+      },
+      "week": {
+        "screenAssetId": "a5ecc87d-1180-4554-bc57-8a0372ed3fed",
+        "renderGroup": "f16b471f-182c-44b1-b79b-1b71885e2f5e",
+        "renderId": "84133f4b-d26d-49f1-a4d3-93f7789530ca"
+      },
+      "month": {
+        "screenAssetId": "e7a0847f-c84f-4a3c-b68d-d92d7b8c309a",
+        "renderGroup": "e9673ad0-1be9-4cb3-8ee9-5c87968117de",
+        "renderId": "0b1b799c-46ca-4010-9524-f39c3cf5061b"
+      },
+      "shop": {
+        "screenAssetId": "8ab23b89-92b1-4cb6-88c0-863b3782a9c5",
+        "renderGroup": "e328b854-cf94-438b-9e27-813654584c80",
+        "renderId": "beaf41c7-9c66-4ef4-aac7-62073d0be7b2"
+      }
+    },
+    "ko": {
+      "home": {
+        "screenAssetId": "2f0c224f-62e2-42e3-9e22-7aba137d69f5",
+        "renderGroup": "94c2aab8-ae49-4fbb-a824-dd7cb8ccf8fa",
+        "renderId": "b52e6d46-b30f-4c25-8607-d9c010a51cdc"
+      },
+      "week": {
+        "screenAssetId": "087d4345-68d5-4a25-a7a9-1d96b8f88f21",
+        "renderGroup": "43d78195-d065-471f-b234-4a8f121a943e",
+        "renderId": "8a2c8cf8-902f-473c-b757-758b4fe49d6c"
+      },
+      "month": {
+        "screenAssetId": "369b566f-4405-4100-bec1-2614964f67a1",
+        "renderGroup": "f264d714-a735-4f7e-9ff6-321b60e46a23",
+        "renderId": "689ff8f8-8907-4539-83fb-2fe83ba6515a"
+      },
+      "shop": {
+        "screenAssetId": "b7b70551-c6c2-42c4-9afb-d458bc673220",
+        "renderGroup": "f9c7f677-5222-4f6b-b7a7-352246a4577e",
+        "renderId": "35156a21-8ca9-4a9a-a4b0-3c8d0f2a920c"
+      }
+    },
+    "zh-TW": {
+      "home": {
+        "screenAssetId": "437c8f40-7607-4f1e-9fbf-c18042bdd096",
+        "renderGroup": "53668380-4b2c-4bda-a234-70bdfcbe8c7d",
+        "renderId": "3785df44-4fac-4b43-829f-ee4513baabfd"
+      },
+      "week": {
+        "screenAssetId": "2dab3d8d-4c26-4015-8c72-46f2e123f3d1",
+        "renderGroup": "1d27c9d7-e84f-45f1-b8c1-36526ee2b08b",
+        "renderId": "5db9946e-b343-493e-b967-db0cdb6316ba"
+      },
+      "month": {
+        "screenAssetId": "14bb3510-0117-496d-8b69-a11ad185cb49",
+        "renderGroup": "493b5ac4-ce21-4e0f-85fe-c5307495285d",
+        "renderId": "9aa99f9a-c15a-4c9f-95b9-c65fdefcc344"
+      },
+      "shop": {
+        "screenAssetId": "aaeb011d-af48-47f0-a497-b654b07d7a21",
+        "renderGroup": "2d94c92b-ee73-4943-8099-590cb11a3fd6",
+        "renderId": "556cd8b1-9ae0-46fd-9d5a-6fc9f30839c2"
+      }
+    }
+  }
+}

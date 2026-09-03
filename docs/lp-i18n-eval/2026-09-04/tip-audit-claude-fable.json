@@ -1,0 +1,71 @@
+{
+  "generatedAt": "2026-09-03T19:59:25.715Z",
+  "reviewer": "claude-fable",
+  "model": "claude-fable-5",
+  "summaryJapanese": "3言語とも猫語の混入や責める表現はなく、韓国語の助詞（ねこ勤怠는/를/의、건의 사항을、여기를）も正しく、台湾向け語彙（應用程式・付款・信用卡・隱私權政策・常見問題）も適切です。高優先度は韓国語 note2 で、明細に表示されるショップ名「ｼﾁｬのねこ屋さん」が「ｼﾁｬ의ねこ屋さん」と部分翻訳されている点です。その他は中優先度で、英語の「Requests」の文中大文字、note3 の主語揺れ（I / us）、note4 の不自然な構文、範囲表記の波ダッシュ（英語・韓国語）、繁体字 note2 の「與」欠落、customAmountBeforeLink の末尾スペース、note1 の「回饋品／回饋」の語の衝突を指摘しました。",
+  "issues": [
+    {
+      "locale": "ko",
+      "key": "note2",
+      "severity": "high",
+      "replacement": "・결제는 ねこ勤怠를 만든 c_cya의 온라인 숍 'ｼﾁｬのねこ屋さん'과 같은 시스템으로 진행돼요. 명세서에는 숍 이름이 표시돼요.",
+      "reasonJapanese": "ショップ名「ｼﾁｬのねこ屋さん」が「ｼﾁｬ의ねこ屋さん」と部分的に翻訳されています。明細に出る固有名詞なので原文どおりに固定する必要があります。助詞「과」はそのままで正しいです。"
+    },
+    {
+      "locale": "en",
+      "key": "note1Link",
+      "severity": "medium",
+      "replacement": "requests",
+      "reasonJapanese": "文中のリンク語が大文字始まりの「Requests」になっており、英語の文として不自然です。ナビの contactLink（Requests）はラベルなのでそのままで問題ありません。"
+    },
+    {
+      "locale": "en",
+      "key": "note3",
+      "severity": "medium",
+      "replacement": "・Credit cards, PayPay, and more are accepted. Card numbers are handled by the payment provider and never reach me.",
+      "reasonJapanese": "note1・note4 は一人称「I」なのに note3 だけ「us」で主語が揺れています。個人開発の文脈に合わせて一人称に統一し、「will not reach us」の硬さも解消しました。"
+    },
+    {
+      "locale": "en",
+      "key": "note4",
+      "severity": "medium",
+      "replacement": "・Every bit of support I receive goes into making ねこ勤怠 better.",
+      "reasonJapanese": "「work hard ... as much as the support I receive」は英語として構文が成立しておらず不自然です。「いただいた分だけがんばる」の意味を、取引的・条件的に聞こえない中立的な言い方に置き換えました。"
+    },
+    {
+      "locale": "en",
+      "key": "customAmountRange",
+      "severity": "medium",
+      "replacement": "(¥100–¥10,000)",
+      "reasonJapanese": "範囲を示す「〜」は日本語の波ダッシュで、英語では en dash「–」または「to」を使うのが慣例です。"
+    },
+    {
+      "locale": "ko",
+      "key": "customAmountRange",
+      "severity": "medium",
+      "replacement": "(¥100~¥10,000)",
+      "reasonJapanese": "韓国語でも範囲は半角の「~」で表すのが一般的で、日本語の波ダッシュ「〜」は見慣れない記号になります。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "note2",
+      "severity": "medium",
+      "replacement": "・付款將透過與製作 ねこ勤怠 的 c_cya 旗下線上商店「ｼﾁｬのねこ屋さん」相同的系統進行。帳單明細上會顯示該商店的名稱。",
+      "reasonJapanese": "「透過…相同的系統」は比較対象を導く「與」が欠けており文法的に不完全です。「透過與…相同的系統」に修正しました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "customAmountBeforeLink",
+      "severity": "medium",
+      "replacement": "如果想自行決定金額，請點選",
+      "reasonJapanese": "中国語ではリンク語の前にスペースを置かないため、末尾スペースが「請點選 這裡」という不自然な空白として表示されます。同じロケールの note1BeforeLink は末尾スペースなしなので、それに合わせました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "note1BeforeLink",
+      "severity": "medium",
+      "replacement": "・這是一份贊助。不會有謝禮或應用程式的額外功能。相對地，我會為了收到的",
+      "reasonJapanese": "「回饋品」（おれいの品）と直後のリンク語「建議與回饋」（ごようぼう）で「回饋」が別の意味で連続し、読み手が混同します。おれいの品は「謝禮」として語の衝突を避けました。"
+    }
+  ]
+}

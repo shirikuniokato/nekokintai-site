@@ -1,0 +1,702 @@
+{
+  "generatedAt": "2026-09-03T20:41:20.948Z",
+  "provider": "gemini",
+  "model": "gemini-3.1-pro-preview",
+  "page": "roadmap",
+  "sourceCount": 99,
+  "translations": [
+    {
+      "key": "documentTitle",
+      "en": "Update Roadmap | ねこ勤怠",
+      "ko": "업데이트 예정 | ねこ勤怠",
+      "zhTW": "更新計畫 | ねこ勤怠",
+      "notes": "ページタイトル"
+    },
+    {
+      "key": "documentDescription",
+      "en": "Upcoming updates and past release notes for ねこ勤怠. You can check the status for both iOS and Android.",
+      "ko": "ねこ勤怠의 앞으로의 업데이트 예정과 지금까지의 갱신 내용. iOS와 Android 각각의 상황을 안내해 드려요.",
+      "zhTW": "ねこ勤怠未來的更新計畫與過去的更新內容。這裡列出了 iOS 與 Android 各自的狀況。",
+      "notes": "メタディスクリプション"
+    },
+    {
+      "key": "heading",
+      "en": "Update Roadmap",
+      "ko": "업데이트 예정",
+      "zhTW": "更新計畫",
+      "notes": "サイト共通の固定訳"
+    },
+    {
+      "key": "lead",
+      "en": "We have summarized what's coming next and past updates\nby version.",
+      "ko": "앞으로 추가될 내용과 지금까지의 내용을\n버전별로 정리했어요.",
+      "zhTW": "我們將未來即將推出的內容與過去的更新，\n依版本整理在這裡。",
+      "notes": "リード文"
+    },
+    {
+      "key": "sub",
+      "en": "Since store review times are unpredictable,\nthe release timing may differ between iOS and Android.",
+      "ko": "스토어 심사에 걸리는 시간을 예측하기 어려워,\n도착하는 타이밍이 iOS와 Android에서 다를 수 있어요.",
+      "zhTW": "由於無法預測商店審核所需的時間，\n推出時間在 iOS 與 Android 上可能會有所不同。",
+      "notes": "サブリード文"
+    },
+    {
+      "key": "languageSelector",
+      "en": "Language",
+      "ko": "언어",
+      "zhTW": "語言",
+      "notes": "サイト共通の固定訳"
+    },
+    {
+      "key": "showMore",
+      "en": "Show {{count}} more updates",
+      "ko": "다른 갱신 내용 {{count}}건 더 보기",
+      "zhTW": "查看其他 {{count}} 項更新內容",
+      "notes": "もっと見るボタン"
+    },
+    {
+      "key": "showLess",
+      "en": "Hide updates",
+      "ko": "갱신 내용 닫기",
+      "zhTW": "收起更新內容",
+      "notes": "閉じるボタン"
+    },
+    {
+      "key": "iosPaneLabel",
+      "en": "iOS Updates",
+      "ko": "iOS 업데이트",
+      "zhTW": "iOS 更新",
+      "notes": "タブのラベル"
+    },
+    {
+      "key": "statusPreparing",
+      "en": "Preparing",
+      "ko": "준비 중",
+      "zhTW": "準備中",
+      "notes": "ステータスバッジ"
+    },
+    {
+      "key": "ios230Item1",
+      "en": "You will be able to use the app in English, 한국어, and 繁體中文.\nIt will also be available\nin overseas stores.",
+      "ko": "영어, 한국어, 번체 중국어로도\n사용할 수 있게 할게요. 해외 스토어에서도\n설치할 수 있게 할게요.",
+      "zhTW": "將支援英文、韓文與繁體中文。\n海外的商店也能夠\n下載了。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios230Item2",
+      "en": "You will be able to see the cats and your daily progress\non the Home Screen\nand Lock Screen.",
+      "ko": "홈 화면이나 잠금 화면에서\n고양이와 오늘의 수고를\n볼 수 있게 할게요.",
+      "zhTW": "在主畫面與鎖定畫面上，\n將能看到貓咪與\n今天的努力成果。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios230Item3",
+      "en": "You will be able to clock in, take breaks, and clock out\nfrom widgets without opening the app.",
+      "ko": "출근, 휴식, 퇴근을 앱을 열지 않고\n위젯에서 할 수 있게 할게요.",
+      "zhTW": "不需打開應用程式，\n就能從小工具進行上班、休息與下班。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "statusInReview",
+      "en": "In Review",
+      "ko": "심사 중",
+      "zhTW": "審核中",
+      "notes": "ステータスバッジ"
+    },
+    {
+      "key": "whenInReview",
+      "en": "Submitted for review. Please wait a little longer until it arrives from the store.",
+      "ko": "심사를 요청했어요. 스토어에서 도착할 때까지 조금만 더 기다려 주세요.",
+      "zhTW": "已送交審核。請稍候片刻，等待商店發布。",
+      "notes": "ステータスの説明"
+    },
+    {
+      "key": "ios220Item1",
+      "en": "Introducing the \"Support Plan\".\nYour monthly support will help fund\nthe development of ねこ勤怠 (¥300/month).",
+      "ko": "'응원 플랜'이 생겨요.\n매월 응원해 주시면 ねこ勤怠의\n개발에 큰 힘이 돼요 (월 300엔).",
+      "zhTW": "新增「贊助方案」。\n透過每個月的贊助，可以支持\nねこ勤怠 的開發（每月 ¥300）。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios220Item2",
+      "en": "While you are supporting us, as a thank you,\ntwo rainbow cats will walk with you.",
+      "ko": "응원해 주시는 동안에는 감사의 마음을 담아,\n무지개 고양이 2마리가 함께 걸어요.",
+      "zhTW": "在贊助期間，作為回報，\n會有 2 隻彩虹貓咪與您一起散步。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios220Item3",
+      "en": "Whether you support us or not,\nall features will remain available as before.",
+      "ko": "응원 여부와 상관없이,\n모든 기능은 지금까지처럼 사용할 수 있어요.",
+      "zhTW": "無論是否贊助，\n所有功能都能像以前一樣正常使用。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios220Item4",
+      "en": "Work BGM will automatically stop\nwhen you clock out.",
+      "ko": "퇴근하면 업무용 BGM이\n자동으로 멈추게 할게요.",
+      "zhTW": "下班時，工作 BGM\n將會自動停止。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios220Item5",
+      "en": "Fixed an issue where the screen couldn't be closed\nwhen edits to overnight records\nfailed to save.",
+      "ko": "날짜를 넘긴 기록의 수정이\n저장되지 않을 때, 화면을\n닫을 수 없게 되는 문제를 고칠게요.",
+      "zhTW": "修正跨日紀錄的修改\n無法儲存時，畫面會\n無法關閉的問題。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios220Item6",
+      "en": "Fixed an issue where the \"Halfway there\" dialogue\nappeared too early.",
+      "ko": "'절반까지 왔어요'라는 대사가\n너무 일찍 나오던 문제를 고칠게요.",
+      "zhTW": "修正「已經完成一半了」的台詞\n太早出現的問題。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios220Item7",
+      "en": "Fixed an issue where the status could become out of sync\nafter editing an overnight record.",
+      "ko": "날짜를 넘긴 기록을 수정한 후에,\n상태가 어긋나는 일이 있던 문제를 고칠게요.",
+      "zhTW": "修正修改跨日紀錄後，\n狀態可能會發生錯誤的問題。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "statusPublished",
+      "en": "Published",
+      "ko": "공개 완료",
+      "zhTW": "已發布",
+      "notes": "ステータスバッジ"
+    },
+    {
+      "key": "whenPublished",
+      "en": "Published. It may take about a day to reach your device.",
+      "ko": "공개했어요. 기기에 도착하기까지 하루 정도 걸릴 수 있어요.",
+      "zhTW": "已發布。可能需要大約 1 天的時間才會推送到您的裝置上。",
+      "notes": "ステータスの説明"
+    },
+    {
+      "key": "ios210Item1",
+      "en": "You can now choose and play\n3 work BGMs on the Home screen.",
+      "ko": "홈에서 3곡의 작업용 BGM을\n선택해서 틀 수 있게 돼요.",
+      "zhTW": "現在可以在主畫面選擇並播放\n3 首工作 BGM 了。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios210Item2",
+      "en": "Added 6 new cats,\nbringing the total to 15.",
+      "ko": "새로운 고양이가 6마리 늘어나,\n전부 15마리가 돼요.",
+      "zhTW": "新增了 6 隻新貓咪，\n總共會有 15 隻。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios210Item3",
+      "en": "You can now long-press cats in ねこ屋さん\nto rearrange them in your preferred order.",
+      "ko": "ねこ屋さん에서 고양이를 길게 눌러\n원하는 순서대로 바꿀 수 있어요.",
+      "zhTW": "在 ねこ屋さん 中長按貓咪，\n就可以將牠們重新排列成喜歡的順序。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios210Item4",
+      "en": "Added plenty of new cat dialogues\ntailored to different situations and work hours.",
+      "ko": "상황이나 작업 시간에 맞춘\n고양이의 대사를 듬뿍 추가할게요.",
+      "zhTW": "大量新增了配合不同情境與工作時間的\n貓咪台詞。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios210Item5",
+      "en": "Ensured that adding and editing records\nare saved correctly.",
+      "ko": "기록 추가와 수정이\n올바르게 저장되도록 할게요.",
+      "zhTW": "確保新增與修改紀錄時\n都能正確儲存。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios210Item6",
+      "en": "Stabilized Japanese input and\nthe notifications at the bottom of the screen.",
+      "ko": "일본어 입력과 화면 아래의 알림을\n안정시킬게요.",
+      "zhTW": "提升日文輸入與\n畫面下方通知的穩定性。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios210Item7",
+      "en": "Improved editing of records\nduring breaks or overnight.",
+      "ko": "휴식 중이나 날짜를 넘기는 기록의\n수정을 개선할게요.",
+      "zhTW": "改善休息中或跨日紀錄的\n修改功能。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios210Item8",
+      "en": "Fixed bugs such as long category names\nand carry-over displays.",
+      "ko": "긴 카테고리 이름이나 이월 표시 등의\n오류를 수정할게요.",
+      "zhTW": "修正過長的類別名稱\n與結轉顯示等錯誤。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios201Item1",
+      "en": "You can now choose the \"Start of Day\"\nfrom 12:00 AM\nto 12:00 PM.",
+      "ko": "'하루의 시작 시간'을\n0시부터 낮 12시까지\n선택할 수 있게 돼요.",
+      "zhTW": "現在可以將「一天的切換時間」\n從 0 點到中午 12 點之間\n自由選擇了。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios201Item2",
+      "en": "Fixed a bug on the Month screen where\nrecords from the previous month sometimes\nappeared in the next month.",
+      "ko": "월 화면에서 이전 달의 기록이\n다음 달에 있는 것처럼 보일 수 있는\n오류를 수정할게요.",
+      "zhTW": "修正「月」畫面中，上個月的紀錄\n有時會顯示在下個月的\n錯誤。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios201Item3",
+      "en": "By tapping a date on the Month screen,\nyou can now edit or add records\nfor that day later.",
+      "ko": "월 화면에서 날짜를 누르면,\n그날의 기록을 나중에\n고치거나 추가할 수 있어요.",
+      "zhTW": "在「月」畫面點按日期，\n就可以在事後修改或新增\n當天的紀錄。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios201Item4",
+      "en": "You can also add overnight hours\nfrom \"Add Record\".",
+      "ko": "밤부터 날짜를 넘기는 시간도\n'기록 추가'에서 넣을 수 있어요.",
+      "zhTW": "從夜晚跨越到隔天的時間，\n也能透過「新增紀錄」來加入了。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios201Item5",
+      "en": "Tapping the time opens a number panel\nfor 1-minute increments.\n[+] and [-] will adjust by 10 minutes.",
+      "ko": "시간을 누르면 숫자 패널이 열려서,\n1분 단위로 입력할 수 있어요.\n[+][-]는 10분 단위가 돼요.",
+      "zhTW": "點按時間會開啟數字面板，\n可以以 1 分鐘為單位輸入。\n［＋］與［－］則是以 10 分鐘為單位。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios201Item6",
+      "en": "You can rearrange work categories\nin your preferred order by long-pressing.",
+      "ko": "작업 카테고리를 길게 눌러서\n원하는 순서대로 바꿀 수 있어요.",
+      "zhTW": "長按作業類別，\n就可以重新排列成喜歡的順序。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios201Item7",
+      "en": "You can now reselect a different work category\nand \"Work Again\" even after clocking out\nor during a break (Bug fix).",
+      "ko": "퇴근 후나 휴식 중에도\n다른 작업 카테고리를 다시 선택해서\n'다시 일하기'를 할 수 있게 돼요 (오류 수정).",
+      "zhTW": "即使在下班後或休息期間，\n也能重新選擇其他的作業類別\n並「繼續工作」了（錯誤修正）。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios201Item8",
+      "en": "Tapping the boss on the Home screen\nlets you change your days off for the week all at once.",
+      "ko": "홈의 사장님을 누르면,\n이번 주 휴일을 한꺼번에 바꿀 수 있어요.",
+      "zhTW": "點按主畫面的老闆，\n就可以一次更改本週的休假日。",
+      "notes": "アップデート内容"
+    },
+    {
+      "key": "ios201Item9",
+      "en": "You can set \"Time to suggest a break\"\nseparately from your daily goal time.",
+      "ko": "'휴식을 권하는 시간'을\n하루 목표 시간과 별도로 정할 수 있어요.",
+      "zhTW": "您可以將「建議休息時間」\n與每日目標時間分開設定。",
+      "notes": "UI用語「休憩にさそう時間」"
+    },
+    {
+      "key": "ios201Item10",
+      "en": "When a new version is released,\nwe will notify you on the Settings screen.",
+      "ko": "새로운 버전이 나왔을 때\n설정 화면에서 알려드려요.",
+      "zhTW": "當有新版本推出時，\n會在設定畫面中通知您。",
+      "notes": "設定画面"
+    },
+    {
+      "key": "ios201Item11",
+      "en": "Fixes an issue where the calendar on the Month screen\ndoes not switch correctly\nwhen \"Start of week\" is set to Monday.",
+      "ko": "'한 주의 시작'을 월요일로 했을 때\n월 화면의 달력이\n바뀌지 않는 문제를 수정해요.",
+      "zhTW": "修正當「一週的開始」設為星期一時，\n月畫面的日曆\n無法正常切換的問題。",
+      "notes": "UI用語「週のはじまり」「月」"
+    },
+    {
+      "key": "ios201Item12",
+      "en": "Fixes an issue where \"Time to suggest a break\"\ncannot be increased again\nafter lowering it to 1 hour.",
+      "ko": "'휴식을 권하는 시간'을 1시간까지 내리면\n다시 늘릴 수 없게 되는 문제를\n수정해요.",
+      "zhTW": "修正將「建議休息時間」調降至1小時後，\n就無法再次增加的\n問題。",
+      "notes": "UI用語「休憩にさそう時間」"
+    },
+    {
+      "key": "ios201Item13",
+      "en": "Fixes an issue where pressing \"Save\"\nwhile \"Add record\" is open clears the input\nand leaves nothing behind.",
+      "ko": "'기록 더하기'를 열어둔 채로\n'저장하기'를 누르면 입력이 지워지고\n아무것도 남지 않는 문제를 수정해요.",
+      "zhTW": "修正在開啟「新增紀錄」的狀態下\n按下「儲存」時，輸入內容會消失\n且未留下任何紀錄的問題。",
+      "notes": "UI用語「記録を足す」「保存する」"
+    },
+    {
+      "key": "ios201Item14",
+      "en": "In addition, fixes other issues related to records\nand keyboard display.",
+      "ko": "그 밖에 기록 관련 문제와\n키보드 표시 문제를 수정해요.",
+      "zhTW": "此外，也修正了紀錄相關\n與鍵盤顯示的問題。",
+      "notes": "記録まわり"
+    },
+    {
+      "key": "ios201Note",
+      "en": "Your past records will be carried over as they are.\nOnly the Light/Dark setting will not be carried over,\nso if you use Dark mode, please select it again\nfrom the Settings after updating.",
+      "ko": "지금까지의 기록은 그대로 이어져요.\n라이트/다크 설정만 이어지지 않으니,\n다크 모드를 쓰시는 분은 업데이트 후\n설정에서 다시 골라주세요.",
+      "zhTW": "您至今的紀錄將會原封不動地保留。\n只有淺色／深色外觀的設定無法繼承，\n因此使用深色外觀的用戶，請在更新後\n至設定中重新選擇。",
+      "notes": "ライト／ダーク設定"
+    },
+    {
+      "key": "statusSkipped",
+      "en": "Skipped release",
+      "ko": "공개 보류",
+      "zhTW": "暫緩發布",
+      "notes": "こうかいみおくり"
+    },
+    {
+      "key": "ios200When",
+      "en": "Version 2.0.0 will not be released; its contents will be included in 2.0.1.",
+      "ko": "2.0.0은 공개하지 않고, 내용을 2.0.1에 모아서 공개할 예정이에요.",
+      "zhTW": "2.0.0將不發布，預計將內容統整至2.0.1一併推出。",
+      "notes": "バージョン番号はそのまま"
+    },
+    {
+      "key": "ios120Item1",
+      "en": "You can give a name to each cat.",
+      "ko": "고양이 한 마리씩 이름을 지어줄 수 있어요.",
+      "zhTW": "您可以為每一隻貓咪取名字。",
+      "notes": "ねこ1匹ずつ"
+    },
+    {
+      "key": "ios120Item2",
+      "en": "You can choose your first cat on the initial launch.",
+      "ko": "처음 시작할 때 첫 고양이를 고를 수 있어요.",
+      "zhTW": "首次開啟應用程式時，可以選擇第一隻貓咪。",
+      "notes": "さいしょのねこ"
+    },
+    {
+      "key": "ios120Item3",
+      "en": "When a break goes on for a while,\nthe cat will let you know \"Break is over\".",
+      "ko": "휴식이 길어질 때\n고양이가 '휴식 끝'을 알려줘요.",
+      "zhTW": "當休息時間過長時，\n貓咪會提醒您「休息結束」。",
+      "notes": "休憩おしまい"
+    },
+    {
+      "key": "ios120Item4",
+      "en": "Fixed an issue where records were saved in Japan time\nwhen used overseas.",
+      "ko": "해외에서 사용할 때 기록이 일본 시간으로 남는\n문제를 수정했어요.",
+      "zhTW": "修正了在海外使用時，\n紀錄會變成日本時間的問題。",
+      "notes": "日本時間"
+    },
+    {
+      "key": "ios120Item5",
+      "en": "You can now collapse the list of deleted tasks.",
+      "ko": "지운 작업 목록을 접을 수 있게 돼요.",
+      "zhTW": "您可以將已刪除的作業清單收合起來了。",
+      "notes": "UI用語「けした作業」"
+    },
+    {
+      "key": "ios120Item6",
+      "en": "The maximum goal time will be\n168 hours per week and 24 hours per day.",
+      "ko": "목표 시간의 상한이\n주 168시간, 하루 24시간이 돼요.",
+      "zhTW": "目標時間的上限\n將變為每週168小時、每日24小時。",
+      "notes": "週168時間・1日24時間"
+    },
+    {
+      "key": "ios120Item7",
+      "en": "You can open the contact page from the Settings.",
+      "ko": "설정에서 문의 페이지를 열 수 있어요.",
+      "zhTW": "您可以從設定中開啟聯絡我們的頁面。",
+      "notes": "お問い合わせページ"
+    },
+    {
+      "key": "ios110Item1",
+      "en": "Editing records is now confirmed\nby pressing \"Save\".",
+      "ko": "기록 수정은 '저장하기'를 눌러\n확정하는 방식으로 바뀌었어요.",
+      "zhTW": "修改紀錄的流程已改為\n按下「儲存」來確認。",
+      "notes": "UI用語「保存する」"
+    },
+    {
+      "key": "ios110Item2",
+      "en": "Fragmented records caused by misclicks\nwill be combined and counted as one.",
+      "ko": "잘못 눌러서 잘게 쪼개진 기록을\n하나로 이어서 계산해요.",
+      "zhTW": "因誤觸而變得零碎的紀錄，\n將會合併為一筆來計算。",
+      "notes": "細切れになった記録"
+    },
+    {
+      "key": "ios110Item3",
+      "en": "You can restore deleted task categories from the Settings.\nYou can also reuse the same name.",
+      "ko": "지운 작업 카테고리를 설정에서 되돌릴 수 있어요.\n같은 이름을 다시 붙일 수도 있어요.",
+      "zhTW": "您可以從設定中還原已刪除的作業類別。\n也可以重新取相同的名稱。",
+      "notes": "UI用語「けした作業」「作業のカテゴリ」"
+    },
+    {
+      "key": "ios110Item4",
+      "en": "Added 2 long-haired cats\n(Fluffy Black Cat, Fluffy Brown Cat)",
+      "ko": "장모종 고양이가 2마리 늘었어요\n(폭신검은고양이, 폭신갈색고양이)",
+      "zhTW": "增加了2隻長毛貓咪\n（蓬鬆黑貓、蓬鬆焦糖貓）",
+      "notes": "ねこの種類"
+    },
+    {
+      "key": "ios110Item5",
+      "en": "You can \"Share last week as an image\"\nanytime from the Week screen.",
+      "ko": "주 화면에서 언제든지\n'지난주를 이미지로 공유'할 수 있어요.",
+      "zhTW": "您可以隨時從週畫面\n「將上週紀錄以圖片分享」。",
+      "notes": "先週を画像で共有"
+    },
+    {
+      "key": "ios110Item6",
+      "en": "Even while working, you can edit\nthe \"Start\" time of that session.",
+      "ko": "일하는 도중에도 그 작업의\n'시작' 시간을 수정할 수 있어요.",
+      "zhTW": "即使在工作中，\n也能修改該次作業的「開始」時間。",
+      "notes": "「はじめ」の時刻"
+    },
+    {
+      "key": "ios100Item1",
+      "en": "Released the app made together with cats.",
+      "ko": "고양이와 함께 만든 앱을 공개했어요.",
+      "zhTW": "發布了與貓咪一起製作的應用程式。",
+      "notes": "ねこと一緒に作ったアプリ"
+    },
+    {
+      "key": "androidPaneLabel",
+      "en": "Android Updates",
+      "ko": "Android 업데이트",
+      "zhTW": "Android 更新",
+      "notes": "Android のアップデート"
+    },
+    {
+      "key": "android202Item1",
+      "en": "Fixes an issue where text overlaps or breaks\nwhen entering names or task categories\nin Japanese.",
+      "ko": "이름이나 작업 카테고리를 일본어로 입력하면\n글자가 겹치거나 깨지는\n문제를 수정해요.",
+      "zhTW": "修正輸入日文名稱或作業類別時，\n文字會重疊或跑版的\n問題。",
+      "notes": "UI用語「作業のカテゴリ」"
+    },
+    {
+      "key": "android202Item2",
+      "en": "Shortens the display time of notifications at the bottom,\nand allows them to be closed\nby swiping down.",
+      "ko": "화면 아래 알림의 표시 시간을 짧게 맞추고,\n아래로 스와이프해도\n닫을 수 있게 해요.",
+      "zhTW": "縮短畫面下方通知的顯示時間，\n並支援向下滑動\n即可關閉。",
+      "notes": "お知らせの表示時間"
+    },
+    {
+      "key": "android202Item3",
+      "en": "New records will be added directly\nonce the start and end times are set.\nYou can input them in any order.",
+      "ko": "새로운 기록은 시작과 끝을 정하면\n그대로 추가되도록 바뀌어요.\n어느 시간부터든 입력할 수 있어요.",
+      "zhTW": "新增紀錄時，只要設定好開始與結束時間\n就會直接加入。\n您可以從任一時間開始輸入。",
+      "notes": "はじめとおわり"
+    },
+    {
+      "key": "android202Item4",
+      "en": "When editing an existing record,\nyou will now confirm the changes\nwith \"Done\" in the top right.",
+      "ko": "지금 있는 기록을 수정할 때는\n오른쪽 위 '완료'로\n변경을 확정하게 돼요.",
+      "zhTW": "修改現有紀錄時，\n將改為點選右上角的「完成」\n來確認變更。",
+      "notes": "「おわる」ボタン"
+    },
+    {
+      "key": "android201Item1",
+      "en": "You can now choose the \"Daily reset time\"\nfrom 12:00 AM\nto 12:00 PM.",
+      "ko": "'하루가 바뀌는 시간'을\n0시부터 낮 12시까지\n고를 수 있게 되었어요.",
+      "zhTW": "現在可以將「一天的切換時間」\n設定在0點\n至中午12點之間了。",
+      "notes": "UI用語「1日のきりかえ時刻」"
+    },
+    {
+      "key": "android201Item2",
+      "en": "Fixed an issue on the Month screen\nwhere previous month's records sometimes appeared\nin the following month.",
+      "ko": "월 화면에서 이전 달의 기록이\n다음 달에 있는 것처럼 보일 수 있는\n문제를 수정했어요.",
+      "zhTW": "修正了在月畫面中，\n上個月的紀錄有時會顯示在下個月的\n問題。",
+      "notes": "UI用語「月」"
+    },
+    {
+      "key": "android200Item1",
+      "en": "Fixed an issue where the calendar on the Month screen\ndoes not switch correctly\nwhen \"Start of week\" is set to Monday.",
+      "ko": "'한 주의 시작'을 월요일로 했을 때\n월 화면의 달력이\n바뀌지 않는 문제를 수정했어요.",
+      "zhTW": "修正當「一週的開始」設為星期一時，\n月畫面的日曆\n無法正常切換的問題。",
+      "notes": "UI用語「週のはじまり」「月」"
+    },
+    {
+      "key": "android200Item2",
+      "en": "Fixed an issue where \"Time to suggest a break\"\ncannot be increased again\nafter lowering it to 1 hour.",
+      "ko": "'휴식을 권하는 시간'을 1시간까지 내리면\n다시 늘릴 수 없게 되는 문제를\n수정했어요.",
+      "zhTW": "修正將「建議休息時間」調降至1小時後，\n就無法再次增加的\n問題。",
+      "notes": "UI用語「休憩にさそう時間」"
+    },
+    {
+      "key": "android200Item3",
+      "en": "Fixed an issue where pressing \"Save\"\nwhile \"Add record\" is open clears the input\nand leaves nothing behind.",
+      "ko": "'기록 더하기'를 열어둔 채로\n'저장하기'를 누르면 입력이 지워지고\n아무것도 남지 않는 문제를 수정했어요.",
+      "zhTW": "修正在開啟「新增紀錄」的狀態下\n按下「儲存」時，輸入內容會消失\n且未留下任何紀錄的問題。",
+      "notes": "UI用語「記録を足す」「保存する」"
+    },
+    {
+      "key": "android200Item4",
+      "en": "Fixed an issue where the \"Back\" button\nwould close the app.",
+      "ko": "'뒤로 가기' 버튼으로 앱이 종료되어 버리는\n문제를 수정했어요.",
+      "zhTW": "修正按下「返回」按鈕時\n應用程式會關閉的問題。",
+      "notes": "「戻る」ボタン"
+    },
+    {
+      "key": "android200Item5",
+      "en": "In addition, fixed other issues related to records\nand keyboard display.",
+      "ko": "그 밖에 기록 관련 문제와\n키보드 표시 문제를 수정했어요.",
+      "zhTW": "此外，也修正了紀錄相關\n與鍵盤顯示的問題。",
+      "notes": "記録まわり"
+    },
+    {
+      "key": "android110Item1",
+      "en": "Added 3 long-haired cats\n(Fluffy White Cat, Fluffy Black Cat, Fluffy Brown Cat)",
+      "ko": "장모종 고양이가 3마리 늘었어요\n(폭신하얀고양이, 폭신검은고양이, 폭신갈색고양이)",
+      "zhTW": "增加了3隻長毛貓咪\n（蓬鬆白貓、蓬鬆黑貓、蓬鬆焦糖貓）",
+      "notes": "ねこの種類"
+    },
+    {
+      "key": "android110Item2",
+      "en": "When the week changes, \"Last week's review\" appears,\nand you can share it as an image card.",
+      "ko": "주가 바뀌면 '지난주 돌아보기'가 나오고,\n이미지 카드로 공유할 수 있어요.",
+      "zhTW": "換週時會出現「上週回顧」，\n並能以圖片卡片分享。",
+      "notes": "先週のふりかえり"
+    },
+    {
+      "key": "android110Item3",
+      "en": "You can now achieve your weekly goal\nusing what you worked hard on last week (Good Job Savings).",
+      "ko": "지난주에 열심히 한 만큼(수고 저금)으로\n이번 주 목표를 달성할 수 있게 돼요.",
+      "zhTW": "您可以使用上週努力的時數（辛苦撲滿）\n來達成當週的目標了。",
+      "notes": "がんばった貯金"
+    },
+    {
+      "key": "futureHeading",
+      "en": "What we want to do next",
+      "ko": "앞으로 하고 싶은 일",
+      "zhTW": "未來想做的事",
+      "notes": "そのさき やりたいこと"
+    },
+    {
+      "key": "futureLead",
+      "en": "These are things we want to do,\nmainly based on the requests we received.\nThe order has not been decided yet.",
+      "ko": "건의 사항으로 보내주신 의견을 중심으로\n해보고 싶은 일들이에요.\n순서는 아직 정하지 않았어요.",
+      "zhTW": "這些是我們想做的事，\n主要來自大家提供的建議與回饋。\n實作順序尚未決定。",
+      "notes": "ごようぼう"
+    },
+    {
+      "key": "future1",
+      "en": "Set daily and weekly goals in increments smaller than 1 hour",
+      "ko": "하루 및 일주일 목표를 1시간보다 세밀하게 설정하기",
+      "zhTW": "將每日與每週目標設定得比1小時更精細",
+      "notes": "1時間より細かく設定する"
+    },
+    {
+      "key": "future2",
+      "en": "Set different daily goals for each day of the week",
+      "ko": "요일마다 하루 목표 다르게 설정하기",
+      "zhTW": "依據不同星期幾設定不同的每日目標",
+      "notes": "曜日ごとに目標を変える"
+    },
+    {
+      "key": "future3",
+      "en": "Choose cat's fur and eye colors, and keep multiple cats",
+      "ko": "고양이 털색과 눈동자 색 고르기, 여러 마리 키우기",
+      "zhTW": "選擇貓咪的毛色與眼睛顏色、飼養多隻貓咪",
+      "notes": "多頭飼い"
+    },
+    {
+      "key": "future4",
+      "en": "Pet the cat and give treats",
+      "ko": "고양이 쓰다듬기, 간식 주기",
+      "zhTW": "摸摸貓咪、給貓咪獎勵",
+      "notes": "なでる、ごほうび"
+    },
+    {
+      "key": "future5",
+      "en": "Show the cat on widgets and lock screens to clock in and out",
+      "ko": "위젯이나 잠금 화면에 고양이를 띄우고 기록하기",
+      "zhTW": "在小工具或鎖定畫面顯示貓咪並進行打卡",
+      "notes": "ウィジェット、ロック画面"
+    },
+    {
+      "key": "future6",
+      "en": "Clock in and out from Apple Watch",
+      "ko": "Apple Watch에서 기록하기",
+      "zhTW": "透過 Apple Watch 打卡",
+      "notes": "Apple Watch"
+    },
+    {
+      "key": "future7",
+      "en": "Export records as CSV",
+      "ko": "기록을 CSV로 내보내기",
+      "zhTW": "將紀錄匯出為 CSV",
+      "notes": "CSV書き出し"
+    },
+    {
+      "key": "future8",
+      "en": "Repeated break invitations and daily reminders",
+      "ko": "반복되는 휴식 권유 및 매일 리마인더",
+      "zhTW": "重複的休息邀請與每日提醒",
+      "notes": "休憩さそい、リマインダー"
+    },
+    {
+      "key": "future9",
+      "en": "Add more theme colors and colors for work categories",
+      "ko": "테마 색상 및 작업 카테고리 색상 추가하기",
+      "zhTW": "增加主題顏色與作業分類的顏色",
+      "notes": "テーマカラー、作業カテゴリ"
+    },
+    {
+      "key": "future10",
+      "en": "Sound effects for actions",
+      "ko": "조작 효과음",
+      "zhTW": "操作音效",
+      "notes": "効果音"
+    },
+    {
+      "key": "future11",
+      "en": "Completely delete \"Deleted tasks\" with 0 hours recorded",
+      "ko": "기록이 0시간인 '지운 작업' 완전히 삭제하기",
+      "zhTW": "完全刪除紀錄為0小時的「刪除的作業」",
+      "notes": "けした作業の完全削除"
+    },
+    {
+      "key": "futureNote",
+      "en": "Once completed, they will be moved\nto the version section on this page.",
+      "ko": "완성된 것부터 이 페이지의\n버전 항목으로 옮겨갈 예정이에요.",
+      "zhTW": "完成的項目會陸續移到\n這個頁面的版本區塊中。",
+      "notes": "完了したものから順次移動させる旨を訳出"
+    },
+    {
+      "key": "wantMoreBeforeLink",
+      "en": "If you have any \"I want this too\" requests, please let me know via the ",
+      "ko": "\"이것도 있었으면 좋겠다\" 하는 기능이 있다면 ",
+      "zhTW": "如果有「我也想要這個」的想法，請透過",
+      "notes": "リンク前"
+    },
+    {
+      "key": "contactFormLink",
+      "en": "request form",
+      "ko": "건의 사항 폼",
+      "zhTW": "建議與回饋表單",
+      "notes": "リンクテキスト"
+    },
+    {
+      "key": "wantMoreAfterLink",
+      "en": ".",
+      "ko": "으로 알려주세요.",
+      "zhTW": "告訴我。",
+      "notes": "リンク後"
+    },
+    {
+      "key": "backToTop",
+      "en": "← Back to ねこ勤怠 page",
+      "ko": "← ねこ勤怠 페이지로 돌아가기",
+      "zhTW": "← 返回 ねこ勤怠 頁面",
+      "notes": "トップへ戻る"
+    },
+    {
+      "key": "faqLink",
+      "en": "FAQ",
+      "ko": "자주 묻는 질문",
+      "zhTW": "常見問題",
+      "notes": "固定訳"
+    },
+    {
+      "key": "contactLink",
+      "en": "Requests",
+      "ko": "건의 사항",
+      "zhTW": "建議與回饋",
+      "notes": "固定訳"
+    },
+    {
+      "key": "privacyLink",
+      "en": "Privacy Policy",
+      "ko": "개인정보 처리방침",
+      "zhTW": "隱私權政策",
+      "notes": "固定訳"
+    }
+  ]
+}

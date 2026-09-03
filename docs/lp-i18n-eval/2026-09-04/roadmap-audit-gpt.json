@@ -1,0 +1,239 @@
+{
+  "generatedAt": "2026-09-03T20:45:13.717Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "summaryJapanese": "critical はありません。high 2件、medium 31件です。主な問題は、韓国語で「打刻」が一般的な「記録」に弱められている点、未翻訳の日本語UI名、同一UIラベル・機能名の用語揺れ、韓国語の助詞、台湾向け繁体字として不自然な「作業類別」「用戶」、およびストア配信や入力順に関する意味のずれです。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "whenInReview",
+      "severity": "medium",
+      "replacement": "Submitted for review. Please wait a little longer for it to become available in the store.",
+      "reasonJapanese": "「ストアから届く」という物理的な配送のような意味になっています。ストアで利用可能になることを示す文に直します。"
+    },
+    {
+      "locale": "en",
+      "key": "ios210Item3",
+      "severity": "medium",
+      "replacement": "You can now long-press cats in the Cat Shop\nto rearrange them in your preferred order.",
+      "reasonJapanese": "通常の英語UI内に「ねこ屋さん」だけが未翻訳で混入しています。ブランド名ではない画面名なので英訳します。"
+    },
+    {
+      "locale": "en",
+      "key": "ios201Item5",
+      "severity": "medium",
+      "replacement": "Tapping the time opens a number pad,\nwhere you can enter the time in 1-minute increments.\n[+] and [−] adjust it in 10-minute increments.",
+      "reasonJapanese": "現訳は「数字パネルが1分刻み用」という係り方になり、時刻を1分単位で入力できるという意味が明確に伝わりません。"
+    },
+    {
+      "locale": "en",
+      "key": "ios201Item13",
+      "severity": "medium",
+      "replacement": "Fixes an issue where pressing \"Save\"\nwhile \"Add Record\" is open clears the input\nand leaves nothing behind.",
+      "reasonJapanese": "同じUIラベルが別項目では「Add Record」なのに、この項目だけ「Add record」になっています。"
+    },
+    {
+      "locale": "en",
+      "key": "ios110Item3",
+      "severity": "medium",
+      "replacement": "You can restore deleted work categories from Settings.\nYou can also reuse the same name.",
+      "reasonJapanese": "同じ「作業カテゴリ」がページ内で「work categories」と「task categories」に揺れています。"
+    },
+    {
+      "locale": "en",
+      "key": "android202Item1",
+      "severity": "medium",
+      "replacement": "Fixes an issue where text overlaps or breaks\nwhen entering names or work categories\nin Japanese.",
+      "reasonJapanese": "同じ「作業カテゴリ」が他項目の「work categories」ではなく「task categories」になっています。"
+    },
+    {
+      "locale": "en",
+      "key": "android201Item1",
+      "severity": "medium",
+      "replacement": "You can now choose the \"Start of Day\"\nfrom 12:00 AM\nto 12:00 PM.",
+      "reasonJapanese": "同じ設定名がiOSでは「Start of Day」、Androidでは「Daily reset time」と異なっています。"
+    },
+    {
+      "locale": "en",
+      "key": "android200Item3",
+      "severity": "medium",
+      "replacement": "Fixed an issue where pressing \"Save\"\nwhile \"Add Record\" is open clears the input\nand leaves nothing behind.",
+      "reasonJapanese": "同じUIラベルが別項目では「Add Record」なのに、この項目だけ「Add record」になっています。"
+    },
+    {
+      "locale": "en",
+      "key": "future8",
+      "severity": "medium",
+      "replacement": "Recurring break prompts and daily reminders",
+      "reasonJapanese": "「break invitations」は人から休憩へ招待される意味に寄り、アプリによる休憩の促しという機能内容が正確に伝わりません。"
+    },
+    {
+      "locale": "ko",
+      "key": "documentDescription",
+      "severity": "medium",
+      "replacement": "ねこ勤怠의 향후 업데이트 일정과 지난 업데이트 내역을 안내해 드려요. iOS와 Android의 진행 상황도 각각 확인할 수 있어요.",
+      "reasonJapanese": "ソフトウェア更新に「갱신 내용」を使っており、見出しの「업데이트」と用語が揺れています。韓国語UIでは「업데이트 내역」が自然です。"
+    },
+    {
+      "locale": "ko",
+      "key": "showMore",
+      "severity": "medium",
+      "replacement": "업데이트 내역 {{count}}건 더 보기",
+      "reasonJapanese": "同じ更新情報を指す語が「업데이트」と「갱신」に揺れています。"
+    },
+    {
+      "locale": "ko",
+      "key": "showLess",
+      "severity": "medium",
+      "replacement": "업데이트 내역 접기",
+      "reasonJapanese": "「갱신」は他の更新関連ラベルと用語が揺れています。また、展開部分を戻す操作には「닫기」より「접기」が適切です。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios210Item3",
+      "severity": "medium",
+      "replacement": "고양이 가게에서 고양이를 길게 눌러\n원하는 순서대로 바꿀 수 있어요.",
+      "reasonJapanese": "通常の韓国語UI内に「ねこ屋さん」だけが未翻訳で混入しています。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios201Item5",
+      "severity": "medium",
+      "replacement": "시간을 누르면 숫자 키패드가 열려서,\n1분 단위로 입력할 수 있어요.\n[+]와 [−]는 10분 단위로 조절돼요.",
+      "reasonJapanese": "「[+][-]는」は二つのボタンを並べる助詞のつなぎ方が不自然です。「와」で並列関係を明示します。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios201Item13",
+      "severity": "medium",
+      "replacement": "'기록 추가'를 열어둔 채로\n'저장하기'를 누르면 입력이 지워지고\n아무것도 남지 않는 문제를 수정해요.",
+      "reasonJapanese": "同じUIラベルが別項目では「기록 추가」、この項目では「기록 더하기」と揺れています。"
+    },
+    {
+      "locale": "ko",
+      "key": "android201Item1",
+      "severity": "medium",
+      "replacement": "'하루의 시작 시간'을\n0시부터 낮 12시까지\n선택할 수 있게 되었어요.",
+      "reasonJapanese": "同じ設定名がiOSでは「하루의 시작 시간」、Androidでは「하루가 바뀌는 시간」と異なっています。"
+    },
+    {
+      "locale": "ko",
+      "key": "android202Item3",
+      "severity": "medium",
+      "replacement": "새 기록은 시작과 종료 시간을 정하면\n바로 추가돼요.\n시작과 종료 중 어느 쪽부터든 입력할 수 있어요.",
+      "reasonJapanese": "「어느 시간부터든」では任意の時刻から入力できる意味にも読めます。開始時刻と終了時刻のどちらを先に入力してもよいことを明示します。"
+    },
+    {
+      "locale": "ko",
+      "key": "android200Item3",
+      "severity": "medium",
+      "replacement": "'기록 추가'를 열어둔 채로\n'저장하기'를 누르면 입력이 지워지고\n아무것도 남지 않는 문제를 수정했어요.",
+      "reasonJapanese": "同じUIラベルが別項目では「기록 추가」、この項目では「기록 더하기」と揺れています。"
+    },
+    {
+      "locale": "ko",
+      "key": "future5",
+      "severity": "high",
+      "replacement": "위젯이나 잠금 화면에 고양이를 표시하고 출퇴근을 기록하기",
+      "reasonJapanese": "「기록하기」だけでは一般的な記録作成を意味し、打刻機能であることが欠落しています。"
+    },
+    {
+      "locale": "ko",
+      "key": "future6",
+      "severity": "high",
+      "replacement": "Apple Watch에서 출퇴근 기록하기",
+      "reasonJapanese": "「기록하기」だけでは一般的な記録作成に読め、Apple Watchから打刻する機能だという重要な意味が欠落しています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios230Item1",
+      "severity": "medium",
+      "replacement": "將支援英文、韓文與繁體中文。\n也可以從海外 App Store\n下載。",
+      "reasonJapanese": "「將支援」という未来表現に対して「下載了」は完了を表し、同じ項目内で時制と意味が矛盾しています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "whenPublished",
+      "severity": "medium",
+      "replacement": "已發布。可能需要約 1 天才會在您的裝置上顯示更新。",
+      "reasonJapanese": "「推送到裝置」はプッシュ配信を行う意味になりますが、原文はストア反映に時間差があることだけを述べています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios210Item3",
+      "severity": "medium",
+      "replacement": "在貓咪商店中長按貓咪，\n就可以依喜好調整順序。",
+      "reasonJapanese": "通常の繁体字UI内に「ねこ屋さん」だけが未翻訳で混入しています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios201Item1",
+      "severity": "medium",
+      "replacement": "「換日時間」現在可以\n從凌晨 0 點到中午 12 點之間\n自由選擇。",
+      "reasonJapanese": "「一天的切換時間」は日本語を直訳した表現です。台湾の勤怠・記録系UIでは「換日時間」が簡潔で自然です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios201Item6",
+      "severity": "medium",
+      "replacement": "長按工作類別，\n就可以依喜好調整順序。",
+      "reasonJapanese": "勤怠アプリの仕事区分に「作業類別」を使うのは日本語寄りです。台湾向けUIでは「工作類別」が自然です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios201Item7",
+      "severity": "medium",
+      "replacement": "即使在下班後或休息期間，\n也能重新選擇其他工作類別\n並「繼續工作」（錯誤修正）。",
+      "reasonJapanese": "勤怠アプリの仕事区分に「作業類別」を使うのは日本語寄りです。台湾向けの「工作類別」に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios201Note",
+      "severity": "medium",
+      "replacement": "您至今的紀錄將會原封不動地保留。\n只有淺色／深色外觀的設定無法繼承，\n因此使用深色外觀的使用者，請在更新後\n至設定中重新選擇。",
+      "reasonJapanese": "「用戶」は中国大陸寄りの語彙です。台湾向けUIでは「使用者」が一般的です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios110Item3",
+      "severity": "medium",
+      "replacement": "您可以從設定中還原已刪除的工作類別。\n也可以重新使用相同的名稱。",
+      "reasonJapanese": "「作業類別」は日本語寄りで、台湾の勤怠アプリでは「工作類別」が自然です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "android202Item1",
+      "severity": "medium",
+      "replacement": "修正以日文輸入名稱或工作類別時，\n文字會重疊或跑版的\n問題。",
+      "reasonJapanese": "「作業類別」は日本語寄りで、台湾向けの勤怠UIでは「工作類別」が自然です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "android202Item3",
+      "severity": "medium",
+      "replacement": "新增紀錄時，只要設定好開始與結束時間\n就會直接加入。\n開始或結束時間都可以先輸入。",
+      "reasonJapanese": "「從任一時間開始輸入」では任意の時刻から入力できる意味にも読めます。開始時刻と終了時刻のどちらを先に入力してもよいことを明示します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "android201Item1",
+      "severity": "medium",
+      "replacement": "「換日時間」現在可以\n從凌晨 0 點到中午 12 點之間\n自由選擇。",
+      "reasonJapanese": "同じ設定名の「一天的切換時間」は日本語を直訳した表現です。台湾向けUIでは「換日時間」が自然です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "future8",
+      "severity": "medium",
+      "replacement": "定期休息提醒與每日提醒",
+      "reasonJapanese": "「休息邀請」は人を休憩へ招待する意味になり、アプリが定期的に休憩を促す機能だと伝わりにくくなっています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "future9",
+      "severity": "medium",
+      "replacement": "增加主題色彩與工作類別配色",
+      "reasonJapanese": "「作業分類」は日本語寄りの語彙で、他のカテゴリ項目とも用語が揺れます。台湾向けの「工作類別」に統一します。"
+    }
+  ]
+}

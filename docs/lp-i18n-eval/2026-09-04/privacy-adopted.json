@@ -1,0 +1,40 @@
+{
+  "draft": "privacy-gemini-initial.json",
+  "audits": {
+    "claude-fable": "privacy-audit-claude-fable.json",
+    "gpt": "privacy-audit-gpt.json"
+  },
+  "adopt": [
+    { "locale": "en", "key": "governingLanguage", "from": "gpt" },
+    { "locale": "en", "key": "purchaseBody2", "from": "gpt" },
+    { "locale": "en", "key": "sitePurpose", "from": "gpt" },
+
+    { "locale": "ko", "key": "governingLanguage", "from": "gpt" },
+    { "locale": "ko", "key": "purchaseBody2", "from": "gpt" },
+    { "locale": "ko", "key": "inquiryBeforeEmail", "from": "gpt" },
+    { "locale": "ko", "key": "revisionBody", "from": "gpt" },
+    { "locale": "ko", "key": "dataIntro", "from": "claude-fable" },
+    { "locale": "ko", "key": "emailNote", "from": "claude-fable" },
+
+    { "locale": "zh-TW", "key": "dataLocal", "from": "gpt" },
+    { "locale": "zh-TW", "key": "noPersonalInfo", "from": "gpt" },
+    { "locale": "zh-TW", "key": "backupBody", "from": "claude-fable" },
+    { "locale": "zh-TW", "key": "purchaseBody2", "from": "gpt" },
+    { "locale": "zh-TW", "key": "siteSentInfo", "from": "gpt" },
+    { "locale": "zh-TW", "key": "recipientLabel", "from": "gpt" },
+    { "locale": "zh-TW", "key": "storageLabel", "from": "gpt" },
+    { "locale": "zh-TW", "key": "emailNote", "from": "claude-fable" }
+  ],
+  "manual": [
+    { "locale": "en", "key": "cookieBetweenLinks", "text": ". For information on how Google handles data, please check " },
+    { "locale": "zh-TW", "key": "governingLanguage", "text": "本隱私權政策以日文版為準，翻譯版本僅供參考。" },
+    { "locale": "zh-TW", "key": "inquiryBeforeEmail", "text": "關於本隱私權政策的詢問：" },
+    { "locale": "en", "key": "updatedAt", "text": "Last updated: September 4, 2026" },
+    { "locale": "ko", "key": "updatedAt", "text": "최종 업데이트: 2026년 9월 4일" },
+    { "locale": "zh-TW", "key": "updatedAt", "text": "最後更新日期：2026年9月4日" }
+  ],
+  "replace": [
+    { "locale": "zh-TW", "from": "本政策", "to": "本隱私權政策" },
+    { "locale": "zh-TW", "from": "邀請休息", "to": "提醒休息" }
+  ]
+}

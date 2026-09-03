@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" data-i18n-source="/assets/privacy/locales.json">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>プライバシーポリシー | ねこ勤怠</title>
-<meta name="description" content="ねこ勤怠のプライバシーポリシー。記録はすべて端末内に保存され、外部に送信されません。">
+<title data-i18n="documentTitle">プライバシーポリシー | ねこ勤怠</title>
+<meta name="description" data-i18n-content="documentDescription" content="ねこ勤怠のプライバシーポリシー。記録はすべて端末内に保存され、外部に送信されません。">
 <link rel="canonical" href="https://nekokintai.com/privacy/">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2J5J902MFE"></script>
@@ -14,6 +14,7 @@
   gtag('js', new Date());
   gtag('config', 'G-2J5J902MFE');
 </script>
+<script type="module" src="/assets/lp/i18n.mjs"></script>
 <style>
   :root { color-scheme: light; }
   body {
@@ -42,59 +43,72 @@
   strong { color: #155C69; }
   a { color: #1B7E90; }
   .home { display: inline-block; margin-top: 28px; font-size: 13px; }
+  .locale-switcher{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px;}
+  .locale-switcher button{border:1px solid #DCEDF2;border-radius:999px;background:#FFFFFF;color:#155C69;font:inherit;font-size:12px;line-height:1.2;padding:6px 10px;cursor:pointer;}
+  .locale-switcher button[aria-pressed="true"]{border-color:#0C3A44;background:#FFDE59;color:#0C3A44;}
+  .locale-switcher button:focus-visible{outline:2px solid #155C69;outline-offset:3px;}
+  .governing { font-size: 12px; color: #7FA6AF; margin: 0 0 24px; }
 </style>
 </head>
 <body>
 <main>
   <div class="card">
-    <h1>ねこ勤怠 プライバシーポリシー</h1>
-    <p class="updated">最終更新日: 2026年8月31日</p>
+    <h1 data-i18n="heading">ねこ勤怠 プライバシーポリシー</h1>
+    <p class="updated" data-i18n="updatedAt">最終更新日: 2026年9月4日</p>
 
-    <h2>このアプリが扱う情報について</h2>
-    <p>「ねこ勤怠」（以下「本アプリ」）は、あなたの働いた時間を記録するためのアプリです。</p>
+    <nav class="locale-switcher" data-i18n-aria-label="languageSelector" aria-label="言語">
+      <button type="button" data-locale="ja" aria-pressed="true">日本語</button>
+      <button type="button" data-locale="en" aria-pressed="false">English</button>
+      <button type="button" data-locale="ko" aria-pressed="false">한국어</button>
+      <button type="button" data-locale="zh-TW" aria-pressed="false">繁體中文</button>
+    </nav>
+    <p class="governing" data-i18n="governingLanguage">本ポリシーの正文は日本語版です。翻訳は参考として提供しています。</p>
+
+    <h2 data-i18n="dataHeading">このアプリが扱う情報について</h2>
+    <p data-i18n="dataIntro">「ねこ勤怠」（以下「本アプリ」）は、あなたの働いた時間を記録するためのアプリです。</p>
     <ul>
-      <li><strong>記録されるデータ（打刻・作業カテゴリ・設定・ねこの名前など）は、すべてあなたの端末の中にのみ保存されます。</strong>外部のサーバーには送信されません</li>
-      <li>本アプリは、アカウント登録を必要としません</li>
-      <li>本アプリは、個人情報を収集しません</li>
-      <li>本アプリは、広告を表示せず、広告事業者へのデータ提供も行いません</li>
-      <li>本アプリは、アクセス解析・行動トラッキングを行いません（本アプリの紹介ウェブサイトについては「<a href="#site">本サイトについて</a>」をご覧ください）</li>
+      <li><strong data-i18n="dataLocal">記録されるデータ（打刻・作業カテゴリ・設定・ねこの名前など）は、すべてあなたの端末の中にのみ保存されます。</strong><span data-i18n="dataLocalRest">外部のサーバーには送信されません</span></li>
+      <li data-i18n="noAccount">本アプリは、アカウント登録を必要としません</li>
+      <li data-i18n="noPersonalInfo">本アプリは、個人情報を収集しません</li>
+      <li data-i18n="noAds">本アプリは、広告を表示せず、広告事業者へのデータ提供も行いません</li>
+      <li><span data-i18n="noTrackingBeforeLink">本アプリは、アクセス解析・行動トラッキングを行いません（本アプリの紹介ウェブサイトについては「</span><a data-i18n="siteHeading" href="#site">本サイトについて</a><span data-i18n="noTrackingAfterLink">」をご覧ください）</span></li>
     </ul>
 
-    <h2>通知について</h2>
-    <p>休憩のおさそいなどの通知は、端末内のローカル通知機能で行います。通知のために外部サーバーとの通信は行いません。通知は端末の設定からいつでも無効にできます。</p>
+    <h2 data-i18n="notificationsHeading">通知について</h2>
+    <p data-i18n="notificationsBody">休憩のおさそいなどの通知は、端末内のローカル通知機能で行います。通知のために外部サーバーとの通信は行いません。通知は端末の設定からいつでも無効にできます。</p>
 
-    <h2>バックアップについて</h2>
-    <p>「設定 → バックアップ」で書き出されるファイルは、あなたが選んだ保存先にのみ保存されます。開発者がその内容を受け取ることはありません。</p>
+    <h2 data-i18n="backupHeading">バックアップについて</h2>
+    <p data-i18n="backupBody">「設定 → バックアップ」で書き出されるファイルは、あなたが選んだ保存先にのみ保存されます。開発者がその内容を受け取ることはありません。</p>
 
-    <h2>アプリ内課金について</h2>
-    <p>本アプリでは、開発を応援するための月額プラン（自動更新）を提供します。応援中はお礼として特別なねこを選べます。決済と購入状況の管理は Apple / Google の仕組みで行われ、開発者がクレジットカード情報等を受け取ることはありません。</p>
-    <p>月額プランの利用状況はストアへ問い合わせて端末内に保存します。購入情報を開発者のサーバーへ送信することはありません。解約や更新状況の確認は、Apple / Google のサブスクリプション管理画面から行えます。</p>
+    <h2 data-i18n="purchaseHeading">アプリ内課金について</h2>
+    <p data-i18n="purchaseBody1">本アプリでは、開発を応援するための月額プラン（自動更新）を提供します。応援中はお礼として特別なねこを選べます。決済と購入状況の管理は Apple / Google の仕組みで行われ、開発者がクレジットカード情報等を受け取ることはありません。</p>
+    <p data-i18n="purchaseBody2">月額プランの利用状況はストアへ問い合わせて端末内に保存します。購入情報を開発者のサーバーへ送信することはありません。解約や更新状況の確認は、Apple / Google のサブスクリプション管理画面から行えます。</p>
 
-    <h2 id="site">本サイトについて</h2>
-    <p>ここまでの内容は、アプリ「ねこ勤怠」についてのものです。本アプリの紹介ウェブサイト（nekokintai.com）では、サイトの利用状況を把握するために、Google LLC が提供する「Google アナリティクス」を使用しています。</p>
+    <h2 id="site" data-i18n="siteHeading">本サイトについて</h2>
+    <p data-i18n="siteBody">ここまでの内容は、アプリ「ねこ勤怠」についてのものです。本アプリの紹介ウェブサイト（nekokintai.com）では、サイトの利用状況を把握するために、Google LLC が提供する「Google アナリティクス」を使用しています。</p>
     <ul>
-      <li><strong>送信先:</strong> Google LLC</li>
-      <li><strong>送信される情報:</strong> 閲覧したページ、参照元、ブラウザ・端末の種類、おおよその地域などの利用状況</li>
-      <li><strong>利用目的:</strong> 本サイトのアクセス状況の把握と改善</li>
+      <li><strong data-i18n="recipientLabel">送信先:</strong> Google LLC</li>
+      <li><strong data-i18n="sentInfoLabel">送信される情報:</strong><span data-i18n="siteSentInfo"> 閲覧したページ、参照元、ブラウザ・端末の種類、おおよその地域などの利用状況</span></li>
+      <li><strong data-i18n="purposeLabel">利用目的:</strong><span data-i18n="sitePurpose"> 本サイトのアクセス状況の把握と改善</span></li>
     </ul>
-    <p>これらは Cookie を用いて収集されますが、個人を特定するものではありません。ブラウザの設定で Cookie を無効にするか、<a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google アナリティクス オプトアウト アドオン</a>を使用することで収集を拒否できます。Google によるデータの取り扱いは<a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">こちら</a>をご確認ください。</p>
+    <p><span data-i18n="cookieBeforeOptOut">これらは Cookie を用いて収集されますが、個人を特定するものではありません。ブラウザの設定で Cookie を無効にするか、</span><a data-i18n="optOutLink" href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google アナリティクス オプトアウト アドオン</a><span data-i18n="cookieBetweenLinks">を使用することで収集を拒否できます。Google によるデータの取り扱いは</span><a data-i18n="googleDataLink" href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">こちら</a><span data-i18n="cookieAfterLinks">をご確認ください。</span></p>
 
-    <h2>ご意見・ご要望フォームについて</h2>
-    <p>本サイトの「ごようぼう」フォームから送信すると、以下の情報が開発者へ送られます。</p>
+    <h2 data-i18n="contactFormHeading">ご意見・ご要望フォームについて</h2>
+    <p data-i18n="contactFormBody">本サイトの「ごようぼう」フォームから送信すると、以下の情報が開発者へ送られます。</p>
     <ul>
-      <li><strong>送信される情報:</strong> よびかた（ニックネーム可）、ご要望の内容、（お返事を希望した場合のみ）メールアドレス、アプリから開いた場合は利用OS（iOS / Android）とアプリバージョン</li>
-      <li><strong>送信先と保存場所:</strong> 開発者（c_cya）が管理する AWS 上の問い合わせ管理システム</li>
-      <li><strong>利用目的:</strong> ご要望へのお返事と、アプリ改善の参考</li>
+      <li><strong data-i18n="sentInfoLabel">送信される情報:</strong><span data-i18n="contactSentInfo"> よびかた（ニックネーム可）、ご要望の内容、（お返事を希望した場合のみ）メールアドレス、アプリから開いた場合は利用OS（iOS / Android）とアプリバージョン</span></li>
+      <li><strong data-i18n="storageLabel">送信先と保存場所:</strong><span data-i18n="contactStorage"> 開発者（c_cya）が管理する AWS 上の問い合わせ管理システム</span></li>
+      <li><strong data-i18n="purposeLabel">利用目的:</strong><span data-i18n="contactPurpose"> ご要望へのお返事と、アプリ改善の参考</span></li>
     </ul>
-    <p>メールアドレスの入力は任意です。入力された場合もお返事のためだけに使用し、第三者への提供は行いません。</p>
+    <p data-i18n="emailNote">メールアドレスの入力は任意です。入力された場合もお返事のためだけに使用し、第三者への提供は行いません。</p>
 
-    <h2>お問い合わせ</h2>
-    <p>本ポリシーに関するお問い合わせ: <a href="mailto:support@c-cya.com">support@c-cya.com</a></p>
+    <h2 data-i18n="inquiryHeading">お問い合わせ</h2>
+    <p><span data-i18n="inquiryBeforeEmail">本ポリシーに関するお問い合わせ: </span><a href="mailto:support@c-cya.com">support@c-cya.com</a></p>
 
-    <h2>改定について</h2>
-    <p>本ポリシーを改定する場合は、本ページを更新します。</p>
+    <h2 data-i18n="revisionHeading">改定について</h2>
+    <p data-i18n="revisionBody">本ポリシーを改定する場合は、本ページを更新します。</p>
 
-    <a class="home" href="/">← ねこ勤怠 トップへ</a>
+    <a class="home" data-i18n="backToTop" href="/">← ねこ勤怠 トップへ</a>
   </div>
 </main>
 </body>

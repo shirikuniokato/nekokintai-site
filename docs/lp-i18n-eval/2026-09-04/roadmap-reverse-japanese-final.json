@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-09-03T20:49:08.987Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "summaryJapanese": "全体として意味はほぼ正確です。英語と繁體中文で同一の軽微な意味の欠落が2件あります。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "android202Item2",
+      "severity": "medium",
+      "backTranslationJapanese": "画面下のお知らせの表示時間を短くし、下向きにスワイプして閉じられるようにします。",
+      "reasonJapanese": "原文の「表示時間を短くそろえ」に含まれる、表示時間を統一する意味が抜けています。翻訳では短縮だけが伝わります。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "android202Item2",
+      "severity": "medium",
+      "backTranslationJapanese": "画面下のお知らせの表示時間を短くし、下向きにスワイプして閉じられるようにします。",
+      "reasonJapanese": "原文の「表示時間を短くそろえ」に含まれる、表示時間を統一する意味が抜けています。翻訳では短縮だけが伝わります。"
+    }
+  ]
+}

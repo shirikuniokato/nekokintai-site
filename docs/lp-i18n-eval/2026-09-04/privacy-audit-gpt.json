@@ -1,0 +1,113 @@
+{
+  "generatedAt": "2026-09-03T20:41:38.727Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "summaryJapanese": "criticalはありません。正文の法的な位置づけが弱まっている2件をhigh、購読状態の意味精度、韓国語の用語揺れ、台湾向け語彙・ラベルの不自然さなど13件をmediumと判定しました。責める表現、通常UIへの猫語混入、ブランド名・がんばった貯金の表記違反はありません。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "governingLanguage",
+      "severity": "high",
+      "replacement": "The Japanese version of this policy is authoritative. Translations are provided for reference only.",
+      "reasonJapanese": "「original text」では原文であることしか示さず、日本語版が正文であるという優先・拘束関係が欠落しています。"
+    },
+    {
+      "locale": "en",
+      "key": "purchaseBody2",
+      "severity": "medium",
+      "replacement": "Your monthly plan status is retrieved from the store and saved on your device. Purchase information is not sent to the developer's server. You can cancel or check your renewal status from the Apple / Google subscription management screen.",
+      "reasonJapanese": "「usage status」は利用頻度などの行動データにも読めます。ここで照会するのは月額プランの契約・利用可否の状態です。"
+    },
+    {
+      "locale": "en",
+      "key": "sitePurpose",
+      "severity": "medium",
+      "replacement": " To understand website traffic and improve this website",
+      "reasonJapanese": "「access status」はアクセシビリティや接続状態とも解釈でき、アクセス解析の目的を正確に表していません。"
+    },
+    {
+      "locale": "ko",
+      "key": "governingLanguage",
+      "severity": "high",
+      "replacement": "이 개인정보처리방침은 일본어판을 기준으로 해요. 번역본은 참고용으로 제공해요.",
+      "reasonJapanese": "「원본」は原文という意味にとどまり、日本語版が正文として優先されることを十分に示していません。あわせて文書名を「개인정보처리방침」に統一しています。"
+    },
+    {
+      "locale": "ko",
+      "key": "purchaseBody2",
+      "severity": "medium",
+      "replacement": "월간 플랜의 구독 상태는 스토어에서 확인해 기기 내에 저장해요. 구매 정보를 개발자의 서버로 전송하지 않아요. 해지나 갱신 상태 확인은 Apple / Google의 구독 관리 화면에서 할 수 있어요.",
+      "reasonJapanese": "「이용 상태」は利用状況データとも読めます。ストアから取得する契約状態には「구독 상태」が明確です。"
+    },
+    {
+      "locale": "ko",
+      "key": "inquiryBeforeEmail",
+      "severity": "medium",
+      "replacement": "본 개인정보처리방침에 관한 문의: ",
+      "reasonJapanese": "同じ文書を「개인정보처리방침」「방침」「정책」と呼び分けており、用語が揺れています。正式名称に統一する必要があります。"
+    },
+    {
+      "locale": "ko",
+      "key": "revisionBody",
+      "severity": "medium",
+      "replacement": "본 개인정보처리방침을 개정할 경우에는 이 페이지를 업데이트해요.",
+      "reasonJapanese": "同じ文書について他の箇所の「개인정보처리방침」と異なる「정책」を使用しているため、正式名称に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "dataLocal",
+      "severity": "medium",
+      "replacement": "所有記錄資料（打卡、工作類別、設定、貓咪名稱等）皆只儲存在您的裝置中。",
+      "reasonJapanese": "台湾では勤務内容のカテゴリに「工作類別」が自然です。「作業類別」は操作や宿題の分類にも読めます。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "noPersonalInfo",
+      "severity": "medium",
+      "replacement": "本應用程式不會收集個人資料。",
+      "reasonJapanese": "台湾のプライバシー・法務文脈では「個人資料」が標準的な用語です。「個人資訊」では文書内の用語精度が下がります。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "backupBody",
+      "severity": "medium",
+      "replacement": "透過「設定 → 備份」匯出的檔案，只會儲存在您選擇的位置。開發者不會收到檔案內容。",
+      "reasonJapanese": "保存先を「目的地」と呼ぶのは台湾向けのストレージ文脈では不自然です。「位置」が簡潔で自然です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "purchaseBody2",
+      "severity": "medium",
+      "replacement": "月費方案的訂閱狀態會向商店查詢並儲存於裝置中。不會將購買資訊傳送至開發者的伺服器。您可以從 Apple / Google 的訂閱管理畫面取消訂閱或確認續訂狀態。",
+      "reasonJapanese": "「使用狀態」は利用状況データとも読めます。ストアから照会する対象には「訂閱狀態」が正確です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "siteSentInfo",
+      "severity": "medium",
+      "replacement": " 瀏覽頁面、參照來源、瀏覽器與裝置類型、概略地區等使用資訊",
+      "reasonJapanese": "「大約的地區」は台湾華語として直訳調です。アクセス解析の地域粒度には「概略地區」が自然です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "recipientLabel",
+      "severity": "medium",
+      "replacement": "資料接收方：",
+      "reasonJapanese": "「傳送至」は後ろに目的語を直接取る表現で、独立した項目ラベルとしては不自然です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "storageLabel",
+      "severity": "medium",
+      "replacement": "資料接收方與儲存位置：",
+      "reasonJapanese": "「傳送至與儲存位置」は前置表現と名詞を並列しており文法的に不自然です。「資料接收方」とすれば項目名として成立します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "emailNote",
+      "severity": "medium",
+      "replacement": "電子郵件地址為選填。即使填寫，也只會用於回覆，不會提供給第三方。",
+      "reasonJapanese": "台湾のフォームUIでは「自由選項」ではなく「選填」が標準的です。置換文は意味を保ちながら表示も簡潔になります。"
+    }
+  ]
+}

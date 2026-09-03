@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" data-i18n-source="/assets/roadmap/locales.json">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>アップデートのよてい | ねこ勤怠</title>
-<meta name="description" content="ねこ勤怠のこれからのアップデート予定と、いままでの更新内容。iOS・Android それぞれの状況をのせています。">
+<title data-i18n="documentTitle">アップデートのよてい | ねこ勤怠</title>
+<meta name="description" data-i18n-content="documentDescription" content="ねこ勤怠のこれからのアップデート予定と、いままでの更新内容。iOS・Android それぞれの状況をのせています。">
 <link rel="canonical" href="https://nekokintai.com/roadmap/">
 <link rel="icon" type="image/png" href="/favicon.png">
 <!-- Google tag (gtag.js) -->
@@ -18,6 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+<script type="module" src="/assets/lp/i18n.mjs"></script>
 <style>
   :root{
     --ink:#0C3A44; --bg:#EAF4F7; --paper:#FFFFFF; --border:#DCEDF2;
@@ -30,6 +31,14 @@
   a:hover{color:var(--ink);}
   a:focus-visible{outline:2px solid var(--deep);outline-offset:3px;}
   img{display:block;}
+  /* 翻訳文の改行（\n）をそのまま表示する。トップLPと同じ約束 */
+  .lp-copy-multiline{white-space:pre-line;}
+  .locale-switcher{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin:14px 0 24px;}
+  .locale-switcher button{border:1px solid var(--border);border-radius:999px;background:var(--paper);color:var(--deep);font:inherit;font-size:11px;line-height:1.2;padding:6px 9px;cursor:pointer;}
+  .locale-switcher button[aria-pressed="true"]{border-color:var(--ink);background:var(--accent);color:var(--ink);}
+  .locale-switcher button:focus-visible{outline:2px solid var(--deep);outline-offset:3px;}
+  /* 英語は単語が長く、日本語の位置で改行すると1語だけの行ができるので、自然に折り返す */
+  html[lang="en"] .rv-list li,html[lang="en"] .rv-when,html[lang="en"] .rv-note,html[lang="en"] .rv-lead,html[lang="en"] .lp-copy-multiline{white-space:normal;}
   @keyframes nk-bob{0%,49%{transform:translateY(0)}50%,100%{transform:translateY(-4px)}}
   @keyframes nk-twinkle{0%,100%{opacity:.25}50%{opacity:1}}
   @media (prefers-reduced-motion:reduce){*{animation:none !important}}
@@ -108,10 +117,24 @@
     <span aria-hidden="true" style="position:absolute;left:16%;bottom:0;font-size:18px;color:var(--shadow);animation:nk-twinkle 3.3s ease-in-out .7s infinite;">＋</span>
     <span aria-hidden="true" style="position:absolute;right:6%;top:10%;font-size:34px;color:var(--accent);animation:nk-twinkle 3s ease-in-out 1.1s infinite;">＋</span>
     <span aria-hidden="true" style="position:absolute;right:20%;top:-10%;font-size:18px;color:var(--shadow);animation:nk-twinkle 2.9s ease-in-out .3s infinite;">＋</span>
-    <h1 style="position:relative;font-size:clamp(28px,7vw,40px);font-weight:400;line-height:1.5;letter-spacing:.04em;margin:12px 0 8px;">アップデートのよてい</h1>
+    <h1 data-i18n="heading" style="position:relative;font-size:clamp(28px,7vw,40px);font-weight:400;line-height:1.5;letter-spacing:.04em;margin:12px 0 8px;">アップデートのよてい</h1>
   </div>
-  <p style="font-size:clamp(14px,3.5vw,16px);color:var(--deep);margin:0 0 8px;">これから届くものと、いままでのぶんを<br>バージョンごとに まとめています。</p>
-  <p style="font-size:clamp(12px,3.2vw,13px);color:var(--muted);margin:0 0 24px;">ストアの審査にかかる時間が読めないため、<br>届くタイミングは iOS と Android でずれることがあります</p>
+  <p class="lp-copy-multiline" data-i18n="lead" style="font-size:clamp(14px,3.5vw,16px);color:var(--deep);margin:0 0 8px;">これから届くものと、いままでのぶんを
+バージョンごとに まとめています。</p>
+  <p class="lp-copy-multiline" data-i18n="sub" style="font-size:clamp(12px,3.2vw,13px);color:var(--muted);margin:0;">ストアの審査にかかる時間が読めないため、
+届くタイミングは iOS と Android でずれることがあります</p>
+
+  <nav class="locale-switcher" data-i18n-aria-label="languageSelector" aria-label="言語">
+    <button type="button" data-locale="ja" aria-pressed="true">日本語</button>
+    <button type="button" data-locale="en" aria-pressed="false">English</button>
+    <button type="button" data-locale="ko" aria-pressed="false">한국어</button>
+    <button type="button" data-locale="zh-TW" aria-pressed="false">繁體中文</button>
+  </nav>
+  <!-- JS が組み立てる文言。表示はしないが、辞書の差し替えを受けて「もっと見る」ボタンがここから読む -->
+  <div id="rv-copy" hidden>
+    <span data-i18n="showMore">ほかの更新内容を {{count}}件見る</span>
+    <span data-i18n="showLess">更新内容をとじる</span>
+  </div>
 
   <div>
     <input class="rv-osradio" type="radio" name="os" id="os-ios" checked>
@@ -121,301 +144,301 @@
       <label class="rv-tab" for="os-android">Android</label>
     </div>
 
-    <section class="rv-pane rv-pane-ios" aria-label="iOS のアップデート">
+    <section class="rv-pane rv-pane-ios" data-i18n-aria-label="iosPaneLabel" aria-label="iOS のアップデート">
       <div class="rv-card">
-        <div class="rv-head"><h2 class="rv-ver">2.3.0</h2><span class="rv-chip st-prep">じゅんびちゅう</span></div>
+        <div class="rv-head"><h2 class="rv-ver">2.3.0</h2><span class="rv-chip st-prep" data-i18n="statusPreparing">じゅんびちゅう</span></div>
         <ul class="rv-list">
-          <li>英語・한국어・繁體中文でも
+          <li data-i18n="ios230Item1">英語・한국어・繁體中文でも
 使えるようにします。海外のストアからも
 入れられるようにします</li>
-          <li>ホーム画面やロック画面で、
+          <li data-i18n="ios230Item2">ホーム画面やロック画面で、
 ねこと今日のがんばりを
 見られるようにします</li>
-          <li>出勤・休憩・退勤を、アプリを開かずに
+          <li data-i18n="ios230Item3">出勤・休憩・退勤を、アプリを開かずに
 ウィジェットからできるようにします</li>
         </ul>
       </div>
 
       <div class="rv-card">
-        <div class="rv-head"><h2 class="rv-ver">2.2.0</h2><span class="rv-chip st-review">しんさちゅう</span></div>
-        <p class="rv-when">審査に出しました。ストアから届くまで、もう少しお待ちください</p>
+        <div class="rv-head"><h2 class="rv-ver">2.2.0</h2><span class="rv-chip st-review" data-i18n="statusInReview">しんさちゅう</span></div>
+        <p class="rv-when" data-i18n="whenInReview">審査に出しました。ストアから届くまで、もう少しお待ちください</p>
         <ul class="rv-list">
-          <li>「おうえんプラン」ができます。
+          <li data-i18n="ios220Item1">「おうえんプラン」ができます。
 毎月のおうえんで、ねこ勤怠の
 開発を支えられます（月額300円）</li>
-          <li>おうえんしているあいだは、おれいに、
+          <li data-i18n="ios220Item2">おうえんしているあいだは、おれいに、
 にじいろのねこ2匹が一緒に歩きます</li>
-          <li>おうえんしてもしなくても、
+          <li data-i18n="ios220Item3">おうえんしてもしなくても、
 すべての機能はこれまでどおり使えます</li>
-          <li>退勤すると、しごとのBGMが
+          <li data-i18n="ios220Item4">退勤すると、しごとのBGMが
 自動でとまるようにします</li>
-          <li>日をまたいだきろくの手直しが
+          <li data-i18n="ios220Item5">日をまたいだきろくの手直しが
 保存できないとき、画面を
 閉じられなくなるのを直します</li>
-          <li>「半分まで来ました」のセリフが
+          <li data-i18n="ios220Item6">「半分まで来ました」のセリフが
 早く出すぎていたのを直します</li>
-          <li>日をまたいだきろくを直したあとに、
+          <li data-i18n="ios220Item7">日をまたいだきろくを直したあとに、
 状態がずれることがあったのを直します</li>
         </ul>
       </div>
 
       <div class="rv-card">
-        <div class="rv-head"><h2 class="rv-ver">2.1.0</h2><span class="rv-chip st-live">こうかいずみ</span></div>
-        <p class="rv-when">公開しました。お手元に届くまで、1日ほどかかることがあります</p>
+        <div class="rv-head"><h2 class="rv-ver">2.1.0</h2><span class="rv-chip st-live" data-i18n="statusPublished">こうかいずみ</span></div>
+        <p class="rv-when" data-i18n="whenPublished">公開しました。お手元に届くまで、1日ほどかかることがあります</p>
         <ul class="rv-list">
-          <li>ホームで3曲の作業用BGMを
+          <li data-i18n="ios210Item1">ホームで3曲の作業用BGMを
 選んで流せるようになります</li>
-          <li>新しいねこが6匹ふえ、
+          <li data-i18n="ios210Item2">新しいねこが6匹ふえ、
 ぜんぶで15匹になります</li>
-          <li>ねこ屋さんで、ねこを長おしして
+          <li data-i18n="ios210Item3">ねこ屋さんで、ねこを長おしして
 好きな順にならべかえられます</li>
-          <li>場面や作業時間にあわせた
+          <li data-i18n="ios210Item4">場面や作業時間にあわせた
 ねこのセリフを たっぷり追加します</li>
-          <li>記録の追加と手直しが
+          <li data-i18n="ios210Item5">記録の追加と手直しが
 正しく保存されるようにします</li>
-          <li>日本語入力と画面下のお知らせを
+          <li data-i18n="ios210Item6">日本語入力と画面下のお知らせを
 安定させます</li>
-          <li>休憩中や日をまたぐ記録の
+          <li data-i18n="ios210Item7">休憩中や日をまたぐ記録の
 手直しを改善します</li>
-          <li>長いカテゴリ名や繰りこし表示などの
+          <li data-i18n="ios210Item8">長いカテゴリ名や繰りこし表示などの
 不具合を修正します</li>
         </ul>
       </div>
 
       <div class="rv-card">
-        <div class="rv-head"><h2 class="rv-ver">2.0.1</h2><span class="rv-chip st-live">こうかいずみ</span></div>
-        <p class="rv-when">公開しました。お手元に届くまで、1日ほどかかることがあります</p>
+        <div class="rv-head"><h2 class="rv-ver">2.0.1</h2><span class="rv-chip st-live" data-i18n="statusPublished">こうかいずみ</span></div>
+        <p class="rv-when" data-i18n="whenPublished">公開しました。お手元に届くまで、1日ほどかかることがあります</p>
         <ul class="rv-list">
-          <li>「1日のきりかえ時刻」を、
+          <li data-i18n="ios201Item1">「1日のきりかえ時刻」を、
 0時から お昼の12時まで
 選べるようになります</li>
-          <li>月の画面で、前の月の記録が
+          <li data-i18n="ios201Item2">月の画面で、前の月の記録が
 次の月にあるように見えることがある
 不具合を修正します</li>
-          <li>月の画面で日付を押すと、
+          <li data-i18n="ios201Item3">月の画面で日付を押すと、
 その日の記録を あとから
 直したり足したりできます</li>
-          <li>夜から日をまたぐ時間も、
+          <li data-i18n="ios201Item4">夜から日をまたぐ時間も、
 「記録を足す」から入れられます</li>
-          <li>時刻を押すと数字のパネルがひらいて、
+          <li data-i18n="ios201Item5">時刻を押すと数字のパネルがひらいて、
 1分きざみで打ちこめます。
 ［＋］［−］は10分きざみになります</li>
-          <li>作業カテゴリを、長押しで
+          <li data-i18n="ios201Item6">作業カテゴリを、長押しで
 すきな順に ならべかえられます</li>
-          <li>退勤のあとや休憩のあいだでも、
+          <li data-i18n="ios201Item7">退勤のあとや休憩のあいだでも、
 別の作業カテゴリを選びなおして
 「また働く」できるようになります（不具合の修正）</li>
-          <li>ホームの社長を押すと、
+          <li data-i18n="ios201Item8">ホームの社長を押すと、
 今週のおやすみを まとめて変えられます</li>
-          <li>「休憩にさそう時間」を、
+          <li data-i18n="ios201Item9">「休憩にさそう時間」を、
 1日の目標時間とは別に決められます</li>
-          <li>新しいバージョンが出たとき、
+          <li data-i18n="ios201Item10">新しいバージョンが出たとき、
 設定の画面でお知らせします</li>
-          <li>「週のはじまり」を月曜にしたとき、
+          <li data-i18n="ios201Item11">「週のはじまり」を月曜にしたとき、
 月の画面のカレンダーが
 切りかわらない不具合を修正します</li>
-          <li>「休憩にさそう時間」を1時間まで下げると
+          <li data-i18n="ios201Item12">「休憩にさそう時間」を1時間まで下げると
 ふたたび増やせなくなる不具合を
 修正します</li>
-          <li>「記録を足す」をひらいたまま
+          <li data-i18n="ios201Item13">「記録を足す」をひらいたまま
 「保存する」を押すと入力が消えて
 何も残らない不具合を修正します</li>
-          <li>そのほか、記録まわりと
+          <li data-i18n="ios201Item14">そのほか、記録まわりと
 キーボード表示の不具合を修正します</li>
         </ul>
-        <p class="rv-note">今までの記録は そのまま引きつがれます。
+        <p class="rv-note" data-i18n="ios201Note">今までの記録は そのまま引きつがれます。
 ライト／ダークの設定だけは引きつがれないので、
 ダークをお使いの方は 更新のあと
 設定から選びなおしてください</p>
       </div>
 
       <div class="rv-card">
-        <div class="rv-head"><h2 class="rv-ver">2.0.0</h2><span class="rv-chip st-prep">こうかいみおくり</span></div>
-        <p class="rv-when">2.0.0は公開せず、内容を2.0.1にまとめて公開する予定です</p>
+        <div class="rv-head"><h2 class="rv-ver">2.0.0</h2><span class="rv-chip st-prep" data-i18n="statusSkipped">こうかいみおくり</span></div>
+        <p class="rv-when" data-i18n="ios200When">2.0.0は公開せず、内容を2.0.1にまとめて公開する予定です</p>
       </div>
 
       <div class="rv-card">
-        <div class="rv-head"><h2 class="rv-ver">1.2.0</h2><span class="rv-chip st-live">こうかいずみ</span></div>
-        <p class="rv-when">公開しました。お手元に届くまで、1日ほどかかることがあります</p>
+        <div class="rv-head"><h2 class="rv-ver">1.2.0</h2><span class="rv-chip st-live" data-i18n="statusPublished">こうかいずみ</span></div>
+        <p class="rv-when" data-i18n="whenPublished">公開しました。お手元に届くまで、1日ほどかかることがあります</p>
         <ul class="rv-list">
-          <li>ねこ1匹ずつに呼び名をつけられます</li>
-          <li>はじめての起動で、さいしょのねこを選べます</li>
-          <li>休憩が長びいたとき、
+          <li data-i18n="ios120Item1">ねこ1匹ずつに呼び名をつけられます</li>
+          <li data-i18n="ios120Item2">はじめての起動で、さいしょのねこを選べます</li>
+          <li data-i18n="ios120Item3">休憩が長びいたとき、
 「休憩おしまい」をねこが知らせてくれます</li>
-          <li>海外で使うと記録が日本時間になる
+          <li data-i18n="ios120Item4">海外で使うと記録が日本時間になる
 不具合を修正しました</li>
-          <li>けした作業の一覧を、たためるようになります</li>
-          <li>目標時間の上限が
+          <li data-i18n="ios120Item5">けした作業の一覧を、たためるようになります</li>
+          <li data-i18n="ios120Item6">目標時間の上限が
 週168時間・1日24時間になります</li>
-          <li>設定から、お問い合わせページをひらけます</li>
+          <li data-i18n="ios120Item7">設定から、お問い合わせページをひらけます</li>
         </ul>
       </div>
 
       <div class="rv-divider"><img src="/art/happy.png" alt="" style="width:52px;height:auto;image-rendering:pixelated;animation:nk-bob 1.7s steps(1,end) infinite;"></div>
 
       <div class="rv-card">
-        <div class="rv-head"><h2 class="rv-ver">1.1.0</h2><span class="rv-chip st-live">こうかいずみ</span></div>
+        <div class="rv-head"><h2 class="rv-ver">1.1.0</h2><span class="rv-chip st-live" data-i18n="statusPublished">こうかいずみ</span></div>
         <ul class="rv-list">
-          <li>記録の手直しは「保存する」を押して
+          <li data-i18n="ios110Item1">記録の手直しは「保存する」を押して
 確定する形になりました</li>
-          <li>押しまちがいで細切れになった記録を、
+          <li data-i18n="ios110Item2">押しまちがいで細切れになった記録を、
 ひとつにつなげて数えます</li>
-          <li>けした作業カテゴリを設定から戻せます。
+          <li data-i18n="ios110Item3">けした作業カテゴリを設定から戻せます。
 同じ名前をつけなおすこともできます</li>
-          <li>長毛のねこが2匹ふえました
+          <li data-i18n="ios110Item4">長毛のねこが2匹ふえました
 （ふわくろねこ・こげふわねこ）</li>
-          <li>週の画面から、いつでも
+          <li data-i18n="ios110Item5">週の画面から、いつでも
 「先週を画像で共有」できます</li>
-          <li>働いている途中でも、その稼働の
+          <li data-i18n="ios110Item6">働いている途中でも、その稼働の
 「はじめ」の時刻を手直しできます</li>
         </ul>
       </div>
 
       <div class="rv-card">
-        <div class="rv-head"><h2 class="rv-ver">1.0.0</h2><span class="rv-chip st-live">こうかいずみ</span></div>
+        <div class="rv-head"><h2 class="rv-ver">1.0.0</h2><span class="rv-chip st-live" data-i18n="statusPublished">こうかいずみ</span></div>
         <ul class="rv-list">
-          <li>ねこと一緒に作ったアプリを公開しました。</li>
+          <li data-i18n="ios100Item1">ねこと一緒に作ったアプリを公開しました。</li>
         </ul>
       </div>
     </section>
 
-    <section class="rv-pane rv-pane-android" aria-label="Android のアップデート">
+    <section class="rv-pane rv-pane-android" data-i18n-aria-label="androidPaneLabel" aria-label="Android のアップデート">
       <div class="rv-card">
-        <div class="rv-head"><h2 class="rv-ver">2.3.0</h2><span class="rv-chip st-prep">じゅんびちゅう</span></div>
+        <div class="rv-head"><h2 class="rv-ver">2.3.0</h2><span class="rv-chip st-prep" data-i18n="statusPreparing">じゅんびちゅう</span></div>
         <ul class="rv-list">
-          <li>英語・한국어・繁體中文でも
+          <li data-i18n="ios230Item1">英語・한국어・繁體中文でも
 使えるようにします。海外のストアからも
 入れられるようにします</li>
-          <li>ホーム画面やロック画面で、
+          <li data-i18n="ios230Item2">ホーム画面やロック画面で、
 ねこと今日のがんばりを
 見られるようにします</li>
-          <li>出勤・休憩・退勤を、アプリを開かずに
+          <li data-i18n="ios230Item3">出勤・休憩・退勤を、アプリを開かずに
 ウィジェットからできるようにします</li>
         </ul>
       </div>
 
       <div class="rv-card">
-        <div class="rv-head"><h2 class="rv-ver">2.2.0</h2><span class="rv-chip st-review">しんさちゅう</span></div>
-        <p class="rv-when">審査に出しました。ストアから届くまで、もう少しお待ちください</p>
+        <div class="rv-head"><h2 class="rv-ver">2.2.0</h2><span class="rv-chip st-review" data-i18n="statusInReview">しんさちゅう</span></div>
+        <p class="rv-when" data-i18n="whenInReview">審査に出しました。ストアから届くまで、もう少しお待ちください</p>
         <ul class="rv-list">
-          <li>「おうえんプラン」ができます。
+          <li data-i18n="ios220Item1">「おうえんプラン」ができます。
 毎月のおうえんで、ねこ勤怠の
 開発を支えられます（月額300円）</li>
-          <li>おうえんしているあいだは、おれいに、
+          <li data-i18n="ios220Item2">おうえんしているあいだは、おれいに、
 にじいろのねこ2匹が一緒に歩きます</li>
-          <li>おうえんしてもしなくても、
+          <li data-i18n="ios220Item3">おうえんしてもしなくても、
 すべての機能はこれまでどおり使えます</li>
-          <li>退勤すると、しごとのBGMが
+          <li data-i18n="ios220Item4">退勤すると、しごとのBGMが
 自動でとまるようにします</li>
-          <li>日をまたいだきろくの手直しが
+          <li data-i18n="ios220Item5">日をまたいだきろくの手直しが
 保存できないとき、画面を
 閉じられなくなるのを直します</li>
-          <li>「半分まで来ました」のセリフが
+          <li data-i18n="ios220Item6">「半分まで来ました」のセリフが
 早く出すぎていたのを直します</li>
-          <li>日をまたいだきろくを直したあとに、
+          <li data-i18n="ios220Item7">日をまたいだきろくを直したあとに、
 状態がずれることがあったのを直します</li>
         </ul>
       </div>
 
       <div class="rv-card">
-        <div class="rv-head"><h2 class="rv-ver">2.1.0</h2><span class="rv-chip st-live">こうかいずみ</span></div>
-        <p class="rv-when">公開しました。お手元に届くまで、1日ほどかかることがあります</p>
+        <div class="rv-head"><h2 class="rv-ver">2.1.0</h2><span class="rv-chip st-live" data-i18n="statusPublished">こうかいずみ</span></div>
+        <p class="rv-when" data-i18n="whenPublished">公開しました。お手元に届くまで、1日ほどかかることがあります</p>
         <ul class="rv-list">
-          <li>ホームで3曲の作業用BGMを
+          <li data-i18n="ios210Item1">ホームで3曲の作業用BGMを
 選んで流せるようになります</li>
-          <li>新しいねこが6匹ふえ、
+          <li data-i18n="ios210Item2">新しいねこが6匹ふえ、
 ぜんぶで15匹になります</li>
-          <li>ねこ屋さんで、ねこを長おしして
+          <li data-i18n="ios210Item3">ねこ屋さんで、ねこを長おしして
 好きな順にならべかえられます</li>
-          <li>場面や作業時間にあわせた
+          <li data-i18n="ios210Item4">場面や作業時間にあわせた
 ねこのセリフを たっぷり追加します</li>
-          <li>休憩中や日をまたぐ記録の
+          <li data-i18n="ios210Item7">休憩中や日をまたぐ記録の
 手直しを改善します</li>
-          <li>長いカテゴリ名や繰りこし表示などの
+          <li data-i18n="ios210Item8">長いカテゴリ名や繰りこし表示などの
 不具合を修正します</li>
         </ul>
       </div>
 
       <div class="rv-card">
-        <div class="rv-head"><h2 class="rv-ver">2.0.2</h2><span class="rv-chip st-live">こうかいずみ</span></div>
-        <p class="rv-when">公開しました。お手元に届くまで、1日ほどかかることがあります</p>
+        <div class="rv-head"><h2 class="rv-ver">2.0.2</h2><span class="rv-chip st-live" data-i18n="statusPublished">こうかいずみ</span></div>
+        <p class="rv-when" data-i18n="whenPublished">公開しました。お手元に届くまで、1日ほどかかることがあります</p>
         <ul class="rv-list">
-          <li>名前や作業カテゴリを日本語で入力すると、
+          <li data-i18n="android202Item1">名前や作業カテゴリを日本語で入力すると、
 文字が重なったり崩れたりする
 不具合を修正します</li>
-          <li>画面下のお知らせの表示時間を短くそろえ、
+          <li data-i18n="android202Item2">画面下のお知らせの表示時間を短くそろえ、
 下向きにスワイプしても
 閉じられるようにします</li>
-          <li>新しい記録は、はじめとおわりを決めると
+          <li data-i18n="android202Item3">新しい記録は、はじめとおわりを決めると
 そのまま追加されるようになります。
 どちらの時刻からでも入力できます</li>
-          <li>今ある記録を直したときは、
+          <li data-i18n="android202Item4">今ある記録を直したときは、
 右上の「おわる」で
 変更を確定するようになります</li>
         </ul>
       </div>
 
       <div class="rv-card">
-        <div class="rv-head"><h2 class="rv-ver">2.0.1</h2><span class="rv-chip st-live">こうかいずみ</span></div>
-        <p class="rv-when">公開しました。お手元に届くまで、1日ほどかかることがあります</p>
+        <div class="rv-head"><h2 class="rv-ver">2.0.1</h2><span class="rv-chip st-live" data-i18n="statusPublished">こうかいずみ</span></div>
+        <p class="rv-when" data-i18n="whenPublished">公開しました。お手元に届くまで、1日ほどかかることがあります</p>
         <ul class="rv-list">
-          <li>「1日のきりかえ時刻」を、
+          <li data-i18n="android201Item1">「1日のきりかえ時刻」を、
 0時から お昼の12時まで
 選べるようになりました</li>
-          <li>月の画面で、前の月の記録が
+          <li data-i18n="android201Item2">月の画面で、前の月の記録が
 次の月にあるように見えることがある
 不具合を修正しました</li>
         </ul>
       </div>
 
       <div class="rv-card">
-        <div class="rv-head"><h2 class="rv-ver">2.0.0</h2><span class="rv-chip st-live">こうかいずみ</span></div>
-        <p class="rv-when">公開しました。お手元に届くまで、1日ほどかかることがあります</p>
+        <div class="rv-head"><h2 class="rv-ver">2.0.0</h2><span class="rv-chip st-live" data-i18n="statusPublished">こうかいずみ</span></div>
+        <p class="rv-when" data-i18n="whenPublished">公開しました。お手元に届くまで、1日ほどかかることがあります</p>
         <ul class="rv-list">
-          <li>月の画面で日付を押すと、
+          <li data-i18n="ios201Item3">月の画面で日付を押すと、
 その日の記録を あとから
 直したり足したりできます</li>
-          <li>夜から日をまたぐ時間も、
+          <li data-i18n="ios201Item4">夜から日をまたぐ時間も、
 「記録を足す」から入れられます</li>
-          <li>時刻を押すと数字のパネルがひらいて、
+          <li data-i18n="ios201Item5">時刻を押すと数字のパネルがひらいて、
 1分きざみで打ちこめます。
 ［＋］［−］は10分きざみになります</li>
-          <li>作業カテゴリを、長押しで
+          <li data-i18n="ios201Item6">作業カテゴリを、長押しで
 すきな順に ならべかえられます</li>
-          <li>退勤のあとや休憩のあいだでも、
+          <li data-i18n="ios201Item7">退勤のあとや休憩のあいだでも、
 別の作業カテゴリを選びなおして
 「また働く」できるようになります（不具合の修正）</li>
-          <li>ホームの社長を押すと、
+          <li data-i18n="ios201Item8">ホームの社長を押すと、
 今週のおやすみを まとめて変えられます</li>
-          <li>「休憩にさそう時間」を、
+          <li data-i18n="ios201Item9">「休憩にさそう時間」を、
 1日の目標時間とは別に決められます</li>
-          <li>新しいバージョンが出たとき、
+          <li data-i18n="ios201Item10">新しいバージョンが出たとき、
 設定の画面でお知らせします</li>
-          <li>「週のはじまり」を月曜にしたとき、
+          <li data-i18n="android200Item1">「週のはじまり」を月曜にしたとき、
 月の画面のカレンダーが
 切りかわらない不具合を修正しました</li>
-          <li>「休憩にさそう時間」を1時間まで下げると
+          <li data-i18n="android200Item2">「休憩にさそう時間」を1時間まで下げると
 ふたたび増やせなくなる不具合を
 修正しました</li>
-          <li>「記録を足す」をひらいたまま
+          <li data-i18n="android200Item3">「記録を足す」をひらいたまま
 「保存する」を押すと入力が消えて
 何も残らない不具合を修正しました</li>
-          <li>ねこ1匹ずつに呼び名をつけられます</li>
-          <li>はじめての起動で、さいしょのねこを選べます</li>
-          <li>休憩が長びいたとき、
+          <li data-i18n="ios120Item1">ねこ1匹ずつに呼び名をつけられます</li>
+          <li data-i18n="ios120Item2">はじめての起動で、さいしょのねこを選べます</li>
+          <li data-i18n="ios120Item3">休憩が長びいたとき、
 「休憩おしまい」をねこが知らせてくれます</li>
-          <li>海外で使うと記録が日本時間になる
+          <li data-i18n="ios120Item4">海外で使うと記録が日本時間になる
 不具合を修正しました</li>
-          <li>「戻る」ボタンでアプリが終了してしまう
+          <li data-i18n="android200Item4">「戻る」ボタンでアプリが終了してしまう
 不具合を修正しました</li>
-          <li>けした作業の一覧を、たためるようになります</li>
-          <li>目標時間の上限が
+          <li data-i18n="ios120Item5">けした作業の一覧を、たためるようになります</li>
+          <li data-i18n="ios120Item6">目標時間の上限が
 週168時間・1日24時間になります</li>
-          <li>設定から、お問い合わせページをひらけます</li>
-          <li>そのほか、記録まわりと
+          <li data-i18n="ios120Item7">設定から、お問い合わせページをひらけます</li>
+          <li data-i18n="android200Item5">そのほか、記録まわりと
 キーボード表示の不具合を修正しました</li>
         </ul>
-        <p class="rv-note">今までの記録は そのまま引きつがれます。
+        <p class="rv-note" data-i18n="ios201Note">今までの記録は そのまま引きつがれます。
 ライト／ダークの設定だけは引きつがれないので、
 ダークをお使いの方は 更新のあと
 設定から選びなおしてください</p>
@@ -424,30 +447,30 @@
       <div class="rv-divider"><img src="/art/happy.png" alt="" style="width:52px;height:auto;image-rendering:pixelated;animation:nk-bob 1.7s steps(1,end) infinite;"></div>
 
       <div class="rv-card">
-        <div class="rv-head"><h2 class="rv-ver">1.1.0</h2><span class="rv-chip st-live">こうかいずみ</span></div>
-        <p class="rv-when">公開しました。お手元に届くまで、1日ほどかかることがあります</p>
+        <div class="rv-head"><h2 class="rv-ver">1.1.0</h2><span class="rv-chip st-live" data-i18n="statusPublished">こうかいずみ</span></div>
+        <p class="rv-when" data-i18n="whenPublished">公開しました。お手元に届くまで、1日ほどかかることがあります</p>
         <ul class="rv-list">
-          <li>記録の手直しは「保存する」を押して
+          <li data-i18n="ios110Item1">記録の手直しは「保存する」を押して
 確定する形になりました</li>
-          <li>押しまちがいで細切れになった記録を、
+          <li data-i18n="ios110Item2">押しまちがいで細切れになった記録を、
 ひとつにつなげて数えます</li>
-          <li>けした作業カテゴリを設定から戻せます。
+          <li data-i18n="ios110Item3">けした作業カテゴリを設定から戻せます。
 同じ名前をつけなおすこともできます</li>
-          <li>長毛のねこが3匹ふえました
+          <li data-i18n="android110Item1">長毛のねこが3匹ふえました
 （ふわしろねこ・ふわくろねこ・こげふわねこ）</li>
-          <li>週がかわると「先週のふりかえり」が出て、
+          <li data-i18n="android110Item2">週がかわると「先週のふりかえり」が出て、
 画像カードで共有できます</li>
-          <li>まえの週にがんばったぶん（貯金）で
+          <li data-i18n="android110Item3">まえの週にがんばったぶん（貯金）で
 週の目標をたっせいできるようになります</li>
-          <li>働いている途中でも、その稼働の
+          <li data-i18n="ios110Item6">働いている途中でも、その稼働の
 「はじめ」の時刻を手直しできます</li>
         </ul>
       </div>
 
       <div class="rv-card">
-        <div class="rv-head"><h2 class="rv-ver">1.0.0</h2><span class="rv-chip st-live">こうかいずみ</span></div>
+        <div class="rv-head"><h2 class="rv-ver">1.0.0</h2><span class="rv-chip st-live" data-i18n="statusPublished">こうかいずみ</span></div>
         <ul class="rv-list">
-          <li>ねこと一緒に作ったアプリを公開しました。</li>
+          <li data-i18n="ios100Item1">ねこと一緒に作ったアプリを公開しました。</li>
         </ul>
       </div>
     </section>
@@ -458,34 +481,33 @@
 
   <div class="rv-divider"><img src="/assets/lp/cream-sit.png" alt="" width="208" height="120" style="width:62px;height:auto;image-rendering:pixelated;animation:nk-bob 2.3s steps(1,end) infinite;"></div>
 
-  <section aria-label="そのさき やりたいこと">
-    <h2 class="rv-h2">そのさき やりたいこと</h2>
-    <p class="rv-lead">ごようぼうから いただいた声を中心に、
+  <section data-i18n-aria-label="futureHeading" aria-label="そのさき やりたいこと">
+    <h2 class="rv-h2" data-i18n="futureHeading">そのさき やりたいこと</h2>
+    <p class="rv-lead" data-i18n="futureLead">ごようぼうから いただいた声を中心に、
 やりたいと思っていることです。
 じゅんばんは、まだ決めていません。</p>
     <div class="rv-card">
       <ul class="rv-list">
-        <li>1日・1週間の目標を、1時間より細かく設定する</li>
-        <li>曜日ごとに、1日の目標を変える</li>
-        <li>ねこの毛色や目の色をえらぶ・多頭飼い</li>
-        <li>ねこを なでたり、ごほうびをあげたりする</li>
-        <li>ウィジェットやロック画面にねこを出して、打刻できるようにする</li>
-        <li>Apple Watch から打刻する</li>
-        <li>記録を CSV で書き出す</li>
-        <li>くり返しの休憩さそい・毎日のリマインダー</li>
-        <li>テーマカラーや、作業カテゴリの色を増やす</li>
-        <li>操作の効果音</li>
-        <li>記録が0時間の「けした作業」の完全削除</li>
-        <li>日本語いがいの言葉に対応する</li>
+        <li data-i18n="future1">1日・1週間の目標を、1時間より細かく設定する</li>
+        <li data-i18n="future2">曜日ごとに、1日の目標を変える</li>
+        <li data-i18n="future3">ねこの毛色や目の色をえらぶ・多頭飼い</li>
+        <li data-i18n="future4">ねこを なでたり、ごほうびをあげたりする</li>
+        <li data-i18n="future5">ウィジェットやロック画面にねこを出して、打刻できるようにする</li>
+        <li data-i18n="future6">Apple Watch から打刻する</li>
+        <li data-i18n="future7">記録を CSV で書き出す</li>
+        <li data-i18n="future8">くり返しの休憩さそい・毎日のリマインダー</li>
+        <li data-i18n="future9">テーマカラーや、作業カテゴリの色を増やす</li>
+        <li data-i18n="future10">操作の効果音</li>
+        <li data-i18n="future11">記録が0時間の「けした作業」の完全削除</li>
       </ul>
-      <p class="rv-note">できたものから、このページの
+      <p class="rv-note" data-i18n="futureNote">できたものから、このページの
 バージョンのところへ移していきます</p>
     </div>
   </section>
 
-  <p style="font-size:clamp(13px,3.6vw,15px);color:var(--deep);margin:26px 0 0;">「これもほしい」があれば、<br><a href="/contact/" style="border-bottom:2px dashed var(--shadow);">ごようぼうフォーム</a>から おしえてください。</p>
+  <p style="font-size:clamp(13px,3.6vw,15px);color:var(--deep);margin:26px 0 0;"><span data-i18n="wantMoreBeforeLink">「これもほしい」があれば、</span><br><a data-i18n="contactFormLink" href="/contact/" style="border-bottom:2px dashed var(--shadow);">ごようぼうフォーム</a><span data-i18n="wantMoreAfterLink">から おしえてください。</span></p>
 
-  <p style="margin:24px 0 0;font-size:13px;"><a href="/" style="border-bottom:2px dashed var(--shadow);">← ねこ勤怠のページへもどる</a></p>
+  <p style="margin:24px 0 0;font-size:13px;"><a data-i18n="backToTop" href="/" style="border-bottom:2px dashed var(--shadow);">← ねこ勤怠のページへもどる</a></p>
 
   <div style="position:relative;margin-top:clamp(40px,7vw,64px);">
     <div style="position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--shadow);border-radius:3px;"></div>
@@ -501,9 +523,9 @@
   <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;">
     <a href="https://shop.c-cya.com" target="_blank" rel="noopener" style="border-bottom:2px dashed var(--shadow);">Online shop</a>
     <a href="https://www.instagram.com/c_cya__/" target="_blank" rel="noopener" style="border-bottom:2px dashed var(--shadow);">Instagram</a>
-    <a href="/qa/" style="border-bottom:2px dashed var(--shadow);">よくあるしつもん</a>
-    <a href="/contact/" style="border-bottom:2px dashed var(--shadow);">ごようぼう</a>
-    <a href="/privacy/" style="border-bottom:2px dashed var(--shadow);">プライバシーポリシー</a>
+    <a data-i18n="faqLink" href="/qa/" style="border-bottom:2px dashed var(--shadow);">よくあるしつもん</a>
+    <a data-i18n="contactLink" href="/contact/" style="border-bottom:2px dashed var(--shadow);">ごようぼう</a>
+    <a data-i18n="privacyLink" href="/privacy/" style="border-bottom:2px dashed var(--shadow);">プライバシーポリシー</a>
   </div>
   <div style="color:var(--muted);font-size:12px;margin-top:20px;">© c_cya.</div>
 </footer>
@@ -511,6 +533,16 @@
 <script>
   // Android の端末では Android タブを最初に見せる
   if (/Android/i.test(navigator.userAgent)) document.getElementById('os-android').checked = true;
+
+  // ボタンの文言は #rv-copy から読む。言語が切り替わると i18n.mjs がそこを書き換え、nekokintai:locale で知らせてくる
+  const copyOf = (key) => document.querySelector('#rv-copy [data-i18n=' + JSON.stringify(key) + ']').textContent;
+  const moreButtonLabel = (button) => {
+    const expanded = button.getAttribute('aria-expanded') === 'true';
+    return expanded ? copyOf('showLess') : copyOf('showMore').replace('{{count}}', button.dataset.hiddenCount);
+  };
+  const relabelMoreButtons = () => {
+    document.querySelectorAll('.rv-more').forEach((button) => { button.textContent = moreButtonLabel(button); });
+  };
 
   // 長いリリースノートは最初の3件だけ見せる。「そのさき やりたいこと」の一覧は対象外。
   const releaseNoteVisibleCount = 3;
@@ -525,17 +557,19 @@
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'rv-more';
+    button.dataset.hiddenCount = String(hiddenCount);
     button.setAttribute('aria-controls', listId);
     button.setAttribute('aria-expanded', 'false');
-    button.textContent = `ほかの更新内容を ${hiddenCount}件見る`;
+    button.textContent = moreButtonLabel(button);
     button.addEventListener('click', () => {
       const expanded = button.getAttribute('aria-expanded') === 'true';
       list.classList.toggle('is-collapsed', expanded);
       button.setAttribute('aria-expanded', String(!expanded));
-      button.textContent = expanded ? `ほかの更新内容を ${hiddenCount}件見る` : '更新内容をとじる';
+      button.textContent = moreButtonLabel(button);
     });
     list.after(button);
   });
+  document.addEventListener('nekokintai:locale', relabelMoreButtons);
 </script>
 </body>
 </html>

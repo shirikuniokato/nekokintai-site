@@ -1,0 +1,303 @@
+{
+  "generatedAt": "2026-09-03T20:59:16.855Z",
+  "provider": "gemini",
+  "model": "gemini-3.1-pro-preview",
+  "page": "lp",
+  "sourceCount": 42,
+  "translations": [
+    {
+      "key": "documentTitle",
+      "en": "ねこ勤怠 — Track your time with cats.",
+      "ko": "ねこ勤怠 — 고양이와 함께하는 나만의 근태 관리.",
+      "zhTW": "ねこ勤怠 — 和貓咪一起記錄你的工時。",
+      "notes": "ブランド名「ねこ勤怠」を維持"
+    },
+    {
+      "key": "documentDescription",
+      "en": "Track your working hours, meow. A time-tracking app for yourself, kept going with cats.",
+      "ko": "일한 시간을 기록하는 거냥. 고양이와 함께 계속하는 나를 위한 작업 기록 앱.",
+      "zhTW": "記錄工作時間喵。和貓咪一起持續下去，專屬你的工作記錄App。",
+      "notes": "猫の台詞にmeow/냥/喵を使用"
+    },
+    {
+      "key": "ogTitle",
+      "en": "ねこ勤怠",
+      "ko": "ねこ勤怠",
+      "zhTW": "ねこ勤怠",
+      "notes": "ブランド名維持"
+    },
+    {
+      "key": "ogDescription",
+      "en": "Track your working hours, meow. Track your time with cats.",
+      "ko": "일한 시간을 기록하는 거냥. 고양이와 함께하는 나만의 근태 관리.",
+      "zhTW": "記錄工作時間喵。和貓咪一起記錄你的工時。",
+      "notes": "猫の台詞にmeow/냥/喵を使用"
+    },
+    {
+      "key": "languageSelector",
+      "en": "Language",
+      "ko": "언어",
+      "zhTW": "語言",
+      "notes": "一般的なUI用語"
+    },
+    {
+      "key": "heroTitle",
+      "en": "Track your time\nwith cats.",
+      "ko": "고양이와 함께하는\n나만의 근태 관리.",
+      "zhTW": "和貓咪一起\n記錄你的工時。",
+      "notes": "2行"
+    },
+    {
+      "key": "heroLead",
+      "en": "Track your working hours, meow.",
+      "ko": "일한 시간을 기록하는 거냥.",
+      "zhTW": "記錄工作時間喵。",
+      "notes": "猫の台詞"
+    },
+    {
+      "key": "appStoreAlt",
+      "en": "Download on the App Store",
+      "ko": "App Store에서 다운로드",
+      "zhTW": "從 App Store 下載",
+      "notes": "公式バッジの代替テキスト"
+    },
+    {
+      "key": "playStoreAlt",
+      "en": "Get it on Google Play",
+      "ko": "Google Play에서 다운로드",
+      "zhTW": "在 Google Play 取得",
+      "notes": "公式バッジの代替テキスト"
+    },
+    {
+      "key": "heroSpeechLeft",
+      "en": "＼Is this a sense of achievement, meow?／",
+      "ko": "＼이게 성취감인 거냥／",
+      "zhTW": "＼這就是成就感嗎喵／",
+      "notes": "猫の台詞"
+    },
+    {
+      "key": "heroSpeechRight",
+      "en": "＼It must be!／",
+      "ko": "＼분명 그럴 거야!／",
+      "zhTW": "＼一定是這樣！／",
+      "notes": "猫の台詞ではないので通常語尾"
+    },
+    {
+      "key": "walkingWhiteCatAlt",
+      "en": "Walking white cat",
+      "ko": "걷는 하얀 고양이",
+      "zhTW": "走路的白貓",
+      "notes": "歩く比喩を残す"
+    },
+    {
+      "key": "weekScreenAlt",
+      "en": "Week screen of ねこ勤怠. Celebrating a week where the goal was reached",
+      "ko": "ねこ勤怠의 주 화면. 목표에 도달한 주를 축하함",
+      "zhTW": "ねこ勤怠的週畫面。慶祝達成目標的這一週",
+      "notes": "画面名"
+    },
+    {
+      "key": "sittingVanillaCatAlt",
+      "en": "Sitting vanilla cat",
+      "ko": "앉아있는 바닐라 고양이",
+      "zhTW": "坐著的香草貓",
+      "notes": "キャラクター名"
+    },
+    {
+      "key": "featuresAriaLabel",
+      "en": "Key features",
+      "ko": "추천 포인트",
+      "zhTW": "推薦重點",
+      "notes": "推しポイント"
+    },
+    {
+      "key": "featuresLabel",
+      "en": "Features",
+      "ko": "특징",
+      "zhTW": "特色",
+      "notes": "とくちょう"
+    },
+    {
+      "key": "goodJobSavings",
+      "en": "Good Job Savings",
+      "ko": "수고 저금",
+      "zhTW": "辛苦撲滿",
+      "notes": "指定用語"
+    },
+    {
+      "key": "goodJobSavingsDescription",
+      "en": "All your time on days off\ngoes into savings",
+      "ko": "쉬는 날 일한 시간은\n전부 저금으로",
+      "zhTW": "休息日的時間\n全部存進撲滿裡",
+      "notes": "2行"
+    },
+    {
+      "key": "catWalks",
+      "en": "Cats walk",
+      "ko": "고양이가 걷는다",
+      "zhTW": "貓咪走路",
+      "notes": "歩く比喩"
+    },
+    {
+      "key": "catWalksDescription",
+      "en": "Walking steadily toward your goal",
+      "ko": "목표를 향해 뚜벅뚜벅",
+      "zhTW": "一步步走向目標",
+      "notes": "てくてく"
+    },
+    {
+      "key": "onDevice",
+      "en": "All on your device",
+      "ko": "전부 기기 안에",
+      "zhTW": "全部都在裝置裡",
+      "notes": "ぜんぶ端末の中"
+    },
+    {
+      "key": "onDeviceDescription",
+      "en": "No accounts. No ads",
+      "ko": "계정 없음. 광고 없음",
+      "zhTW": "免帳號。無廣告",
+      "notes": "アカウントなし。広告なし"
+    },
+    {
+      "key": "goalScreenTitle",
+      "en": "Let's walk with cats\ntoward your goal.",
+      "ko": "목표를 향해\n고양이와 걸어봐요.",
+      "zhTW": "朝著目標，\n和貓咪一起走吧。",
+      "notes": "2行"
+    },
+    {
+      "key": "goalScreenAlt",
+      "en": "Home. A white cat walking toward the goal",
+      "ko": "홈. 목표를 향해 걷는 하얀 고양이",
+      "zhTW": "首頁。朝著目標走路的白貓",
+      "notes": "歩く比喩"
+    },
+    {
+      "key": "progressScreenTitle",
+      "en": "See your daily efforts\nat a glance.",
+      "ko": "매일의 노력이\n눈에 보여요.",
+      "zhTW": "每天的努力，\n都看得見。",
+      "notes": "2行"
+    },
+    {
+      "key": "progressScreenAlt",
+      "en": "Month calendar. Daily efforts pile up in color intensity",
+      "ko": "월 달력. 매일의 노력이 색의 농도로 쌓임",
+      "zhTW": "月曆。每天的努力會以顏色的深淺累積",
+      "notes": "月のカレンダー"
+    },
+    {
+      "key": "shopScreenTitle",
+      "en": "There are so many\ncats here.",
+      "ko": "아주 많은\n고양이가 있어요.",
+      "zhTW": "這裡有\n好多貓咪喔。",
+      "notes": "2行"
+    },
+    {
+      "key": "shopScreenAlt",
+      "en": "ねこ屋さん. Choose your partner cat and long-press to reorder them as you like",
+      "ko": "ねこ屋さん. 파트너 고양이를 고르고 길게 눌러 원하는 순서로 바꿀 수 있음",
+      "zhTW": "ねこ屋さん。選擇你的夥伴貓咪，長按可以隨喜好重新排序",
+      "notes": "ねこ屋さんはそのまま"
+    },
+    {
+      "key": "makerLabel",
+      "en": "Creator",
+      "ko": "만든 사람",
+      "zhTW": "開發者",
+      "notes": "つくった人"
+    },
+    {
+      "key": "makerBio",
+      "en": "I like cats.",
+      "ko": "고양이를 좋아해요.",
+      "zhTW": "我喜歡貓咪。",
+      "notes": "ねこがすきです"
+    },
+    {
+      "key": "makerCopyBeforeLink",
+      "en": "I made this not to strictly monitor time, but simply to count the fact that you worked. I wanted cuteness and a sense of achievement. So it's very simple! No accounts, no ads. For requests, please use ",
+      "ko": "시간을 엄격하게 감시하기 위해서가 아니라, 일했다는 사실을 그저 세기 위해 만들었어요. 귀여움과 성취감이 필요했거든요. 그래서 아주 심플해요! 계정도 광고도 없어요. 건의 사항은 ",
+      "zhTW": "我做這個App不是為了嚴格監視時間，只是單純想記錄工作過的這件事。我想要可愛的感覺和成就感。所以它非常簡單！沒有帳號也沒有廣告。如果有任何建議，請透過 ",
+      "notes": "末尾の半角スペースを維持"
+    },
+    {
+      "key": "contactForm",
+      "en": "this form",
+      "ko": "이 폼",
+      "zhTW": "這個表單",
+      "notes": "こちらのフォーム"
+    },
+    {
+      "key": "makerCopyBeforeEmail",
+      "en": ". Email is also fine (",
+      "ko": "을 이용해 주세요. 이메일도 괜찮아요(",
+      "zhTW": " 聯絡我。寫信也可以（",
+      "notes": "前後の繋がりを考慮して調整"
+    },
+    {
+      "key": "makerCopyAfterEmail",
+      "en": ").",
+      "ko": ").",
+      "zhTW": "）。",
+      "notes": "閉じ括弧"
+    },
+    {
+      "key": "faqLink",
+      "en": "FAQ",
+      "ko": "자주 묻는 질문",
+      "zhTW": "常見問題",
+      "notes": "よくあるしつもん"
+    },
+    {
+      "key": "roadmapLink",
+      "en": "Update Roadmap",
+      "ko": "업데이트 예정",
+      "zhTW": "更新計畫",
+      "notes": "アップデートのよてい"
+    },
+    {
+      "key": "supportLink",
+      "en": "Support Development",
+      "ko": "개발 응원하기",
+      "zhTW": "支持開發",
+      "notes": "台湾華語で應援は避ける"
+    },
+    {
+      "key": "supportNote",
+      "en": "This is a tip. The app will remain free, and you can use it exactly the same whether you support it or not.",
+      "ko": "후원입니다. 앱은 앞으로도 무료이며, 응원하든 안 하든 똑같이 사용할 수 있어요.",
+      "zhTW": "這是贊助。App 未來也會保持免費，無論是否贊助，都可以一樣正常使用。",
+      "notes": "投げ銭です"
+    },
+    {
+      "key": "contactLink",
+      "en": "Requests",
+      "ko": "건의 사항",
+      "zhTW": "建議",
+      "notes": "ごようぼう"
+    },
+    {
+      "key": "privacyLink",
+      "en": "Privacy Policy",
+      "ko": "개인정보 처리방침",
+      "zhTW": "隱私權政策",
+      "notes": "プライバシーポリシー"
+    },
+    {
+      "key": "playStoreSoonChip",
+      "en": "Coming soon",
+      "ko": "준비 중",
+      "zhTW": "準備中",
+      "notes": "UIのチップ用なので短く"
+    },
+    {
+      "key": "playStoreSoonNote",
+      "en": "Google Play is currently available only in Japan. Other countries and regions are coming soon.",
+      "ko": "Google Play는 현재 일본에서만 이용할 수 있어요. 다른 국가와 지역은 준비 중이에요.",
+      "zhTW": "Google Play 目前僅在日本提供。其他國家與地區正在準備中。",
+      "notes": "丁寧な説明"
+    }
+  ]
+}

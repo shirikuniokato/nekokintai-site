@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2026-09-01T09:25:16.904Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "summaryJapanese": "意味上の差異を1件検出しました。欠落・追加・反転に当たる重大な問題はありません。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "heroSpeechLeft",
+      "severity": "medium",
+      "backTranslationJapanese": "＼これが達成なのかにゃ／",
+      "reasonJapanese": "「達成感」という感情が「達成・成果そのもの」に変わっており、感じているものを尋ねる原文の意味が弱まっています。"
+    }
+  ]
+}

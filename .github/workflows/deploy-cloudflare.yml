@@ -18,8 +18,26 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # ブラウザテスト（言語ボタンの切替）は Playwright の Chromium で動く
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Check translations
+        run: npm run check:i18n
+
       - name: Test store update automation
         run: npm test
+
+      - name: Test locale switching in a browser
+        run: npm run test:browser
 
       - name: Build production assets
         run: npm run build

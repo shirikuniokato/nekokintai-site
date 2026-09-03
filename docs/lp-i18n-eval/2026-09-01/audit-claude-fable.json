@@ -1,0 +1,36 @@
+{
+  "generatedAt": "2026-09-01T09:20:54.469Z",
+  "reviewer": "claude-fable",
+  "model": "claude-fable-5",
+  "summaryJapanese": "全3ロケール×41キーを母語編集者の観点で監査。critical/highに該当する問題はなし。medium 4件のみ：韓国語「터벅터벅」は疲れて重い足取りの擬態語で「てくてく」と情緒が反転（→뚜벅뚜벅）、繁体字の作者コピーは原文の核「見はる vs ただ数える」の対比が「記錄…足跡」で欠落、英語の吹き出し左は原文11字に対し約40字で吹き出しUIとして長すぎ、繁体字の「App」前後スペースが supportNote（有）と documentDescription／makerCopy（無）で表記揺れ。問題なしと確認した項目：猫語は原文のにゃ↔meow/냥/喵に完全対応し通常UI（ボタン・alt・フッター・機能名）への混入なし／責める表現なし／韓国語助詞は分割キー「이 폼」+「으로 보내주세요」の連結を含めすべて正／zh-TW語彙は台湾標準（裝置・帳號・隱私權政策・撲滿・回饋・計畫・月曆）／ブランド「ねこ勤怠」と Good Job Savings・수고 저금・辛苦撲滿 は全ロケールで遵守／改行数は全キーで原文と一致。",
+  "issues": [
+    {
+      "locale": "ko",
+      "key": "catWalksDescription",
+      "severity": "medium",
+      "replacement": "목표를 향해, 뚜벅뚜벅",
+      "reasonJapanese": "「터벅터벅」は疲れて重い足取り（とぼとぼ）を表す擬態語で、軽快に歩く「てくてく」とニュアンスが逆転している。着実に歩く「뚜벅뚜벅」が原文の情緒に合う。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "makerCopyBeforeLink",
+      "severity": "medium",
+      "replacement": "製作這款 App 不是為了嚴格監視時間，而是只想單純數算自己確實工作過的時間。我想要可愛的感覺和成就感。所以它非常簡單！沒有帳號也沒有廣告。如果有任何建議，請透過",
+      "reasonJapanese": "原文の核である「きびしく見はる」対「ただ数える」の対比が「記錄工作過的足跡」で失われ、意味が欠落している。「数える」の概念を復元し、末尾はリンク「這個表單」へ自然につながるよう「請透過」で終える。あわせて「App」前後のスペースを supportNote の表記に統一。"
+    },
+    {
+      "locale": "en",
+      "key": "heroSpeechLeft",
+      "severity": "medium",
+      "replacement": "＼ Is this achievement, meow? ／",
+      "reasonJapanese": "原文11文字に対し訳文が約40文字あり、猫の吹き出しUIとしては長すぎて折り返し・はみ出しの恐れがある。意味と猫語（meow）を保ったまま短縮。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "documentDescription",
+      "severity": "medium",
+      "replacement": "記錄工作時間喵。和貓咪一起持續，專屬自己的工作記錄 App。",
+      "reasonJapanese": "「App」前後のスペースが supportNote（「App 未來也會」）では有り、ここでは無しと表記が揺れている。台湾の一般的な中英混植の慣習に合わせてスペース有りに統一。"
+    }
+  ]
+}

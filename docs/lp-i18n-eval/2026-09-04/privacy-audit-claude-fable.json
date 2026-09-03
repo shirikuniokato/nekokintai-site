@@ -1,0 +1,71 @@
+{
+  "generatedAt": "2026-09-03T20:42:23.417Z",
+  "reviewer": "claude-fable",
+  "model": "claude-fable-5",
+  "summaryJapanese": "プライバシーポリシー3言語を独立編集者として監査しました。意味の欠落・責める表現・猫語混入は3言語とも見当たらず、critical/highはありません。韓国語は「방침/정책」「답변/답장」の用語揺れと、dataIntroの括弧直後の助詞（'이 앱')는）を指摘しました。台湾繁体字は「目的地/儲存位置」の揺れ、「傳送至與儲存位置」のラベル破綻、「自由選項」「作業類別」の地域語彙を指摘しました。英語はカテゴリ内の問題なしですが、cookieBeforeOptOutとcookieBetweenLinksを連結すると「refuse collection … to opt out」と重複するため、cookieBetweenLinks側を「. For information on how Google handles data, please check 」に変えると自然になります（意味欠落ではないためissues外）。未検証事項: dataLocalRest・noAccount・noPersonalInfo・noAdsは原文に句点がないのに全訳が句点で終わるため、HTML側で末尾に「。」が付いていれば二重句読点になります。「ごようぼう」フォーム名（Requests / 건의 사항 / 建議）はcontactページの実表記と一致していることが前提です。zh-TWのinquiryBeforeEmailだけ半角コロンで他ラベルは全角です。",
+  "issues": [
+    {
+      "locale": "ko",
+      "key": "dataIntro",
+      "severity": "medium",
+      "replacement": "'ねこ勤怠'(이하 '이 앱')은 여러분이 일한 시간을 기록하기 위한 앱이에요.",
+      "reasonJapanese": "括弧直後の助詞「는」が読者の目には「앱+는」に見えます。ブランド名が日本語表記で韓国語読みが示されないため「括弧前の語に合わせる」規範が機能せず、直前の「앱」（받침あり）に合わせて「은」にする方が自然に読めます。"
+    },
+    {
+      "locale": "ko",
+      "key": "inquiryBeforeEmail",
+      "severity": "medium",
+      "replacement": "이 방침에 관한 문의: ",
+      "reasonJapanese": "用語揺れ。題名は「개인정보처리방침」、governingLanguageは「이 방침」なのに、このキーだけ「본 정책」になっています。「이 방침」に統一します。"
+    },
+    {
+      "locale": "ko",
+      "key": "revisionBody",
+      "severity": "medium",
+      "replacement": "이 방침을 개정할 경우에는 이 페이지를 업데이트해요.",
+      "reasonJapanese": "用語揺れ。他の箇所は「방침」なのにここだけ「본 정책」です。「이 방침」に統一します。"
+    },
+    {
+      "locale": "ko",
+      "key": "emailNote",
+      "severity": "medium",
+      "replacement": "이메일 주소 입력은 선택 사항이에요. 입력하신 경우에도 답변을 위해서만 사용하며, 제3자에게 제공하지 않아요.",
+      "reasonJapanese": "用語揺れ。contactSentInfo・contactPurposeは「답변」なのにここだけ「답장」です。「답변」に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "dataLocal",
+      "severity": "medium",
+      "replacement": "所有記錄的資料（打卡、工作類別、設定、貓咪名字等），皆僅儲存於您的裝置中。",
+      "reasonJapanese": "台湾では「作業」は宿題や業務工程の連想が強く、勤務の作業カテゴリには「工作類別」が自然です。ただしアプリ内UIの訳語と一致させる必要があるため、アプリ側が「作業類別」を採用している場合はそちらに合わせてください。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "backupBody",
+      "severity": "medium",
+      "replacement": "透過「設定 → 備份」匯出的檔案，只會儲存在您選擇的儲存位置。開發者不會收到該內容。",
+      "reasonJapanese": "用語揺れ。「保存先」がここでは「目的地」、storageLabelでは「儲存位置」になっています。「儲存位置」に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "recipientLabel",
+      "severity": "medium",
+      "replacement": "傳送對象：",
+      "reasonJapanese": "storageLabelを「傳送對象與儲存位置：」に直すのに合わせ、ラベル間の揺れを作らないよう名詞形「傳送對象」に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "storageLabel",
+      "severity": "medium",
+      "replacement": "傳送對象與儲存位置：",
+      "reasonJapanese": "「傳送至與儲存位置」は動詞句「傳送至」を「與」で名詞と結んでおり文として成立していません。名詞形「傳送對象」にして「儲存位置」と並列させます。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "emailNote",
+      "severity": "medium",
+      "replacement": "電子郵件地址為選填。即使您有填寫，也僅用於回覆您，不會提供給第三方。",
+      "reasonJapanese": "台湾向け地域語彙。フォームの任意項目は「選填」と表現するのが一般的で、「自由選項」は不自然です。後半も台湾の口調に合わせて「即使您有填寫」に整えました。"
+    }
+  ]
+}

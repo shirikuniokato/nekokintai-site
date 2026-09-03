@@ -1,0 +1,463 @@
+{
+  "generatedAt": "2026-09-03T20:09:52.953Z",
+  "reviewer": "claude-fable",
+  "model": "claude-fable-5",
+  "summaryJapanese": "criticalはなし。高優先は (1) 英・繁でメール送付先の前置詞/動詞（to／寄到）が欠けている意味欠落、(2) 韓国語でリンク・メールの直後に空白を挟んだ助詞（「 에」「 로」）と、リンク前の空白欠落（「〜는」「〜다면」＋リンクが密着）、(3) 設定ラベル「1日のきりかえ時刻」「休憩にさそう時間」が各言語で2〜3通りに揺れている点（韓「초대」・繁「邀請」はさそうの直訳で不自然）、(4) 「くろねこ勤怠」が同一言語内で訳語とそのままの表記が混在（ブランド名の方針に合わせて日本語表記に統一する前提で置換文を作成。訳す方針なら逆方向に統一が必要）、(5) 繁体字の「白底虎斑貓」はサバトラでなくサバシロの意味で誤り、(6) 繁体字で作業カテゴリが「工作類別／任務分類／作業分類」に揺れている点、(7) 「ねこ屋さん」が3言語とも未訳のまま残っている点（置換文はアプリ内の実際のローカライズ文言に合わせて差し替える必要あり）。中優先はリンク周りの空白・句点、英語「You didn't clock out.」の責める語感、韓国語の並べ替え＝정렬、ねこ毛色名、そのほか用語統一に伴う調整。猫語の混入は見つからず。なお英語と繁体字では前半が「We／我們」、後半が「I／我」と一人称が揺れています（指定カテゴリ外のため個別指摘はせず。統一を推奨）。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "investigating1NoteBeforeEmail",
+      "severity": "high",
+      "replacement": "If you experience the same issue, please send a screenshot,\nyour device name, Android version, and how you closed the app\nto ",
+      "reasonJapanese": "メールアドレスの直前に「to」がなく、送付先という意味が欠落して「…closed the app support@…」と読めてしまう。"
+    },
+    {
+      "locale": "en",
+      "key": "investigating1NoteAfterEmail",
+      "severity": "high",
+      "replacement": ". It would be very helpful.",
+      "reasonJapanese": "メールアドレスとピリオドの間に空白が入り「support@c-cya.com .」となる。英語では空白なしでピリオドを続ける。"
+    },
+    {
+      "locale": "en",
+      "key": "investigatingIntroAfterLink",
+      "severity": "medium",
+      "replacement": ".",
+      "reasonJapanese": "リンク末尾とピリオドの間に空白が入り「Update Roadmap .」と表示される。"
+    },
+    {
+      "locale": "en",
+      "key": "upcomingOutroBeforeLink",
+      "severity": "high",
+      "replacement": "To see what's coming in each update, check the ",
+      "reasonJapanese": "末尾に空白がなく、リンク文と密着して「theUpdate Roadmap」になる。"
+    },
+    {
+      "locale": "en",
+      "key": "upcomingOutroAfterLink",
+      "severity": "medium",
+      "replacement": ".",
+      "reasonJapanese": "リンク末尾とピリオドの間の空白を削除。"
+    },
+    {
+      "locale": "en",
+      "key": "notFoundBeforeLink",
+      "severity": "high",
+      "replacement": "If you can't find the answer, please let me know via the ",
+      "reasonJapanese": "末尾に空白がなく「theRequests form」と密着する。"
+    },
+    {
+      "locale": "en",
+      "key": "howTo2Answer",
+      "severity": "medium",
+      "replacement": "When you open Home the next day,\nit will say \"Clock-out wasn't recorded.\"\nYou can edit the previous day's record\nfrom \"Edit Time\" in that message.\nIf it doesn't appear, go to the \"Month\" screen,\ntap the previous day, and edit it there.",
+      "reasonJapanese": "原文「退勤がおされていませんでした」は受け身のやわらかい表現だが、「You didn't clock out.」は利用者を責める語感になる。"
+    },
+    {
+      "locale": "en",
+      "key": "howTo7Answer",
+      "severity": "high",
+      "replacement": "In \"Cat Shop\" in Settings,\ntap the cat's name to rewrite it.\nIf you confirm while it's empty,\nit will revert to the original name.",
+      "reasonJapanese": "UIラベル「ねこ屋さん」だけが日本語のまま残っている。ほかのUIラベルは英訳されており不統一。置換文はアプリ内の実際の英語ラベルに合わせて差し替えること。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming9Question",
+      "severity": "medium",
+      "replacement": "I want break prompts at regular intervals, and daily reminders.",
+      "reasonJapanese": "「休憩さそい」が「break invitations」と「Break Prompt Time」で揺れている。fixedInLatest3Questionの「Break Prompt」に統一。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming9Answer",
+      "severity": "medium",
+      "replacement": "I'll consider adding repeating break prompts.\nI do want to include daily morning notifications.\nI'll make it so you can turn them on and off,\nbut it will take some time.",
+      "reasonJapanese": "「break invitations」を「break prompts」に統一。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming9Note",
+      "severity": "high",
+      "replacement": "Currently, \"Break Prompt Time\"\nand \"Break Time\" start from 30 minutes,\nin 30-minute increments.",
+      "reasonJapanese": "設定ラベル「休憩にさそう時間」がfixedInLatest3Questionでは「Break Prompt Time」、ここでは「Time to Invite for a Break」と揺れている。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming10Question",
+      "severity": "medium",
+      "replacement": "I want to change the theme color and the colors of task categories.",
+      "reasonJapanese": "「作業カテゴリ」はページ全体で「task categories」だが、ここだけ「work categories」。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming10Answer",
+      "severity": "medium",
+      "replacement": "I want to do this.\nI'm not sure if it will be exactly\nas you imagine, but I want to let you\nchange backgrounds and more,\nvaluing the excitement of how it looks.\nI will also consider adding more colors\nfor task categories at the same time.",
+      "reasonJapanese": "「work categories」を「task categories」に統一。"
+    },
+    {
+      "locale": "en",
+      "key": "unlikely6Note",
+      "severity": "high",
+      "replacement": "I want to make \"くろねこ勤怠\"\nfor company employees.\nI'm considering it for that app.",
+      "reasonJapanese": "「くろねこ勤怠」がunlikely10Noteでは日本語表記、ここでは「Black Cat Time Clock」と揺れている。ねこ勤怠と同様に日本語表記で統一。"
+    },
+    {
+      "locale": "en",
+      "key": "unlikely7Note",
+      "severity": "high",
+      "replacement": "I want to make \"くろねこ勤怠\",\nwhere you can manage work in more detail.\nI'm considering it for that app.",
+      "reasonJapanese": "「くろねこ勤怠」の表記揺れ。日本語表記で統一。"
+    },
+    {
+      "locale": "en",
+      "key": "unlikely8Note",
+      "severity": "high",
+      "replacement": "I also want to release \"くろねこ勤怠\"\nfor working people someday,\nbut it will likely be quite a while.",
+      "reasonJapanese": "「くろねこ勤怠」の表記揺れ。日本語表記で統一。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming3Note",
+      "severity": "medium",
+      "replacement": "Tuxedo, Brown Tabby, Orange Tabby, and Silver Tabby\ncan be welcomed starting in 2.1.0.\nI take my time drawing the pixel art for each one.\nCats added in the future might be paid content.",
+      "reasonJapanese": "「will be available to welcome」は英語として不自然。「might be paid」も「有料コンテンツになるかも」の意味が伝わりにくい。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming6Note",
+      "severity": "medium",
+      "replacement": "I've received many requests from users\nwho want to keep seeing the cat the whole time they work.",
+      "reasonJapanese": "原文の「ずっと」（作業中ずっと見えていてほしい）が抜けている。"
+    },
+    {
+      "locale": "ko",
+      "key": "investigatingIntroAfterLink",
+      "severity": "high",
+      "replacement": "에 정리해 두었어요.",
+      "reasonJapanese": "助詞「에」の前に空白があり、「업데이트 예정 에」と分かち書きされてしまう。助詞は前の語に密着させる。"
+    },
+    {
+      "locale": "ko",
+      "key": "investigating1NoteAfterEmail",
+      "severity": "high",
+      "replacement": "으로 보내주시면 큰 도움이 돼요.",
+      "reasonJapanese": "助詞の前に空白があるうえ、メールアドレス末尾（.com）は子音で終わるため「로」ではなく「으로」。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcomingOutroBeforeLink",
+      "severity": "high",
+      "replacement": "어떤 업데이트에 무엇이 추가되는지는 ",
+      "reasonJapanese": "末尾に空白がなく、リンク文と密着して「추가되는지는업데이트 예정」になる。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcomingOutroAfterLink",
+      "severity": "high",
+      "replacement": "에 정리해 두었어요.",
+      "reasonJapanese": "助詞「에」の前の空白を削除。"
+    },
+    {
+      "locale": "ko",
+      "key": "notFoundBeforeLink",
+      "severity": "high",
+      "replacement": "원하는 답을 찾지 못하셨다면 ",
+      "reasonJapanese": "末尾に空白がなく、「못하셨다면건의 사항 폼」と密着する。"
+    },
+    {
+      "locale": "ko",
+      "key": "unlikely14Note",
+      "severity": "medium",
+      "replacement": "건의 사항 폼이나 support@c-cya.com으로 보내주세요.",
+      "reasonJapanese": "メールアドレスと助詞「으로」の間に空白が入っている。助詞は密着させる。"
+    },
+    {
+      "locale": "ko",
+      "key": "howTo13Note",
+      "severity": "high",
+      "replacement": "설정 → 하루가 바뀌는 시각",
+      "reasonJapanese": "設定ラベル「1日のきりかえ時刻」がhowTo5では「하루가 바뀌는 시각」、ここでは「하루 갱신 시간」と揺れている。操作手順で使っている前者に統一。"
+    },
+    {
+      "locale": "ko",
+      "key": "fixedInLatest1Note",
+      "severity": "high",
+      "replacement": "'하루가 바뀌는 시각'을\n0시 이후로 설정해 두면,\n월초의 심야 작업분은 이전 달에 포함돼요.\n이것은 정상적인 사양이에요.",
+      "reasonJapanese": "設定ラベル「하루 갱신 시간」を「하루가 바뀌는 시각」に統一。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcoming9Note",
+      "severity": "high",
+      "replacement": "현재 '휴식 권유 시간'과\n'휴식 시간'은 30분부터 시작하며,\n30분 단위로 설정할 수 있어요.",
+      "reasonJapanese": "「休憩にさそう時間」がfixedInLatest3Questionでは「휴식 권유 시간」、ここでは「휴식에 초대할 시간」と揺れている。「초대」は人を招待する語で設定名として不自然。"
+    },
+    {
+      "locale": "ko",
+      "key": "howTo7Answer",
+      "severity": "high",
+      "replacement": "설정의 '고양이 가게'에서\n그 아이의 이름을 누르면 다시 쓸 수 있어요.\n빈칸인 채로 확정하면\n원래 이름으로 돌아갑니다.",
+      "reasonJapanese": "UIラベル「ねこ屋さん」だけが日本語のまま。置換文はアプリ内の実際の韓国語ラベルに合わせて差し替えること。"
+    },
+    {
+      "locale": "ko",
+      "key": "howTo6Question",
+      "severity": "medium",
+      "replacement": "작업 카테고리의 순서를 바꾸고 싶어요.",
+      "reasonJapanese": "「ならべかえる」は任意の順に並べ替える意味だが、「정렬」は自動ソートの意味に取られる。"
+    },
+    {
+      "locale": "ko",
+      "key": "howTo6Answer",
+      "severity": "medium",
+      "replacement": "홈의 '지금 하고 있는 일'에서\n카테고리를 길게 누르면\n원하는 순서로 바꿀 수 있어요.",
+      "reasonJapanese": "「정렬」を「순서를 바꾸다」に統一。"
+    },
+    {
+      "locale": "ko",
+      "key": "howTo10Answer",
+      "severity": "medium",
+      "replacement": "'월' 화면에서 날짜를 누르면,\n그날의 총합과 작업별\n시작과 끝 시각을 볼 수 있어요.",
+      "reasonJapanese": "「はじめ・おわり」がほかの項目では「시작」「끝」だが、ここだけ「시작 및 종료 시간」と用語が揺れている。"
+    },
+    {
+      "locale": "ko",
+      "key": "unlikely5Answer",
+      "severity": "medium",
+      "replacement": "이번 주 안에서라면 앞으로의 날도\n정할 수 있어요.\n홈의 사장님을 누르면 이번 주 쉬는 날을\n한 번에 바꿀 수 있어요.\n다음 주나 다다음 주를 미리 한 번에\n정하는 것은 불가능해요.",
+      "reasonJapanese": "「〜답니다」はページ内で唯一の語尾で、幼い語感になりトーンが浮く。ほかと同じ「〜어요」に揃える。"
+    },
+    {
+      "locale": "ko",
+      "key": "unlikely6Note",
+      "severity": "high",
+      "replacement": "회사에 다니는 분들을 위한\n'くろねこ勤怠'를 만들고 싶어요.\n그쪽에서 생각하고 있어요.",
+      "reasonJapanese": "「くろねこ勤怠」がunlikely10Noteでは日本語表記、ここでは「검은 고양이 근태」と揺れている。日本語表記で統一。「그쪽에서 고려해 볼게요」も原文「そちらで考えています」とずれる。"
+    },
+    {
+      "locale": "ko",
+      "key": "unlikely7Note",
+      "severity": "high",
+      "replacement": "업무를 더 자세히 관리할 수 있는\n'くろねこ勤怠'를 만들고 싶어요.\n그쪽에서 생각하고 있어요.",
+      "reasonJapanese": "「くろねこ勤怠」の表記揺れ。日本語表記で統一。"
+    },
+    {
+      "locale": "ko",
+      "key": "unlikely8Note",
+      "severity": "high",
+      "replacement": "직장인을 위한 'くろねこ勤怠'도\n언젠가 출시하고 싶다고 생각하지만,\n시간이 꽤 걸릴 것 같아요.",
+      "reasonJapanese": "「くろねこ勤怠」の表記揺れ。日本語表記で統一。"
+    },
+    {
+      "locale": "ko",
+      "key": "unlikely10Note",
+      "severity": "medium",
+      "replacement": "회사에 다니시는 분들을 위한\n'くろねこ勤怠'를 만들고 싶어요.\n그쪽에서 생각하고 있어요.",
+      "reasonJapanese": "同じ原文のunlikely6Noteと語尾・表現がずれている（「습니다」体）。同一文に揃える。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcoming3Note",
+      "severity": "medium",
+      "replacement": "턱시도, 브라운 태비, 치즈 태비, 고등어 태비는\n2.1.0에서 맞이할 수 있게 돼요.\n도트 그래픽은 한 마리씩 시간을 들여 그리고 있어요.\n앞으로 추가할 고양이는 유료가 될지도 몰라요.",
+      "reasonJapanese": "韓国では「고등어 태비」はサバトラ（灰縞）を指すことが多く、キジトラに当てると色の対応がずれる。用法に幅があるため参考指摘。"
+    },
+    {
+      "locale": "ko",
+      "key": "howTo9Answer",
+      "severity": "medium",
+      "replacement": "작업 카테고리가 하나도 없으면\n출근할 수 없어요.\n설정의 '작업 카테고리'에서\n'새 작업 추가하기'로 하나 만들면\n누를 수 있게 됩니다.",
+      "reasonJapanese": "「새로운 작업 늘리기」は「ふやす」の直訳でボタン名として不自然。アプリ内の実際のラベルに合わせて差し替えること。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "investigating1NoteBeforeEmail",
+      "severity": "high",
+      "replacement": "如果遇到相同情況，請將螢幕截圖，\n以及裝置名稱、Android 版本、關閉應用程式的方式\n寄到 ",
+      "reasonJapanese": "メールアドレスの直前に「寄到」がなく、送付先という意味が欠落している。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "investigating1NoteAfterEmail",
+      "severity": "high",
+      "replacement": "，這會對我們有很大的幫助。",
+      "reasonJapanese": "メールアドレスと全角読点の間に空白が入っている。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "investigatingIntroBeforeLink",
+      "severity": "medium",
+      "replacement": "更新的內容整理在",
+      "reasonJapanese": "中国語文中でリンク前に半角空白が入るのは不自然。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "investigatingIntroAfterLink",
+      "severity": "medium",
+      "replacement": "中。",
+      "reasonJapanese": "リンク後の空白を削除。upcomingOutroAfterLinkの「中」と揃える。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcomingOutroAfterLink",
+      "severity": "medium",
+      "replacement": "中。",
+      "reasonJapanese": "リンク後の空白を削除。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo13Note",
+      "severity": "high",
+      "replacement": "設定 → 換日時間",
+      "reasonJapanese": "設定ラベル「1日のきりかえ時刻」がhowTo5では「換日時間」、ここでは「每日重置時間」と揺れている。操作手順で使っている前者に統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "fixedInLatest1Note",
+      "severity": "high",
+      "replacement": "如果將「換日時間」\n設在0點之後，\n月初深夜的紀錄會算在上個月。\n這是正常的設計。",
+      "reasonJapanese": "設定ラベル「每日重置時間」を「換日時間」に統一。「深夜のぶん」は記録のことなので「任務」ではなく「紀錄」。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming9Question",
+      "severity": "medium",
+      "replacement": "我想要每隔固定時間的休息提醒，以及每天的提醒。",
+      "reasonJapanese": "「休憩さそい」がfixedInLatest3Questionでは「休息提醒」、ここでは「休息邀請」と揺れている。「邀請」はさそうの直訳で不自然。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming9Answer",
+      "severity": "medium",
+      "replacement": "我會評估看看重複的休息提醒。\n每天早上的通知，我是希望能加入的。\n我會設計成可以自由開關，\n不過還需要一段時間。",
+      "reasonJapanese": "「休息邀請」を「休息提醒」に統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming9Note",
+      "severity": "high",
+      "replacement": "目前的「休息提醒時間」\n與「休息時間」是從 30 分鐘起跳，\n並以 30 分鐘為單位。",
+      "reasonJapanese": "設定ラベル「休憩にさそう時間」がfixedInLatest3Questionの「休息提醒時間」と、ここの「邀請休息的時間」で揺れている。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming3Note",
+      "severity": "high",
+      "replacement": "賓士貓、虎斑貓、橘貓、灰虎斑貓\n在2.1.0版就能迎接牠們了。\n像素圖是我花時間一隻一隻畫出來的。\n今後新增的貓咪可能會需要付費。",
+      "reasonJapanese": "「白底虎斑貓」は白地に虎斑（サバシロ）の意味で、サバトラ（灰色の縞）とは別の毛色。台湾では「灰虎斑」が一般的。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo7Answer",
+      "severity": "high",
+      "replacement": "在設定的「貓咪商店」中，\n按下貓咪的名字就可以修改。\n如果留空並確認，\n就會恢復成原本的名字。",
+      "reasonJapanese": "UIラベル「ねこ屋さん」だけが日本語のまま。置換文はアプリ内の実際の繁体字ラベルに合わせて差し替えること。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo15Question",
+      "severity": "high",
+      "replacement": "刪除的工作類別可以復原嗎？",
+      "reasonJapanese": "「作業カテゴリ」がhowTo6・howTo9では「工作類別」、ここでは「任務分類」と揺れている。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo15Answer",
+      "severity": "high",
+      "replacement": "打開設定的「已刪除的工作」，\n就可以復原工作類別。\n不看清單時可以將其折疊起來。",
+      "reasonJapanese": "「任務分類」「已刪除任務」を「工作類別」「工作」系に統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo15Note",
+      "severity": "medium",
+      "replacement": "有紀錄的工作會保留下來，\n以免影響總計。\n未來希望能讓0小時的工作可以完全刪除。",
+      "reasonJapanese": "「任務」を「工作」に統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming10Question",
+      "severity": "high",
+      "replacement": "我想更改主題顏色和工作類別的顏色。",
+      "reasonJapanese": "「作業分類」は「工作類別」に統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming10Answer",
+      "severity": "high",
+      "replacement": "我也很想做。\n雖然還不知道能不能完全符合\n大家的想像，但我希望能讓大家\n更改背景等設定，\n好好珍惜視覺上帶來的期待感。\n增加工作類別顏色的部分，\n我也會一併評估看看。",
+      "reasonJapanese": "「作業分類」を「工作類別」に統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo10Answer",
+      "severity": "medium",
+      "replacement": "在「月」畫面點按日期，\n就能看到當天的總計，\n以及各項工作的開始與結束時間。",
+      "reasonJapanese": "「作業」がほかでは「工作」だがここは「任務」。統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo13Answer",
+      "severity": "medium",
+      "replacement": "可以從設定中更改，\n範圍是0點到中午12點。\n如果設為「早上4點」，深夜的工作\n也會算在同一天的紀錄裡。",
+      "reasonJapanese": "「任務」を「工作」に統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo14Note",
+      "severity": "medium",
+      "replacement": "即使平日和假日的工作時間不同，\n乘法算不攏也沒有問題。",
+      "reasonJapanese": "「任務時間」を「工作時間」に統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely2Question",
+      "severity": "medium",
+      "replacement": "我想同時計算兩項工作的時間。",
+      "reasonJapanese": "「作業」は繁体字では「工作」に統一（「作業」は宿題・作業工程の語感）。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely2Answer",
+      "severity": "medium",
+      "replacement": "目前的設計是同一個時間內，\n只能記錄一項工作。\n因為我很重視簡單易用的體驗，\n所以目前沒有更改的計畫。",
+      "reasonJapanese": "「作業」を「工作」に統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely6Answer",
+      "severity": "medium",
+      "replacement": "因為我希望能維持這款應用程式\n輕鬆將工作視覺化的特色，\n所以目前覺得\n可能比較困難。",
+      "reasonJapanese": "「作業」を「工作」に統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely6Note",
+      "severity": "high",
+      "replacement": "我想為上班族製作一款\n「くろねこ勤怠」。\n我會在那邊考慮加入這個功能。",
+      "reasonJapanese": "「くろねこ勤怠」がunlikely10Noteでは日本語表記、ここでは「黑貓勤怠」と揺れている。日本語表記で統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely7Note",
+      "severity": "high",
+      "replacement": "我想製作一款能更詳細管理工作的\n「くろねこ勤怠」。\n我會在那邊考慮加入這個功能。",
+      "reasonJapanese": "「くろねこ勤怠」の表記揺れ。日本語表記で統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely8Note",
+      "severity": "high",
+      "replacement": "我也希望有一天能推出\n給上班族用的「くろねこ勤怠」，\n不過可能還要等上好一陣子。",
+      "reasonJapanese": "「くろねこ勤怠」の表記揺れ。日本語表記で統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo4Answer",
+      "severity": "medium",
+      "replacement": "如果正在工作途中，\n只要在「目前正在做的事」\n點按下一個工作項目即可。\n從那個時間起，就會變成新工作的紀錄。\n下班後或休息中，\n也可以先選好下一個工作項目。",
+      "reasonJapanese": "「按下下一個」は「下」が連続して読みにくい。ページ内で使っている「點按」に揃える。"
+    }
+  ]
+}

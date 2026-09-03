@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" data-i18n-source="/assets/qa/locales.json">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>よくあるしつもん | ねこ勤怠</title>
-<meta name="description" content="ねこ勤怠によせられた、よくあるしつもんとこたえ。記録の使いかた、できること、これからやりたいこと。">
+<title data-i18n="documentTitle">よくあるしつもん | ねこ勤怠</title>
+<meta name="description" data-i18n-content="documentDescription" content="ねこ勤怠によせられた、よくあるしつもんとこたえ。記録の使いかた、できること、これからやりたいこと。">
 <link rel="canonical" href="https://nekokintai.com/qa/">
 <link rel="icon" type="image/png" href="/favicon.png">
 <!-- Google tag (gtag.js) -->
@@ -18,6 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+<script type="module" src="/assets/lp/i18n.mjs"></script>
 <style>
   :root{
     --ink:#0C3A44; --bg:#EAF4F7; --paper:#FFFFFF; --border:#DCEDF2;
@@ -30,6 +31,12 @@
   a:hover{color:var(--ink);}
   a:focus-visible{outline:2px solid var(--deep);outline-offset:3px;}
   img{display:block;}
+  /* 翻訳文の改行（\n）をそのまま表示する。トップLPと同じ約束 */
+  .lp-copy-multiline{white-space:pre-line;}
+  .locale-switcher{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin:18px 0 0;}
+  .locale-switcher button{border:1px solid var(--border);border-radius:999px;background:var(--paper);color:var(--deep);font:inherit;font-size:11px;line-height:1.2;padding:6px 9px;cursor:pointer;}
+  .locale-switcher button[aria-pressed="true"]{border-color:var(--ink);background:var(--accent);color:var(--ink);}
+  .locale-switcher button:focus-visible{outline:2px solid var(--deep);outline-offset:3px;}
   @keyframes nk-bob{0%,49%{transform:translateY(0)}50%,100%{transform:translateY(-4px)}}
   @keyframes nk-twinkle{0%,100%{opacity:.25}50%{opacity:1}}
   @media (prefers-reduced-motion:reduce){*{animation:none !important}}
@@ -64,6 +71,8 @@
   .qa-body .qa-chip{display:inline-flex;margin:0 auto 8px;}
   .qa-a{margin:0;white-space:pre-line;font-size:clamp(14px,3.8vw,15px);line-height:1.85;color:var(--ink);}
   .qa-note{margin:10px 0 0;white-space:pre-line;font-size:clamp(11px,3.1vw,12px);line-height:1.8;color:var(--muted);text-align:center;}
+  /* 英語は単語が長く、日本語の位置で改行すると1語だけの行ができるので、自然に折り返す。韓国語・繁体字は日本語と同じ改行位置で読める */
+  html[lang="en"] .qa-a,html[lang="en"] .qa-note{white-space:normal;}
 </style>
 </head>
 <body>
@@ -76,58 +85,66 @@
     <span aria-hidden="true" style="position:absolute;left:16%;bottom:0;font-size:18px;color:var(--shadow);animation:nk-twinkle 3.3s ease-in-out .7s infinite;">＋</span>
     <span aria-hidden="true" style="position:absolute;right:6%;top:10%;font-size:34px;color:var(--accent);animation:nk-twinkle 3s ease-in-out 1.1s infinite;">＋</span>
     <span aria-hidden="true" style="position:absolute;right:20%;top:-10%;font-size:18px;color:var(--shadow);animation:nk-twinkle 2.9s ease-in-out .3s infinite;">＋</span>
-    <h1 style="position:relative;font-size:clamp(28px,7vw,40px);font-weight:400;line-height:1.5;letter-spacing:.04em;margin:12px 0 8px;">よくあるしつもん</h1>
+    <h1 data-i18n="heading" style="position:relative;font-size:clamp(28px,7vw,40px);font-weight:400;line-height:1.5;letter-spacing:.04em;margin:12px 0 8px;">よくあるしつもん</h1>
   </div>
-  <p style="font-size:clamp(14px,3.5vw,16px);color:var(--deep);margin:0 0 8px;">よせられた声への、いまのこたえです。<br>ぜんぶ読んでいます。</p>
-  <p style="font-size:clamp(12px,3.2vw,13px);color:var(--muted);margin:0 0 24px;">気になるしつもんを タップすると、こたえがひらきます</p>
+  <p class="lp-copy-multiline" data-i18n="lead" style="font-size:clamp(14px,3.5vw,16px);color:var(--deep);margin:0 0 8px;">よせられた声への、いまのこたえです。
+ぜんぶ読んでいます。</p>
+  <p data-i18n="howToOpen" style="font-size:clamp(12px,3.2vw,13px);color:var(--muted);margin:0;">気になるしつもんを タップすると、こたえがひらきます</p>
 
-  <section aria-label="いま 調べているところ" style="margin:0 0 26px;">
+  <nav class="locale-switcher" data-i18n-aria-label="languageSelector" aria-label="言語" style="margin:14px 0 24px;">
+    <button type="button" data-locale="ja" aria-pressed="true">日本語</button>
+    <button type="button" data-locale="en" aria-pressed="false">English</button>
+    <button type="button" data-locale="ko" aria-pressed="false">한국어</button>
+    <button type="button" data-locale="zh-TW" aria-pressed="false">繁體中文</button>
+  </nav>
+
+  <section data-i18n-aria-label="investigatingLabel" aria-label="いま 調べているところ" style="margin:0 0 26px;">
     <div style="display:flex;align-items:flex-end;justify-content:center;gap:10px;margin:0 0 8px;">
       <img src="/art/walkA.png" alt="" style="width:48px;height:auto;image-rendering:pixelated;animation:nk-bob 1.9s steps(1,end) infinite;">
-      <span style="font-size:13px;letter-spacing:.3em;color:var(--muted);padding-bottom:4px;">いま 調べているところ</span>
+      <span data-i18n="investigatingLabel" style="font-size:13px;letter-spacing:.3em;color:var(--muted);padding-bottom:4px;">いま 調べているところ</span>
     </div>
-    <p style="font-size:clamp(11px,3.1vw,12px);color:var(--muted);margin:0 0 10px;line-height:1.8;">アップデートの中身は、<a href="/roadmap/" style="border-bottom:2px dashed var(--shadow);">アップデートのよてい</a> にまとめています。</p>
+    <p style="font-size:clamp(11px,3.1vw,12px);color:var(--muted);margin:0 0 10px;line-height:1.8;"><span data-i18n="investigatingIntroBeforeLink">アップデートの中身は、</span><a data-i18n="roadmapLink" href="/roadmap/" style="border-bottom:2px dashed var(--shadow);">アップデートのよてい</a><span data-i18n="investigatingIntroAfterLink"> にまとめています。</span></p>
     <div class="qa-group">
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">Androidでアプリを開き直すと、ねこと「きょうの内わけ」が真っ黒になる</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="investigating1Question">Androidでアプリを開き直すと、ねこと「きょうの内わけ」が真っ黒になる</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">一部のAndroid端末で起きている不具合です。
+          <p class="qa-a" data-i18n="investigating1Answer">一部のAndroid端末で起きている不具合です。
 端末によって、ねこの画面と
 「きょうの内わけ」が正しく描き直されない
 可能性があり、原因を調べています。</p>
-          <p class="qa-note">同じことが起きた方は、画面のスクリーンショットと、
+          <p class="qa-note"><span data-i18n="investigating1NoteBeforeEmail">同じことが起きた方は、画面のスクリーンショットと、
 端末名・Androidのバージョン・アプリを閉じた方法を
-<a href="mailto:support@c-cya.com" style="border-bottom:2px dashed var(--shadow);">support@c-cya.com</a> へ送ってもらえると助かります</p>
+</span><a href="mailto:support@c-cya.com" style="border-bottom:2px dashed var(--shadow);">support@c-cya.com</a><span data-i18n="investigating1NoteAfterEmail"> へ送ってもらえると助かります</span></p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">「記録を足す」で、かさなっていないのに「かさなっています」と出る</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="investigating2Question">「記録を足す」で、かさなっていないのに「かさなっています」と出る</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">はたらいている最中や休憩中に足すと、
+          <p class="qa-a" data-i18n="investigating2Answer">はたらいている最中や休憩中に足すと、
 出ることがあります。
 日付をまたいで はたらいたままのときに
 とくに出やすいです。
 いちど退勤してから、「月」の画面で
 足してみてください。</p>
-          <p class="qa-note">はたらいたまま足せるように直す予定です</p>
+          <p class="qa-note" data-i18n="investigating2Note">はたらいたまま足せるように直す予定です</p>
         </div>
       </details>
     </div>
   </section>
 
-  <section aria-label="できること" style="margin:0 0 26px;">
+  <section data-i18n-aria-label="howToLabel" aria-label="できること" style="margin:0 0 26px;">
     <div style="display:flex;align-items:flex-end;justify-content:center;gap:10px;margin:0 0 10px;">
       <img src="/art/happy.png" alt="" style="width:46px;height:auto;image-rendering:pixelated;animation:nk-bob 1.7s steps(1,end) infinite;">
-      <span style="font-size:13px;letter-spacing:.3em;color:var(--muted);padding-bottom:4px;">できること</span>
+      <span data-i18n="howToLabel" style="font-size:13px;letter-spacing:.3em;color:var(--muted);padding-bottom:4px;">できること</span>
     </div>
     <div class="qa-group">
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">記録の直しかたが わからない</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="howTo1Question">記録の直しかたが わからない</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">「月」の画面で直したい日を押して、
+          <p class="qa-a" data-i18n="howTo1Answer">「月」の画面で直したい日を押して、
 「時間を直す」をひらきます。
 きょうのぶんは、ホームの
 「時間を直す」からでも直せます。
@@ -137,32 +154,32 @@
 決めると、そのまま追加されます。
 今ある記録を直したときは、
 右上の「おわる」で確定します。</p>
-        <p class="qa-note">時刻を押すと1分きざみで入力できます。
+        <p class="qa-note" data-i18n="howTo1Note">時刻を押すと1分きざみで入力できます。
 ［−］［＋］は10分ずつ動きます。
 「月」で日付が押せないときは、
 アプリを最新にしてみてください</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">退勤を押し忘れて寝てしまった</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="howTo2Question">退勤を押し忘れて寝てしまった</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">翌日ホームをひらくと
+          <p class="qa-a" data-i18n="howTo2Answer">翌日ホームをひらくと
 「退勤がおされていませんでした」と出ます。
 その中の「時間を直す」から、
 前の日の記録を直せます。
 出なかったときは、「月」の画面で
 前の日を押して直してください。</p>
-          <p class="qa-note">出勤した時刻は端末に残っているので、
+          <p class="qa-note" data-i18n="howTo2Note">出勤した時刻は端末に残っているので、
 記録が消えることはありません。
 アプリを入れ直す必要もありません</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">休憩を押し忘れた。あとから休憩を入れたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="howTo3Question">休憩を押し忘れた。あとから休憩を入れたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">「時間を直す」で、
+          <p class="qa-a" data-i18n="howTo3Answer">「時間を直す」で、
 休憩の前後に記録を分けると入れられます。
 休憩前の記録の「おわり」を
 休憩に入った時刻にして、
@@ -172,26 +189,26 @@
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">作業の途中で、ちがう作業に切りかえたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="howTo4Question">作業の途中で、ちがう作業に切りかえたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">はたらいている途中なら、
+          <p class="qa-a" data-i18n="howTo4Answer">はたらいている途中なら、
 「いま やっていること」で
 次の作業を押すだけです。
 その時刻から、新しい作業の記録になります。
 退勤したあとや休憩中も、
 次の作業を選んでおけます。</p>
-          <p class="qa-note">退勤後に切りかえられなかった不具合は
+          <p class="qa-note" data-i18n="howTo4Note">退勤後に切りかえられなかった不具合は
 直っています。
 押しても変わらないときは、
 アプリを最新にしてみてください</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">夜中をまたいで はたらいたときは？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="howTo5Question">夜中をまたいで はたらいたときは？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">そのまま退勤を押せば、
+          <p class="qa-a" data-i18n="howTo5Answer">そのまま退勤を押せば、
 日付ごとに分けて記録されます。
 夜通しのぶんを同じ日にまとめたいときは、
 設定の「1日のきりかえ時刻」を
@@ -199,34 +216,34 @@
 あとから足すときは、
 はじめ22:00・おわり2:00 のように入れると、
 翌日の時刻として記録されます。</p>
-          <p class="qa-note">設定 → 1日のきりかえ時刻。
+          <p class="qa-note" data-i18n="howTo5Note">設定 → 1日のきりかえ時刻。
 0時〜お昼の12時の間で変えられます</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">作業のカテゴリを ならべかえたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="howTo6Question">作業のカテゴリを ならべかえたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">ホームの「いま やっていること」で、
+          <p class="qa-a" data-i18n="howTo6Answer">ホームの「いま やっていること」で、
 カテゴリを長おしすると
 好きな順にならべかえられます。</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">ねこの呼び名を、あとから変えたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="howTo7Question">ねこの呼び名を、あとから変えたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">設定の「ねこ屋さん」で、
+          <p class="qa-a" data-i18n="howTo7Answer">設定の「ねこ屋さん」で、
 その子の名前を押すと書きかえられます。
 空のまま確定すると、
 もとの名前にもどります。</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">画面を消していても、記録は続いていますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="howTo8Question">画面を消していても、記録は続いていますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">続いています。
+          <p class="qa-a" data-i18n="howTo8Answer">続いています。
 出勤を押したあと、画面を消しても
 ほかのアプリを開いても大丈夫です。
 ねこ勤怠は裏でずっと動くのではなく、
@@ -235,10 +252,10 @@
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">出勤ボタンが押せない</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="howTo9Question">出勤ボタンが押せない</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">作業のカテゴリが1つもないと、
+          <p class="qa-a" data-i18n="howTo9Answer">作業のカテゴリが1つもないと、
 出勤できません。
 設定の「作業のカテゴリ」から
 「あたらしい作業をふやす」で1つ作ると、
@@ -246,69 +263,69 @@
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">過去の日に「何時から何時まで」やったか見たい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="howTo10Question">過去の日に「何時から何時まで」やったか見たい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">「月」の画面で日付を押すと、
+          <p class="qa-a" data-i18n="howTo10Answer">「月」の画面で日付を押すと、
 その日の合計と、作業ごとの
 はじめ・おわりの時刻が見られます。</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">機種を変えるとき、記録は引きつげますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="howTo11Question">機種を変えるとき、記録は引きつげますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">設定の「バックアップはこちら」から
+          <p class="qa-a" data-i18n="howTo11Answer">設定の「バックアップはこちら」から
 引きつげます。
 まずファイルに書き出して、
 いちど端末に保存してください。
 つぎの端末で、おなじ
 「バックアップはこちら」に
 そのファイルを読みこむと完了です。</p>
-        <p class="qa-note">ゆくゆくは、もう少し便利な方法にしたいです</p>
+        <p class="qa-note" data-i18n="howTo11Note">ゆくゆくは、もう少し便利な方法にしたいです</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">今日だけ急にお休み、ってできますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="howTo12Question">今日だけ急にお休み、ってできますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">できます。
+          <p class="qa-a" data-i18n="howTo12Answer">できます。
 週の画面でその日をタップすると
 「お休みにする」ボタンが出ます。
 後から取り消しもできます。</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">日付が変わる時刻は、真夜中0時のままですか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="howTo13Question">日付が変わる時刻は、真夜中0時のままですか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">設定から 0時〜お昼の12時の間で
+          <p class="qa-a" data-i18n="howTo13Answer">設定から 0時〜お昼の12時の間で
 変更できます。
 「朝4時」にすると、深夜の作業も
 同じ日の記録になります。</p>
-        <p class="qa-note">設定 → 1日のきりかえ時刻</p>
+        <p class="qa-note" data-i18n="howTo13Note">設定 → 1日のきりかえ時刻</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">週の目標と1日の目標は、合計をそろえないとだめ？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="howTo14Question">週の目標と1日の目標は、合計をそろえないとだめ？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">そろえなくて大丈夫です。
+          <p class="qa-a" data-i18n="howTo14Answer">そろえなくて大丈夫です。
 週の目標は1週間ぜんぶの合計、
 1日の目標は「今日はこれくらい」の目安で、
 それぞれ別のものとして見ています。</p>
-        <p class="qa-note">平日と休日で働く時間がちがっても、
+        <p class="qa-note" data-i18n="howTo14Note">平日と休日で働く時間がちがっても、
 かけ算が合わないままで問題ありません</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">消した作業カテゴリを、元に戻せない？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="howTo15Question">消した作業カテゴリを、元に戻せない？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">設定の「けした作業」をひらくと、
+          <p class="qa-a" data-i18n="howTo15Answer">設定の「けした作業」をひらくと、
 作業カテゴリを元に戻せます。
 一覧は、見ないときは畳んでおけます。</p>
-        <p class="qa-note">記録がある作業は、
+        <p class="qa-note" data-i18n="howTo15Note">記録がある作業は、
 集計が崩れないように残しています。
 0時間のものは完全に削除できるようにしたいです</p>
         </div>
@@ -316,41 +333,41 @@
     </div>
   </section>
 
-  <section aria-label="最新にすると直ること" style="margin:0 0 26px;">
+  <section data-i18n-aria-label="fixedInLatestLabel" aria-label="最新にすると直ること" style="margin:0 0 26px;">
     <div style="display:flex;align-items:flex-end;justify-content:center;gap:10px;margin:0 0 10px;">
       <img src="/art/sit.png" alt="" style="width:48px;height:auto;image-rendering:pixelated;animation:nk-bob 2s steps(1,end) infinite;">
-      <span style="font-size:13px;letter-spacing:.3em;color:var(--muted);padding-bottom:4px;">最新にすると直ること</span>
+      <span data-i18n="fixedInLatestLabel" style="font-size:13px;letter-spacing:.3em;color:var(--muted);padding-bottom:4px;">最新にすると直ること</span>
     </div>
     <div class="qa-group">
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">「月」の画面で、8月の記録が7月や9月に見える</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="fixedInLatest1Question">「月」の画面で、8月の記録が7月や9月に見える</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">月を切りかえたとき、
+          <p class="qa-a" data-i18n="fixedInLatest1Answer">月を切りかえたとき、
 見出しだけ変わって
 中身が前の月のまま残る不具合でした。
 記録そのものはずれていません。
 アプリを最新にすると直ります。</p>
-          <p class="qa-note">「1日のきりかえ時刻」を
+          <p class="qa-note" data-i18n="fixedInLatest1Note">「1日のきりかえ時刻」を
 0時より後にしていると、
 月はじめの深夜のぶんは前の月に入ります。
 これは仕様です</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">Androidで、名前を入れると「ねここここ」になる</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="fixedInLatest2Question">Androidで、名前を入れると「ねここここ」になる</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">はじめの設定で、
+          <p class="qa-a" data-i18n="fixedInLatest2Answer">はじめの設定で、
 日本語がうまく入らない不具合がありました。
 Android版は最新にすると直ります。</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">「休憩にさそう時間」を減らしたら、増やせなくなった</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="fixedInLatest3Question">「休憩にさそう時間」を減らしたら、増やせなくなった</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">1日の目標より長くできない
+          <p class="qa-a" data-i18n="fixedInLatest3Answer">1日の目標より長くできない
 つくりになっていたのが原因でした。
 最新版では、目標とは別に
 決められるようになっています。</p>
@@ -359,116 +376,116 @@ Android版は最新にすると直ります。</p>
     </div>
   </section>
 
-  <section aria-label="これからのこと" style="margin:0 0 26px;">
+  <section data-i18n-aria-label="upcomingLabel" aria-label="これからのこと" style="margin:0 0 26px;">
     <div style="display:flex;align-items:flex-end;justify-content:center;gap:10px;margin:0 0 10px;">
       <img src="/assets/lp/cream-sit.png" alt="" width="208" height="120" style="width:54px;height:auto;image-rendering:pixelated;animation:nk-bob 2.3s steps(1,end) infinite;">
-      <span style="font-size:13px;letter-spacing:.3em;color:var(--muted);padding-bottom:4px;">これからのこと</span>
+      <span data-i18n="upcomingLabel" style="font-size:13px;letter-spacing:.3em;color:var(--muted);padding-bottom:4px;">これからのこと</span>
     </div>
     <div class="qa-group">
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">合計時間を「6.9h」ではなく「6時間54分」で見たい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="upcoming1Question">合計時間を「6.9h」ではなく「6時間54分」で見たい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">声をたくさんいただいています。
+          <p class="qa-a" data-i18n="upcoming1Answer">声をたくさんいただいています。
 画面のデザインとのかねあいで、
 どう見せるのがいちばん見やすいか
 考えているところです。</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">1日の目標を、曜日ごとに変えたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="upcoming2Question">1日の目標を、曜日ごとに変えたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">考えています。
+          <p class="qa-a" data-i18n="upcoming2Answer">考えています。
 ふだんの画面はそのままにして、
 必要な方だけ細かく決められる形に
 できたらと思っています。</p>
-        <p class="qa-note">設定が増えて ごちゃごちゃしないように、
+        <p class="qa-note" data-i18n="upcoming2Note">設定が増えて ごちゃごちゃしないように、
 気をつけて作ります</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">ねこは、これから増えますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="upcoming3Question">ねこは、これから増えますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">2.1.0で6匹ふえて、
-ぜんぶで15匹になります。
+          <p class="qa-a" data-i18n="upcoming3Answer">2.1.0で6匹ふえて、
+ぜんぶで15匹になりました。
 これからも少しずつ増やしたいです。</p>
-        <p class="qa-note">ハチワレ・キジトラ・茶トラ・サバトラは
-2.1.0でお迎えできるようになります。
+        <p class="qa-note" data-i18n="upcoming3Note">ハチワレ・キジトラ・茶トラ・サバトラは
+2.1.0からお迎えできます。
 ドット絵は1匹ずつ時間をかけて描いています。
 今後追加するねこは、有料になるかもしれません</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">ねこの毛色や目の色を変えたい。多頭飼いもしたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="upcoming4Question">ねこの毛色や目の色を変えたい。多頭飼いもしたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">とてもやりたいです。
+          <p class="qa-a" data-i18n="upcoming4Answer">とてもやりたいです。
 大きな不具合の修正を
 ひと通り終えてからになるので、
 待っていてもらえると嬉しいです。</p>
-        <p class="qa-note">多頭飼いも、今後は
+        <p class="qa-note" data-i18n="upcoming4Note">多頭飼いも、今後は
 有料になるかもしれません</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">ねこを なでたり、ごほうびをあげたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="upcoming5Question">ねこを なでたり、ごほうびをあげたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">たくさんの声をいただいています。
+          <p class="qa-a" data-i18n="upcoming5Answer">たくさんの声をいただいています。
 作者もやってみたい気持ちがあります。
 今は不具合を直すことを
 先にしています。</p>
-        <p class="qa-note">なでる、おやつ、おもちゃ、お着替え。
+        <p class="qa-note" data-i18n="upcoming5Note">なでる、おやつ、おもちゃ、お着替え。
 いただいた案は ぜんぶ残しています</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">ウィジェットやロック画面にも ねこがほしい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="upcoming6Question">ウィジェットやロック画面にも ねこがほしい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">対応したい気持ちはあるのですが、
+          <p class="qa-a" data-i18n="upcoming6Answer">対応したい気持ちはあるのですが、
 今は手が回らず、
 かなり先になりそうです。</p>
-        <p class="qa-note">作業のあいだ ずっとねこが見えていてほしい、
+        <p class="qa-note" data-i18n="upcoming6Note">作業のあいだ ずっとねこが見えていてほしい、
 という声を多くいただいています</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">記録を CSV で書き出したい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="upcoming7Question">記録を CSV で書き出したい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">検討いたします。
+          <p class="qa-a" data-i18n="upcoming7Answer">検討いたします。
 ただ、少し先になるかもしれません。</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">Apple Watch やウィジェットから打刻したい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="upcoming8Question">Apple Watch やウィジェットから打刻したい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">ほしいという声をいただいています。
+          <p class="qa-a" data-i18n="upcoming8Answer">ほしいという声をいただいています。
 少し先になりそうです。</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">決まった時間ごとの休憩さそいや、毎日のリマインダーがほしい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="upcoming9Question">決まった時間ごとの休憩さそいや、毎日のリマインダーがほしい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">繰り返しの休憩さそいは、検討いたします。
+          <p class="qa-a" data-i18n="upcoming9Answer">繰り返しの休憩さそいは、検討いたします。
 毎朝の通知は、入れたいと思っています。
 オンとオフを切りかえられるように
 しますが、少し先になります。</p>
-        <p class="qa-note">いまの「休憩にさそう時間」
+        <p class="qa-note" data-i18n="upcoming9Note">いまの「休憩にさそう時間」
 「休憩する時間」は30分から、
 30分きざみです</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">テーマカラーや、作業カテゴリの色を変えたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="upcoming10Question">テーマカラーや、作業カテゴリの色を変えたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">やりたいです。
+          <p class="qa-a" data-i18n="upcoming10Answer">やりたいです。
 みなさんの想像どおりの形になるかは
 まだわかりませんが、背景なども
 変えられるようにして、見た目の
@@ -478,199 +495,199 @@ Android版は最新にすると直ります。</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">PCやブラウザからも使いたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="upcoming11Question">PCやブラウザからも使いたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">ご要望をたくさんいただいて、
+          <p class="qa-a" data-i18n="upcoming11Answer">ご要望をたくさんいただいて、
 検討してみました。
 ただ、ログインがいらないことを
 大切にしているので、作るとしても
 スマホの記録とはつながりません。
 それでも使いたいか、悩んでいます。</p>
-        <p class="qa-note">「つながらなくても使いたい」
+        <p class="qa-note" data-i18n="upcoming11Note">「つながらなくても使いたい」
 「それなら いらない」。
 どちらでも、ごようぼうフォームから
 おしえてもらえると助かります</p>
         </div>
       </details>
     </div>
-    <p style="font-size:clamp(11px,3.1vw,12px);color:var(--muted);margin:10px 0 0;line-height:1.8;">どのアップデートで何が届くかは、<br><a href="/roadmap/" style="color:var(--deep);border-bottom:2px dashed var(--shadow);">アップデートのよてい</a> にまとめています</p>
+    <p style="font-size:clamp(11px,3.1vw,12px);color:var(--muted);margin:10px 0 0;line-height:1.8;"><span data-i18n="upcomingOutroBeforeLink">どのアップデートで何が届くかは、</span><br><a data-i18n="roadmapLink" href="/roadmap/" style="color:var(--deep);border-bottom:2px dashed var(--shadow);">アップデートのよてい</a><span data-i18n="upcomingOutroAfterLink"> にまとめています</span></p>
   </section>
 
-  <section aria-label="むずかしいかもしれないこと" style="margin:0 0 26px;">
+  <section data-i18n-aria-label="unlikelyLabel" aria-label="むずかしいかもしれないこと" style="margin:0 0 26px;">
     <div style="display:flex;align-items:flex-end;justify-content:center;gap:10px;margin:0 0 10px;">
       <img src="/assets/lp/mint-sit.png" alt="" style="width:52px;height:auto;image-rendering:pixelated;animation:nk-bob 2.1s steps(1,end) infinite;">
-      <span style="font-size:13px;letter-spacing:.3em;color:var(--muted);padding-bottom:4px;">むずかしいかもしれないこと</span>
+      <span data-i18n="unlikelyLabel" style="font-size:13px;letter-spacing:.3em;color:var(--muted);padding-bottom:4px;">むずかしいかもしれないこと</span>
     </div>
     <div class="qa-group">
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">時給を入れて、いくら稼いだか見たい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely1Question">時給を入れて、いくら稼いだか見たい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">申し訳ないのですが、予定はありません。
+          <p class="qa-a" data-i18n="unlikely1Answer">申し訳ないのですが、予定はありません。
 ねこ勤怠は、お金の計算よりも
 「自分の時間を気軽に数える」ことを
 大切にしています。</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">2つの作業を同時に数えたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely2Question">2つの作業を同時に数えたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">同じ時間には、
+          <p class="qa-a" data-i18n="unlikely2Answer">同じ時間には、
 1つの作業だけを記録するつくりです。
 かんたんな使い心地を大切にしているので、
 今のところ変える予定はありません。</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">「出勤」「退勤」のことばを変えたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely3Question">「出勤」「退勤」のことばを変えたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">いまは変えられません。
+          <p class="qa-a" data-i18n="unlikely3Answer">いまは変えられません。
 勉強や趣味の時間にも使ってもらえていて、
 ことばを選べるようにしたい気持ちはあります。</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">iPhone と iPad の2台で、同じ記録を使いたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely4Question">iPhone と iPad の2台で、同じ記録を使いたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">申し訳ないのですが、
+          <p class="qa-a" data-i18n="unlikely4Answer">申し訳ないのですが、
 同期には対応していません。
 記録を端末の中だけに置く方針で、
 ログイン機能を作る予定が
 ないためです。</p>
-        <p class="qa-note">そのかわり、アカウント登録も広告もありません</p>
+        <p class="qa-note" data-i18n="unlikely4Note">そのかわり、アカウント登録も広告もありません</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">お休みを、先の日も決めたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely5Question">お休みを、先の日も決めたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">今週のなかでなら、先の日も
+          <p class="qa-a" data-i18n="unlikely5Answer">今週のなかでなら、先の日も
 決められます。
 ホームの社長を押すと、今週のお休みを
 まとめて変えられます。
 来週や再来週を先にまとめて、は
 できません。</p>
-        <p class="qa-note">毎週おなじ曜日のお休みなら、
+        <p class="qa-note" data-i18n="unlikely5Note">毎週おなじ曜日のお休みなら、
 いまも設定から決められます。
 本格的なものは、別のアプリとして
 作りたいです</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">お休みや目標を週ごとに決めておきたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely6Question">お休みや目標を週ごとに決めておきたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">ゆるく作業を可視化するための
+          <p class="qa-a" data-i18n="unlikely6Answer">ゆるく作業を可視化するための
 アプリにしたいので、
 今のところむずかしいと
 考えています。</p>
-        <p class="qa-note">会社にお勤めの方に向けた
+        <p class="qa-note" data-i18n="unlikely6Note">会社にお勤めの方に向けた
 「くろねこ勤怠」を作りたいです。
 そちらで考えています</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">メモや やることリストもほしい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely7Question">メモや やることリストもほしい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">ご要望はすべて読んでいます。
+          <p class="qa-a" data-i18n="unlikely7Answer">ご要望はすべて読んでいます。
 よく検討したのですが、
 別のアプリにしたほうが
 いいかもしれないと思っています。</p>
-        <p class="qa-note">もっと細かくお仕事を管理できる
+        <p class="qa-note" data-i18n="unlikely7Note">もっと細かくお仕事を管理できる
 「くろねこ勤怠」を作りたいです。
 そちらで考えています</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">シフトや勤務時間の設定はできますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely8Question">シフトや勤務時間の設定はできますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">このアプリは「お金の出ない時間」を
+          <p class="qa-a" data-i18n="unlikely8Answer">このアプリは「お金の出ない時間」を
 測るために作っているので、
 お仕事の勤怠管理には
 向かないかもしれません。</p>
-        <p class="qa-note">働く人向けの「くろねこ勤怠」も、
+        <p class="qa-note" data-i18n="unlikely8Note">働く人向けの「くろねこ勤怠」も、
 いつか出したいと考えていますが、
 かなり先になりそうです</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">ポモドーロ・タイマーがほしい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely9Question">ポモドーロ・タイマーがほしい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">悩んでいます。
+          <p class="qa-a" data-i18n="unlikely9Answer">悩んでいます。
 作者があまり使ったことがないので、
 勉強してから決めます……。</p>
-          <p class="qa-note">「25分やって5分休む」のような
+          <p class="qa-note" data-i18n="unlikely9Note">「25分やって5分休む」のような
 短いきざみは、いまは選べません</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">目標を、もっとこまかく決めたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely10Question">目標を、もっとこまかく決めたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">なるべくシンプルなアプリで
+          <p class="qa-a" data-i18n="unlikely10Answer">なるべくシンプルなアプリで
 ありたいので、別のアプリとして
 作りたいと思っています。</p>
-        <p class="qa-note">会社にお勤めの方に向けた
+        <p class="qa-note" data-i18n="unlikely10Note">会社にお勤めの方に向けた
 「くろねこ勤怠」を作りたいです。
 そちらで考えています</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">ねこ以外の子（犬など）もいてほしい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely11Question">ねこ以外の子（犬など）もいてほしい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">ねこ以外が描けなくて、
+          <p class="qa-a" data-i18n="unlikely11Answer">ねこ以外が描けなくて、
 むずかしいかもしれないです。
 がんばるにしても、いまは
 ねこを少しずつ増やしていきたいです。</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">日本語いがいの言葉にも対応してほしい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely12Question">日本語いがいの言葉にも対応してほしい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">今は日本語だけです。
-作者が外国語をできないので、
-ひとりで作ると、とんでもない翻訳で
-お届けすることになりそうです。</p>
-        <p class="qa-note">こういうのは、どこに頼めば
-いいのでしょうか……</p>
+          <p class="qa-a" data-i18n="unlikely12Answer">2.3.0で、英語・한국어・繁體中文でも
+使えるようにします。
+端末の言語にあわせて切りかわり、
+設定でえらぶこともできます。</p>
+        <p class="qa-note" data-i18n="unlikely12Note">翻訳の申し出やアドバイスをくださった方、
+ありがとうございます</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">海外のストアでも入れられますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely13Question">海外のストアでも入れられますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">日本のほかにも、いくつかの国の
-ストアで公開しています。
-ただ、一部の地域では
-公開していません。</p>
-        <p class="qa-note">きまりへの対応がむずかしいためです。
-ごめんなさい</p>
+          <p class="qa-a" data-i18n="unlikely13Answer">App Store は、すべての国と地域で
+公開しています。
+Google Play は、いまのところ
+日本だけです。</p>
+        <p class="qa-note" data-i18n="unlikely13Note">Google Play のほかの国と地域は、
+準備中です</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q">会社やチームでも使ってみたいです</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely14Question">会社やチームでも使ってみたいです</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a">企業のみなさま、
+          <p class="qa-a" data-i18n="unlikely14Answer">企業のみなさま、
 お声がけをお待ちしています。</p>
-        <p class="qa-note">ごようぼうフォーム、または support@c-cya.com へ</p>
+        <p class="qa-note" data-i18n="unlikely14Note">ごようぼうフォーム、または support@c-cya.com へ</p>
         </div>
       </details>
     </div>
   </section>
 
-  <p style="font-size:clamp(13px,3.6vw,15px);color:var(--deep);margin:26px 0 0;">こたえが見つからないときは、<br><a href="/contact/" style="border-bottom:2px dashed var(--shadow);">ごようぼうフォーム</a>から おしえてください。</p>
+  <p style="font-size:clamp(13px,3.6vw,15px);color:var(--deep);margin:26px 0 0;"><span data-i18n="notFoundBeforeLink">こたえが見つからないときは、</span><br><a data-i18n="contactFormLink" href="/contact/" style="border-bottom:2px dashed var(--shadow);">ごようぼうフォーム</a><span data-i18n="notFoundAfterLink">から おしえてください。</span></p>
 
-  <p style="margin:24px 0 0;font-size:13px;"><a href="/" style="border-bottom:2px dashed var(--shadow);">← ねこ勤怠のページへもどる</a></p>
+  <p style="margin:24px 0 0;font-size:13px;"><a data-i18n="backToTop" href="/" style="border-bottom:2px dashed var(--shadow);">← ねこ勤怠のページへもどる</a></p>
 
   <div style="position:relative;margin-top:clamp(40px,7vw,64px);">
     <div style="position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--shadow);border-radius:3px;"></div>
@@ -686,9 +703,9 @@ Android版は最新にすると直ります。</p>
   <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;">
     <a href="https://shop.c-cya.com" target="_blank" rel="noopener" style="border-bottom:2px dashed var(--shadow);">Online shop</a>
     <a href="https://www.instagram.com/c_cya__/" target="_blank" rel="noopener" style="border-bottom:2px dashed var(--shadow);">Instagram</a>
-    <a href="/roadmap/" style="border-bottom:2px dashed var(--shadow);">アップデートのよてい</a>
-    <a href="/contact/" style="border-bottom:2px dashed var(--shadow);">ごようぼう</a>
-    <a href="/privacy/" style="border-bottom:2px dashed var(--shadow);">プライバシーポリシー</a>
+    <a data-i18n="roadmapLink" href="/roadmap/" style="border-bottom:2px dashed var(--shadow);">アップデートのよてい</a>
+    <a data-i18n="contactLink" href="/contact/" style="border-bottom:2px dashed var(--shadow);">ごようぼう</a>
+    <a data-i18n="privacyLink" href="/privacy/" style="border-bottom:2px dashed var(--shadow);">プライバシーポリシー</a>
   </div>
   <div style="color:var(--muted);font-size:12px;margin-top:20px;">© c_cya.</div>
 </footer>

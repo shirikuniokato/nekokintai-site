@@ -1,0 +1,78 @@
+{
+  "generatedAt": "2026-09-03T20:16:03.730Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "summaryJapanese": "critical はありません。high 1件、medium 9件です。主な問題は、未確定の要望を「今後追加される機能・計画」と断定する確度の変化、猫種名の誤対応、打刻範囲の縮小です。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "documentDescription",
+      "severity": "medium",
+      "backTranslationJapanese": "ねこ勤怠についてのよくある質問と回答。記録の使い方、できること、そして私が予定していること。",
+      "reasonJapanese": "「寄せられた」という利用者から届いた質問であることが抜けています。また、「これからやりたいこと」が「予定していること」になり、希望から計画へ確度が上がっています。"
+    },
+    {
+      "locale": "en",
+      "key": "upcomingLabel",
+      "severity": "high",
+      "backTranslationJapanese": "今後追加される機能",
+      "reasonJapanese": "「これからのこと」という未確定事項も含められる表現が、実装予定の機能を示す表現に変わっています。この節には検討中や実現時期未定の内容もあるため、公開予定を約束するような意味になります。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming3Note",
+      "severity": "medium",
+      "backTranslationJapanese": "黒い帽子柄、キジトラ、茶トラ、サバトラの猫は、2.1.0から迎えられます。",
+      "reasonJapanese": "「ハチワレ」が「Black-cap（黒い帽子柄）」になっています。額から顔にかけて八の字に色が分かれるハチワレとは別の模様を指すため、猫の種類が変わっています。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming8Question",
+      "severity": "medium",
+      "backTranslationJapanese": "Apple Watchやウィジェットから出勤したい。",
+      "reasonJapanese": "「打刻」は出勤・退勤などの時刻記録全般を含みますが、「clock in」は出勤だけを指します。退勤などを操作したい意味が欠落しています。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcomingLabel",
+      "severity": "medium",
+      "backTranslationJapanese": "今後の計画",
+      "reasonJapanese": "中立的な「これからのこと」が「計画」に変わり、検討中の要望まで決定済みの計画であるように読めます。"
+    },
+    {
+      "locale": "ko",
+      "key": "unlikely10Answer",
+      "severity": "medium",
+      "backTranslationJapanese": "できるだけシンプルなアプリとして残したいので、別のアプリとして作ってみようかと考えています。",
+      "reasonJapanese": "「別のアプリとして作りたい」という明確な希望が、「作ろうかと考えている」という検討段階まで弱まっています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "documentDescription",
+      "severity": "medium",
+      "backTranslationJapanese": "ねこ勤怠に関するよくある質問と回答。記録の使い方、できること、そして将来の計画。",
+      "reasonJapanese": "「寄せられた」という利用者から届いた質問であることが抜けています。また、「これからやりたいこと」が「将来の計画」になり、希望から計画へ確度が上がっています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcomingLabel",
+      "severity": "medium",
+      "backTranslationJapanese": "将来の計画",
+      "reasonJapanese": "中立的な「これからのこと」が「計画」に変わり、検討中の内容まで決定済みの計画であるように読めます。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely10Answer",
+      "severity": "medium",
+      "backTranslationJapanese": "このアプリをできるだけシンプルに保ちたいので、別の新しいアプリを作るつもりです。",
+      "reasonJapanese": "「別のアプリとして作りたい」という希望が、「作るつもり」という具体的な計画に強まっています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely10Note",
+      "severity": "medium",
+      "backTranslationJapanese": "上班族向けの「くろねこ勤怠」を作りたいです。現在、この方向で計画しています。",
+      "reasonJapanese": "原文は、細かな目標設定を「くろねこ勤怠」の側で検討するという意味です。翻訳ではその機能との結び付きがなくなり、アプリ自体をその方向で計画中だという意味に変わっています。"
+    }
+  ]
+}

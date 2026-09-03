@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["summaryJapanese", "issues"],
+  "properties": {
+    "summaryJapanese": { "type": "string" },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["locale", "key", "severity", "replacement", "reasonJapanese"],
+        "properties": {
+          "locale": { "type": "string", "enum": ["en", "ko", "zh-TW"] },
+          "key": { "type": "string" },
+          "severity": { "type": "string", "enum": ["critical", "high", "medium"] },
+          "replacement": { "type": "string" },
+          "reasonJapanese": { "type": "string" }
+        }
+      }
+    }
+  }
+}

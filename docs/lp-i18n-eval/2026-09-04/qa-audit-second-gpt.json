@@ -1,0 +1,183 @@
+{
+  "generatedAt": "2026-09-03T21:20:12.225Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "summaryJapanese": "重大な欠落はありません。修正対象は25件です。主な問題は、不具合で実際に表示される文字列の改変、利用者を責める表現、Android OSとアプリ版の混同、同一UI用語・製品名の揺れ、韓国語助詞、台湾向け猫柄名称、および翻訳協力への謝意の意味欠落です。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "howTo2Answer",
+      "severity": "medium",
+      "replacement": "When you open Home the next day,\nit will say \"Clock-out wasn't recorded.\"\nYou can edit the previous day's record\nfrom \"Edit Time\" there.\nIf it doesn't appear, please tap the previous day\non the \"Month\" screen to edit it.",
+      "reasonJapanese": "「You didn't clock out」は利用者を直接責める表現です。原文の受け身に合わせ、記録状態を説明する中立的な文にします。"
+    },
+    {
+      "locale": "en",
+      "key": "fixedInLatest2Question",
+      "severity": "high",
+      "replacement": "On Android, entering a name turns it into \"ねここここ\"",
+      "reasonJapanese": "不具合で実際に表示される文字列を別表記にし、さらに「こ」が1文字欠けています。診断に必要な文字列なので原文どおり保持します。"
+    },
+    {
+      "locale": "en",
+      "key": "fixedInLatest2Answer",
+      "severity": "medium",
+      "replacement": "During initial setup,\nthere was a bug that affected Japanese text input.\nUpdate the Android app to the latest version to fix it.",
+      "reasonJapanese": "「Updating the Android version」ではAndroid OSの更新と読めます。原文はAndroid版アプリの更新を指します。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming9Note",
+      "severity": "medium",
+      "replacement": "Currently, \"Break Prompt Time\"\nand \"Break time\" start at 30 minutes\nand can be adjusted in 30-minute increments.",
+      "reasonJapanese": "同じUI項目が別箇所では「Break Prompt Time」、ここでは「Time to invite for a break」と訳されており、用語が揺れています。"
+    },
+    {
+      "locale": "en",
+      "key": "unlikely10Note",
+      "severity": "medium",
+      "replacement": "I want to make \"Black Cat Timecard\"\nfor company employees.\nI'm considering it for that app.",
+      "reasonJapanese": "同じ予定製品名が他の項目では「Black Cat Timecard」、ここだけ「くろねこ勤怠」になっています。"
+    },
+    {
+      "locale": "ko",
+      "key": "investigating1NoteAfterEmail",
+      "severity": "medium",
+      "replacement": "으로 보내주시면 큰 도움이 됩니다.",
+      "reasonJapanese": "メールアドレスの直後に助詞を空けて書くのは不自然です。また「닷컴」と読む語尾には「로」ではなく「으로」が適切です。"
+    },
+    {
+      "locale": "ko",
+      "key": "fixedInLatest2Question",
+      "severity": "high",
+      "replacement": "Android에서 이름을 입력하면 'ねここここ'가 돼요",
+      "reasonJapanese": "不具合で実際に表示される日本語文字列をハングルへ置き換えると、別の現象に見えます。引用部分は原文どおり保持します。"
+    },
+    {
+      "locale": "ko",
+      "key": "fixedInLatest2Answer",
+      "severity": "medium",
+      "replacement": "처음 설정할 때,\n일본어 입력이 잘 안 되는 버그가 있었어요.\nAndroid 앱을 최신 버전으로 업데이트하면 해결돼요.",
+      "reasonJapanese": "「Android 버전」はAndroid OSのバージョンとも読めます。更新対象がAndroid版アプリであることを明示します。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcoming9Note",
+      "severity": "medium",
+      "replacement": "현재 '휴식 권유 시간'과\n'휴식할 시간'은 30분부터 시작하며,\n30분 단위로 설정할 수 있어요.",
+      "reasonJapanese": "同じUI項目が別箇所では「휴식 권유 시간」、ここでは「휴식에 초대할 시간」となっており、用語が揺れています。"
+    },
+    {
+      "locale": "ko",
+      "key": "unlikely8Question",
+      "severity": "medium",
+      "replacement": "근무 일정이나 근무 시간을 설정할 수 있나요?",
+      "reasonJapanese": "「교대 근무」は交代制勤務に意味を限定します。原文の「シフト」は勤務日程・勤務表全般を指します。"
+    },
+    {
+      "locale": "ko",
+      "key": "unlikely9Question",
+      "severity": "medium",
+      "replacement": "포모도로 타이머가 있었으면 좋겠어요.",
+      "reasonJapanese": "韓国語で一般的な名称は「포모도로 타이머」です。「뽀모도로」は用語として不自然です。"
+    },
+    {
+      "locale": "ko",
+      "key": "unlikely10Note",
+      "severity": "medium",
+      "replacement": "회사에 다니시는 분들을 위한\n'검은 고양이 근태'를 만들고 싶어요.\n그쪽에서 고려해 볼게요.",
+      "reasonJapanese": "同じ予定製品名が他の項目では「검은 고양이 근태」、ここだけ日本語表記になっています。"
+    },
+    {
+      "locale": "ko",
+      "key": "unlikely12Note",
+      "severity": "medium",
+      "replacement": "번역을 도와주겠다고 제안해 주시거나\n조언해 주신 분들, 정말 감사합니다.",
+      "reasonJapanese": "現訳の「번역을 제안」は翻訳そのものを申し出たという意味を十分に伝えていません。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcomingOutroAfterLink",
+      "severity": "medium",
+      "replacement": "에 정리해 두었어요",
+      "reasonJapanese": "リンク名に続く助詞「에」は前の語へ続けて書きます。現在の先頭空白は韓国語の助詞規則に合いません。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "investigating1NoteBeforeEmail",
+      "severity": "high",
+      "replacement": "如果您遇到相同情況，請將螢幕截圖、\n裝置型號、Android 版本和關閉應用程式的方式寄到\n",
+      "reasonJapanese": "メールアドレスへ「送る」という動詞が欠落し、リンクを挟んだ文が成立していません。後続キーと合わせて修正します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "investigating1NoteAfterEmail",
+      "severity": "high",
+      "replacement": "，這會對我們很有幫助。",
+      "reasonJapanese": "前の断片と合わせるとメールアドレスの前後に読点が重なり、送付指示も成立しません。前置断片の「寄到」とつながる形にします。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo2Answer",
+      "severity": "medium",
+      "replacement": "隔天開啟首頁時，\n會顯示「尚未記錄下班打卡」。\n您可以從裡面的「修改時間」，\n來修改前一天的紀錄。\n如果沒有顯示，請在「月份」畫面\n按一下前一天的日期來修改。",
+      "reasonJapanese": "「您尚未打卡下班」は利用者を直接責める響きがあります。原文どおり、記録状態を示す中立的な表現にします。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo10Answer",
+      "severity": "medium",
+      "replacement": "在「月份」畫面按一下日期，\n就能看到當天的總時間，\n以及每項工作的開始與結束時間。",
+      "reasonJapanese": "同じ画面名が大半の項目では「月份」、ここでは「月」になっています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "fixedInLatest1Question",
+      "severity": "medium",
+      "replacement": "在「月份」畫面，8月的紀錄跑到7月或9月了",
+      "reasonJapanese": "同じ画面名が大半の項目では「月份」、ここでは「月」になっています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "fixedInLatest2Question",
+      "severity": "high",
+      "replacement": "在 Android 輸入名字後會變成「ねここここ」",
+      "reasonJapanese": "実際に表示される「ねここここ」を「貓貓貓貓」と意訳すると、不具合の症状が別の文字列に変わってしまいます。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming3Note",
+      "severity": "medium",
+      "replacement": "賓士貓、棕色虎斑貓、橘貓、銀灰虎斑貓\n從2.1.0版開始就可以迎接囉。\n點陣圖是花時間一隻一隻畫出來的。\n今後新增的貓咪可能會需要付費。",
+      "reasonJapanese": "「サバトラ」を台湾で別の柄を指す「白底虎斑貓」としており、毛柄の意味が変わっています。「銀灰虎斑貓」が適切です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming9Note",
+      "severity": "medium",
+      "replacement": "目前的「提醒休息時間」\n與「休息時間」從 30 分鐘起，\n並以 30 分鐘為單位。",
+      "reasonJapanese": "同じUI項目が別箇所では「提醒休息時間」、ここでは「邀請休息的時間」となっており、用語が揺れています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely5Note",
+      "severity": "medium",
+      "replacement": "如果每週固定在同一天休假，\n現在就能從設定中指定。\n更完整的功能，我希望能\n做成另一款應用程式。",
+      "reasonJapanese": "台湾華語の「正式」は本格的・高機能という意味になりません。原文は、より充実した休暇管理機能を指しています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely10Note",
+      "severity": "medium",
+      "replacement": "我想為上班族製作一款\n「黑貓勤怠」。\n我會在那邊考慮加入這個功能。",
+      "reasonJapanese": "同じ予定製品名が他の項目では「黑貓勤怠」、ここだけ日本語表記になっています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely12Note",
+      "severity": "medium",
+      "replacement": "感謝主動提出協助翻譯，\n或提供建議的朋友們。",
+      "reasonJapanese": "現訳では「翻訳を申し出た人」が「翻訳について提案した人」に変わり、協力の申し出という意味が欠落しています。"
+    }
+  ]
+}

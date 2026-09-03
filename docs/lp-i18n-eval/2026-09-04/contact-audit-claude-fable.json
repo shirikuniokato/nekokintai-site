@@ -1,0 +1,36 @@
+{
+  "generatedAt": "2026-09-03T20:40:59.372Z",
+  "reviewer": "claude-fable",
+  "model": "claude-fable-5",
+  "summaryJapanese": "全体として3言語とも意味は概ね正確で、猫語は吹き出し（catSpeech / thanksSpeech）に限定されており通常UIへの混入はありません。台湾向け語彙（回饋・傳送・電子郵件・應用程式・隱私權政策）も適切です。指摘は4件。韓国語のメール宛先に続く助詞「으로」が語末未確定の英字アドレスに直付けされ、かつ前に空白が入っている点（high）、英語のdoneReplyで「wait a moment」が2行目の「数日かかる」と矛盾する点、英語のfaqHintAfterLinkが前置き文なしで断片文になる点、韓国語のkindTroubleがリード文の表現と揺れている点（いずれもmedium）です。",
+  "issues": [
+    {
+      "locale": "ko",
+      "key": "errorAfterEmail",
+      "severity": "high",
+      "replacement": " 주소로 보내주세요.",
+      "reasonJapanese": "韓国語の助詞問題。メールアドレス（英字、語末の受け身音が確定しない）の直後に「으로」を固定で付けており、さらに助詞の前に空白が入っているため正書法として誤りです。名詞「주소」を挟むことで助詞の選択と分かち書きの問題を同時に回避します。改行数0を維持。"
+    },
+    {
+      "locale": "en",
+      "key": "doneReply",
+      "severity": "medium",
+      "replacement": "I'll write you a reply, so please hang tight.\nIt may take a few days, since I look into it properly before answering.",
+      "reasonJapanese": "意味のずれ。1行目の「wait a moment」は原文にない上、2行目の「数日かかることがあります」と矛盾し、すぐ返事が来る印象を与えます。原文どおり「待っていてください」だけを伝える表現に修正。改行数1を維持。"
+    },
+    {
+      "locale": "en",
+      "key": "faqHintAfterLink",
+      "severity": "medium",
+      "replacement": " might already have the answer.",
+      "reasonJapanese": "UIとして不自然。原文にはリンク前の文がないため、表示上は「FAQ, which might have the answer.」という関係節だけの断片文になります。リンク語に直接続けて一文として成立する形に修正。改行数0を維持。"
+    },
+    {
+      "locale": "ko",
+      "key": "kindTrouble",
+      "severity": "medium",
+      "replacement": "불편한 점이 있어요",
+      "reasonJapanese": "用語揺れ。リード文では「여기가 불편해요」と表現しているのに、選択肢では「곤란해요」となっており、同じ種類の要望を指す語が揃っていません。他の選択肢「이런 기능이 필요해요」と同様にリード文の表現に合わせます。改行数0を維持。"
+    }
+  ]
+}

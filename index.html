@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ねこ勤怠 — ねこと一緒に、じぶん勤怠。</title>
-<meta name="description" content="はたらいた時間を、きろくするにゃ。ねこと一緒に続ける、じぶんのための作業記録アプリ。">
+<title data-i18n="documentTitle">ねこ勤怠 — ねこと一緒に、じぶん勤怠。</title>
+<meta name="description" data-i18n-content="documentDescription" content="はたらいた時間を、きろくするにゃ。ねこと一緒に続ける、じぶんのための作業記録アプリ。">
 <link rel="canonical" href="https://nekokintai.com/">
-<meta property="og:title" content="ねこ勤怠">
-<meta property="og:description" content="はたらいた時間を、きろくするにゃ。ねこと一緒に、じぶん勤怠。">
+<meta property="og:title" data-i18n-content="ogTitle" content="ねこ勤怠">
+<meta property="og:description" data-i18n-content="ogDescription" content="はたらいた時間を、きろくするにゃ。ねこと一緒に、じぶん勤怠。">
 <meta property="og:image" content="https://nekokintai.com/ogp.png">
 <meta property="og:url" content="https://nekokintai.com/">
 <meta property="og:type" content="website">
@@ -21,6 +21,7 @@
   gtag('js', new Date());
   gtag('config', 'G-2J5J902MFE');
 </script>
+<script type="module" src="/assets/lp/i18n.mjs"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
@@ -38,6 +39,29 @@
   img{display:block;}
   .social-btn{transition:transform .12s ease,box-shadow .12s ease;}
   .social-btn:hover{transform:translateY(-2px);box-shadow:4px 6px 0 var(--shadow) !important;}
+  .lp-copy-multiline{white-space:pre-line;}
+  .locale-switcher{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin:18px 0 0;}
+  .locale-switcher button{border:1px solid var(--border);border-radius:999px;background:var(--paper);color:var(--deep);font:inherit;font-size:11px;line-height:1.2;padding:6px 9px;cursor:pointer;}
+  .locale-switcher button[aria-pressed="true"]{border-color:var(--ink);background:var(--accent);color:var(--ink);}
+  .locale-switcher button:focus-visible{outline:2px solid var(--deep);outline-offset:3px;}
+  /* ストアバッジ。素材は公式のまま、表示の高さだけそろえる */
+  .store-badges{display:flex;justify-content:center;align-items:center;gap:clamp(7px,2.4vw,12px);margin-top:28px;flex-wrap:nowrap;--badge-height:clamp(44px,12vw,56px);}
+  .store-badges img{height:var(--badge-height);width:auto;display:block;}
+  /* Google Play の「準備中」。日本語では出さない。バッジは公式素材なので覆わず、下にぶら下げる */
+  .store-play{position:relative;display:block;}
+  .store-soon{display:none;position:absolute;left:50%;top:calc(100% + 6px);transform:translateX(-50%);white-space:nowrap;font-size:10px;line-height:1;letter-spacing:.08em;color:var(--deep);background:var(--paper);border:1px dashed var(--ink);border-radius:999px;padding:4px 8px;}
+  .store-note{display:none;font-size:11px;line-height:1.7;color:var(--muted);margin:30px 0 0;}
+  html:not([lang="ja"]) .store-soon,html:not([lang="ja"]) .store-note{display:block;}
+  html:not([lang="ja"]) .store-play a{pointer-events:none;cursor:default;}
+  /* Google Play の公式 PNG（en / ko / zh-TW、646×250）は透明余白を含み、その量が言語で違う。
+     en は本体 564×168 のまわりに 41px、ko / zh-TW は本体 646×192 の上下だけに 29px（左右 0）。
+     日本語の SVG は余白なしなので、同じ高さで出すと本体だけ小さく見える。
+     表示だけを 250/本体高さ 倍にして余白ぶんを負のマージンで打ち消し、本体の見た目の高さと並びの間隔を日本語と同じにする。
+     係数は scripts/measure-lp-badge-padding.mjs の実測値そのもので、scripts/lib/lp-badge-padding.test.mjs が一致を検査する。
+     素材ファイルそのものには手を入れない */
+  html[lang="en"] .store-badges img[data-locale-badge="google-play"]{height:calc(var(--badge-height) * 250 / 168);margin:calc(var(--badge-height) * -41 / 168) calc(var(--badge-height) * -41 / 168);}
+  html[lang="ko"] .store-badges img[data-locale-badge="google-play"]{height:calc(var(--badge-height) * 250 / 192);margin:calc(var(--badge-height) * -29 / 192) 0;}
+  html[lang="zh-TW"] .store-badges img[data-locale-badge="google-play"]{height:calc(var(--badge-height) * 250 / 192);margin:calc(var(--badge-height) * -29 / 192) 0;}
   @keyframes nk-bob{0%,49%{transform:translateY(0)}50%,100%{transform:translateY(-4px)}}
   @keyframes nk-twinkle{0%,100%{opacity:.25}50%{opacity:1}}
   /* ボタン内のキラキラ用: 消えかけない浅い明滅 */
@@ -64,16 +88,27 @@
     <span aria-hidden="true" class="tsp2" style="position:absolute;left:20%;bottom:2%;font-size:24px;color:var(--shadow);animation:nk-twinkle 3.3s ease-in-out .7s infinite;">＋</span>
     <span aria-hidden="true" class="tsp3" style="position:absolute;right:9%;top:16%;font-size:44px;color:var(--accent);animation:nk-twinkle 3s ease-in-out 1.1s infinite;">＋</span>
     <span aria-hidden="true" class="tsp4" style="position:absolute;right:22%;top:-6%;font-size:26px;color:var(--shadow);animation:nk-twinkle 2.9s ease-in-out .3s infinite;">＋</span>
-    <h1 style="position:relative;font-size:clamp(30px,7vw,46px);font-weight:400;line-height:1.5;letter-spacing:.02em;margin:12px 0 8px;">ねこと一緒に、<br>じぶん勤怠。</h1>
+    <h1 class="lp-copy-multiline" data-i18n="heroTitle" style="position:relative;font-size:clamp(30px,7vw,46px);font-weight:400;line-height:1.5;letter-spacing:.02em;margin:12px 0 8px;">ねこと一緒に、
+じぶん勤怠。</h1>
   </div>
-  <p style="font-size:clamp(14px,3.5vw,17px);color:var(--deep);margin:0;">はたらいた時間を、きろくするにゃ。</p>
+  <p data-i18n="heroLead" style="font-size:clamp(14px,3.5vw,17px);color:var(--deep);margin:0;">はたらいた時間を、きろくするにゃ。</p>
+
+  <nav class="locale-switcher" data-i18n-aria-label="languageSelector" aria-label="言語">
+    <button type="button" data-locale="ja" aria-pressed="true">日本語</button>
+    <button type="button" data-locale="en" aria-pressed="false">English</button>
+    <button type="button" data-locale="ko" aria-pressed="false">한국어</button>
+    <button type="button" data-locale="zh-TW" aria-pressed="false">繁體中文</button>
+  </nav>
 
   <!-- ストアバッジは公式素材。規約上いかなる改変も不可なので、色・比率・枠に手を入れないこと -->
-  <div style="display:flex;justify-content:center;align-items:center;gap:clamp(7px,2.4vw,12px);margin-top:28px;flex-wrap:nowrap;">
-    <a href="https://apps.apple.com/jp/app/id6801066427" target="_blank" rel="noopener" onclick="gtag('event','store_click',{store:'ios'});" style="display:block;"><img src="/assets/badges/app-store-ja.svg" width="109" height="40" alt="App Store からダウンロード" style="height:clamp(44px,12vw,56px);width:auto;display:block;"></a>
+  <div class="store-badges">
+    <!-- App Store の国コードは言語に合わせて切り替える（下の script）。国コードなしの URL は閲覧者の国を見ずに米国へ転送されるため -->
+    <a href="https://apps.apple.com/jp/app/id6801066427" target="_blank" rel="noopener" onclick="gtag('event','store_click',{store:'ios'});" data-store="app-store" style="display:block;"><img src="/assets/badges/app-store-ja.svg" width="109" height="40" data-locale-badge="app-store" data-i18n-alt="appStoreAlt" alt="App Store からダウンロード"></a>
     <!-- referrer の中身は %3D / %26 でエンコードすること（生の & だと utm_medium 以降が Play に渡らない） -->
-    <a href="https://play.google.com/store/apps/details?id=com.ccya.nekokintai&amp;referrer=utm_source%3Dnekokintai-lp%26utm_medium%3Dweb" target="_blank" rel="noopener" onclick="gtag('event','store_click',{store:'android'});" style="display:block;"><img src="/assets/badges/google-play-ja.svg" width="180" height="53" alt="Google Play で手に入れよう" style="height:clamp(44px,12vw,56px);width:auto;display:block;"></a>
+    <!-- Google Play は日本のみ配信中。日本語以外ではバッジそのものには触れず、下に「準備中」を出してリンクを外す（切替は下の script） -->
+    <span class="store-play"><a href="https://play.google.com/store/apps/details?id=com.ccya.nekokintai&amp;referrer=utm_source%3Dnekokintai-lp%26utm_medium%3Dweb" target="_blank" rel="noopener" onclick="gtag('event','store_click',{store:'android'});" data-store="google-play" style="display:block;"><img src="/assets/badges/google-play-ja.svg" width="180" height="53" data-locale-badge="google-play" data-i18n-alt="playStoreAlt" alt="Google Play で手に入れよう"></a><span class="store-soon" data-i18n="playStoreSoonChip">準備中</span></span>
   </div>
+  <p class="store-note" data-i18n="playStoreSoonNote">Google Play は いまのところ日本のみで配信しています。ほかの国と地域は準備中です</p>
 
   <div style="position:relative;margin:clamp(44px,6vw,64px) 0 0;">
     <span aria-hidden="true" style="position:absolute;left:6%;top:6%;font-size:20px;color:var(--accent);animation:nk-twinkle 2.8s ease-in-out infinite;">＋</span>
@@ -82,32 +117,33 @@
     <div style="position:absolute;left:0;right:0;bottom:26px;height:6px;background:var(--shadow);border-radius:3px;"></div>
     <div style="position:relative;display:flex;align-items:flex-end;justify-content:center;gap:clamp(2px,2vw,40px);padding-bottom:26px;">
       <div style="flex:0 0 auto;padding-bottom:6px;position:relative;">
-        <div style="position:absolute;left:0;bottom:calc(100% + 14px);font-size:clamp(10px,2.6vw,15px);color:var(--deep);white-space:nowrap;">＼これが達成感かにゃ／</div>
-        <img src="assets/lp/cat-white.png" alt="歩くしろねこ" width="208" height="144" style="width:clamp(54px,14vw,104px);height:auto;image-rendering:pixelated;margin:0 auto;animation:nk-bob 1.7s steps(1,end) infinite;">
+        <div data-i18n="heroSpeechLeft" style="position:absolute;left:0;bottom:calc(100% + 14px);font-size:clamp(10px,2.6vw,15px);color:var(--deep);white-space:nowrap;">＼これが達成感かにゃ／</div>
+        <img src="assets/lp/cat-white.png" data-i18n-alt="walkingWhiteCatAlt" alt="歩くしろねこ" width="208" height="144" style="width:clamp(54px,14vw,104px);height:auto;image-rendering:pixelated;margin:0 auto;animation:nk-bob 1.7s steps(1,end) infinite;">
       </div>
-      <img src="assets/lp/screen-week.png" alt="ねこ勤怠の週の画面。目標に届いた週のおいわい" style="width:clamp(180px,48vw,360px);height:auto;flex:0 1 auto;margin-bottom:clamp(124px,15vw,160px);">
+      <img src="assets/lp/screen-week.png" data-locale-screenshot="week" data-i18n-alt="weekScreenAlt" alt="ねこ勤怠の週の画面。目標に届いた週のおいわい" style="width:clamp(180px,48vw,360px);height:auto;flex:0 1 auto;margin-bottom:clamp(124px,15vw,160px);">
       <div style="flex:0 0 auto;padding-bottom:6px;position:relative;">
-        <div style="position:absolute;right:0;bottom:calc(100% + 14px);font-size:clamp(10px,2.6vw,15px);color:var(--deep);white-space:nowrap;">＼きっとそうだよ／</div>
-        <img src="assets/lp/cream-sit.png" alt="すわるバニラねこ" width="208" height="120" style="width:clamp(50px,13vw,96px);height:auto;image-rendering:pixelated;margin:0 auto;scale:-1 1;animation:nk-bob 2.3s steps(1,end) .3s infinite;">
+        <div data-i18n="heroSpeechRight" style="position:absolute;right:0;bottom:calc(100% + 14px);font-size:clamp(10px,2.6vw,15px);color:var(--deep);white-space:nowrap;">＼きっとそうだよ／</div>
+        <img src="assets/lp/cream-sit.png" data-i18n-alt="sittingVanillaCatAlt" alt="すわるバニラねこ" width="208" height="120" style="width:clamp(50px,13vw,96px);height:auto;image-rendering:pixelated;margin:0 auto;scale:-1 1;animation:nk-bob 2.3s steps(1,end) .3s infinite;">
       </div>
     </div>
   </div>
 
-  <section aria-label="推しポイント" style="margin:64px 0 0;text-align:left;">
-    <span style="display:block;font-size:13px;letter-spacing:.3em;color:var(--muted);margin:0 0 18px;">とくちょう</span>
+  <section data-i18n-aria-label="featuresAriaLabel" aria-label="推しポイント" style="margin:64px 0 0;text-align:left;">
+    <span data-i18n="featuresLabel" style="display:block;font-size:13px;letter-spacing:.3em;color:var(--muted);margin:0 0 18px;">とくちょう</span>
     <hr style="height:0;border:0;margin:0;border-top:2px solid var(--ink);">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px 0;padding:34px 0 18px;">
       <div style="display:flex;align-items:flex-start;justify-content:flex-start;gap:10px;width:100%;max-width:250px;margin:0 auto;">
         <img src="art/happy.png" alt="" style="width:clamp(34px,9vw,44px);height:auto;image-rendering:pixelated;margin-top:3px;flex:0 0 auto;">
-        <span style="display:block;"><span style="display:block;font-size:clamp(15px,4.2vw,20px);line-height:1.5;">がんばった貯金</span><span style="display:block;font-size:clamp(11px,3.2vw,13px);line-height:1.7;min-height:40px;color:var(--muted);">おやすみの日のぶんは、<br>ぜんぶ貯金に</span></span>
+        <span style="display:block;"><span data-i18n="goodJobSavings" style="display:block;font-size:clamp(15px,4.2vw,20px);line-height:1.5;">がんばった貯金</span><span class="lp-copy-multiline" data-i18n="goodJobSavingsDescription" style="display:block;font-size:clamp(11px,3.2vw,13px);line-height:1.7;min-height:40px;color:var(--muted);">おやすみの日のぶんは、
+ぜんぶ貯金に</span></span>
       </div>
       <div style="display:flex;align-items:flex-start;justify-content:flex-start;gap:10px;width:100%;max-width:250px;margin:0 auto;">
         <img src="art/walkA.png" alt="" style="width:clamp(34px,9vw,44px);height:auto;image-rendering:pixelated;margin-top:3px;flex:0 0 auto;">
-        <span style="display:block;"><span style="display:block;font-size:clamp(15px,4.2vw,20px);line-height:1.5;">ねこがあるく</span><span style="display:block;font-size:clamp(11px,3.2vw,13px);line-height:1.7;min-height:40px;color:var(--muted);">目標まで、てくてく</span></span>
+        <span style="display:block;"><span data-i18n="catWalks" style="display:block;font-size:clamp(15px,4.2vw,20px);line-height:1.5;">ねこがあるく</span><span class="lp-copy-multiline" data-i18n="catWalksDescription" style="display:block;font-size:clamp(11px,3.2vw,13px);line-height:1.7;min-height:40px;color:var(--muted);">目標まで、てくてく</span></span>
       </div>
       <div style="display:flex;align-items:flex-start;justify-content:flex-start;gap:10px;width:100%;max-width:250px;margin:0 auto;">
         <img src="art/sleep.png" alt="" style="width:clamp(34px,9vw,44px);height:auto;image-rendering:pixelated;margin-top:3px;flex:0 0 auto;">
-        <span style="display:block;"><span style="display:block;font-size:clamp(15px,4.2vw,20px);line-height:1.5;">ぜんぶ端末の中</span><span style="display:block;font-size:clamp(11px,3.2vw,13px);line-height:1.7;min-height:40px;color:var(--muted);">アカウントなし。広告なし</span></span>
+        <span style="display:block;"><span data-i18n="onDevice" style="display:block;font-size:clamp(15px,4.2vw,20px);line-height:1.5;">ぜんぶ端末の中</span><span data-i18n="onDeviceDescription" style="display:block;font-size:clamp(11px,3.2vw,13px);line-height:1.7;min-height:40px;color:var(--muted);">アカウントなし。広告なし</span></span>
       </div>
     </div>
     <hr style="height:0;border:0;border-top:2px solid var(--ink);margin:0;">
@@ -118,16 +154,19 @@
     <span aria-hidden="true" style="position:absolute;right:10%;top:2%;font-size:20px;color:var(--shadow);animation:nk-twinkle 2.9s ease-in-out .9s infinite;">＋</span>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(24px,4vw,40px);justify-items:center;">
       <div>
-        <h2 style="font-size:clamp(16px,2.2vw,20px);font-weight:400;line-height:1.6;margin:0 0 18px;">目標にむかって、<br>ねこと歩こう。</h2>
-        <img src="assets/lp/screen-home.png" alt="ホーム。目標にむかって歩くしろねこ" style="width:100%;max-width:230px;height:auto;margin:0 auto;">
+        <h2 class="lp-copy-multiline" data-i18n="goalScreenTitle" style="font-size:clamp(16px,2.2vw,20px);font-weight:400;line-height:1.6;margin:0 0 18px;">目標にむかって、
+ねこと歩こう。</h2>
+        <img src="assets/lp/screen-home.png" data-locale-screenshot="home" data-i18n-alt="goalScreenAlt" alt="ホーム。目標にむかって歩くしろねこ" style="width:100%;max-width:230px;height:auto;margin:0 auto;">
       </div>
       <div>
-        <h2 style="font-size:clamp(16px,2.2vw,20px);font-weight:400;line-height:1.6;margin:0 0 18px;">毎日のがんばりが、<br>目で見える。</h2>
-        <img src="assets/lp/screen-month.png" alt="月のカレンダー。日ごとのがんばりが色の濃さでつもる" style="width:100%;max-width:230px;height:auto;margin:0 auto;">
+        <h2 class="lp-copy-multiline" data-i18n="progressScreenTitle" style="font-size:clamp(16px,2.2vw,20px);font-weight:400;line-height:1.6;margin:0 0 18px;">毎日のがんばりが、
+目で見える。</h2>
+        <img src="assets/lp/screen-month.png" data-locale-screenshot="month" data-i18n-alt="progressScreenAlt" alt="月のカレンダー。日ごとのがんばりが色の濃さでつもる" style="width:100%;max-width:230px;height:auto;margin:0 auto;">
       </div>
       <div>
-        <h2 style="font-size:clamp(16px,2.2vw,20px);font-weight:400;line-height:1.6;margin:0 0 18px;">好きなねこを、<br>好きな順に。</h2>
-        <img src="assets/lp/screen-shop.png" alt="ねこ屋さん。相棒のねこを選び、長押しで好きな順に並べ替えられる" style="width:100%;max-width:230px;height:auto;margin:0 auto;">
+        <h2 class="lp-copy-multiline" data-i18n="shopScreenTitle" style="font-size:clamp(16px,2.2vw,20px);font-weight:400;line-height:1.6;margin:0 0 18px;">たくさんの、
+ねこがいるよ。</h2>
+        <img src="assets/lp/screen-shop.png" data-locale-screenshot="shop" data-i18n-alt="shopScreenAlt" alt="ねこ屋さん。相棒のねこを選び、長押しで好きな順に並べ替えられる" style="width:100%;max-width:230px;height:auto;margin:0 auto;">
       </div>
     </div>
     <div style="position:relative;margin-top:clamp(32px,5vw,56px);">
@@ -139,43 +178,68 @@
     </div>
   </div>
 
-  <section aria-label="つくった人" style="margin:clamp(56px,8vw,88px) 0 0;text-align:left;">
-    <span style="display:block;font-size:13px;letter-spacing:.3em;color:var(--muted);margin:0 0 18px;">つくった人</span>
+  <section data-i18n-aria-label="makerLabel" aria-label="つくった人" style="margin:clamp(56px,8vw,88px) 0 0;text-align:left;">
+    <span data-i18n="makerLabel" style="display:block;font-size:13px;letter-spacing:.3em;color:var(--muted);margin:0 0 18px;">つくった人</span>
     <hr style="height:0;border:0;margin:0;border-top:2px solid var(--ink);">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px clamp(24px,4vw,48px);align-items:start;padding:28px 0;">
       <div style="display:flex;align-items:flex-start;gap:14px;">
         <img src="assets/lp/mint-sit.png" alt="" style="width:52px;height:30px;image-rendering:pixelated;margin-top:4px;flex:0 0 auto;object-fit:contain;">
         <span style="display:block;">
           <span style="display:block;font-size:clamp(15px,4.2vw,20px);line-height:1.5;">c_cya</span>
-          <span style="display:block;font-size:13px;line-height:1.7;color:var(--muted);">ねこがすきです。</span>
+          <span data-i18n="makerBio" style="display:block;font-size:13px;line-height:1.7;color:var(--muted);">ねこがすきです。</span>
           <span style="display:flex;gap:16px;font-size:13px;line-height:1.7;margin-top:8px;">
             <a href="https://www.instagram.com/c_cya__/" target="_blank" rel="noopener" style="border-bottom:2px dashed var(--shadow);">Instagram</a>
             <a href="https://shop.c-cya.com" target="_blank" rel="noopener" style="border-bottom:2px dashed var(--shadow);">Online shop</a>
           </span>
         </span>
       </div>
-      <p class="maker-span" style="font-size:14px;line-height:1.95;margin:0;color:var(--deep);grid-column:span 2;max-width:34em;">時間をきびしく見はるためではなく、はたらいた事実をただ数えるために作りました。カワイさと達成感がほしかったのです。なので非常にシンプル！アカウントも広告もありません。ごようぼうは <a href="/contact/" style="border-bottom: 2px dashed var(--shadow);">こちらのフォーム</a>から。メールでも大丈夫です（<a href="mailto:support@c-cya.com" style="border-bottom: 2px dashed var(--shadow);">support@c-cya.com</a>）。</p>
+      <p class="maker-span" style="font-size:14px;line-height:1.95;margin:0;color:var(--deep);grid-column:span 2;max-width:34em;"><span data-i18n="makerCopyBeforeLink">時間をきびしく見はるためではなく、はたらいた事実をただ数えるために作りました。カワイさと達成感がほしかったのです。なので非常にシンプル！アカウントも広告もありません。ごようぼうは </span><a data-i18n="contactForm" href="/contact/" style="border-bottom: 2px dashed var(--shadow);">こちらのフォーム</a><span data-i18n="makerCopyBeforeEmail">から。メールでも大丈夫です（</span><a href="mailto:support@c-cya.com" style="border-bottom: 2px dashed var(--shadow);">support@c-cya.com</a><span data-i18n="makerCopyAfterEmail">）。</span></p>
     </div>
     <hr style="height:0;border:0;margin:0;border-top:2px solid var(--ink);">
     <div style="display:flex;gap:clamp(8px,2.5vw,16px);flex-wrap:nowrap;justify-content:center;margin-top:26px;">
-      <a class="social-btn" href="/qa/" style="display:inline-flex;align-items:center;justify-content:center;gap:clamp(7px,2.5vw,16px);flex:0 1 auto;min-width:0;border:2px solid var(--border);background:var(--paper);color:var(--deep);border-radius:12px;padding:clamp(11px,3vw,20px) clamp(12px,4vw,34px);font-size:clamp(12px,3.4vw,20px);white-space:nowrap;box-shadow:4px 4px 0 var(--shadow);"><span aria-hidden="true" style="font-size:clamp(20px,5.5vw,34px);line-height:1;color:var(--accent);animation:nk-twinkle-soft 3s ease-in-out infinite;flex:0 0 auto;">＋</span>よくあるしつもん</a>
-      <a class="social-btn" href="/roadmap/" style="display:inline-flex;align-items:center;justify-content:center;gap:clamp(7px,2.5vw,16px);flex:0 1 auto;min-width:0;border:2px solid var(--border);background:var(--paper);color:var(--deep);border-radius:12px;padding:clamp(11px,3vw,20px) clamp(12px,4vw,34px);font-size:clamp(12px,3.4vw,20px);white-space:nowrap;box-shadow:4px 4px 0 var(--shadow);"><span aria-hidden="true" style="font-size:clamp(20px,5.5vw,34px);line-height:1;color:var(--shadow);animation:nk-twinkle-soft 3.4s ease-in-out .6s infinite;flex:0 0 auto;">＋</span>アップデートのよてい</a>
+      <a class="social-btn" href="/qa/" style="display:inline-flex;align-items:center;justify-content:center;gap:clamp(7px,2.5vw,16px);flex:0 1 auto;min-width:0;border:2px solid var(--border);background:var(--paper);color:var(--deep);border-radius:12px;padding:clamp(11px,3vw,20px) clamp(12px,4vw,34px);font-size:clamp(12px,3.4vw,20px);white-space:nowrap;box-shadow:4px 4px 0 var(--shadow);"><span aria-hidden="true" style="font-size:clamp(20px,5.5vw,34px);line-height:1;color:var(--accent);animation:nk-twinkle-soft 3s ease-in-out infinite;flex:0 0 auto;">＋</span><span data-i18n="faqLink">よくあるしつもん</span></a>
+      <a class="social-btn" href="/roadmap/" style="display:inline-flex;align-items:center;justify-content:center;gap:clamp(7px,2.5vw,16px);flex:0 1 auto;min-width:0;border:2px solid var(--border);background:var(--paper);color:var(--deep);border-radius:12px;padding:clamp(11px,3vw,20px) clamp(12px,4vw,34px);font-size:clamp(12px,3.4vw,20px);white-space:nowrap;box-shadow:4px 4px 0 var(--shadow);"><span aria-hidden="true" style="font-size:clamp(20px,5.5vw,34px);line-height:1;color:var(--shadow);animation:nk-twinkle-soft 3.4s ease-in-out .6s infinite;flex:0 0 auto;">＋</span><span data-i18n="roadmapLink">アップデートのよてい</span></a>
     </div>
     <!-- 投げ銭。/tip/ で金額を選んでから Stripe Payment Link へ。アプリ内からは絶対にリンクしない（ストア規約） -->
     <div style="display:flex;justify-content:center;margin-top:clamp(10px,3vw,18px);">
-      <a class="social-btn" href="/tip/" onclick="gtag('event','tip_click');" style="display:inline-flex;align-items:center;justify-content:center;gap:clamp(7px,2.5vw,16px);flex:0 1 auto;min-width:0;border:2px solid var(--border);background:var(--paper);color:var(--deep);border-radius:12px;padding:clamp(11px,3vw,20px) clamp(12px,4vw,34px);font-size:clamp(12px,3.4vw,20px);white-space:nowrap;box-shadow:4px 4px 0 var(--shadow);"><img src="art/happy.png" alt="" style="width:clamp(28px,8vw,56px);height:auto;image-rendering:pixelated;flex:0 0 auto;">開発をおうえんする</a>
+      <a class="social-btn" href="/tip/" onclick="gtag('event','tip_click');" style="display:inline-flex;align-items:center;justify-content:center;gap:clamp(7px,2.5vw,16px);flex:0 1 auto;min-width:0;border:2px solid var(--border);background:var(--paper);color:var(--deep);border-radius:12px;padding:clamp(11px,3vw,20px) clamp(12px,4vw,34px);font-size:clamp(12px,3.4vw,20px);white-space:nowrap;box-shadow:4px 4px 0 var(--shadow);"><img src="art/happy.png" alt="" style="width:clamp(28px,8vw,56px);height:auto;image-rendering:pixelated;flex:0 0 auto;"><span data-i18n="supportLink">開発をおうえんする</span></a>
     </div>
-    <p style="font-size:12px;line-height:1.8;color:var(--muted);margin:10px 0 0;text-align:center;">投げ銭です。アプリはこれからも無料で、おうえんしてもしなくても同じように使えます。</p>
+    <p data-i18n="supportNote" style="font-size:12px;line-height:1.8;color:var(--muted);margin:10px 0 0;text-align:center;">投げ銭です。アプリはこれからも無料で、おうえんしてもしなくても同じように使えます。</p>
   </section>
 
 </main>
 
 <footer style="margin-top:clamp(56px,8vw,80px);border-top:2px solid var(--border);padding:28px 20px 44px;font-size:13px;text-align:center;">
   <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;">
-    <a href="/contact/" style="border-bottom:2px dashed var(--shadow);">ごようぼう</a>
-    <a href="/privacy/" style="border-bottom:2px dashed var(--shadow);">プライバシーポリシー</a>
+    <a data-i18n="contactLink" href="/contact/" style="border-bottom:2px dashed var(--shadow);">ごようぼう</a>
+    <a data-i18n="privacyLink" href="/privacy/" style="border-bottom:2px dashed var(--shadow);">プライバシーポリシー</a>
   </div>
   <div style="color:var(--muted);font-size:12px;margin-top:20px;">© c_cya.</div>
 </footer>
+
+<script>
+  // Google Play は日本のみ配信中。日本語以外の言語ではリンクを外して「準備中」にする（見た目は CSS、ここはキーボード操作と読み上げのぶん）。
+  // 言語が変わるたびに i18n.mjs が nekokintai:locale で知らせてくる。
+  // App Store は175地域で配信中。パソコンのブラウザではパスの国コードでストアが決まるので、言語に合わせる（英語は米国）。
+  // iPhone では端末の Apple ID の国のストアで開くので、国コードは効かない
+  const APP_STORE_COUNTRY = { ja: 'jp', en: 'us', ko: 'kr', 'zh-TW': 'tw' };
+  document.addEventListener('nekokintai:locale', (event) => {
+    const appStore = document.querySelector('[data-store="app-store"]');
+    if (appStore) appStore.setAttribute('href', `https://apps.apple.com/${APP_STORE_COUNTRY[event.detail.locale] ?? 'jp'}/app/id6801066427`);
+
+    const anchor = document.querySelector('[data-store="google-play"]');
+    if (!anchor) return;
+    if (event.detail.locale === 'ja') {
+      if (anchor.dataset.href) anchor.setAttribute('href', anchor.dataset.href);
+      anchor.removeAttribute('aria-disabled');
+      anchor.removeAttribute('tabindex');
+      return;
+    }
+    if (anchor.hasAttribute('href')) anchor.dataset.href = anchor.getAttribute('href');
+    anchor.removeAttribute('href');
+    anchor.setAttribute('aria-disabled', 'true');
+    anchor.setAttribute('tabindex', '-1');
+  });
+</script>
 </body>
 </html>

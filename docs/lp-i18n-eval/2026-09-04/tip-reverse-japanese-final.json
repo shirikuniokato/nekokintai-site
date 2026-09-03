@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-09-03T20:00:16.556Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "summaryJapanese": "全体として意味はよく保たれています。note4のみ、原文の「いただいた分だけ頑張る」という支援額に応じた努力の意味が変化しています。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "note4",
+      "severity": "medium",
+      "backTranslationJapanese": "いただいた支援のすべてを、ねこ勤怠をよりよくするために注ぎます。",
+      "reasonJapanese": "原文は「いただいた分に応じて頑張る」という努力の度合いを述べていますが、訳文は支援のすべてを改善に投入するという使途の約束に変わっています。"
+    },
+    {
+      "locale": "ko",
+      "key": "note4",
+      "severity": "medium",
+      "backTranslationJapanese": "送ってくださったお気持ちの分だけ、ねこ勤怠のために頑張ります。",
+      "reasonJapanese": "原文の「いただいた分」は金銭的な支援額を指しますが、訳文では「お気持ち」に置き換わり、支援額に応じて頑張るという意味が弱まっています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "note4",
+      "severity": "medium",
+      "backTranslationJapanese": "いただいた応援を胸に、これからもねこ勤怠のために頑張ります。",
+      "reasonJapanese": "原文にある「いただいた分だけ」という支援額と努力の対応関係が欠落し、応援を励みに今後も努力するという一般的な表現に変わっています。"
+    }
+  ]
+}

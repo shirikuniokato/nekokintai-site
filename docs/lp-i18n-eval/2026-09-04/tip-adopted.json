@@ -1,0 +1,23 @@
+{
+  "draft": "tip-gemini-initial.json",
+  "audits": {
+    "claude-fable": "tip-audit-claude-fable.json",
+    "gpt": "tip-audit-gpt.json"
+  },
+  "adopt": [
+    { "locale": "ko", "key": "note2", "from": "gpt" },
+    { "locale": "en", "key": "note1Link", "from": "claude-fable" },
+    { "locale": "en", "key": "note3", "from": "claude-fable" },
+    { "locale": "en", "key": "note4", "from": "claude-fable" },
+    { "locale": "en", "key": "customAmountRange", "from": "claude-fable" },
+    { "locale": "ko", "key": "customAmountRange", "from": "claude-fable" },
+    { "locale": "zh-TW", "key": "note2", "from": "gpt" },
+    { "locale": "zh-TW", "key": "note3", "from": "gpt" },
+    { "locale": "zh-TW", "key": "customAmountBeforeLink", "from": "claude-fable" },
+    { "locale": "zh-TW", "key": "note1BeforeLink", "from": "claude-fable" }
+  ],
+  "manual": [],
+  "replace": [
+    { "locale": "zh-TW", "from": "我們", "to": "我" }
+  ]
+}

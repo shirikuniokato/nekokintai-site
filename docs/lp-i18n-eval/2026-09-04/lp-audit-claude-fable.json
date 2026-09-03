@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-09-03T21:03:20.188Z",
+  "reviewer": "claude-fable",
+  "model": "claude-fable-5",
+  "summaryJapanese": "全体として3言語とも品質は高く、責める表現や通常UIへの猫語混入はありません（meow／거냥／喵はすべて原文の「にゃ」に対応）。韓国語の助詞も「이 폼을」を含めて正しく、台湾向け語彙（裝置・計畫・隱私權政策・首頁・免帳號）も適切です。主な指摘は、EN/zh-TWの「がんばった貯金」説明文が「休みの日の時間全部」と読めて「休みの日にはたらいた時間」の意味が欠けている点（韓国語は正しく訳出）、KOのalt「주 화면」が「メイン画面」と誤読される点、ENのヒーロー吹き出しが原文の3倍近く長い点、ENのdescription「kept going with cats」が不自然な点です。なお、shopScreenAltの「ねこ屋さん」は3言語とも日本語のまま残っています。アプリ内のローカライズ済み画面名に合わせる方針があれば問題ありませんが、ない場合はアプリ内表記（例: Cat Shop／고양이 가게／貓咪商店）に揃えることを推奨します。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "goodJobSavingsDescription",
+      "severity": "high",
+      "replacement": "Hours worked on days off\nall go into savings",
+      "reasonJapanese": "「All your time on days off」は休日の時間そのもの（余暇）が貯金になると読めてしまい、「休みの日にはたらいたぶん」という意味が欠落しています。韓国語版と同じく「休日に働いた時間」であることを明示しました。改行数は原文と同じ1つです。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "goodJobSavingsDescription",
+      "severity": "high",
+      "replacement": "休息日工作的時間\n全部存進撲滿裡",
+      "reasonJapanese": "「休息日的時間」だと休日の時間全体が撲滿に入ると読めてしまい、「休みの日にはたらいたぶん」という意味が欠落しています。「工作的」を補って働いた時間であることを明示しました。改行数は原文と同じ1つです。"
+    },
+    {
+      "locale": "ko",
+      "key": "weekScreenAlt",
+      "severity": "medium",
+      "replacement": "ねこ勤怠의 주간 화면. 목표에 도달한 주를 축하함",
+      "reasonJapanese": "「주 화면」は「主 화면（メイン画面）」と誤読されやすく、スクリーンリーダー利用者に週表示であることが伝わりません。「주간 화면」にすると週単位の画面であることが明確になります。"
+    },
+    {
+      "locale": "en",
+      "key": "heroSpeechLeft",
+      "severity": "medium",
+      "replacement": "＼So this is achievement, meow?／",
+      "reasonJapanese": "原文12文字に対し訳文が約40文字とヒーローの吹き出しとして長すぎ、レイアウト崩れの恐れがあります。意味と猫語（meow）を保ったまま短くしました。全角の＼／は維持しています。"
+    },
+    {
+      "locale": "en",
+      "key": "documentDescription",
+      "severity": "medium",
+      "replacement": "Track your working hours, meow. A time-tracking app just for you, one you keep up with cats by your side.",
+      "reasonJapanese": "「kept going with cats」は英語として不自然で、「ねこと一緒に続ける」のニュアンスが伝わりにくい表現です。「じぶんのための」を just for you で明示し、継続の主体がユーザーであることが分かる自然な文にしました。"
+    }
+  ]
+}

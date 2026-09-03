@@ -1,0 +1,17 @@
+{
+  "note": "日本語を直した4キーだけを qa-gemini-second.json から採用し、ねこの名前はアプリのロケール、韓国語の語尾は 해요체 にそろえた。ほかの137キーは触らない。",
+  "draft": "qa-gemini-second.json",
+  "audits": {
+    "claude-fable": "qa-audit-second-claude-fable.json",
+    "gpt": "qa-audit-second-gpt.json"
+  },
+  "keys": ["upcoming3Answer", "upcoming3Note", "unlikely13Answer", "unlikely13Note"],
+  "manual": [
+    { "locale": "en", "key": "upcoming3Note", "text": "Black-cap, brown tabby, orange tabby, and silver tabby cats\ncan be welcomed from 2.1.0.\nI take my time drawing the pixel art for each one.\nCats added in the future might be paid content." },
+    { "locale": "ko", "key": "upcoming3Note", "text": "젖소, 고등어, 치즈, 은빛 고등어 고양이는\n2.1.0부터 맞이할 수 있어요.\n도트 그래픽은 한 마리씩 시간을 들여 그리고 있어요.\n앞으로 추가될 고양이는 유료가 될 수도 있어요." },
+    { "locale": "zh-TW", "key": "upcoming3Note", "text": "賓士貓、虎斑貓、橘貓、銀虎斑貓\n從2.1.0版開始就可以迎接囉。\n像素圖是我花時間一隻一隻畫出來的。\n今後新增的貓咪可能會需要付費。" },
+    { "locale": "ko", "key": "unlikely13Answer", "text": "App Store에서는 모든 국가와 지역에\n공개되어 있어요.\nGoogle Play는 현재로서는\n일본에서만 이용할 수 있어요." },
+    { "locale": "en", "key": "unlikely13Note", "text": "Google Play in other countries and regions\nis coming soon." },
+    { "locale": "ko", "key": "unlikely13Note", "text": "Google Play의 다른 국가와 지역은\n준비 중이에요." }
+  ]
+}

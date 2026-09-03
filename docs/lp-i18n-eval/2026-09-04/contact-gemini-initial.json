@@ -1,0 +1,254 @@
+{
+  "generatedAt": "2026-09-03T20:38:45.856Z",
+  "provider": "gemini",
+  "model": "gemini-3.1-pro-preview",
+  "page": "contact",
+  "sourceCount": 35,
+  "translations": [
+    {
+      "key": "documentTitle",
+      "en": "Requests | ねこ勤怠",
+      "ko": "건의 사항 | ねこ勤怠",
+      "zhTW": "建議與回饋 | ねこ勤怠",
+      "notes": "ページタイトル"
+    },
+    {
+      "key": "documentDescription",
+      "en": "Feedback and request form for ねこ勤怠. Feature requests, issues, or just cat talk. I read them all.",
+      "ko": "ねこ勤怠에 대한 의견 및 건의 사항 폼. 이런 기능이 필요해요, 여기가 불편해요, 고양이 이야기. 전부 읽고 있어요.",
+      "zhTW": "ねこ勤怠的意見與建議表單。想要新功能、遇到困難、或是貓咪的話題。我全部都會看喔。",
+      "notes": "メタディスクリプション"
+    },
+    {
+      "key": "heading",
+      "en": "Requests",
+      "ko": "건의 사항",
+      "zhTW": "建議與回饋",
+      "notes": "ページ見出し"
+    },
+    {
+      "key": "lead",
+      "en": "Feature requests, issues, or just cat talk.\nI read them all.",
+      "ko": "이런 기능이 필요해요, 여기가 불편해요, 고양이 이야기.\n전부 읽고 있어요.",
+      "zhTW": "想要新功能、遇到困難、或是貓咪的話題。\n我全部都會看喔。",
+      "notes": "リード文"
+    },
+    {
+      "key": "faqLink",
+      "en": "FAQ",
+      "ko": "자주 묻는 질문",
+      "zhTW": "常見問題",
+      "notes": "FAQへのリンクテキスト"
+    },
+    {
+      "key": "faqHintAfterLink",
+      "en": ", which might have the answer.",
+      "ko": "에 답이 있을지도 몰라요.",
+      "zhTW": "裡可能會有答案喔。",
+      "notes": "リンク直後のテキスト。先頭スペースなしで繋がるように工夫"
+    },
+    {
+      "key": "languageSelector",
+      "en": "Language",
+      "ko": "언어",
+      "zhTW": "語言",
+      "notes": "言語切り替え"
+    },
+    {
+      "key": "sendingLabel",
+      "en": "Sending...",
+      "ko": "보내는 중이에요...",
+      "zhTW": "傳送中...",
+      "notes": "送信中の表示"
+    },
+    {
+      "key": "catSpeech",
+      "en": "＼ Tell me your story, meow! ／",
+      "ko": "＼ 이야기 들려줘냥 ／",
+      "zhTW": "＼ 跟我說說話喵 ／",
+      "notes": "猫のセリフ"
+    },
+    {
+      "key": "nameLabel",
+      "en": "Name",
+      "ko": "호칭",
+      "zhTW": "稱呼",
+      "notes": "名前入力欄のラベル"
+    },
+    {
+      "key": "nameHint",
+      "en": "Nicknames are fine",
+      "ko": "닉네임도 좋아요",
+      "zhTW": "暱稱也可以喔",
+      "notes": "名前入力欄のヒント"
+    },
+    {
+      "key": "namePlaceholder",
+      "en": "Working Cat",
+      "ko": "일하는 고양이 님",
+      "zhTW": "工作貓",
+      "notes": "名前入力欄のプレースホルダー"
+    },
+    {
+      "key": "kindLabel",
+      "en": "What is it about?",
+      "ko": "어떤 내용인가요?",
+      "zhTW": "關於什麼事呢？",
+      "notes": "種類の選択ラベル"
+    },
+    {
+      "key": "kindWish",
+      "en": "Feature request",
+      "ko": "이런 기능이 필요해요",
+      "zhTW": "想要新功能",
+      "notes": "要望"
+    },
+    {
+      "key": "kindTrouble",
+      "en": "Having trouble",
+      "ko": "곤란해요",
+      "zhTW": "遇到困難",
+      "notes": "困りごと"
+    },
+    {
+      "key": "kindCat",
+      "en": "Cat talk",
+      "ko": "고양이 이야기",
+      "zhTW": "貓咪的話題",
+      "notes": "猫の話"
+    },
+    {
+      "key": "kindOther",
+      "en": "Other",
+      "ko": "기타",
+      "zhTW": "其他",
+      "notes": "その他"
+    },
+    {
+      "key": "messageLabel",
+      "en": "Message",
+      "ko": "건의 사항",
+      "zhTW": "建議與回饋",
+      "notes": "本文入力欄のラベル"
+    },
+    {
+      "key": "messagePlaceholder",
+      "en": "Write freely here",
+      "ko": "자유롭게 적어주세요",
+      "zhTW": "請自由填寫喔",
+      "notes": "本文入力欄のプレースホルダー"
+    },
+    {
+      "key": "emailLabel",
+      "en": "Email",
+      "ko": "이메일",
+      "zhTW": "電子郵件",
+      "notes": "メールアドレス入力欄のラベル"
+    },
+    {
+      "key": "emailHint",
+      "en": "Only if you want a reply",
+      "ko": "답장이 필요할 때만",
+      "zhTW": "只有在需要回覆時才填寫",
+      "notes": "メールアドレス入力欄のヒント"
+    },
+    {
+      "key": "emailPlaceholder",
+      "en": "Optional",
+      "ko": "없어도 괜찮아요",
+      "zhTW": "不填也沒關係",
+      "notes": "メールアドレス入力欄のプレースホルダー"
+    },
+    {
+      "key": "appContextLabel",
+      "en": "Inquiry source",
+      "ko": "문의 출처",
+      "zhTW": "詢問來源",
+      "notes": "アプリ情報のラベル"
+    },
+    {
+      "key": "appVersionPrefix",
+      "en": " / App ",
+      "ko": " / 앱 ",
+      "zhTW": " / 應用程式 ",
+      "notes": "アプリバージョンの前につくテキスト。前後に半角スペース"
+    },
+    {
+      "key": "appContextNote",
+      "en": "This information will also be sent.",
+      "ko": "이 정보도 함께 전송돼요.",
+      "zhTW": "這些資訊也會一起傳送喔。",
+      "notes": "アプリ情報送信の注記"
+    },
+    {
+      "key": "sendButton",
+      "en": "Send",
+      "ko": "보내기",
+      "zhTW": "傳送",
+      "notes": "送信ボタン"
+    },
+    {
+      "key": "errorLead",
+      "en": "It seems the message couldn't be sent... Sorry about that.",
+      "ko": "잘 보내지지 않은 것 같아요... 미안해요.",
+      "zhTW": "好像沒有傳送成功……對不起喔。",
+      "notes": "送信エラー時のリード文"
+    },
+    {
+      "key": "errorBeforeEmail",
+      "en": "If it still doesn't work after a while, please send it to ",
+      "ko": "시간이 지나도 안 될 때는 ",
+      "zhTW": "如果稍後再試還是不行的話，請傳送到 ",
+      "notes": "メアド前のテキスト。末尾に半角スペース"
+    },
+    {
+      "key": "errorAfterEmail",
+      "en": " instead.",
+      "ko": " 으로 보내주세요.",
+      "zhTW": " 喔。",
+      "notes": "メアド後のテキスト。先頭に半角スペース"
+    },
+    {
+      "key": "thanksSpeech",
+      "en": "＼ Thank you, meow! ／",
+      "ko": "＼ 고맙다냥 ／",
+      "zhTW": "＼ 謝謝你喵 ／",
+      "notes": "送信完了時の猫のセリフ"
+    },
+    {
+      "key": "happyCatAlt",
+      "en": "Happy cat",
+      "ko": "기뻐하는 고양이",
+      "zhTW": "開心的貓咪",
+      "notes": "画像の代替テキスト"
+    },
+    {
+      "key": "doneReply",
+      "en": "I will write a reply, so please wait a moment.\nIt may take a few days as I will look into it to provide the correct information.",
+      "ko": "답장을 드릴 테니 조금만 기다려주세요.\n확인 후 정확한 내용을 보내드리기 위해 며칠이 걸릴 수 있어요.",
+      "zhTW": "我會回覆您的，請稍等一下喔。\n為了確認並提供正確的資訊，可能會需要幾天的時間。",
+      "notes": "返信希望ありの完了メッセージ"
+    },
+    {
+      "key": "doneNoReply",
+      "en": "I have received your message.\nI will read it carefully.",
+      "ko": "의견 잘 받았습니다.\n소중히 읽을게요.",
+      "zhTW": "已經收到您的意見了。\n我會好好閱讀的。",
+      "notes": "返信希望なしの完了メッセージ"
+    },
+    {
+      "key": "backToTop",
+      "en": "← Back to the ねこ勤怠 page",
+      "ko": "← ねこ勤怠 페이지로 돌아가기",
+      "zhTW": "← 回到 ねこ勤怠 頁面",
+      "notes": "トップへ戻るリンク"
+    },
+    {
+      "key": "privacyLink",
+      "en": "Privacy Policy",
+      "ko": "개인정보 처리방침",
+      "zhTW": "隱私權政策",
+      "notes": "プライバシーポリシーへのリンク"
+    }
+  ]
+}

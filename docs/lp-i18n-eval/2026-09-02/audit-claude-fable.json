@@ -1,0 +1,85 @@
+{
+  "generatedAt": "2026-09-02T02:27:48.672Z",
+  "reviewer": "claude-fable",
+  "model": "claude-fable-5",
+  "summaryJapanese": "致命的な問題はありません。ブランド名「ねこ勤怠」と固定用語（Good Job Savings / 수고 저금 / 辛苦撲滿）は全言語で維持され、猫語（meow / 냥 / 喵）は原文に「にゃ」があるキーにのみ現れており、通常UIへの混入はありません。韓国語の助詞（폼을、App Store에서、ねこ勤怠의）も正しいです。指摘は英語の不自然な言い回しと吹き出しの長さ、英語「がんばった貯金」説明の意味ずれ、韓国語の連体修飾語直後の読点と「몫」の語選択、台湾繁体字の「記錄／紀錄」の使い分け・中英スペースの不統一・「該週」「打賞」の語彙です。合計11件、high 1件、medium 10件です。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "documentDescription",
+      "severity": "medium",
+      "replacement": "Track your working hours, meow. A time-tracking app just for you, kept up with cats by your side.",
+      "reasonJapanese": "「kept going with cats」は英語として不自然で、原文の「ねこと一緒に続ける」の意味が伝わりにくいため言い換えました。原文に「にゃ」があるので meow は維持しています。"
+    },
+    {
+      "locale": "en",
+      "key": "heroSpeechLeft",
+      "severity": "medium",
+      "replacement": "＼Is this achievement, meow?／",
+      "reasonJapanese": "吹き出しとしては長すぎ、韓国語・繁体字版と比べても不釣り合いです。意味を保ったまま短縮し、＼／の記号は維持しました。"
+    },
+    {
+      "locale": "en",
+      "key": "goodJobSavingsDescription",
+      "severity": "high",
+      "replacement": "Hours from your days off\nall go into savings",
+      "reasonJapanese": "原文は「おやすみの日のぶん（の時間）」が貯金に入る意味ですが、現訳は「休みの日そのものが貯金される」と読めて意味がずれています。savings は Good Job Savings との用語整合のため維持し、改行数も同じです。"
+    },
+    {
+      "locale": "en",
+      "key": "progressScreenAlt",
+      "severity": "medium",
+      "replacement": "Monthly calendar. Daily efforts build up as deeper colors",
+      "reasonJapanese": "「pile up in color intensity」はalt文として不自然な英語です。色の濃さで積み重なる意味が伝わる自然な表現にしました。"
+    },
+    {
+      "locale": "en",
+      "key": "makerCopyBeforeLink",
+      "severity": "medium",
+      "replacement": "I made this not to police your time, but simply to count the hours you actually worked. I wanted cuteness and a sense of achievement. So it's very simple! No accounts, no ads. For requests, please use ",
+      "reasonJapanese": "「count the fact that you worked」は英語として不自然です。「はたらいた事実をただ数える」の意図を自然な英語に直し、後続リンクのための末尾スペースは維持しました。"
+    },
+    {
+      "locale": "ko",
+      "key": "goodJobSavingsDescription",
+      "severity": "medium",
+      "replacement": "쉬는 날의 시간은,\n전부 저금으로",
+      "reasonJapanese": "「몫」は分け前・取り分の意味合いが強く、時間の話としては不自然です。「시간」に置き換え、수고 저금 との整合のため 저금 は維持、改行数も同じです。"
+    },
+    {
+      "locale": "ko",
+      "key": "shopScreenTitle",
+      "severity": "medium",
+      "replacement": "고양이가,\n아주 많아요.",
+      "reasonJapanese": "連体修飾語「수많은」の直後に読点を置くと韓国語として不自然です。原文の区切りのリズムを保ちつつ、自然な位置に読点を移しました。改行数は同じです。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "documentDescription",
+      "severity": "medium",
+      "replacement": "記錄工作時間喵。和貓咪一起持續下去、專屬自己的工作紀錄 App。",
+      "reasonJapanese": "台湾では動詞は「記錄」、名詞は「紀錄」と使い分けるため「工作紀錄」に修正しました。「持續，」で動詞が宙に浮いているので「持續下去」と補い、中英間のスペース（紀錄 App）も他キーと統一しました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "weekScreenAlt",
+      "severity": "medium",
+      "replacement": "ねこ勤怠的每週畫面。慶祝達成目標的那一週",
+      "reasonJapanese": "「該週」は文書的で硬く、alt文として不自然です。台湾で自然な「那一週」にしました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "makerCopyBeforeLink",
+      "severity": "medium",
+      "replacement": "製作這款 App 不是為了嚴格監視時間，而是單純想記下有工作過這件事。我想要可愛的感覺和成就感。所以它非常簡單！沒有帳號也沒有廣告。如有任何建議，請填寫",
+      "reasonJapanese": "「這款App」は supportNote の「App 未來」とスペースの有無が不統一なので「這款 App」に揃えました。「記錄工作過的這件事」もやや冗長なため自然な言い回しにしています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "supportNote",
+      "severity": "medium",
+      "replacement": "這是小額贊助。App 未來也會保持免費，無論是否贊助，都能照常使用。",
+      "reasonJapanese": "「打賞」は中国大陸の配信文化由来の語で、台湾でも通じますが supportLink の「贊助開發」と用語が揺れています。「小額贊助」にして贊助で統一しました。"
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "generatedAt": "2026-09-03T19:54:29.048Z",
+  "provider": "gemini",
+  "model": "gemini-3.1-pro-preview",
+  "page": "tip",
+  "sourceCount": 25,
+  "translations": [
+    {
+      "key": "documentTitle",
+      "en": "Support the development | ねこ勤怠",
+      "ko": "개발 응원하기 | ねこ勤怠",
+      "zhTW": "支持開發 | ねこ勤怠",
+      "notes": "固定訳「Support the development / 개발 응원하기 / 支持開發」を使用"
+    },
+    {
+      "key": "documentDescription",
+      "en": "You can support the development of ねこ勤怠 with a tip. Choose an amount to proceed to the payment page. The app will remain free.",
+      "ko": "후원금으로 ねこ勤怠의 개발을 응원할 수 있어요. 금액을 선택하면 결제 페이지로 이동해요. 앱은 앞으로도 무료예요.",
+      "zhTW": "您可以透過贊助來支持 ねこ勤怠 的開發。選擇金額後將進入付款頁面。應用程式未來也會繼續免費提供。",
+      "notes": "投げ銭は tip / 후원금 / 贊助 と訳出"
+    },
+    {
+      "key": "heading",
+      "en": "Support the development",
+      "ko": "개발 응원하기",
+      "zhTW": "支持開發",
+      "notes": "固定訳"
+    },
+    {
+      "key": "lead",
+      "en": "ねこ勤怠 is developed by an individual.\nYou can support the development with a tip.",
+      "ko": "ねこ勤怠는 개인이 만들고 있어요.\n후원금으로 개발을 응원할 수 있어요.",
+      "zhTW": "ねこ勤怠 是由個人開發的。\n您可以透過贊助來支持開發。",
+      "notes": "改行を保持"
+    },
+    {
+      "key": "sub",
+      "en": "Choose an amount to proceed to the payment screen.\nThe app will remain free, and you can use it exactly the same way whether you support it or not.",
+      "ko": "금액을 선택하면 결제 화면으로 이동해요.\n앱은 앞으로도 무료이며, 응원 여부와 상관없이 똑같이 사용할 수 있어요.",
+      "zhTW": "選擇金額後將進入付款畫面。\n應用程式未來也會繼續免費提供，無論是否贊助，都能以相同的方式使用。",
+      "notes": "改行を保持"
+    },
+    {
+      "key": "languageSelector",
+      "en": "Language",
+      "ko": "언어",
+      "zhTW": "語言",
+      "notes": "固定訳"
+    },
+    {
+      "key": "amountsAriaLabel",
+      "en": "Support amount",
+      "ko": "응원할 금액",
+      "zhTW": "支持金額",
+      "notes": ""
+    },
+    {
+      "key": "amount100Label",
+      "en": "A little bit",
+      "ko": "조금",
+      "zhTW": "一點點",
+      "notes": "「ちょこっと」のニュアンス"
+    },
+    {
+      "key": "amount300Label",
+      "en": "A bottle of juice",
+      "ko": "주스 한 병",
+      "zhTW": "一瓶果汁",
+      "notes": ""
+    },
+    {
+      "key": "amount500Label",
+      "en": "A cup of coffee",
+      "ko": "커피 한 잔",
+      "zhTW": "一杯咖啡",
+      "notes": ""
+    },
+    {
+      "key": "amount1000Label",
+      "en": "Cat food",
+      "ko": "고양이 밥",
+      "zhTW": "貓咪的飯",
+      "notes": ""
+    },
+    {
+      "key": "customAmountBeforeLink",
+      "en": "If you want to decide the amount yourself, click ",
+      "ko": "금액을 직접 정하고 싶다면 ",
+      "zhTW": "如果想自行決定金額，請點選 ",
+      "notes": "末尾の半角スペースを保持"
+    },
+    {
+      "key": "customAmountLink",
+      "en": "here",
+      "ko": "여기",
+      "zhTW": "這裡",
+      "notes": ""
+    },
+    {
+      "key": "customAmountAfterLink",
+      "en": ".",
+      "ko": "를 눌러주세요.",
+      "zhTW": "。",
+      "notes": ""
+    },
+    {
+      "key": "customAmountRange",
+      "en": "(¥100〜¥10,000)",
+      "ko": "(¥100〜¥10,000)",
+      "zhTW": "（¥100〜¥10,000）",
+      "notes": "金額は変更せず維持。英語と韓国語は半角括弧に変更"
+    },
+    {
+      "key": "note1BeforeLink",
+      "en": "・This is a tip. There are no return gifts or additional app features. Instead, I will do my best for the ",
+      "ko": "・후원금이에요. 답례품이나 앱의 추가 기능은 없어요. 대신 보내주신 ",
+      "zhTW": "・這是一份贊助。沒有回饋品或應用程式的額外功能。相對地，我會為了收到的",
+      "notes": "英語と韓国語はリンクとの結合のため末尾にスペースを追加"
+    },
+    {
+      "key": "note1Link",
+      "en": "Requests",
+      "ko": "건의 사항",
+      "zhTW": "建議與回饋",
+      "notes": "固定訳"
+    },
+    {
+      "key": "note1AfterLink",
+      "en": " I receive.",
+      "ko": "을 위해 노력할게요.",
+      "zhTW": "而努力。",
+      "notes": "英語はリンクとの結合のため先頭にスペースを追加"
+    },
+    {
+      "key": "note2",
+      "en": "・Payment is processed through the same system as \"ｼﾁｬのねこ屋さん\", the online shop of c_cya, the creator of ねこ勤怠. The shop's name will appear on your statement.",
+      "ko": "・결제는 ねこ勤怠를 만든 c_cya의 온라인 숍 'ｼﾁｬ의ねこ屋さん'과 같은 시스템으로 진행돼요. 명세서에는 숍 이름이 표시돼요.",
+      "zhTW": "・付款將透過製作 ねこ勤怠 的 c_cya 旗下線上商店「ｼﾁｬのねこ屋さん」相同的系統進行。帳單明細上會顯示該商店的名稱。",
+      "notes": "ブランド名やショップ名はそのまま維持"
+    },
+    {
+      "key": "note3",
+      "en": "・Credit cards, PayPay, etc. are accepted. Card numbers are handled by the payment company and will not reach us.",
+      "ko": "・카드, PayPay 등을 사용할 수 있어요. 카드 번호는 결제 회사에서 처리하며, 저희에게는 전달되지 않아요.",
+      "zhTW": "・可使用信用卡、PayPay 等方式。信用卡卡號由付款公司處理，我們不會收到您的卡號資訊。",
+      "notes": ""
+    },
+    {
+      "key": "note4",
+      "en": "・I will work hard for ねこ勤怠 as much as the support I receive.",
+      "ko": "・보내주신 마음만큼 ねこ勤怠를 위해 노력할게요.",
+      "zhTW": "・我會帶著您給予的支持，繼續為 ねこ勤怠 努力。",
+      "notes": ""
+    },
+    {
+      "key": "backToTop",
+      "en": "← Back to the ねこ勤怠 page",
+      "ko": "← ねこ勤怠 페이지로 돌아가기",
+      "zhTW": "← 返回 ねこ勤怠 頁面",
+      "notes": ""
+    },
+    {
+      "key": "faqLink",
+      "en": "FAQ",
+      "ko": "자주 묻는 질문",
+      "zhTW": "常見問題",
+      "notes": "固定訳"
+    },
+    {
+      "key": "contactLink",
+      "en": "Requests",
+      "ko": "건의 사항",
+      "zhTW": "建議與回饋",
+      "notes": "固定訳"
+    },
+    {
+      "key": "privacyLink",
+      "en": "Privacy Policy",
+      "ko": "개인정보 처리방침",
+      "zhTW": "隱私權政策",
+      "notes": "固定訳"
+    }
+  ]
+}

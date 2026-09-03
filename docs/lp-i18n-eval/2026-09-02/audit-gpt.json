@@ -1,0 +1,99 @@
+{
+  "generatedAt": "2026-09-02T02:27:15.622Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "summaryJapanese": "13件（high 4件、medium 9件）です。主な問題は、英語の意味のずれと吹き出しの長さ、韓国語・繁体字の主要コピーが個人向け工時記録ではなく組織的な勤怠管理に聞こえる点、台湾では不自然な「打賞」です。責める表現、通常UIへの猫語混入、韓国語の助詞誤りはありません。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "documentDescription",
+      "severity": "medium",
+      "replacement": "Track your working hours, meow. A personal work log you can keep up with alongside cats.",
+      "reasonJapanese": "「kept going with cats」では継続する主体と意味が曖昧で、「ねこと一緒に続けられる」という価値が十分に伝わりません。"
+    },
+    {
+      "locale": "en",
+      "key": "heroSpeechLeft",
+      "severity": "medium",
+      "replacement": "＼Is this what achievement feels like?／",
+      "reasonJapanese": "現在文は短い吹き出し用コピーとして長く、「a sense of achievement」も説明的です。意味を保ちながら収まりやすくしています。"
+    },
+    {
+      "locale": "en",
+      "key": "goodJobSavingsDescription",
+      "severity": "medium",
+      "replacement": "Time from your days off\ngoes straight into savings",
+      "reasonJapanese": "現在文は「休日そのものが貯金される」という意味に読めます。「休日のぶん」が貯金に回るという意味へ修正しています。"
+    },
+    {
+      "locale": "ko",
+      "key": "documentTitle",
+      "severity": "high",
+      "replacement": "ねこ勤怠 — 고양이와 함께, 나만의 근무 기록.",
+      "reasonJapanese": "「근태 관리」は企業が従業員の出退勤を管理する印象が強く、個人が自分の仕事時間を記録するアプリという中核的な意味からずれます。"
+    },
+    {
+      "locale": "ko",
+      "key": "documentDescription",
+      "severity": "medium",
+      "replacement": "일한 시간을 기록한다냥. 고양이와 함께 꾸준히 쓸 수 있는 나를 위한 근무 기록 앱.",
+      "reasonJapanese": "「함께 계속하는」は韓国語では継続対象が不明瞭です。また主要コピーの用語を個人向けの「근무 기록」に統一しています。"
+    },
+    {
+      "locale": "ko",
+      "key": "ogDescription",
+      "severity": "medium",
+      "replacement": "일한 시간을 기록한다냥. 고양이와 함께, 나만의 근무 기록.",
+      "reasonJapanese": "「근태 관리」は組織的な勤怠管理を連想させ、個人用の工時記録という意味を誤認させます。"
+    },
+    {
+      "locale": "ko",
+      "key": "heroTitle",
+      "severity": "high",
+      "replacement": "고양이와 함께,\n나만의 근무 기록.",
+      "reasonJapanese": "ヒーロー見出しの「근태 관리」は企業側の管理を強く連想させます。個人向けアプリとして自然な「근무 기록」に置き換える必要があります。"
+    },
+    {
+      "locale": "ko",
+      "key": "catWalksDescription",
+      "severity": "medium",
+      "replacement": "목표까지, 한 걸음씩",
+      "reasonJapanese": "「타박타박」は重く疲れた足取りを表すことがあり、軽快に目標へ進む「てくてく」の印象とずれます。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "documentTitle",
+      "severity": "high",
+      "replacement": "ねこ勤怠 — 和貓咪一起，記錄自己的工時。",
+      "reasonJapanese": "台湾で「管理自己的出勤」は企業的な出勤管理に聞こえ、個人が自分の工時を記録するサービスという中核的な意味からずれます。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "documentDescription",
+      "severity": "medium",
+      "replacement": "記錄工作時間喵。讓貓咪陪你持續記錄，這是一款屬於自己的工時紀錄 App。",
+      "reasonJapanese": "「和貓咪一起持續」は目的語がなく不自然で、何を続けるアプリなのかが欠落しています。台湾向けに動詞「記錄」と名詞「紀錄」も使い分けています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ogDescription",
+      "severity": "medium",
+      "replacement": "記錄工作時間喵。和貓咪一起，留下自己的工時紀錄。",
+      "reasonJapanese": "「管理自己的出勤」は組織的な勤怠管理を連想させます。台湾の個人向けアプリとして自然な「工時紀錄」に修正しています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "heroTitle",
+      "severity": "high",
+      "replacement": "和貓咪一起，\n記錄自己的工時。",
+      "reasonJapanese": "主要見出しの「管理自己的出勤」は台湾では企業側の出勤管理に聞こえます。個人による工時記録という意味へ直す必要があります。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "supportNote",
+      "severity": "medium",
+      "replacement": "這是一筆小額贊助。App 未來也會保持免費，無論是否贊助，都能照常使用。",
+      "reasonJapanese": "「打賞」は台湾向けUIでは中国大陸寄りの語彙です。同じ文とリンクですでに使われている台湾で自然な「贊助」に統一しています。"
+    }
+  ]
+}
