@@ -243,36 +243,23 @@ for (const viewport of [{ width: 1280, height: 900 }, { width: 390, height: 844 
       const images = byKey(await readImages(page))
       assertLocaleImages(images, locale, jaImages)
       assertBadgeParity(images, locale, jaImages)
-      // Google Play は日本のみ配信中。日本語以外では「準備中」を出し、リンクを外す。バッジの画像そのものは変えない
+      // Google Play は全世界で配信中。言語を切り替えてもリンクは常に有効である
       // App Store は言語に合わせた国のストアフロントへ
       const appStoreHref = await page.locator('[data-store="app-store"]').getAttribute('href')
       assert.equal(appStoreHref, `https://apps.apple.com/${{ ja: 'jp', en: 'us', ko: 'kr', 'zh-TW': 'tw' }[locale]}/app/id6801066427`, `${locale}: App Store のリンク`)
       const play = await page.evaluate(() => {
         const anchor = document.querySelector('[data-store="google-play"]')
-        const chip = document.querySelector('.store-soon')
-        const note = document.querySelector('.store-note')
         return {
           href: anchor.getAttribute('href'),
           disabled: anchor.getAttribute('aria-disabled'),
-          chipVisible: getComputedStyle(chip).display !== 'none',
-          noteVisible: getComputedStyle(note).display !== 'none',
-          chipText: chip.textContent,
-          noteText: note.textContent,
+          tabindex: anchor.getAttribute('tabindex'),
+          pointerEvents: getComputedStyle(anchor).pointerEvents,
         }
       })
-      if (locale === 'ja') {
-        assert.match(play.href ?? '', /^https:\/\/play\.google\.com\//u, 'ja: Google Play のリンクが戻っていない')
-        assert.equal(play.disabled, null, 'ja: aria-disabled が残っている')
-        assert.equal(play.chipVisible, false, 'ja: 準備中が出ている')
-        assert.equal(play.noteVisible, false, 'ja: 準備中の注が出ている')
-      } else {
-        assert.equal(play.href, null, `${locale}: Google Play のリンクが外れていない`)
-        assert.equal(play.disabled, 'true', `${locale}: aria-disabled がない`)
-        assert.equal(play.chipVisible, true, `${locale}: 準備中が出ていない`)
-        assert.equal(play.chipText, copies[locale].playStoreSoonChip, `${locale}: 準備中の文言`)
-        assert.equal(play.noteVisible, true, `${locale}: 準備中の注が出ていない`)
-        assert.equal(play.noteText, copies[locale].playStoreSoonNote, `${locale}: 準備中の注の文言`)
-      }
+      assert.match(play.href ?? '', /^https:\/\/play\.google\.com\//u, `${locale}: Google Play のリンクが無効`)
+      assert.equal(play.disabled, null, `${locale}: aria-disabled が残っている`)
+      assert.equal(play.tabindex, null, `${locale}: tabindex が残っている`)
+      assert.equal(play.pointerEvents, 'auto', `${locale}: Google Play のリンクがクリックできない`)
       assert.equal(await page.locator('h1').innerText(), copies[locale].heroTitle, `${locale}: h1`)
       assert.equal(await page.title(), copies[locale].documentTitle, `${locale}: title`)
       assert.equal(new URL(page.url()).searchParams.get('lang'), locale === 'ja' ? null : locale, `${locale}: ?lang=`)

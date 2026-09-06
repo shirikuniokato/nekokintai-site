@@ -47,12 +47,8 @@
   /* ストアバッジ。素材は公式のまま、表示の高さだけそろえる */
   .store-badges{display:flex;justify-content:center;align-items:center;gap:clamp(7px,2.4vw,12px);margin-top:28px;flex-wrap:nowrap;--badge-height:clamp(44px,12vw,56px);}
   .store-badges img{height:var(--badge-height);width:auto;display:block;}
-  /* Google Play の「準備中」。日本語では出さない。バッジは公式素材なので覆わず、下にぶら下げる */
+  /* Google Play のバッジ。素材は公式のまま、表示の高さだけそろえる */
   .store-play{position:relative;display:block;}
-  .store-soon{display:none;position:absolute;left:50%;top:calc(100% + 6px);transform:translateX(-50%);white-space:nowrap;font-size:10px;line-height:1;letter-spacing:.08em;color:var(--deep);background:var(--paper);border:1px dashed var(--ink);border-radius:999px;padding:4px 8px;}
-  .store-note{display:none;font-size:11px;line-height:1.7;color:var(--muted);margin:30px 0 0;}
-  html:not([lang="ja"]) .store-soon,html:not([lang="ja"]) .store-note{display:block;}
-  html:not([lang="ja"]) .store-play a{pointer-events:none;cursor:default;}
   /* Google Play の公式 PNG（en / ko / zh-TW、646×250）は透明余白を含み、その量が言語で違う。
      en は本体 564×168 のまわりに 41px、ko / zh-TW は本体 646×192 の上下だけに 29px（左右 0）。
      日本語の SVG は余白なしなので、同じ高さで出すと本体だけ小さく見える。
@@ -105,10 +101,9 @@
     <!-- App Store の国コードは言語に合わせて切り替える（下の script）。国コードなしの URL は閲覧者の国を見ずに米国へ転送されるため -->
     <a href="https://apps.apple.com/jp/app/id6801066427" target="_blank" rel="noopener" onclick="gtag('event','store_click',{store:'ios'});" data-store="app-store" style="display:block;"><img src="/assets/badges/app-store-ja.svg" width="109" height="40" data-locale-badge="app-store" data-i18n-alt="appStoreAlt" alt="App Store からダウンロード"></a>
     <!-- referrer の中身は %3D / %26 でエンコードすること（生の & だと utm_medium 以降が Play に渡らない） -->
-    <!-- Google Play は日本のみ配信中。日本語以外ではバッジそのものには触れず、下に「準備中」を出してリンクを外す（切替は下の script） -->
-    <span class="store-play"><a href="https://play.google.com/store/apps/details?id=com.ccya.nekokintai&amp;referrer=utm_source%3Dnekokintai-lp%26utm_medium%3Dweb" target="_blank" rel="noopener" onclick="gtag('event','store_click',{store:'android'});" data-store="google-play" style="display:block;"><img src="/assets/badges/google-play-ja.svg" width="180" height="53" data-locale-badge="google-play" data-i18n-alt="playStoreAlt" alt="Google Play で手に入れよう"></a><span class="store-soon" data-i18n="playStoreSoonChip">準備中</span></span>
+    <!-- Google Play は全世界で配信中。言語に関係なく同じ商品ページへ案内する -->
+    <span class="store-play"><a href="https://play.google.com/store/apps/details?id=com.ccya.nekokintai&amp;referrer=utm_source%3Dnekokintai-lp%26utm_medium%3Dweb" target="_blank" rel="noopener" onclick="gtag('event','store_click',{store:'android'});" data-store="google-play" style="display:block;"><img src="/assets/badges/google-play-ja.svg" width="180" height="53" data-locale-badge="google-play" data-i18n-alt="playStoreAlt" alt="Google Play で手に入れよう"></a></span>
   </div>
-  <p class="store-note" data-i18n="playStoreSoonNote">Google Play は いまのところ日本のみで配信しています。ほかの国と地域は準備中です</p>
 
   <div style="position:relative;margin:clamp(44px,6vw,64px) 0 0;">
     <span aria-hidden="true" style="position:absolute;left:6%;top:6%;font-size:20px;color:var(--accent);animation:nk-twinkle 2.8s ease-in-out infinite;">＋</span>
@@ -218,7 +213,6 @@
 </footer>
 
 <script>
-  // Google Play は日本のみ配信中。日本語以外の言語ではリンクを外して「準備中」にする（見た目は CSS、ここはキーボード操作と読み上げのぶん）。
   // 言語が変わるたびに i18n.mjs が nekokintai:locale で知らせてくる。
   // App Store は175地域で配信中。パソコンのブラウザではパスの国コードでストアが決まるので、言語に合わせる（英語は米国）。
   // iPhone では端末の Apple ID の国のストアで開くので、国コードは効かない
@@ -226,19 +220,6 @@
   document.addEventListener('nekokintai:locale', (event) => {
     const appStore = document.querySelector('[data-store="app-store"]');
     if (appStore) appStore.setAttribute('href', `https://apps.apple.com/${APP_STORE_COUNTRY[event.detail.locale] ?? 'jp'}/app/id6801066427`);
-
-    const anchor = document.querySelector('[data-store="google-play"]');
-    if (!anchor) return;
-    if (event.detail.locale === 'ja') {
-      if (anchor.dataset.href) anchor.setAttribute('href', anchor.dataset.href);
-      anchor.removeAttribute('aria-disabled');
-      anchor.removeAttribute('tabindex');
-      return;
-    }
-    if (anchor.hasAttribute('href')) anchor.dataset.href = anchor.getAttribute('href');
-    anchor.removeAttribute('href');
-    anchor.setAttribute('aria-disabled', 'true');
-    anchor.setAttribute('tabindex', '-1');
   });
 </script>
 </body>
