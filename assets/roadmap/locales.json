@@ -99,7 +99,9 @@
     "backToTop": "← ねこ勤怠のページへもどる",
     "faqLink": "よくあるしつもん",
     "contactLink": "ごようぼう",
-    "privacyLink": "プライバシーポリシー"
+    "privacyLink": "プライバシーポリシー",
+    "statusInProgress": "たいおうちゅう",
+    "koreanWeekShareFix": "週の共有画像を保存すると、\n韓国語の文字が正しく表示されない\n不具合を直します"
   },
   "en": {
     "documentTitle": "Update Roadmap | ねこ勤怠",
@@ -201,7 +203,9 @@
     "backToTop": "← Back to ねこ勤怠 page",
     "faqLink": "FAQ",
     "contactLink": "Requests",
-    "privacyLink": "Privacy Policy"
+    "privacyLink": "Privacy Policy",
+    "statusInProgress": "In Progress",
+    "koreanWeekShareFix": "Fix Korean text not displaying correctly\nwhen saving an image\nof your weekly record."
   },
   "ko": {
     "documentTitle": "업데이트 예정 | ねこ勤怠",
@@ -303,7 +307,9 @@
     "backToTop": "← ねこ勤怠 페이지로 돌아가기",
     "faqLink": "자주 묻는 질문",
     "contactLink": "건의 사항",
-    "privacyLink": "개인정보 처리방침"
+    "privacyLink": "개인정보 처리방침",
+    "statusInProgress": "수정 중",
+    "koreanWeekShareFix": "주간 기록을 이미지로 저장할 때\n한글이 깨지는 문제를\n수정할 예정입니다."
   },
   "zh-TW": {
     "documentTitle": "更新計畫 | ねこ勤怠",
@@ -405,6 +411,8 @@
     "backToTop": "← 返回 ねこ勤怠 頁面",
     "faqLink": "常見問題",
     "contactLink": "建議與回饋",
-    "privacyLink": "隱私權政策"
+    "privacyLink": "隱私權政策",
+    "statusInProgress": "處理中",
+    "koreanWeekShareFix": "修正儲存每週紀錄圖片時，\n韓文文字無法正常顯示\n的問題。"
   }
 }
