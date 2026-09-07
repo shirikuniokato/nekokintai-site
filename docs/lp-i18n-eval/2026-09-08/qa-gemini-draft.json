@@ -1,0 +1,877 @@
+{
+  "generatedAt": "2026-09-07T16:31:46.046Z",
+  "provider": "gemini",
+  "model": "gemini-3.1-pro-preview",
+  "page": "qa",
+  "sourceCount": 124,
+  "translations": [
+    {
+      "key": "documentTitle",
+      "en": "FAQ | ねこ勤怠",
+      "ko": "자주 묻는 질문 | ねこ勤怠",
+      "zhTW": "常見問題 | ねこ勤怠",
+      "notes": "ページタイトル"
+    },
+    {
+      "key": "documentDescription",
+      "en": "Frequently asked questions and answers for ねこ勤怠. How to use records, what you can do, and future plans.",
+      "ko": "ねこ勤怠에 보내주신 자주 묻는 질문과 답변. 기록 사용법, 할 수 있는 일, 앞으로 하고 싶은 일.",
+      "zhTW": "關於ねこ勤怠的常見問題與解答。紀錄的使用方法、可以做的事，以及未來的計畫。",
+      "notes": "メタディスクリプション"
+    },
+    {
+      "key": "languageSelector",
+      "en": "Language",
+      "ko": "언어",
+      "zhTW": "語言",
+      "notes": "サイト共通の固定訳"
+    },
+    {
+      "key": "heading",
+      "en": "FAQ",
+      "ko": "자주 묻는 질문",
+      "zhTW": "常見問題",
+      "notes": "サイト共通の固定訳"
+    },
+    {
+      "key": "lead",
+      "en": "Here are my current answers to your feedback.\nI read every single one of them.",
+      "ko": "보내주신 의견에 대한 지금의 답변이에요.\n전부 읽고 있어요.",
+      "zhTW": "這是目前對大家回饋的解答。\n每一則我都有看喔。",
+      "notes": "開発者からのメッセージ"
+    },
+    {
+      "key": "howToOpen",
+      "en": "Tap a question you're curious about to open the answer.",
+      "ko": "궁금한 질문을 누르면 답변이 열려요.",
+      "zhTW": "按下想了解的問題，就會展開解答。",
+      "notes": "アコーディオンの操作説明"
+    },
+    {
+      "key": "roadmapLink",
+      "en": "Update Roadmap",
+      "ko": "업데이트 예정",
+      "zhTW": "更新計畫",
+      "notes": "サイト共通の固定訳"
+    },
+    {
+      "key": "investigatingIntroBeforeLink",
+      "en": "Details of the updates are summarized in ",
+      "ko": "업데이트 내용은 ",
+      "zhTW": "更新的內容整理在",
+      "notes": "リンク前のテキスト。末尾のスペースは英語・韓国語で維持"
+    },
+    {
+      "key": "investigatingIntroAfterLink",
+      "en": " .",
+      "ko": " 에 정리해 두었어요.",
+      "zhTW": " 裡。",
+      "notes": "リンク後のテキスト。先頭の半角スペースを維持"
+    },
+    {
+      "key": "investigating1NoteBeforeEmail",
+      "en": "If you experience the same issue, please share a screenshot,\nyour device name, Android version, and how you closed the app.\n",
+      "ko": "같은 문제가 발생한 분은 화면 스크린샷과 함께\n기기명, Android 버전, 앱을 닫은 방법을\n",
+      "zhTW": "如果遇到相同情況，請提供螢幕截圖，\n以及裝置名稱、Android版本、關閉應用程式的方式\n",
+      "notes": "原文の改行位置と末尾の改行を維持し、ユーザーに寄り添う丁寧な表現にしました。"
+    },
+    {
+      "key": "investigating1NoteAfterEmail",
+      "en": " . It would be very helpful!",
+      "ko": " 로 보내주시면 큰 도움이 돼요.",
+      "zhTW": " ，這會對我們有很大的幫助。",
+      "notes": "メールアドレス後のテキスト。先頭の半角スペースを維持"
+    },
+    {
+      "key": "investigatingLabel",
+      "en": "Currently Investigating",
+      "ko": "지금 조사 중인 내용",
+      "zhTW": "目前正在調查的問題",
+      "notes": "調査中セクションの見出し"
+    },
+    {
+      "key": "investigating1Question",
+      "en": "When reopening the app on Android, the cat and \"Today's Breakdown\" turn completely black.",
+      "ko": "Android에서 앱을 다시 열면 고양이와 '오늘의 내역'이 새까맣게 변해요.",
+      "zhTW": "在Android重新開啟應用程式時，貓咪和「今天的明細」會變成全黑。",
+      "notes": "不具合の質問"
+    },
+    {
+      "key": "investigating1Answer",
+      "en": "This is a bug occurring on some Android devices.\nDepending on the device, the cat screen and\n\"Today's Breakdown\" might not redraw correctly.\nI am currently investigating the cause.",
+      "ko": "일부 Android 기기에서 발생하는 버그예요.\n기기에 따라 고양이 화면과\n'오늘의 내역'이 제대로 다시 그려지지 않을\n가능성이 있어 원인을 조사하고 있어요.",
+      "zhTW": "這是部分Android裝置上發生的錯誤。\n根據裝置不同，貓咪畫面與\n「今天的明細」可能無法正確重新繪製，\n目前正在調查原因。",
+      "notes": "不具合の回答"
+    },
+    {
+      "key": "investigating2Question",
+      "en": "When using \"Add Record\", it says \"Records overlap\" even when they don't.",
+      "ko": "'기록 추가'에서 겹치지 않았는데 '겹쳐 있습니다'라고 나와요.",
+      "zhTW": "使用「新增紀錄」時，明明沒有重疊卻顯示「時間重疊了」。",
+      "notes": "不具合の質問"
+    },
+    {
+      "key": "investigating2Answer",
+      "en": "This can happen if you add a record\nwhile you are currently working.\nIt is especially likely to occur\nwhen working past midnight.\nPlease clock out first, and then\ntry adding it from the \"Month\" screen.",
+      "ko": "일하는 도중에 추가하면\n나타날 수 있어요.\n날짜를 넘겨서 계속 일하고 있을 때\n특히 자주 발생해요.\n일단 퇴근한 다음, '월' 화면에서\n추가해 보세요.",
+      "zhTW": "在工作途中新增紀錄時，\n有時會出現這個訊息。\n特別是在跨日且仍在工作狀態時\n最容易發生。\n請先下班後，再到「月」的畫面\n試著新增看看。",
+      "notes": "不具合の回答"
+    },
+    {
+      "key": "investigating2Note",
+      "en": "I plan to fix this so you can add records while working.",
+      "ko": "일하는 중에도 추가할 수 있도록 고칠 예정이에요.",
+      "zhTW": "預計會修正成在工作狀態下也能新增紀錄。",
+      "notes": "修正予定の補足"
+    },
+    {
+      "key": "howToLabel",
+      "en": "What You Can Do",
+      "ko": "할 수 있는 일",
+      "zhTW": "可以做的事",
+      "notes": "使い方セクションの見出し"
+    },
+    {
+      "key": "howTo1Question",
+      "en": "I don't know how to edit records.",
+      "ko": "기록을 어떻게 수정하는지 모르겠어요.",
+      "zhTW": "不知道怎麼修改紀錄。",
+      "notes": "使い方の質問"
+    },
+    {
+      "key": "howTo1Answer",
+      "en": "Tap the day you want to edit on the \"Month\" screen,\nand open \"Edit Time\".\nFor today's records, you can also edit them\nfrom \"Edit Time\" on the Home screen.\nForgotten times can be entered\nfrom \"+ Add Record\".\nNew records are added directly\nonce you set the start and end times.\nWhen you edit an existing record,\nconfirm it with \"Done\" in the top right.",
+      "ko": "'월' 화면에서 수정할 날짜를 누르고\n'시간 수정'을 열어주세요.\n오늘 기록은 홈 화면의\n'시간 수정'에서도 고칠 수 있어요.\n적는 걸 깜빡한 시간은 '+ 기록 추가'에서\n넣을 수 있어요.\n새로운 기록은 시작과 끝을\n정하면 그대로 추가돼요.\n기존 기록을 수정했을 때는\n오른쪽 위의 '완료'로 확정해요.",
+      "zhTW": "在「月」的畫面按下想修改的日期，\n然後打開「修改時間」。\n今天的紀錄也可以從首頁的\n「修改時間」來修改。\n忘記記錄的時間可以從「＋ 新增紀錄」\n補上去。\n新紀錄只要設定好開始與結束時間，\n就會直接新增。\n修改現有紀錄時，\n請按右上角的「完成」來確認。",
+      "notes": "使い方の回答"
+    },
+    {
+      "key": "howTo1Note",
+      "en": "Tap the time to enter it in 1-minute increments.\n[-] and [+] move the time by 10 minutes.\nIf you can't tap a date in \"Month\",\nplease try updating the app to the latest version.",
+      "ko": "시각을 누르면 1분 단위로 입력할 수 있어요.\n[-] [+]는 10분씩 움직여요.\n'월'에서 날짜가 눌리지 않을 때는\n앱을 최신 버전으로 업데이트해 보세요.",
+      "zhTW": "按下時間可以進行1分鐘單位的輸入。\n［−］［＋］則是以10分鐘為單位增減。\n如果在「月」無法按下日期，\n請試著將應用程式更新到最新版本。",
+      "notes": "操作の補足"
+    },
+    {
+      "key": "howTo2Question",
+      "en": "I forgot to clock out and fell asleep.",
+      "ko": "퇴근을 누르는 걸 깜빡하고 자버렸어요.",
+      "zhTW": "忘記按下班就睡著了。",
+      "notes": "使い方の質問"
+    },
+    {
+      "key": "howTo2Answer",
+      "en": "When you open Home the next day,\nit will say \"You forgot to clock out.\"\nYou can edit the previous day's record\nfrom \"Edit Time\" in that message.\nIf it doesn't appear, please go to the \"Month\" screen,\ntap the previous day, and edit it there.",
+      "ko": "다음 날 홈을 열면\n'퇴근이 눌리지 않았습니다'라고 나와요.\n그 안의 '시간 수정'에서\n전날의 기록을 고칠 수 있어요.\n나오지 않았을 때는 '월' 화면에서\n전날을 눌러 수정해 주세요.",
+      "zhTW": "隔天打開首頁時，\n會顯示「您忘記按下班了」。\n您可以從裡面的「修改時間」，\n修改前一天的紀錄。\n如果沒有顯示，請在「月」的畫面\n按下前一天的日期來修改。",
+      "notes": "使い方の回答"
+    },
+    {
+      "key": "howTo2Note",
+      "en": "The clock-in time is saved on your device,\nso your records will not disappear.\nThere is no need to reinstall the app.",
+      "ko": "출근한 시각은 기기에 남아 있으므로\n기록이 지워지는 일은 없어요.\n앱을 다시 설치할 필요도 없어요.",
+      "zhTW": "上班的時間會保留在裝置裡，\n所以紀錄不會消失。\n也不需要重新安裝應用程式。",
+      "notes": "安心させる補足"
+    },
+    {
+      "key": "howTo3Question",
+      "en": "I forgot to start my break. I want to add it later.",
+      "ko": "휴식을 누르는 걸 깜빡했어요. 나중에 휴식을 넣고 싶어요.",
+      "zhTW": "忘記按休息了。想事後補上休息時間。",
+      "notes": "使い方の質問"
+    },
+    {
+      "key": "howTo3Answer",
+      "en": "You can add it in \"Edit Time\"\nby splitting the record before and after the break.\nSet the \"End\" of the pre-break record\nto the time your break started,\nand use \"+ Add Record\"\nto add the time after your break.\nThe time in between will be excluded from your work hours.",
+      "ko": "'시간 수정'에서\n휴식 전후로 기록을 나누면 넣을 수 있어요.\n휴식 전 기록의 '끝'을\n휴식에 들어간 시각으로 하고,\n'+ 기록 추가'로\n휴식 후의 시간을 더해 주세요.\n그 사이의 시간이 일한 시간에서 제외돼요.",
+      "zhTW": "在「修改時間」中，\n將紀錄分成休息前後兩段就可以補上。\n把休息前紀錄的「結束」\n設為開始休息的時間，\n再用「＋ 新增紀錄」\n補上休息後的時間。\n這中間的空檔就會從工作時間中扣除。",
+      "notes": "使い方の回答"
+    },
+    {
+      "key": "howTo4Question",
+      "en": "I want to switch to a different task while working.",
+      "ko": "작업 도중에 다른 작업으로 바꾸고 싶어요.",
+      "zhTW": "工作到一半，想切換成別的工作。",
+      "notes": "使い方の質問"
+    },
+    {
+      "key": "howTo4Answer",
+      "en": "If you are currently working,\njust tap the next task\nunder \"Current Task\".\nIt will start recording the new task from that time.\nEven after clocking out or during a break,\nyou can select the next task in advance.",
+      "ko": "일하는 도중이라면\n'지금 하는 일'에서\n다음 작업을 누르기만 하면 돼요.\n그 시각부터 새로운 작업으로 기록돼요.\n퇴근한 후나 휴식 중에도\n다음 작업을 미리 선택해 둘 수 있어요.",
+      "zhTW": "如果正在工作途中，\n只要在「現在正在做的事」\n按下下一個工作就可以了。\n從那個時間起，就會變成新工作的紀錄。\n下班後或休息中，\n也可以先選好下一個工作。",
+      "notes": "使い方の回答"
+    },
+    {
+      "key": "howTo4Note",
+      "en": "The bug where you couldn't switch tasks after clocking out\nhas been fixed.\nIf tapping doesn't change the task,\nplease try updating the app to the latest version.",
+      "ko": "퇴근 후에 바꿀 수 없었던 버그는\n수정되었어요.\n눌러도 바뀌지 않을 때는\n앱을 최신 버전으로 업데이트해 보세요.",
+      "zhTW": "下班後無法切換工作的錯誤\n已經修正了。\n如果按了沒有反應，\n請試著將應用程式更新到最新版本。",
+      "notes": "修正済みの補足"
+    },
+    {
+      "key": "howTo5Question",
+      "en": "What if I work past midnight?",
+      "ko": "자정을 넘겨서 일했을 때는요?",
+      "zhTW": "如果工作跨越半夜怎麼辦？",
+      "notes": "使い方の質問"
+    },
+    {
+      "key": "howTo5Answer",
+      "en": "If you just clock out normally,\nthe records will be split by date.\nIf you want to group overnight work into the same day,\nplease change the \"Daily Reset Time\" in Settings\nto something like \"4:00 AM\".\nWhen adding records later,\nentering start 22:00 and end 2:00\nwill record the end time as the next day.",
+      "ko": "그대로 퇴근을 누르면\n날짜별로 나뉘어 기록돼요.\n밤샘 작업분을 같은 날로 묶고 싶을 때는\n설정의 '하루 전환 시각'을\n'아침 4시' 등으로 변경해 주세요.\n나중에 추가할 때는\n시작 22:00, 끝 2:00처럼 넣으면\n다음 날 시각으로 기록돼요.",
+      "zhTW": "直接按下班的話，\n紀錄會依日期分開計算。\n如果想把熬夜的工作算在同一天，\n請將設定裡的「換日時間」\n改成「早上4點」之類的時間。\n事後補上紀錄時，\n只要輸入開始22:00、結束2:00，\n就會自動記錄為隔天的時間。",
+      "notes": "使い方の回答"
+    },
+    {
+      "key": "howTo5Note",
+      "en": "Settings → Daily Reset Time.\nYou can change it between 0:00 and 12:00 PM.",
+      "ko": "설정 → 하루 전환 시각.\n0시~낮 12시 사이에서 바꿀 수 있어요.",
+      "zhTW": "設定 → 換日時間。\n可以在0點到中午12點之間更改。",
+      "notes": "設定場所の補足"
+    },
+    {
+      "key": "howTo6Question",
+      "en": "I want to rearrange my task categories.",
+      "ko": "작업 카테고리 순서를 바꾸고 싶어요.",
+      "zhTW": "想重新排列工作分類。",
+      "notes": "使い方の質問"
+    },
+    {
+      "key": "howTo6Answer",
+      "en": "Under \"Current Task\" on the Home screen,\nlong-press a category\nto rearrange them in any order you like.",
+      "ko": "홈의 '지금 하는 일'에서\n카테고리를 길게 누르면\n원하는 순서로 바꿀 수 있어요.",
+      "zhTW": "在首頁的「現在正在做的事」中，\n長按分類\n就可以隨意重新排列順序。",
+      "notes": "使い方の回答"
+    },
+    {
+      "key": "howTo7Question",
+      "en": "I want to change the cat's name later.",
+      "ko": "고양이의 이름을 나중에 바꾸고 싶어요.",
+      "zhTW": "想事後更改貓咪的名字。",
+      "notes": "使い方の質問"
+    },
+    {
+      "key": "howTo7Answer",
+      "en": "In the \"Cat Shop\" under Settings,\ntap the cat's name to rewrite it.\nIf you confirm it while empty,\nit will revert to the original name.",
+      "ko": "설정의 '고양이 상점'에서\n그 아이의 이름을 누르면 다시 쓸 수 있어요.\n빈칸인 채로 확정하면\n원래 이름으로 돌아가요.",
+      "zhTW": "在設定的「貓咪商店」裡，\n按下貓咪的名字就可以修改。\n如果留空並確認，\n就會恢復成原本的名字。",
+      "notes": "使い方の回答"
+    },
+    {
+      "key": "howTo8Question",
+      "en": "Does it keep recording even if I turn off the screen?",
+      "ko": "화면을 꺼두어도 기록은 계속되나요?",
+      "zhTW": "關閉螢幕時，紀錄還會繼續嗎？",
+      "notes": "使い方の質問"
+    },
+    {
+      "key": "howTo8Answer",
+      "en": "Yes, it does.\nAfter clocking in, it's fine to turn off the screen\nor open other apps.\nねこ勤怠 doesn't run constantly in the background;\nit remembers the time you clocked in\nand calculates the duration the next time you open it.",
+      "ko": "계속되고 있어요.\n출근을 누른 후 화면을 끄거나\n다른 앱을 열어도 괜찮아요.\nねこ勤怠는 백그라운드에서 계속 도는 게 아니라,\n출근한 시각을 기억해 두었다가\n다음에 열었을 때 계산하고 있어요.",
+      "zhTW": "會繼續喔。\n按下上班後，關閉螢幕\n或是打開其他應用程式都沒關係。\nねこ勤怠並不是一直在背景運作，\n而是記住您上班的時間，\n在下次打開時才進行計算。",
+      "notes": "使い方の回答"
+    },
+    {
+      "key": "howTo9Question",
+      "en": "I can't tap the clock-in button.",
+      "ko": "출근 버튼이 눌리지 않아요.",
+      "zhTW": "無法按上班按鈕。",
+      "notes": "使い方の質問"
+    },
+    {
+      "key": "howTo9Answer",
+      "en": "You cannot clock in\nif you don't have any task categories.\nIf you create one from \"Task Categories\" in Settings\nby tapping \"Add a new task\",\nyou will be able to tap it.",
+      "ko": "작업 카테고리가 하나도 없으면\n출근할 수 없어요.\n설정의 '작업 카테고리'에서\n'새로운 작업 추가하기'로 하나 만들면\n누를 수 있게 돼요.",
+      "zhTW": "如果沒有任何工作分類，\n就無法上班。\n請從設定的「工作分類」中，\n點選「新增工作」建立一個分類，\n就可以按了。",
+      "notes": "使い方の回答"
+    },
+    {
+      "key": "howTo10Question",
+      "en": "I want to see 'from what time to what time' I worked on a past day",
+      "ko": "과거 날짜에 '몇 시부터 몇 시까지' 했는지 보고 싶어요",
+      "zhTW": "我想看過去某天「從幾點到幾點」做了什麼",
+      "notes": "UI用語なし"
+    },
+    {
+      "key": "howTo10Answer",
+      "en": "If you tap a date on the 'Month' screen,\nyou can see the total for that day and\nthe start and end times for each task.",
+      "ko": "'월' 화면에서 날짜를 누르면,\n그날의 총 시간과 작업별\n시작 및 종료 시각을 볼 수 있어요.",
+      "zhTW": "在「月」畫面按一下日期，\n就能看到當天的總計，以及\n各項任務的開始與結束時間。",
+      "notes": "「月」の画面名統一"
+    },
+    {
+      "key": "howTo11Question",
+      "en": "Can I transfer my records when changing devices?",
+      "ko": "기기를 바꿀 때 기록을 이어받을 수 있나요?",
+      "zhTW": "換手機時，紀錄可以轉移嗎？",
+      "notes": "機種変更"
+    },
+    {
+      "key": "howTo11Answer",
+      "en": "You can transfer them from\n'Backup Here' in the settings.\nFirst, export it to a file and\nsave it to your device.\nOn your new device, load that file\nfrom the same 'Backup Here'\nand you're all set.",
+      "ko": "설정의 '백업은 여기'에서\n이어받을 수 있어요.\n먼저 파일로 내보내서\n기기에 한 번 저장해 주세요.\n다음 기기에서 똑같이\n'백업은 여기'를 통해\n그 파일을 불러오면 완료돼요.",
+      "zhTW": "可以從設定的「備份請點此」\n來轉移紀錄。\n請先匯出成檔案，\n並儲存到裝置中。\n在下一台裝置上，\n同樣從「備份請點此」\n讀取該檔案就完成了。",
+      "notes": "「バックアップはこちら」のボタン名統一"
+    },
+    {
+      "key": "howTo11Note",
+      "en": "I hope to make this process a bit more convenient in the future.",
+      "ko": "나중에는 조금 더 편리한 방법으로 만들고 싶어요.",
+      "zhTW": "希望未來能提供更方便的方法。",
+      "notes": "補足"
+    },
+    {
+      "key": "howTo12Question",
+      "en": "Can I suddenly take a day off just for today?",
+      "ko": "오늘만 갑자기 쉬는 것도 가능한가요?",
+      "zhTW": "可以臨時決定今天休假嗎？",
+      "notes": "お休み"
+    },
+    {
+      "key": "howTo12Answer",
+      "en": "Yes, you can.\nTap the day on the week screen,\nand a 'Take a Day Off' button will appear.\nYou can also cancel it later.",
+      "ko": "가능해요.\n주 화면에서 해당 날짜를 탭하면\n'쉬는 날로 하기' 버튼이 나와요.\n나중에 취소할 수도 있어요.",
+      "zhTW": "可以的。\n在週畫面點選該日期，\n就會出現「設為休假」按鈕。\n之後也可以取消。",
+      "notes": "タップする→點選"
+    },
+    {
+      "key": "howTo13Question",
+      "en": "Does the date always change at midnight (0:00)?",
+      "ko": "날짜가 바뀌는 시각은 자정(0시)으로 고정인가요?",
+      "zhTW": "換日時間只能固定在半夜0點嗎？",
+      "notes": "日付変更"
+    },
+    {
+      "key": "howTo13Answer",
+      "en": "You can change it in the settings\nto anywhere between 0:00 and 12:00 PM.\nIf you set it to '4:00 AM', late-night work\nwill be recorded on the same day.",
+      "ko": "설정에서 0시부터 낮 12시 사이로\n변경할 수 있어요.\n'아침 4시'로 설정하면, 심야 작업도\n같은 날의 기록이 돼요.",
+      "zhTW": "可以從設定中更改，\n範圍是0點到中午12點。\n如果設為「早上4點」，深夜的任務\n也會算在同一天的紀錄裡。",
+      "notes": "時間設定"
+    },
+    {
+      "key": "howTo13Note",
+      "en": "Settings -> Daily Reset Time",
+      "ko": "설정 → 하루 전환 시각",
+      "zhTW": "設定 → 換日時間",
+      "notes": "「1日のきりかえ時刻」の画面名統一"
+    },
+    {
+      "key": "howTo14Question",
+      "en": "Do the weekly and daily goals need to add up to the same total?",
+      "ko": "주 목표와 하루 목표는 합계를 맞춰야 하나요?",
+      "zhTW": "每週目標和每日目標的總計必須一致嗎？",
+      "notes": "目標設定"
+    },
+    {
+      "key": "howTo14Answer",
+      "en": "They don't need to match.\nThe weekly goal is the total for the whole week,\nand the daily goal is a guide for 'about this much today'.\nThey are treated as separate things.",
+      "ko": "맞추지 않아도 괜찮아요.\n주 목표는 일주일 전체의 합계이고,\n하루 목표는 '오늘은 이 정도'라는 기준으로,\n각각 별개의 것으로 보고 있어요.",
+      "zhTW": "不一致也沒關係。\n每週目標是一整週的總計，\n每日目標則是「今天大概做這些」的參考，\n兩者是分開來看的。",
+      "notes": "目標の考え方"
+    },
+    {
+      "key": "howTo14Note",
+      "en": "Even if your working hours differ on weekdays and weekends,\nit's fine if the math doesn't perfectly multiply out.",
+      "ko": "평일과 휴일의 작업 시간이 달라도,\n곱셈이 맞지 않은 채로 두어도 문제없어요.",
+      "zhTW": "即使平日和假日的任務時間不同，\n乘法算不攏也沒有問題。",
+      "notes": "補足"
+    },
+    {
+      "key": "howTo15Question",
+      "en": "Can I restore a deleted task category?",
+      "ko": "지운 작업 카테고리를 원래대로 되돌릴 수 없나요?",
+      "zhTW": "刪除的任務分類可以復原嗎？",
+      "notes": "「作業カテゴリ」の用語統一"
+    },
+    {
+      "key": "howTo15Answer",
+      "en": "If you open 'Deleted Tasks' in the settings,\nyou can restore task categories.\nYou can collapse the list when you don't need to see it.",
+      "ko": "설정의 '지운 작업'을 열면,\n작업 카테고리를 원래대로 되돌릴 수 있어요.\n목록은 보지 않을 때 접어둘 수 있어요.",
+      "zhTW": "打開設定的「已刪除任務」，\n就可以復原任務分類。\n不看的時候可以把清單收合起來。",
+      "notes": "「けした作業」の画面名統一。一覧→清單"
+    },
+    {
+      "key": "howTo15Note",
+      "en": "Tasks with records are kept\nso that the totals don't break.\nI want to make it possible to completely delete those with 0 hours.",
+      "ko": "기록이 있는 작업은\n통계가 어긋나지 않도록 남겨두고 있어요.\n0시간인 것은 완전히 삭제할 수 있게 만들고 싶어요.",
+      "zhTW": "有紀錄的任務會保留下來，\n以免影響總計。\n希望未來能讓0小時的任務完全刪除。",
+      "notes": "補足"
+    },
+    {
+      "key": "upcomingLabel",
+      "en": "Upcoming Plans",
+      "ko": "앞으로의 계획",
+      "zhTW": "未來的計畫",
+      "notes": "見出し"
+    },
+    {
+      "key": "upcoming1Question",
+      "en": "I want to see the total time as '6 hours 54 minutes' instead of '6.9h'",
+      "ko": "총 시간을 '6.9h'가 아니라 '6시간 54분'으로 보고 싶어요",
+      "zhTW": "我想把總時間顯示為「6小時54分」，而不是「6.9h」",
+      "notes": "表示形式"
+    },
+    {
+      "key": "upcoming1Answer",
+      "en": "I've received many requests for this.\nI'm thinking about the best way to show it\nwhile keeping it easy to read\nwithin the screen design.",
+      "ko": "많은 분들이 의견을 주셨어요.\n화면 디자인과의 조화를 고려해서,\n어떻게 보여주는 것이 가장 보기 좋을지\n고민하고 있어요.",
+      "zhTW": "我收到了很多這方面的建議。\n考量到畫面設計的平衡，\n我正在思考怎麼呈現\n才是最清楚易讀的。",
+      "notes": "回答"
+    },
+    {
+      "key": "upcoming2Question",
+      "en": "I want to set detailed goals for each day of the week and each week",
+      "ko": "목표를 요일별, 주별로 세밀하게 정하고 싶어요",
+      "zhTW": "我想針對每天和每週設定更詳細的目標",
+      "notes": "目標設定"
+    },
+    {
+      "key": "upcoming2Answer",
+      "en": "I want to keep this app simple,\nso I'd like to create a powered-up version\nwith detailed features as a separate app.",
+      "ko": "심플한 앱으로 남고 싶어서,\n세밀한 기능을 포함한 업그레이드 버전을\n다른 앱으로 만들고 싶어요.",
+      "zhTW": "因為希望這是一款簡單的App，\n所以我打算把包含詳細功能的進階版，\n做成另一款獨立的App。",
+      "notes": "別アプリ構想"
+    },
+    {
+      "key": "upcoming2Note",
+      "en": "I'll be careful not to clutter ねこ勤怠 with too many settings.",
+      "ko": "ねこ勤怠에서는 설정이 많아져서 복잡해지지 않도록 주의해서 만들게요.",
+      "zhTW": "我會小心開發，避免讓「ねこ勤怠」因為設定太多而變得雜亂。",
+      "notes": "「ねこ勤怠」ブランド名維持"
+    },
+    {
+      "key": "upcoming3Question",
+      "en": "Will there be more cats in the future?",
+      "ko": "고양이는 앞으로 더 늘어나나요?",
+      "zhTW": "未來還會增加貓咪嗎？",
+      "notes": "ねこ追加"
+    },
+    {
+      "key": "upcoming3Answer",
+      "en": "6 cats were added in version 2.1.0,\nmaking a total of 17 cats now.\nI want to keep adding more little by little.",
+      "ko": "2.1.0에서 6마리가 늘어나서,\n지금은 총 17마리예요.\n앞으로도 조금씩 늘려가고 싶어요.",
+      "zhTW": "在2.1.0版本增加了6隻，\n現在總共有17隻貓咪。\n未來也想一點一滴慢慢增加。",
+      "notes": "バージョン番号維持"
+    },
+    {
+      "key": "upcoming3Note",
+      "en": "You can get 2 rainbow cats\nthrough the support plan.\nI spend a lot of time drawing each pixel art cat.\nCats added in the future might be paid.",
+      "ko": "무지개색 고양이 2마리는\n후원 플랜으로 얻을 수 있어요.\n도트 그래픽은 한 마리씩 시간을 들여 그리고 있어요.\n앞으로 추가할 고양이는 유료가 될 수도 있어요.",
+      "zhTW": "2隻彩虹貓咪\n可以透過贊助方案獲得。\n像素圖是我花時間一隻一隻畫出來的。\n未來新增的貓咪可能會需要付費。",
+      "notes": "おうえんプラン→贊助方案"
+    },
+    {
+      "key": "upcoming4Question",
+      "en": "I want to change the cats' fur and eye colors. I also want to keep multiple cats.",
+      "ko": "고양이의 털색이나 눈동자 색을 바꾸고 싶어요. 여러 마리도 키우고 싶어요.",
+      "zhTW": "我想改變貓咪的毛色和眼睛顏色，也想同時養很多隻貓",
+      "notes": "カスタマイズ"
+    },
+    {
+      "key": "upcoming4Answer",
+      "en": "I really want to do this.\nIt will be after I finish fixing\nthe major bugs,\nso I'd appreciate it if you could wait a bit.",
+      "ko": "정말 하고 싶어요.\n큰 버그 수정을\n어느 정도 마친 후에 진행할 예정이니,\n기다려 주시면 기쁠 것 같아요.",
+      "zhTW": "我非常想加入這些功能。\n不過要等我把重大問題\n都修復完畢後才能進行，\n希望大家能耐心等候。",
+      "notes": "回答"
+    },
+    {
+      "key": "upcoming4Note",
+      "en": "These features might be paid.",
+      "ko": "이 기능들은 유료가 될 수도 있어요.",
+      "zhTW": "這些功能可能會需要付費。",
+      "notes": "補足"
+    },
+    {
+      "key": "upcoming5Question",
+      "en": "I want to pet the cats and give them treats.",
+      "ko": "고양이를 쓰다듬거나 간식을 주고 싶어요.",
+      "zhTW": "我想摸摸貓咪，或是給牠們獎勵",
+      "notes": "ふれあい"
+    },
+    {
+      "key": "upcoming5Answer",
+      "en": "I've received many requests for this.\nI also really want to try making it.\nRight now, I'm prioritizing\nfixing bugs.",
+      "ko": "많은 분들이 의견을 주셨어요.\n저도 해보고 싶은 마음이 있어요.\n지금은 버그를 고치는 것을\n우선으로 하고 있어요.",
+      "zhTW": "我收到了很多這方面的建議。\n我自己也很想試試看。\n不過目前會優先\n修復App的問題。",
+      "notes": "回答"
+    },
+    {
+      "key": "upcoming5Note",
+      "en": "Petting, treats, toys, dress-up.\nI'm keeping all the ideas you've shared.",
+      "ko": "쓰다듬기, 간식, 장난감, 옷 갈아입히기.\n보내주신 아이디어는 전부 남겨두고 있어요.",
+      "zhTW": "摸摸、零食、玩具、換裝。\n大家提供的點子我都有好好保留下來。",
+      "notes": "補足"
+    },
+    {
+      "key": "upcoming6Question",
+      "en": "I want to see the cats and clock in from widgets or Apple Watch.",
+      "ko": "위젯이나 Apple Watch에서 고양이를 보거나 기록하고 싶어요.",
+      "zhTW": "我想從小工具或 Apple Watch 看到貓咪並打卡",
+      "notes": "ウィジェット"
+    },
+    {
+      "key": "upcoming6Answer",
+      "en": "I plan to support widgets for the\nhome screen and lock screen.\nI also bought an Apple Watch, so\nI'm thinking about how to make it\neasy to use on there as well.",
+      "ko": "홈 화면이나 잠금 화면의\n위젯은 지원할 예정이에요.\nApple Watch도 구입했기 때문에,\n어떻게 하면 사용하기 편할지\n함께 고민하고 있어요.",
+      "zhTW": "主畫面和鎖定畫面的\n小工具已在計畫中。\n我也買了 Apple Watch，\n正在思考要怎麼設計\n才會比較好用。",
+      "notes": "回答"
+    },
+    {
+      "key": "upcoming6Note",
+      "en": "The most common request I get is\nwanting to see the cats all the time while working.",
+      "ko": "작업하는 동안 계속 고양이가 보였으면 좋겠다는\n의견을 가장 많이 받고 있어요.",
+      "zhTW": "我收到最多的建議，\n就是希望在任務期間能一直看到貓咪。",
+      "notes": "補足"
+    },
+    {
+      "key": "upcoming7Question",
+      "en": "I want to export my records as a CSV.",
+      "ko": "기록을 CSV로 내보내고 싶어요.",
+      "zhTW": "我想把紀錄匯出成 CSV",
+      "notes": "CSV"
+    },
+    {
+      "key": "upcoming7Answer",
+      "en": "I will look into it.\nHowever, it might take a little while.",
+      "ko": "검토해 볼게요.\n다만, 시간이 조금 걸릴 수도 있어요.",
+      "zhTW": "我會評估看看。\n不過可能要再等一段時間。",
+      "notes": "回答"
+    },
+    {
+      "key": "upcoming9Question",
+      "en": "I want regular break suggestions and daily reminders.",
+      "ko": "정해진 시간마다 휴식을 권유하거나, 매일 리마인더를 받고 싶어요.",
+      "zhTW": "我想要定時的休息提醒，以及每天的提醒通知",
+      "notes": "通知"
+    },
+    {
+      "key": "upcoming9Answer",
+      "en": "I will look into repeating break suggestions.\nI do want to add a daily morning notification.\nI'll make it so you can toggle it on and off,\nbut it might take a little while.",
+      "ko": "반복적인 휴식 권유는 검토해 볼게요.\n매일 아침 알림은 넣고 싶다고 생각하고 있어요.\n켜고 끌 수 있도록 만들 예정이지만,\n시간이 조금 걸릴 것 같아요.",
+      "zhTW": "重複的休息提醒我會評估看看。\n每天早上的通知，我希望能加進去。\n會設計成可以自由開關，\n不過可能要再等一段時間。",
+      "notes": "回答"
+    },
+    {
+      "key": "upcoming9Note",
+      "en": "Currently, 'Time to Suggest Break'\nand 'Break Time' start from 30 minutes,\nin 30-minute increments.",
+      "ko": "지금의 '휴식 권유 시간'과\n'휴식 시간'은 30분부터 시작해서,\n30분 단위로 설정할 수 있어요.",
+      "zhTW": "目前的「建議休息時間」\n和「休息時間」是從30分鐘開始，\n以30分鐘為單位。",
+      "notes": "「休憩にさそう時間」「休憩する時間」の用語統一"
+    },
+    {
+      "key": "upcoming10Question",
+      "en": "I want to change the theme color and task category colors.",
+      "ko": "테마 색상이나 작업 카테고리의 색을 바꾸고 싶어요.",
+      "zhTW": "我想更改主題顏色和任務分類的顏色",
+      "notes": "「作業カテゴリ」の用語統一"
+    },
+    {
+      "key": "upcoming10Answer",
+      "en": "I want to do this.\nI'm not sure yet if it will be\nexactly as you imagine, but I want to\nmake backgrounds changeable and\nvalue the excitement of the look.\nYou can currently choose from 12 colors\nfor task categories. Whether to add more\nwill be considered together with this.",
+      "ko": "하고 싶어요.\n여러분이 상상하시는 모습이 될지는\n아직 모르겠지만, 배경 등도\n바꿀 수 있게 해서 시각적인\n즐거움을 소중히 하고 싶어요.\n작업 카테고리 색상은 지금 12가지 중에서\n고를 수 있어요. 그 이상 늘릴지는\n함께 검토해 볼게요.",
+      "zhTW": "我很想做。\n雖然還不知道會不會是\n大家想像中的樣子，但我想讓\n背景等也能夠更換，\n重視視覺上的期待感。\n作業分類的顏色目前有12種\n可以選擇。是否要再增加，\n我會一併評估。",
+      "notes": "ワクワクはexcitement/즐거움/期待感としました。"
+    },
+    {
+      "key": "upcoming11Question",
+      "en": "I want to use it on PC and browsers",
+      "ko": "PC나 브라우저에서도 쓰고 싶어요",
+      "zhTW": "想在電腦或瀏覽器上使用",
+      "notes": ""
+    },
+    {
+      "key": "upcoming11Answer",
+      "en": "I've received many requests for this.\nI'm also preparing a PC version.",
+      "ko": "건의를 정말 많이 받았어요.\nPC 버전도 준비하고 있어요.",
+      "zhTW": "我收到了很多這方面的建議。\n目前也正在準備電腦版。",
+      "notes": ""
+    },
+    {
+      "key": "upcoming11Note",
+      "en": "Once I decide how to handle data transfer and linking\nfrom the smartphone version, I'll let you know.",
+      "ko": "스마트폰 버전에서의 데이터 연동 등을 어떻게 할지,\n방향이 정해지면 다시 알려드릴게요.",
+      "zhTW": "關於手機版的資料轉移與連動等要如何處理，\n等方向確定後會再通知大家。",
+      "notes": ""
+    },
+    {
+      "key": "unlikelyLabel",
+      "en": "Things that might be difficult",
+      "ko": "어려울지도 모르는 것",
+      "zhTW": "可能比較困難的事",
+      "notes": ""
+    },
+    {
+      "key": "unlikely1Question",
+      "en": "I want to enter my hourly wage and see how much I earned",
+      "ko": "시급을 입력해서 얼마나 벌었는지 보고 싶어요",
+      "zhTW": "想輸入時薪，看看賺了多少錢",
+      "notes": ""
+    },
+    {
+      "key": "unlikely1Answer",
+      "en": "I'm sorry, but there are no plans for this.\nねこ勤怠 values\n\"counting your own time casually\"\nmore than calculating money.",
+      "ko": "죄송하지만, 예정에 없어요.\nねこ勤怠는 돈을 계산하기보다\n'내 시간을 가볍게 세어보는' 것을\n소중하게 생각하고 있어요.",
+      "zhTW": "很抱歉，目前沒有這個計畫。\nねこ勤怠比起計算金錢，\n更重視\n「輕鬆計算自己的時間」。",
+      "notes": "「自分の時間を気軽に数える」は各言語で自然な表現にしました。"
+    },
+    {
+      "key": "unlikely2Question",
+      "en": "I want to count two tasks at the same time",
+      "ko": "두 가지 작업을 동시에 세고 싶어요",
+      "zhTW": "想同時計算兩項作業",
+      "notes": ""
+    },
+    {
+      "key": "unlikely2Answer",
+      "en": "It's designed to record\nonly one task at a time.\nI value a simple user experience,\nso I have no plans to change this for now.",
+      "ko": "같은 시간에는\n하나의 작업만 기록하도록 만들어졌어요.\n간단한 사용감을 소중히 하고 있어서,\n지금으로서는 바꿀 예정이 없어요.",
+      "zhTW": "目前的設計是同一個時間內，\n只能記錄一項作業。\n因為我很重視簡單的使用體驗，\n所以目前沒有更改的計畫。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely3Question",
+      "en": "I want to change the words \"Clock In\" and \"Clock Out\"",
+      "ko": "'출근', '퇴근'이라는 단어를 바꾸고 싶어요",
+      "zhTW": "想更改「上班」和「下班」的用詞",
+      "notes": "「出勤」「退勤」は一般的なClock In/Out等にしました。"
+    },
+    {
+      "key": "unlikely3Answer",
+      "en": "You can't change them right now.\nSince people use it for study and hobbies too,\nI do want to make the words selectable.",
+      "ko": "지금은 바꿀 수 없어요.\n공부나 취미 시간에도 많이 써주시고 있어서,\n단어를 고를 수 있게 하고 싶은 마음은 있어요.",
+      "zhTW": "目前無法更改。\n因為也有人將它用在讀書或興趣上，\n我確實有想讓大家可以自己選擇用詞。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely4Question",
+      "en": "I want to use the same records on two devices, like iPhone and iPad",
+      "ko": "iPhone과 iPad 두 대에서 같은 기록을 쓰고 싶어요",
+      "zhTW": "想在 iPhone 和 iPad 兩台裝置上使用相同的紀錄",
+      "notes": ""
+    },
+    {
+      "key": "unlikely4Answer",
+      "en": "I'm sorry, but\nsyncing is not supported.\nThis is because I plan to keep records only on the device,\nand I have no plans\nto create a login feature.",
+      "ko": "죄송하지만,\n동기화는 지원하지 않아요.\n기록을 기기 안에만 두는 방침이라,\n로그인 기능을 만들 예정이\n없기 때문이에요.",
+      "zhTW": "很抱歉，\n目前不支援同步功能。\n因為我的方針是將紀錄只留在裝置內，\n所以沒有計畫\n製作登入功能。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely4Note",
+      "en": "It will be a while, but I'd like to make a powered-up version with account linking.",
+      "ko": "조금 먼 이야기지만, 계정 연동이 가능한 파워업 버전을 만들고 싶어요.",
+      "zhTW": "雖然還要一段時間，但我希望能製作可以連結帳號的進階版。",
+      "notes": "パワーアップ版はpowered-up version/파워업 버전/進階版としました。"
+    },
+    {
+      "key": "unlikely5Question",
+      "en": "I want to set days off and shifts in advance",
+      "ko": "휴일이나 시프트를 미리 정해두고 싶어요",
+      "zhTW": "想提前設定好未來的休假和排班",
+      "notes": ""
+    },
+    {
+      "key": "unlikely5Answer",
+      "en": "Within the current week, you can\nset them in advance.\nIf you tap the Boss (Cat) on the Home screen,\nyou can change this week's days off all at once.\nSetting them for next week or the week after\nis not possible.",
+      "ko": "이번 주 안에서라면 미리\n정할 수 있어요.\n홈 화면의 사장님(고양이)을 누르면,\n이번 주 휴일을 한 번에 바꿀 수 있어요.\n다음 주나 다다음 주를 미리 정하는 건\n할 수 없어요.",
+      "zhTW": "如果是這個禮拜以內，\n可以提前設定。\n點選首頁的社長（貓咪），\n就能一次更改這週的休假。\n但無法提前設定\n下週或下下週的休假。",
+      "notes": "社長(ねこ)はBoss (Cat)/사장님(고양이)/社長（貓咪）としました。"
+    },
+    {
+      "key": "unlikely5Note",
+      "en": "If your days off are on the same days every week, you can set them from Settings now.",
+      "ko": "매주 같은 요일에 쉰다면, 지금도 설정에서 정할 수 있어요.",
+      "zhTW": "如果每週都在固定的星期休假，現在也可以從設定中決定。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely7Question",
+      "en": "I also want notes and a to-do list",
+      "ko": "메모나 할 일 목록도 있었으면 좋겠어요",
+      "zhTW": "也想要有備忘錄和待辦清單",
+      "notes": ""
+    },
+    {
+      "key": "unlikely7Answer",
+      "en": "I read all your requests.\nI've thought about it carefully,\nbut I think it might be better\nto make it a separate app.",
+      "ko": "건의해 주신 내용은 모두 읽고 있어요.\n충분히 고민해 보았지만,\n다른 앱으로 분리하는 편이\n좋을 것 같다고 생각해요.",
+      "zhTW": "大家的建議我都有看。\n經過仔細評估後，\n我覺得做成另一個應用程式\n可能會比較好。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely7Note",
+      "en": "I want to make a powered-up app\nwhere you can manage work in more detail.\nI'm considering it for that app.",
+      "ko": "업무를 더 자세히 관리할 수 있는\n파워업 버전의 앱을 만들고 싶어요.\n그쪽에서 고려해 볼게요.",
+      "zhTW": "我想製作一款能更詳細管理工作\n的進階版應用程式。\n我會在那邊考慮加入這些功能。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely9Question",
+      "en": "I want a Pomodoro timer",
+      "ko": "뽀모도로 타이머가 있었으면 좋겠어요",
+      "zhTW": "想要有番茄鐘功能",
+      "notes": ""
+    },
+    {
+      "key": "unlikely9Answer",
+      "en": "I'm torn.\nI haven't used one much myself,\nso I'll decide after studying it...",
+      "ko": "고민 중이에요.\n제가 잘 써본 적이 없어서,\n공부해 보고 결정할게요…….",
+      "zhTW": "我還在猶豫。\n因為我自己不太常用，\n等我研究一下再決定……。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely9Note",
+      "en": "I'd like to develop an app specialized in focusing on study and hobbies.",
+      "ko": "공부나 취미에 집중하는 것에 특화된 앱을 개발하고 싶어요.",
+      "zhTW": "我想開發一款專門用來專注於讀書或興趣的應用程式。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely11Question",
+      "en": "I want animals other than cats (like dogs) too",
+      "ko": "고양이 말고 다른 동물(강아지 등)도 있었으면 좋겠어요",
+      "zhTW": "希望也有貓咪以外的動物（例如狗狗）",
+      "notes": ""
+    },
+    {
+      "key": "unlikely11Answer",
+      "en": "I can't draw anything but cats,\nso it might be difficult.\nEven if I try my best, for now\nI want to gradually add more cats.",
+      "ko": "제가 고양이 말고는 잘 못 그려서,\n어려울지도 몰라요.\n노력해 보겠지만, 지금은\n고양이를 조금씩 늘려가고 싶어요.",
+      "zhTW": "因為我不太會畫貓咪以外的動物，\n所以可能有點困難。\n就算要努力嘗試，目前\n我還是想先慢慢增加貓咪的數量。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely12Question",
+      "en": "I want it to support languages other than Japanese",
+      "ko": "일본어 외의 언어도 지원해 주면 좋겠어요",
+      "zhTW": "希望也能支援日文以外的語言",
+      "notes": ""
+    },
+    {
+      "key": "unlikely12Answer",
+      "en": "You can also use it in\nEnglish, 한국어, and 繁體中文.\nIt switches according to your device's language,\nand you can also choose it in Settings.",
+      "ko": "영어, 한국어, 번체 중국어로도\n쓸 수 있어요.\n기기 언어에 맞춰 바뀌고,\n설정에서 고를 수도 있어요.",
+      "zhTW": "目前也可以使用\n英文、韓文和繁體中文。\n會根據裝置的語言自動切換，\n也可以在設定中選擇。",
+      "notes": "言語名は原文通り各言語のネイティブ表記を残しました。"
+    },
+    {
+      "key": "unlikely12Note",
+      "en": "To those who offered to translate or gave advice,\nthank you very much.",
+      "ko": "번역을 도와주시겠다고 하거나 조언해 주신 분들,\n정말 감사합니다.",
+      "zhTW": "謝謝那些主動提出幫忙翻譯，\n或是給予建議的朋友們。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely13Question",
+      "en": "Can I download it from overseas stores?",
+      "ko": "해외 스토어에서도 다운로드할 수 있나요?",
+      "zhTW": "海外的商店也可以下載嗎？",
+      "notes": ""
+    },
+    {
+      "key": "unlikely13Answer",
+      "en": "It is available in all countries and regions\non both the App Store\nand Google Play.",
+      "ko": "App Store와 Google Play\n모두, 모든 국가와 지역에\n출시되어 있어요.",
+      "zhTW": "在 App Store 和 Google Play 上，\n所有的國家和地區\n都可以下載。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely14Question",
+      "en": "I want to try using it with my company or team",
+      "ko": "회사나 팀에서도 써보고 싶어요",
+      "zhTW": "想在公司或團隊裡使用看看",
+      "notes": ""
+    },
+    {
+      "key": "unlikely14Answer",
+      "en": "To all companies,\nI look forward to hearing from you.",
+      "ko": "기업 관계자 여러분,\n연락을 기다리고 있을게요.",
+      "zhTW": "各位企業的朋友，\n期待收到你們的聯繫。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely14Note",
+      "en": "Please use the Requests form or email support@c-cya.com",
+      "ko": "건의 사항 폼, 또는 support@c-cya.com으로 보내주세요",
+      "zhTW": "請透過建議與回饋表單，或來信至 support@c-cya.com",
+      "notes": ""
+    },
+    {
+      "key": "upcomingOutroBeforeLink",
+      "en": "To see what arrives in which update, check the",
+      "ko": "어떤 업데이트에서 무엇이 추가될지는",
+      "zhTW": "關於每次更新會推出什麼內容，都整理在",
+      "notes": "リンク前後のスペースを調整しました。"
+    },
+    {
+      "key": "upcomingOutroAfterLink",
+      "en": " for more details.",
+      "ko": " 에 정리해 두었어요.",
+      "zhTW": " 中。",
+      "notes": "原文の先頭スペースを残しつつ自然な文末にしました。"
+    },
+    {
+      "key": "notFoundBeforeLink",
+      "en": "If you can't find the answer, please use the ",
+      "ko": "답을 찾지 못하셨다면 ",
+      "zhTW": "如果找不到解答，請透過",
+      "notes": "リンク前後のスペースを調整しました。"
+    },
+    {
+      "key": "contactFormLink",
+      "en": "Requests form",
+      "ko": "건의 사항 폼",
+      "zhTW": "建議與回饋表單",
+      "notes": ""
+    },
+    {
+      "key": "notFoundAfterLink",
+      "en": " to let me know.",
+      "ko": "을 통해 알려주세요.",
+      "zhTW": "告訴我。",
+      "notes": "リンク前後のスペースを調整しました。"
+    },
+    {
+      "key": "backToTop",
+      "en": "← Back to the ねこ勤怠 page",
+      "ko": "← ねこ勤怠 페이지로 돌아가기",
+      "zhTW": "← 回到 ねこ勤怠 頁面",
+      "notes": ""
+    },
+    {
+      "key": "contactLink",
+      "en": "Requests",
+      "ko": "건의 사항",
+      "zhTW": "建議與回饋",
+      "notes": ""
+    },
+    {
+      "key": "privacyLink",
+      "en": "Privacy Policy",
+      "ko": "개인정보 처리방침",
+      "zhTW": "隱私權政策",
+      "notes": "固定訳を使用"
+    },
+    {
+      "key": "unlikely1Note",
+      "en": "I will consider if this can be supported in a separate, powered-up app.",
+      "ko": "파워업 버전의 다른 앱에서 지원할 수 있을지 검토해 볼게요.",
+      "zhTW": "我會評估看看是否能在進階版的其他應用程式中支援。",
+      "notes": "丁寧な個人開発者のトーン"
+    },
+    {
+      "key": "unlikely3Note",
+      "en": "I'd also like to develop an app for those who are studying hard, so I want to make it possible to choose the words there.",
+      "ko": "공부를 열심히 하시는 분들을 위한 앱도 개발하고 싶어서, 그곳에서는 단어를 선택할 수 있게 하고 싶어요.",
+      "zhTW": "我也想為努力讀書的人開發一款應用程式，希望到時候能讓大家自己選擇用語。",
+      "notes": "勉強向けアプリの構想"
+    },
+    {
+      "key": "upcoming10Note",
+      "en": "You can choose it from \"Change Color\"\nin \"Task Categories\" in the settings.",
+      "ko": "설정의 '작업 카테고리'에서\n'색상 변경'으로 선택할 수 있어요.",
+      "zhTW": "可以從設定的「作業分類」中\n透過「更改顏色」來選擇。",
+      "notes": "設定メニューの案内"
+    }
+  ]
+}

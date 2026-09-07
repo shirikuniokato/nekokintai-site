@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-09-07T16:49:43.102Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "summaryJapanese": "全体として意味は保たれていますが、将来の対応意向を原文より強くした箇所が2件あります。",
+  "issues": [
+    {
+      "locale": "ko",
+      "key": "unlikely11Answer",
+      "severity": "medium",
+      "backTranslationJapanese": "ねこ以外はうまく描けないので、少し難しいかもしれません。努力はしてみますが、今はねこを少しずつ増やしていきたいです。",
+      "reasonJapanese": "原文の「がんばるにしても」は仮定で、ねこ以外への対応を約束していません。訳文は「努力してみる」と今後の試行を表明しており、対応意向が追加されています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming2Answer",
+      "severity": "medium",
+      "backTranslationJapanese": "シンプルなアプリでありたいので、細かな機能を含む進化版を、別の独立したアプリとして作るつもりです。",
+      "reasonJapanese": "原文は別アプリを「作りたい」という希望ですが、訳文の「打算」は具体的な予定・意向を表し、実現への確度を原文より強めています。"
+    }
+  ]
+}

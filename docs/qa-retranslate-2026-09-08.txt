@@ -1,0 +1,37 @@
+QA 再翻訳が必要なキー（2026-09-08 / ja を差し替えた分）
+en / ko / zh-TW は古い訳のまま残っているので、必ず訳し直してから push すること。
+check:i18n の改行数チェックだけでは全部は拾えない（改行数が偶然合うものは検知されない）。
+
+■ ja を差し替えた 17 キー
+upcoming1Answer
+upcoming2Answer
+upcoming2Note
+upcoming3Note
+upcoming4Note
+upcoming6Answer
+upcoming9Answer
+upcoming11Answer
+upcoming11Note
+unlikely4Note
+unlikely5Answer
+unlikely5Note
+unlikely7Note
+unlikely9Note
+unlikely12Answer
+
+■ 新しく足した 2 キー（en/ko/zh-TW はいま日本語のまま）
+unlikely1Note
+unlikely3Note
+
+■ 統合でキーごと消したもの（辞書から削除済み・作業不要）
+upcoming8* / unlikely6* / unlikely8* / unlikely10* / fixedInLatest*
+
+■ 2026-09-08 追加で ja を直したキー（同じく要再翻訳）
+unlikely13Answer（Google Play を全世界配信に修正・Note はキーごと削除）
+upcoming3Answer / upcoming3Note（17匹・おうえん限定）
+upcoming10Answer / upcoming10Note（12色はいま選べる。Note は新規キー）
+unlikely12Answer（公開済みなので「使えます」）※項目は「できること」章へ移動
+
+■ ロードマップ側（assets/roadmap/locales.json）
+jumpToFuture（新規・「そのさき やりたいこと を見る ▾」。en/ko/zh-TW はいま日本語のまま）
+※ ios240Item1 と statusPlanned は「けんとうちゅう」カードを外したので4言語から削除済み

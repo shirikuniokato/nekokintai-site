@@ -1,0 +1,36 @@
+{
+  "generatedAt": "2026-09-07T16:45:10.100Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "summaryJapanese": "大半は意味が等価です。意味の追加または具体性の欠落がある medium 4件を検出しました。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "ios220Item2",
+      "severity": "medium",
+      "backTranslationJapanese": "応援している間は、お礼として、2匹の虹色の猫があなたと一緒に歩きます。",
+      "reasonJapanese": "原文は「2匹の猫が一緒に歩く」であり、利用者と一緒に歩くとは明示していません。「with you」によって同行相手が追加されています。"
+    },
+    {
+      "locale": "ko",
+      "key": "statusInProgress",
+      "severity": "medium",
+      "backTranslationJapanese": "修正中",
+      "reasonJapanese": "原文の「対応中」は機能追加なども含められる広い状態ですが、「수정 중」は不具合などを修正している状態に意味が狭まっています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios220Item2",
+      "severity": "medium",
+      "backTranslationJapanese": "支援している間は、お礼として、2匹の虹色の猫があなたと一緒に散歩します。",
+      "reasonJapanese": "原文は「2匹の猫が一緒に歩く」であり、利用者との同行や散歩とは明示していません。「與您一起散步」により相手と行動のニュアンスが追加されています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios220Item7",
+      "severity": "medium",
+      "backTranslationJapanese": "跨日記録を修正したあと、状態にエラーが発生することがある問題を修正します。",
+      "reasonJapanese": "原文の「状態がずれる」は状態同士の不整合という具体的な症状ですが、「發生錯誤」では単なるエラーに一般化され、その意味が欠落しています。"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "generatedAt": "2026-09-07T16:45:39.767Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "summaryJapanese": "大半は意味等価です。機能範囲の欠落、動作説明の変化、開発意向の強弱が変わる箇所を8件検出しました。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "upcoming2Question",
+      "severity": "high",
+      "backTranslationJapanese": "曜日ごとに1日の目標を変えたい。",
+      "reasonJapanese": "原文にある「週ごとに細かく決めたい」という要望が欠落し、曜日別の日次目標だけに範囲が狭まっています。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcoming2Question",
+      "severity": "high",
+      "backTranslationJapanese": "1日の目標を曜日ごとに変えて設定したい。",
+      "reasonJapanese": "原文にある「週ごと」の目標設定が欠落し、曜日ごとの設定だけになっています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming2Question",
+      "severity": "high",
+      "backTranslationJapanese": "曜日に応じて1日の目標を変えたい。",
+      "reasonJapanese": "原文にある「週ごとに細かく決めたい」という要望が抜けています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo5Answer",
+      "severity": "medium",
+      "backTranslationJapanese": "そのまま退勤を押すと、記録は日付ごとに分けて計算されます。",
+      "reasonJapanese": "原文は記録そのものが日付ごとに分割される説明ですが、翻訳では計算だけが日付別に行われる意味になり、アプリの動作説明が変わっています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo10Question",
+      "severity": "medium",
+      "backTranslationJapanese": "過去の日に、何時から何時まで何をしたのか見たい。",
+      "reasonJapanese": "原文は働いた時間帯を確認したいという質問ですが、翻訳では「何をしたか」という作業内容の確認まで追加されています。"
+    },
+    {
+      "locale": "ko",
+      "key": "unlikely11Answer",
+      "severity": "medium",
+      "backTranslationJapanese": "猫以外はうまく描けないので、少し難しいかもしれません。努力してみますが、今は猫を少しずつ増やしたいです。",
+      "reasonJapanese": "原文の「がんばるにしても」は仮定ですが、翻訳は「努力してみる」と実行を約束する表現になり、今後の対応意向が強まっています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming2Answer",
+      "severity": "medium",
+      "backTranslationJapanese": "シンプルなアプリにしたいので、細かい機能を含む進階版を別の独立したアプリとして作る予定です。",
+      "reasonJapanese": "原文は「作りたい」という希望ですが、翻訳では「作る予定・つもり」に近い表現となり、別アプリ開発への確約度が強まっています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely3Answer",
+      "severity": "medium",
+      "backTranslationJapanese": "今は変更できません。勉強や趣味にも使う人がいるので、言葉を選べるようにすることを確かに考えたことがあります。",
+      "reasonJapanese": "原文は現在も「選べるようにしたい」という意向があると述べていますが、翻訳では過去に検討したことがあるという意味になり、継続中の意向が弱まっています。"
+    }
+  ]
+}

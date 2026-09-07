@@ -105,6 +105,15 @@
   .rv-h2{font-size:clamp(18px,4.8vw,22px);font-weight:400;letter-spacing:.06em;margin:0 0 4px;}
   .rv-lead{font-size:clamp(13px,3.5vw,14px);color:var(--deep);margin:0 0 16px;white-space:pre-line;}
   .rv-divider{display:flex;justify-content:center;margin:6px 0 22px;}
+  /* 下の「そのさき やりたいこと」へ飛ぶ。iOS / Android のタブと張り合わないよう、
+     「ほかの更新内容を◯件見る」と同じ 控えめな下線のボタンにする */
+  .rv-jump{
+    display:inline-block;padding:2px 2px 3px;
+    border-bottom:2px dashed var(--shadow);
+    font-size:clamp(12px,3.2vw,13px);line-height:1.6;color:var(--deep);
+  }
+  .rv-jump:hover{color:var(--ink);}
+  @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth;}}
 </style>
 </head>
 <body>
@@ -123,6 +132,8 @@
 バージョンごとに まとめています。</p>
   <p class="lp-copy-multiline" data-i18n="sub" style="font-size:clamp(12px,3.2vw,13px);color:var(--muted);margin:0;">ストアの審査にかかる時間が読めないため、
 届くタイミングは iOS と Android でずれることがあります</p>
+
+  <p style="margin:14px 0 0;"><a class="rv-jump" href="#future" data-i18n="jumpToFuture">そのさき やりたいこと を見る ▾</a></p>
 
   <nav class="locale-switcher" data-i18n-aria-label="languageSelector" aria-label="言語">
     <button type="button" data-locale="ja" aria-pressed="true">日本語</button>
@@ -145,15 +156,6 @@
     </div>
 
     <section class="rv-pane rv-pane-ios" data-i18n-aria-label="iosPaneLabel" aria-label="iOS のアップデート">
-      <div class="rv-card">
-        <div class="rv-head"><h2 class="rv-ver">2.4.0</h2><span class="rv-chip st-prep" data-i18n="statusPlanned">けんとうちゅう</span></div>
-        <ul class="rv-list">
-          <li data-i18n="ios240Item1">ホーム画面やロック画面で使える
-ウィジェットに対応する予定です。
-できることは、ただいま検討中です</li>
-        </ul>
-      </div>
-
       <div class="rv-card">
         <div class="rv-head"><h2 class="rv-ver">2.3.2</h2><span class="rv-chip st-prep" data-i18n="statusInProgress">たいおうちゅう</span></div>
         <ul class="rv-list">
@@ -333,17 +335,11 @@
 
     <section class="rv-pane rv-pane-android" data-i18n-aria-label="androidPaneLabel" aria-label="Android のアップデート">
       <div class="rv-card">
-        <div class="rv-head"><h2 class="rv-ver">2.4.0</h2><span class="rv-chip st-prep" data-i18n="statusPlanned">けんとうちゅう</span></div>
-        <ul class="rv-list">
-          <li data-i18n="ios240Item1">ホーム画面やロック画面で使える
-ウィジェットに対応する予定です。
-できることは、ただいま検討中です</li>
-        </ul>
-      </div>
-
-      <div class="rv-card">
         <div class="rv-head"><h2 class="rv-ver">2.3.1</h2><span class="rv-chip st-prep" data-i18n="statusInProgress">たいおうちゅう</span></div>
         <ul class="rv-list">
+          <li data-i18n="ios231Item1">おうえんプランを買っていないのに
+「ストアで購入できませんでした」が
+くり返し出ることがあったのを直します</li>
           <li data-i18n="koreanWeekShareFix">週の共有画像を保存すると、
 韓国語の文字が正しく表示されない
 不具合を直します</li>
@@ -529,15 +525,14 @@
 
   <div class="rv-divider"><img src="/assets/lp/cream-sit.png" alt="" width="208" height="120" style="width:62px;height:auto;image-rendering:pixelated;animation:nk-bob 2.3s steps(1,end) infinite;"></div>
 
-  <section data-i18n-aria-label="futureHeading" aria-label="そのさき やりたいこと">
+  <section id="future" data-i18n-aria-label="futureHeading" aria-label="そのさき やりたいこと" style="scroll-margin-top:24px;">
     <h2 class="rv-h2" data-i18n="futureHeading">そのさき やりたいこと</h2>
     <p class="rv-lead" data-i18n="futureLead">ごようぼうから いただいた声を中心に、
 やりたいと思っていることです。
 じゅんばんは、まだ決めていません。</p>
     <div class="rv-card">
       <ul class="rv-list">
-        <li data-i18n="future1">1日・1週間の目標を、1時間より細かく設定する</li>
-        <li data-i18n="future2">曜日ごとに、1日の目標を変える</li>
+        <li data-i18n="future5">ウィジェットやロック画面にねこを出して、打刻できるようにする</li>
         <li data-i18n="future3">ねこの毛色や目の色をえらぶ・多頭飼い</li>
         <li data-i18n="future4">ねこを なでたり、ごほうびをあげたりする</li>
         <li data-i18n="future6">Apple Watch から打刻する</li>

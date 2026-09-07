@@ -71,6 +71,9 @@
   .qa-body .qa-chip{display:inline-flex;margin:0 auto 8px;}
   .qa-a{margin:0;white-space:pre-line;font-size:clamp(14px,3.8vw,15px);line-height:1.85;color:var(--ink);}
   .qa-note{margin:10px 0 0;white-space:pre-line;font-size:clamp(11px,3.1vw,12px);line-height:1.8;color:var(--muted);text-align:center;}
+  /* ロードマップへの案内は、日本語のときだけリンクの前で折り返す。
+     ほかの言葉は「〜は、」に当たる切れ目が同じ場所に来ないので、文の途中で切れてしまう */
+  html[lang="ja"] .intro-tail{display:block;}
   /* 英語は単語が長く、日本語の位置で改行すると1語だけの行ができるので、自然に折り返す。韓国語・繁体字は日本語と同じ改行位置で読める */
   html[lang="en"] .qa-a,html[lang="en"] .qa-note{white-space:normal;}
 </style>
@@ -103,7 +106,7 @@
       <img src="/art/walkA.png" alt="" style="width:48px;height:auto;image-rendering:pixelated;animation:nk-bob 1.9s steps(1,end) infinite;">
       <span data-i18n="investigatingLabel" style="font-size:13px;letter-spacing:.3em;color:var(--muted);padding-bottom:4px;">いま 調べているところ</span>
     </div>
-    <p style="font-size:clamp(11px,3.1vw,12px);color:var(--muted);margin:0 0 10px;line-height:1.8;"><span data-i18n="investigatingIntroBeforeLink">アップデートの中身は、</span><a data-i18n="roadmapLink" href="/roadmap/" style="border-bottom:2px dashed var(--shadow);">アップデートのよてい</a><span data-i18n="investigatingIntroAfterLink"> にまとめています。</span></p>
+    <p style="font-size:clamp(11px,3.1vw,12px);color:var(--muted);margin:0 0 10px;line-height:1.8;"><span data-i18n="investigatingIntroBeforeLink">アップデートの中身は、</span><span class="intro-tail"><a data-i18n="roadmapLink" href="/roadmap/" style="border-bottom:2px dashed var(--shadow);">アップデートのよてい</a><span data-i18n="investigatingIntroAfterLink"> にまとめています。</span></span></p>
     <div class="qa-group">
       <details>
         <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="investigating1Question">Androidでアプリを開き直すと、ねこと「きょうの内わけ」が真っ黒になる</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
@@ -113,16 +116,14 @@
 端末によって、ねこの画面と
 「きょうの内わけ」が正しく描き直されない
 可能性があり、原因を調べています。</p>
-          <p class="qa-note"><span data-i18n="investigating1NoteBeforeEmail">同じことが起きた方は、画面のスクリーンショットと、
-端末名・Androidのバージョン・アプリを閉じた方法を
-</span><a href="mailto:support@c-cya.com" style="border-bottom:2px dashed var(--shadow);">support@c-cya.com</a><span data-i18n="investigating1NoteAfterEmail"> へ送ってもらえると助かります</span></p>
+          <p class="qa-note"><span data-i18n="investigating1NoteBeforeEmail">同じことが起きた方は、画面のスクリーンショットと、端末名・Androidのバージョン・アプリを閉じた方法を </span><a href="mailto:support@c-cya.com" style="border-bottom:2px dashed var(--shadow);">support@c-cya.com</a><span data-i18n="investigating1NoteAfterEmail"> へ送ってもらえると助かります</span></p>
         </div>
       </details>
       <details>
         <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="investigating2Question">「記録を足す」で、かさなっていないのに「かさなっています」と出る</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a" data-i18n="investigating2Answer">はたらいている最中や休憩中に足すと、
+          <p class="qa-a" data-i18n="investigating2Answer">はたらいている最中に足すと、
 出ることがあります。
 日付をまたいで はたらいたままのときに
 とくに出やすいです。
@@ -154,10 +155,7 @@
 決めると、そのまま追加されます。
 今ある記録を直したときは、
 右上の「おわる」で確定します。</p>
-        <p class="qa-note" data-i18n="howTo1Note">時刻を押すと1分きざみで入力できます。
-［−］［＋］は10分ずつ動きます。
-「月」で日付が押せないときは、
-アプリを最新にしてみてください</p>
+        <p class="qa-note" data-i18n="howTo1Note">時刻を押すと1分きざみで入力できます。［−］［＋］は10分ずつ動きます。「月」で日付が押せないときは、アプリを最新にしてみてください</p>
         </div>
       </details>
       <details>
@@ -170,9 +168,7 @@
 前の日の記録を直せます。
 出なかったときは、「月」の画面で
 前の日を押して直してください。</p>
-          <p class="qa-note" data-i18n="howTo2Note">出勤した時刻は端末に残っているので、
-記録が消えることはありません。
-アプリを入れ直す必要もありません</p>
+          <p class="qa-note" data-i18n="howTo2Note">出勤した時刻は端末に残っているので、記録が消えることはありません。アプリを入れ直す必要もありません</p>
         </div>
       </details>
       <details>
@@ -198,10 +194,7 @@
 その時刻から、新しい作業の記録になります。
 退勤したあとや休憩中も、
 次の作業を選んでおけます。</p>
-          <p class="qa-note" data-i18n="howTo4Note">退勤後に切りかえられなかった不具合は
-直っています。
-押しても変わらないときは、
-アプリを最新にしてみてください</p>
+          <p class="qa-note" data-i18n="howTo4Note">退勤後に切りかえられなかった不具合は直っています。押しても変わらないときは、アプリを最新にしてみてください</p>
         </div>
       </details>
       <details>
@@ -216,8 +209,7 @@
 あとから足すときは、
 はじめ22:00・おわり2:00 のように入れると、
 翌日の時刻として記録されます。</p>
-          <p class="qa-note" data-i18n="howTo5Note">設定 → 1日のきりかえ時刻。
-0時〜お昼の12時の間で変えられます</p>
+          <p class="qa-note" data-i18n="howTo5Note">設定 → 1日のきりかえ時刻。0時〜お昼の12時の間で変えられます</p>
         </div>
       </details>
       <details>
@@ -314,8 +306,7 @@
 週の目標は1週間ぜんぶの合計、
 1日の目標は「今日はこれくらい」の目安で、
 それぞれ別のものとして見ています。</p>
-        <p class="qa-note" data-i18n="howTo14Note">平日と休日で働く時間がちがっても、
-かけ算が合わないままで問題ありません</p>
+        <p class="qa-note" data-i18n="howTo14Note">平日と休日で働く時間がちがっても、かけ算が合わないままで問題ありません</p>
         </div>
       </details>
       <details>
@@ -325,52 +316,27 @@
           <p class="qa-a" data-i18n="howTo15Answer">設定の「けした作業」をひらくと、
 作業カテゴリを元に戻せます。
 一覧は、見ないときは畳んでおけます。</p>
-        <p class="qa-note" data-i18n="howTo15Note">記録がある作業は、
-集計が崩れないように残しています。
-0時間のものは完全に削除できるようにしたいです</p>
-        </div>
-      </details>
-    </div>
-  </section>
-
-  <section data-i18n-aria-label="fixedInLatestLabel" aria-label="最新にすると直ること" style="margin:0 0 26px;">
-    <div style="display:flex;align-items:flex-end;justify-content:center;gap:10px;margin:0 0 10px;">
-      <img src="/art/sit.png" alt="" style="width:48px;height:auto;image-rendering:pixelated;animation:nk-bob 2s steps(1,end) infinite;">
-      <span data-i18n="fixedInLatestLabel" style="font-size:13px;letter-spacing:.3em;color:var(--muted);padding-bottom:4px;">最新にすると直ること</span>
-    </div>
-    <div class="qa-group">
-      <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="fixedInLatest1Question">「月」の画面で、8月の記録が7月や9月に見える</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
-        <div class="qa-body">
-          <span class="qa-chip a">A</span>
-          <p class="qa-a" data-i18n="fixedInLatest1Answer">月を切りかえたとき、
-見出しだけ変わって
-中身が前の月のまま残る不具合でした。
-記録そのものはずれていません。
-アプリを最新にすると直ります。</p>
-          <p class="qa-note" data-i18n="fixedInLatest1Note">「1日のきりかえ時刻」を
-0時より後にしていると、
-月はじめの深夜のぶんは前の月に入ります。
-これは仕様です</p>
+        <p class="qa-note" data-i18n="howTo15Note">記録がある作業は、集計が崩れないように残しています。0時間のものは完全に削除できるようにしたいです</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="fixedInLatest2Question">Androidで、名前を入れると「ねここここ」になる</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely12Question">日本語いがいの言葉にも対応してほしい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a" data-i18n="fixedInLatest2Answer">はじめの設定で、
-日本語がうまく入らない不具合がありました。
-Android版は最新にすると直ります。</p>
+          <p class="qa-a" data-i18n="unlikely12Answer">英語・한국어・繁體中文でも
+使えます。
+端末の言語にあわせて切りかわり、
+設定でえらぶこともできます。</p>
+          <p class="qa-note" data-i18n="unlikely12Note">翻訳の申し出やアドバイスをくださった方、ありがとうございます</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="fixedInLatest3Question">「休憩にさそう時間」を減らしたら、増やせなくなった</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely13Question">海外のストアでも入れられますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a" data-i18n="fixedInLatest3Answer">1日の目標より長くできない
-つくりになっていたのが原因でした。
-最新版では、目標とは別に
-決められるようになっています。</p>
+          <p class="qa-a" data-i18n="unlikely13Answer">App Store と Google Play の
+どちらも、すべての国と地域で
+公開しています。</p>
         </div>
       </details>
     </div>
@@ -389,19 +355,17 @@ Android版は最新にすると直ります。</p>
           <p class="qa-a" data-i18n="upcoming1Answer">声をたくさんいただいています。
 画面のデザインとのかねあいで、
 どう見せるのがいちばん見やすいか
-考えているところです。</p>
+考えています。</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="upcoming2Question">1日の目標を、曜日ごとに変えたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="upcoming2Question">目標を、曜日ごと・週ごとに こまかく決めたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a" data-i18n="upcoming2Answer">考えています。
-ふだんの画面はそのままにして、
-必要な方だけ細かく決められる形に
-できたらと思っています。</p>
-        <p class="qa-note" data-i18n="upcoming2Note">設定が増えて ごちゃごちゃしないように、
-気をつけて作ります</p>
+          <p class="qa-a" data-i18n="upcoming2Answer">シンプルなアプリでありたいので、
+細かい機能を含めたパワーアップ版を
+別のアプリとして作りたいです。</p>
+          <p class="qa-note" data-i18n="upcoming2Note">ねこ勤怠では 設定が増えて ごちゃごちゃしないように、気をつけて作ります。</p>
         </div>
       </details>
       <details>
@@ -409,12 +373,9 @@ Android版は最新にすると直ります。</p>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
           <p class="qa-a" data-i18n="upcoming3Answer">2.1.0で6匹ふえて、
-ぜんぶで15匹になりました。
+いまはぜんぶで17匹です。
 これからも少しずつ増やしたいです。</p>
-        <p class="qa-note" data-i18n="upcoming3Note">ハチワレ・キジトラ・茶トラ・サバトラは
-2.1.0からお迎えできます。
-ドット絵は1匹ずつ時間をかけて描いています。
-今後追加するねこは、有料になるかもしれません</p>
+          <p class="qa-note" data-i18n="upcoming3Note">にじいろのねこちゃん2匹は、おうえんプランでゲットできます。ドット絵は1匹ずつ時間をかけて描いています。今後追加するねこは、有料になるかもしれません</p>
         </div>
       </details>
       <details>
@@ -425,8 +386,7 @@ Android版は最新にすると直ります。</p>
 大きな不具合の修正を
 ひと通り終えてからになるので、
 待っていてもらえると嬉しいです。</p>
-        <p class="qa-note" data-i18n="upcoming4Note">多頭飼いも、今後は
-有料になるかもしれません</p>
+          <p class="qa-note" data-i18n="upcoming4Note">これらの機能は、有料になるかもしれません。</p>
         </div>
       </details>
       <details>
@@ -437,19 +397,19 @@ Android版は最新にすると直ります。</p>
 作者もやってみたい気持ちがあります。
 今は不具合を直すことを
 先にしています。</p>
-        <p class="qa-note" data-i18n="upcoming5Note">なでる、おやつ、おもちゃ、お着替え。
-いただいた案は ぜんぶ残しています</p>
+          <p class="qa-note" data-i18n="upcoming5Note">なでる、おやつ、おもちゃ、お着替え。いただいた案は ぜんぶ残しています</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="upcoming6Question">ウィジェットやロック画面にも ねこがほしい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="upcoming6Question">ウィジェットや Apple Watch から、ねこを見たい・打刻したい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a" data-i18n="upcoming6Answer">対応したい気持ちはあるのですが、
-今は手が回らず、
-かなり先になりそうです。</p>
-        <p class="qa-note" data-i18n="upcoming6Note">作業のあいだ ずっとねこが見えていてほしい、
-という声を多くいただいています</p>
+          <p class="qa-a" data-i18n="upcoming6Answer">ホーム画面やロック画面の
+ウィジェットは対応予定です。
+Apple Watch も購入したので、
+どんな風にすると使いやすいのか
+あわせて考えています。</p>
+          <p class="qa-note" data-i18n="upcoming6Note">作業のあいだ ずっとねこが見えていてほしい、という声を いちばん多くいただいています</p>
         </div>
       </details>
       <details>
@@ -461,24 +421,14 @@ Android版は最新にすると直ります。</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="upcoming8Question">Apple Watch やウィジェットから打刻したい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
-        <div class="qa-body">
-          <span class="qa-chip a">A</span>
-          <p class="qa-a" data-i18n="upcoming8Answer">ほしいという声をいただいています。
-少し先になりそうです。</p>
-        </div>
-      </details>
-      <details>
         <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="upcoming9Question">決まった時間ごとの休憩さそいや、毎日のリマインダーがほしい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
           <p class="qa-a" data-i18n="upcoming9Answer">繰り返しの休憩さそいは、検討いたします。
 毎朝の通知は、入れたいと思っています。
 オンとオフを切りかえられるように
-しますが、少し先になります。</p>
-        <p class="qa-note" data-i18n="upcoming9Note">いまの「休憩にさそう時間」
-「休憩する時間」は30分から、
-30分きざみです</p>
+しますが、少し先になりそうです。</p>
+          <p class="qa-note" data-i18n="upcoming9Note">いまの「休憩にさそう時間」「休憩する時間」は30分から、30分きざみです</p>
         </div>
       </details>
       <details>
@@ -490,24 +440,19 @@ Android版は最新にすると直ります。</p>
 まだわかりませんが、背景なども
 変えられるようにして、見た目の
 ワクワクを大切にしたいです。
-作業カテゴリの色をふやすことも、
+作業カテゴリの色は、いま12色から
+えらべます。それ以上ふやすかは、
 あわせて検討いたします。</p>
+          <p class="qa-note" data-i18n="upcoming10Note">設定の「作業のカテゴリ」から「色をかえる」でえらべます</p>
         </div>
       </details>
       <details>
         <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="upcoming11Question">PCやブラウザからも使いたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a" data-i18n="upcoming11Answer">ご要望をたくさんいただいて、
-検討してみました。
-ただ、ログインがいらないことを
-大切にしているので、作るとしても
-スマホの記録とはつながりません。
-それでも使いたいか、悩んでいます。</p>
-        <p class="qa-note" data-i18n="upcoming11Note">「つながらなくても使いたい」
-「それなら いらない」。
-どちらでも、ごようぼうフォームから
-おしえてもらえると助かります</p>
+          <p class="qa-a" data-i18n="upcoming11Answer">ご要望をたくさんいただきました。
+PC版の準備も進めております。</p>
+          <p class="qa-note" data-i18n="upcoming11Note">スマホ版からの引き継ぎや連携などをどうするか、方針が決まったら あらためてお知らせします。</p>
         </div>
       </details>
     </div>
@@ -528,6 +473,7 @@ Android版は最新にすると直ります。</p>
 ねこ勤怠は、お金の計算よりも
 「自分の時間を気軽に数える」ことを
 大切にしています。</p>
+          <p class="qa-note" data-i18n="unlikely1Note">パワーアップ版の別アプリで対応できるか検討いたします。</p>
         </div>
       </details>
       <details>
@@ -547,6 +493,7 @@ Android版は最新にすると直ります。</p>
           <p class="qa-a" data-i18n="unlikely3Answer">いまは変えられません。
 勉強や趣味の時間にも使ってもらえていて、
 ことばを選べるようにしたい気持ちはあります。</p>
+          <p class="qa-note" data-i18n="unlikely3Note">勉強をがんばる方向けのアプリも開発したいと思っているので、そちらではことばを選べるようにしたいです。</p>
         </div>
       </details>
       <details>
@@ -558,36 +505,20 @@ Android版は最新にすると直ります。</p>
 記録を端末の中だけに置く方針で、
 ログイン機能を作る予定が
 ないためです。</p>
-        <p class="qa-note" data-i18n="unlikely4Note">そのかわり、アカウント登録も広告もありません</p>
+          <p class="qa-note" data-i18n="unlikely4Note">少し先になりますが、アカウント連携ができるパワーアップ版を制作したいと思っています。</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely5Question">お休みを、先の日も決めたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely5Question">お休みやシフトを、先の日まで決めておきたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
           <p class="qa-a" data-i18n="unlikely5Answer">今週のなかでなら、先の日も
 決められます。
-ホームの社長を押すと、今週のお休みを
-まとめて変えられます。
+ホームの社長(ねこ)を押すと、
+今週のお休みをまとめて変えられます。
 来週や再来週を先にまとめて、は
 できません。</p>
-        <p class="qa-note" data-i18n="unlikely5Note">毎週おなじ曜日のお休みなら、
-いまも設定から決められます。
-本格的なものは、別のアプリとして
-作りたいです</p>
-        </div>
-      </details>
-      <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely6Question">お休みや目標を週ごとに決めておきたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
-        <div class="qa-body">
-          <span class="qa-chip a">A</span>
-          <p class="qa-a" data-i18n="unlikely6Answer">ゆるく作業を可視化するための
-アプリにしたいので、
-今のところむずかしいと
-考えています。</p>
-        <p class="qa-note" data-i18n="unlikely6Note">会社にお勤めの方に向けた
-「くろねこ勤怠」を作りたいです。
-そちらで考えています</p>
+          <p class="qa-note" data-i18n="unlikely5Note">毎週おなじ曜日のお休みなら、いまも設定から決められます。</p>
         </div>
       </details>
       <details>
@@ -598,22 +529,7 @@ Android版は最新にすると直ります。</p>
 よく検討したのですが、
 別のアプリにしたほうが
 いいかもしれないと思っています。</p>
-        <p class="qa-note" data-i18n="unlikely7Note">もっと細かくお仕事を管理できる
-「くろねこ勤怠」を作りたいです。
-そちらで考えています</p>
-        </div>
-      </details>
-      <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely8Question">シフトや勤務時間の設定はできますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
-        <div class="qa-body">
-          <span class="qa-chip a">A</span>
-          <p class="qa-a" data-i18n="unlikely8Answer">このアプリは「お金の出ない時間」を
-測るために作っているので、
-お仕事の勤怠管理には
-向かないかもしれません。</p>
-        <p class="qa-note" data-i18n="unlikely8Note">働く人向けの「くろねこ勤怠」も、
-いつか出したいと考えていますが、
-かなり先になりそうです</p>
+          <p class="qa-note" data-i18n="unlikely7Note">もっと細かくお仕事を管理できるパワーアップ版のアプリを作りたいです。そちらで考えています</p>
         </div>
       </details>
       <details>
@@ -623,20 +539,7 @@ Android版は最新にすると直ります。</p>
           <p class="qa-a" data-i18n="unlikely9Answer">悩んでいます。
 作者があまり使ったことがないので、
 勉強してから決めます……。</p>
-          <p class="qa-note" data-i18n="unlikely9Note">「25分やって5分休む」のような
-短いきざみは、いまは選べません</p>
-        </div>
-      </details>
-      <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely10Question">目標を、もっとこまかく決めたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
-        <div class="qa-body">
-          <span class="qa-chip a">A</span>
-          <p class="qa-a" data-i18n="unlikely10Answer">なるべくシンプルなアプリで
-ありたいので、別のアプリとして
-作りたいと思っています。</p>
-        <p class="qa-note" data-i18n="unlikely10Note">会社にお勤めの方に向けた
-「くろねこ勤怠」を作りたいです。
-そちらで考えています</p>
+          <p class="qa-note" data-i18n="unlikely9Note">勉強や趣味に集中すること、に特化したアプリを開発したいと思っています。</p>
         </div>
       </details>
       <details>
@@ -650,36 +553,12 @@ Android版は最新にすると直ります。</p>
         </div>
       </details>
       <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely12Question">日本語いがいの言葉にも対応してほしい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
-        <div class="qa-body">
-          <span class="qa-chip a">A</span>
-          <p class="qa-a" data-i18n="unlikely12Answer">2.3.0で、英語・한국어・繁體中文でも
-使えるようにします。
-端末の言語にあわせて切りかわり、
-設定でえらぶこともできます。</p>
-        <p class="qa-note" data-i18n="unlikely12Note">翻訳の申し出やアドバイスをくださった方、
-ありがとうございます</p>
-        </div>
-      </details>
-      <details>
-        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely13Question">海外のストアでも入れられますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
-        <div class="qa-body">
-          <span class="qa-chip a">A</span>
-          <p class="qa-a" data-i18n="unlikely13Answer">App Store は、すべての国と地域で
-公開しています。
-Google Play は、いまのところ
-日本だけです。</p>
-        <p class="qa-note" data-i18n="unlikely13Note">Google Play のほかの国と地域は、
-準備中です</p>
-        </div>
-      </details>
-      <details>
         <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="unlikely14Question">会社やチームでも使ってみたいです</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
           <p class="qa-a" data-i18n="unlikely14Answer">企業のみなさま、
 お声がけをお待ちしています。</p>
-        <p class="qa-note" data-i18n="unlikely14Note">ごようぼうフォーム、または support@c-cya.com へ</p>
+          <p class="qa-note" data-i18n="unlikely14Note">ごようぼうフォーム、または support@c-cya.com へ</p>
         </div>
       </details>
     </div>

@@ -9,8 +9,6 @@
     "showMore": "ほかの更新内容を {{count}}件見る",
     "showLess": "更新内容をとじる",
     "iosPaneLabel": "iOS のアップデート",
-    "statusPlanned": "けんとうちゅう",
-    "ios240Item1": "ホーム画面やロック画面で使える\nウィジェットに対応する予定です。\nできることは、ただいま検討中です",
     "ios231Item1": "おうえんプランを買っていないのに\n「ストアで購入できませんでした」が\nくり返し出ることがあったのを直します",
     "ios230Item1": "英語・한국어・繁體中文でも\n使えるようにします。ストアの案内も\nそれぞれの言語に対応します",
     "ios230Item2": "前の日の記録は「月」から直せることを\nホームの案内にも追加します",
@@ -80,8 +78,6 @@
     "android110Item3": "まえの週にがんばったぶん（貯金）で\n週の目標をたっせいできるようになります",
     "futureHeading": "そのさき やりたいこと",
     "futureLead": "ごようぼうから いただいた声を中心に、\nやりたいと思っていることです。\nじゅんばんは、まだ決めていません。",
-    "future1": "1日・1週間の目標を、1時間より細かく設定する",
-    "future2": "曜日ごとに、1日の目標を変える",
     "future3": "ねこの毛色や目の色をえらぶ・多頭飼い",
     "future4": "ねこを なでたり、ごほうびをあげたりする",
     "future6": "Apple Watch から打刻する",
@@ -99,7 +95,9 @@
     "contactLink": "ごようぼう",
     "privacyLink": "プライバシーポリシー",
     "statusInProgress": "たいおうちゅう",
-    "koreanWeekShareFix": "週の共有画像を保存すると、\n韓国語の文字が正しく表示されない\n不具合を直します"
+    "koreanWeekShareFix": "週の共有画像を保存すると、\n韓国語の文字が正しく表示されない\n不具合を直します",
+    "jumpToFuture": "そのさき やりたいこと を見る ▾",
+    "future5": "ウィジェットやロック画面にねこを出して、打刻できるようにする"
   },
   "en": {
     "documentTitle": "Update Roadmap | ねこ勤怠",
@@ -111,8 +109,6 @@
     "showMore": "Show {{count}} more updates",
     "showLess": "Hide updates",
     "iosPaneLabel": "iOS Updates",
-    "statusPlanned": "Planned",
-    "ios240Item1": "Widgets for the Home Screen and Lock Screen\nare planned for this version.\nThe details are still being worked out.",
     "ios231Item1": "Fixes an issue where “The purchase couldn’t be completed in the store.”\nkept appearing even when you hadn’t bought\nthe Support plan.",
     "ios230Item1": "You will be able to use the app in English, Korean, and Traditional Chinese.\nThe store listing will also be available\nin each language.",
     "ios230Item2": "The Home screen will now explain that records from previous days\ncan be edited from the Month screen.",
@@ -182,8 +178,6 @@
     "android110Item3": "You can now achieve your weekly goal\nusing what you worked hard on last week (Good Job Savings).",
     "futureHeading": "What I'd like to do next",
     "futureLead": "These are things I'd like to do,\nmainly based on the requests I've received.\nThe order hasn't been decided yet.",
-    "future1": "Set daily and weekly goals in increments smaller than 1 hour",
-    "future2": "Set different daily goals for each day of the week",
     "future3": "Choose cat's fur and eye colors, and keep multiple cats",
     "future4": "Pet the cat and give treats",
     "future6": "Clock in and out from Apple Watch",
@@ -201,7 +195,9 @@
     "contactLink": "Requests",
     "privacyLink": "Privacy Policy",
     "statusInProgress": "In Progress",
-    "koreanWeekShareFix": "Fix Korean text not displaying correctly\nwhen saving an image\nof your weekly record."
+    "koreanWeekShareFix": "Fix Korean text not displaying correctly\nwhen saving an image\nof your weekly record.",
+    "jumpToFuture": "See what I'd like to do next ▾",
+    "future5": "Show the cat on widgets and lock screens to clock in and out"
   },
   "ko": {
     "documentTitle": "업데이트 예정 | ねこ勤怠",
@@ -213,8 +209,6 @@
     "showMore": "업데이트 내역 {{count}}건 더 보기",
     "showLess": "업데이트 내역 접기",
     "iosPaneLabel": "iOS 업데이트",
-    "statusPlanned": "검토 중",
-    "ios240Item1": "홈 화면과 잠금 화면에서 사용할 수 있는\n위젯을 지원할 예정이에요.\n세부 기능은 아직 검토 중이에요.",
     "ios231Item1": "응원 플랜을 구매하지 않았는데도\n'스토어에서 구매하지 못했어요.'가 반복해서 표시되던\n문제를 수정할게요.",
     "ios230Item1": "영어, 한국어, 번체 중국어로도\n사용할 수 있게 할게요. 스토어 안내도\n각 언어로 제공할게요.",
     "ios230Item2": "이전 날짜의 기록은 '월'에서 수정할 수 있다는\n안내를 홈 화면에도 추가할게요.",
@@ -284,8 +278,6 @@
     "android110Item3": "지난주에 열심히 한 만큼(수고 저금)으로\n이번 주 목표를 달성할 수 있게 돼요.",
     "futureHeading": "앞으로 하고 싶은 일",
     "futureLead": "건의 사항으로 보내주신 의견을 중심으로\n해보고 싶은 일들이에요.\n순서는 아직 정하지 않았어요.",
-    "future1": "하루 및 일주일 목표를 1시간보다 세밀하게 설정하기",
-    "future2": "요일마다 하루 목표 다르게 설정하기",
     "future3": "고양이 털색과 눈동자 색 고르기, 여러 마리 키우기",
     "future4": "고양이 쓰다듬기, 간식 주기",
     "future6": "Apple Watch에서 출퇴근 기록하기",
@@ -303,7 +295,9 @@
     "contactLink": "건의 사항",
     "privacyLink": "개인정보 처리방침",
     "statusInProgress": "수정 중",
-    "koreanWeekShareFix": "주간 기록을 이미지로 저장할 때\n한글이 깨지는 문제를\n수정할 예정입니다."
+    "koreanWeekShareFix": "주간 기록을 이미지로 저장할 때\n한글이 깨지는 문제를\n수정할 예정입니다.",
+    "jumpToFuture": "앞으로 하고 싶은 일 보기 ▾",
+    "future5": "위젯이나 잠금 화면에 고양이를 표시하고 출퇴근을 기록하기"
   },
   "zh-TW": {
     "documentTitle": "更新計畫 | ねこ勤怠",
@@ -315,8 +309,6 @@
     "showMore": "查看其他 {{count}} 項更新內容",
     "showLess": "收起更新內容",
     "iosPaneLabel": "iOS 更新",
-    "statusPlanned": "規劃中",
-    "ios240Item1": "此版本預計支援主畫面與鎖定畫面的\n小工具。\n詳細功能仍在規劃中。",
     "ios231Item1": "修正未購買支持方案時，\n仍會重複顯示「無法在商店完成購買。」\n的問題。",
     "ios230Item1": "將支援英文、韓文與繁體中文。\n商店頁面也會提供\n各語言版本。",
     "ios230Item2": "主畫面也會提示您，\n之前日期的紀錄可從「月」修改。",
@@ -386,8 +378,6 @@
     "android110Item3": "您可以使用上週努力的時數（辛苦撲滿）\n來達成當週的目標了。",
     "futureHeading": "未來想做的事",
     "futureLead": "這些是我想做的事，\n主要來自大家提供的建議與回饋。\n實作順序尚未決定。",
-    "future1": "將每日與每週目標設定得比1小時更精細",
-    "future2": "依據不同星期幾設定不同的每日目標",
     "future3": "選擇貓咪的毛色與眼睛顏色、飼養多隻貓咪",
     "future4": "摸摸貓咪、給貓咪獎勵",
     "future6": "透過 Apple Watch 打卡",
@@ -405,6 +395,8 @@
     "contactLink": "建議與回饋",
     "privacyLink": "隱私權政策",
     "statusInProgress": "處理中",
-    "koreanWeekShareFix": "修正儲存每週紀錄圖片時，\n韓文文字無法正常顯示\n的問題。"
+    "koreanWeekShareFix": "修正儲存每週紀錄圖片時，\n韓文文字無法正常顯示\n的問題。",
+    "jumpToFuture": "查看 未來想做的事 ▾",
+    "future5": "在小工具或鎖定畫面顯示貓咪並進行打卡"
   }
 }

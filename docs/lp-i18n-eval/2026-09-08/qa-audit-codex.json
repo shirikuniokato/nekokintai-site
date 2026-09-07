@@ -1,0 +1,197 @@
+{
+  "generatedAt": "2026-09-07T16:41:00.179Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "summaryJapanese": "criticalはありません。要修正は27件です。主な問題は、問い合わせ先メールへの送信指示の欠落、未退勤を利用者の過失と断定する表現、打刻・曜日別設定・データ移行の意味欠落、韓国語の助詞分離、強化版アプリや繁体字の「工作分類」に関する用語揺れです。ブランド名の変更、通常UIへの猫語混入、がんばった貯金の誤訳はありません。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "investigating1NoteBeforeEmail",
+      "severity": "high",
+      "replacement": "If you experience the same issue, please send a screenshot,\nyour device name, Android version, and how you closed the app to\n",
+      "reasonJapanese": "メールアドレスへ「送る」という動作が欠落しており、現状ではメールアドレスが情報一覧の直後に唐突につながります。"
+    },
+    {
+      "locale": "en",
+      "key": "investigating1NoteAfterEmail",
+      "severity": "high",
+      "replacement": ". It would be very helpful!",
+      "reasonJapanese": "直前の修正と組み合わせて送信先メールアドレスを含む文を完成させる必要があります。現在の先頭空白により、メールアドレスと句点の間にも不自然な空白が入ります。"
+    },
+    {
+      "locale": "en",
+      "key": "howTo2Answer",
+      "severity": "high",
+      "replacement": "When you open Home the next day,\nit will say \"Clock Out wasn't tapped.\"\nYou can edit the previous day's record\nfrom \"Edit Time\" in that message.\nIf it doesn't appear, please go to the \"Month\" screen,\ntap the previous day, and edit it there.",
+      "reasonJapanese": "原文の中立的な状態表示を「You forgot」と利用者の過失を責める表現に変えています。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming6Question",
+      "severity": "medium",
+      "replacement": "I want to see the cats and clock in or out from widgets or Apple Watch.",
+      "reasonJapanese": "「打刻」が「clock in」だけになり、退勤操作の意味が欠落しています。"
+    },
+    {
+      "locale": "ko",
+      "key": "investigatingIntroAfterLink",
+      "severity": "medium",
+      "replacement": "에 정리해 두었어요.",
+      "reasonJapanese": "韓国語の助詞「에」は直前のリンク文字列に空白なしで付ける必要があります。"
+    },
+    {
+      "locale": "ko",
+      "key": "investigating1NoteAfterEmail",
+      "severity": "medium",
+      "replacement": "로 보내주시면 큰 도움이 돼요.",
+      "reasonJapanese": "韓国語の助詞「로」は直前のメールアドレスに空白なしで付ける必要があります。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcomingOutroBeforeLink",
+      "severity": "medium",
+      "replacement": "어떤 업데이트에 어떤 내용이 포함될지는 ",
+      "reasonJapanese": "リンクの前に必要な語間スペースがなく、現状は前文とリンクが連結します。助詞をリンクへ正しく付けられる構造に直しています。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcomingOutroAfterLink",
+      "severity": "medium",
+      "replacement": "에 정리해 두었어요.",
+      "reasonJapanese": "助詞「에」の前に空白があり、リンクと助詞が分離しています。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcoming6Question",
+      "severity": "medium",
+      "replacement": "위젯이나 Apple Watch에서 고양이를 보거나 출퇴근을 기록하고 싶어요.",
+      "reasonJapanese": "「기록하고 싶어요」だけでは何を記録するのか曖昧で、原文の出退勤を打刻する意味が欠落しています。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcoming11Note",
+      "severity": "medium",
+      "replacement": "스마트폰 버전의 데이터 이전과 연동 등을 어떻게 할지,\n방향이 정해지면 다시 알려드릴게요.",
+      "reasonJapanese": "「引き継ぎ」が「연동」にまとめられ、端末間のデータ移行という意味が欠落しています。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcoming2Answer",
+      "severity": "medium",
+      "replacement": "간단한 앱으로 유지하고 싶어서,\n세부 기능을 담은 앱은\n별도로 만들고 싶어요.",
+      "reasonJapanese": "同じ別アプリを指す表現が「업그레이드 버전」と「파워업 버전」で揺れています。自然で一貫した「별도 앱」に統一します。"
+    },
+    {
+      "locale": "ko",
+      "key": "unlikely1Note",
+      "severity": "medium",
+      "replacement": "더 다양한 기능을 담은 별도 앱에서 지원할 수 있을지 검토해 볼게요.",
+      "reasonJapanese": "同じ構想に「파워업 버전의 다른 앱」という不自然かつ不統一な呼称が使われています。"
+    },
+    {
+      "locale": "ko",
+      "key": "unlikely4Note",
+      "severity": "medium",
+      "replacement": "조금 먼 이야기지만, 계정 연동이 가능한 별도 앱을 만들고 싶어요.",
+      "reasonJapanese": "同じ構想に使われている「파워업 버전」を、他の該当箇所と一貫した「별도 앱」に統一します。"
+    },
+    {
+      "locale": "ko",
+      "key": "unlikely7Note",
+      "severity": "medium",
+      "replacement": "업무를 더 자세히 관리할 수 있는\n별도 앱을 만들고 싶어요.\n그 앱에 넣는 방향으로 생각하고 있어요.",
+      "reasonJapanese": "「파워업 버전의 앱」は不自然で、同じ別アプリ構想の呼称も揺れています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "investigating1NoteBeforeEmail",
+      "severity": "high",
+      "replacement": "如果遇到相同情況，請附上螢幕截圖，\n以及裝置名稱、Android 版本和關閉 App 的方式，並寄到\n",
+      "reasonJapanese": "メールアドレスへ送るという動作が欠落しており、現状では収集項目の直後にメールアドレスが唐突につながります。台湾向けとして一般的な「螢幕截圖」「裝置」「App」も維持しています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "investigating1NoteAfterEmail",
+      "severity": "high",
+      "replacement": "，將會對我很有幫助。",
+      "reasonJapanese": "直前の修正と組み合わせて送信文を完成させます。また、サイト全体が一人称単数なのに、この箇所だけ「我們」になっている揺れを解消します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo2Answer",
+      "severity": "high",
+      "replacement": "隔天打開首頁時，\n會顯示「尚未按下『下班』按鈕」。\n您可以從裡面的「修改時間」，\n修改前一天的紀錄。\n如果沒有顯示，請在「月」的畫面\n按下前一天的日期來修改。",
+      "reasonJapanese": "「您忘記」と利用者の過失を断定しています。原文どおり、未操作の状態を中立的に知らせる表現へ戻します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming2Question",
+      "severity": "medium",
+      "replacement": "我想按星期幾及每週設定更詳細的目標",
+      "reasonJapanese": "「曜日ごと」が「每天」になり、曜日別に設定する意味が欠落しています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo15Question",
+      "severity": "medium",
+      "replacement": "刪除的工作分類可以復原嗎？",
+      "reasonJapanese": "同じUI概念の「作業カテゴリ」が「工作分類」「任務分類」「作業分類」と揺れています。既存の台湾向け表現「工作分類」に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo15Answer",
+      "severity": "medium",
+      "replacement": "打開設定的「已刪除任務」，\n就可以復原工作分類。\n不看的時候可以把清單收合起來。",
+      "reasonJapanese": "一般名詞としてのカテゴリが「任務分類」になっており、他の箇所の「工作分類」と不一致です。固有のUI名「已刪除任務」は維持します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming10Question",
+      "severity": "medium",
+      "replacement": "我想更改主題顏色和工作分類的顏色",
+      "reasonJapanese": "同じUI概念が「任務分類」になっているため、「工作分類」に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming10Answer",
+      "severity": "medium",
+      "replacement": "我很想做。\n雖然還不知道會不會是\n大家想像中的樣子，但我想讓\n背景等也能夠更換，\n重視視覺上的期待感。\n工作分類的顏色目前有12種\n可以選擇。是否要再增加，\n我會一併評估。",
+      "reasonJapanese": "「作業分類」は日本語寄りで、同じUI概念に使われている台湾向けの「工作分類」と揺れています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming10Note",
+      "severity": "medium",
+      "replacement": "可以從設定的「工作分類」中\n透過「更改顏色」來選擇。",
+      "reasonJapanese": "設定項目名が「作業分類」になっており、既出の「工作分類」と一致していません。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely5Answer",
+      "severity": "medium",
+      "replacement": "如果是在本週內，\n可以提前設定。\n點選首頁的社長（貓咪），\n就能一次更改本週的休假。\n但無法一次提前設定\n下週或下下週的休假。",
+      "reasonJapanese": "同じ回答内で「這個禮拜」「這週」「下週」が混在しています。短いUI文として読みやすい「本週／下週」にそろえます。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely7Note",
+      "severity": "medium",
+      "replacement": "我想製作一款能更詳細管理工作的\n進階版應用程式。\n會考慮在那款應用程式中加入這些功能。",
+      "reasonJapanese": "改行によって助詞相当の「的」だけが次行の先頭に残り、UI上の読み切りが不自然です。改行数を保ったまま文節を整えます。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely4Note",
+      "severity": "medium",
+      "replacement": "雖然還要一段時間，但我希望能製作支援帳號連動的進階版。",
+      "reasonJapanese": "台湾向けでは「可以連結帳號」より「支援帳號連動」が自然で、別箇所の「連動」とも統一できます。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely1Note",
+      "severity": "medium",
+      "replacement": "我會評估是否能透過另一款進階版應用程式提供這項功能。",
+      "reasonJapanese": "「進階版的其他應用程式」ではアプリ同士の関係が不明瞭になり、「別のアプリ」という意味が正しく伝わりません。"
+    }
+  ]
+}
