@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "ios": {
-    "latestVersion": "2.3.1",
+    "latestVersion": "2.3.2",
     "storeUrl": "https://apps.apple.com/app/id6801066427",
     "notes": [
       "こまかな修正です。",
-      "おうえんプランを買っていないのに「ストアで購入できませんでした」がくり返し出ることがあったのを直しました"
+      "週の共有画像で、韓国語の文字が正しく表示されない不具合を直しました"
     ]
   },
   "android": {
