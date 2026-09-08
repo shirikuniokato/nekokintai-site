@@ -1,0 +1,281 @@
+{
+  "generatedAt": "2026-09-08T22:40:04.094Z",
+  "reviewer": "claude-fable",
+  "model": "claude-fable-5",
+  "summaryJapanese": "3言語とも大筋は正確で、責める表現や猫語混入は見当たりませんでした。critical はありません。主な指摘は、韓国語で「업데이트 예정 에」のように助詞の前にスペースが入る箇所と、メールアドレス（-com）の後の「로」が「으로」であるべき点、および「ねこ屋さん」が 상점/가게 で揺れている点。台湾繁体字では「作業のカテゴリ」が 工作分類/任務分類/作業分類 の3通りに揺れており（「作業」は中国語では宿題・操作の意味で日本語由来の不自然な語）、「月」画面も「月份」と揺れています。英語は「 .」の句読点前スペース、Settings の表記揺れ、powered-up/upgraded の揺れ、「might be paid」の曖昧さ、「You didn't clock out」の二人称帰責が中心です。アプリ内ラベルの引用（ねこ屋さん、けした作業、退勤メッセージ等）は実際のアプリ文言に合わせて最終確認してください。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "investigatingIntroAfterLink",
+      "severity": "medium",
+      "replacement": ".",
+      "reasonJapanese": "リンク直後に「 .」と句読点の前にスペースが入り「Roadmap .」と表示される。同じ構造の notFoundAfterLink は「.」のみで、統一のため先頭スペースを削除。"
+    },
+    {
+      "locale": "en",
+      "key": "investigating1NoteAfterEmail",
+      "severity": "medium",
+      "replacement": ".",
+      "reasonJapanese": "メールアドレス直後に「 .」と句読点の前にスペースが入る。notFoundAfterLink と同様に先頭スペースなしの「.」に統一。"
+    },
+    {
+      "locale": "en",
+      "key": "upcomingOutroAfterLink",
+      "severity": "medium",
+      "replacement": ".",
+      "reasonJapanese": "リンク直後に「 .」と句読点の前にスペースが入る。notFoundAfterLink と同様に「.」に統一。"
+    },
+    {
+      "locale": "en",
+      "key": "howTo2Answer",
+      "severity": "medium",
+      "replacement": "When you open Home the next day,\nit will say \"Clock-out wasn't recorded.\"\nYou can edit the previous day's record\nfrom \"Edit Time\" in that message.\nIf it doesn't appear, please tap the previous day\non the \"Month\" screen to edit it.",
+      "reasonJapanese": "原文「退勤がおされていませんでした」は受け身でユーザーを責めない表現だが、「You didn't clock out」は二人称で責める響きになる。アプリ内の実際の英語文言に合わせて最終確認が必要。"
+    },
+    {
+      "locale": "en",
+      "key": "howTo5Note",
+      "severity": "medium",
+      "replacement": "Settings → Daily Reset Time. You can change it between midnight and 12:00 noon.",
+      "reasonJapanese": "「0:00 and 12:00 PM」は24時間表記と12時間表記が混在し、12:00 PM は正午か深夜かで誤解されやすい。原文「0時〜お昼の12時」の意図を明確に。"
+    },
+    {
+      "locale": "en",
+      "key": "howTo13Answer",
+      "severity": "medium",
+      "replacement": "You can change it in Settings\nto anywhere between midnight and 12:00 noon.\nIf you set it to \"4:00 AM\", late-night work\nwill be recorded on the same day.",
+      "reasonJapanese": "howTo5Note と同じ時刻表記の混在。あわせて「the settings」を他箇所の「Settings」に統一。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming3Note",
+      "severity": "medium",
+      "replacement": "You can get 2 rainbow cats with the support plan. I spend time drawing each pixel art cat one by one. Cats added in the future may require payment.",
+      "reasonJapanese": "「Cats might be paid」は「猫が報酬をもらう」とも読め、原文「有料になるかもしれません」の意味が正しく伝わらない。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming4Note",
+      "severity": "medium",
+      "replacement": "These features may require payment.",
+      "reasonJapanese": "「might be paid」は意味が曖昧。upcoming3Note と同じ表現に統一。"
+    },
+    {
+      "locale": "en",
+      "key": "unlikely4Note",
+      "severity": "medium",
+      "replacement": "It might be a while, but I'd like to create an upgraded version with account linking.",
+      "reasonJapanese": "「パワーアップ版」が upcoming2Answer では upgraded version、ここでは powered-up version と揺れている。upgraded に統一。"
+    },
+    {
+      "locale": "en",
+      "key": "unlikely7Note",
+      "severity": "medium",
+      "replacement": "I want to make an upgraded app where you can manage your work in more detail. I'm considering it for that.",
+      "reasonJapanese": "「パワーアップ版」の訳語揺れ（powered-up / upgraded）。upgraded に統一。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming9Note",
+      "severity": "medium",
+      "replacement": "The current \"Time to Suggest Break\" and \"Break Time\" settings start from 30 minutes, in 30-minute increments.",
+      "reasonJapanese": "原文は「休憩にさそう時間」「休憩する時間」の2つの設定名を引用しているが、2つ目の引用符が落ちて設定名だと分からなくなっている。"
+    },
+    {
+      "locale": "en",
+      "key": "supporter2Answer",
+      "severity": "medium",
+      "replacement": "Just by joining, your partner\nwon't switch automatically.\nIn the \"Cat Shop\" in Settings,\nplease select the rainbow cat\nand tap \"Make Partner\".",
+      "reasonJapanese": "他の箇所はすべて「tap」だがここだけ「press」で用語が揺れている。あわせて「in settings」を「in Settings」に統一。"
+    },
+    {
+      "locale": "en",
+      "key": "howTo11Answer",
+      "severity": "medium",
+      "replacement": "You can transfer them from\n\"Backup Here\" in Settings.\nFirst, export it to a file and\nsave it to your device.\nOn your new device, import\nthat file from the same\n\"Backup Here\" to complete it.",
+      "reasonJapanese": "設定画面の呼び方が「Settings」と「the settings」で揺れている。画面名として Settings に統一。"
+    },
+    {
+      "locale": "en",
+      "key": "howTo15Answer",
+      "severity": "medium",
+      "replacement": "If you open \"Deleted Tasks\" in Settings,\nyou can restore task categories.\nYou can collapse the list when not looking at it.",
+      "reasonJapanese": "設定画面の呼び方の揺れ（the settings → Settings）。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming10Note",
+      "severity": "medium",
+      "replacement": "You can choose it from \"Change Color\" in \"Task Categories\" in Settings.",
+      "reasonJapanese": "設定画面の呼び方の揺れ（the settings → Settings）。"
+    },
+    {
+      "locale": "en",
+      "key": "unlikely5Note",
+      "severity": "medium",
+      "replacement": "If your days off are on the same days every week, you can set them in Settings now.",
+      "reasonJapanese": "設定画面の呼び方の揺れ（the settings → Settings）。"
+    },
+    {
+      "locale": "ko",
+      "key": "investigatingIntroAfterLink",
+      "severity": "high",
+      "replacement": "에 정리해 두었어요.",
+      "reasonJapanese": "助詞「에」の前にスペースがあり「업데이트 예정 에」と表示される。韓国語の助詞は分かち書きしない。同構造の notFoundAfterLink はスペースなしで、統一する。"
+    },
+    {
+      "locale": "ko",
+      "key": "investigating1NoteAfterEmail",
+      "severity": "high",
+      "replacement": "으로 보내주시면 큰 도움이 돼요.",
+      "reasonJapanese": "メールアドレス（…com、終声ㅁ）の後は「으로」が正しく、「로」は助詞の誤り。あわせて助詞前のスペースも削除。unlikely14Note では正しく「com으로」となっている。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcomingOutroAfterLink",
+      "severity": "high",
+      "replacement": "에 정리해 두었어요.",
+      "reasonJapanese": "助詞「에」の前にスペースがあり分かち書きの誤りになる。スペースを削除。"
+    },
+    {
+      "locale": "ko",
+      "key": "howTo7Answer",
+      "severity": "high",
+      "replacement": "설정의 '고양이 가게'에서\n그 아이의 이름을 누르면 바꿔 쓸 수 있어요.\n빈칸인 채로 확정하면\n원래 이름으로 돌아가요.",
+      "reasonJapanese": "「ねこ屋さん」が supporter1Answer/supporter2Answer では '고양이 가게'、ここでは '고양이 상점' と揺れている。UI名なので統一が必要。実際のアプリ内表記に合わせて最終確認を。"
+    },
+    {
+      "locale": "ko",
+      "key": "howTo13Answer",
+      "severity": "medium",
+      "replacement": "설정에서 0시부터 낮 12시 사이로\n변경할 수 있어요.\n'새벽 4시'로 설정하면, 심야 작업도\n같은 날의 기록이 돼요.",
+      "reasonJapanese": "同じ「朝4時」が howTo5Answer では '새벽 4시'、ここでは '아침 4시' と揺れている。午前4時は韓国語では 새벽 が自然。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcoming2Answer",
+      "severity": "medium",
+      "replacement": "심플한 앱으로 남고 싶어서,\n세밀한 기능을 포함한 파워업 버전을\n다른 앱으로 만들고 싶어요.",
+      "reasonJapanese": "「パワーアップ版」が他3箇所では '파워업 버전'、ここだけ '업그레이드 버전' と揺れている。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcoming3Note",
+      "severity": "medium",
+      "replacement": "무지갯빛 고양이 2마리는 후원 플랜으로 얻을 수 있어요. 도트 그래픽은 한 마리씩 시간을 들여 그리고 있어요. 앞으로 추가할 고양이는 유료가 될 수도 있어요.",
+      "reasonJapanese": "「にじいろのねこ」が supporter 系では '무지갯빛 고양이'、ここでは '무지개 고양이' と揺れている。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcoming6Question",
+      "severity": "medium",
+      "replacement": "위젯이나 Apple Watch에서 고양이를 보거나 출퇴근을 찍고 싶어요.",
+      "reasonJapanese": "「打刻したい」が '기록하고 싶어요' と一般化され、出退勤の打刻という意味が欠落している。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcoming9Note",
+      "severity": "medium",
+      "replacement": "지금의 '휴식 권유 시간'과 '휴식 시간'은 30분부터 시작하며, 30분 단위예요.",
+      "reasonJapanese": "原文は2つの設定名を引用しているが、2つ目の引用符が落ちて設定名だと分からない。"
+    },
+    {
+      "locale": "ko",
+      "key": "supporter1Answer",
+      "severity": "medium",
+      "replacement": "무지갯빛 고양이 두 마리가\n고양이 가게에 추가돼요.\n둘 중 하나를 파트너로 삼을 수 있어요.\n기능의 차이는 없어요.\n후원을 하든 하지 않든\n할 수 있는 일은 똑같아요.",
+      "reasonJapanese": "ページ全体は 해요体で統一されているのに、ここだけ '없답니다' と甘えた調子の語尾が混ざり、語調が不統一。"
+    },
+    {
+      "locale": "ko",
+      "key": "supporter1Note",
+      "severity": "medium",
+      "replacement": "월 300엔이에요. 개발을 계속하기 위한 후원의 형태예요.",
+      "reasonJapanese": "'형태랍니다' が他箇所の 해요体と語調が合わない。"
+    },
+    {
+      "locale": "ko",
+      "key": "unlikely9Question",
+      "severity": "medium",
+      "replacement": "포모도로 타이머가 있었으면 좋겠어요",
+      "reasonJapanese": "韓国語では「포모도로 타이머」表記が一般的で、'뽀모도로' は少数派。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo10Answer",
+      "severity": "high",
+      "replacement": "在「月份」畫面按下日期，\n就能看到當天的總時間，以及\n各項工作的開始與結束時間。",
+      "reasonJapanese": "「月」画面が他の全箇所では「月份」なのにここだけ「月」で、UI名が揺れている。あわせて「作業」の訳語も他箇所の「工作」に統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo13Answer",
+      "severity": "medium",
+      "replacement": "可以從設定中，\n在0點到中午12點之間更改。\n如果設為「早上4點」，半夜的工作\n也會算在同一天的紀錄裡。",
+      "reasonJapanese": "「作業」の訳語が「工作」と「任務」で揺れている。前半の項目は「工作」なので統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo14Note",
+      "severity": "medium",
+      "replacement": "就算平日和假日的工作時間不同，乘起來不吻合也沒問題。",
+      "reasonJapanese": "「働く時間」が「任務時間」となっており、他箇所の「工作時間」と揺れている。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo15Question",
+      "severity": "medium",
+      "replacement": "刪除的工作分類可以復原嗎？",
+      "reasonJapanese": "「作業カテゴリ」が howTo6Question/howTo9Answer では「工作分類」、ここでは「任務分類」と揺れている。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo15Answer",
+      "severity": "high",
+      "replacement": "打開設定的「已刪除的工作」，\n就能復原工作分類。\n不看的時候可以把清單收合起來。",
+      "reasonJapanese": "設定項目名「けした作業」と「作業カテゴリ」の訳が「任務」系になっており、他箇所のUI名「工作分類」と揺れている。実際のアプリ内表記に合わせて最終確認を。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo15Note",
+      "severity": "medium",
+      "replacement": "有紀錄的工作會保留，以免總計出錯。未來希望能讓0小時的工作完全刪除。",
+      "reasonJapanese": "「作業」の訳語揺れ（任務 → 工作）。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming10Question",
+      "severity": "medium",
+      "replacement": "我想更改主題顏色和工作分類的顏色。",
+      "reasonJapanese": "「作業カテゴリ」の訳語揺れ（任務分類 → 工作分類）。同じ項目の回答では「工作分類」を使っている。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming10Note",
+      "severity": "high",
+      "replacement": "您可以在設定的「工作分類」中，透過「更改顏色」來選擇。",
+      "reasonJapanese": "「作業分類」は日本語をそのまま置いた表記で、中国語の「作業」は宿題・操作の意味になり不自然。設定項目名なので他箇所の「工作分類」に統一。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming9Note",
+      "severity": "medium",
+      "replacement": "目前的「建議休息時間」和「休息時間」是從30分鐘開始，以30分鐘為單位。",
+      "reasonJapanese": "原文は2つの設定名を引用しているが、2つ目の引用符が落ちて設定名だと分からない。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "supporter2Note",
+      "severity": "medium",
+      "replacement": "在首頁走路的只會有一隻夥伴。",
+      "reasonJapanese": "アプリのホーム画面は他箇所では「首頁」だが、ここだけ「主畫面」で揺れている（「主畫面」は upcoming6Answer のOSホーム画面用に使われている）。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "supporter1Note",
+      "severity": "medium",
+      "replacement": "每月 300 日圓。這是為了持續開發的一種贊助方式。",
+      "reasonJapanese": "台湾では「¥」が人民元と誤解されやすく、通貨が曖昧。「日圓」と明記するのが自然。"
+    }
+  ]
+}
