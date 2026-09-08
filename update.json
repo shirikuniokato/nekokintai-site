@@ -9,12 +9,11 @@
     ]
   },
   "android": {
-    "latestVersion": "2.3.0",
+    "latestVersion": "2.3.1",
     "storeUrl": "https://play.google.com/store/apps/details?id=com.ccya.nekokintai",
     "notes": [
-      "ねこ勤怠が、英語・韓国語・繁體中文（台灣）でも使えるようになりました。",
-      "端末のことばの設定にあわせて、アプリのことばが切りかわります",
-      "「詳細設定」の「ことば」から、使いたいことばを選ぶこともできます"
+      "こまかな修正です。",
+      "週の共有画像で、韓国語の文字が正しく表示されない不具合を直しました"
     ]
   }
 }
