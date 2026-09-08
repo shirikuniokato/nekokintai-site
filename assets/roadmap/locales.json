@@ -94,7 +94,6 @@
     "faqLink": "よくあるしつもん",
     "contactLink": "ごようぼう",
     "privacyLink": "プライバシーポリシー",
-    "statusInProgress": "たいおうちゅう",
     "koreanWeekShareFix": "週の共有画像を保存すると、\n韓国語の文字が正しく表示されない\n不具合を直します",
     "jumpToFuture": "そのさき やりたいこと を見る ▾",
     "future5": "ウィジェットやロック画面にねこを出して、打刻できるようにする"
@@ -194,7 +193,6 @@
     "faqLink": "FAQ",
     "contactLink": "Requests",
     "privacyLink": "Privacy Policy",
-    "statusInProgress": "In Progress",
     "koreanWeekShareFix": "Fix Korean text not displaying correctly\nwhen saving an image\nof your weekly record.",
     "jumpToFuture": "See what I'd like to do next ▾",
     "future5": "Show the cat on widgets and lock screens to clock in and out"
@@ -294,7 +292,6 @@
     "faqLink": "자주 묻는 질문",
     "contactLink": "건의 사항",
     "privacyLink": "개인정보 처리방침",
-    "statusInProgress": "대응 중",
     "koreanWeekShareFix": "주간 기록을 이미지로 저장할 때\n한글이 깨지는 문제를\n수정할 예정입니다.",
     "jumpToFuture": "앞으로 하고 싶은 일 보기 ▾",
     "future5": "위젯이나 잠금 화면에 고양이를 표시하고 출퇴근을 기록하기"
@@ -394,7 +391,6 @@
     "faqLink": "常見問題",
     "contactLink": "建議與回饋",
     "privacyLink": "隱私權政策",
-    "statusInProgress": "處理中",
     "koreanWeekShareFix": "修正儲存每週紀錄圖片時，\n韓文文字無法正常顯示\n的問題。",
     "jumpToFuture": "查看 未來想做的事 ▾",
     "future5": "在小工具或鎖定畫面顯示貓咪並進行打卡"
