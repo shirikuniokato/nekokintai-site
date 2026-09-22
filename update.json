@@ -9,11 +9,12 @@
     ]
   },
   "android": {
-    "latestVersion": "2.3.1",
+    "latestVersion": "2.4.0",
     "storeUrl": "https://play.google.com/store/apps/details?id=com.ccya.nekokintai",
     "notes": [
-      "こまかな修正です。",
-      "週の共有画像で、韓国語の文字が正しく表示されない不具合を直しました"
+      "ホーム画面にウィジェットが置けるようになりました。",
+      "出勤・休憩・退勤をホーム画面から押せます。ねこがきょうの時間といっしょに歩きます",
+      "iPhone はロック画面にも、はたらいている時間とねこが出ます（Apple Watch にも）"
     ]
   }
 }
