@@ -5,7 +5,14 @@ export const I18N_PAGES = {
   lp: { html: 'index.html', locales: 'assets/lp/locales.json', label: 'トップLP' },
   tip: { html: 'tip/index.html', locales: 'assets/tip/locales.json', label: '開発をおうえんする' },
   qa: { html: 'qa/index.html', locales: 'assets/qa/locales.json', label: 'よくあるしつもん' },
-  roadmap: { html: 'roadmap/index.html', locales: 'assets/roadmap/locales.json', label: 'アップデートのよてい' },
+  roadmap: {
+    html: 'roadmap/index.html',
+    locales: 'assets/roadmap/locales.json',
+    label: 'アップデートのよてい',
+    // 審査中のカードが1枚も無い期間は HTML から消えるが、次の提出でまた使う状態チップの文言。
+    // cron が公開ずみに書き換えるたびに未使用キー扱いで CI が落ち、デプロイが止まっていた
+    reservedKeys: ['statusInProgress', 'whenInProgress'],
+  },
   contact: { html: 'contact/index.html', locales: 'assets/contact/locales.json', label: 'ごようぼう' },
   privacy: { html: 'privacy/index.html', locales: 'assets/privacy/locales.json', label: 'プライバシーポリシー' },
 }

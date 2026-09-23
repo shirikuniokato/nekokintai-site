@@ -88,7 +88,8 @@ function checkPage(pageName, page, lpLocales) {
   const sourceKeys = Object.keys(locales.ja).sort()
   const usedKeys = htmlKeys(page.html)
   const missingKeys = usedKeys.filter((key) => !sourceKeys.includes(key))
-  const unusedKeys = sourceKeys.filter((key) => !usedKeys.includes(key))
+  const reservedKeys = page.reservedKeys ?? []
+  const unusedKeys = sourceKeys.filter((key) => !usedKeys.includes(key) && !reservedKeys.includes(key))
   let errorCount = 0
 
   if (missingKeys.length > 0) {
