@@ -131,14 +131,14 @@
     "supporter4Answer": "解約しても、いまの期間が\n終わるまでは一緒に歩けます。\n期間が終わると、相棒は\n自動で無料の子にもどります。",
     "supporter4Note": "記録や設定は、なにも変わりません",
     "howTo16Question": "ウィジェットから打刻したい",
-    "howTo16Answer": "ホーム画面にウィジェットを置けます。\n出勤・休憩・退勤を、アプリを開かずに押せて、\nねこが きょうの時間といっしょに歩きます。\nホーム画面を長おしして「ウィジェット」から\n「ねこ勤怠」をさがしてください。",
+    "howTo16Answer": "ホーム画面にウィジェットを置けます。\n出勤・休憩・退勤を、\nアプリを開かずに押せて、\nねこが きょうの時間といっしょに歩きます。\nホーム画面を長おしして「ウィジェット」から\n「ねこ勤怠」をさがしてください。",
     "howTo16Note": "iPhone は iOS 17 から使えます。はたらいているあいだは、ロック画面と Apple Watch にも時間とねこが出ます。Android は勤務中の通知に時間が出ます。はじめに いちどアプリを開いてください",
     "howTo17Question": "はたらいている途中に、記録を足したい",
     "howTo17Answer": "同じ日のうちなら、はたらいたままでも、\nいまの記録より前の時間を足せます。\n日付をまたいで はたらいたままのときは、\nいちど退勤してから足してください。",
     "howTo18Question": "これまでに はたらいた時間の合計を見たい",
     "howTo18Answer": "「記録」の画面の右上のボタンから、\n全期間の合計と、つけた日数、\n作業ごとの内わけが見られます。",
     "upcoming12Question": "ウィジェットの時間が止まらない・ボタンが効かない",
-    "upcoming12Answer": "ウィジェットまわりに、まだ不具合があります。\nアプリで退勤しても時間が進んでしまう、\nAndroid で休憩・退勤が効かない、\nなど、ウィジェットまわりの不具合に対応します。",
+    "upcoming12Answer": "ウィジェットまわりに、\nまだ不具合があります。\nアプリで退勤しても時間が進んでしまう、\nAndroid で休憩・退勤が効かない、\nなど、ウィジェットの不具合に\n対応します。",
     "upcoming12Note": "一部の Android 端末でウィジェットが一覧に出ないこと、iOS 26 の「クリア」表示で透けないことも、あわせて見ています"
   },
   "en": {
@@ -273,14 +273,14 @@
     "supporter4Answer": "Even if you cancel, you can walk together\nuntil the current period ends.\nWhen the period ends, your companion\nwill automatically return to a free cat.",
     "supporter4Note": "Your records and settings will not change at all.",
     "howTo16Question": "I want to clock in from a widget",
-    "howTo16Answer": "You can put a widget on your Home Screen.\nClock in, take a break, and clock out without opening the app,\nwith your cat walking along with today's time.\nLong-press the Home Screen, open \"Widgets\",\nand search for \"ねこ勤怠\".",
+    "howTo16Answer": "You can put a widget on your Home Screen.\nClock in, take a break, and clock out\nwithout opening the app,\nwith your cat walking along with today's time.\nLong-press the Home Screen, open \"Widgets\",\nand search for \"ねこ勤怠\".",
     "howTo16Note": "On iPhone, this works on iOS 17 or later. While you're working, your time and cat also appear on the Lock Screen and Apple Watch. On Android, your time shows in the notification while you work. Please open the app once first",
     "howTo17Question": "I want to add a record while I'm still working",
     "howTo17Answer": "Within the same day, you can add time\nbefore your current record, even while still working.\nIf you're still working past midnight,\nplease clock out once, then add it.",
     "howTo18Question": "I want to see the total time I've worked so far",
     "howTo18Answer": "From the button at the top right of the \"Log\" screen,\nyou can see your all-time total, the number of days logged,\nand a breakdown by task.",
     "upcoming12Question": "The widget's time keeps going / the buttons don't work",
-    "upcoming12Answer": "There are still some bugs around widgets.\nThe time keeps going even after you clock out in the app,\nbreak and clock-out don't work on Android, and so on.\nI'm working on these widget bugs.",
+    "upcoming12Answer": "There are still some bugs\naround widgets.\nThe time keeps going even after you clock out in the app,\nbreak and clock-out don't work on Android,\nand so on. I'm working on\nthese widget bugs.",
     "upcoming12Note": "I'm also looking into widgets not appearing in the list on some Android devices, and widgets not turning see-through in the \"Clear\" look on iOS 26"
   },
   "ko": {
@@ -415,14 +415,14 @@
     "supporter4Answer": "해지하더라도 지금의 기간이\n끝날 때까지는 함께 걸을 수 있어요.\n기간이 끝나면 단짝은\n자동으로 무료 아이로 돌아가요.",
     "supporter4Note": "기록이나 설정은 아무것도 변하지 않아요.",
     "howTo16Question": "위젯에서 출퇴근을 기록하고 싶어요",
-    "howTo16Answer": "홈 화면에 위젯을 둘 수 있어요.\n출근·휴식·퇴근을 앱을 열지 않고 누를 수 있고,\n고양이가 오늘의 시간과 함께 걸어요.\n홈 화면을 길게 누르고 '위젯'에서\n'ねこ勤怠'를 찾아 주세요.",
+    "howTo16Answer": "홈 화면에 위젯을 둘 수 있어요.\n출근·휴식·퇴근을\n앱을 열지 않고 누를 수 있고,\n고양이가 오늘의 시간과 함께 걸어요.\n홈 화면을 길게 누르고 '위젯'에서\n'ねこ勤怠'를 찾아 주세요.",
     "howTo16Note": "iPhone은 iOS 17부터 쓸 수 있어요. 일하는 동안에는 잠금 화면과 Apple Watch에도 시간과 고양이가 나와요. Android는 근무 중 알림에 시간이 나와요. 먼저 앱을 한 번 열어 주세요",
     "howTo17Question": "일하는 도중에 기록을 추가하고 싶어요",
     "howTo17Answer": "같은 날 안이라면, 일하는 중에도\n지금 기록보다 앞의 시간을 추가할 수 있어요.\n날짜를 넘겨서 계속 일하고 있을 때는\n한 번 퇴근한 뒤에 추가해 주세요.",
     "howTo18Question": "지금까지 일한 시간의 합계를 보고 싶어요",
     "howTo18Answer": "'기록' 화면 오른쪽 위의 버튼에서\n전체 기간의 합계와 기록한 날 수,\n작업별 내역을 볼 수 있어요.",
     "upcoming12Question": "위젯의 시간이 멈추지 않아요 / 버튼이 안 눌려요",
-    "upcoming12Answer": "위젯 쪽에 아직 문제가 있어요.\n앱에서 퇴근해도 시간이 계속 늘어나거나,\nAndroid에서 휴식·퇴근이 안 되는 등,\n위젯 관련 문제를 고치고 있어요.",
+    "upcoming12Answer": "위젯 쪽에\n아직 문제가 있어요.\n앱에서 퇴근해도 시간이 계속 늘어나거나,\nAndroid에서 휴식·퇴근이 안 되는 등,\n위젯 관련 문제를\n고치고 있어요.",
     "upcoming12Note": "일부 Android 기기에서 위젯이 목록에 나오지 않는 문제와, iOS 26의 '투명' 표시에서 비쳐 보이지 않는 문제도 함께 살펴보고 있어요"
   },
   "zh-TW": {
@@ -557,14 +557,14 @@
     "supporter4Answer": "即使取消訂閱，在目前週期\n結束前還是能一起走路。\n週期結束後，夥伴就會\n自動變回免費的貓咪。",
     "supporter4Note": "紀錄和設定都不會有任何改變。",
     "howTo16Question": "想從小工具打卡",
-    "howTo16Answer": "可以把小工具放到主畫面。\n不用打開應用程式就能按上班、休息、下班，\n貓咪會和今天的時間一起走。\n請長按主畫面，從「小工具」\n搜尋「ねこ勤怠」。",
+    "howTo16Answer": "可以把小工具放到主畫面。\n不用打開應用程式，\n就能按上班、休息、下班，\n貓咪會和今天的時間一起走。\n請長按主畫面，從「小工具」\n搜尋「ねこ勤怠」。",
     "howTo16Note": "iPhone 需要 iOS 17 以上。工作期間，鎖定畫面和 Apple Watch 也會顯示時間和貓咪。Android 會在工作中的通知顯示時間。請先打開一次應用程式",
     "howTo17Question": "想在工作途中新增紀錄",
     "howTo17Answer": "如果是同一天內，即使還在工作中，\n也能新增目前紀錄之前的時間。\n如果跨過日期還在工作中，\n請先下班一次再新增。",
     "howTo18Question": "想看目前為止工作時間的合計",
     "howTo18Answer": "從「紀錄」畫面右上角的按鈕，\n可以看到全部期間的合計、記錄的天數，\n以及各項工作的明細。",
     "upcoming12Question": "小工具的時間停不下來／按鈕沒反應",
-    "upcoming12Answer": "小工具方面還有一些問題。\n像是在應用程式下班後時間仍繼續增加、\nAndroid 上按休息、下班沒反應等，\n我會處理這些小工具的問題。",
+    "upcoming12Answer": "小工具方面\n還有一些問題。\n像是在應用程式下班後時間仍繼續增加、\nAndroid 上按休息、下班沒反應等，\n我會處理這些\n小工具的問題。",
     "upcoming12Note": "部分 Android 裝置的小工具清單裡找不到，以及 iOS 26「透明」外觀下沒有變透明的問題，也在一併確認中"
   }
 }
