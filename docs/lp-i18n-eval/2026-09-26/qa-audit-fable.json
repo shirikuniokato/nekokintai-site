@@ -1,0 +1,120 @@
+{
+  "generatedAt": "2026-09-26T05:10:08.147Z",
+  "reviewer": "claude-fable",
+  "model": "claude-fable-5",
+  "summaryJapanese": "3言語とも意味の欠落・責める表現・通常UIへの猫語混入は見当たらず、指摘は用語揺れと表記の欠陥に限られます。韓国語は「스크린샷과기기명」の分かち書き欠落が唯一の明確な不良（high）で、助詞の誤りはありません。そのほかは、英語の Support plan / companion / Task categories の大文字小文字揺れと冠詞の欠落、韓国語の 무지개색↔무지갯빛・후원↔응원 の揺れ、繁體中文の 工作分類↔工作類別・贊助↔支持・App↔應用程式 の揺れと、新しめのキー（howTo16〜18・upcoming12）に残る日本語式の中黒「・」です。台湾向け語彙（應用程式・小工具・螢幕截圖・裝置・帳號・番茄鐘など）は問題ありません。なお英語の supporter2Answer「Choose」、howTo18Answer「Log」画面、upcoming1Answer「6h 54m」、howTo2Answer のバナー文言は他言語より意訳が強いものの、アプリ実装の英語文言と一致している可能性があるため指摘から外しました。アプリ側の実際の文言と照合してください。がんばった貯金は今回の対象に含まれていません。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "investigatingIntroBeforeLink",
+      "severity": "medium",
+      "replacement": "The details of the updates are summarized in the ",
+      "reasonJapanese": "リンク文言と結合すると「summarized in Update Roadmap.」となり冠詞が抜けて不自然。upcomingOutroBeforeLink では「check the 」と冠詞を付けており揺れているため、こちらにも the を補う。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming3Note",
+      "severity": "medium",
+      "replacement": "You can get 2 rainbow cats through the Support plan. I spend a lot of time drawing each pixel art cat. Cats added in the future may require a purchase.",
+      "reasonJapanese": "supporterLabel・supporter1Question・upcoming3Answer では「Support plan」と表記しているが、ここだけ「support plan」と小文字で用語が揺れている。"
+    },
+    {
+      "locale": "en",
+      "key": "supporter1Answer",
+      "severity": "medium",
+      "replacement": "Two rainbow-colored cats\nwill be added to the Cat shop.\nYou can choose either as your companion.\nThere is no difference in features.\nWhether you support or not,\nwhat you can do remains the same.",
+      "reasonJapanese": "「相棒」の訳が supporter2Answer・supporter4Answer では小文字の companion なのに、ここだけ大文字の Companion で用語が揺れている。"
+    },
+    {
+      "locale": "en",
+      "key": "supporter2Note",
+      "severity": "medium",
+      "replacement": "Only your companion cat walks on the Home screen.",
+      "reasonJapanese": "「相棒」を他のキーでは companion と訳しているのに、ここだけ partner cat になっており用語が揺れている。ホーム画面も他キーの「Home screen」と表記を揃える。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming10Note",
+      "severity": "medium",
+      "replacement": "You can choose it from \"Change color\" in \"Task categories\" in Settings.",
+      "reasonJapanese": "設定項目名が howTo9Answer では「Task categories」なのに、ここでは「Task Categories」「Change Color」とタイトルケースになっており、UI名称の表記が揺れている。"
+    },
+    {
+      "locale": "ko",
+      "key": "investigating1NoteBeforeEmail",
+      "severity": "high",
+      "replacement": "같은 현상이 발생하신 분은 화면 스크린샷과 기기명, Android 버전, 앱을 닫은 방법을 ",
+      "reasonJapanese": "「스크린샷과기기명」の分かち書きが抜けており、誤字として目立つ。「스크린샷과 기기명」に修正する。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcoming3Answer",
+      "severity": "medium",
+      "replacement": "2.1.0에서 6마리가 늘어나\n무료 고양이는 15마리가 됐어요.\n응원 플랜 한정 무지갯빛 고양이 2마리를 합치면\n모두 17마리예요.\n앞으로도 조금씩 늘려 가고 싶어요.",
+      "reasonJapanese": "「にじいろ」の訳が supporter 系のキーでは一貫して「무지갯빛」なのに、ここでは「무지개색」になっており用語が揺れている。多数派の 무지갯빛 に統一する。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcoming3Note",
+      "severity": "medium",
+      "replacement": "무지갯빛 고양이 2마리는 응원 플랜으로 얻을 수 있어요. 도트 그래픽은 한 마리씩 시간을 들여 그리고 있어요. 앞으로 추가할 고양이는 유료가 될 수도 있어요.",
+      "reasonJapanese": "upcoming3Answer と同様に「무지개색」が supporter 系の「무지갯빛」と揺れているため統一する。"
+    },
+    {
+      "locale": "ko",
+      "key": "supporter2Question",
+      "severity": "medium",
+      "replacement": "응원했는데 무지갯빛 아이가 걷지 않아요.",
+      "reasonJapanese": "「おうえん」は supporterLabel・supporter1Question・supporter4Question など他のキーで一貫して「응원」と訳されているのに、ここだけ「후원」になっており用語が揺れている。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming10Answer",
+      "severity": "medium",
+      "replacement": "我很想做。\n雖然還不知道會不會是\n大家想像中的樣子，但我想讓\n背景等也能夠更換，\n重視視覺上的期待感。\n工作類別的顏色目前有12種\n可以選擇。是否要再增加，\n我會一併評估。\n目前可以在設定畫面右上角，\n切換「淺色」和「深色」。",
+      "reasonJapanese": "「作業のカテゴリ」は howTo6・howTo9・howTo15 で「工作類別」と訳されているのに、ここだけ「工作分類」になっており用語が揺れている。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming10Note",
+      "severity": "medium",
+      "replacement": "可以從設定的「工作類別」中透過「更改顏色」來選擇。",
+      "reasonJapanese": "設定の項目名が howTo9Answer では「工作類別」なのに、ここでは「工作分類」となっており、同じ画面名を指すのに表記が揺れている。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "supporter2Question",
+      "severity": "medium",
+      "replacement": "我加入支持方案了，但彩虹貓咪沒有在走路。",
+      "reasonJapanese": "「おうえん」は supporterLabel 以下で一貫して「支持（方案）」と訳されているのに、ここだけ「贊助」になっており用語が揺れている。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo16Answer",
+      "severity": "medium",
+      "replacement": "可以把小工具放到主畫面。\n不用打開應用程式就能按上班、休息、下班，\n貓咪會和今天的時間一起走。\n請長按主畫面，從「小工具」\n搜尋「ねこ勤怠」。",
+      "reasonJapanese": "「アプリ」はページ全体で「應用程式」と訳されているのに、この新しめのキーでは「App」になっており用語が揺れている。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo16Note",
+      "severity": "medium",
+      "replacement": "iPhone 需要 iOS 17 以上。工作期間，鎖定畫面和 Apple Watch 也會顯示時間和貓咪。Android 會在工作中的通知顯示時間。請先打開一次應用程式",
+      "reasonJapanese": "howTo16Answer と同様に「App」が他キーの「應用程式」と揺れているため統一する。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming12Question",
+      "severity": "medium",
+      "replacement": "小工具的時間停不下來／按鈕沒反應",
+      "reasonJapanese": "日本語の中黒「・」がそのまま区切りとして残っている。繁體中文では並列の区切りに「・」は使わないため、「／」に置き換える。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming12Answer",
+      "severity": "medium",
+      "replacement": "小工具方面還有一些問題。\n像是在應用程式下班後時間仍繼續增加、\nAndroid 上按休息、下班沒反應等，\n我會處理這些小工具的問題。",
+      "reasonJapanese": "「App」が他キーの「應用程式」と揺れているのに加え、「休息・下班」に日本語式の中黒が残っている。同じキー内の他行や howTo16Answer では「、」を使っているため揃える。"
+    }
+  ]
+}

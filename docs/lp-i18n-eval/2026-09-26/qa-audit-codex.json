@@ -1,0 +1,134 @@
+{
+  "generatedAt": "2026-09-26T05:12:05.448Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "summaryJapanese": "criticalはありません。ブランド名と固定用語は維持され、通常UIへの猫語混入や韓国語のブランド名後の助詞にも問題はありません。指摘は18件で、主に公式UI名・機能名の用語揺れ、韓国語の分かち書き、台湾繁体字の用語統一、解約後の相棒の挙動を誤解させる表現です。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "howTo14Note",
+      "severity": "medium",
+      "replacement": "Even if your working hours differ between working days and days off, it's fine if the numbers don't add up.",
+      "reasonJapanese": "「weekends」では「休日」を土日に限定してしまいます。任意に設定した休みの日も含む「days off」にして意味の狭まりを解消します。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming9Answer",
+      "severity": "medium",
+      "replacement": "I will look into recurring break prompts.\nI do want to add a daily morning notification.\nI'll make it so you can toggle it on and off,\nbut it might take a little while.",
+      "reasonJapanese": "同じ機能が質問では「break prompts」、回答では「break suggestions」と揺れています。機能名に合わせて「break prompts」に統一します。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming3Note",
+      "severity": "medium",
+      "replacement": "You can get 2 rainbow cats through the Support plan. I spend a lot of time drawing each pixel art cat. Cats added in the future may require a purchase.",
+      "reasonJapanese": "正式名称が他のキーでは「Support plan」なのに、このキーだけ小文字の「support plan」になっています。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming10Note",
+      "severity": "medium",
+      "replacement": "You can choose it from \"Change Color\" in \"Task categories\" in the settings.",
+      "reasonJapanese": "設定項目名は他のキーで「Task categories」となっており、このキーだけ「Task Categories」と大文字表記が揺れています。"
+    },
+    {
+      "locale": "en",
+      "key": "supporter2Note",
+      "severity": "medium",
+      "replacement": "Only your companion walks on the Home screen.",
+      "reasonJapanese": "同じ「相棒」が周辺のキーでは「Companion／companion」、ここだけ「partner cat」になっています。"
+    },
+    {
+      "locale": "en",
+      "key": "supporter4Answer",
+      "severity": "high",
+      "replacement": "Even if you cancel, you can walk together\nuntil the current period ends.\nAfter that, a free cat\nwill automatically become your companion.",
+      "reasonJapanese": "現訳は、現在の相棒や虹色の猫自体が無料の猫へ戻るようにも読めます。期間終了後に無料の猫が相棒として選ばれる挙動を明示します。"
+    },
+    {
+      "locale": "ko",
+      "key": "investigating1NoteBeforeEmail",
+      "severity": "medium",
+      "replacement": "같은 현상이 발생하신 분은 화면 스크린샷과 기기명, Android 버전, 앱을 닫은 방법을 ",
+      "reasonJapanese": "「스크린샷과기기명」で別の単語が連結されています。「스크린샷과 기기명」と正しく分かち書きします。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcoming3Answer",
+      "severity": "medium",
+      "replacement": "2.1.0에서 6마리가 늘어나\n무료 고양이는 15마리가 됐어요.\n응원 플랜 한정 무지갯빛 고양이 2마리를 합치면\n모두 17마리예요.\n앞으로도 조금씩 늘려 가고 싶어요.",
+      "reasonJapanese": "虹色の猫が、このキーでは「무지개색 고양이」、おうえんプランの各キーでは「무지갯빛 고양이」と揺れています。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcoming3Note",
+      "severity": "medium",
+      "replacement": "무지갯빛 고양이 2마리는 응원 플랜으로 얻을 수 있어요. 도트 그래픽은 한 마리씩 시간을 들여 그리고 있어요. 앞으로 추가할 고양이는 유료가 될 수도 있어요.",
+      "reasonJapanese": "虹色の猫の名称を、おうえんプランの各キーで使われている「무지갯빛 고양이」に統一します。"
+    },
+    {
+      "locale": "ko",
+      "key": "supporter2Question",
+      "severity": "medium",
+      "replacement": "응원 플랜에 가입했는데 무지갯빛 아이가 걷지 않아요.",
+      "reasonJapanese": "「후원했는데」は寄付したという意味に寄り、応援プランへ加入した状態が曖昧です。正式名称「응원 플랜」を使って加入済みであることを明示します。"
+    },
+    {
+      "locale": "ko",
+      "key": "supporter4Answer",
+      "severity": "high",
+      "replacement": "해지하더라도 지금의 기간이\n끝날 때까지는 함께 걸을 수 있어요.\n기간이 끝나면 무료 고양이가\n자동으로 단짝이 돼요.",
+      "reasonJapanese": "「단짝은 무료 아이로 돌아가요」では、虹色の猫自体が無料の猫に変わるようにも読めます。無料の猫が新しい相棒になる挙動を明示します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming10Answer",
+      "severity": "medium",
+      "replacement": "我很想做。\n雖然還不知道會不會是\n大家想像中的樣子，但我想讓\n背景等也能夠更換，\n重視視覺上的期待感。\n工作類別的顏色目前有12種\n可以選擇。是否要再增加，\n我會一併評估。\n目前可以在設定畫面右上角，\n切換「淺色」和「深色」。",
+      "reasonJapanese": "「作業カテゴリ」は他のキーと実際の設定名で「工作類別」を使用しており、このキーの「工作分類」と揺れています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming10Note",
+      "severity": "medium",
+      "replacement": "可以從設定的「工作類別」中透過「更改顏色」來選擇。",
+      "reasonJapanese": "画面で探す設定項目名が「工作分類」になっています。他のキーの「工作類別」に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "supporter2Question",
+      "severity": "medium",
+      "replacement": "我已經加入支持方案了，但彩虹貓咪沒有走動。",
+      "reasonJapanese": "「我已經贊助了」では単発の寄付にも読め、支持方案への加入状態が伝わりません。正式名称を使って意味を明確にします。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "supporter4Answer",
+      "severity": "high",
+      "replacement": "即使取消訂閱，在目前週期\n結束前還是能一起走路。\n週期結束後，免費貓咪會\n自動成為夥伴。",
+      "reasonJapanese": "「夥伴自動變回免費的貓咪」では、虹色の猫自体が無料の猫へ変化するように読めます。期間終了後に無料の猫が相棒になる挙動を明示します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo16Answer",
+      "severity": "medium",
+      "replacement": "可以把小工具放到主畫面。\n不用打開應用程式就能按上班、休息、下班，\n貓咪會和今天的時間一起走。\n請長按主畫面，從「小工具」\n搜尋「ねこ勤怠」。",
+      "reasonJapanese": "一般名詞のアプリが、既存部分では「應用程式」、追加部分では「App」と揺れています。「App Store」以外は「應用程式」に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo16Note",
+      "severity": "medium",
+      "replacement": "iPhone 需要 iOS 17 以上。工作期間，鎖定畫面和 Apple Watch 也會顯示時間和貓咪。Android 會在工作中的通知顯示時間。請先打開一次應用程式",
+      "reasonJapanese": "一般名詞の「App」を、ページ内で主に使われている台湾向け表記「應用程式」に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming12Answer",
+      "severity": "medium",
+      "replacement": "小工具方面還有一些問題。\n像是在應用程式中按下班後，時間仍繼續增加、\nAndroid 上按休息・下班沒反應等，\n我會處理這些小工具的問題。",
+      "reasonJapanese": "一般名詞のアプリが、この追加部分だけ「App」になっています。「應用程式」に統一し、アプリ内で下班を押したという関係も明確にします。"
+    }
+  ]
+}
