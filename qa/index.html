@@ -19,6 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 <script type="module" src="/assets/lp/i18n.mjs"></script>
+<script type="module" src="/assets/qa/search.mjs"></script>
 <style>
   :root{
     --ink:#0C3A44; --bg:#EAF4F7; --paper:#FFFFFF; --border:#DCEDF2;
@@ -41,6 +42,23 @@
   @keyframes nk-twinkle{0%,100%{opacity:.25}50%{opacity:1}}
   @media (prefers-reduced-motion:reduce){*{animation:none !important}}
 
+  .qa-search{margin:0 0 22px;}
+  .qa-search-label{display:block;font-size:12px;letter-spacing:.2em;color:var(--muted);margin:0 0 6px;}
+  .qa-search-row{display:flex;gap:8px;align-items:stretch;justify-content:center;}
+  .qa-search input{
+    flex:1 1 auto;min-width:0;max-width:420px;font:inherit;font-size:clamp(14px,3.6vw,15px);
+    color:var(--ink);background:var(--paper);border:2px solid var(--border);border-radius:10px;
+    padding:10px 12px;box-shadow:3px 3px 0 var(--shadow);
+  }
+  .qa-search input::placeholder{color:var(--muted);}
+  .qa-search input:focus-visible{outline:2px solid var(--deep);outline-offset:2px;}
+  .qa-search input::-webkit-search-cancel-button{display:none;}
+  .qa-search-clear{
+    flex:0 0 auto;font:inherit;font-size:13px;color:var(--deep);background:var(--paper);
+    border:2px solid var(--border);border-radius:10px;padding:0 14px;cursor:pointer;
+  }
+  .qa-search-clear:focus-visible{outline:2px solid var(--deep);outline-offset:2px;}
+  .qa-search-empty{margin:12px 0 0;font-size:clamp(13px,3.4vw,14px);color:var(--muted);line-height:1.8;}
   .qa-group{
     text-align:left;background:var(--paper);
     border:2px solid var(--border);border-radius:14px;box-shadow:3px 3px 0 var(--shadow);
@@ -101,6 +119,17 @@
     <button type="button" data-locale="zh-TW" aria-pressed="false">繁體中文</button>
   </nav>
 
+  <!-- しつもんの絞りこみ。JS が無い環境ではそのまま全部が並ぶ（search.mjs が hidden 属性で外すだけ） -->
+  <form class="qa-search" role="search" hidden>
+    <label class="qa-search-label" data-i18n="searchLabel" for="qa-search-input">しつもんをさがす</label>
+    <div class="qa-search-row">
+      <input id="qa-search-input" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder" placeholder="ことばで さがす">
+      <button type="button" class="qa-search-clear" data-i18n="searchClear" hidden>けす</button>
+    </div>
+    <p class="qa-search-empty lp-copy-multiline" data-i18n="searchEmpty" hidden>見つかりませんでした。
+ちがうことばで さがしてみてください。</p>
+  </form>
+
   <section data-i18n-aria-label="investigatingLabel" aria-label="いま 調べているところ" style="margin:0 0 26px;">
     <div style="display:flex;align-items:flex-end;justify-content:center;gap:10px;margin:0 0 8px;">
       <img src="/art/walkA.png" alt="" style="width:48px;height:auto;image-rendering:pixelated;animation:nk-bob 1.9s steps(1,end) infinite;">
@@ -112,10 +141,10 @@
         <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="investigating1Question">Androidでアプリを開き直すと、ねこと「きょうの内わけ」が真っ黒になる</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a" data-i18n="investigating1Answer">一部のAndroid端末で起きている不具合です。
-端末によって、ねこの画面と
-「きょうの内わけ」が正しく描き直されない
-可能性があり、原因を調べています。</p>
+          <p class="qa-a" data-i18n="investigating1Answer">2.0.2 のころに1件いただいたきりで、
+そのあとの報告がありません。
+描き直しのまわりはその後に直しているので、
+いまの版では起きていない見込みです。</p>
           <p class="qa-note"><span data-i18n="investigating1NoteBeforeEmail">同じことが起きた方は、画面のスクリーンショットと、端末名・Androidのバージョン・アプリを閉じた方法を </span><a href="mailto:support@c-cya.com" style="border-bottom:2px dashed var(--shadow);">support@c-cya.com</a><span data-i18n="investigating1NoteAfterEmail"> へ送ってもらえると助かります</span></p>
         </div>
       </details>
@@ -283,6 +312,47 @@
         </div>
       </details>
       <details>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="howTo19Question">ウィジェットが一覧に出てこない（iPhone）</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <div class="qa-body">
+          <span class="qa-chip a">A</span>
+          <p class="qa-a" data-i18n="howTo19Answer">ホーム画面とロック画面のウィジェットは
+iOS 17 から使えます。
+アプリは iOS 16.4 から入りますが、
+16 の端末では、ウィジェットの一覧に
+出てきません。
+設定 → 一般 → 情報 で、
+iOS の版を確かめてみてください。</p>
+          <p class="qa-note" data-i18n="howTo19Note">ウィジェットの名前は「打刻と時間」「ねこと今週」です。アプリ名では並ばないことがあります</p>
+        </div>
+      </details>
+      <details>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="howTo20Question">ウィジェットのボタンが効かない・時間が0分のまま（Android）</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <div class="qa-body">
+          <span class="qa-chip a">A</span>
+          <p class="qa-a" data-i18n="howTo20Answer">端末の電池の設定で、アプリが
+「制限」になっていると、
+ウィジェットから打刻できず、
+時間も止まったままになります。
+設定 → アプリ → ねこ勤怠 → 電池
+をひらいて、「制限」以外を
+選んでください。</p>
+          <p class="qa-note" data-i18n="howTo20Note">端末によって「バックグラウンドの制限」「省電力」など、呼び方がちがいます</p>
+        </div>
+      </details>
+      <details>
+        <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="howTo21Question">ロック画面のねこが消えてしまった（iPhone）</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
+        <div class="qa-body">
+          <span class="qa-chip a">A</span>
+          <p class="qa-a" data-i18n="howTo21Answer">記録は消えていません。
+アプリをひらくか、次の打刻をすると
+また出てきます。
+ロック画面の表示は iPhone の決まりで、
+はたらきはじめてから時間がたつと
+自動で消えることがあります。</p>
+          <p class="qa-note" data-i18n="howTo21Note">表示を左へスワイプすると、自分で消すこともできます。記録には影響しません</p>
+        </div>
+      </details>
+      <details>
         <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="howTo11Question">機種を変えるとき、記録は引きつげますか？</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
@@ -440,9 +510,10 @@
         <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="upcoming2Question">目標を、曜日ごと・週ごとに こまかく決めたい</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
         <div class="qa-body">
           <span class="qa-chip a">A</span>
-          <p class="qa-a" data-i18n="upcoming2Answer">シンプルなアプリでありたいので、
-細かい機能を含めたパワーアップ版を
-別のアプリとして作りたいです。</p>
+          <p class="qa-a" data-i18n="upcoming2Answer">曜日ごとに1日の目標を変えられるように
+したい、と考えています。
+週ごと・作業のカテゴリごとは、
+むずかしいかもしれません。</p>
           <p class="qa-note" data-i18n="upcoming2Note">ねこ勤怠では 設定が増えて ごちゃごちゃしないように、気をつけて作ります。</p>
         </div>
       </details>
