@@ -4,7 +4,7 @@ const PUBLISHED_MESSAGE = '公開しました。お手元に届くまで、1日�
 // 同期はチップの文言を書き換えるので、キーも一緒に書き、翻訳側（assets/roadmap/locales.json）が拾えるようにする
 const PUBLISHED_STATUS_KEY = 'statusPublished'
 const PUBLISHED_MESSAGE_KEY = 'whenPublished'
-const STATUS_PATTERN = /<span class="rv-chip st-(?:live|review|prep)"(?: data-i18n="[^"]*")?>[^<]*<\/span>/
+const STATUS_PATTERN = /<span class="rv-chip st-(?:live|review|prep|wip)"(?: data-i18n="[^"]*")?>[^<]*<\/span>/
 const TIMING_PATTERN = /<p class="rv-when"(?: data-i18n="[^"]*")?>[^<]*<\/p>/
 
 /** ページが翻訳の仕組みを使っていれば、書き足す要素にも翻訳キーを付ける。古い HTML にはキーを持ち込まない */

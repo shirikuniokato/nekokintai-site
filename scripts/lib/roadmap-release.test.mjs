@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { readFileSync } from 'node:fs'
 import test from 'node:test'
 import { markPublishedRoadmapVersions } from './roadmap-release.mjs'
 
@@ -105,4 +106,12 @@ test('公開版のカードがなければ失敗する', () => {
     () => markPublishedRoadmapVersions(roadmapFixture(), { ios: '3.0.0' }),
     /roadmap の ios に v3\.0\.0 のカードがありません/,
   )
+})
+
+test('実際の roadmap の対応中カードを公開済みにできる', () => {
+  const current = readFileSync(new URL('../../roadmap/index.html', import.meta.url), 'utf8')
+  const updated = markPublishedRoadmapVersions(current, { ios: '2.4.1', android: '2.4.1' })
+
+  assert.equal(updated.match(/<h2 class="rv-ver">2\.4\.1<\/h2><span class="rv-chip st-live" data-i18n="statusPublished">こうかいずみ<\/span><\/div>\n        <p class="rv-when" data-i18n="whenPublished">公開しました。お手元に届くまで、1日ほどかかることがあります<\/p>/g)?.length, 2)
+  assert.equal(markPublishedRoadmapVersions(updated, { ios: '2.4.1', android: '2.4.1' }), updated)
 })
