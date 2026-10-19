@@ -1,0 +1,92 @@
+{
+  "generatedAt": "2026-10-19T13:13:35.799Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "summaryJapanese": "critical はありません。high 3件、medium 9件です。ブランド名「ねこ勤怠」の改変、責める表現、通常UIへの猫語混入は見つかりませんでした。「がんばった貯金」は監査対象に含まれていません。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "howTo2Answer",
+      "severity": "medium",
+      "replacement": "When you open Home the next day,\nyou'll see \"Clock-out wasn't recorded.\"\nYou can edit the previous day's record\nfrom \"Edit time\" in that message.\nIf it doesn't appear, go to the \"Month\" screen,\ntap the previous day, and edit it there.",
+      "reasonJapanese": "引用されている実際の表示文言が一般的な説明に置き換わっており、UI文言としての対応関係が欠落しています。"
+    },
+    {
+      "locale": "en",
+      "key": "howTo12Answer",
+      "severity": "medium",
+      "replacement": "Yes, you can.\nTap the day on the \"Week\" screen\nand the \"Set as day off\" button will appear.\nYou can also tap the Boss on the Home screen\nto change this week's days off all at once.\nYou can also cancel it later.",
+      "reasonJapanese": "同じページでは画面名を「Month」「Home」のように固有のUI名として扱っていますが、ここだけ一般名詞の「week screen」になっています。"
+    },
+    {
+      "locale": "en",
+      "key": "supporter2Answer",
+      "severity": "high",
+      "replacement": "Joining alone won't switch your companion\nautomatically.\nIn \"Cat shop\" in Settings,\nselect the rainbow cat\nand tap \"Set as companion\".",
+      "reasonJapanese": "「相棒にする」が単なる「Choose」になっており、ボタンを押した結果が欠落しています。操作を誤認し得るUI文言です。"
+    },
+    {
+      "locale": "ko",
+      "key": "howTo24Answer",
+      "severity": "high",
+      "replacement": "'나만의 고양이'에서 만들 수 있어요.\n고양이 가게 오른쪽 위의 집 모양에서\n열고, '고양이 만들기'에서\n몸·무늬·윤곽·눈·목걸이·발바닥의 색,\n삼색·턱시도 같은 무늬,\n단모/장모를 고를 수 있어요.\n칸은 한 마리씩 한 번만 결제하는 방식이고,\n한 칸의 고양이는\n몇 번이든 다시 만들 수 있어요.",
+      "reasonJapanese": "「ハチワレ」を「젖소무늬（牛柄）」としており、別の柄を指しています。「턱시도」のほうが韓国語で意図を伝えられます。"
+    },
+    {
+      "locale": "ko",
+      "key": "howTo12Answer",
+      "severity": "medium",
+      "replacement": "가능해요.\n주간 화면에서 해당 날짜를 탭하면\n'쉬는 날로 하기' 버튼이 나와요.\n홈 화면의 사장님을 눌러도\n이번 주 휴일을 한 번에 바꿀 수 있어요.\n나중에 취소할 수도 있어요.",
+      "reasonJapanese": "「주 화면」は「主画面」とも読めてホーム画面と紛らわしいため、週表示を意味する「주간 화면」に統一する必要があります。"
+    },
+    {
+      "locale": "ko",
+      "key": "upcoming2Answer",
+      "severity": "medium",
+      "replacement": "요일마다 하루 목표를 다르게 정할 수 있게\n하고 싶어요.\n주별 또는 작업 카테고리별 설정은\n어려울지도 몰라요.",
+      "reasonJapanese": "「주 단위나 작업 카테고리별은」は並列する名詞句と助詞の接続が不自然です。「설정은」を補うと対象が明確になります。"
+    },
+    {
+      "locale": "ko",
+      "key": "supporter3Answer",
+      "severity": "medium",
+      "replacement": "응원 플랜은 응원 화면의\n'구매 복원'에서 복원할 수 있어요.\n'나만의 고양이' 칸은\n'나만의 고양이' 화면의\n'구매한 칸 복원'에서 복원할 수 있어요.\n둘 다 같은 Apple ID / Google 계정을 사용하고,\n같은 OS(iPhone끼리·Android끼리)인\n경우에 복원할 수 있어요.",
+      "reasonJapanese": "「같은 … 계정으로, 같은 OS … 일 때」は助詞と条件節の接続が不自然で、同一アカウントと同一OSの両方が必要という条件が読み取りにくくなっています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo5Answer",
+      "severity": "medium",
+      "replacement": "直接按下班的話，\n紀錄會依日期分開記錄。\n如果想把跨夜工作的時數算在同一天，\n請將設定中的「一天的切換時間」\n改為「早上4點」等時間。\n事後新增紀錄時，\n如果輸入開始22:00、結束2:00，\n就會記錄為隔天的時間。",
+      "reasonJapanese": "「記録」が「計算」に変わり、「夜通しの仕事」が台湾では夜更かしの意味が強い「熬夜」になっています。記録動作と跨夜勤務を明示する必要があります。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming2Answer",
+      "severity": "medium",
+      "replacement": "我希望能讓每天的目標\n依星期幾分別設定。\n至於每週或每個工作類別，\n可能會比較困難。",
+      "reasonJapanese": "「每個星期幾」は台湾向け繁体字として不自然です。また、ページ全体の一人称「我」がここだけ「我們」に変わっています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely5Note",
+      "severity": "medium",
+      "replacement": "如果每週都固定在同一天休假，現在也可以從設定中指定。",
+      "reasonJapanese": "「固定的星期休假」は台湾では不自然な曜日表現です。「每週固定在同一天」のほうが意味も明確です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo17Answer",
+      "severity": "medium",
+      "replacement": "如果是同一天內，即使還在工作中，\n也能新增目前紀錄之前的時間。\n如果跨過日期還在工作中，\n請先按一次「下班」，再新增紀錄。",
+      "reasonJapanese": "「先下班一次」は実際に仕事を終える意味にも読めます。ボタン操作であることを明示しないと手順を誤認する可能性があります。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo19Answer",
+      "severity": "high",
+      "replacement": "主畫面和鎖定畫面的小工具\n需要 iOS 17 以上版本。\n應用程式可安裝於 iOS 16.4 以上版本，\n但在 iOS 16 裝置上，\n小工具不會出現在清單中。\n請前往「設定」→「一般」→「關於本機」，\n確認 iOS 版本。",
+      "reasonJapanese": "現訳は「iOS 16の端末が小工具一覧に表示されない」と読めます。表示されない対象は端末ではなく小工具であり、操作案内の意味が変わっています。"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "draft": "qa-draft.json",
+  "audits": { "claude-fable": "qa-audit-fable.json", "gpt": "qa-audit-codex.json" },
+  "adopt": [
+    { "locale": "zh-TW", "key": "howTo23Answer", "from": "claude-fable" },
+    { "locale": "zh-TW", "key": "supporter1Answer", "from": "claude-fable" },
+    { "locale": "en", "key": "investigating1Answer", "from": "claude-fable" },
+    { "locale": "en", "key": "upcoming2Answer", "from": "claude-fable" },
+    { "locale": "zh-TW", "key": "howTo19Note", "from": "claude-fable" },
+    { "locale": "ko", "key": "supporter3Answer", "from": "gpt" },
+    { "locale": "en", "key": "howTo12Answer", "from": "gpt" },
+    { "locale": "ko", "key": "upcoming2Answer", "from": "gpt" },
+    { "locale": "zh-TW", "key": "howTo5Answer", "from": "gpt" },
+    { "locale": "zh-TW", "key": "upcoming2Answer", "from": "gpt" },
+    { "locale": "zh-TW", "key": "unlikely5Note", "from": "gpt" },
+    { "locale": "zh-TW", "key": "howTo17Answer", "from": "gpt" },
+    { "locale": "zh-TW", "key": "howTo19Answer", "from": "gpt" }
+  ],
+  "manual": [
+    { "locale": "en", "key": "supporter3Answer", "text": "The Support plan can be restored from\n\"Restore purchases\" on the support screen.\nSlots in \"Your own cats\" can be restored from\n\"Restore purchased slots\"\non the \"Your own cats\" screen.\nBoth need the same\nApple ID / Google account\nand the same OS\n(iPhone to iPhone, or Android to Android)." },
+    { "locale": "ko", "key": "supporter3Answer", "text": "응원 플랜은 응원 화면의\n'구매 복원'에서 복원할 수 있어요.\n'나만의 고양이' 칸은\n'나만의 고양이' 화면의\n'구매한 칸 복원'에서 복원할 수 있어요.\n둘 다 같은\nApple ID / Google 계정을 사용하고,\n같은 OS(iPhone끼리·Android끼리)인\n경우에 복원할 수 있어요." },
+    { "locale": "zh-TW", "key": "supporter3Answer", "text": "支持方案可以從支持畫面的\n「恢復購買」來恢復。\n「專屬貓咪」的名額，\n則從「專屬貓咪」畫面的\n「恢復已購買名額」來恢復。\n兩者都需要相同的\nApple ID / Google 帳號，\n而且要在相同的作業系統才能恢復\n（iPhone 換 iPhone、Android 換 Android）。" },
+    { "locale": "zh-TW", "key": "howTo24Answer", "text": "可以在「專屬貓咪」裡建立。\n從貓咪小舖右上角的房子圖示\n打開後，在「建立貓咪」中\n可以選擇身體、花紋、輪廓、\n眼睛、項圈、肉球的顏色，\n三花、賓士貓等花紋，以及短毛／長毛。\n名額是買斷制，一個名額一隻貓，\n同一個名額裡的貓咪\n可以不限次數重新建立。" }
+  ],
+  "replace": []
+}

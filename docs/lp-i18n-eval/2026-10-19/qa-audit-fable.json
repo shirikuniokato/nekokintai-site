@@ -1,0 +1,57 @@
+{
+  "generatedAt": "2026-10-19T13:13:41.981Z",
+  "reviewer": "claude-fable",
+  "model": "claude-fable-5",
+  "summaryJapanese": "en・ko・zh-TW の全キーを、意味の欠落・責める表現・猫語混入・用語揺れ・韓国語助詞・台湾語彙・UI長の観点で確認しました。韓国語は助詞（.com으로／폼을／ねこ勤怠는 など）を含め問題なし。台湾向け語彙（應用程式・小工具・鎖定畫面・關於本機・賓士貓・番茄鐘 など）も適切です。責める表現や猫語の混入、UIとして不自然な長さは見当たりませんでした。指摘は6件で、英語のボタン名「相棒にする」の意味欠落（high）、zh-TW の「作業」混入による用語揺れ、作者の一人称が We／我們 に揺れる3箇所、zh-TW の「両方を相棒に選べる」と読める箇所、ウィジェット名注記の不自然な文、です。ウィジェット名の語順入れ替え（Time & punch 等）は3言語で一貫しているため実際の名称と判断し、指摘していません。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "supporter2Answer",
+      "severity": "high",
+      "replacement": "Just by joining, your companion\nwon't switch automatically.\nIn the \"Cat shop\" in Settings,\nplease select the rainbow cat\nand tap \"Set as companion\".",
+      "reasonJapanese": "原文のボタン名「相棒にする」が \"Choose\" になっており、「相棒に設定する」という意味が欠落しています。同じ回答群の supporter1Answer では \"as your companion\" と訳されているため、ボタン名も companion を含む表記にそろえます。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo23Answer",
+      "severity": "medium",
+      "replacement": "在首頁把手機橫放，\n貓咪和時間就會放大顯示。\n適合一邊看著一邊工作。\n上班、休息、下班，\n還有切換工作項目都可以操作。\n只有首頁會變成橫向，\n其他畫面仍維持直向。",
+      "reasonJapanese": "「切換作業」の「作業」は台湾華語では宿題・作業工程の意味で読まれ、他のキーで一貫して使っている「工作項目／工作類別」と用語が揺れています。howTo4Answer と同じ「工作項目」にそろえます。"
+    },
+    {
+      "locale": "en",
+      "key": "investigating1Answer",
+      "severity": "medium",
+      "replacement": "I had one report back in 2.0.2\nand none since then.\nI have fixed the redrawing since,\nso I believe it no longer happens.",
+      "reasonJapanese": "ページ全体は個人開発者の一人称 \"I\" で統一されていますが、この回答だけ \"We\" になっており話者が揺れています。一人称を I にそろえます。"
+    },
+    {
+      "locale": "en",
+      "key": "upcoming2Answer",
+      "severity": "medium",
+      "replacement": "I would like to let you set a different\ndaily goal for each day of the week.\nPer week or per task category\nmay be difficult.",
+      "reasonJapanese": "他の回答が \"I\" で統一されている中、この回答だけ \"We would like\" と複数形になり話者が揺れています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming2Answer",
+      "severity": "medium",
+      "replacement": "我希望可以讓每個星期幾\n設定不同的每日目標。\n每週或每個工作類別，\n可能會比較困難。",
+      "reasonJapanese": "zh-TW では他の回答が「我」で統一されているのに対し、ここだけ「我們」になっており話者が揺れています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "supporter1Answer",
+      "severity": "medium",
+      "replacement": "可以從兩隻彩虹貓中\n選一隻當夥伴，\n還能使用一個\n「專屬貓咪」的名額，\n用喜歡的顏色建立貓咪。\n功能上沒有任何差異。\n無論您是否支持，\n能做的事情都是一樣的。",
+      "reasonJapanese": "「可以把兩隻彩虹貓選為夥伴」は2匹を同時に相棒にできると読めますが、原文は「2匹のうちどちらかを相棒に選べる」の意味で、supporter2Note でもホームを歩くのは1匹と説明しています。誤解を避ける表現にします。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo19Note",
+      "severity": "medium",
+      "replacement": "小工具的名稱是「時間與打卡」和「貓咪與這一週」。有時不會列在應用程式名稱底下",
+      "reasonJapanese": "「有時不會用應用程式的名稱排在一起」は意味が取りづらく、原文の「アプリ名の下には並ばないことがある」が伝わりません。自然な台湾華語に直します。"
+    }
+  ]
+}
