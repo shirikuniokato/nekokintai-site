@@ -1,0 +1,274 @@
+{
+  "generatedAt": "2026-10-19T14:22:26.009Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "summaryJapanese": "重大な破綻はありませんが、意味が変わる追加表現、韓国語の助詞・引用処理、台湾向け語彙と画面名の揺れ、UIとして不自然な長さを含む38件を指摘します。各置換文は元のキーと改行数を維持しています。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "ios230Item1",
+      "severity": "medium",
+      "replacement": "You can use ねこ勤怠 in English, Korean,\nand Traditional Chinese. The store listing\nwill also be available in each language.",
+      "reasonJapanese": "1行目がUI文として長すぎるため、意味を保ったまま読みやすく分割しました。"
+    },
+    {
+      "locale": "en",
+      "key": "ios230Item2",
+      "severity": "medium",
+      "replacement": "The Home screen will also show that past records\ncan be edited from the Month screen.",
+      "reasonJapanese": "1行目が不自然に長く、「will now explain」も画面案内として硬いため簡潔にしました。"
+    },
+    {
+      "locale": "en",
+      "key": "v250Item2",
+      "severity": "high",
+      "replacement": "While you're on the Support plan,\nyou can use one slot for Your own cats",
+      "reasonJapanese": "原文は「枠を1つ使える」であり、「one extra slot」ではありません。「extra」によって既存枠とは別に追加されるという意味が加わっています。"
+    },
+    {
+      "locale": "en",
+      "key": "v250Item3",
+      "severity": "medium",
+      "replacement": "On the Home screen, turn your phone sideways\nto enlarge the cat and the time",
+      "reasonJapanese": "「see ... larger」は英語として不自然です。横向きにすると表示が大きくなるという意味を自然にしました。"
+    },
+    {
+      "locale": "en",
+      "key": "v240Item5",
+      "severity": "medium",
+      "replacement": "\"Add a record\" now lets you enter\ntime up to the current minute.",
+      "reasonJapanese": "「accepts the current minute」は入力可能な時刻範囲を表す英語として不自然です。"
+    },
+    {
+      "locale": "en",
+      "key": "ios210Item1",
+      "severity": "medium",
+      "replacement": "You can now choose from three work tracks\nand play them on the Home screen.",
+      "reasonJapanese": "「3 work BGMs」は母語話者向けの英語として不自然です。3曲から選んで再生できる意味を明確にしました。"
+    },
+    {
+      "locale": "en",
+      "key": "ios210Item5",
+      "severity": "medium",
+      "replacement": "Records you add or edit\nwill now be saved correctly.",
+      "reasonJapanese": "「adding and editing records are saved」では、操作そのものが保存されるように読めます。保存対象が記録だと分かる形にしました。"
+    },
+    {
+      "locale": "en",
+      "key": "ios100Item1",
+      "severity": "medium",
+      "replacement": "We released the app we made together with cats.",
+      "reasonJapanese": "「Released the app made together with cats.」は主語と修飾関係が不自然です。猫と一緒に作ったという原意は残しています。"
+    },
+    {
+      "locale": "en",
+      "key": "android202Item2",
+      "severity": "medium",
+      "replacement": "Messages at the bottom of the screen\nwill appear for less time and can also be dismissed\nby swiping down.",
+      "reasonJapanese": "元の1行目がUI表示には長すぎ、「display time of notifications at the bottom」も不自然です。"
+    },
+    {
+      "locale": "en",
+      "key": "android110Item3",
+      "severity": "medium",
+      "replacement": "You can now reach your weekly goal\nusing last week's Good Job Savings.",
+      "reasonJapanese": "「what you worked hard on last week」では機能の意味が曖昧です。指定用語の Good Job Savings を機能名として直接使いました。"
+    },
+    {
+      "locale": "ko",
+      "key": "sub",
+      "severity": "medium",
+      "replacement": "스토어 심사 시간을 예측하기 어려워,\niOS와 Android의 업데이트 시점이 다를 수 있어요.",
+      "reasonJapanese": "「도착하는 타이밍」は更新配信について不自然な直訳です。「업데이트 시점」が韓国語UIとして自然です。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios231Item1",
+      "severity": "medium",
+      "replacement": "응원 플랜을 구매하지 않았는데도\n'스토어에서 구매하지 못했어요.'라는 메시지가\n반복해서 표시되던 문제를 수정할게요.",
+      "reasonJapanese": "句点を含む引用文へ直接「가」を付けた「...'가」は助詞処理が不自然です。「라는 메시지가」で受ける形にしました。"
+    },
+    {
+      "locale": "ko",
+      "key": "v250Item1",
+      "severity": "medium",
+      "replacement": "'나만의 고양이'에서 원하는 색의 고양이를 만들 수 있어요\n(고양이 가게 오른쪽 위의 집 모양 아이콘에서)",
+      "reasonJapanese": "「집 모양에서」だけでは何を操作するのか不自然です。「집 모양 아이콘」でUI要素を明確にしました。"
+    },
+    {
+      "locale": "ko",
+      "key": "v241Item1",
+      "severity": "medium",
+      "replacement": "월 화면에서 그날을\n'쉬는 날로 하기'로 바꿀 수 있어요(지난 날짜도)",
+      "reasonJapanese": "「'쉬는 날로 하기'로 정하다」は助詞と述語の組み合わせが不自然です。「지난 날」も「지난 날짜」の方が自然です。"
+    },
+    {
+      "locale": "ko",
+      "key": "v240Item5",
+      "severity": "high",
+      "replacement": "'기록 추가하기'에서\n현재 시각까지 입력할 수 있어요",
+      "reasonJapanese": "「지금 이 분까지」は韓国語として成立しにくく、時刻の「分」と指示語が衝突しています。"
+    },
+    {
+      "locale": "ko",
+      "key": "whenPublished",
+      "severity": "medium",
+      "replacement": "공개했어요. 기기에 업데이트가 표시되기까지 하루 정도 걸릴 수 있어요.",
+      "reasonJapanese": "更新が端末へ「到着する」という「기기에 도착하다」は直訳調です。端末に更新が表示される表現にしました。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios210Item5",
+      "severity": "medium",
+      "replacement": "추가하거나 수정한 기록이\n올바르게 저장되도록 할게요.",
+      "reasonJapanese": "「기록 추가와 수정이 저장되다」では操作自体が保存されるように読めます。保存対象を記録にしました。"
+    },
+    {
+      "locale": "ko",
+      "key": "statusSkipped",
+      "severity": "medium",
+      "replacement": "공개하지 않음",
+      "reasonJapanese": "「공개 건너뜀」は機械翻訳調で、ステータスラベルとして不自然です。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios110Item5",
+      "severity": "medium",
+      "replacement": "주 화면에서 언제든지\n'지난주를 이미지로 공유하기'를 선택할 수 있어요.",
+      "reasonJapanese": "引用された機能名へそのまま「할 수 있어요」を続ける構文が不自然です。「를 선택하다」で助詞関係を整えました。"
+    },
+    {
+      "locale": "ko",
+      "key": "android202Item4",
+      "severity": "medium",
+      "replacement": "기존 기록을 수정할 때는\n오른쪽 위의 '끝내기'를 눌러\n변경 사항을 확정하게 돼요.",
+      "reasonJapanese": "「'끝내기'로 변경을 확정하다」はUI操作として不自然です。ボタンを押す操作を明示しました。"
+    },
+    {
+      "locale": "ko",
+      "key": "future8",
+      "severity": "medium",
+      "replacement": "반복 휴식 알림과 매일 리마인더",
+      "reasonJapanese": "通知機能に「휴식 권유」を使うと、人から休憩を勧められるように聞こえます。「휴식 알림」が自然です。"
+    },
+    {
+      "locale": "ko",
+      "key": "future11",
+      "severity": "medium",
+      "replacement": "기록이 0시간인 '지운 작업'을 완전히 삭제하기",
+      "reasonJapanese": "削除対象の引用語に目的格助詞「을」が欠けています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "lead",
+      "severity": "medium",
+      "replacement": "這裡依版本整理了即將推出的內容，\n以及過去的更新。",
+      "reasonJapanese": "原文にない一人称「我」と未来形「將」が加わっており、ページ説明としても不自然です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "sub",
+      "severity": "medium",
+      "replacement": "由於商店審核時間難以預估，\niOS 與 Android 的上架時間可能不同。",
+      "reasonJapanese": "「推出時間在……上」は直訳調です。台湾のアプリストア文脈では「上架時間」が自然です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios220Item5",
+      "severity": "medium",
+      "replacement": "修正跨日紀錄無法儲存時，\n畫面會卡住而\n無法關閉的問題。",
+      "reasonJapanese": "「無法儲存時，畫面會無法關閉」は「無法」が重なり不自然です。因果関係が読み取れる形にしました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "v250Item1",
+      "severity": "medium",
+      "replacement": "可以在「專屬貓咪」打造自己喜歡配色的貓咪\n（從貓咪小舖右上角的房子圖示進入）",
+      "reasonJapanese": "「建立喜歡顏色的貓咪」は台湾華語として語のつながりが不自然で、括弧内も操作方法が完結していません。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "v250Item3",
+      "severity": "medium",
+      "replacement": "在主畫面將手機轉為橫向，\n貓咪和時間就會放大顯示",
+      "reasonJapanese": "同じページで「ホーム」は「主畫面」と訳されており、この項目だけ「首頁」になっています。UI用語を統一しました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios241Item3",
+      "severity": "high",
+      "replacement": "從鎖定畫面記錄休息或下班時，\n需要先解鎖裝置",
+      "reasonJapanese": "元訳は「先に解錠してから記録する」とアプリ側の動作のように読めます。原文の要点は、利用者が端末を解錠する必要があることです。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios241Item5",
+      "severity": "medium",
+      "replacement": "主畫面與鎖定畫面的小工具\n可在 iOS 17 或以上版本使用",
+      "reasonJapanese": "「需要 iOS 17 以上」は台湾向けUIとしてやや不自然です。「iOS 17 或以上版本」が自然です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "v240Item3",
+      "severity": "medium",
+      "replacement": "「目前為止的紀錄」會新增\n所有期間的總計",
+      "reasonJapanese": "「全部期間」は台湾華語として不自然です。「所有期間」が自然です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "v240Item5",
+      "severity": "medium",
+      "replacement": "「新增紀錄」可輸入\n截至目前的時間",
+      "reasonJapanese": "「現在這一分鐘」は直訳調で、時刻の入力範囲を示す表現として不自然です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios201Item1",
+      "severity": "medium",
+      "replacement": "現在可以將「一天的切換時間」\n設定在 0 點到中午 12 點之間\n任一時間。",
+      "reasonJapanese": "「從……之間自由選擇了」は語法が不自然です。台湾華語の設定説明として自然な形にしました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios201Item4",
+      "severity": "medium",
+      "replacement": "從夜晚跨越到隔天的時間，\n也能透過「新增紀錄」輸入。",
+      "reasonJapanese": "時間を「加入」する表現は不自然です。時刻・時間の入力には「輸入」が適切です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "statusSkipped",
+      "severity": "medium",
+      "replacement": "未發布",
+      "reasonJapanese": "「略過發布」は機械翻訳調で、台湾向けのステータスラベルとして不自然です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios120Item7",
+      "severity": "medium",
+      "replacement": "您可以從設定中開啟聯絡頁面。",
+      "reasonJapanese": "原文にない一人称「我」が追加されています。「聯絡我的頁面」はUI名称としても不自然です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios110Item5",
+      "severity": "medium",
+      "replacement": "您可以隨時從週畫面\n將上週紀錄分享為圖片。",
+      "reasonJapanese": "「以圖片分享上週」は目的語が曖昧で不自然です。共有する対象が上週の記録だと分かる形にしました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "future3",
+      "severity": "medium",
+      "replacement": "飼養多隻貓咪（多隻一起走動）",
+      "reasonJapanese": "「一起散步」は猫を散歩に連れていく意味に寄りやすく、画面内で何匹も一緒に歩くという原意からずれます。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "jumpToFuture",
+      "severity": "medium",
+      "replacement": "查看「未來想做的事」▾",
+      "reasonJapanese": "「查看」と項目名の間だけに空白があり、UIラベルとして不自然です。項目名を括弧で明確にしました。"
+    }
+  ]
+}

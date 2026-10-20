@@ -1,0 +1,134 @@
+{
+  "generatedAt": "2026-10-19T14:22:20.106Z",
+  "reviewer": "claude-fable",
+  "model": "claude-fable-5",
+  "summaryJapanese": "3言語とも致命的な誤訳・意味の欠落・責める表現・通常UIへの猫語混入はありませんでした。指摘は主に用語・文体の揺れです。韓国語は 2.4.1 のまとまりと koreanWeekShareFix だけが합니다체で、他は해요체のため統一を推奨。v240Item5 の「이 분」は「この方」と読めるため言い換え、ios110Item5 は引用名詞の後に「를」が欠けています。繁体字は「首頁」と「主畫面」、「作業」と「工作」の揺れを統一。英語と繁体字の v250Item2 は原文にない「extra／額外」が加わっているので削除。英語は whenInProgress だけ「We」で、ページ全体の一人称「I」とずれています。地域語彙（應用程式・小工具・鎖定畫面・點按・匯出・日圓・隱私權政策）は台湾向けとして問題ありません。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "v250Item2",
+      "severity": "medium",
+      "replacement": "While you're on the Support plan,\nyou can use one slot in Your own cats",
+      "reasonJapanese": "原文は「枠を1つ使えます」で、「extra（追加で）」という情報はありません。非加入時に別枠があるかどうかは原文から読めないため、原文どおり「1枠使える」に戻します。"
+    },
+    {
+      "locale": "en",
+      "key": "android110Item3",
+      "severity": "medium",
+      "replacement": "You can now reach your weekly goal\nwith the extra hours from last week (Good Job Savings).",
+      "reasonJapanese": "「what you worked hard on last week」は「先週がんばった作業内容」と読めてしまい、「先週がんばった分の時間（貯金）」という意味が伝わりません。時間であることが分かる表現にします。"
+    },
+    {
+      "locale": "en",
+      "key": "whenInProgress",
+      "severity": "medium",
+      "replacement": "Submitted for review. I'll update this page once it's released.",
+      "reasonJapanese": "ページ全体は futureHeading や wantMoreBeforeLink のように個人開発者の一人称「I」で書かれていますが、このキーだけ「We」になっており語り手が揺れています。"
+    },
+    {
+      "locale": "en",
+      "key": "ios230Item1",
+      "severity": "medium",
+      "replacement": "You will be able to use the app in English,\nKorean, and Traditional Chinese. The store listing\nwill also be available in each language.",
+      "reasonJapanese": "1行目が約75文字と突出して長く、2・3行目が短いため、他の項目と比べて行の長さが不揃いです。改行数を変えずに3行へ均等に配分します。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios241Item1",
+      "severity": "medium",
+      "replacement": "퇴근한 뒤에도 잠금 화면의 시간이\n계속 늘어나던 문제를 고쳐요",
+      "reasonJapanese": "ページ全体は해요体で統一されていますが、2.4.1 の項目だけ합니다体（고칩니다）になっており、同じカード内の ios241Item3・ios241Item5 とも文体が揺れています。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios241Item2",
+      "severity": "medium",
+      "replacement": "오래 일하면 잠금 화면의 고양이가\n사라진 채 돌아오지 않던 문제를 고쳐요",
+      "reasonJapanese": "합니다体（고칩니다）がページ全体の해요体と揃っていないため統一します。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios241Item4",
+      "severity": "medium",
+      "replacement": "iOS 26에서 홈 화면을 투명하게 하거나\n색을 입히면 위젯이 하얗던 문제를 고쳐요",
+      "reasonJapanese": "합니다体（고칩니다）がページ全体の해요体と揃っていないため統一します。"
+    },
+    {
+      "locale": "ko",
+      "key": "android241Item1",
+      "severity": "medium",
+      "replacement": "일부 기기에서 '고양이와 이번 주' 위젯을\n둘 수 없던 문제를 고쳐요",
+      "reasonJapanese": "합니다体（고칩니다）がページ全体の해요体と揃っていません。あわせて、この項目だけ曲線引用符「‘ ’」で、他のキーの直線引用符「' '」と揺れているので統一します。"
+    },
+    {
+      "locale": "ko",
+      "key": "android241Item2",
+      "severity": "medium",
+      "replacement": "'일하는 동안의 알림'을\n'알림 받기'와 별개로 켤 수 있게 해요",
+      "reasonJapanese": "합니다体（합니다）がページ全体の해요体と揃っていません。引用符も他キーと同じ直線引用符に統一します。"
+    },
+    {
+      "locale": "ko",
+      "key": "android241Item3",
+      "severity": "medium",
+      "replacement": "배터리 설정의 제한으로 기록할 수 없을 때,\n그 사실을 위젯에 표시해요",
+      "reasonJapanese": "합니다体（표시합니다）がページ全体の해요体と揃っていないため統一します。"
+    },
+    {
+      "locale": "ko",
+      "key": "koreanWeekShareFix",
+      "severity": "medium",
+      "replacement": "주간 기록을 이미지로 저장할 때\n한글이 깨지는 문제를\n수정할게요.",
+      "reasonJapanese": "「수정할 예정입니다」だけ합니다体で、同じ「直します」系の他キー（수정할게요／고칠게요）と文体が揺れています。"
+    },
+    {
+      "locale": "ko",
+      "key": "v240Item5",
+      "severity": "medium",
+      "replacement": "'기록 추가하기'에서\n지금 시각까지 넣을 수 있어요",
+      "reasonJapanese": "「지금 이 분까지」の「이 분」は敬語の「この方」と読めてしまい、「いまの分（現在時刻）まで」という意味が取れません。「지금 시각까지」にすると意図どおり伝わります。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios110Item5",
+      "severity": "medium",
+      "replacement": "주 화면에서 언제든지\n'지난주를 이미지로 공유하기'를 할 수 있어요.",
+      "reasonJapanese": "引用符で囲んだ機能名の直後に目的格助詞「를」がなく「'공유하기'할 수 있어요」となっていて不自然です。「를」を補います。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios220Item2",
+      "severity": "medium",
+      "replacement": "응원하는 동안에는 감사의 뜻으로,\n무지갯빛 고양이 2마리가 고양이 가게에 들어와요.",
+      "reasonJapanese": "2.2.0 の他の項目はすべて文末に「.」が付いていますが、この項目だけ付いておらず、同じカード内で表記が揺れています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "v250Item3",
+      "severity": "medium",
+      "replacement": "在主畫面把手機橫放，\n貓咪和時間就會放大顯示",
+      "reasonJapanese": "「ホーム」は他のキー（ios230Item2・ios210Item1・ios201Item8・widgets240Item1）で「主畫面」と訳されていますが、ここだけ「首頁」になっており用語が揺れています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios120Item5",
+      "severity": "medium",
+      "replacement": "您可以將已刪除的工作清單收合起來了。",
+      "reasonJapanese": "「けした作業」は future11 で「已刪除的工作」、作業カテゴリは全体で「工作類別」と訳されています。「作業」は台湾では「宿題」と読まれやすく、用語も揺れるため「工作」に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios110Item6",
+      "severity": "medium",
+      "replacement": "即使在工作中，\n也能修改該次工作的「開始」時間。",
+      "reasonJapanese": "同じ文の前半で「工作中」と訳しているのに後半は「該次作業」となっており、一文の中で用語が揺れています。台湾では「作業」が宿題の意味に取られやすいため「工作」に揃えます。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "v250Item2",
+      "severity": "medium",
+      "replacement": "訂閱支持方案期間，\n可使用 1 個專屬貓咪名額",
+      "reasonJapanese": "原文は「枠を1つ使えます」で、「額外（追加で）」という情報はありません。非加入時の枠の有無は原文から読めないため、原文どおり「1枠使える」に戻します。"
+    }
+  ]
+}
