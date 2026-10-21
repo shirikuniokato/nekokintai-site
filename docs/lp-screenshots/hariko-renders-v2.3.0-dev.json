@@ -24,9 +24,9 @@
         "renderId": "0b1b799c-46ca-4010-9524-f39c3cf5061b"
       },
       "shop": {
-        "screenAssetId": "8ab23b89-92b1-4cb6-88c0-863b3782a9c5",
-        "renderGroup": "e328b854-cf94-438b-9e27-813654584c80",
-        "renderId": "beaf41c7-9c66-4ef4-aac7-62073d0be7b2"
+        "screenAssetId": "4e9eb75e-e736-40b8-9047-0eefaf85f7a0",
+        "renderGroup": "3fcd96d2-16e3-4838-b6be-f04d713f85ed",
+        "renderId": "a9a37135-bb1d-4e3f-895f-8e75bff1f4de"
       }
     },
     "ko": {
@@ -46,9 +46,9 @@
         "renderId": "689ff8f8-8907-4539-83fb-2fe83ba6515a"
       },
       "shop": {
-        "screenAssetId": "b7b70551-c6c2-42c4-9afb-d458bc673220",
-        "renderGroup": "f9c7f677-5222-4f6b-b7a7-352246a4577e",
-        "renderId": "35156a21-8ca9-4a9a-a4b0-3c8d0f2a920c"
+        "screenAssetId": "a4590edd-885f-44dd-9ae7-82c8363e48a5",
+        "renderGroup": "a51af144-0162-49fc-9d65-7da503131e95",
+        "renderId": "025d83d2-4789-4013-bff1-22eb44039025"
       }
     },
     "zh-TW": {
@@ -68,9 +68,9 @@
         "renderId": "9aa99f9a-c15a-4c9f-95b9-c65fdefcc344"
       },
       "shop": {
-        "screenAssetId": "aaeb011d-af48-47f0-a497-b654b07d7a21",
-        "renderGroup": "2d94c92b-ee73-4943-8099-590cb11a3fd6",
-        "renderId": "556cd8b1-9ae0-46fd-9d5a-6fc9f30839c2"
+        "screenAssetId": "b93e2f02-43bd-442c-90ed-aeedf75cde98",
+        "renderGroup": "a1a5a6c5-4ee1-4035-8af9-22c033cd2943",
+        "renderId": "aa281f4c-437b-489b-b0d4-881affd490d6"
       }
     }
   }

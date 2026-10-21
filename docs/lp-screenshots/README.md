@@ -74,3 +74,14 @@ npm run prepare:lp-screenshot-demo -- en docs/lp-screenshots/demo/en-week-2026-0
    公式 PNG の透明余白は言語で違う（en は四辺 41px、ko / zh-TW は上下 29px・左右 0）ので、`index.html` の `.store-badges` は
    言語ごとに実測値で打ち消している。実測は `npm run measure:lp-badges`、係数と実測の一致は `npm test`
    （`scripts/lib/lp-badge-padding.test.mjs`）、見た目の高さと間隔の一致は `npm run test:browser` が検査する。
+
+## 2026-10-19: 2.5.0 のねこ屋さんを差し替え
+
+2.5.0 でねこ屋さんの右上に「じぶんだけのねこ」への家のマークが入ったので、ねこ屋さんの画像だけ作り直した。
+`sources/<locale>/screen-shop.png` は **ストア画像の撮影素材**（`~/git/nekokintai` の `docs/store/screenshots/2.5.0/<locale>/sources/final-4.png`。
+fixture データ・既定順・prod-internal の APK `608e3e5`）をそのまま置き、`npm run render:lp-localized-screenshots -- en ko zh-TW --screens=shop` で作った。
+ねこ屋さんは記録データに依らない画面なので、LP 用デモデータで撮り直していない。ホーム・週・月は 2.3.0 のまま。
+日本語は `scripts/rebuild-lp-screenshots.sh <2.5.0 の ja final-1/4 を置いた app_root>` で作り、**`screen-shop.png` だけ採用**した。
+`screen-home.png` は LP 用に別に選んだ絵（8月29日・6時間7分・休憩中）で、ストア 1 枚目（2 時間・勤務中）とは違うので、作り直したものは使わず元のまま。
+rebuild スクリプトはホームも上書きするので、次に使うときはホームを戻すこと。
+本番への反映は両ストアで 2.5.0 が公開されてから（QA と同じ `qa/2.5.0` ブランチ）。
