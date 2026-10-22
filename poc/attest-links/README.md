@@ -33,3 +33,7 @@ Cloud project `playconsole-505815`（483856818891）は API を有効化済み�
 - Android 実機またはエミュレータの provider / token / verdict または正確な error code
 - Android App Links の verified 状態と HTTPS 起動
 - AASA CDN と iOS の Safari からの HTTPS 起動（同一ドメイン内遷移だけでは判断しない）
+
+実測結果: iPhone13 / iOS26.6.1 で `appattestdevelop` の attestation、増加する assertion counter、再送409を確認。Android15 / API35 Google Play エミュレータでは provider・token・Google解読が通り、`app: UNEVALUATED` / `device: []` / `license: UNEVALUATED` / `testing:false`、再送409を観測した。Cloud の基本 API 有効化と scoped token で解読できたが、Play Console のリンク設定はこの試作では確認していない。
+
+App Links は自動 verified となり、Chrome の別ドメインページから HTTPS をタップして dev アプリへ到達、`universal:true` と試験コードを受信。iOS も Safari から HTTPS・カスタムスキームでアプリへ戻れた。どちらもアプリを開く確認が表示されたとの本人確認あり。
