@@ -35,7 +35,7 @@ test('ビルド済み Functions は認証を装った投稿も受け付けない
 test('静的な公開物にサーバーのソース・設定・開発ファイルを混ぜない', async () => {
   const routes = JSON.parse(await readFile(resolve(outputDirectory, '_routes.json'), 'utf8'))
   assert.deepEqual(routes.include, ['/api/nekos/*'])
-  for (const privateEntry of ['server', 'functions', 'scripts', 'docs', 'node_modules', '.git', '.dev.vars']) {
+  for (const privateEntry of ['server', 'functions', 'scripts', 'docs', 'migrations', 'cloudflare', 'node_modules', '.git', '.dev.vars']) {
     await assert.rejects(access(resolve(outputDirectory, privateEntry)), { code: 'ENOENT' })
   }
   await access(resolve(outputDirectory, 'privacy/index.html'))
