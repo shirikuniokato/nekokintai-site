@@ -3,18 +3,62 @@
 const LIKED_STORAGE_KEY = 'nekokintai.nekos.liked'
 const OWNER_PATTERN = /^[A-Za-z0-9_-]{1,64}$/
 
+const APP_CONTEXT_STORAGE_KEY = 'nekokintai.nekos.app'
+// サーバーが受ける上限と同じ。アプリは超えたら古いほうから送らない
+const HIDDEN_OWNERS_LIMIT = 100
+
 /**
  * アプリのシートから開かれたときの印。アプリは /nekos/?from=app（dev は from=app-dev）で開く。
  * 表示しない飼い主の印は hide=<印>,<印> で渡す想定（パラメータ名は仮。#246・#247 のアプリ側と合わせて決める）。
+ * 読んだら URL からは消して、このタブ（シート）の sessionStorage で持つ。シートの共有ボタンで URL を送ると、
+ * 受け取った人のストア案内が消え、表示しない一覧も他人に渡ってしまうため。
  */
-export function appContext(search = window.location.search) {
-  const params = new URLSearchParams(search)
+export function appContext(location = window.location) {
+  const params = new URLSearchParams(location.search)
+  if (!params.has('from') && !params.has('hide')) return readStoredContext()
   const from = params.get('from')
   const fromApp = from === 'app' || from === 'app-dev'
   const hiddenOwners = new Set(
-    (params.get('hide') ?? '').split(',').filter((owner) => OWNER_PATTERN.test(owner)),
+    (params.get('hide') ?? '').split(',').filter((owner) => OWNER_PATTERN.test(owner)).slice(0, HIDDEN_OWNERS_LIMIT),
   )
-  return { fromApp, isDev: from === 'app-dev', from: fromApp ? from : null, hiddenOwners }
+  const context = { fromApp, isDev: from === 'app-dev', from: fromApp ? from : null, hiddenOwners }
+  storeContext(context)
+  removeAppParams(location, params)
+  return context
+}
+
+/** 表示しないにした飼い主を足す。このタブの中で、ほかのページへ移っても覚えておく */
+export function addHiddenOwner(context, owner) {
+  context.hiddenOwners = new Set([...context.hiddenOwners, owner])
+  storeContext(context)
+}
+
+function readStoredContext() {
+  const empty = { fromApp: false, isDev: false, from: null, hiddenOwners: new Set() }
+  try {
+    const stored = JSON.parse(sessionStorage.getItem(APP_CONTEXT_STORAGE_KEY) ?? 'null')
+    if (stored?.from !== 'app' && stored?.from !== 'app-dev') return empty
+    const owners = Array.isArray(stored.hiddenOwners) ? stored.hiddenOwners.filter((owner) => OWNER_PATTERN.test(owner)) : []
+    return { fromApp: true, isDev: stored.from === 'app-dev', from: stored.from, hiddenOwners: new Set(owners) }
+  } catch {
+    return empty
+  }
+}
+
+function storeContext(context) {
+  try {
+    if (!context.fromApp) sessionStorage.removeItem(APP_CONTEXT_STORAGE_KEY)
+    else sessionStorage.setItem(APP_CONTEXT_STORAGE_KEY, JSON.stringify({ from: context.from, hiddenOwners: [...context.hiddenOwners] }))
+  } catch {
+    // 覚えておけないときは、リンクに付けなおす印（withAppParams）だけで引きつぐ
+  }
+}
+
+function removeAppParams(location, params) {
+  params.delete('from')
+  params.delete('hide')
+  const search = params.toString()
+  history.replaceState(history.state, '', location.pathname + (search ? `?${search}` : '') + location.hash)
 }
 
 /**

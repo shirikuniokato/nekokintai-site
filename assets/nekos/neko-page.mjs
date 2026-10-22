@@ -1,7 +1,7 @@
 // /nekos/<id> 1 匹のページ。
 import { catSvg, usedColorKeys } from './cat.mjs'
 import {
-  appContext, applyAppVisibility, copyOf, createLikeStore, heartSvg, onLocaleChange, rewriteInternalLinks, showToast, withAppParams,
+  addHiddenOwner, appContext, applyAppVisibility, copyOf, createLikeStore, heartSvg, onLocaleChange, rewriteInternalLinks, showToast, withAppParams,
 } from './common.mjs'
 import { fetchNeko, fetchOtherNekos } from './data.mjs'
 import { placeholderQrSvg } from './qr-placeholder.mjs'
@@ -173,7 +173,7 @@ async function load() {
   render()
   const id = catIdFromLocation()
   try {
-    const cat = id ? await fetchNeko(id) : null
+    const cat = id ? await fetchNeko(id, { hiddenOwners: context.hiddenOwners }) : null
     view.cat = cat
     view.others = await fetchOtherNekos({ excludeId: cat?.id ?? '', hiddenOwners: context.hiddenOwners })
     view.status = cat ? 'shown' : 'gone'
@@ -229,7 +229,7 @@ async function onShareClick() {
 function onBlockConfirm(event) {
   // 行き先（nekokintai://block?owner=…&label=…）はまだつながない。押した直後の絞りこみは、このページの中だけで済ませる
   if (event.currentTarget.getAttribute('href') === '#') event.preventDefault()
-  context.hiddenOwners = new Set([...context.hiddenOwners, view.cat.owner])
+  addHiddenOwner(context, view.cat.owner)
   $('np-block-dialog').close()
   $('np-block-open').hidden = true
   rewriteInternalLinks(context)
