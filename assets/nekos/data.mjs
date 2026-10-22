@@ -62,10 +62,11 @@ export function fetchNekos({ sort, page, hiddenOwners }) {
   return later({ cats: sorted.slice(page * PAGE_SIZE, end), hasMore: end < sorted.length })
 }
 
-/** 1 匹ぶん。見られないときは null */
-export function fetchNeko(id) {
+/** 1 匹ぶん。見られないとき・表示しないにした飼い主のねこちゃんのときは null */
+export function fetchNeko(id, { hiddenOwners }) {
   if (GONE_IDS.has(id)) return later(null)
-  return later(CATS.find((cat) => cat.id === id) ?? null)
+  const cat = CATS.find((candidate) => candidate.id === id)
+  return later(cat && !hiddenOwners.has(cat.owner) ? cat : null)
 }
 
 /** 1 匹のページの下に出す「ほかのねこちゃん」 */
