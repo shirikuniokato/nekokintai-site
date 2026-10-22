@@ -1,7 +1,7 @@
-// 端末証明と公開名の検査がそろうまで、投稿を受け付けない。
-export function onRequest() {
-  return Response.json(
-    { error: 'unavailable' },
-    { status: 503, headers: { 'Cache-Control': 'no-store' } },
-  )
+import { createHandler } from '../../../server/api/handler.mjs'
+import { productionWrite } from '../../../server/api/production-routes.mjs'
+
+const handle = createHandler(productionWrite, 'production')
+export function onRequest({ request, env }) {
+  return handle(request, env)
 }

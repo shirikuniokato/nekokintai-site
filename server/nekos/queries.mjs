@@ -3,7 +3,7 @@ export const VISIBLE_PUBLICATION = `p.withdrawn_at IS NULL AND p.replaced_at IS 
   AND EXISTS (SELECT 1 FROM neko_slots s WHERE s.publication_id = p.id)`
 
 // private な owner_hash を公開用の戻り値に含めない。
-const PUBLIC_COLUMNS = `p.id, p.code, p.name, p.author, o.public_token AS owner,
+const PUBLIC_COLUMNS = `p.id, p.code, p.name, p.author, p.revision, o.public_token AS owner,
   p.created_at, p.updated_at,
   (SELECT count(*) FROM neko_likes l WHERE l.publication_id = p.id) AS likes`
 

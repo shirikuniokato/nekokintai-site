@@ -1,0 +1,13 @@
+{
+  "name": "nekokintai-sharing-dev",
+  "pages_build_output_dir": "../../.pages-dist/development",
+  "compatibility_date": "2026-10-19",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": { "NEKOS_ENV": "development" },
+  "d1_databases": [{
+    "binding": "NEKOS_DB",
+    "database_name": "nekokintai-nekos-dev",
+    "database_id": "2b8dfa8e-699b-419b-ac5c-985e72388d32",
+    "migrations_dir": "../../migrations"
+  }]
+}

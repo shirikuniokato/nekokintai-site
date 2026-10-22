@@ -12,6 +12,7 @@ test('ビルド済み Functions は認証を装った投稿も受け付けない
     modules: true,
     scriptPath: resolve(outputDirectory, '_worker.js/index.js'),
     compatibilityDate: '2026-10-19',
+    compatibilityFlags: ['nodejs_compat'],
     d1Databases: ['NEKOS_DB'],
     serviceBindings: { ASSETS: () => new Response('static asset') },
   }))

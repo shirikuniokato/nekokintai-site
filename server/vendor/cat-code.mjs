@@ -1,0 +1,796 @@
+// 生成物。正本: shirikuniokato/nekokintai 33a29f363237652f3c22162e4f73ab3f0e3c9b1e src/shared/catCode.ts。手で直さない。
+
+// ../../nekokintai/release-2.6.0/src/shared/sprites.ts
+var SPRITES = {
+  walkA: [
+    "...............KK....KK...",
+    "...............KBK...KBK..",
+    "..............KBBBKKKBBBK.",
+    "..............KBBBBBBBBBK.",
+    ".............KBBBBBBBBBBBK",
+    "KKK..........KBBB--BB--BBK",
+    "KBBKK......KKKBBBBBBBBBBBK",
+    "KBBBBKKKKKKKBBCBBBBBBBBBK.",
+    "KKKBBBBBBBBBBBBCCCBBBBBKK.",
+    "..KKBBBBBBBBBBBBBBBBBBK...",
+    "...KBBBBBBBBBBBBBBBBBKK...",
+    "...KBBBBBBBBBBBBBBBBBK....",
+    "...KBBBBBBBBBBBBBBBBBK....",
+    "...KBBBKKKBBKKBBBBBBBK....",
+    "...KKBBK.KBBK.KBBKKBBK....",
+    "....KBBK.KBBK.KBBK.KBBK...",
+    "....KBBK.KBBK.KBBK.KBBK...",
+    "....KKKK.KKKK.KKKK.KKKK..."
+  ],
+  walkB: [
+    "...............KK....KK...",
+    "...............KBK...KBK..",
+    "..............KBBBKKKBBBK.",
+    "..............KBBBBBBBBBK.",
+    ".............KBBBBBBBBBBBK",
+    ".KKK.........KBBB--BB--BBK",
+    "KBBBKK.....KKKBBBBBBBBBBBK",
+    "KBBBBBKKKKKKBBCBBBBBBBBBK.",
+    "KKBBBBBBBBBBBBBCCCBBBBBKK.",
+    "..KKBBBBBBBBBBBBBBBBBBK...",
+    "....KBBBBBBBBBBBBBBBBKK...",
+    "....KBBBBBBBBBBBBBBBBK....",
+    "....KBBBBBBBBBBBBBBBBK....",
+    "...KBBBKKBBKKKBBBBBBBBK...",
+    "..KBBBK.KBBK..KBBKKKBBK...",
+    "..KBBKK.KBBKK.KBBK.KKBBK..",
+    "..KBBK..KBBBK.KBBBK.KBBK..",
+    "..KKKK..KKKKK.KKKKK.KKKK.."
+  ],
+  sit: [
+    "..............KK....KK....",
+    "..............KBK...KBK...",
+    ".............KBBBKKKBBBK..",
+    ".............KBBBBBBBBBK..",
+    "............KBBBBBBBBBBBK.",
+    "............KBBB--BB--BBK.",
+    ".......KKKKKBBBBBBBBBBBBK.",
+    "......KBBBBBBBBBBBBBBBBK..",
+    ".....KBBBBBBBBCBBBBBBBKK..",
+    ".....KBBBBBBBBBCCCBBBBK...",
+    ".....KBBBBBBBBBBBBBBBBK...",
+    "....KBBBBBBBBBBBBBKBBBKK..",
+    ".KKKBBBBBBBBBBBBBBKKBBBK..",
+    ".KBBBKKBBBBBBBBBBBBKBBBBK.",
+    ".KKKK..KKKKKKKKKKKKKKKKKK."
+  ],
+  sleep: [
+    "..........KK...KK.........",
+    ".......KKKBBKKKBBKKK......",
+    ".....KKBBBBBBBBBBBBBKK....",
+    "...KKBBBBBBBBBBBBBBBBBK...",
+    "..KBBBBBBBBBBBBBBBBBBBBK..",
+    ".KBBBBBBBBBBB--BB--BBBBBK.",
+    ".KBBBBBBBBBBBBBBBBBBBBBBK.",
+    ".KBBBBBBBBCBBBBBBBBBBBBBK.",
+    ".KBBBBBBBBBCCBBBBBBBBBBBK.",
+    "..KBBBBBBBBBBBBBBBBBBBBK..",
+    "...KKBBBBBBBBBBBBBBBBKK...",
+    ".....KKKKKKKKKKKKKKKK....."
+  ],
+  /** 週のお祝いでひょこっと顔を出す */
+  happy: [
+    ".........KK....KK.........",
+    ".........KBK...KBK........",
+    "........KBBBKKKBBBK.......",
+    "........KBBBBBBBBBK.......",
+    ".......KBBBBBBBBBBBK......",
+    "......KKKBB--BB--BBKKKK...",
+    ".....KBBKKBBBBBBBBBKBBKK..",
+    ".....KBBBKCBBBBBBBKBHBBK..",
+    ".....KBBBKBCCCBBBKKBHHBK..",
+    ".....KBBBKBBBBBBBKBBBBK...",
+    ".....KBBBBBBBBBBBBBBBBK..."
+  ]
+};
+
+// ../../nekokintai/release-2.6.0/src/shared/skins.ts
+var skinCopy = {};
+function localizedSkin(skin) {
+  return Object.defineProperties(skin, {
+    name: { enumerable: true, get: () => skinCopy[skin.id]?.name ?? skin.id },
+    desc: { enumerable: true, get: () => skinCopy[skin.id]?.description ?? "" }
+  });
+}
+var MIKE_SPRITES = {
+  walkA: [
+    "...............KK....KK...",
+    "...............KTK...KOK..",
+    "..............KTTTKKKOOOK.",
+    "..............KTTTTBOOOOK.",
+    ".............KTTTBBBOOOOOK",
+    "KKK..........KTTB--BB--OOK",
+    "KBOKK......KKKBBBBBBBBOOOK",
+    "KBOOTKKKKKKKBBCBBBBBBBBBK.",
+    "KKKTTTTTTTOOBBBCCCBBBBBKK.",
+    "..KKBTTTOOOOBBBBBBBBBBK...",
+    "...KBBBBOOOOBBBBBBBBBKK...",
+    "...KBBBBBBBBBBBBBBBBBK....",
+    "...KBBBBBBBBBBBBBBBBBK....",
+    "...KBBBKKKBOKKBBTTBBOK....",
+    "...KKBBK.KBOK.KBTKKBOK....",
+    "....KBBK.KBBK.KBBK.KBBK...",
+    "....KBBK.KBBK.KBBK.KBBK...",
+    "....KKKK.KKKK.KKKK.KKKK..."
+  ],
+  walkB: [
+    "...............KK....KK...",
+    "...............KTK...KOK..",
+    "..............KTTTKKKOOOK.",
+    "..............KTTTTBOOOOK.",
+    ".............KTTTBBBOOOOOK",
+    ".KKK.........KTTB--BB--OOK",
+    "KBBOKK.....KKKBBBBBBBBOOOK",
+    "KBBOOTKKKKKKBBCBBBBBBBBBK.",
+    "KKBBOTTTTTOOOBBCCCBBBBBKK.",
+    "..KKBBTTTOOOOBBBBBBBBBK...",
+    "....KBBBOOOOOBBBBBBBBKK...",
+    "....KBBBBBBBBBBBBBBBBK....",
+    "....KBBBBBBBBBBBBBBBBK....",
+    "...KBBBKKBOKKKBBTTBBBOK...",
+    "..KBBBK.KBOK..KBTKKKBOK...",
+    "..KBBKK.KBBKK.KBBK.KKBBK..",
+    "..KBBK..KBBBK.KBBBK.KBBK..",
+    "..KKKK..KKKKK.KKKKK.KKKK.."
+  ],
+  sit: [
+    "..............KK....KK....",
+    "..............KTK...KOK...",
+    ".............KTTTKKKOOOK..",
+    ".............KTTTTBOOOOK..",
+    "............KTTTBBBOOOOOK.",
+    "............KTTB--BB--OOK.",
+    ".......KKKKKBBBBBBBBBOOOK.",
+    "......KTTTBBBBBBBBBBBBBK..",
+    ".....KTTTOOOBBCBBBBBBBKK..",
+    ".....KTTBOOOBBBCCCBBBBK...",
+    ".....KTBBBBBBBBBBBBBBBK...",
+    "....KOBBBBBBOBBBTTKBBOKK..",
+    ".KKKOOBBBBBBOBBBBTKKBOOK..",
+    ".KBBBKKBBBBBBBBBBBBKBBBBK.",
+    ".KKKK..KKKKKKKKKKKKKKKKKK."
+  ],
+  sleep: [
+    "..........KK...KK.........",
+    ".......KKKTTKKKOOKKK......",
+    ".....KKTTTTTTTTOOOOOKK....",
+    "...KKBBTTTTTTTBOOOOOOOK...",
+    "..KBBBBBTTTTBBBBOOOOOBBK..",
+    ".KTTBBBBBBBBB--BB--OBBBBK.",
+    ".KTTBBBBBBBBBBBBBBBBBBBBK.",
+    ".KTTOBBBBBCBBBBBBBBBBBBBK.",
+    ".KTOOOBBBBBCCBBBBBBBBBBBK.",
+    "..KBBBBBBBBBBBBBBBBBBBBK..",
+    "...KKBBBOOBBBBBBOOBBBKK...",
+    ".....KKKKKKKKKKKKKKKK....."
+  ],
+  happy: [
+    ".........KK....KK.........",
+    ".........KTK...KOK........",
+    "........KTTTKKKOOOK.......",
+    "........KTTTTBOOOOK.......",
+    ".......KTTTBBBOOOOOK......",
+    "......KKKTB--BB--OOKKKK...",
+    ".....KBBKKBBBBBBOOOKBBKK..",
+    ".....KBBBKCBBBBBBBKBHBBK..",
+    ".....KOBBKBCCCBBBKKBHHBK..",
+    ".....KOBBKBBBBBBBKBBBBK...",
+    ".....KBBBBBBBBBBBBBBBBK..."
+  ]
+};
+var FUWA_SPRITES = {
+  walkA: [
+    "...............KK....KK....",
+    ".KKK...........KBK...KBK...",
+    "KKBKK........KKBBKK.KKBBK..",
+    "KBBBK........KBBBBKKKBBBK..",
+    "KBBBKK.....KKBBBBBBBBBBBKK.",
+    "KBBBBBKKKKKBBBBBBBBBBBBBBK.",
+    "KBBBBBBBBBBBBBBBB--BB--BBK.",
+    "KBBBBBBBBBBKBBBBBBBBBBBBBBK",
+    "KKBBBBBBBBBBKKKBBBBBBBBBKKK",
+    ".KKBBBBBBBBBBBKKKBBBBBKKK..",
+    "..KBBBBBBBBBBBBBBBCCCBBK...",
+    "..KBBBBBBBBBBBBBBBBBBBBK...",
+    "..KBBBBBBBBBBBBBBBBBBKK....",
+    "...KBBBBBBBBKKBBBBBBBK.....",
+    "...KBBBKKKBBK.KBBKKBBK.....",
+    "....KBBK.KBBK.KBBK.KBBK....",
+    "....KBBK.KBBK.KBBK.KBBK....",
+    "....KKKK.KKKK.KKKK.KKKK...."
+  ],
+  // walkA/B とも本人の描き直し版（2026-08-12 第2稿）。体・しっぽ・頭は2コマで同じで、脚まわりだけ動く
+  walkB: [
+    "...............KK....KK....",
+    ".KKK...........KBK...KBK...",
+    "KKBKK........KKBBKK.KKBBK..",
+    "KBBBK........KBBBBKKKBBBK..",
+    "KBBBKK.....KKBBBBBBBBBBBKK.",
+    "KBBBBBKKKKKBBBBBBBBBBBBBBK.",
+    "KBBBBBBBBBBBBBBBB--BB--BBK.",
+    "KBBBBBBBBBBKBBBBBBBBBBBBBBK",
+    "KKBBBBBBBBBBKKKBBBBBBBBBKKK",
+    ".KKBBBBBBBBBBBKKKBBBBBKKK..",
+    "..KBBBBBBBBBBBBBBBCCCBBK...",
+    "..KBBBBBBBBBBBBBBBBBBBBK...",
+    "..KBBBBBBBBBBBBBBBBBBBK....",
+    "..KKBBBBBBBKKKBBBBBBBBBK...",
+    "...KBBBKKBBK..KBBKKKKBBKK..",
+    "...KBBK.KBBBK.KBBK..KKBBK..",
+    "...KBBK.KBBBK.KBBBK..KBBK..",
+    "...KKKK.KKKKK.KKKKK..KKKK.."
+  ],
+  sit: [
+    "...............KK....KK....",
+    "...............KBK...KBK...",
+    ".............KKBBKK.KKBBK..",
+    ".KKK.........KBBBBKKKBBBK..",
+    "KKBKK.....KKKBBBBBBBBBBBKK.",
+    "KBBBK..KKKBBBBBBBBBBBBBBBK.",
+    "KBBBKKKBBBBKBBBBB--BB--BBK.",
+    "KBBBBBBBBBBKBBBBBBBBBBBBBBK",
+    "KBBBBBBBBBBBKKKBBBBBBBBBKKK",
+    "KBBBBBBBBBBBBBKKKBBBBBKKK..",
+    "KKBBBBBBBBBBBBBBBBCCCBBK...",
+    ".KKBBBBBBBBBBBBBBBBBBBBK...",
+    "..KBBBBBBBBBBBBBBBKBBBKK...",
+    ".KKBBBBBBBBBBBBBBBKKBBBK...",
+    ".KBBBBKKBBBBBBBBBBBKBBBBK..",
+    ".KKKKK.KKKKKKKKKKKKKKKKKK.."
+  ],
+  // happy は片手あげのオリジナル構図（本人原画 2026-08-12）
+  happy: [
+    ".........KK....KK..........",
+    ".........KBK...KBK.........",
+    ".......KKBBKK.KKBBK........",
+    ".......KBBBBKKKBBBKK.......",
+    "......KBBBBBBBBBBBBK.KKK...",
+    "......KBBBBBBBBBBBBKKBBKK..",
+    ".....KBBBBB--BB--BBKBHBBK..",
+    ".....KBBBBBBBBBBBBBBKHHBK..",
+    ".....KKKKBBBBBBBBBKKKBBBK..",
+    "....KBBBKKKBBBBBKKKBBBBK...",
+    "...KBBBBBBBCCBCBBBBBBBK...."
+  ],
+  sleep: [
+    "..........KK...KK..........",
+    ".........KBK..KBKK.........",
+    "......KKKBBBKKBBBBKK.......",
+    ".....KBBBBBBBBBBBBBBKK.....",
+    "....KBBBBBBBBBBBBBBBBBK....",
+    "...KBBBBBBBBBBBBBBBBBBK....",
+    "..KBBBBBBBBBBBBBBBBBBBBK...",
+    ".KBBBBBBBBBBB--BB--BBBBBK..",
+    ".KBBBBBBBBBBBBBBBBBBBBBBK..",
+    ".KBBBBBBBBBBBBBBBBBBBBBBK..",
+    "..KBBBBBBBBBCCBCBBBBBBBBK..",
+    "..KBBBBBBBBBBBBBBBBBBBBBK..",
+    "..KKBBBBBBBBBBBBBBBBBBBKK..",
+    "...KKKKKKKKKKKKKKKKKKKKK..."
+  ]
+};
+var HATI1_SPRITES = {
+  walkA: [
+    "...............KK....KK....",
+    "...............KSK...KSK...",
+    "..............KSSSKKKSSSK..",
+    "..............KSSSSSSSSSK..",
+    ".............KSSSSSBSSSSSK.",
+    "KKK..........KSSS--B--SSSK.",
+    "KSSKK......KKKSSSSBBBSSSSK.",
+    "KSSSSKKKKKKKSBSSBBBBBBBSK..",
+    "KKKSSBBSSSSSSBBBCCCBBBSKK..",
+    "..KKBBBBSSSSBBBBBBBBBBK....",
+    "...KBBBBBBBBBBBBBBBBBKK....",
+    "...KBBBBBBBBBBBBBBBBBK.....",
+    "...KBBBBBBBBBBBBBBBBBK.....",
+    "...KBBBKKKBBKKBBBBBBBK.....",
+    "...KKBBK.KBBK.KBBKKBBK.....",
+    "....KBBK.KBBK.KBBK.KBBK....",
+    "....KBBK.KBBK.KBBK.KBBK....",
+    "....KKKK.KKKK.KKKK.KKKK...."
+  ],
+  walkB: [
+    "...............KK....KK....",
+    "...............KSK...KSK...",
+    "..............KSSSKKKSSSK..",
+    "..............KSSSSSSSSSK..",
+    ".............KSSSSSBSSSSSK.",
+    ".KKK.........KSSS--B--SSSK.",
+    "KSSSKK.....KKKSSSSBBBSSSSK.",
+    "KSSSSBKKKKKKSBSSBBBBBBBSK..",
+    "KKSSSBBSSSSSSBBBCCCBBBSKK..",
+    "..KKBBBBSSSSBBBBBBBBBBK....",
+    "....KBBBBBBBBBBBBBBBBKK....",
+    "....KBBBBBBBBBBBBBBBBK.....",
+    "....KBBBBBBBBBBBBBBBBK.....",
+    "...KBBBKKBBKKKBBBBBBBBK....",
+    "..KBBBK.KBBK..KBBKKKBBK....",
+    "..KBBKK.KBBKK.KBBK.KKBBK...",
+    "..KBBK..KBBBK.KBBBK.KBBK...",
+    "..KKKK..KKKKK.KKKKK.KKKK..."
+  ],
+  sit: [
+    "..............KK....KK.....",
+    "..............KSK...KSK....",
+    ".............KSSSKKKSSSK...",
+    ".............KSSSSSSSSSK...",
+    "............KSSSSSBSSSSSK..",
+    "............KSSS--B--SSSK..",
+    ".......KKKKKSSSSSBBBSSSSK..",
+    "......KBBBBBBSSSBBBBBBSK...",
+    ".....KBBBBBBBBBCCCBCBSKK...",
+    ".....KBBBBBBBBBBBBBBBBK....",
+    ".....KBBBBBBBBBBBBBBBBK....",
+    "....KSBBBBBBBBBBBBKBBBKK...",
+    ".KKKSSSBBBBBBBBBBBKKBBBK...",
+    ".KSSSKKBBBBBBBBBBBBKBBBBK..",
+    ".KKKK..KKKKKKKKKKKKKKKKKK.."
+  ],
+  sleep: [
+    "..........KK...KK..........",
+    ".......KKKSSKKKSSKKK.......",
+    ".....KKBSSSSSSSSSSSSKK.....",
+    "...KKSBBSSSSSSSSSSSSSSK....",
+    "..KSSSBBSSSSSSSBSSSSSSBK...",
+    ".KSSSBBBBSSSS--B--SSSBBBK..",
+    ".KSSSBBBBBSSBBBBBBSSBBBBK..",
+    ".KSSBBBBBBBBCCCBBBBBBBBBK..",
+    ".KBBBBBBBBBBBBBBBBBBBBBBK..",
+    "..KBBBSSSBBBBBBBBBBBBBBK...",
+    "...KKBSSSBBBBBBBBBBBBKK....",
+    ".....KKKKKKKKKKKKKKKK......"
+  ],
+  happy: [
+    ".........KK....KK..........",
+    ".........KSK...KSK.........",
+    "........KSSSKKKSSSK........",
+    "........KSSSSSSSSSK........",
+    ".......KSSSSSSBSSSSK.......",
+    "......KKKSSS--B--SSKKKK....",
+    ".....KBBKKSSSBBBSSSKBBKK...",
+    ".....KBBBKSBBBBBBBKBHBBK...",
+    ".....KBBBKBCCBCBBKKBHHBK...",
+    ".....KBBBKBBBBBBBKBBBBK....",
+    ".....KBBBBBBBBBBBBBBBBK...."
+  ]
+};
+var HATI2_SPRITES = {
+  walkA: [
+    "...............KK....KK....",
+    "...............KBK...KBK...",
+    "..............KBBBKKKBBBK..",
+    "..............KBBBBBBBBBK..",
+    ".............KBBBBBWBBBBBK.",
+    "KKK..........KBBB--W--BBBK.",
+    "KBBKK......KKKBBBBWWWBBBBK.",
+    "KBBBBKKKKKKKBBBBBWWWWWWBK..",
+    "KKKBBBBBBBBBBBBWWWWWWWBKK..",
+    "..KKBBBBBBBBBBBBWWWWWWK....",
+    "...KBBBBBBBBBBBBBWWWWKK....",
+    "...KBBBBBBBBBBBBBBWWBK.....",
+    "...KBBBBBBBBBBBBBBBBBK.....",
+    "...KBBBKKKBBKKBBBBBBBK.....",
+    "...KKBBK.KBBK.KBBKKBBK.....",
+    "....KWWK.KWWK.KBBK.KBBK....",
+    "....KWWK.KWWK.KWWK.KWWK....",
+    "....KKKK.KKKK.KKKK.KKKK...."
+  ],
+  walkB: [
+    "...............KK....KK....",
+    "...............KBK...KBK...",
+    "..............KBBBKKKBBBK..",
+    "..............KBBBBBBBBBK..",
+    ".............KBBBBBWBBBBBK.",
+    ".KKK.........KBBB--W--BBBK.",
+    "KBBBKK.....KKKBBBBWWWBBBBK.",
+    "KBBBBBKKKKKKBBBBBWWWWWWBK..",
+    "KKBBBBBBBBBBBBBWWWWWWWBKK..",
+    "..KKBBBBBBBBBBBBWWWWWWK....",
+    "....KBBBBBBBBBBBBWWWWKK....",
+    "....KBBBBBBBBBBBBBWWBK.....",
+    "....KBBBBBBBBBBBBBBBBK.....",
+    "...KBBBKKBBKKKBBBBBBBBK....",
+    "..KWBBK.KBBK..KBBKKKBBK....",
+    "..KWWKK.KWWKK.KBBK.KKBBK...",
+    "..KWWK..KWWWK.KWWWK.KWWK...",
+    "..KKKK..KKKKK.KKKKK.KKKK..."
+  ],
+  sit: [
+    "..............KK....KK.....",
+    "..............KBK...KBK....",
+    ".............KBBBKKKBBBK...",
+    ".............KBBBBBBBBBK...",
+    "............KBBBBBWBBBBBK..",
+    "............KBBB--W--BBBK..",
+    ".......KKKKKBBBBBWWWBBBBK..",
+    "......KBBBBBBBBBWWWWWWBK...",
+    ".....KBBBBBBBBBWWWWWWBKK...",
+    ".....KBBBBBBBBBBWWWWWBK....",
+    ".....KBBBBBBBBBBBWWWBBK....",
+    "....KBBBBBBBBBBBBBKBBBKK...",
+    ".KKKBBBBBBBWWBBBBBKKBBBK...",
+    ".KBBBKKBBBBWWWBBBWWKBBWWK..",
+    ".KKKK..KKKKKKKKKKKKKKKKKK.."
+  ],
+  sleep: [
+    "..........KK...KK..........",
+    ".......KKKBBKKKBBKKK.......",
+    ".....KKBBBBBBBBBBBBBKK.....",
+    "...KKBBBBBBBBBBBBBBBBBK....",
+    "..KBBBBBBBBBBBBWBBBBBBBK...",
+    ".KBBBBBBBBBBB--W--BBBBBBK..",
+    ".KBBBBBBBBBBBBWWWBBBBBBBK..",
+    ".KBBBBBBBBBBBWWWWWBBBBBBK..",
+    ".KBBBBBBBBBBBBBBBBBBBBBBK..",
+    "..KBBBBBBBBBBBBBBBBBBBBK...",
+    "...KKBBBBBBBBBBBBBBBBKK....",
+    ".....KKKKKKKKKKKKKKKK......"
+  ],
+  happy: [
+    ".........KK....KK..........",
+    ".........KBK...KBK.........",
+    "........KBBBKKKBBBK........",
+    "........KBBBBBBBBBK........",
+    ".......KBBBBBBWBBBBK.......",
+    "......KKKBBB--W--BBKKKK....",
+    ".....KWWKKBBBWWWBBBKWWKK...",
+    ".....KWWWKBWWWWWWBKWHWWK...",
+    ".....KBBBKWWWWWWWKKWHHWK...",
+    ".....KBBBKBWWWWWBKBBWWK....",
+    ".....KBBBBBBWWWBBBBBBBK...."
+  ]
+};
+var KIJITORA_SPRITES = {
+  walkA: [
+    "...............KK....KK....",
+    "...............KBK...KBK...",
+    "..............KBBKKKKKBBK..",
+    "..............KBBKBKBKBBK..",
+    ".............KBBBBBBBBBBBK.",
+    "KKK..........KKKB--BB--BKK.",
+    "KBKKK......KKKBBBBBBBBBBBK.",
+    "KBKBKKKKKKKKBBPBBBBBBBBBK..",
+    "KKKBKBBKBKBBBBBPPPBBBBBKK..",
+    "..KKBBBKBKBBBBBBBBBBBBK....",
+    "...KBBBBBBBBBBBBBBBBBKK....",
+    "...KBBBBBBBBBBBBBBBBKK.....",
+    "...KBBBBBBBBBBBBBBBBBK.....",
+    "...KBBKKKKBKKKBBBBBBKK.....",
+    "...KKBBK.KBBK.KBBKKBBK.....",
+    "....KBKK.KBKK.KBBK.KBBK....",
+    "....KBBK.KBBK.KBBK.KBBK....",
+    "....KKKK.KKKK.KKKK.KKKK...."
+  ],
+  walkB: [
+    "...............KK....KK....",
+    "...............KBK...KBK...",
+    "..............KBBKKKKKBBK..",
+    "..............KBBKBKBKBBK..",
+    ".............KBBBBBBBBBBBK.",
+    ".KKK.........KKKB--BB--BKK.",
+    "KBKBKK.....KKKBBBBBBBBBBBK.",
+    "KBKBKBKKKKKKBBPBBBBBBBBBK..",
+    "KKKBKBBBKBKBBBBPPPBBBBBKK..",
+    "..KKBBBBKBKBBBBBBBBBBBK....",
+    "....KBBBBBBBBBBBBBBBBKK....",
+    "....KBBBBBBBBBBBBBBBKK.....",
+    "....KBBBBBBBBBBBBBBBBK.....",
+    "...KBBBKKBBKKKBBBBBBBBK....",
+    "..KBKBK.KBKK..KBKKKKBBK....",
+    "..KBBKK.KBBKK.KBBK.KKBBK...",
+    "..KBBK..KBBBK.KBBBK.KBBK...",
+    "..KKKK..KKKKK.KKKKK.KKKK..."
+  ],
+  sit: [
+    "..............KK....KK.....",
+    "..............KBK...KBK....",
+    ".............KBBKKKKKBBK...",
+    ".............KBBKBKBKBBK...",
+    "............KBBBBBBBBBBBK..",
+    "............KKBB--BB--BKK..",
+    ".......KKKKKBBBBBBBBBBBBK..",
+    "......KBKBKBBBBBBBBBBBBK...",
+    ".....KBBKBKBBBPBBBBBBBKK...",
+    ".....KBBBBBBBBBPPPBBBBK....",
+    ".....KBBBBBBBBBBBBBBBBK....",
+    "...KKBBBBBKBBBBBBBKBBBKK...",
+    ".KKKBKBBBBBKBKBBBBKKBBBK...",
+    ".KBKBKKBBBBKBKBBBBBKBBBBK..",
+    ".KKKK..KKKKKKKKKKKKKKKKKK.."
+  ],
+  sleep: [
+    "..........KK...KK..........",
+    ".......KKKBKKKKKBKKK.......",
+    ".....KKBBBBKBKBKBBBBKK.....",
+    "...KKBBBBBBKBKBKBBBBBBK....",
+    "..KBBBBBBBBBBBBBBBBBBBBK...",
+    ".KBBBBBBBKBBB--B--BBKBBBK..",
+    ".KKKKBBBKBBBBBBBBBBBBKBBK..",
+    ".KBBBBBBBBPBBBBBBBBBBBBBK..",
+    ".KKKBBBBBBBPPPBBBBBBBBBBK..",
+    "..KBBBBBBBBBBBBBBBBBBBBK...",
+    "...KKBBBBBBBBBBBBBBBBKK....",
+    ".....KKKKKKKKKKKKKKKK......"
+  ],
+  happy: [
+    ".........KK....KK..........",
+    ".........KBK...KBK.........",
+    "........KBBKKKKKBBK........",
+    "........KBBKBKBKBBK........",
+    ".......KBBBBBBBBBBBK.......",
+    "......KKKBBB--B--BKKKKK....",
+    ".....KBBKKBBBBBBBBBKBBKK...",
+    ".....KBBBKPBBBBBBBKBHBBK...",
+    ".....KKKBKBPPPBBBKKBHHBK...",
+    ".....KBBBKBBBBBBBKBBBBK....",
+    ".....KKKBBBBBBBBBBBBBBK...."
+  ]
+};
+var RAINBOW_BANDS = ["1", "2", "3", "4", "5", "6", "7"];
+var RAINBOW_PALETTE = {
+  "1": "#FF8A8A",
+  "2": "#FFB259",
+  "3": "#FFE45C",
+  "4": "#8FE87C",
+  "5": "#6FD8F2",
+  "6": "#8FA8FF",
+  "7": "#D791FF"
+};
+function rainbowRows(rows) {
+  const isBody = (ch) => ch === "B" || ch === "C";
+  const diagonals = rows.flatMap(
+    (row, y) => Array.from(row, (ch, x) => isBody(ch) ? x + y : null).filter((d) => d !== null)
+  );
+  if (diagonals.length === 0) return rows.map((row) => row);
+  const first = Math.min(...diagonals);
+  const span = Math.max(1, Math.max(...diagonals) - first + 1);
+  return rows.map(
+    (row, y) => Array.from(row, (ch, x) => {
+      if (!isBody(ch)) return ch;
+      const band = Math.floor((x + y - first) / span * RAINBOW_BANDS.length);
+      return RAINBOW_BANDS[Math.min(RAINBOW_BANDS.length - 1, band)];
+    }).join("")
+  );
+}
+function rainbowSprites(base) {
+  const out = {};
+  for (const pose of Object.keys(SPRITES)) {
+    out[pose] = rainbowRows(base?.[pose] ?? SPRITES[pose]);
+  }
+  return out;
+}
+var SKINS = [
+  localizedSkin({ id: "white", body: "#FFFFFF", line: "#000000", accent: "#FF9FB0", collar: "#26CAD4", price: 0 }),
+  localizedSkin({ id: "kuro", body: "#232F34", line: "#6F8E9B", eyes: "#FFD84D", accent: "#FFDE59", collar: "#F5F5F5", price: 0 }),
+  localizedSkin({
+    id: "mike",
+    body: "#FFFFFF",
+    line: "#000000",
+    accent: "#E8B072",
+    collar: "#F62323",
+    palette: { O: "#FFA442", T: "#24211D" },
+    sprites: MIKE_SPRITES,
+    price: 0
+  }),
+  localizedSkin({ id: "sakura", body: "#FFF2F8", line: "#D65F92", accent: "#C2436B", collar: "#A7D96C", price: 0 }),
+  localizedSkin({ id: "cream", body: "#FDEFC9", line: "#9B6B3F", accent: "#FF9FB0", collar: "#F5A7C5", price: 0 }),
+  localizedSkin({ id: "mint", body: "#F8FFFC", line: "#6C4A33", eyes: "#6FCDE5", accent: "#4ECBAE", collar: "#3FB4C4", price: 0 }),
+  localizedSkin({
+    id: "fuwashiro",
+    body: "#FFFFFF",
+    line: "#000000",
+    accent: "#FF9FB0",
+    collar: "#26CAD4",
+    sprites: FUWA_SPRITES,
+    price: 0
+  }),
+  localizedSkin({
+    id: "fuwakuro",
+    // 体の色は くろねこ とおなじ。輪郭はふわくろ用に少し明るめ、首輪はライムグリーン（くろねこ と見分けるため）
+    body: "#232F34",
+    line: "#5C6B70",
+    eyes: "#FFD84D",
+    accent: "#FFDE59",
+    collar: "#7CFC3E",
+    sprites: FUWA_SPRITES,
+    price: 0
+  }),
+  localizedSkin({
+    id: "fuwakoge",
+    // 色は バニラねこ とおなじで、首輪だけ濃い茶色
+    body: "#FDEFC9",
+    line: "#9B6B3F",
+    accent: "#FF9FB0",
+    collar: "#6B4423",
+    sprites: FUWA_SPRITES,
+    price: 0
+  }),
+  localizedSkin({
+    id: "hati1",
+    body: "#FFFFFF",
+    line: "#000000",
+    eyes: "#E0B900",
+    accent: "#E0B900",
+    collar: "#2A8BC6",
+    palette: { S: "#202020" },
+    sprites: HATI1_SPRITES,
+    price: 0
+  }),
+  localizedSkin({
+    id: "hati2",
+    body: "#202020",
+    line: "#6F8E9B",
+    eyes: "#5EEBA7",
+    accent: "#5EEBA7",
+    palette: { W: "#FFFFFF" },
+    sprites: HATI2_SPRITES,
+    price: 0
+  }),
+  localizedSkin({ id: "gray", body: "#7D7D7D", line: "#3D3D3D", eyes: "#B9FF94", accent: "#FDC9D2", collar: "#FFFFFF", price: 0 }),
+  // きじとら・さばとら・ちゃとら は同じ絵の色ちがい。しま模様は輪郭の色（line）で描いてあるので、
+  // line を変えるとしまの色も一緒に変わる。きじとら・さばとらの肉球は原画どおり黒。
+  localizedSkin({
+    id: "kijitora",
+    body: "#A58B72",
+    line: "#3B332B",
+    eyes: "#FFBE3E",
+    accent: "#FFB0C4",
+    palette: { H: "#000000" },
+    sprites: KIJITORA_SPRITES,
+    price: 0
+  }),
+  localizedSkin({
+    id: "sabatora",
+    body: "#9AA6AC",
+    line: "#3A4247",
+    eyes: "#7FD8E8",
+    accent: "#FFB0C4",
+    palette: { H: "#000000" },
+    sprites: KIJITORA_SPRITES,
+    price: 0
+  }),
+  localizedSkin({
+    id: "chatora",
+    body: "#FFF5E5",
+    line: "#ECAF6A",
+    eyes: "#9B6B3F",
+    accent: "#F62323",
+    sprites: KIJITORA_SPRITES,
+    price: 0
+  }),
+  localizedSkin({
+    id: "niji",
+    // しろねこ の絵から、体を斜めの虹に。首輪は無し
+    body: "#FFFFFF",
+    line: "#000000",
+    accent: "#FF9FB0",
+    // 肉球は虹に合わせて白（共通の桃色だと虹から浮くため）
+    palette: { ...RAINBOW_PALETTE, H: "#FFFFFF" },
+    sprites: rainbowSprites(void 0),
+    price: 0
+  }),
+  localizedSkin({
+    id: "nijifuwa",
+    // ふわしろねこ の絵から、体を斜めの虹に。首輪は無し
+    body: "#FFFFFF",
+    line: "#000000",
+    accent: "#FF9FB0",
+    // 肉球は虹に合わせて白（共通の桃色だと虹から浮くため）
+    palette: { ...RAINBOW_PALETTE, H: "#FFFFFF" },
+    sprites: rainbowSprites(FUWA_SPRITES),
+    price: 0
+  })
+];
+var SKIN_IDS = SKINS.map((skin) => skin.id);
+
+// ../../nekokintai/release-2.6.0/src/shared/customCats.ts
+var CUSTOM_CAT_SLOT_COUNT = 10;
+var MAX_STORED_CUSTOM_CATS = CUSTOM_CAT_SLOT_COUNT + 1;
+var CUSTOM_CAT_BREEDS = ["short", "calico", "hachi", "tuxedo", "long"];
+var COLOR_PATTERN = /^#[0-9A-Fa-f]{6}$/;
+function isCustomCatColors(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return false;
+  return Object.keys(defaultCustomCatColors()).every((key) => COLOR_PATTERN.test(value[key]));
+}
+function defaultCustomCatColors() {
+  return {
+    body: "#FFFFFF",
+    pattern: "#FFA442",
+    patternSecondary: "#24211D",
+    line: "#000000",
+    eyes: "#000000",
+    collar: "#26CAD4",
+    paws: "#FFAEAE"
+  };
+}
+
+// ../../nekokintai/release-2.6.0/src/shared/catCode.ts
+var CAT_CODE_VERSION = 1;
+var CAT_CODE_LENGTH = 31;
+var COLOR_KEYS = ["body", "pattern", "patternSecondary", "line", "eyes", "collar", "paws"];
+var BYTE_LENGTH = 2 + COLOR_KEYS.length * 3;
+var ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
+var MAX_INPUT_LENGTH = 256;
+function encodeCatCode(cat) {
+  const breedIndex = CUSTOM_CAT_BREEDS.indexOf(cat.breed);
+  if (breedIndex < 0) throw new Error(`catCode: unknown breed ${String(cat.breed)}`);
+  if (!isCustomCatColors(cat.colors)) throw new Error("catCode: colors must be #RRGGBB");
+  const bytes = [CAT_CODE_VERSION, breedIndex];
+  for (const key of COLOR_KEYS) {
+    const value = parseInt(cat.colors[key].slice(1), 16);
+    bytes.push(value >> 16 & 255, value >> 8 & 255, value & 255);
+  }
+  return toBase64Url(bytes);
+}
+function decodeCatCode(code) {
+  if (typeof code !== "string" || code.length < 2 || code.length > MAX_INPUT_LENGTH) return broken();
+  const sextets = toSextets(code);
+  if (!sextets) return broken();
+  const [first = 0, second = 0] = sextets;
+  const version = first << 2 | second >> 4;
+  if (version > CAT_CODE_VERSION) return { ok: false, reason: "newer" };
+  if (version !== CAT_CODE_VERSION || code.length !== CAT_CODE_LENGTH) return broken();
+  const bytes = fromSextets(sextets);
+  if (!bytes) return broken();
+  const breed = CUSTOM_CAT_BREEDS[bytes[1] ?? 0];
+  if (breed === void 0) return { ok: false, reason: "newer" };
+  const colors = Object.fromEntries(COLOR_KEYS.map((key, index) => {
+    const offset = 2 + index * 3;
+    return [key, `#${bytes.slice(offset, offset + 3).map(toHexByte).join("")}`];
+  }));
+  return { ok: true, cat: { breed, colors } };
+}
+function broken() {
+  return { ok: false, reason: "broken" };
+}
+function toHexByte(byte) {
+  return byte.toString(16).toUpperCase().padStart(2, "0");
+}
+function toBase64Url(bytes) {
+  let text = "";
+  for (let index = 0; index < bytes.length; index += 3) {
+    const chunk = (bytes[index] ?? 0) << 16 | (bytes[index + 1] ?? 0) << 8 | (bytes[index + 2] ?? 0);
+    const charCount = Math.min(4, Math.ceil((bytes.length - index) * 8 / 6));
+    for (let charIndex = 0; charIndex < charCount; charIndex += 1) {
+      text += ALPHABET[chunk >> 18 - charIndex * 6 & 63];
+    }
+  }
+  return text;
+}
+function toSextets(text) {
+  const sextets = [];
+  for (const char of text) {
+    const value = ALPHABET.indexOf(char);
+    if (value < 0) return null;
+    sextets.push(value);
+  }
+  return sextets;
+}
+function fromSextets(sextets) {
+  if (sextets.length % 4 === 1) return null;
+  const bytes = [];
+  let buffer = 0;
+  let bits = 0;
+  for (const sextet of sextets) {
+    buffer = (buffer << 6 | sextet) & 4095;
+    bits += 6;
+    if (bits >= 8) {
+      bits -= 8;
+      bytes.push(buffer >> bits & 255);
+    }
+  }
+  if ((buffer & (1 << bits) - 1) !== 0) return null;
+  return bytes.length === BYTE_LENGTH ? bytes : null;
+}
+export {
+  CAT_CODE_LENGTH,
+  CAT_CODE_VERSION,
+  decodeCatCode,
+  encodeCatCode
+};

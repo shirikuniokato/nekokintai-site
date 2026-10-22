@@ -26,8 +26,13 @@
     "neko:ops": "node scripts/neko-ops.mjs"
   },
   "devDependencies": {
+    "esbuild": "0.28.2",
     "miniflare": "5.20261019.2-beta",
     "playwright": "^1.62.1",
     "wrangler": "4.152.0"
+  },
+  "dependencies": {
+    "cbor": "10.0.12",
+    "node-app-attest": "1.0.1"
   }
 }
