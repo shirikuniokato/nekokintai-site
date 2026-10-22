@@ -58,7 +58,9 @@ npm run db:check:local # ローカル D1 だけに SELECT 1 を実行
 
 `cloudflare/local/wrangler.json` はローカル検証専用。本番・preview の D1 binding や
 実 DB の ID を含めず、本番デプロイへ使わない。永続化ファイルは gitignore する。
-本番の D1 作成・migration・binding の追加は、仕様確認と #259 の端末証明 PoC の
+`npm run db:migrate:local` で保存層のスキーマをローカルだけに適用できる。
+保存層の実装範囲と残る接続は [docs/neko-api.md](docs/neko-api.md) を参照。
+本番の D1 作成・migration・binding の追加は、#259 の端末証明 PoC の
 結果を受けて別途行う。dev と本番は別 DB とし、本番へ証明の素通しを入れない。
 
 Wrangler と Miniflare は版を固定している。Miniflare 5 の公開された

@@ -7,7 +7,8 @@
       "binding": "NEKOS_DB",
       "database_name": "nekokintai-nekos-local",
       "database_id": "local-nekos-only",
-      "preview_database_id": "NEKOS_DB"
+      "preview_database_id": "NEKOS_DB",
+      "migrations_dir": "../../migrations"
     }
   ]
 }
