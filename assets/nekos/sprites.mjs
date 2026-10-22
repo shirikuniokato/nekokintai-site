@@ -2,6 +2,8 @@
 // nekokintai の src/shared/sprites.ts・skins.ts・customCats.ts（customCatSkin）から書き出したもの（d5fc7ad 時点）。
 // 記号は . が透明。色の名前は CustomCatColors のキー（body / pattern / patternSecondary / line / eyes / collar / paws）。
 // 品種の並びは CUSTOM_CAT_BREEDS と同じ。
+// 作りなおすとき: 品種ごとに customCatSkin へ色ごとにちがう目印の色を入れ、paletteOf と同じ並び（K - B P C H に柄を重ねる）で
+// 記号 → 目印の色 → 色の名前と逆引きし、spriteOf で sit / walkA / walkB / sleep / happy の 5 ポーズを書き出す。
 
 export const CAT_SPRITES = {
   short: {
