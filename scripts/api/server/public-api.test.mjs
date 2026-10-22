@@ -22,10 +22,12 @@ function request(path, method = 'GET', body, extraHeaders = {}) {
 }
 
 test('正本の code、NFKC、4言語の禁止語、OGP 未収録字を公開前に検査する', () => {
-  for (const name of ['', 'もち', 'Mochi', 'class', 'Scunthorpe', 'ナビ', '나비', '小貓咪糰子']) {
+  for (const name of ['', 'もち', 'Mochi', 'class', 'Scunthorpe', 'ナビ', '나비', '小貓咪糰子',
+    'サセックス', 'ファックス', 'ちんころ', '보지마', '媽媽的貓', 'Pussy']) {
     assert.equal(validatePublicationInput({ code: CODE, name }).ok, true, name)
   }
-  for (const name of ['セックス', 'fucking', '씨발', '幹你娘']) {
+  assert.equal(validatePublicNames({ name: '妈妈的猫' }, RULES).ok, true)
+  for (const name of ['セックス', 'fucking', '씨발', '幹你娘', '草泥馬']) {
     assert.equal(validatePublicationInput({ code: CODE, name }).reason, 'blocked', name)
   }
   assert.equal(validatePublicationInput({ code: CODE, author: '😀' }).reason, 'unsupported_character')
@@ -38,6 +40,8 @@ test('自動名は正本の20か所で、全4言語の80候補が辞書と OGP �
   const supported = new Set(glyphs.codepoints)
   assert.equal(fallbackName('ja', 0), '街の野良ねこ')
   assert.equal(fallbackName('en', 19), 'The rice field stray')
+  assert.equal(fallbackName('ko', 8), '신사 경내의 길고양이')
+  assert.equal(fallbackName('zh-TW', 12), '緣廊的浪貓')
   for (const locale of Object.keys(PLACES)) {
     assert.equal(PLACES[locale].length, 20)
     for (let index = 0; index < 20; index += 1) {

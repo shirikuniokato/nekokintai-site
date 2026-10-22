@@ -3,7 +3,7 @@ import { catSvg, usedColorKeys } from './cat.mjs'
 import {
   addHiddenOwner, appContext, applyAppVisibility, copyOf, createLikeStore, heartSvg, onLocaleChange, rewriteInternalLinks, showToast, withAppParams,
 } from './common.mjs'
-import { fetchNeko, fetchOtherNekos } from './data.mjs'
+import { fetchNeko, fetchOtherNekos, setLike, reportPublication } from './data.mjs'
 import { placeholderQrSvg } from './qr-placeholder.mjs'
 
 const ID_PATTERN = /^[A-Za-z0-9_-]{1,64}$/
@@ -103,7 +103,7 @@ function renderFigure() {
 
 function renderLike(cat) {
   const liked = likes.has(cat.id)
-  const count = cat.likes + (liked ? 1 : 0)
+  const count = cat.likes
   const button = $('np-like')
   button.setAttribute('aria-pressed', String(liked))
   button.setAttribute('aria-label', `${copyOf(liked ? 'unlike' : 'like')} ${count}`)
@@ -239,19 +239,46 @@ function onBlockConfirm(event) {
 
 function bindActions() {
   $('np-like').querySelector('[data-slot="heart"]').append(heartSvg(22))
-  $('np-like').addEventListener('click', () => {
-    likes.toggle(view.cat.id)
-    renderLike(view.cat)
-  })
+  $('np-like').addEventListener('click', () => void onLikeClick())
   $('np-share').addEventListener('click', () => void onShareClick())
   $('np-apply').addEventListener('click', onApplyClick)
   $('np-report-open').addEventListener('click', () => $('np-report-dialog').showModal())
-  // 通報の送り先（API・Slack）はまだつながない
-  $('np-report-form').addEventListener('submit', () => showToast(copyOf('reported')))
+  $('np-report-form').addEventListener('submit', onReportSubmit)
   $('np-block-open').addEventListener('click', () => $('np-block-dialog').showModal())
   $('np-block-ok').addEventListener('click', onBlockConfirm)
   $('np-retry').addEventListener('click', () => void load())
   narrowScreen.addEventListener('change', render)
+}
+
+async function onLikeClick() {
+  $('np-like').disabled = true
+  try {
+    const result = await setLike(view.cat.id, !likes.has(view.cat.id))
+    likes.set(view.cat.id, result.liked)
+    view.cat = { ...view.cat, likes: result.likes }
+    renderLike(view.cat)
+  } catch {
+    showToast(copyOf('errorBody'))
+  } finally {
+    $('np-like').disabled = false
+  }
+}
+
+async function onReportSubmit(event) {
+  event.preventDefault()
+  const button = event.submitter
+  if (!button || button.hasAttribute('data-close')) return
+  button.disabled = true
+  try {
+    const reason = new FormData(event.currentTarget).get('reason')
+    await reportPublication(view.cat.id, view.cat.revision, reason)
+    $('np-report-dialog').close()
+    showToast(copyOf('reported'))
+  } catch {
+    showToast(copyOf('errorBody'))
+  } finally {
+    button.disabled = false
+  }
 }
 
 function init() {

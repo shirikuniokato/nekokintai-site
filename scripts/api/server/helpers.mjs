@@ -25,13 +25,17 @@ export async function databaseFor(context) {
   }))
   context.after(() => worker.dispose())
   const database = await worker.getD1Database('NEKOS_DB')
+  await applyMigrations(database)
+  await registerOwner(database, { ownerHash: OWNER, publicToken: 'd'.repeat(64), now: 1 })
+  await registerOwner(database, { ownerHash: OTHER_OWNER, publicToken: 'e'.repeat(64), now: 1 })
+  return database
+}
+
+export async function applyMigrations(database) {
   const migrations = (await readdir('migrations')).filter((name) => name.endsWith('.sql')).sort()
   for (const name of migrations) {
     const schema = await readFile(`migrations/${name}`, 'utf8')
     // D1.exec は改行ごとに分割するため、trigger の BEGIN/END を一文のまま渡す。
     await database.exec(schema.replace(/^--.*$/gm, '').replaceAll('\n', ' '))
   }
-  await registerOwner(database, { ownerHash: OWNER, publicToken: 'd'.repeat(64), now: 1 })
-  await registerOwner(database, { ownerHash: OTHER_OWNER, publicToken: 'e'.repeat(64), now: 1 })
-  return database
 }

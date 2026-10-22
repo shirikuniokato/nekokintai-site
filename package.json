@@ -19,6 +19,7 @@
     "test:browser": "node --test scripts/browser/*.test.mjs",
     "build:static": "node scripts/build-pages.mjs",
     "build:functions": "node scripts/build-functions.mjs",
+    "build:development": "npm run build:static && node scripts/build-functions.mjs --development",
     "test:api": "npm run build && node --test scripts/api/*.test.mjs scripts/api/server/*.test.mjs",
     "db:check:local": "wrangler d1 execute NEKOS_DB --config cloudflare/local/wrangler.json --local --command \"SELECT 1 AS connected\"",
     "db:migrate:local": "wrangler d1 migrations apply NEKOS_DB --config cloudflare/local/wrangler.json --local",

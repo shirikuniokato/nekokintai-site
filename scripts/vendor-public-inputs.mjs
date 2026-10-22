@@ -16,6 +16,10 @@ await build({ stdin: { contents: "export { decodeCatCode, encodeCatCode, CAT_COD
   resolveDir: `${app}/src/shared`, loader: 'ts' }, bundle: true, format: 'esm', platform: 'neutral',
   outfile: 'server/vendor/cat-code.mjs', tsconfigRaw: {},
   banner: { js: `// 生成物。正本: shirikuniokato/nekokintai ${revision} src/shared/catCode.ts。手で直さない。` } })
+await build({ stdin: { contents: "export { customCatSkin } from './customCats.ts'; export { paletteOf, spriteOf } from './skins.ts'",
+  resolveDir: `${app}/src/shared`, loader: 'ts' }, bundle: true, format: 'esm', platform: 'neutral',
+  outfile: 'server/vendor/ogp-shared.mjs', tsconfigRaw: {}, minifyWhitespace: true,
+  banner: { js: `// 生成物。正本: shirikuniokato/nekokintai ${revision} src/shared。手で直さない。` } })
 
 const bytes = await readFile(glyphFile)
 if (bytes.subarray(0, 4).toString() !== 'NKGP' || bytes.readUInt16LE(4) !== 1) throw new Error('glyph pack の形式が違います')

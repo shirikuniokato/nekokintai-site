@@ -43,11 +43,11 @@ jobs:
         run: npm run test:api
 
       - name: Deploy production site
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy .pages-dist/site --project-name=nekokintai --branch=main --commit-hash=${{ github.sha }}
+        working-directory: cloudflare/production
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: node ../../node_modules/wrangler/bin/wrangler.js pages deploy ../../.pages-dist/site --project-name=nekokintai --branch=main --commit-hash=${{ github.sha }}
 
       - name: Deploy legacy redirect
         uses: cloudflare/wrangler-action@v3

@@ -13,7 +13,7 @@ npm run neko:ops -- status --environment local
 
 local は `cloudflare/local/wrangler.json` の D1 を Wrangler 経由で使う。既定の保存先も `db:migrate:local` と共通。
 テスト用に分ける場合は、migration と CLI の両方に同じ `--persist-to /絶対パス` を渡す。
-CLI は migration を自動適用しない。remote の D1 作成・migration・API 配線は #249 で行う。
+CLI は migration を自動適用しない。remote の D1 と migration は #249 で準備済み。開発環境の実 API と運営操作も通して確認している。
 
 ## 確認と操作
 
@@ -100,7 +100,7 @@ bind パラメータは [Cloudflare REST の仕様](https://developers.cloudflar
 個人情報の消去請求に対する物理削除ではない。本文・いいね・識別子・通報・監査・バックアップの保存期限と消去方法、証明を失った人の本人確認は #252 で決める。
 
 検証はローカル Miniflare D1 と Wrangler local。remote transport は模擬応答で検証する。
-dev / production D1 は未作成・未適用で、実リソースへの疎通・運営操作は未確認。#249 の環境構築後に staging で確認する。
+dev / production D1 は作成・migration適用済み。開発 Pages の実 URL で公開・再送・いいね・通報・非表示/解除・飼い主停止/解除・全体停止/再開・取り下げ・再公開・公開終了・通報処理済みを検証した。本番の所有者操作は #259 / #252 の公開条件待ちで閉じている。
 
 ```sh
 npm test

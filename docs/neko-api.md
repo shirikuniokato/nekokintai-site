@@ -1,75 +1,129 @@
-# ねこの API の実装状況（#249）
+# ねこ共有 API（#249）
 
-対象: `feat/neko-api` / [アプリ側の仕様](https://github.com/shirikuniokato/nekokintai/blob/release/2.6.0/docs/design/cat-share/README.md)。
-この文書は公開 HTTP API の完成した契約ではなく、ローカルで検証している保存層の引き継ぎ。
-本番へのマージ・デプロイ・D1 作成はまだ行わない。
+対象: release/2.6.0。保存層・運営 CLI #251 と、既存のサイト画面 #250 を接続する。
 
-## 実装した範囲
+## 実装と検証の状態
 
-- Pages Functions のコンパイルと API 専用のルーティング、静的ファイルの許可リスト。
-- ローカル D1 のスキーマ、投稿・編集・取り下げ・再公開・枠の入れ替え、いいね・取消、新しい順の取得。
-- 運営の非表示、飼い主の投稿停止、利用者のブロックが読み取り・更新に適用される条件。
-- 名前2つの NFKC・制御文字整理、UTF-16 の12文字上限、URL 拒否、語ごとの全体/単語境界/部分一致。
-- LDNOOBW の4言語の元データ。これは選別前のデータで、受付に使う辞書は未作成。
+- 新しい順・累計いいね順（同数は公開日時とidの降順）、直リンク、ほかのねこ、ブロック対象の除外。
+- 公開・編集・取り下げ・再公開・世代交換、署名対象の正規化、challenge / counter / 保存を同じ SQL 文で確定する receipt。
+- いいねの冪等な追加・取消、投稿/飼い主への通報、重複抑止、通知待ちの同時保存。
+- 正本 #245 の code 検査、NFKC / URL / 12 UTF-16文字、4言語の選別語、OGP の glyph pack と同じ文字集合の検査。
+- #250 で確定した20か所と英語名、ko / zh-TW の自動名。自動名は初回に決めて保持する。
+- 本人決定: **日次カウンターは追加しない。1枠1投稿＋短時間IP制限。にんき順は累計、同数なら新しい順。**
+- 既存画面の fetch・いいね・通報を実 API に接続。見た目や導線の再設計は含めない。
+- 1匹のHTMLと OGP PNG。名前・code が変わると og:image URL も変わる。非表示/取り下げ後は画像を返さない。画像も no-store とし、以前の応答を自サイトのキャッシュから返さない。SNS 側が既に保存した画像の回収はできない。
 
-`functions/api/nekos/[[path]].js` は現在すべて 503 を返す。下記の保存関数へ繋ぐ認証済みの HTTP ハンドラはまだない。
-本番の証明省略フラグや、クライアントが owner_hash を渡して操作する API は作らない。
+開発 Pages: https://nekokintai-sharing-dev.pages.dev （独立プロジェクト・独立 D1・noindex）。
+開発用証明省略は別 entrypoint のみ。本番 bundle に `server/development` を入れず、本番 DB も development proof を拒否する。
+本番用 D1 と秘密は準備済みだが、本番サイトのデプロイ・共有ブランチへのマージはしていない。
 
-## 保存関数の呼び出し条件
+**本番の所有者操作は `OWNER_WRITES_ENABLED` 未設定により503。**
+#259 の実機証明と #252 の公開条件を確認した後だけ `verified` に設定する。設定しても暗号学的検証は必須で、省略する本番経路はない。
 
-`registerOwner` / `publishPublication` 等は内部の保存関数。受信 JSON をそのまま渡す場所ではない。
-端末証明が確かめた利用者に対応する ownerHash をサーバーで求め、検査済みの code・名前・時刻を渡す。
-uid と IP の原文は DB に入れない。公開用 token は private な ownerHash とは別にする。
-HMAC の鍵や生成処理はまだ接続していない。
+## 公開 API
 
-`publishPublication` へは、枠番号、ねこの世代 generation、クライアントが知っている直前の expectedGeneration / expectedRevision を渡す。
-初回だけ expectedGeneration=null / expectedRevision=0。同じ世代の再公開・編集は同じ id を維持し、世代が変わったときはサーバーが新しい id を作る。
-公開・編集・取り下げ等で revision が進むので、古い編集要求は conflict になる。conflict のまま自動的に上書きしない。
-成功した応答が失われた場合も再送は conflict になる。`readCurrentPublication` で自分の世代・版・保存内容を読み直して照合できるが、認証済みの読み直し用 HTTP 導線か、署名対象の操作 ID による再試行の仕組みを接続するまで公開しない。
+すべて `/api/nekos` 以下。同一 origin の Web から使い、CORS の許可は追加しない。JSON API の応答は no-store。
 
-**アプリ側への依存:** generation はねこの色や code から推測できない。枠のねこを入れ替えたときだけ変わる識別子をアプリで保持し、バックアップでも引き継ぐ必要がある。
-取り込みで入れ替えた時点で `retirePublication` 相当の通知を行い、その後も旧世代の行と枠の履歴を残す。
-認証済みのリクエストに generation・revision・操作内容をどう結びつけるかは #259 の結果を受けて決める。
+| method / path | 内容 |
+| --- | --- |
+| `GET /` | `sort=new|popular&page=0&limit=8&hide=<印>,<印>&exclude=<id>` → `{cats, hasMore}` |
+| `GET /<id>` | `{cat}`。非公開・ブロック対象・存在しない投稿は404 |
+| `PUT /<id>/like` | `{liked: boolean}` → `{likes, liked}`。反転要求ではなく希望状態を送る |
+| `POST /<id>/reports` | `{revision, targetKind: publication|owner, reason}` → 202 `{accepted:true}` |
 
-fallbackName はサーバーが確認済みの場所一覧から初回に決める内部の値。クライアントの任意文字列を使わない。
-いったん保存した fallback_name は再公開で引き継ぐ。利用者の入力名が空ならこの名前を使う。
-4言語の全候補の確定・語の確認と、自動命名の接続は残っている。
+投稿は id / code / breed / colors / name / author / owner（公開用識別子）/ revision / likes / 日時を返す。
+private な owner hash、uid 原文、IP 原文、端末の鍵や証明を公開レスポンスへ含めない。
+`hide` はアプリが持つブロック一覧。100人まで。API の上限は50件/ページ。
 
-運営による1投稿の非表示と、飼い主の停止は別の状態。前者だけでは別の世代の公開まで禁止しない。悪用者の再投稿を止める措置では、#251 の運営スクリプトで飼い主の停止も行う。
+IP は Cloudflare が付ける `CF-Connecting-IP` を秘密付き HMAC にする。ヘッダーをクライアント入力からコピーする独自 proxy は挟まない。
+いいねは IP hash×投稿で1件。通報は IP hash×投稿×版×対象で重複を抑止する。
+短時間制限は、いいね60回/分、通報3回/10分、所有者操作60回/分。同じIPの共有回線も同じ枠になる。期限切れ bucket は削除する。
+通報時点の revision を保存し、本文の複製は持たない。受付後の編集は運営 CLI で版の差から分かる。
 
-## 同時実行
+## アプリからの操作手順
 
-- 既存の編集は、現在の枠・revision・非表示/停止の条件を1つの UPDATE 内で確認する。
-- 新規/入れ替えは、現在の枠と revision を条件に INSERT し、枠の更新・旧投稿の終了を D1.batch のトランザクションで行う。
-- いいねは「追加する/取り消す」を指定する。再試行で反転する toggle にはしない。投稿×IPハッシュの一意制約で重複を防ぎ、数は行から導く。
-- 新しい順は公開日時と id の組でページを進める。ブロック済み飼い主は一覧と直リンクで除外できる。
+1. `POST /challenge` に `{uid, purpose:'mutation', platform:'ios'|'android', keyId?, payload}`。
+2. 返る `clientData` をそのまま端末証明に結び付ける。Android の `requestHash` は返る SHA-256 hex。
+3. `POST /mutation` に `{uid, platform, challengeId:id, clientData, assertion? | token?}`。
+4. 成功は `{operationId, action, publication}`。応答を失ったら**同じ要求**を再送する。新しい操作IDで自動上書きしない。
 
-これらは challenge の消費・App Attest の counter とはまだ同一の原子的処理になっていない。
-#259 の前に実サービスへ繋いでよい、という意味ではない。
+payload の共通項目:
 
-## 検証
-
-```sh
-npm run test:api       # 公開ビルドの境界と、実際の workerd/D1 上の保存処理
-npm run db:migrate:local
-npm run db:check:local
+```json
+{
+  "operationId": "クライアントで生成したUUID",
+  "action": "publish",
+  "slot": 1,
+  "generation": "枠のねこの世代",
+  "expectedGeneration": null,
+  "expectedRevision": 0,
+  "code": "正本の31文字のcode",
+  "name": "",
+  "author": "",
+  "locale": "ja"
+}
 ```
 
-本番/preview の migration や、dev client 用の証明を省略する環境はここでは作成しない。
-ローカル設定は `cloudflare/local/wrangler.json` だけを使う。
+初回は expectedGeneration=null / expectedRevision=0。編集・再公開は直前の generation / revision。
+入れ替え時だけ generation を変え、端末の保存・バックアップでも引き継ぐ（#246/#247）。色や code から世代を推測しない。
+`withdraw` / `retire` は共通項目の code / name / author / locale が不要。
+`read` は operationId / action / slot だけで現在の保存状態を確認する。再送では当時の snapshot を返す。
 
-## 残っている範囲
+canonical payload に操作ID・owner hash・全入力・世代/版を含め、clientData は challenge / platform / key / payload digest を含む。
+サーバーが正規化して challenge と一緒に保存するため、受信 JSON の ownerHash や fallbackName を信用しない。
+challenge は120秒。保存直前にも DB 内で期限・未使用・用途・payload を照合する。
 
-1. #259 の App Attest / Play Integrity PoC。verified principal、challenge・counter・再試行と保存の原子的な境界。
-2. #245 の正本の code 検査の取り込み。保存層は検査済み code を受ける前提で、31文字であることだけを DB でも確認している。
-3. 名前の実辞書の選別と4言語の内容確認、自動名の4言語の候補。全体一致等の検査だけで網羅性を主張しない。
-4. uid ごとの投稿回数・IP 制限の値と実装、にんき順の期間・計算の決定。
-5. 投稿・閲覧・いいね・通報等の HTTP ハンドラ、通報データと Slack 通知の再試行、運営操作用の接続。
-6. 本番と dev の別 D1・binding・secrets、保存期間/完全削除等の #252 の方針、実環境での検証。
+iOS の初回は `purpose:'attest'` と keyId で challenge を取り、`POST /attest` に uid / platform / keyId / challengeId / clientData / attestation。
+公開鍵は1 uidにつき複数許可する。証明書・nonce・credential・production AAGUIDを検査し、未知の拡張は拒否する。
+以降の assertion は公開鍵と counter で検証する。counter更新と投稿保存が別々に成功する形にはしない。
 
-上記がそろうまで #249 は未完了、PR は draft のままにする。
+Android は Play 認識、package、アプリ署名鍵、device integrity、license、requestHash、時刻をすべて検査する。test verdict は本番で拒否する。
+生の token / assertion を DB に残さず、再送照合用の digest を保存する。
 
-## 運営操作の追加
+dev は同じ challenge / mutation 手順で platform を `development` とし、assertion/tokenなし。専用 URL・専用 D1 以外には使わない。
 
-運営 CLI と追加 migration の手順・保存契約は [neko-operations.md](./neko-operations.md) を参照。
-`0002_neko_operations.sql` 適用後の公開処理は全体停止と永久公開終了の条件を SQL 内で確認する。
+## 環境と秘密
+
+`cloudflare/development/wrangler.json` と `cloudflare/production/wrangler.json` がそれぞれの D1 を指定する。
+Pages は custom config path での deploy を受け付けないため、該当ディレクトリから Wrangler を起動する。
+
+```sh
+npm ci
+npm run test:api
+npm run build:development
+# Cloudflare の共有 loader で環境変数を設定してから
+(cd cloudflare/development && node ../../node_modules/wrangler/bin/wrangler.js pages deploy ../../.pages-dist/development --project-name nekokintai-sharing-dev --branch release/2.6.0)
+```
+
+秘密の正本:
+
+| vault item | 注入先 |
+| --- | --- |
+| `nekokintai/OWNER_PEPPER` / `IP_PEPPER` | 本番 Pages の同名 secret |
+| `nekokintai-sharing-dev/OWNER_PEPPER` / `IP_PEPPER` | 開発 Pages の同名 secret |
+| `nekokintai/PLAY_INTEGRITY_SA_JSON` | 本番 Pages の同名 secret |
+| `nekokintai/NEKOS_SLACK_WEBHOOK_URL` | GitHub Actions の同名 secret |
+
+owner pepper を変えると既存所有者へアクセスできなくなる。通常の secret 更新と同じ感覚で再生成しない。
+Play Integrity は専用 SA `nekokintai-integrity` の鍵から、playintegrity scope の10分tokenを作る。publisher の鍵や権限を使わない。
+2026-10-23 に本人の許可で、プロジェクト限定の managed key作成禁止を一時解除して発行した。vault保存後にプロジェクト override を削除し、継承される禁止が enforce=true に戻ったことを確認済み。
+OAuth と Google decode endpoint の実接続は確認済み。合成の不正 token が Google に400 INVALID_ARGUMENTで拒否されるところまでで、正規端末の verdict 実測は #259。
+
+## 通報通知
+
+通報と `neko_report_notifications` への記録を同じ SQL 文で保存する。
+`.github/workflows/notify-neko-reports.yml` が main 上で10分ごとに未送信を処理する。
+有効化変数は `NEKOS_NOTIFICATIONS_ENABLED=true`。leaseで並行送信を抑え、失敗は指数バックオフ、最大10回。
+Slack が受領した直後に応答が失われると重複通知する可能性がある。正本の通報自体は1件のまま。
+理由の自由文・IP・uidは Slack に送らず、通報ID・対象種別・投稿URLだけにする。
+手元からの確認と再送は `node scripts/neko-notifications.mjs production <target.json> plan|apply`。
+本番の定期実行は workflow が main に入ってから。実 Slack 送信は行わず、成功・失敗・lease競合・再送を模擬送信先で検証した。
+
+## 検証と残る公開条件
+
+`npm test` / `npm run test:browser` / `npm run test:api` / `npm run check:i18n`。
+開発環境では `scripts/verify-dev-neko-api.mjs`、`scripts/verify-dev-neko-page.mjs` を再実行できる。
+操作 CLI は [neko-operations.md](./neko-operations.md)。
+
+残る本番条件: #259 の署名アプリでの attestation/assertion/replay と Play配布版 verdict、#248 のアプリとの接続、#252 の公開規約・プライバシー・保存期限/完全削除、#250 の未完の画面翻訳・アプリへの反映導線。
+これらを API 単体のローカル検証で済んだ扱いにしない。本番で公開する前に、実際の署名・申告・画面との組合せを確認する。
