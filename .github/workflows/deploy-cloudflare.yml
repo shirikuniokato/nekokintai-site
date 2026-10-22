@@ -39,8 +39,8 @@ jobs:
       - name: Test locale switching in a browser
         run: npm run test:browser
 
-      - name: Build production assets
-        run: npm run build
+      - name: Build production assets and test Functions boundary
+        run: npm run test:api
 
       - name: Deploy production site
         uses: cloudflare/wrangler-action@v3
