@@ -1,0 +1,6 @@
+node_modules/
+.wrangler/
+.probe-dist/
+public/_worker.js/
+public/_routes.json
+.dev.vars

@@ -1,0 +1,17 @@
+{
+  "name": "nekokintai-attest-links-poc",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "npm run build && node --test test/*.test.mjs",
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "cbor": "10.0.12",
+    "node-app-attest": "1.0.1"
+  },
+  "devDependencies": {
+    "miniflare": "5.20261019.2-beta",
+    "wrangler": "4.152.0"
+  }
+}

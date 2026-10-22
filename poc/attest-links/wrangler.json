@@ -1,0 +1,22 @@
+{
+  "name": "nekokintai-attest-poc",
+  "pages_build_output_dir": "public",
+  "compatibility_date": "2026-10-19",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "vars": {
+    "IOS_BUNDLE_ID": "com.ccya.nekokintai.dev",
+    "IOS_APP_ID_PREFIX": "38KMU5TJWZ",
+    "ANDROID_PACKAGE": "com.ccya.nekokintai.dev",
+    "POC_EXPIRES_AT": "2026-10-26T15:00:00Z"
+  },
+  "d1_databases": [
+    {
+      "binding": "POC_DB",
+      "database_name": "nekokintai-attest-poc",
+      "database_id": "dc8bcb52-a15f-466f-b1e7-d98e2fcc02dd",
+      "preview_database_id": "POC_DB"
+    }
+  ]
+}

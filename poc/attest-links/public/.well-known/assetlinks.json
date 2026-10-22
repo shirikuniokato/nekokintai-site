@@ -1,0 +1,1 @@
+[{"relation": ["delegate_permission/common.handle_all_urls"], "target": {"namespace": "android_app", "package_name": "com.ccya.nekokintai.dev", "sha256_cert_fingerprints": ["3B:49:C5:C2:7E:5A:56:26:94:7A:8A:0E:B8:8C:34:EF:40:A8:41:CD:8B:0A:EA:54:CA:79:17:A5:3E:00:68:57"]}}]
