@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sheet return PoC</title>
+<style>
+body { font: 20px sans-serif; padding: 20px; }
+a, button { display: block; padding: 18px; margin: 14px 0; font: inherit; }
+</style>
+<h1>Sheet return PoC</h1>
+<p id="mode"></p>
+<a href="nekokintaidev://neko?code=TEST1">A: query TEST1</a>
+<a href="nekokintaidev://neko/TEST2">B: path TEST2</a>
+<button onclick="location.href='nekokintaidev://neko?code=TEST3'">C: location TEST3</button>
+<a href="?auto=1">D: load timer page</a>
+<p id="timer">No automatic navigation on this page.</p>
+<script>
+const automatic = new URLSearchParams(location.search).has('auto');
+document.querySelector('#mode').textContent = navigator.userAgent;
+if (automatic) {
+  document.querySelector('#timer').textContent = 'Automatic TEST4 in 3 seconds';
+  setTimeout(() => {
+    document.querySelector('#timer').textContent = 'Automatic TEST4 attempted';
+    location.href = 'nekokintaidev://neko?code=TEST4';
+  }, 3000);
+}
+</script>
+</html>
