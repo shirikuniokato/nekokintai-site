@@ -39,7 +39,8 @@ function readAttestationData(data, keyId) {
   requireValue(key instanceof Map && key.get(1) === 2 && key.get(3) === -7 && key.get(-1) === 1, 'credential_algorithm')
   requireValue(Buffer.isBuffer(key.get(-2)) && key.get(-2).length === 32
     && Buffer.isBuffer(key.get(-3)) && key.get(-3).length === 32, 'credential_point')
-  return { aaguid: data.subarray(37, 53).toString('utf8'), counter: 0 }
+  return { aaguid: data.subarray(37, 53).toString('utf8'), counter: 0,
+    flags: data[32], authenticatorExtensionsPresent: false }
 }
 
 export function verifyIosAttestation(input, policy, now = Date.now()) {

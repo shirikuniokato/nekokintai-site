@@ -17,6 +17,10 @@ App Attest は既存 MIT ライブラリ `node-app-attest@1.0.1` に、証明書
 
 Android の verdict は観測値であり、dev APK を正規ストア版として認証するものではない。Google の解読用認証情報がない場合は503で停止する。
 
+Google の鍵の発行は組織ポリシーで禁止されているため、鍵は作成しない。専用 service account `nekokintai-attest-poc@playconsole-505815.iam.gserviceaccount.com` に対する operator `admin@ncp-tech.com` の Token Creator 権限で、playintegrity scope だけの1時間 tokenを発行する。Worker secrets は `GOOGLE_ACCESS_TOKEN` と `GOOGLE_ACCESS_TOKEN_EXPIRES_AT`。残り60秒で503へ戻る。短期 token は vault に保存しない。
+
+Cloud project `playconsole-505815`（483856818891）は API を有効化済み。dev アプリの Play Console へのリンクは未確認。現在の setup 文書ではリンクは追加設定・テスト・上限増加用の推奨手順だが、実際に解読できるかは実測が必要。https://developer.android.com/google/play/integrity/setup
+
 ## 配置
 
 `npm run build` で `public/_worker.js` を作る。`wrangler.json` の D1 は試作専用。既存プロジェクトには配置しない。Worker secret と D1 binding を設定して `wrangler pages deploy public --project-name nekokintai-attest-poc --branch poc/attest-links`。
