@@ -12,14 +12,18 @@
 
 ```sh
 node --test scripts/lib/*.test.mjs
-node scripts/build-pages.mjs
+npm run test:api
 git push origin main
 ```
 
 同じ `main` を手動で再デプロイする場合だけ `npm run deploy` を使う。このコマンドは
 `main`、クリーンな作業ツリー、`origin/main` と同じHEADの3条件を満たさなければ失敗する。
 
-本体は `scripts/build-pages.mjs` の許可リストにある静的ファイルだけを配信する。
+本体の静的ファイルは `scripts/build-pages.mjs` の許可リストにあるものだけを配信する。
+`npm run build` は続けて Pages Functions を `_worker.js` にコンパイルし、
+`/api/nekos/*` だけを通す `_routes.json` と一緒に公開物へ入れる。
+API は端末証明と入力検査の接続前のため、すべてのメソッドに 503 を返す。
+静的なページは従来どおり配信する。
 同期スクリプト、テスト、GitHub Actions、旧ドメイン用プロジェクトのファイルは本体へアップロードしない。
 
 ## アプリの更新案内
@@ -41,3 +45,25 @@ npm run sync-store-update
 
 `update-dev.json` はdev版アプリの手動確認専用。nishiokaの
 `https://nekokintai.c-cya.dev/update-dev.json` から配信し、表示確認したい版へ自由に進めてよい。
+
+## ねこの API の開発（#249）
+
+`feat/neko-api` で基盤から実装中。公開 API はまだ利用できない。
+
+```sh
+npm ci
+npm run test:api      # ビルドした Functions を workerd で検証
+npm run db:check:local # ローカル D1 だけに SELECT 1 を実行
+```
+
+`cloudflare/local/wrangler.json` はローカル検証専用。本番・preview の D1 binding や
+実 DB の ID を含めず、本番デプロイへ使わない。永続化ファイルは gitignore する。
+`npm run db:migrate:local` で保存層のスキーマをローカルだけに適用できる。
+保存層の実装範囲と残る接続は [docs/neko-api.md](docs/neko-api.md) を参照。
+本番の D1 作成・migration・binding の追加は、#259 の端末証明 PoC の
+結果を受けて別途行う。dev と本番は別 DB とし、本番へ証明の素通しを入れない。
+
+Wrangler と Miniflare は版を固定している。Miniflare 5 の公開された
+`convertV4MiniflareOptions` でテストの設定を変換する。互換日付は同梱 workerd が
+対応する `2026-10-19` に合わせる。ライブラリを更新した場合も、
+CI の `test:api` で実際のコンパイル結果・非公開ファイルの境界を確かめる。

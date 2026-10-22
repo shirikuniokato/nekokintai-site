@@ -91,7 +91,7 @@ export function applyAppVisibility(context, root = document) {
  * {{name}} のような差しこみは vars で埋める。
  */
 export function copyOf(key, vars = {}) {
-  const element = document.querySelector(`#nk-copy [data-i18n="${key}"]`)
+  const element = document.querySelector(`#nk-copy [data-i18n="${key}"]`) || document.querySelector(`[data-i18n="${key}"]`)
   const text = element?.textContent ?? key
   return Object.entries(vars).reduce((result, [name, value]) => result.replaceAll(`{{${name}}}`, value), text)
 }
@@ -122,6 +122,10 @@ export function createLikeStore() {
   }
   return {
     has: (id) => liked.has(id),
+    set(id, value) {
+      liked = new Set(value ? [...liked, id] : [...liked].filter((item) => item !== id))
+      save()
+    },
     toggle(id) {
       liked = new Set(liked)
       if (liked.has(id)) liked.delete(id)
