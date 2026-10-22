@@ -1,0 +1,80 @@
+/* みんなのねこちゃん（/nekos/・/nekos/<id>・/nekos/rules/）の共通の見た目。色の名前はほかのページと同じ */
+:root{
+  --ink:#0C3A44; --bg:#EAF4F7; --paper:#FFFFFF; --border:#DCEDF2;
+  --muted:#7FA6AF; --deep:#155C69; --accent:#FFDE59; --shadow:#C3E4EE;
+  --soft:#F4FBFD; --dash:#CFE4EA; --heart:#E0506A; --heart-bg:#FFF1F3; --dashed-edge:#7FBFCE;
+}
+*{box-sizing:border-box;}
+/* 日本語は文節の切れ目でだけ折り返す。1 文字だけ次の行に落ちないようにする */
+*{word-break:auto-phrase;line-break:strict;}
+/* text-wrap: pretty / balance は auto-phrase と組むと文節の中で折ってしまう（Chrome 151 で確認）ので使わない */
+/* 文節の切れ目は phrase-wrap.mjs が入れる（auto-phrase は Safari が未対応で、「」の中も折るため） */
+.nk-phrase-wrap body *{word-break:keep-all;overflow-wrap:anywhere;}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"DotGothic16",system-ui,sans-serif;font-weight:400;line-height:1.8;}
+a{color:var(--deep);text-decoration:none;}
+a:hover{color:var(--ink);}
+a:focus-visible,button:focus-visible{outline:2px solid var(--deep);outline-offset:3px;}
+[hidden]{display:none !important;}
+h1,h2{font-weight:400;}
+.nk-cat{display:block;}
+
+.locale-switcher{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin:12px 0 0;}
+.locale-switcher button{border:1px solid var(--border);border-radius:999px;background:var(--paper);color:var(--deep);font:inherit;font-size:11px;line-height:1.2;padding:6px 9px;cursor:pointer;}
+.locale-switcher button[aria-pressed="true"]{border-color:var(--ink);background:var(--accent);color:var(--ink);}
+
+.nk-main{max-width:960px;margin:0 auto;padding:clamp(20px,5vw,40px) clamp(16px,4vw,24px) 56px;display:flex;flex-direction:column;gap:24px;}
+.nk-topnav{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;}
+.nk-topnav .nk-back{display:inline-flex;align-items:center;min-height:44px;font-size:14px;}
+.nk-brand{font-size:12px;letter-spacing:.4em;color:var(--deep);}
+
+/* ボタン */
+.nk-btn-primary{font:inherit;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;border:2px solid var(--ink);border-radius:8px;background:var(--accent);color:var(--ink);box-shadow:4px 4px 0 var(--ink);}
+.nk-btn-primary:hover{color:var(--ink);}
+.nk-btn-primary:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink);}
+.nk-btn-plain{font:inherit;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;border:2px solid var(--border);border-radius:8px;background:var(--paper);color:var(--deep);}
+.nk-linkbtn{font:inherit;font-size:12px;min-height:44px;padding:0;border:0;background:none;color:var(--deep);cursor:pointer;text-decoration:underline;}
+
+/* いいね */
+.nk-heart path{fill:var(--paper);stroke:var(--ink);stroke-width:.5;}
+[aria-pressed="true"] > .nk-heart path{fill:var(--heart);}
+
+/* カード（一覧とほかのねこちゃん） */
+.nk-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:clamp(12px,2.4vw,18px);}
+.nk-card{display:flex;flex-direction:column;background:var(--paper);border:2px solid var(--border);border-radius:12px;box-shadow:4px 4px 0 var(--shadow);transition:transform .12s ease,box-shadow .12s ease;overflow:hidden;min-width:0;}
+.nk-card:hover{transform:translateY(-2px);box-shadow:4px 6px 0 var(--shadow);}
+.nk-cardlink{display:flex;flex-direction:column;align-items:center;gap:10px;padding:18px 12px 6px;color:var(--ink);text-align:center;}
+.nk-cardlink:hover{color:var(--ink);}
+.nk-stage-sm{width:100%;display:flex;justify-content:center;align-items:flex-end;height:84px;border-bottom:2px dashed var(--dash);padding-bottom:6px;}
+.nk-cardname{font-size:16px;line-height:1.4;overflow-wrap:anywhere;}
+.nk-byline{font-size:12px;line-height:1.4;color:var(--deep);min-height:17px;}
+.nk-cardfoot{display:flex;justify-content:flex-end;padding:0 8px 8px;}
+.nk-like-sm{display:inline-flex;align-items:center;gap:6px;min-height:44px;min-width:44px;padding:0 10px;border:0;border-radius:8px;background:transparent;font:inherit;font-size:14px;color:var(--ink);cursor:pointer;}
+.nk-like-sm[aria-pressed="true"]{background:var(--heart-bg);}
+
+/* お知らせ */
+.nk-toast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%);background:var(--ink);color:var(--paper);border-radius:8px;padding:10px 18px;font-size:14px;white-space:nowrap;z-index:10;}
+
+/* フッター */
+.nk-footer{display:flex;gap:18px 24px;justify-content:center;flex-wrap:wrap;font-size:13px;border-top:2px solid var(--border);padding:28px 20px 44px;}
+.nk-footer a{border-bottom:2px dashed var(--shadow);}
+.nk-footer-copy{width:100%;text-align:center;color:var(--muted);font-size:12px;}
+
+/* ストアバッジ。素材は公式のまま、表示の高さだけそろえる（トップLPと同じ約束。言語ごとの余白の打ち消しも同じ係数） */
+.store-badges{display:flex;justify-content:center;align-items:center;gap:clamp(7px,2.4vw,12px);flex-wrap:wrap;--badge-height:clamp(44px,12vw,50px);}
+.store-badges img{height:var(--badge-height);width:auto;display:block;}
+.store-play{position:relative;display:block;}
+html[lang="en"] .store-badges img[data-locale-badge="google-play"]{height:calc(var(--badge-height) * 250 / 168);margin:calc(var(--badge-height) * -41 / 168) calc(var(--badge-height) * -41 / 168);}
+html[lang="ko"] .store-badges img[data-locale-badge="google-play"]{height:calc(var(--badge-height) * 250 / 192);margin:calc(var(--badge-height) * -29 / 192) 0;}
+html[lang="zh-TW"] .store-badges img[data-locale-badge="google-play"]{height:calc(var(--badge-height) * 250 / 192);margin:calc(var(--badge-height) * -29 / 192) 0;}
+
+/* ダイアログ */
+.nk-dialog{width:calc(100% - 32px);max-width:380px;background:var(--paper);color:var(--ink);border:2px solid var(--ink);border-radius:8px;padding:20px 16px 14px;}
+.nk-dialog::backdrop{background:rgba(0,0,0,.45);}
+.nk-dialog-body{display:flex;flex-direction:column;gap:12px;}
+.nk-dialog h2{margin:0;font-size:16px;}
+.nk-dialog-actions{display:flex;gap:10px;justify-content:flex-end;}
+.nk-dialog-actions > *{font-size:14px;min-height:44px;padding:0 16px;}
+.nk-dialog-actions .nk-btn-primary{box-shadow:3px 3px 0 var(--ink);}
+
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important;}}

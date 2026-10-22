@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ja" data-i18n-source="/assets/nekos/locales.json">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="rulesDocumentTitle">みんなのねこちゃんのきまり | ねこ勤怠</title>
+<meta name="description" data-i18n-content="rulesDocumentDescription" content="みんなのねこちゃんに公開するときのきまり。のるもの、つけないでほしい名前、公開のやめかた。">
+<link rel="canonical" href="https://nekokintai.com/nekos/rules/">
+<link rel="icon" type="image/png" href="/favicon.png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2J5J902MFE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2J5J902MFE');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/nekos/nekos.css">
+<script type="module" src="/assets/lp/i18n.mjs"></script>
+<script type="module" src="/assets/nekos/phrase-wrap.mjs"></script>
+<script type="module" src="/assets/nekos/rules.mjs"></script>
+<style>
+  body{line-height:1.9;}
+  .rl-main{max-width:720px;gap:20px;}
+  .rl-head{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;}
+  .rl-head h1{margin:0;font-size:clamp(26px,6vw,34px);}
+  .rl-head p{margin:0;font-size:14px;color:var(--deep);}
+  .rl-section{background:var(--paper);border:2px solid var(--border);border-radius:12px;box-shadow:4px 4px 0 var(--shadow);padding:20px clamp(16px,4vw,24px);}
+  .rl-section h2{margin:0 0 8px;font-size:18px;}
+  .rl-section ul{margin:0;padding-left:1.2em;font-size:14px;display:flex;flex-direction:column;gap:4px;}
+  .rl-foot{margin:0;font-size:12px;color:var(--deep);text-align:center;}
+</style>
+</head>
+<body>
+
+<!-- 文言は仮。確定版は規約・プライバシーポリシーの見直し（#252）と一緒に決める -->
+<main class="nk-main rl-main">
+  <nav class="nk-topnav">
+    <a class="nk-back" data-nekos-link="/nekos/" href="/nekos/">‹ <span data-i18n="back">みんなのねこちゃん</span></a>
+    <a class="nk-brand" href="/">NEKO KINTAI</a>
+  </nav>
+
+  <header class="rl-head">
+    <div id="rl-cat"></div>
+    <h1 data-i18n="rulesHeading">みんなのねこちゃんのきまり</h1>
+    <p data-i18n="rulesLead">だれもが気持ちよく見られるように、これだけ守ってください。</p>
+  </header>
+
+  <section class="rl-section">
+    <h2 data-i18n="rulesShownTitle">のるもの</h2>
+    <ul>
+      <li data-i18n="rulesShown1">ねこちゃんの絵（品種と色）</li>
+      <li data-i18n="rulesShown2">ねこちゃんの名前と、飼い主の名前（どちらも入れなくてもかまいません）</li>
+      <li data-i18n="rulesShown3">いいねの数</li>
+    </ul>
+  </section>
+
+  <section class="rl-section">
+    <h2 data-i18n="rulesNamesTitle">つけないでほしい名前</h2>
+    <ul>
+      <li data-i18n="rulesNames1">だれかがわかる名前（本名・住所・連絡先など）</li>
+      <li data-i18n="rulesNames2">ほかの人やお店・会社になりすます名前</li>
+      <li data-i18n="rulesNames3">宣伝・URL・人をきずつけることば</li>
+    </ul>
+  </section>
+
+  <section class="rl-section">
+    <h2 data-i18n="rulesTakedownTitle">ふさわしくないとき</h2>
+    <ul>
+      <li data-i18n="rulesTakedown1">通報があったねこちゃんや、きまりに合わないねこちゃんは、お知らせせずに表示をとりやめることがあります</li>
+      <li data-i18n="rulesTakedown2">ページの「通報する」から知らせてください</li>
+    </ul>
+  </section>
+
+  <section class="rl-section">
+    <h2 data-i18n="rulesStopTitle">公開をやめたいとき</h2>
+    <ul>
+      <li data-i18n="rulesStop1">アプリの「じぶんだけのねこ」から、いつでも公開をやめられます</li>
+      <li data-i18n="rulesStop2">アプリを消すと、アプリから公開をやめられなくなります。消す前に公開をやめてください</li>
+      <li data-i18n="rulesStop3">こまったときは、お問い合わせからご連絡ください</li>
+    </ul>
+  </section>
+
+  <p class="rl-foot" data-i18n="rulesFoot">きまりはかわることがあります。かわったときは、アプリで公開するときにお知らせします。</p>
+</main>
+
+<footer class="nk-footer">
+  <a data-nekos-link="/nekos/" href="/nekos/" data-i18n="heading">みんなのねこちゃん</a>
+  <a href="/contact/" data-i18n="contactLink">ごようぼう・お問い合わせ</a>
+  <a href="/privacy/" data-i18n="privacyLink">プライバシーポリシー</a>
+  <div class="nk-footer-copy">© c_cya.</div>
+</footer>
+</body>
+</html>

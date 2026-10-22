@@ -1,0 +1,200 @@
+<!doctype html>
+<!--
+  1 匹のページ /nekos/<id> の雛形。
+  本番で /nekos/<id> にこのページを返し、1 匹ごとの title・OGP を差しこむのは Pages Functions（#249）の仕事。
+  それまでの手元の確認は /nekos/neko/?id=<id> で開く（JS は /nekos/<id> の形のパスからも id を読む）。
+-->
+<html lang="ja" data-i18n-source="/assets/nekos/locales.json">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="catDocumentTitle">ねこちゃんのページ | みんなのねこちゃん | ねこ勤怠</title>
+<meta name="description" data-i18n-content="documentDescription" content="ねこ勤怠の「じぶんだけのねこ」で生まれた、みんなのねこちゃん。気に入ったねこちゃんを、アプリにおむかえできます。">
+<link rel="icon" type="image/png" href="/favicon.png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2J5J902MFE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2J5J902MFE');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/nekos/nekos.css">
+<link rel="stylesheet" href="/assets/nekos/neko-page.css">
+<script type="module" src="/assets/lp/i18n.mjs"></script>
+<script type="module" src="/assets/nekos/phrase-wrap.mjs"></script>
+<script type="module" src="/assets/nekos/neko-page.mjs"></script>
+</head>
+<body>
+
+<main class="nk-main">
+  <nav class="nk-topnav">
+    <a class="nk-back" data-nekos-link="/nekos/" href="/nekos/">‹ <span data-i18n="back">みんなのねこちゃん</span></a>
+    <a class="nk-brand" href="/">NEKO KINTAI</a>
+  </nav>
+
+  <section class="np-panel" id="np-gone" hidden>
+    <h1 data-i18n="goneTitle">このねこちゃんは、いまは見られません</h1>
+    <p data-i18n="goneBody">飼い主が公開をやめたか、表示をとりやめました。</p>
+    <a class="nk-btn-primary np-panel-cta" data-nekos-link="/nekos/" href="/nekos/" data-i18n="goneCta">ほかのねこちゃんを見る</a>
+  </section>
+
+  <section class="np-panel" id="np-error" role="alert" hidden>
+    <h1 data-i18n="errorTitle">ねこちゃんをよみこめませんでした</h1>
+    <p data-i18n="errorBody">すこし時間をおいて、もう一度ためしてください。</p>
+    <button type="button" class="nk-btn-primary np-panel-cta" id="np-retry" data-i18n="retry">もう一度よみこむ</button>
+  </section>
+
+  <div id="np-shown" hidden>
+    <div class="np-columns">
+      <div class="np-left">
+        <figure class="np-figure">
+          <span aria-hidden="true" class="np-spark np-spark1">＋</span>
+          <span aria-hidden="true" class="np-spark np-spark2">＋</span>
+          <span aria-hidden="true" class="np-spark np-spark3">＋</span>
+          <div class="np-stage" id="np-stage"></div>
+          <div aria-hidden="true" class="np-ground"></div>
+          <figcaption class="np-caption" id="np-caption"></figcaption>
+        </figure>
+        <div class="np-poses" role="radiogroup" id="np-poses" data-i18n-aria-label="poses" aria-label="すがた"></div>
+      </div>
+
+      <section class="np-info">
+        <div class="np-titles">
+          <h1 class="np-title" id="np-title"></h1>
+          <p class="np-byline" id="np-byline"></p>
+        </div>
+
+        <div class="np-actions">
+          <button type="button" class="np-like" id="np-like" aria-pressed="false"><span data-slot="heart"></span><span id="np-like-text"></span></button>
+          <button type="button" class="np-share" id="np-share">
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 2v8M4.5 5.5 8 2l3.5 3.5M3 9v4.5h10V9"></path></svg>
+            <span data-i18n="share">シェア</span>
+          </button>
+        </div>
+
+        <div class="np-apply">
+          <!-- 反映は <a href> を実際にタップさせる形だけにする（#240）。行き先は #258・#259 の結果を待って neko-page.mjs の applyHref でつなぐ -->
+          <a class="nk-btn-primary np-apply-btn" id="np-apply" href="#" data-i18n="apply">アプリに反映する</a>
+          <p class="np-note" id="np-apply-note"></p>
+
+          <div class="np-tried" id="np-tried" role="status" hidden>
+            <p data-i18n="triedTitle">アプリがひらかなかったときは</p>
+            <p class="np-tried-body" data-i18n="triedBody">ねこ勤怠を入れたら、もう一度「アプリに反映する」を押してください。</p>
+          </div>
+
+          <div class="np-store" data-outside-app>
+            <p data-i18n="noApp">まだアプリがない方は</p>
+            <!-- ストアバッジは公式素材。規約上いかなる改変も不可なので、色・比率・枠に手を入れないこと -->
+            <div class="store-badges">
+              <a href="https://apps.apple.com/jp/app/id6801066427" target="_blank" rel="noopener" data-store="app-store"><img src="/assets/badges/app-store-ja.svg" width="109" height="40" data-locale-badge="app-store" data-i18n-alt="appStoreAlt" alt="App Store からダウンロード"></a>
+              <span class="store-play"><a href="https://play.google.com/store/apps/details?id=com.ccya.nekokintai&amp;referrer=utm_source%3Dnekokintai-nekos%26utm_medium%3Dweb" target="_blank" rel="noopener" data-store="google-play"><img src="/assets/badges/google-play-ja.svg" width="180" height="53" data-locale-badge="google-play" data-i18n-alt="playStoreAlt" alt="Google Play で手に入れよう"></a></span>
+            </div>
+            <p class="np-note" data-i18n="afterInstall">入れたら、もう一度「アプリに反映する」を押してね</p>
+          </div>
+        </div>
+
+        <div class="np-colors">
+          <p class="np-note-left" data-i18n="colors">このねこちゃんの色</p>
+          <ul class="np-swatches" id="np-swatches"></ul>
+        </div>
+
+        <div class="np-links">
+          <!-- 表示しないはアプリの端末に覚えさせる。アプリの外のブラウザでは覚えておけないので出さない -->
+          <button type="button" class="nk-linkbtn" id="np-block-open" data-in-app hidden data-i18n="block">この飼い主のねこちゃんを表示しない</button>
+          <button type="button" class="nk-linkbtn" id="np-report-open" data-i18n="report">通報する</button>
+        </div>
+      </section>
+    </div>
+
+    <section class="np-others" aria-labelledby="np-others-title">
+      <div class="np-others-head">
+        <h2 id="np-others-title" data-i18n="others">ほかのねこちゃん</h2>
+        <a class="np-others-more" data-nekos-link="/nekos/" href="/nekos/"><span data-i18n="more">みんなのねこちゃんをもっと見る</span> ›</a>
+      </div>
+      <div class="np-others-grid" id="np-others"></div>
+    </section>
+  </div>
+</main>
+
+<footer class="nk-footer">
+  <a data-nekos-link="/nekos/rules/" href="/nekos/rules/" data-i18n="rulesLink">みんなのねこちゃんのきまり</a>
+  <a href="/contact/" data-i18n="contactLink">ごようぼう・お問い合わせ</a>
+  <a href="/privacy/" data-i18n="privacyLink">プライバシーポリシー</a>
+  <div class="nk-footer-copy">© c_cya.</div>
+</footer>
+
+<dialog class="nk-dialog np-qr" id="np-qr-dialog" aria-labelledby="np-qr-title">
+  <div class="nk-dialog-body np-center">
+    <h2 id="np-qr-title" data-i18n="qrTitle">スマホで読みこんでね</h2>
+    <div class="np-qr-box" id="np-qr"></div>
+    <p class="np-note" data-i18n="qrBody">ねこ勤怠を入れたスマホのカメラで読みこむと、このねこちゃんをむかえられます。</p>
+    <button type="button" class="nk-btn-plain np-dialog-close" data-close data-i18n="close">とじる</button>
+  </div>
+</dialog>
+
+<dialog class="nk-dialog" id="np-report-dialog" aria-labelledby="np-report-title">
+  <form class="nk-dialog-body" id="np-report-form" method="dialog">
+    <h2 id="np-report-title" data-i18n="reportTitle">このねこちゃんを通報する</h2>
+    <fieldset class="np-reasons">
+      <legend data-i18n="reportWhy">どうしてですか？</legend>
+      <label><input type="radio" name="reason" value="name" checked> <span data-i18n="reason1">名前がふさわしくない</span></label>
+      <label><input type="radio" name="reason" value="spam"> <span data-i18n="reason2">宣伝・なりすまし</span></label>
+      <label><input type="radio" name="reason" value="other"> <span data-i18n="reason3">そのほか</span></label>
+    </fieldset>
+    <div class="nk-dialog-actions">
+      <button type="button" class="nk-btn-plain" data-close data-i18n="cancel">やめる</button>
+      <button type="submit" class="nk-btn-primary" data-i18n="send">送る</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog class="nk-dialog" id="np-block-dialog" aria-labelledby="np-block-title">
+  <div class="nk-dialog-body">
+    <h2 id="np-block-title"></h2>
+    <p class="np-dialog-text" data-i18n="blockBody">アプリで見るときは、この飼い主のねこちゃんが出なくなります。「じぶんだけのねこ」の「表示しないにした飼い主」から、いつでも元にもどせます。</p>
+    <div class="nk-dialog-actions">
+      <button type="button" class="nk-btn-plain" data-close data-i18n="cancel">やめる</button>
+      <!-- 表示しないも <a href> のタップでアプリに伝える（nekokintai://block?owner=…&label=…）。行き先はまだつながない -->
+      <a class="nk-btn-primary" id="np-block-ok" href="#" data-i18n="blockOk">表示しない</a>
+    </div>
+  </div>
+</dialog>
+
+<div class="nk-toast" id="nk-toast" role="status" hidden></div>
+
+<!-- JS が組み立てる文言。表示はしないが、言語が変わると i18n.mjs がここを書きかえる -->
+<div id="nk-copy" hidden>
+  <span data-i18n="catTitle">{{name}} | みんなのねこちゃん | ねこ勤怠</span>
+  <span data-i18n="byline">飼い主: {{name}}</span>
+  <span data-i18n="like">いいね</span>
+  <span data-i18n="unlike">いいねを取り消す</span>
+  <span data-i18n="sit">すわる</span>
+  <span data-i18n="walk">あるく</span>
+  <span data-i18n="sleep">ねる</span>
+  <span data-i18n="happy">よろこぶ</span>
+  <span data-i18n="sitCaption">しごとのあいまはすわって待っています</span>
+  <span data-i18n="walkCaption">しごと中はとことこあるきます</span>
+  <span data-i18n="sleepCaption">しごとの前はまるくなってねています</span>
+  <span data-i18n="happyCaption">週のお祝いでひょこっと出てきます</span>
+  <span data-i18n="applyPhone">ねこ勤怠がひらいて、このねこちゃんをむかえられます</span>
+  <span data-i18n="applyPc">スマホで読みこむと、ねこ勤怠でこのねこちゃんをむかえられます</span>
+  <span data-i18n="colorBody">からだ</span>
+  <span data-i18n="colorPattern">もよう</span>
+  <span data-i18n="colorPatternSecondary">もよう2</span>
+  <span data-i18n="colorLine">せん</span>
+  <span data-i18n="colorEyes">め</span>
+  <span data-i18n="colorCollar">くびわ</span>
+  <span data-i18n="colorPaws">にくきゅう</span>
+  <span data-i18n="block">この飼い主のねこちゃんを表示しない</span>
+  <span data-i18n="blockNamed">{{name}} さんのねこちゃんを表示しない</span>
+  <span data-i18n="blocked">表示しないにしました</span>
+  <span data-i18n="reported">送りました。ありがとうございます</span>
+  <span data-i18n="linkCopied">リンクをコピーしました</span>
+  <span data-i18n="qrLabel">このねこちゃんのページの QR コード</span>
+</div>
+</body>
+</html>
