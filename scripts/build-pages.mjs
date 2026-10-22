@@ -8,6 +8,7 @@ const publicEntries = [
   'art',
   'assets',
   'contact',
+  'nekos',
   'privacy',
   'qa',
   'roadmap',
