@@ -1,0 +1,13 @@
+{
+  "name": "nekokintai-local",
+  "pages_build_output_dir": "../../.pages-dist/site",
+  "compatibility_date": "2026-10-19",
+  "d1_databases": [
+    {
+      "binding": "NEKOS_DB",
+      "database_name": "nekokintai-nekos-local",
+      "database_id": "local-nekos-only",
+      "preview_database_id": "NEKOS_DB"
+    }
+  ]
+}
