@@ -37,3 +37,5 @@ Cloud project `playconsole-505815`（483856818891）は API を有効化済み�
 実測結果: iPhone13 / iOS26.6.1 で `appattestdevelop` の attestation、増加する assertion counter、再送409を確認。Android15 / API35 Google Play エミュレータでは provider・token・Google解読が通り、`app: UNEVALUATED` / `device: []` / `license: UNEVALUATED` / `testing:false`、再送409を観測した。Cloud の基本 API 有効化と scoped token で解読できたが、Play Console のリンク設定はこの試作では確認していない。
 
 App Links は自動 verified となり、Chrome の別ドメインページから HTTPS をタップして dev アプリへ到達、`universal:true` と試験コードを受信。iOS も Safari から HTTPS・カスタムスキームでアプリへ戻れた。どちらもアプリを開く確認が表示されたとの本人確認あり。
+
+実測後に試作用 service account の Token Creator binding を除去し、service account を無効化した。Google 用 Worker secrets も2つ削除して再配置済み。これにより現在の Android 解読 API は503へ戻る。iOS・リンク用の試験 API / 静的ファイルは期限まで残る。
