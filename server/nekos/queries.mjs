@@ -1,5 +1,5 @@
 export const VISIBLE_PUBLICATION = `p.withdrawn_at IS NULL AND p.replaced_at IS NULL
-  AND p.moderated_at IS NULL AND o.suspended_at IS NULL
+  AND p.moderated_at IS NULL AND p.deleted_at IS NULL AND o.suspended_at IS NULL
   AND EXISTS (SELECT 1 FROM neko_slots s WHERE s.publication_id = p.id)`
 
 // private な owner_hash を公開用の戻り値に含めない。
