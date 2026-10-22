@@ -68,3 +68,8 @@ npm run db:check:local
 6. 本番と dev の別 D1・binding・secrets、保存期間/完全削除等の #252 の方針、実環境での検証。
 
 上記がそろうまで #249 は未完了、PR は draft のままにする。
+
+## 運営操作の追加
+
+運営 CLI と追加 migration の手順・保存契約は [neko-operations.md](./neko-operations.md) を参照。
+`0002_neko_operations.sql` 適用後の公開処理は全体停止と永久公開終了の条件を SQL 内で確認する。

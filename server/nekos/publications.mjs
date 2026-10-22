@@ -27,7 +27,8 @@ export async function publishPublication(database, input) {
 async function updatePublication(database, input, current) {
   const result = await database.prepare(`UPDATE neko_publications SET code = ?, name = ?,
     author = ?, updated_at = ?, withdrawn_at = NULL, revision = revision + 1
-    WHERE id = ? AND revision = ? AND replaced_at IS NULL AND moderated_at IS NULL
+    WHERE id = ? AND revision = ? AND replaced_at IS NULL AND moderated_at IS NULL AND deleted_at IS NULL
+    AND EXISTS (SELECT 1 FROM neko_settings WHERE id = 1 AND publishing_paused = 0)
     AND EXISTS (SELECT 1 FROM neko_owners o WHERE o.owner_hash = ? AND o.suspended_at IS NULL)
     AND EXISTS (SELECT 1 FROM neko_slots s WHERE s.publication_id = ?)`)
     .bind(input.code, input.name || current.fallback_name, input.author, input.now,
@@ -54,6 +55,7 @@ function replacementStatements(database, input, current) {
     (id, owner_hash, slot, generation, code, name, author, fallback_name, created_at, updated_at)
     SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
     WHERE EXISTS (SELECT 1 FROM neko_owners WHERE owner_hash = ? AND suspended_at IS NULL)
+    AND EXISTS (SELECT 1 FROM neko_settings WHERE id = 1 AND publishing_paused = 0)
     AND ${guard.sql} ON CONFLICT(owner_hash, slot, generation) DO NOTHING`).bind(
     input.newId, input.ownerHash, input.slot, input.generation, input.code,
     input.name || input.fallbackName, input.author, input.fallbackName, input.now, input.now,

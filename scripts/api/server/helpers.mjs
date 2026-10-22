@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises'
+import { readFile, readdir } from 'node:fs/promises'
 import { Miniflare, convertV4MiniflareOptions } from 'miniflare'
 import { registerOwner } from '../../../server/nekos/publications.mjs'
 
@@ -25,9 +25,12 @@ export async function databaseFor(context) {
   }))
   context.after(() => worker.dispose())
   const database = await worker.getD1Database('NEKOS_DB')
-  const schema = await readFile('migrations/0001_nekos.sql', 'utf8')
-  const statements = schema.replace(/^--.*$/gm, '').split(';').map((sql) => sql.trim()).filter(Boolean)
-  await database.batch(statements.map((sql) => database.prepare(sql)))
+  const migrations = (await readdir('migrations')).filter((name) => name.endsWith('.sql')).sort()
+  for (const name of migrations) {
+    const schema = await readFile(`migrations/${name}`, 'utf8')
+    // D1.exec は改行ごとに分割するため、trigger の BEGIN/END を一文のまま渡す。
+    await database.exec(schema.replace(/^--.*$/gm, '').replaceAll('\n', ' '))
+  }
   await registerOwner(database, { ownerHash: OWNER, publicToken: 'd'.repeat(64), now: 1 })
   await registerOwner(database, { ownerHash: OTHER_OWNER, publicToken: 'e'.repeat(64), now: 1 })
   return database
