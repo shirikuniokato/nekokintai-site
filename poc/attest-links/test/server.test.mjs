@@ -100,3 +100,14 @@ test('期限切れchallengeと余分なCBOR・未設定のGoogle解読を成功�
   const issued = await post('challenge', { purpose: 'integrity' })
   assert.equal((await post('integrity', { challengeId: issued.body.id, clientData: issued.body.clientData, token: 'unconfigured' })).status, 503)
 })
+
+
+test('Googleの短期tokenは期限が不明または残り60秒以下なら外部解読を呼ばない', async (context) => {
+  for (const expiry of ['invalid', new Date(Date.now() + 30_000).toISOString()]) {
+    const { post } = await setup(context, { GOOGLE_ACCESS_TOKEN: 'fixture', GOOGLE_ACCESS_TOKEN_EXPIRES_AT: expiry })
+    const issued = await post('challenge', { purpose: 'integrity' })
+    const result = await post('integrity', { challengeId: issued.body.id, clientData: issued.body.clientData, token: 'fixture' })
+    assert.equal(result.status, 503)
+    assert.equal(result.body.error, 'google_not_configured')
+  }
+})
