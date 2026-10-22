@@ -7,7 +7,9 @@
 *{box-sizing:border-box;}
 /* 日本語は文節の切れ目でだけ折り返す。1 文字だけ次の行に落ちないようにする */
 *{word-break:auto-phrase;line-break:strict;}
-p,h1,h2,figcaption,li,label,span{text-wrap:pretty;}
+/* text-wrap: pretty / balance は auto-phrase と組むと文節の中で折ってしまう（Chrome 151 で確認）ので使わない */
+/* 文節の切れ目は phrase-wrap.mjs が入れる（auto-phrase は Safari が未対応で、「」の中も折るため） */
+.nk-phrase-wrap body *{word-break:keep-all;overflow-wrap:anywhere;}
 body{margin:0;background:var(--bg);color:var(--ink);
   font-family:"DotGothic16",system-ui,sans-serif;font-weight:400;line-height:1.8;}
 a{color:var(--deep);text-decoration:none;}
