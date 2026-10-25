@@ -1,0 +1,13 @@
+{
+  "name": "nekokintai",
+  "pages_build_output_dir": "../../.pages-dist/site",
+  "compatibility_date": "2026-10-19",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": { "NEKOS_ENV": "production" },
+  "d1_databases": [{
+    "binding": "NEKOS_DB",
+    "database_name": "nekokintai-nekos",
+    "database_id": "444a3dec-05aa-4be0-8b5e-0d2c60da518a",
+    "migrations_dir": "../../migrations"
+  }]
+}

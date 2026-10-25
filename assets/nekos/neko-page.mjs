@@ -1,9 +1,9 @@
 // /nekos/<id> 1 匹のページ。
 import { catSvg, usedColorKeys } from './cat.mjs'
 import {
-  addHiddenOwner, appContext, applyAppVisibility, copyOf, createLikeStore, heartSvg, onLocaleChange, rewriteInternalLinks, showToast, withAppParams,
+  addHiddenOwner, appContext, applyAppVisibility, catNameOf, copyOf, createLikeStore, heartSvg, onLocaleChange, rewriteInternalLinks, showToast, withAppParams,
 } from './common.mjs'
-import { fetchNeko, fetchOtherNekos } from './data.mjs'
+import { fetchNeko, fetchOtherNekos, setLike, reportPublication } from './data.mjs'
 import { placeholderQrSvg } from './qr-placeholder.mjs'
 
 const ID_PATTERN = /^[A-Za-z0-9_-]{1,64}$/
@@ -58,12 +58,12 @@ function renderStage(cat) {
   const stage = $('np-stage')
   stage.style.height = `${dot * 18}px`
   if (view.pose !== 'walk') {
-    stage.replaceChildren(catSvg({ breed: cat.breed, colors: cat.colors, pose: view.pose, dot, label: cat.name }))
+    stage.replaceChildren(catSvg({ breed: cat.breed, colors: cat.colors, pose: view.pose, dot, label: catNameOf(cat) }))
     return
   }
   const walk = document.createElement('div')
   walk.className = 'np-walk'
-  const stepA = catSvg({ breed: cat.breed, colors: cat.colors, pose: 'walkA', dot, label: cat.name })
+  const stepA = catSvg({ breed: cat.breed, colors: cat.colors, pose: 'walkA', dot, label: catNameOf(cat) })
   const stepB = catSvg({ breed: cat.breed, colors: cat.colors, pose: 'walkB', dot })
   stepA.classList.add('np-walk-a')
   stepB.classList.add('np-walk-b')
@@ -103,7 +103,7 @@ function renderFigure() {
 
 function renderLike(cat) {
   const liked = likes.has(cat.id)
-  const count = cat.likes + (liked ? 1 : 0)
+  const count = cat.likes
   const button = $('np-like')
   button.setAttribute('aria-pressed', String(liked))
   button.setAttribute('aria-label', `${copyOf(liked ? 'unlike' : 'like')} ${count}`)
@@ -132,7 +132,7 @@ function otherCard(cat) {
   line.setAttribute('aria-hidden', 'true')
   const name = document.createElement('span')
   name.className = 'np-other-name'
-  name.textContent = cat.name
+  name.textContent = catNameOf(cat)
   // 品種で絵の高さがちがうので、足元をそろえる台に載せる
   const art = document.createElement('span')
   art.className = 'np-other-art'
@@ -147,8 +147,8 @@ function renderOthers() {
 }
 
 function renderInfo(cat) {
-  document.title = copyOf('catTitle', { name: cat.name })
-  $('np-title').textContent = cat.name
+  document.title = copyOf('catTitle', { name: catNameOf(cat) })
+  $('np-title').textContent = catNameOf(cat)
   $('np-byline').textContent = cat.author ? copyOf('byline', { name: cat.author }) : ''
   $('np-byline').hidden = !cat.author
   $('np-apply').setAttribute('href', applyHref())
@@ -212,7 +212,7 @@ async function onShareClick() {
   const url = shareUrl(cat)
   if (typeof navigator.share === 'function') {
     try {
-      await navigator.share({ title: cat.name, url })
+      await navigator.share({ title: catNameOf(cat), url })
       return
     } catch (error) {
       if (error?.name === 'AbortError') return
@@ -239,19 +239,46 @@ function onBlockConfirm(event) {
 
 function bindActions() {
   $('np-like').querySelector('[data-slot="heart"]').append(heartSvg(22))
-  $('np-like').addEventListener('click', () => {
-    likes.toggle(view.cat.id)
-    renderLike(view.cat)
-  })
+  $('np-like').addEventListener('click', () => void onLikeClick())
   $('np-share').addEventListener('click', () => void onShareClick())
   $('np-apply').addEventListener('click', onApplyClick)
   $('np-report-open').addEventListener('click', () => $('np-report-dialog').showModal())
-  // 通報の送り先（API・Slack）はまだつながない
-  $('np-report-form').addEventListener('submit', () => showToast(copyOf('reported')))
+  $('np-report-form').addEventListener('submit', onReportSubmit)
   $('np-block-open').addEventListener('click', () => $('np-block-dialog').showModal())
   $('np-block-ok').addEventListener('click', onBlockConfirm)
   $('np-retry').addEventListener('click', () => void load())
   narrowScreen.addEventListener('change', render)
+}
+
+async function onLikeClick() {
+  $('np-like').disabled = true
+  try {
+    const result = await setLike(view.cat.id, !likes.has(view.cat.id))
+    likes.set(view.cat.id, result.liked)
+    view.cat = { ...view.cat, likes: result.likes }
+    renderLike(view.cat)
+  } catch {
+    showToast(copyOf('errorBody'))
+  } finally {
+    $('np-like').disabled = false
+  }
+}
+
+async function onReportSubmit(event) {
+  event.preventDefault()
+  const button = event.submitter
+  if (!button || button.hasAttribute('data-close')) return
+  button.disabled = true
+  try {
+    const reason = new FormData(event.currentTarget).get('reason')
+    await reportPublication(view.cat.id, view.cat.revision, reason)
+    $('np-report-dialog').close()
+    showToast(copyOf('reported'))
+  } catch {
+    showToast(copyOf('errorBody'))
+  } finally {
+    button.disabled = false
+  }
 }
 
 function init() {

@@ -1,9 +1,9 @@
 // /nekos/ みんなのねこちゃん（一覧）。
 import { catSvg } from './cat.mjs'
 import {
-  appContext, applyAppVisibility, copyOf, createLikeStore, heartSvg, onLocaleChange, previewState, rewriteInternalLinks, withAppParams,
+  appContext, applyAppVisibility, catNameOf, copyOf, createLikeStore, heartSvg, onLocaleChange, previewState, rewriteInternalLinks, withAppParams, showToast,
 } from './common.mjs'
-import { fetchNekos } from './data.mjs'
+import { fetchNekos, setLike } from './data.mjs'
 
 const context = appContext()
 const likes = createLikeStore()
@@ -13,11 +13,11 @@ const view = { sort: 'new', page: 0, cats: [], hasMore: false, status: 'loading'
 const $ = (id) => document.getElementById(id)
 
 function likeCount(cat) {
-  // サーバーの数は「押す前」の数として扱い、この端末で押したぶんを足して見せる（仮データの間だけの近似）
-  return cat.likes + (likes.has(cat.id) ? 1 : 0)
+  return cat.likes
 }
 
 function likeButton(cat) {
+  let current = cat
   const button = document.createElement('button')
   button.type = 'button'
   button.className = 'nk-like-sm'
@@ -25,13 +25,23 @@ function likeButton(cat) {
   const refresh = () => {
     const liked = likes.has(cat.id)
     button.setAttribute('aria-pressed', String(liked))
-    button.setAttribute('aria-label', `${copyOf(liked ? 'unlike' : 'like')} ${likeCount(cat)}`)
-    count.textContent = String(likeCount(cat))
+    button.setAttribute('aria-label', `${copyOf(liked ? 'unlike' : 'like')} ${likeCount(current)}`)
+    count.textContent = String(likeCount(current))
   }
   button.append(heartSvg(18), count)
-  button.addEventListener('click', () => {
-    likes.toggle(cat.id)
-    refresh()
+  button.addEventListener('click', async () => {
+    button.disabled = true
+    try {
+      const result = await setLike(cat.id, !likes.has(cat.id))
+      likes.set(cat.id, result.liked)
+      current = { ...current, likes: result.likes }
+      view.cats = view.cats.map((item) => item.id === cat.id ? current : item)
+      refresh()
+    } catch {
+      showToast(copyOf('errorBody'))
+    } finally {
+      button.disabled = false
+    }
   })
   refresh()
   return button
@@ -48,7 +58,7 @@ function card(cat) {
   stage.append(catSvg({ breed: cat.breed, colors: cat.colors, pose: 'sit', dot: 5 }))
   const name = document.createElement('span')
   name.className = 'nk-cardname'
-  name.textContent = cat.name
+  name.textContent = catNameOf(cat)
   const byline = document.createElement('span')
   byline.className = 'nk-byline'
   byline.textContent = cat.author ? copyOf('byline', { name: cat.author }) : ''
