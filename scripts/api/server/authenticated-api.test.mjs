@@ -9,6 +9,10 @@ import { issueChallenge } from '../../../server/api/challenges.mjs'
 import { commitMutation } from '../../../server/api/mutations.mjs'
 import { digest } from '../../../server/api/payload.mjs'
 import { validateAndroidVerdict } from '../../../server/api/production-proof.mjs'
+// Play Console の「アプリの署名」の SHA-256 をそのまま写した値（実装の定数を写すと、同じ写し間違いでも通ってしまう）
+const PLAY_APP_SIGNING_DIGEST = Buffer.from(
+  '58:68:49:3C:F6:7F:BE:39:BD:F5:33:D3:FF:6D:12:56:34:0E:50:F3:5A:52:94:84:C0:3B:FA:77:EA:4F:8C:59'.replaceAll(':', ''), 'hex',
+).toString('base64url')
 
 const UID = 'test-owner-123456789'
 const devHandle = createHandler(developmentWrite, 'development')
@@ -133,7 +137,7 @@ test('Android の判定は requestHash・署名・package・license・device を
   const now = Date.now()
   const verdict = { requestDetails: { requestHash: 'hash', requestPackageName: 'com.ccya.nekokintai', timestampMillis: String(now) },
     appIntegrity: { packageName: 'com.ccya.nekokintai', appRecognitionVerdict: 'PLAY_RECOGNIZED',
-      certificateSha256Digest: [Buffer.from('5868493cf67fbe39bdf533d3ff6d1256340e50ff35a529484c03bfa77ea4f8c59', 'hex').toString('base64url')] },
+      certificateSha256Digest: [PLAY_APP_SIGNING_DIGEST] },
     deviceIntegrity: { deviceRecognitionVerdict: ['MEETS_DEVICE_INTEGRITY'] }, accountDetails: { appLicensingVerdict: 'LICENSED' } }
   assert.doesNotThrow(() => validateAndroidVerdict(verdict, 'hash', now))
   for (const override of [{ requestDetails: { ...verdict.requestDetails, requestHash: 'wrong' } },
