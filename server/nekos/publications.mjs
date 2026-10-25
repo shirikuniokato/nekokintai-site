@@ -31,7 +31,7 @@ async function updatePublication(database, input, current) {
     AND EXISTS (SELECT 1 FROM neko_settings WHERE id = 1 AND publishing_paused = 0)
     AND EXISTS (SELECT 1 FROM neko_owners o WHERE o.owner_hash = ? AND o.suspended_at IS NULL)
     AND EXISTS (SELECT 1 FROM neko_slots s WHERE s.publication_id = ?)`)
-    .bind(input.code, input.name || current.fallback_name, input.author, input.now,
+    .bind(input.code, input.name, input.author, input.now,
       current.id, current.revision, input.ownerHash, current.id).run()
   return result.meta.changes === 1
     ? { status: 'published', id: current.id, revision: current.revision + 1 } : { status: 'conflict' }
@@ -52,13 +52,13 @@ function currentSlotGuard(input, current) {
 function replacementStatements(database, input, current) {
   const guard = currentSlotGuard(input, current)
   const insert = database.prepare(`INSERT INTO neko_publications
-    (id, owner_hash, slot, generation, code, name, author, fallback_name, created_at, updated_at)
+    (id, owner_hash, slot, generation, code, name, author, fallback_place, created_at, updated_at)
     SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
     WHERE EXISTS (SELECT 1 FROM neko_owners WHERE owner_hash = ? AND suspended_at IS NULL)
     AND EXISTS (SELECT 1 FROM neko_settings WHERE id = 1 AND publishing_paused = 0)
     AND ${guard.sql} ON CONFLICT(owner_hash, slot, generation) DO NOTHING`).bind(
     input.newId, input.ownerHash, input.slot, input.generation, input.code,
-    input.name || input.fallbackName, input.author, input.fallbackName, input.now, input.now,
+    input.name, input.author, input.fallbackPlace, input.now, input.now,
     input.ownerHash, ...guard.values,
   )
   const claim = database.prepare(`INSERT INTO neko_slots (owner_hash, slot, publication_id)

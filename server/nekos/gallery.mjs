@@ -1,4 +1,4 @@
-import { VISIBLE_PUBLICATION } from './queries.mjs'
+import { PUBLIC_COLUMNS, VISIBLE_PUBLICATION } from './queries.mjs'
 import { decodeCatCode } from '../vendor/cat-code.mjs'
 
 export function publicCat(row) {
@@ -10,9 +10,7 @@ export function publicCat(row) {
 
 export async function gallery(database, { sort, page, limit, hiddenOwners, excludeId = '' }) {
   const blocking = hiddenOwners.map(() => '?').join(',')
-  const result = await database.prepare(`SELECT p.id, p.code, p.name, p.author, p.revision,
-    o.public_token AS owner, p.created_at, p.updated_at,
-    (SELECT count(*) FROM neko_likes l WHERE l.publication_id = p.id) AS likes
+  const result = await database.prepare(`SELECT ${PUBLIC_COLUMNS}
     FROM neko_publications p JOIN neko_owners o ON o.owner_hash = p.owner_hash
     WHERE ${VISIBLE_PUBLICATION} AND p.id != ?
     ${blocking ? `AND o.public_token NOT IN (${blocking})` : ''}

@@ -11,7 +11,7 @@ export function publication(overrides = {}) {
   return {
     ownerHash: OWNER, slot: 1, generation: 'first',
     expectedGeneration: null, expectedRevision: 0, code: CODE, name: 'よる',
-    author: '', fallbackName: '路地裏の野良ねこ', now: 100,
+    author: '', fallbackPlace: 2, now: 100,
     ...overrides,
   }
 }
@@ -31,8 +31,10 @@ export async function databaseFor(context) {
   return database
 }
 
-export async function applyMigrations(database) {
+// through を渡すと、その番号の migration までで止める（既存の D1 に新しい migration を当てる検証用）
+export async function applyMigrations(database, { from = '', through = '9999' } = {}) {
   const migrations = (await readdir('migrations')).filter((name) => name.endsWith('.sql')).sort()
+    .filter((name) => name.slice(0, 4) > from && name.slice(0, 4) <= through)
   for (const name of migrations) {
     const schema = await readFile(`migrations/${name}`, 'utf8')
     // D1.exec は改行ごとに分割するため、trigger の BEGIN/END を一文のまま渡す。

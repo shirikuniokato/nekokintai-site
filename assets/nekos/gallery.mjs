@@ -1,7 +1,7 @@
 // /nekos/ みんなのねこちゃん（一覧）。
 import { catSvg } from './cat.mjs'
 import {
-  appContext, applyAppVisibility, copyOf, createLikeStore, heartSvg, onLocaleChange, previewState, rewriteInternalLinks, withAppParams, showToast,
+  appContext, applyAppVisibility, catNameOf, copyOf, createLikeStore, heartSvg, onLocaleChange, previewState, rewriteInternalLinks, withAppParams, showToast,
 } from './common.mjs'
 import { fetchNekos, setLike } from './data.mjs'
 
@@ -58,7 +58,7 @@ function card(cat) {
   stage.append(catSvg({ breed: cat.breed, colors: cat.colors, pose: 'sit', dot: 5 }))
   const name = document.createElement('span')
   name.className = 'nk-cardname'
-  name.textContent = cat.name
+  name.textContent = catNameOf(cat)
   const byline = document.createElement('span')
   byline.className = 'nk-byline'
   byline.textContent = cat.author ? copyOf('byline', { name: cat.author }) : ''

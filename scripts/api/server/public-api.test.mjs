@@ -5,7 +5,7 @@ import { databaseFor, publication, CODE, OWNER, OTHER_OWNER, IP } from './helper
 import { publishPublication } from '../../../server/nekos/publications.mjs'
 import { setPublicationLike } from '../../../server/nekos/likes.mjs'
 import { validatePublicationInput } from '../../../server/name-filter/public-input.mjs'
-import { fallbackName, PLACES } from '../../../server/nekos/fallback-names.mjs'
+import { STRAY_NAMES, STRAY_PLACE_COUNT, strayCatName } from '../../../assets/nekos/stray-names.mjs'
 import { validatePublicNames } from '../../../server/name-filter/names.mjs'
 import { RULES } from '../../../server/name-filter/rules.mjs'
 import { createHandler } from '../../../server/api/handler.mjs'
@@ -38,14 +38,14 @@ test('正本の code、NFKC、4言語の禁止語、OGP 未収録字を公開前
 
 test('自動名は正本の20か所で、全4言語の80候補が辞書と OGP の文字集合に通る', () => {
   const supported = new Set(glyphs.codepoints)
-  assert.equal(fallbackName('ja', 0), '街の野良ねこ')
-  assert.equal(fallbackName('en', 19), 'The rice field stray')
-  assert.equal(fallbackName('ko', 8), '신사 경내의 길고양이')
-  assert.equal(fallbackName('zh-TW', 12), '緣廊的浪貓')
-  for (const locale of Object.keys(PLACES)) {
-    assert.equal(PLACES[locale].length, 20)
-    for (let index = 0; index < 20; index += 1) {
-      const name = fallbackName(locale, index)
+  assert.equal(strayCatName(0, 'ja'), '街の野良ねこ')
+  assert.equal(strayCatName(19, 'en'), 'The rice field stray')
+  assert.equal(strayCatName(8, 'ko'), '신사 경내의 길고양이')
+  assert.equal(strayCatName(12, 'zh-TW'), '緣廊的浪貓')
+  assert.equal(STRAY_PLACE_COUNT, 20)
+  for (const locale of Object.keys(STRAY_NAMES)) {
+    for (let index = 0; index < STRAY_PLACE_COUNT; index += 1) {
+      const name = strayCatName(index, locale)
       assert.ok([...name].every((letter) => supported.has(letter.codePointAt(0))), name)
       // 自動名は入力欄の12文字制限と分ける。禁止語の照合は候補の各単語でも確認する。
       for (const word of name.split(' ')) assert.equal(validatePublicNames({ name: word }, RULES).ok, true, word)

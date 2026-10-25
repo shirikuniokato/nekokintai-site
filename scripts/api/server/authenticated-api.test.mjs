@@ -46,7 +46,10 @@ test('dev の公開・再送・編集・取り下げ・再公開・世代交換�
   const env = await setup(context)
   const { input, result } = await publish(env, basePayload())
   assert.equal(result.publication.revision, 1)
-  assert.match(result.publication.name, /の野良ねこ$/)
+  // 名前が空なら空のまま返し、野良ねこの場所の番号を添える（#262）
+  assert.equal(result.publication.name, '')
+  assert.ok(Number.isInteger(result.publication.fallbackPlace) && result.publication.fallbackPlace >= 0
+    && result.publication.fallbackPlace < 20)
   assert.deepEqual(await (await devHandle(post('/mutation', input), env)).json(), result)
   const withdraw = { ...basePayload(), action: 'withdraw', expectedGeneration: 'first', expectedRevision: 1 }
   const removed = await publish(env, withdraw)
@@ -54,6 +57,7 @@ test('dev の公開・再送・編集・取り下げ・再公開・世代交換�
   const again = await publish(env, { ...basePayload(), expectedGeneration: 'first', expectedRevision: 2 })
   assert.equal(again.result.publication.id, result.publication.id)
   assert.equal(again.result.publication.name, result.publication.name)
+  assert.equal(again.result.publication.fallbackPlace, result.publication.fallbackPlace)
   const read = await publish(env, { operationId: randomUUID(), action: 'read', slot: 1 })
   assert.equal(read.result.publication.revision, 3)
   const replaced = await publish(env, { ...basePayload(), generation: 'second', expectedGeneration: 'first', expectedRevision: 3 })

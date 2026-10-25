@@ -13,10 +13,12 @@ test('取り下げ・再公開と色の変更でページ・いいね・自動�
   assert.equal(await getPublicPublication(database, id), null)
   const changedCode = `${CODE.slice(0, -1)}0`
   const result = await publishPublication(database, publication({ expectedGeneration: 'first',
-    expectedRevision: 2, name: '', code: changedCode, fallbackName: '別の野良ねこ', now: 103 }))
+    expectedRevision: 2, name: '', code: changedCode, fallbackPlace: 7, now: 103 }))
   assert.deepEqual(result, { status: 'published', id, revision: 3 })
   const restored = await getPublicPublication(database, id)
-  assert.equal(restored.name, '路地裏の野良ねこ')
+  // 付けた名前は空のまま。野良ねこの場所は最初に決めた番号から変わらない
+  assert.equal(restored.name, '')
+  assert.equal(restored.fallbackPlace, 2)
   assert.equal(restored.likes, 1)
   assert.equal(restored.code, changedCode)
   assert.equal(restored.created_at, 100)

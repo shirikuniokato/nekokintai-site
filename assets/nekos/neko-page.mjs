@@ -1,7 +1,7 @@
 // /nekos/<id> 1 匹のページ。
 import { catSvg, usedColorKeys } from './cat.mjs'
 import {
-  addHiddenOwner, appContext, applyAppVisibility, copyOf, createLikeStore, heartSvg, onLocaleChange, rewriteInternalLinks, showToast, withAppParams,
+  addHiddenOwner, appContext, applyAppVisibility, catNameOf, copyOf, createLikeStore, heartSvg, onLocaleChange, rewriteInternalLinks, showToast, withAppParams,
 } from './common.mjs'
 import { fetchNeko, fetchOtherNekos, setLike, reportPublication } from './data.mjs'
 import { placeholderQrSvg } from './qr-placeholder.mjs'
@@ -58,12 +58,12 @@ function renderStage(cat) {
   const stage = $('np-stage')
   stage.style.height = `${dot * 18}px`
   if (view.pose !== 'walk') {
-    stage.replaceChildren(catSvg({ breed: cat.breed, colors: cat.colors, pose: view.pose, dot, label: cat.name }))
+    stage.replaceChildren(catSvg({ breed: cat.breed, colors: cat.colors, pose: view.pose, dot, label: catNameOf(cat) }))
     return
   }
   const walk = document.createElement('div')
   walk.className = 'np-walk'
-  const stepA = catSvg({ breed: cat.breed, colors: cat.colors, pose: 'walkA', dot, label: cat.name })
+  const stepA = catSvg({ breed: cat.breed, colors: cat.colors, pose: 'walkA', dot, label: catNameOf(cat) })
   const stepB = catSvg({ breed: cat.breed, colors: cat.colors, pose: 'walkB', dot })
   stepA.classList.add('np-walk-a')
   stepB.classList.add('np-walk-b')
@@ -132,7 +132,7 @@ function otherCard(cat) {
   line.setAttribute('aria-hidden', 'true')
   const name = document.createElement('span')
   name.className = 'np-other-name'
-  name.textContent = cat.name
+  name.textContent = catNameOf(cat)
   // 品種で絵の高さがちがうので、足元をそろえる台に載せる
   const art = document.createElement('span')
   art.className = 'np-other-art'
@@ -147,8 +147,8 @@ function renderOthers() {
 }
 
 function renderInfo(cat) {
-  document.title = copyOf('catTitle', { name: cat.name })
-  $('np-title').textContent = cat.name
+  document.title = copyOf('catTitle', { name: catNameOf(cat) })
+  $('np-title').textContent = catNameOf(cat)
   $('np-byline').textContent = cat.author ? copyOf('byline', { name: cat.author }) : ''
   $('np-byline').hidden = !cat.author
   $('np-apply').setAttribute('href', applyHref())
@@ -212,7 +212,7 @@ async function onShareClick() {
   const url = shareUrl(cat)
   if (typeof navigator.share === 'function') {
     try {
-      await navigator.share({ title: cat.name, url })
+      await navigator.share({ title: catNameOf(cat), url })
       return
     } catch (error) {
       if (error?.name === 'AbortError') return

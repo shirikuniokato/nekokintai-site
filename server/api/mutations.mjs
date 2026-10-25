@@ -25,13 +25,13 @@ export async function commitMutation(database, challenge, proof) {
     await database.prepare(`INSERT INTO neko_authenticated_mutations
       (id, owner_hash, proof_kind, key_id, previous_counter, new_counter, challenge_id, payload_digest,
        client_data_hash, proof_digest, action, slot, generation, expected_generation, expected_revision,
-       publication_id, code, name, author, fallback_name)
+       publication_id, code, name, author, fallback_place)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`).bind(
       payload.operationId, challenge.owner_hash, proof.kind, challenge.key_id,
       proof.previousCounter ?? null, proof.counter ?? null, challenge.id, challenge.payload_digest,
       challenge.client_data_hash, proof.digest, payload.action, payload.slot, payload.generation,
       payload.expectedGeneration, payload.expectedRevision, publicationId,
-      payload.code ?? null, payload.name ?? null, payload.author ?? null, payload.fallbackName ?? null,
+      payload.code ?? null, payload.name ?? null, payload.author ?? null, payload.fallbackPlace ?? null,
     ).run()
   } catch (error) {
     if (/conflict|UNIQUE|publishing_unavailable|development_proof_forbidden/.test(error.message)) {

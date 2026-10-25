@@ -1,6 +1,6 @@
-// 生成物。正本: shirikuniokato/nekokintai 33a29f363237652f3c22162e4f73ab3f0e3c9b1e src/shared/catCode.ts。手で直さない。
+// 生成物。正本: shirikuniokato/nekokintai 1449247dc6710209994d923b17c7d942515559f7 src/shared/catCode.ts。手で直さない。
 
-// ../../nekokintai/release-2.6.0/src/shared/sprites.ts
+// ../../nekokintai/feat-neko-name-rules/src/shared/sprites.ts
 var SPRITES = {
   walkA: [
     "...............KK....KK...",
@@ -89,7 +89,7 @@ var SPRITES = {
   ]
 };
 
-// ../../nekokintai/release-2.6.0/src/shared/skins.ts
+// ../../nekokintai/feat-neko-name-rules/src/shared/skins.ts
 var skinCopy = {};
 function localizedSkin(skin) {
   return Object.defineProperties(skin, {
@@ -689,7 +689,7 @@ var SKINS = [
 ];
 var SKIN_IDS = SKINS.map((skin) => skin.id);
 
-// ../../nekokintai/release-2.6.0/src/shared/customCats.ts
+// ../../nekokintai/feat-neko-name-rules/src/shared/customCats.ts
 var CUSTOM_CAT_SLOT_COUNT = 10;
 var MAX_STORED_CUSTOM_CATS = CUSTOM_CAT_SLOT_COUNT + 1;
 var CUSTOM_CAT_BREEDS = ["short", "calico", "hachi", "tuxedo", "long"];
@@ -710,7 +710,7 @@ function defaultCustomCatColors() {
   };
 }
 
-// ../../nekokintai/release-2.6.0/src/shared/catCode.ts
+// ../../nekokintai/feat-neko-name-rules/src/shared/catCode.ts
 var CAT_CODE_VERSION = 1;
 var CAT_CODE_LENGTH = 31;
 var COLOR_KEYS = ["body", "pattern", "patternSecondary", "line", "eyes", "collar", "paws"];

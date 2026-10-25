@@ -1,16 +1,16 @@
-const MAX_NAME_LENGTH = 12
-const URL_PATTERN = /(?:https?:|www[.]|[\p{L}\p{N}](?:[\p{L}\p{N}-]*[\p{L}\p{N}])?[.。．｡](?:[\p{L}]{2,63}|xn--[a-z0-9-]+)(?:\b|$|[/\s]))/iu
+import { checkCatName, normalizeCatName } from '../vendor/cat-name.mjs'
+
 const WORD_CHARACTER = /[\p{L}\p{N}_]/u
 const LATIN_WORD_CHARACTER = /[\p{Script=Latin}\p{N}_]/u
 const LOCALES = ['ja', 'en', 'ko', 'zh-TW']
 
-export function normalizePublicName(value = '') {
-  if (typeof value !== 'string' || value.length > 256) return { ok: false, reason: 'invalid' }
-  const name = value.normalize('NFKC').replace(/[\p{Cc}\p{Cf}]/gu, '').trim()
-  // アプリの呼び名と同じ UTF-16 の12文字。サーバーでは黙って切り詰めない。
-  if (name.length > MAX_NAME_LENGTH) return { ok: false, reason: 'too_long' }
-  if (URL_PATTERN.test(name)) return { ok: false, reason: 'url' }
-  return { ok: true, value: name }
+const EVERY_CHARACTER = () => true
+
+// そろえかた（NFKC・制御文字）・数えかた（UTF-16 で 12）・URL・描ける字は、アプリの src/shared/catName.ts が正本（#262）。
+// 描ける字の一覧を渡さないときは、その検査だけを省く。
+export function normalizePublicName(value = '', isDrawable = EVERY_CHARACTER) {
+  const checked = checkCatName(value, isDrawable)
+  return checked.ok ? { ok: true, value: checked.value } : { ok: false, reason: checked.reason }
 }
 
 export function compileNameRules(rules) {
@@ -27,7 +27,7 @@ export function compileNameRules(rules) {
 }
 
 function foldForMatch(value) {
-  return value.normalize('NFKC').replace(/[\p{Cc}\p{Cf}]/gu, '').toLowerCase()
+  return normalizeCatName(value).toLowerCase()
 }
 
 function hasWord(text, term) {
@@ -47,10 +47,10 @@ function assertLanguageCoverage(rules) {
   }
 }
 
-export function validatePublicNames(input, rules) {
+export function validatePublicNames(input, rules, isDrawable = EVERY_CHARACTER) {
   assertLanguageCoverage(rules)
-  const name = normalizePublicName(input.name)
-  const author = normalizePublicName(input.author)
+  const name = normalizePublicName(input.name, isDrawable)
+  const author = normalizePublicName(input.author, isDrawable)
   if (!name.ok) return { ...name, field: 'name' }
   if (!author.ok) return { ...author, field: 'author' }
   for (const [field, value] of [['name', name.value], ['author', author.value]]) {
