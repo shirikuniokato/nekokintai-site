@@ -38,11 +38,6 @@ function indexOf(pack, codePoint) {
   return -1
 }
 
-/** 名前を NFC にそろえ、pack に無い字を数える。投稿時の検査と OGP の両方で使う想定 */
-export function missingChars(pack, text) {
-  return [...text.normalize('NFC')].filter((ch) => indexOf(pack, ch.codePointAt(0)) < 0)
-}
-
 /**
  * 字ごとの大きさ。fusion-pixel（12px 格子）は整数倍にしてにじませない。
  * DotGothic16 は格子に乗っていないので指定の大きさのまま描く。
@@ -53,7 +48,11 @@ function sizeFor(pack, fontIndex, size) {
   return Math.max(1, Math.round(size / grid)) * grid
 }
 
-/** 字の並び（左上を 0 とした送り位置）。無い字は REPLACEMENT に置き換える */
+/**
+ * 字の並び（左上を 0 とした送り位置）。無い字は REPLACEMENT に置き換える。
+ * 描ける字かどうかの判定と名前のそろえかたは src/shared/catName.ts（server/vendor/cat-name.mjs）が正本で、
+ * 名前は投稿のときにそろえて描ける字だけにしてある。ここの NFC と置き換えは、ロゴなど固定の字も含めた描くときの守り
+ */
 export function layoutText(pack, text, size, letterSpacing = 0) {
   const items = []
   let x = 0
