@@ -1,4 +1,5 @@
 // みんなのねこちゃんの 3 ページで共通に使うもの。
+import { displayCatName } from './vendor/cat-name.mjs'
 
 const LIKED_STORAGE_KEY = 'nekokintai.nekos.liked'
 const OWNER_PATTERN = /^[A-Za-z0-9_-]{1,64}$/
@@ -94,6 +95,14 @@ export function copyOf(key, vars = {}) {
   const element = document.querySelector(`#nk-copy [data-i18n="${key}"]`) || document.querySelector(`[data-i18n="${key}"]`)
   const text = element?.textContent ?? key
   return Object.entries(vars).reduce((result, [name, value]) => result.replaceAll(`{{${name}}}`, value), text)
+}
+
+/**
+ * 画面に出すねこの名前。付けた名前が空なら、野良ねこの名前を見ている人の言語で組み立てる（#262）。
+ * 言語は i18n.mjs が html の lang に入れたもの。言語が変わったら onLocaleChange の描きなおしで組みなおす
+ */
+export function catNameOf(cat) {
+  return displayCatName(cat.name, cat.fallbackPlace, document.documentElement.lang)
 }
 
 /** 言語が変わったら描きなおす（i18n.mjs が nekokintai:locale を出す） */

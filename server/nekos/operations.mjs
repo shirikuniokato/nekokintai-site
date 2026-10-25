@@ -33,7 +33,7 @@ export function settingsStatement() {
 
 export function publicationStatement(target) {
   return {
-    sql: `SELECT p.id, p.code, p.name, p.author, p.generation, p.slot, p.revision,
+    sql: `SELECT p.id, p.code, p.name, p.fallback_place, p.author, p.generation, p.slot, p.revision,
       p.withdrawn_at, p.replaced_at, p.moderated_at, p.deleted_at, p.updated_at,
       o.public_token AS owner, o.suspended_at, o.moderation_revision AS owner_revision
       FROM neko_publications p JOIN neko_owners o ON o.owner_hash = p.owner_hash WHERE p.id = ?`,
@@ -51,7 +51,7 @@ export function reportsStatement({ after = 0, limit = 50, includeResolved = fals
     throw new Error('通報一覧の取得条件が正しくありません')
   }
   return {
-    sql: `SELECT r.*, p.name, p.author, p.revision AS current_publication_revision,
+    sql: `SELECT r.*, p.name, p.fallback_place, p.author, p.revision AS current_publication_revision,
       o.public_token AS owner, o.moderation_revision AS owner_revision,
       p.moderated_at, p.deleted_at, o.suspended_at
       FROM neko_reports r JOIN neko_publications p ON p.id = r.publication_id

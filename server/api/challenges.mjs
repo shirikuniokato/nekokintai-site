@@ -2,7 +2,7 @@ import { ApiError, requireInput } from './errors.mjs'
 import { normalizePayload, digest } from './payload.mjs'
 import { ownerIdentity } from './identity.mjs'
 import { registerOwner } from '../nekos/publications.mjs'
-import { chooseFallbackName } from '../nekos/fallback-names.mjs'
+import { chooseStrayPlace } from '../nekos/stray-places.mjs'
 
 export async function issueChallenge(database, env, input, platform) {
   const identity = await ownerIdentity(env, input.uid)
@@ -13,7 +13,7 @@ export async function issueChallenge(database, env, input, platform) {
   requireInput(purpose !== 'attest' || platform === 'ios')
   const normalized = purpose === 'attest' ? { action: 'attest', keyId } : normalizePayload(input.payload)
   const payload = normalized.action === 'publish'
-    ? { ...normalized, fallbackName: chooseFallbackName(normalized.locale) } : normalized
+    ? { ...normalized, fallbackPlace: chooseStrayPlace() } : normalized
   const id = crypto.randomUUID()
   const payloadJson = JSON.stringify({ v: 1, ownerHash: identity.ownerHash, ...payload })
   const payloadDigest = await digest(payloadJson)

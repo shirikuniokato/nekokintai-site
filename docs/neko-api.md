@@ -8,7 +8,7 @@
 - 公開・編集・取り下げ・再公開・世代交換、署名対象の正規化、challenge / counter / 保存を同じ SQL 文で確定する receipt。
 - いいねの冪等な追加・取消、投稿/飼い主への通報、重複抑止、通知待ちの同時保存。
 - 正本 #245 の code 検査、NFKC / URL / 12 UTF-16文字、4言語の選別語、OGP の glyph pack と同じ文字集合の検査。
-- #250 で確定した20か所と英語名、ko / zh-TW の自動名。自動名は初回に決めて保持する。
+- #250 で確定した20か所と英語名、ko / zh-TW の自動名。自動名は初回に**場所の番号**を決めて保持する（#262）。
 - 本人決定: **日次カウンターは追加しない。1枠1投稿＋短時間IP制限。にんき順は累計、同数なら新しい順。**
 - 既存画面の fetch・いいね・通報を実 API に接続。見た目や導線の再設計は含めない。
 - 1匹のHTMLと OGP PNG。名前・code が変わると og:image URL も変わる。非表示/取り下げ後は画像を返さない。画像も no-store とし、以前の応答を自サイトのキャッシュから返さない。SNS 側が既に保存した画像の回収はできない。
@@ -31,7 +31,9 @@
 | `PUT /<id>/like` | `{liked: boolean}` → `{likes, liked}`。反転要求ではなく希望状態を送る |
 | `POST /<id>/reports` | `{revision, targetKind: publication|owner, reason}` → 202 `{accepted:true}` |
 
-投稿は id / code / breed / colors / name / author / owner（公開用識別子）/ revision / likes / 日時を返す。
+投稿は id / code / breed / colors / name / fallbackPlace / author / owner（公開用識別子）/ revision / likes / 日時を返す。
+`name` は付けた名前だけで、空なら空のまま返す。そのときは `fallbackPlace`（野良ねこの場所の番号）から、
+見る人の言語で「〇〇の野良ねこ」を組み立てる（`displayCatName`）。OGP の絵・サーバーが組む title / og:title は日本語。
 private な owner hash、uid 原文、IP 原文、端末の鍵や証明を公開レスポンスへ含めない。
 `hide` はアプリが持つブロック一覧。100人まで。API の上限は50件/ページ。
 
@@ -46,6 +48,8 @@ IP は Cloudflare が付ける `CF-Connecting-IP` を秘密付き HMAC にする
 2. 返る `clientData` をそのまま端末証明に結び付ける。Android の `requestHash` は返る SHA-256 hex。
 3. `POST /mutation` に `{uid, platform, challengeId:id, clientData, assertion? | token?}`。
 4. 成功は `{operationId, action, publication}`。応答を失ったら**同じ要求**を再送する。新しい操作IDで自動上書きしない。
+   `publication.name` は付けた名前（空なら空）、`publication.fallbackPlace` は野良ねこの場所の番号。
+   0006 より前に保存した receipt の再送は当時の形（自動名の文字が name に入り、fallbackPlace が無い）で返る。
 
 payload の共通項目:
 
@@ -70,7 +74,29 @@ payload の共通項目:
 `read` は operationId / action / slot だけで現在の保存状態を確認する。再送では当時の snapshot を返す。
 
 canonical payload に操作ID・owner hash・全入力・世代/版を含め、clientData は challenge / platform / key / payload digest を含む。
-サーバーが正規化して challenge と一緒に保存するため、受信 JSON の ownerHash や fallbackName を信用しない。
+サーバーが正規化して challenge と一緒に保存するため、受信 JSON の ownerHash や fallbackPlace を信用しない。
+野良ねこの場所のくじは challenge を出すときに引き、payload digest に含める（再送しても場所が変わらない）。
+
+## 名前の決まり（#262）
+
+そろえかた（NFKC・制御文字/見えない書式文字の除去・前後の空白）、数えかた（UTF-16 で 12）、URL の拒否、
+描ける字の判定、野良ねこの場所（20 か所×4 言語）と名前の組み立て、OGP に描く名前（＝og:image の名前のハッシュの元）は、
+アプリの `src/shared/catName.ts` が正本。サイトは `scripts/vendor-public-inputs.mjs` で bundle して取り込む。
+
+| 生成物 | 使う所 |
+| --- | --- |
+| `server/vendor/cat-name.mjs` | API の投稿検査（`server/name-filter`）・自動名のくじ・OGP・ページの title |
+| `assets/nekos/vendor/cat-name.mjs` | ブラウザの表示名（`displayCatName` / `strayCatName` だけ） |
+
+- 正本を直したら、正本の `src/shared` をコミットしてから `node scripts/vendor-public-inputs.mjs <アプリ repo> assets/nekos/glyphs.bin` で取り込みなおす。生成物を手で直さない
+- 描ける字の**判定の関数**は正本、**一覧（データ）**は OGP の字のデータ `assets/nekos/glyphs.bin` から作る `server/name-filter/glyph-codepoints.json`（pack の SHA-256 つき）。
+  アプリの「公開する」シート（#247）でその場で知らせるときは、この一覧を取り込んで `checkCatName` に渡す
+- NG ワード（`server/name-filter/rules.mjs`）はサーバーだけが持つ
+- og:image の版は `<code>.<SHA-256(ogpCatName(name, fallbackPlace))>`。野良ねこは日本語の名前のハッシュ
+- **場所の一覧の並び順は変えない・途中を消さない（足すときは 4 言語とも末尾に）。** D1 は番号だけを持ち、上限を CHECK に書いていない
+- D1 の `neko_publications.fallback_place` は公開したときに必ず入り（trigger `neko_publication_fallback_place_required`）、
+  あとから変えられない（`neko_publication_fallback_place_fixed`）。migration `0006` が文字で持っていた自動名（4 言語×80 通り）を番号へもどす。
+  もどせない行があれば migration ごと止まる
 challenge は120秒。保存直前にも DB 内で期限・未使用・用途・payload を照合する。
 
 iOS の初回は `purpose:'attest'` と keyId で challenge を取り、`POST /attest` に uid / platform / keyId / challengeId / clientData / attestation。
