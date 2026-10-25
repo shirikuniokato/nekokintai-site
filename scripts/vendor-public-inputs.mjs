@@ -16,14 +16,10 @@ await build({ stdin: { contents: "export { decodeCatCode, encodeCatCode, CAT_COD
   resolveDir: `${app}/src/shared`, loader: 'ts' }, bundle: true, format: 'esm', platform: 'neutral',
   outfile: 'server/vendor/cat-code.mjs', tsconfigRaw: {},
   banner: { js: `// 生成物。正本: shirikuniokato/nekokintai ${revision} src/shared/catCode.ts。手で直さない。` } })
-// 公開名の決まり（#262）。API と OGP はすべて、ブラウザは表示に要る分だけを取り込む。
+// 公開名の決まり（#262）。野良ねこの場所の辞書はサイトの assets/nekos/stray-names.mjs が持つ。
 await build({ stdin: { contents: "export * from './catName.ts'",
   resolveDir: `${app}/src/shared`, loader: 'ts' }, bundle: true, format: 'esm', platform: 'neutral',
   outfile: 'server/vendor/cat-name.mjs', tsconfigRaw: {},
-  banner: { js: `// 生成物。正本: shirikuniokato/nekokintai ${revision} src/shared/catName.ts。手で直さない。` } })
-await build({ stdin: { contents: "export { displayCatName, strayCatName } from './catName.ts'",
-  resolveDir: `${app}/src/shared`, loader: 'ts' }, bundle: true, format: 'esm', platform: 'browser',
-  outfile: 'assets/nekos/vendor/cat-name.mjs', tsconfigRaw: {},
   banner: { js: `// 生成物。正本: shirikuniokato/nekokintai ${revision} src/shared/catName.ts。手で直さない。` } })
 await build({ stdin: { contents: "export { customCatSkin } from './customCats.ts'; export { paletteOf, spriteOf } from './skins.ts'",
   resolveDir: `${app}/src/shared`, loader: 'ts' }, bundle: true, format: 'esm', platform: 'neutral',

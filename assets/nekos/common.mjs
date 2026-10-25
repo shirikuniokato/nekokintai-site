@@ -1,5 +1,5 @@
 // みんなのねこちゃんの 3 ページで共通に使うもの。
-import { displayCatName } from './vendor/cat-name.mjs'
+import { displayCatName } from './stray-names.mjs'
 
 const LIKED_STORAGE_KEY = 'nekokintai.nekos.liked'
 const OWNER_PATTERN = /^[A-Za-z0-9_-]{1,64}$/

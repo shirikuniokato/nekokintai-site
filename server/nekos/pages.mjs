@@ -4,11 +4,11 @@ import { digest } from '../api/payload.mjs'
 import { parseGlyphPack } from '../ogp/glyphs.mjs'
 import { renderOgp } from '../ogp/ogp.mjs'
 import { encodePng } from '../ogp/png.mjs'
-import { ogpCatName } from '../vendor/cat-name.mjs'
+import { ogpNameOf } from './stray-places.mjs'
 
-// og:image の URL の版。名前のハッシュは OGP に描く名前（野良ねこは日本語）の SHA-256。決まりは src/shared/catName.ts
+// og:image の URL の版。名前のハッシュは OGP に描く名前（野良ねこは日本語）の SHA-256。決まりは src/shared/catName.ts の ogpCatName
 export async function ogpVersion(cat) {
-  return `${cat.code}.${await digest(ogpCatName(cat.name, cat.fallbackPlace))}`
+  return `${cat.code}.${await digest(ogpNameOf(cat))}`
 }
 
 function blockedOwners(request) {
@@ -28,7 +28,7 @@ export async function nekoPage(request, env, id) {
   const origin = env.NEKOS_ENV === 'production' ? 'https://nekokintai.com' : new URL(request.url).origin
   const canonical = `${origin}/nekos/${encodeURIComponent(id)}`
   // サーバーが組む title・og:title は日本語。野良ねこも OGP の絵と同じ日本語の名前にする（画面の title は見る人の言語で組みなおす）
-  const title = cat ? `${ogpCatName(cat.name, cat.fallbackPlace)} | みんなのねこちゃん | ねこ勤怠` : 'このねこちゃんは、いまは見られません | ねこ勤怠'
+  const title = cat ? `${ogpNameOf(cat)} | みんなのねこちゃん | ねこ勤怠` : 'このねこちゃんは、いまは見られません | ねこ勤怠'
   const ogp = cat ? `${canonical}/og.png?v=${await ogpVersion(cat)}` : null
   const rewritten = new HTMLRewriter().on('title', { element(element) {
     element.removeAttribute('data-i18n')
@@ -60,7 +60,7 @@ export async function nekoOgp(request, env, id) {
   const asset = await env.ASSETS.fetch(new Request(new URL('/assets/nekos/glyphs.bin', request.url)))
   if (!asset.ok) return new Response('Unavailable', { status: 503 })
   const pack = parseGlyphPack(await asset.arrayBuffer())
-  const png = await encodePng(renderOgp(pack, { ...decoded.cat, slot: 1 }, ogpCatName(cat.name, cat.fallbackPlace)))
+  const png = await encodePng(renderOgp(pack, { ...decoded.cat, slot: 1 }, ogpNameOf(cat)))
   return new Response(png, { headers: { 'Content-Type': 'image/png',
     'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' } })
 }

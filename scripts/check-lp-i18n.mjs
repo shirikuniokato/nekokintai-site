@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { I18N_PAGES, SHARED_KEYS } from './lib/lp-i18n-pages.mjs'
+import { STRAY_NAMES } from '../assets/nekos/stray-names.mjs'
 
 const projectRoot = resolve(import.meta.dirname, '..')
 const translatedLocales = ['en', 'ko', 'zh-TW']
@@ -117,6 +118,34 @@ function checkPage(pageName, page, lpLocales) {
   return errorCount
 }
 
+/**
+ * HTML を持たない辞書（JS が使う文言）。キーのそろい・訳の検査はページと同じ validateLocale を通す。
+ * 野良ねこの名前（#262）は、場所の番号 placeNN が 00 から欠けずに続き、どの言語の組み立てにも {{place}} があること。
+ */
+function checkStrayNames() {
+  const label = 'stray-names'
+  const sourceKeys = Object.keys(STRAY_NAMES.ja).sort()
+  const placeKeys = sourceKeys.filter((key) => key.startsWith('place'))
+  const errors = []
+  placeKeys.forEach((key, index) => {
+    if (key !== `place${String(index).padStart(2, '0')}`) errors.push(`ja: ${key} は place00 から欠けなく続く番号にする`)
+  })
+  if (sourceKeys.length !== placeKeys.length + 1 || !sourceKeys.includes('strayName')) {
+    errors.push('ja: strayName と placeNN 以外のキーを置かない')
+  }
+  for (const locale of ['ja', ...translatedLocales]) {
+    if (!STRAY_NAMES[locale]?.strayName?.includes('{{place}}')) errors.push(`${locale}: strayName に {{place}} が無い`)
+  }
+  for (const locale of translatedLocales) {
+    for (const error of validateLocale(STRAY_NAMES, locale, sourceKeys, { requireGoodJobSavings: false })) {
+      errors.push(`${locale}: ${error}`)
+    }
+  }
+  for (const error of errors) console.error(`${label} ${error}`)
+  if (errors.length === 0) console.log(`${label}: ${placeKeys.length}か所×${translatedLocales.length + 1}言語、キー・用語検査に合格`)
+  return errors.length
+}
+
 const lpLocales = readJson(I18N_PAGES.lp.locales)
 const requestedPages = process.argv.slice(2)
 const pageNames = requestedPages.length > 0 ? requestedPages : Object.keys(I18N_PAGES)
@@ -130,5 +159,7 @@ for (const pageName of pageNames) {
   }
   errorCount += checkPage(pageName, page, lpLocales)
 }
+
+if (requestedPages.length === 0) errorCount += checkStrayNames()
 
 if (errorCount > 0) process.exitCode = 1

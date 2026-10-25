@@ -1,5 +1,5 @@
 -- 野良ねこの名前を、文字ではなく場所の番号で持つ（#262）。文字で持つと見る人の言語に訳せない。
--- 番号はアプリの src/shared/catName.ts の STRAY_PLACES の並び（サイトは server/vendor/cat-name.mjs に取り込む）。
+-- 番号はサイトの辞書 assets/nekos/stray-names.mjs の placeNN の NN。
 -- 並びは変えず、足すときは末尾なので、上限はここに書かない（足すたびに migration を要らなくする）。
 -- name には付けた名前だけを入れ、空なら空のまま。画面は見る人の言語、OGP は日本語で組み立てる。
 -- 0004 の trigger が自動名の文字を name に焼き込んでいたので、外してから作りなおす。

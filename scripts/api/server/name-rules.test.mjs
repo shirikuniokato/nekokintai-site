@@ -1,4 +1,5 @@
 // #262 野良ねこの名前を場所の番号で持つことと、名前の決まりをアプリの src/shared/catName.ts にそろえたことの検証。
+// 野良ねこの場所の辞書はサイトの assets/nekos/stray-names.mjs。
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
@@ -8,10 +9,9 @@ import { publishPublication } from '../../../server/nekos/publications.mjs'
 import { getPublicPublication } from '../../../server/nekos/queries.mjs'
 import { ogpVersion } from '../../../server/nekos/pages.mjs'
 import { digest } from '../../../server/api/payload.mjs'
-import { chooseStrayPlace } from '../../../server/nekos/stray-places.mjs'
+import { chooseStrayPlace, ogpNameOf } from '../../../server/nekos/stray-places.mjs'
 import { validatePublicationInput } from '../../../server/name-filter/public-input.mjs'
-import { STRAY_PLACE_COUNT, ogpCatName } from '../../../server/vendor/cat-name.mjs'
-import { displayCatName } from '../../../assets/nekos/vendor/cat-name.mjs'
+import { STRAY_PLACE_COUNT, displayCatName } from '../../../assets/nekos/stray-names.mjs'
 
 async function emptyDatabase(context) {
   const worker = new Miniflare(convertV4MiniflareOptions({ modules: true,
@@ -78,7 +78,8 @@ test('OGP は野良ねこを日本語で描き、名前のハッシュはその�
   const database = await databaseFor(context)
   const { id } = await publishPublication(database, publication({ name: '' }))
   const cat = await getPublicPublication(database, id)
-  assert.equal(ogpCatName(cat.name, cat.fallbackPlace), '路地裏の野良ねこ')
+  assert.equal(ogpNameOf(cat), '路地裏の野良ねこ')
+  assert.equal(ogpNameOf({ ...cat, name: 'よる' }), 'よる')
   assert.equal(await ogpVersion(cat), `${CODE}.${await digest('路地裏の野良ねこ')}`)
   assert.equal(await ogpVersion({ ...cat, name: 'よる' }), `${CODE}.${await digest('よる')}`)
   // 画面は見る人の言語で組み立てる
@@ -93,10 +94,9 @@ test('投稿の検査はアプリと同じ決まりでそろえた名前を返�
   assert.equal(validatePublicationInput({ code: CODE, name: 'あ'.repeat(13) }).reason, 'too_long')
 })
 
-test('サーバーとブラウザの取り込みは同じ正本の版から作られている', async () => {
-  const banner = (text) => text.split('\n')[0]
-  const server = await readFile('server/vendor/cat-name.mjs', 'utf8')
-  const browser = await readFile('assets/nekos/vendor/cat-name.mjs', 'utf8')
-  assert.match(banner(server), /正本: shirikuniokato\/nekokintai [0-9a-f]{40} src\/shared\/catName\.ts/)
-  assert.equal(banner(browser), banner(server))
+test('名前の決まりはアプリの正本を bundle したもので、野良ねこの場所の文字は持ちこまない', async () => {
+  const vendored = await readFile('server/vendor/cat-name.mjs', 'utf8')
+  assert.match(vendored.split('\n')[0], /正本: shirikuniokato\/nekokintai [0-9a-f]{40} src\/shared\/catName\.ts/)
+  assert.equal(vendored.includes('野良ねこ\''), false)
+  assert.equal(/STRAY_PLACES|strayCatName/.test(vendored), false)
 })

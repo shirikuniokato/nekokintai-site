@@ -5,7 +5,7 @@ import { databaseFor, publication, CODE, OWNER, OTHER_OWNER, IP } from './helper
 import { publishPublication } from '../../../server/nekos/publications.mjs'
 import { setPublicationLike } from '../../../server/nekos/likes.mjs'
 import { validatePublicationInput } from '../../../server/name-filter/public-input.mjs'
-import { CAT_NAME_LOCALES, STRAY_PLACE_COUNT, strayCatName } from '../../../server/vendor/cat-name.mjs'
+import { STRAY_NAMES, STRAY_PLACE_COUNT, strayCatName } from '../../../assets/nekos/stray-names.mjs'
 import { validatePublicNames } from '../../../server/name-filter/names.mjs'
 import { RULES } from '../../../server/name-filter/rules.mjs'
 import { createHandler } from '../../../server/api/handler.mjs'
@@ -43,7 +43,7 @@ test('自動名は正本の20か所で、全4言語の80候補が辞書と OGP �
   assert.equal(strayCatName(8, 'ko'), '신사 경내의 길고양이')
   assert.equal(strayCatName(12, 'zh-TW'), '緣廊的浪貓')
   assert.equal(STRAY_PLACE_COUNT, 20)
-  for (const locale of CAT_NAME_LOCALES) {
+  for (const locale of Object.keys(STRAY_NAMES)) {
     for (let index = 0; index < STRAY_PLACE_COUNT; index += 1) {
       const name = strayCatName(index, locale)
       assert.ok([...name].every((letter) => supported.has(letter.codePointAt(0))), name)

@@ -1,4 +1,4 @@
-// 生成物。正本: shirikuniokato/nekokintai 00ca22240b7124804b208b83ff22f182f5172d7b src/shared/catCode.ts。手で直さない。
+// 生成物。正本: shirikuniokato/nekokintai 1449247dc6710209994d923b17c7d942515559f7 src/shared/catCode.ts。手で直さない。
 
 // ../../nekokintai/feat-neko-name-rules/src/shared/sprites.ts
 var SPRITES = {

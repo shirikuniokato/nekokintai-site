@@ -33,7 +33,7 @@
 
 投稿は id / code / breed / colors / name / fallbackPlace / author / owner（公開用識別子）/ revision / likes / 日時を返す。
 `name` は付けた名前だけで、空なら空のまま返す。そのときは `fallbackPlace`（野良ねこの場所の番号）から、
-見る人の言語で「〇〇の野良ねこ」を組み立てる（`displayCatName`）。OGP の絵・サーバーが組む title / og:title は日本語。
+見る人の言語で「〇〇の野良ねこ」を組み立てる（`assets/nekos/stray-names.mjs` の `displayCatName`）。OGP の絵・サーバーが組む title / og:title は日本語。
 private な owner hash、uid 原文、IP 原文、端末の鍵や証明を公開レスポンスへ含めない。
 `hide` はアプリが持つブロック一覧。100人まで。API の上限は50件/ページ。
 
@@ -80,19 +80,20 @@ canonical payload に操作ID・owner hash・全入力・世代/版を含め、c
 ## 名前の決まり（#262）
 
 そろえかた（NFKC・制御文字/見えない書式文字の除去・前後の空白）、数えかた（UTF-16 で 12）、URL の拒否、
-描ける字の判定、野良ねこの場所（20 か所×4 言語）と名前の組み立て、OGP に描く名前（＝og:image の名前のハッシュの元）は、
-アプリの `src/shared/catName.ts` が正本。サイトは `scripts/vendor-public-inputs.mjs` で bundle して取り込む。
+描ける字の判定、OGP に描く名前（付けた名前、空なら日本語の野良ねこの名前。＝og:image の名前のハッシュの元）は、
+アプリの `src/shared/catName.ts` が正本。サイトは `scripts/vendor-public-inputs.mjs` で `server/vendor/cat-name.mjs` に bundle して取り込む
+（API の投稿検査 `server/name-filter`・OGP・ページの title が使う）。
 
-| 生成物 | 使う所 |
-| --- | --- |
-| `server/vendor/cat-name.mjs` | API の投稿検査（`server/name-filter`）・自動名のくじ・OGP・ページの title |
-| `assets/nekos/vendor/cat-name.mjs` | ブラウザの表示名（`displayCatName` / `strayCatName` だけ） |
+野良ねこの場所（20 か所×4 言語）と「〇〇の野良ねこ」の組み立ては、サイトの辞書 `assets/nekos/stray-names.mjs` が持つ。
+アプリの画面は野良ねこの名前を出さないので、アプリには置かない。使うのはページ・一覧（ブラウザが直接 import、見る人の言語）、
+OGP と title（日本語）、くじ（`server/nekos/stray-places.mjs`、場所の数）。辞書の形は `assets/<ページ>/locales.json` と同じで、
+`npm run check:i18n` が 4 言語のキーのそろいと訳を、`scripts/lib/stray-names.test.mjs` が決めた 20 か所の番号を検査する。
 
 - 正本を直したら、正本の `src/shared` をコミットしてから `node scripts/vendor-public-inputs.mjs <アプリ repo> assets/nekos/glyphs.bin` で取り込みなおす。生成物を手で直さない
 - 描ける字の**判定の関数**は正本、**一覧（データ）**は OGP の字のデータ `assets/nekos/glyphs.bin` から作る `server/name-filter/glyph-codepoints.json`（pack の SHA-256 つき）。
   アプリの「公開する」シート（#247）でその場で知らせるときは、この一覧を取り込んで `checkCatName` に渡す
 - NG ワード（`server/name-filter/rules.mjs`）はサーバーだけが持つ
-- og:image の版は `<code>.<SHA-256(ogpCatName(name, fallbackPlace))>`。野良ねこは日本語の名前のハッシュ
+- og:image の版は `<code>.<SHA-256(OGP に描く名前)>`（`server/nekos/stray-places.mjs` の `ogpNameOf`）。野良ねこは日本語の名前のハッシュ
 - **場所の一覧の並び順は変えない・途中を消さない（足すときは 4 言語とも末尾に）。** D1 は番号だけを持ち、上限を CHECK に書いていない
 - D1 の `neko_publications.fallback_place` は公開したときに必ず入り（trigger `neko_publication_fallback_place_required`）、
   あとから変えられない（`neko_publication_fallback_place_fixed`）。migration `0006` が文字で持っていた自動名（4 言語×80 通り）を番号へもどす。
