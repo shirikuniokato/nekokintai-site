@@ -6,7 +6,7 @@ import { googleAccessToken } from './google-auth.mjs'
 
 const IOS_POLICY = { bundleId: 'com.ccya.nekokintai', appIdPrefix: '38KMU5TJWZ' }
 const ANDROID_PACKAGE = 'com.ccya.nekokintai'
-const ANDROID_CERTIFICATE = Buffer.from('5868493cf67fbe39bdf533d3ff6d1256340e50ff35a529484c03bfa77ea4f8c59', 'hex').toString('base64url')
+const ANDROID_CERTIFICATE = Buffer.from('5868493cf67fbe39bdf533d3ff6d1256340e50f35a529484c03bfa77ea4f8c59', 'hex').toString('base64url')
 
 function proofBytes(value, maximum) {
   requireInput(typeof value === 'string' && value.length <= maximum && /^[A-Za-z0-9+/]+={0,2}$/.test(value))
