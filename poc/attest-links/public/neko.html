@@ -1,1 +1,42 @@
-<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>リンクの試験</title><body><h1>リンクの試験</h1><p>これは dev アプリ用の試験ページです。アプリが開かなかった場合はリンクの関連付けを確認します。</p></body></html>
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<!-- Smart App Banner は最初の HTML に無いと Safari が読まない。dev 版はストアに無いので、出るのは本番のねこ勤怠（#261 では出るか・何が開くかを見るだけ） -->
+<meta name="apple-itunes-app" content="app-id=6801066427, app-argument=https://go-dev.nekokintai.com/neko?code=POC259">
+<title>ねこ勤怠dev（試験）</title>
+<style>
+  body { font-family: sans-serif; margin: 0 auto; max-width: 640px; padding: 16px; line-height: 1.6; }
+  a.button { display: block; margin: 10px 0; padding: 14px; border: 2px solid #333; border-radius: 8px;
+    text-decoration: none; color: #111; background: #f6f1e7; font-size: 18px; }
+  .note { font-size: 13px; color: #555; }
+  .flag { padding: 8px; background: #ffe9a8; border-radius: 6px; }
+  textarea { width: 100%; box-sizing: border-box; font-size: 12px; }
+</style>
+</head>
+<body>
+<h1>アプリが開きませんでした（go-dev の案内）</h1>
+<p id="fallback" class="flag" hidden>intent:// の救済から、このページにもどってきました。</p>
+<p>このページは、ねこ勤怠dev が開かなかったときに出る案内です（試験）。</p>
+<p>SNS のアプリの中で開いているときは、メニューから「ブラウザで開く」を選んで、もういちど試してください。</p>
+
+<p class="note">Android だけ: 下のボタンでアプリを開けるか試してください。</p>
+<a class="button" id="rescue-intent" href="intent://neko?code=POC259#Intent;scheme=nekokintaidev;package=com.ccya.nekokintai.dev;S.browser_fallback_url=https%3A%2F%2Fnekokintai-attest-poc.pages.dev%2Fneko%3Fcode%3DPOC259%26fallback%3Dintent;end">アプリで開く（Android の intent://）</a>
+
+<p class="note">受け取ったコード: <span id="code">-</span></p>
+<p class="note">UA:</p>
+<textarea id="ua" rows="5" readonly></textarea>
+<p class="note">開いている URL:</p>
+<textarea id="href" rows="3" readonly></textarea>
+
+<script>
+  var query = new URLSearchParams(location.search)
+  document.getElementById('code').textContent = query.get('code') || '（なし）'
+  document.getElementById('fallback').hidden = query.get('fallback') !== 'intent'
+  document.getElementById('ua').value = navigator.userAgent
+  document.getElementById('href').value = location.href
+</script>
+</body>
+</html>

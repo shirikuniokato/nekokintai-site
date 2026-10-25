@@ -1,3 +1,9 @@
 /.well-known/*
   Content-Type: application/json
   Cache-Control: public, max-age=300
+
+/sns/*
+  X-Robots-Tag: noindex, nofollow
+
+/neko*
+  X-Robots-Tag: noindex, nofollow
