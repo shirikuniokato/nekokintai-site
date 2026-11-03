@@ -262,7 +262,9 @@ for (const viewport of [{ width: 1280, height: 900 }, { width: 390, height: 844 
       assert.equal(play.pointerEvents, 'auto', `${locale}: Google Play のリンクがクリックできない`)
       assert.equal(await page.locator('h1').innerText(), copies[locale].heroTitle, `${locale}: h1`)
       assert.equal(await page.title(), copies[locale].documentTitle, `${locale}: title`)
-      assert.equal(new URL(page.url()).searchParams.get('lang'), locale === 'ja' ? null : locale, `${locale}: ?lang=`)
+      // 言語は URL のパスで表す（/en/ など）。?lang= は残さない
+      assert.equal(new URL(page.url()).pathname, locale === 'ja' ? '/' : `/${locale}/`, `${locale}: URL のパス`)
+      assert.equal(new URL(page.url()).searchParams.get('lang'), null, `${locale}: ?lang= が残っている`)
     }
 
     // 最後の日本語クリックで、HTML に書かれた既定の画像へ戻っている

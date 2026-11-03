@@ -131,7 +131,9 @@ for (const page of PAGES) {
         assert.equal(await tab.title(), copies[locale].documentTitle, `${locale}: title`)
         assert.equal(await tab.locator(page.bodySelector).textContent(), copies[locale][page.bodyKey], `${locale}: ${page.bodyKey}`)
         if (page.extra) await page.extra(tab, locale, copies)
-        assert.equal(new URL(tab.url()).searchParams.get('lang'), locale === 'ja' ? null : locale, `${locale}: ?lang=`)
+        // 言語は URL のパスで表す（/en/qa/ など）。?lang= は残さない
+        assert.equal(new URL(tab.url()).pathname, locale === 'ja' ? page.path : `/${locale}${page.path}`, `${locale}: URL のパス`)
+        assert.equal(new URL(tab.url()).searchParams.get('lang'), null, `${locale}: ?lang= が残っている`)
         // 本文が横にはみ出していない（韓国語・繁体字の長い見出しがスマホ幅で崩れていない）
         const overflow = await tab.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
         assert.ok(overflow <= 0, `${locale}: 横に ${overflow}px はみ出している`)
@@ -141,6 +143,7 @@ for (const page of PAGES) {
       await tab.goto(`${baseUrl}${page.path}?lang=ko`)
       await tab.waitForSelector('html[lang="ko"]')
       assert.equal(await tab.locator('h1').innerText(), copies.ko.heading)
+      assert.equal(new URL(tab.url()).pathname, `/ko${page.path}`, '?lang=ko が /ko/ のパスに置きかわっていない')
 
       await new Promise((resolveIdle) => setTimeout(resolveIdle, 1500))
       assert.deepEqual(lpImageRequests, [], 'トップLPの画面画像・バッジを取りに行っている')

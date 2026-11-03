@@ -22,6 +22,17 @@ git push origin main
 本体は `scripts/build-pages.mjs` の許可リストにある静的ファイルだけを配信する。
 同期スクリプト、テスト、GitHub Actions、旧ドメイン用プロジェクトのファイルは本体へアップロードしない。
 
+## 言語ごとのページ
+
+日本語は `/`・`/qa/` などの今の URL のまま。英語・韓国語・繁体字は `/en/qa/` のように言語を前に付けた URL で、
+`npm run build` が `I18N_PAGES`（`scripts/lib/lp-i18n-pages.mjs`）の全ページを訳した静的な HTML として書き出す
+（`scripts/lib/build-localized-pages.mjs`）。hreflang・canonical・`sitemap.xml`・トップの構造化データもここで作るので、
+`sitemap.xml` は手で書かない。訳した HTML は repo に置かず、元の HTML と `locales.json` だけを直す。
+
+端末の言語では中身を切りかえない。検索エンジンは英語の端末としてページを読むため、切りかえると日本語のページが
+英語として登録される。言語を選んだことがない人には、ページの上に「〇〇語で見る」の帯を出す（`assets/lp/locale-suggestion.mjs`）。
+前に選んだ言語と `?lang=` は今までどおり効き、URL は `/en/` などのパスへ書きかわる。
+
 ## アプリの更新案内
 
 `update.json` はアプリ内の任意アップデート案内が読む公開情報。

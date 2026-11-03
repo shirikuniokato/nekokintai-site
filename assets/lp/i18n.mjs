@@ -1,4 +1,13 @@
-import { FALLBACK_LOCALE, SUPPORTED_LOCALES, isSupportedLocale, preferredLocale } from './locale.mjs'
+import {
+  FALLBACK_LOCALE,
+  SUPPORTED_LOCALES,
+  isSupportedLocale,
+  localizedPathname,
+  preferredLocale,
+  splitLocalePath,
+  suggestedLocale,
+} from './locale.mjs'
+import { showLocaleSuggestion } from './locale-suggestion.mjs'
 
 const LANGUAGE_STORAGE_KEY = 'nekokintai.lp.locale'
 /** トップLPの辞書。ほかのページは <html data-i18n-source="..."> で自分の辞書を指す */
@@ -22,22 +31,20 @@ function saveLocale(locale) {
   }
 }
 
-function requestedLocale() {
-  const fromUrl = new URLSearchParams(window.location.search).get('lang')
-  return preferredLocale({
-    urlLocale: fromUrl,
+function localeRequest() {
+  return {
+    urlLocale: new URLSearchParams(window.location.search).get('lang'),
     storedLocale: readStoredLocale(),
     deviceLocales: navigator.languages ?? [navigator.language],
-  })
+    pageLocale: splitLocalePath(window.location.pathname).locale,
+  }
 }
 
+/** 表示中の言語のページの URL（/en/qa/ など）へ書きかえる。中身はもう切りかえてあるので読み直さない */
 function updateLocaleInUrl(locale) {
   const url = new URL(window.location.href)
-  if (locale === FALLBACK_LOCALE) {
-    url.searchParams.delete('lang')
-  } else {
-    url.searchParams.set('lang', locale)
-  }
+  url.pathname = localizedPathname(splitLocalePath(url.pathname).basePath, locale)
+  url.searchParams.delete('lang')
   window.history.replaceState(null, '', url)
 }
 
@@ -194,15 +201,32 @@ async function initializeLocalization() {
     if (!response.ok) throw new Error(`Could not load translations ${localesUrl}: ${response.status}`)
 
     const copies = await response.json()
-    const initialLocale = requestedLocale()
+    const request = localeRequest()
+    const initialLocale = preferredLocale(request)
     applyLocale(initialLocale, copies)
     // ?lang= 付きの共有リンクで開いたときも言語を覚えておく。ほかのページへ進んでも同じ言語のままにする
-    if (new URLSearchParams(window.location.search).has('lang')) saveLocale(initialLocale)
+    if (request.urlLocale) saveLocale(initialLocale)
+    if (request.urlLocale || initialLocale !== request.pageLocale) updateLocaleInUrl(initialLocale)
 
-    bindLocaleSwitcher(document.querySelectorAll('[data-locale]'), copies, (locale) => {
+    const selectLocale = (locale) => {
       saveLocale(locale)
       updateLocaleInUrl(locale)
-    })
+    }
+    bindLocaleSwitcher(document.querySelectorAll('[data-locale]'), copies, selectLocale)
+
+    const suggestion = suggestedLocale(request)
+    if (suggestion) {
+      showLocaleSuggestion({
+        locale: suggestion,
+        href: localizedPathname(splitLocalePath(window.location.pathname).basePath, suggestion),
+        onAccept: () => {
+          applyLocale(suggestion, copies)
+          selectLocale(suggestion)
+        },
+        // とじたら、いまの言語を選んだものとして覚える（ほかのページで何度も出さない）
+        onDismiss: () => saveLocale(initialLocale),
+      })
+    }
     // 本文用の画像を先に読み終えてから、他の言語の画像を低優先度で温める。
     // 言語で差し替える画像のないページ（お布施・よくあるしつもん）では、LP の画像を無駄に取りに行かない
     const defaultSources = defaultImageSources()
