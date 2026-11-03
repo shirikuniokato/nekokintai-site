@@ -157,6 +157,29 @@ test('/en/ で日本語のボタンを押すと、本文も画面の画像も日
   await context.close()
 })
 
+for (const locale of ['en', 'ko', 'zh-TW']) {
+  test(`/${locale}/contact/ を直接開いても、アプリの情報が出て送信できる`, async () => {
+    const { context, tab, failures } = await openTab(`${locale}-XX`)
+    const sent = []
+    // 本番の受付へは送らず、ここで受けて中身だけ確かめる
+    await tab.route('https://api.c-cya.com/contact', async (route) => {
+      sent.push(JSON.parse(route.request().postData()))
+      await route.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true}' })
+    })
+    await tab.goto(`${baseUrl}/${locale}/contact/?platform=ios&appVersion=2.5.1`)
+    await tab.locator('#nk-app-context').waitFor()
+    assert.equal(await tab.locator('#nk-app-version').innerText(), '2.5.1')
+    await tab.fill('input[name="name"]', 'テスト')
+    await tab.fill('textarea[name="message"]', 'テストです')
+    await tab.click('#nk-send')
+    await tab.locator('#nk-done').waitFor()
+    assert.equal(sent.length, 1)
+    assert.match(sent[0].message, /2\.5\.1/u)
+    assert.deepEqual(failures, [])
+    await context.close()
+  })
+}
+
 test('アプリから開いたお問い合わせは、言語を切りかえてもアプリの情報を手放さない', async () => {
   const { context, tab } = await openTab('ko-KR')
   await tab.goto(`${baseUrl}/contact/?platform=ios&appVersion=2.5.1`)

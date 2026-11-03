@@ -128,6 +128,17 @@ function assertTextOnlyTranslations(html, htmlPath) {
   }
 }
 
+/**
+ * script の中の相対 import は書きかえられない（/en/contact/ から読むと別の場所を指して 404 になり、
+ * スクリプトごと動かなくなる）。絶対パスで書くよう、作る前に止める
+ */
+function assertNoRelativeImports(html, htmlPath) {
+  for (const block of splitByRawText(html).filter((segment) => segment.raw)) {
+    const relative = block.text.match(/(?:\bfrom\s*|\bimport\s*\(?\s*|\ssrc=)["']\.{1,2}\//u)
+    if (relative) throw new Error(`${htmlPath}: script の中に相対パスの読み込みがある（${relative[0]}）。/ から始まる絶対パスにする`)
+  }
+}
+
 export function alternateLinks(pagePath) {
   const links = SUPPORTED_LOCALES.map(
     (locale) => `<link rel="alternate" hreflang="${locale}" href="${SITE_ORIGIN}${localizedPathname(pagePath, locale)}">`,
@@ -148,6 +159,7 @@ function replaceHeadUrls(html, url) {
  */
 export function renderLocalizedPage(html, { htmlPath, locale, copy, sitePagePaths, extraHead = [] }) {
   assertTextOnlyTranslations(html, htmlPath)
+  assertNoRelativeImports(html, htmlPath)
   const pagePath = pagePathFromHtml(htmlPath)
   const context = { locale, copy, pagePath, sitePagePaths }
   // 日本語は元の HTML がそのまま正本なので、本文には手を入れない

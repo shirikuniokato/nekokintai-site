@@ -90,6 +90,14 @@ test('子要素を持つ data-i18n があれば書き出しを止める', () => 
   )
 })
 
+test('script の中に相対パスの読み込みがあれば書き出しを止める', () => {
+  const html = `<html lang="ja"><head></head><body><script type="module">import { a } from './a.mjs'</script></body></html>`
+  assert.throws(
+    () => renderLocalizedPage(html, { htmlPath: 'x/index.html', locale: 'en', copy: {}, sitePagePaths: ['/'] }),
+    /相対パス/u,
+  )
+})
+
 test('sitemap に全ページ × 全言語と、たがいの言語の対応を載せる', () => {
   const sitemap = renderSitemap(['/', '/qa/'])
   assert.equal([...sitemap.matchAll(/<loc>/gu)].length, 2 * SUPPORTED_LOCALES.length)
