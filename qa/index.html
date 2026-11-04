@@ -95,6 +95,8 @@
   html[lang="ja"] .intro-tail{display:block;}
   /* 英語は単語が長く、日本語の位置で改行すると1語だけの行ができるので、自然に折り返す。韓国語・繁体字は日本語と同じ改行位置で読める */
   html[lang="en"] .qa-a,html[lang="en"] .qa-note{white-space:normal;}
+  /* ドット絵の字（DotGothic16）は英字を 11〜12px で出すと字どうしがくっついて読めないので、英語の小さい案内だけ字間をあける */
+  html[lang="en"] .qa-note,html[lang="en"] .qa-small{letter-spacing:.1em;}
 </style>
 </head>
 <body>
@@ -136,7 +138,7 @@
       <img src="/art/walkA.png" alt="" style="width:48px;height:auto;image-rendering:pixelated;animation:nk-bob 1.9s steps(1,end) infinite;">
       <span data-i18n="investigatingLabel" style="font-size:13px;letter-spacing:.3em;color:var(--muted);padding-bottom:4px;">いま 調べているところ</span>
     </div>
-    <p style="font-size:clamp(11px,3.1vw,12px);color:var(--muted);margin:0 0 10px;line-height:1.8;"><span data-i18n="investigatingIntroBeforeLink">アップデートの中身は、</span><span class="intro-tail"><a data-i18n="roadmapLink" href="/roadmap/" style="border-bottom:2px dashed var(--shadow);">アップデートのよてい</a><span data-i18n="investigatingIntroAfterLink"> にまとめています。</span></span></p>
+    <p class="qa-small" style="font-size:clamp(11px,3.1vw,12px);color:var(--muted);margin:0 0 10px;line-height:1.8;"><span data-i18n="investigatingIntroBeforeLink">アップデートの中身は、</span><span class="intro-tail"><a data-i18n="roadmapLink" href="/roadmap/" style="border-bottom:2px dashed var(--shadow);">アップデートのよてい</a><span data-i18n="investigatingIntroAfterLink"> にまとめています。</span></span></p>
     <div class="qa-group">
       <details>
         <summary class="qa-sum"><span class="qa-chip q">Q</span><span class="qa-q" data-i18n="investigating1Question">Androidでアプリを開き直すと、ねこと「きょうの内わけ」が真っ黒になる</span><span class="qa-arrow" aria-hidden="true">▾</span></summary>
@@ -657,7 +659,7 @@ PC版の準備も進めております。</p>
         </div>
       </details>
     </div>
-    <p style="font-size:clamp(11px,3.1vw,12px);color:var(--muted);margin:10px 0 0;line-height:1.8;"><span data-i18n="upcomingOutroBeforeLink">どのアップデートで何が届くかは、</span><br><a data-i18n="roadmapLink" href="/roadmap/" style="color:var(--deep);border-bottom:2px dashed var(--shadow);">アップデートのよてい</a><span data-i18n="upcomingOutroAfterLink"> にまとめています</span></p>
+    <p class="qa-small" style="font-size:clamp(11px,3.1vw,12px);color:var(--muted);margin:10px 0 0;line-height:1.8;"><span data-i18n="upcomingOutroBeforeLink">どのアップデートで何が届くかは、</span><br><a data-i18n="roadmapLink" href="/roadmap/" style="color:var(--deep);border-bottom:2px dashed var(--shadow);">アップデートのよてい</a><span data-i18n="upcomingOutroAfterLink"> にまとめています</span></p>
   </section>
 
   <section data-i18n-aria-label="unlikelyLabel" aria-label="むずかしいかもしれないこと" style="margin:0 0 26px;">
