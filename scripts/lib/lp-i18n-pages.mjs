@@ -107,5 +107,7 @@ export function sharedGlossary(page, lpCopies) {
     en: lpCopies.en[lpKey],
     ko: lpCopies.ko[lpKey],
     zhTW: lpCopies['zh-TW'][lpKey],
+    // LP の簡体字がまだ無い段階（LP 自身を訳すとき）は undefined のまま
+    zhHans: lpCopies['zh-Hans']?.[lpKey],
   }))
 }

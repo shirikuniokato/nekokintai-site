@@ -1,0 +1,347 @@
+{
+  "draft": "qa-draft.json",
+  "audits": {
+    "claude-fable": "qa-audit-fable.json",
+    "gpt": "qa-audit-codex.json"
+  },
+  "adopt": [
+    {
+      "locale": "zh-Hans",
+      "key": "lead",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howToOpen",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "investigating1Question",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo1Answer",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo1Note",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo2Answer",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo4Question",
+      "from": "gpt"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo4Answer",
+      "from": "gpt"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo4Note",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo5Question",
+      "from": "gpt"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo5Answer",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo11Answer",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo12Answer",
+      "from": "gpt"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo14Note",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo17Question",
+      "from": "gpt"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo18Question",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo18Answer",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo19Note",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo20Note",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo21Note",
+      "from": "gpt"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo23Question",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo23Answer",
+      "from": "gpt"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo23Note",
+      "from": "gpt"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming2Question",
+      "from": "gpt"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming2Note",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming3Answer",
+      "from": "gpt"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming13Answer",
+      "from": "gpt"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming5Answer",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming5Note",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming7Answer",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming9Answer",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming10Answer",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming12Answer",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely1Note",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely1Answer",
+      "from": "gpt"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely2Answer",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely7Answer",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely9Answer",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely12Answer",
+      "from": "gpt"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely13Question",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "supporter1Answer",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "supporter2Answer",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "supporter3Answer",
+      "from": "claude-fable"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "supporter4Question",
+      "from": "gpt"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "supporter4Answer",
+      "from": "claude-fable"
+    }
+  ],
+  "manual": [
+    {
+      "locale": "zh-Hans",
+      "key": "upcomingLabel",
+      "text": "接下来的事"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo1Question",
+      "text": "不知道怎么修改记录"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo2Question",
+      "text": "忘记按下班就睡着了"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo3Question",
+      "text": "忘记按休息了。想事后补上休息时间"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo4Question",
+      "text": "工作过程中，想切换到其他工作项目"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo6Question",
+      "text": "想重新排列工作类别"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo7Question",
+      "text": "想事后更改猫咪的名字"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo24Question",
+      "text": "想改变猫咪的毛色或眼睛颜色"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming7Question",
+      "text": "我想将记录导出为 CSV 文件"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming9Question",
+      "text": "我想要每隔固定时间的休息提醒，以及每天的提醒"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming10Question",
+      "text": "我想更改主题颜色和工作类别的颜色"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming11Question",
+      "text": "我也想在电脑或浏览器上使用"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely1Question",
+      "text": "我想输入时薪，看看自己赚了多少钱"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely2Question",
+      "text": "我想同时计算两项工作的时间"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely3Question",
+      "text": "我想更改“上班”和“下班”的用词"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely4Question",
+      "text": "我想在 iPhone 和 iPad 两台设备上使用相同的记录"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely7Question",
+      "text": "我也想要备忘录和待办清单"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely9Question",
+      "text": "我想要番茄钟"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely11Question",
+      "text": "希望有猫咪以外的动物（例如狗狗）"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely12Question",
+      "text": "希望支持日文以外的语言"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely14Question",
+      "text": "希望能和公司或团队一起使用"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "supporter2Question",
+      "text": "我已经加入支持计划了，但彩虹猫咪没有走路"
+    }
+  ],
+  "replace": []
+}

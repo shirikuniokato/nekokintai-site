@@ -1,0 +1,187 @@
+{
+  "generatedAt": "2026-11-05T15:35:50.858Z",
+  "provider": "gemini",
+  "model": "gemini-3.1-pro-preview",
+  "page": "contact",
+  "locales": [
+    "zh-Hans"
+  ],
+  "sourceCount": 35,
+  "translations": [
+    {
+      "key": "documentTitle",
+      "zhHans": "建议与反馈 | ねこ勤怠",
+      "notes": "ブランド名はそのまま"
+    },
+    {
+      "key": "documentDescription",
+      "zhHans": "ねこ勤怠的意见与建议表单。想要新功能、遇到困难、或是猫咪的话题。我全部都会看。",
+      "notes": "中黒は「、」に変換。台湾用語の「喔」は排除"
+    },
+    {
+      "key": "heading",
+      "zhHans": "建议与反馈",
+      "notes": "固定訳"
+    },
+    {
+      "key": "lead",
+      "zhHans": "想要新功能、遇到困难、或是猫咪的话题。\n我全部都会看。",
+      "notes": "2行"
+    },
+    {
+      "key": "faqLink",
+      "zhHans": "常见问题",
+      "notes": "固定訳"
+    },
+    {
+      "key": "faqHintAfterLink",
+      "zhHans": "里可能会有答案。",
+      "notes": "faqLinkに続く文"
+    },
+    {
+      "key": "languageSelector",
+      "zhHans": "语言",
+      "notes": "固定訳"
+    },
+    {
+      "key": "sendingLabel",
+      "zhHans": "发送中...",
+      "notes": "簡体字の語彙を使用"
+    },
+    {
+      "key": "catSpeech",
+      "zhHans": "＼ 跟我说说喵 ／",
+      "notes": "猫のセリフなので「喵」を追加"
+    },
+    {
+      "key": "nameLabel",
+      "zhHans": "称呼",
+      "notes": ""
+    },
+    {
+      "key": "nameHint",
+      "zhHans": "昵称也可以",
+      "notes": ""
+    },
+    {
+      "key": "namePlaceholder",
+      "zhHans": "打工猫",
+      "notes": "「さん」は省略して自然な名前に"
+    },
+    {
+      "key": "kindLabel",
+      "zhHans": "关于什么事呢？",
+      "notes": ""
+    },
+    {
+      "key": "kindWish",
+      "zhHans": "想要新功能",
+      "notes": ""
+    },
+    {
+      "key": "kindTrouble",
+      "zhHans": "遇到困难",
+      "notes": ""
+    },
+    {
+      "key": "kindCat",
+      "zhHans": "猫咪的话题",
+      "notes": ""
+    },
+    {
+      "key": "kindOther",
+      "zhHans": "其他",
+      "notes": ""
+    },
+    {
+      "key": "messageLabel",
+      "zhHans": "建议与反馈",
+      "notes": ""
+    },
+    {
+      "key": "messagePlaceholder",
+      "zhHans": "请自由填写",
+      "notes": ""
+    },
+    {
+      "key": "emailLabel",
+      "zhHans": "电子邮箱",
+      "notes": ""
+    },
+    {
+      "key": "emailHint",
+      "zhHans": "仅在需要回复时填写",
+      "notes": ""
+    },
+    {
+      "key": "emailPlaceholder",
+      "zhHans": "不填也没关系",
+      "notes": ""
+    },
+    {
+      "key": "appContextLabel",
+      "zhHans": "反馈来源",
+      "notes": "中国本土で自然な表現"
+    },
+    {
+      "key": "appVersionPrefix",
+      "zhHans": " / 应用 ",
+      "notes": "前後のスペースを維持。程式ではなく应用"
+    },
+    {
+      "key": "appContextNote",
+      "zhHans": "这些信息也会一起发送。",
+      "notes": "資訊ではなく信息"
+    },
+    {
+      "key": "sendButton",
+      "zhHans": "发送",
+      "notes": ""
+    },
+    {
+      "key": "errorLead",
+      "zhHans": "好像没有发送成功……对不起。",
+      "notes": ""
+    },
+    {
+      "key": "errorBeforeEmail",
+      "zhHans": "如果稍后再试还是不行的话，请发送到 ",
+      "notes": "末尾のスペースを維持"
+    },
+    {
+      "key": "errorAfterEmail",
+      "zhHans": " 。",
+      "notes": "先頭のスペースを維持"
+    },
+    {
+      "key": "thanksSpeech",
+      "zhHans": "＼ 谢谢你喵 ／",
+      "notes": "猫のセリフなので「喵」を追加"
+    },
+    {
+      "key": "happyCatAlt",
+      "zhHans": "开心的猫咪",
+      "notes": ""
+    },
+    {
+      "key": "doneReply",
+      "zhHans": "我会回复您的，请稍等一下。\n为了确认并提供正确的信息，可能需要几天的时间。",
+      "notes": "2行。資訊ではなく信息"
+    },
+    {
+      "key": "doneNoReply",
+      "zhHans": "已经收到您的意见了。\n我会好好阅读的。",
+      "notes": "2行"
+    },
+    {
+      "key": "backToTop",
+      "zhHans": "← 回到 ねこ勤怠 页面",
+      "notes": "ブランド名はそのまま"
+    },
+    {
+      "key": "privacyLink",
+      "zhHans": "隐私政策",
+      "notes": "固定訳"
+    }
+  ]
+}

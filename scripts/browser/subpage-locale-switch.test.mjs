@@ -10,7 +10,7 @@ import test, { after, before } from 'node:test'
 import { chromium } from 'playwright'
 
 const siteRoot = resolve(import.meta.dirname, '../..')
-const CLICK_ORDER = ['en', 'ko', 'zh-TW', 'ja']
+const CLICK_ORDER = ['en', 'ko', 'zh-TW', 'zh-Hans', 'ja']
 const PAGES = [
   { path: '/tip/', locales: 'assets/tip/locales.json', bodyKey: 'note3', bodySelector: '[data-i18n="note3"]' },
   { path: '/qa/', locales: 'assets/qa/locales.json', bodyKey: 'howTo1Answer', bodySelector: '[data-i18n="howTo1Answer"]' },

@@ -47,9 +47,9 @@ test('トップLPで決めた訳をページ側の同じ意味のキーへ写す
 })
 
 test('初稿を頼むときの固定訳の一覧は、ページ側のキー名で並ぶ', () => {
-  const glossary = sharedGlossary('qa', { ...lpCopies, ko: lpCopies.en, 'zh-TW': lpCopies.en })
+  const glossary = sharedGlossary('qa', { ...lpCopies, ko: lpCopies.en, 'zh-TW': lpCopies.en, 'zh-Hans': lpCopies.en })
 
   assert.deepEqual(glossary.map((term) => term.key).sort(), ['contactLink', 'heading', 'languageSelector', 'privacyLink', 'roadmapLink'])
-  assert.deepEqual(glossary.find((term) => term.key === 'heading'), { key: 'heading', ja: 'よくあるしつもん', en: 'FAQ', ko: 'FAQ', zhTW: 'FAQ' })
+  assert.deepEqual(glossary.find((term) => term.key === 'heading'), { key: 'heading', ja: 'よくあるしつもん', en: 'FAQ', ko: 'FAQ', zhTW: 'FAQ', zhHans: 'FAQ' })
   assert.deepEqual(sharedGlossary('lp', lpCopies), [])
 })

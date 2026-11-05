@@ -1,6 +1,6 @@
 // 実ブラウザで LP の言語ボタンをクリックし、本文・4枚のアプリ画面・2つのストアバッジが同時に切り替わることを確かめる。
 //   npm run test:browser
-// 静的サーバーをこのプロセス内で立て、Playwright の Chromium で ja → en → ko → zh-TW → ja の順にクリックする。
+// 静的サーバーをこのプロセス内で立て、Playwright の Chromium で ja → en → ko → zh-TW → zh-Hans → ja の順にクリックする。
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { readFile as readFileAsync } from 'node:fs/promises'
@@ -9,10 +9,11 @@ import { extname, normalize, resolve, sep } from 'node:path'
 import test, { after, before } from 'node:test'
 import { chromium } from 'playwright'
 import { measureBadgePadding } from '../lib/lp-badge-padding.mjs'
+import { localizedScreenshotPath } from '../../assets/lp/i18n.mjs'
 
 const siteRoot = resolve(import.meta.dirname, '../..')
 const copies = JSON.parse(readFileSync(resolve(siteRoot, 'assets/lp/locales.json'), 'utf8'))
-const CLICK_ORDER = ['en', 'ko', 'zh-TW', 'ja']
+const CLICK_ORDER = ['en', 'ko', 'zh-TW', 'zh-Hans', 'ja']
 const SCREENSHOTS = ['home', 'week', 'month', 'shop']
 const SCREENSHOT_SIZE = { width: 720, height: 1205 }
 const MIME_TYPES = {
@@ -41,8 +42,9 @@ function playBadgeFilePadding(locale) {
   return measureBadgePadding(readFileSync(resolve(siteRoot, `assets/badges/google-play-${locale}.png`)))
 }
 
+/** 日本語は HTML の既定の画像。ほかは i18n.mjs と同じ規則（画面をまだ撮っていない簡体字は繁体字の画像を借りる） */
 function expectedScreenshotPath(locale, name) {
-  return locale === 'ja' ? `/assets/lp/screen-${name}.png` : `/assets/lp/screenshots/${locale}/screen-${name}.png`
+  return locale === 'ja' ? `/assets/lp/screen-${name}.png` : localizedScreenshotPath(locale, name)
 }
 
 function expectedBadgePath(locale, badge) {
@@ -246,7 +248,7 @@ for (const viewport of [{ width: 1280, height: 900 }, { width: 390, height: 844 
       // Google Play は全世界で配信中。言語を切り替えてもリンクは常に有効である
       // App Store は言語に合わせた国のストアフロントへ
       const appStoreHref = await page.locator('[data-store="app-store"]').getAttribute('href')
-      assert.equal(appStoreHref, `https://apps.apple.com/${{ ja: 'jp', en: 'us', ko: 'kr', 'zh-TW': 'tw' }[locale]}/app/id6801066427`, `${locale}: App Store のリンク`)
+      assert.equal(appStoreHref, `https://apps.apple.com/${{ ja: 'jp', en: 'us', ko: 'kr', 'zh-TW': 'tw', 'zh-Hans': 'cn' }[locale]}/app/id6801066427`, `${locale}: App Store のリンク`)
       const play = await page.evaluate(() => {
         const anchor = document.querySelector('[data-store="google-play"]')
         return {

@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-11-05T16:29:14.751Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "zh-Hans"
+  ],
+  "summaryJapanese": "全体として意味はほぼ等価です。猫の柄の種類が別の柄に置き換わっている箇所のみ、意味の変化として指摘します。",
+  "issues": [
+    {
+      "locale": "zh-Hans",
+      "key": "howTo24Answer",
+      "severity": "medium",
+      "backTranslationJapanese": "「じぶんだけのねこ」では、体・柄・輪郭・目・首輪・肉球の色や、三毛・タキシードなどの柄、短毛／長毛を選べます。",
+      "reasonJapanese": "原文の「ハチワレ」が「燕尾服（タキシード柄）」に置き換わっています。ハチワレとタキシードは関連する白黒模様ですが同じ柄ではないため、選べる猫の見た目について異なる期待を与えます。"
+    }
+  ]
+}

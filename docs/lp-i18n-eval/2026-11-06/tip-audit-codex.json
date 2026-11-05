@@ -1,0 +1,60 @@
+{
+  "generatedAt": "2026-11-05T15:45:30.857Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "zh-Hans"
+  ],
+  "summaryJapanese": "7件の問題があります。重大な意味破損や繁体字の混入はありませんが、硬い直訳、意味の欠落、台湾寄りの語彙、通貨表記の不一致が見られます。",
+  "issues": [
+    {
+      "locale": "zh-Hans",
+      "key": "sub",
+      "severity": "medium",
+      "replacement": "选择金额后将进入付款页面。\n应用今后也会继续免费，无论是否支持，使用起来都没有区别。",
+      "reasonJapanese": "「以相同的方式使用」は直訳調で、中国本土向けUIとして不自然です。「使用起来都没有区别」のほうが簡潔で自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "amount1000Label",
+      "severity": "medium",
+      "replacement": "猫粮",
+      "reasonJapanese": "「猫咪的饭」は幼児的な直訳に見えます。金額選択肢の短いラベルとしては、中国本土で一般的な「猫粮」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "customAmountRange",
+      "severity": "high",
+      "replacement": "（100～10,000日元）",
+      "reasonJapanese": "通貨が「日元」ではなく「¥」で表記され、さらに日本語の波ダッシュ「〜」が持ち込まれています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "note1BeforeLink",
+      "severity": "medium",
+      "replacement": "这是自愿打赏，不会提供回礼或应用附加功能。不过，我会认真处理收到的",
+      "reasonJapanese": "「这是一份打赏」と「相对地」は直訳調で不自然です。また、原文の「そのかわり」の意図が中国語として滑らかにつながっていません。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "note1AfterLink",
+      "severity": "medium",
+      "replacement": "。",
+      "reasonJapanese": "note1BeforeLinkの自然な置換後は「认真处理收到的建议与反馈。」と完結するため、「而努力。」を残すと文法的に不自然になります。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "note2",
+      "severity": "medium",
+      "replacement": "付款将使用与ねこ勤怠开发者 c_cya 的网店“ｼﾁｬのねこ屋さん”相同的支付系统。账单明细中会显示该网店名称。",
+      "reasonJapanese": "「线上商店」は台湾寄りに感じられ、中国本土の一般利用者向けには「网店」がより自然です。文全体も簡潔なUI文に整えています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "note4",
+      "severity": "medium",
+      "replacement": "收到的每一份支持，都会成为我继续开发ねこ勤怠的动力。",
+      "reasonJapanese": "現訳は「いただいた分だけ」に含まれる、一つ一つの支援を開発へ返すという意味を弱めています。置換文は責める印象を避けながら、その意味を補っています。"
+    }
+  ]
+}

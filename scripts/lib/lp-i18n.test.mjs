@@ -47,7 +47,7 @@ function createPage() {
   appStoreBadge.setAttribute('src', '/assets/badges/app-store-ja.svg')
   const playBadge = createElement({ localeBadge: 'google-play' })
   playBadge.setAttribute('src', '/assets/badges/google-play-ja.svg')
-  const buttons = ['ja', 'en', 'ko', 'zh-TW'].map((locale) => createElement({ locale }))
+  const buttons = ['ja', 'en', 'ko', 'zh-TW', 'zh-Hans'].map((locale) => createElement({ locale }))
 
   globalThis.document = {
     documentElement: { lang: 'ja' },
@@ -84,6 +84,23 @@ test('翻訳リソースを本文、代替文、メタ情報、操作状態へ�
   assert.equal(page.playBadge.attributes.get('src'), '/assets/badges/google-play-zh-TW.png')
   assert.equal(page.buttons[3].attributes.get('aria-pressed'), 'true')
   assert.equal(page.buttons[0].attributes.get('aria-pressed'), 'false')
+
+  delete globalThis.document
+})
+
+test('簡体字はバッジだけ自分のもので、アプリ画面は撮れるまで繁体字のものを借りる', () => {
+  const page = createPage()
+
+  applyLocale('zh-Hans', copies)
+
+  assert.equal(document.documentElement.lang, 'zh-Hans')
+  assert.equal(document.title, copies['zh-Hans'].documentTitle)
+  assert.equal(page.body.textContent, copies['zh-Hans'].heroTitle)
+  assert.equal(page.screenshots[0].attributes.get('src'), '/assets/lp/screenshots/zh-TW/screen-home.png')
+  assert.equal(page.appStoreBadge.attributes.get('src'), '/assets/badges/app-store-zh-Hans.svg')
+  assert.equal(page.playBadge.attributes.get('src'), '/assets/badges/google-play-zh-Hans.png')
+  assert.equal(page.buttons[4].attributes.get('aria-pressed'), 'true')
+  assert.equal(page.buttons[3].attributes.get('aria-pressed'), 'false')
 
   delete globalThis.document
 })
@@ -146,14 +163,21 @@ test('表示中でない言語の画面とバッジを先読みする', () => {
 
   const sources = warmLocalizedImages('en', createImage, defaults)
 
-  assert.deepEqual(sources, [...defaults, ...localizedImageSources('ko'), ...localizedImageSources('zh-TW')])
-  assert.equal(created.length, 14)
+  // 簡体字の画面は繁体字と同じファイルなので、バッジ 2 枚だけが足される
+  assert.deepEqual(sources, [
+    ...defaults,
+    ...localizedImageSources('ko'),
+    ...localizedImageSources('zh-TW'),
+    '/assets/badges/app-store-zh-Hans.svg',
+    '/assets/badges/google-play-zh-Hans.png',
+  ])
+  assert.equal(created.length, 16)
   assert.equal(created[2].src, '/assets/lp/screenshots/ko/screen-home.png')
   assert.equal(created[2].fetchPriority, 'low')
   assert.equal(created[13].src, '/assets/badges/google-play-zh-TW.png')
 
-  // 日本語で開いたときは既定の画像が表示中なので、他の3言語ぶんだけ温める
-  assert.equal(warmLocalizedImages('ja', createImage, defaults).length, 18)
+  // 日本語で開いたときは既定の画像が表示中なので、他の4言語ぶん（画面は3言語ぶん）だけ温める
+  assert.equal(warmLocalizedImages('ja', createImage, defaults).length, 20)
   assert.deepEqual(localizedImageSources('ja'), [])
 })
 

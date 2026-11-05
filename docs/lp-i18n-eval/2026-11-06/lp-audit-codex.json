@@ -1,0 +1,74 @@
+{
+  "generatedAt": "2026-11-05T15:39:21.103Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "zh-Hans"
+  ],
+  "summaryJapanese": "critical該当なし。未翻訳、固定用語の不統一、中国本土で不自然な表現、意味の変質を含む9件を指摘します。",
+  "issues": [
+    {
+      "locale": "zh-Hans",
+      "key": "goodJobSavingsDescription",
+      "severity": "medium",
+      "replacement": "休息日的时间，\n全部存进时间存钱罐",
+      "reasonJapanese": "「那份时长」は直訳調で不自然です。また、固定用語「时间存钱罐」が「存钱罐」に省略されています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "onDeviceDescription",
+      "severity": "medium",
+      "replacement": "无需账号。无广告",
+      "reasonJapanese": "「免账号」は中国本土のUI文言として不自然です。「无需账号」が一般的です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "weekScreenAlt",
+      "severity": "medium",
+      "replacement": "ねこ勤怠的周视图。本周达成目标时的庆祝画面",
+      "reasonJapanese": "「周界面」は不自然なUI語です。「庆祝达成目标的一周」も、週を祝うのか達成を祝うのか曖昧です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "goalScreenAlt",
+      "severity": "medium",
+      "replacement": "首页。朝着目标前进的白猫",
+      "reasonJapanese": "「朝着目标走路的白猫」は動詞の組み合わせが直訳調です。目標へ進む意味なら「前进」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "progressScreenAlt",
+      "severity": "medium",
+      "replacement": "月历。每天的努力用颜色深浅呈现，逐日累积",
+      "reasonJapanese": "「以颜色的深浅累积」は色そのものが累積するようにも読めます。努力の蓄積を色の濃淡で示す関係を明確にする必要があります。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "shopScreenAlt",
+      "severity": "high",
+      "replacement": "猫咪商店。选择搭档猫咪，长按即可按喜欢的顺序重新排序",
+      "reasonJapanese": "「ねこ屋さん」が未翻訳で、画面名の意味が中国語利用者に伝わりません。「随心所欲」も操作説明として過剰です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "makerCopyBeforeLink",
+      "severity": "high",
+      "replacement": "制作这款应用，不是为了严格监控工时，只是想记录自己确实工作过。希望它既可爱，又能带来成就感，所以做得非常简单！无需账号，也没有广告。如有意见或建议，可通过",
+      "reasonJapanese": "「数算自己确实有在工作这件事」は中国語として極めて不自然で、制作意図が伝わりません。「严格监视」も必要以上に監視的な印象を与えます。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "makerCopyBeforeEmail",
+      "severity": "medium",
+      "replacement": "联系我，也可以发送邮件（",
+      "reasonJapanese": "メール案内で「写信」を使うと通常の手紙を連想させます。中国本土のUIでは「发送邮件」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "supportNote",
+      "severity": "high",
+      "replacement": "这是自愿赞助。应用今后也会保持免费，无论是否赞助，都可以照常使用。",
+      "reasonJapanese": "原文にない「所有功能」が加わり、全機能の恒久提供を保証する強い意味に変わっています。「自愿赞助」で任意性も明確になります。"
+    }
+  ]
+}

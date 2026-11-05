@@ -1,0 +1,243 @@
+{
+  "generatedAt": "2026-11-05T15:36:05.490Z",
+  "provider": "gemini",
+  "model": "gemini-3.1-pro-preview",
+  "page": "privacy",
+  "locales": [
+    "zh-Hans"
+  ],
+  "sourceCount": 46,
+  "translations": [
+    {
+      "key": "documentTitle",
+      "zhHans": "隐私政策 | ねこ勤怠",
+      "notes": ""
+    },
+    {
+      "key": "documentDescription",
+      "zhHans": "ねこ勤怠的隐私政策。所有记录均保存在您的设备中，不会发送至外部。",
+      "notes": ""
+    },
+    {
+      "key": "heading",
+      "zhHans": "ねこ勤怠 隐私政策",
+      "notes": ""
+    },
+    {
+      "key": "updatedAt",
+      "zhHans": "最后更新日期：2026年9月4日",
+      "notes": ""
+    },
+    {
+      "key": "languageSelector",
+      "zhHans": "语言",
+      "notes": "共通訳"
+    },
+    {
+      "key": "governingLanguage",
+      "zhHans": "本隐私政策以日文版为准，翻译版本仅供参考。",
+      "notes": ""
+    },
+    {
+      "key": "dataHeading",
+      "zhHans": "关于本应用处理的信息",
+      "notes": ""
+    },
+    {
+      "key": "dataIntro",
+      "zhHans": "“ねこ勤怠”（以下简称“本应用”）是一款用于记录您工作时间的应用。",
+      "notes": ""
+    },
+    {
+      "key": "dataLocal",
+      "zhHans": "所有记录的数据（打卡、工作类别、设置、猫咪名字等）均仅保存在您的设备中。",
+      "notes": "中黒を頓号に変換"
+    },
+    {
+      "key": "dataLocalRest",
+      "zhHans": "不会发送至外部服务器",
+      "notes": ""
+    },
+    {
+      "key": "noAccount",
+      "zhHans": "本应用不需要注册账号",
+      "notes": ""
+    },
+    {
+      "key": "noPersonalInfo",
+      "zhHans": "本应用不会收集个人信息",
+      "notes": ""
+    },
+    {
+      "key": "noAds",
+      "zhHans": "本应用不显示广告，也不会向广告商提供数据",
+      "notes": ""
+    },
+    {
+      "key": "noTrackingBeforeLink",
+      "zhHans": "本应用不进行访问分析、行为追踪（关于本应用的介绍网站，请参阅“",
+      "notes": "中黒を頓号に変換"
+    },
+    {
+      "key": "siteHeading",
+      "zhHans": "关于本网站",
+      "notes": ""
+    },
+    {
+      "key": "noTrackingAfterLink",
+      "zhHans": "”）",
+      "notes": ""
+    },
+    {
+      "key": "notificationsHeading",
+      "zhHans": "关于通知",
+      "notes": ""
+    },
+    {
+      "key": "notificationsBody",
+      "zhHans": "邀请休息等通知，是通过设备内的本地通知功能进行的。不会为了通知而与外部服务器进行通信。您可以随时在设备设置中关闭通知。",
+      "notes": ""
+    },
+    {
+      "key": "backupHeading",
+      "zhHans": "关于备份",
+      "notes": ""
+    },
+    {
+      "key": "backupBody",
+      "zhHans": "通过“设置 → 备份”导出的文件，仅会保存在您选择的保存位置。开发者不会获取该内容。",
+      "notes": ""
+    },
+    {
+      "key": "purchaseHeading",
+      "zhHans": "关于应用内购买",
+      "notes": ""
+    },
+    {
+      "key": "purchaseBody1",
+      "zhHans": "本应用提供支持开发的包月方案（自动续订）。在支持期间，您可以选择特别的猫咪作为回馈。付款与购买状态的管理均通过 Apple / Google 的机制进行，开发者不会获取信用卡等信息。",
+      "notes": ""
+    },
+    {
+      "key": "purchaseBody2",
+      "zhHans": "包月方案的订阅状态会向商店查询并保存在设备中。不会将购买信息发送至开发者的服务器。您可以从 Apple / Google 的订阅管理页面取消订阅或确认续订状态。",
+      "notes": ""
+    },
+    {
+      "key": "siteBody",
+      "zhHans": "以上内容是关于“ねこ勤怠”应用的。本应用的介绍网站（nekokintai.com）为了了解网站的使用情况，使用了由 Google LLC 提供的“Google Analytics”。",
+      "notes": ""
+    },
+    {
+      "key": "recipientLabel",
+      "zhHans": "发送至：",
+      "notes": ""
+    },
+    {
+      "key": "sentInfoLabel",
+      "zhHans": "发送的信息：",
+      "notes": ""
+    },
+    {
+      "key": "siteSentInfo",
+      "zhHans": " 浏览的页面、来源、浏览器、设备类型、大致地区等使用情况",
+      "notes": "先頭の半角スペースを維持。中黒を頓号に変換"
+    },
+    {
+      "key": "purposeLabel",
+      "zhHans": "使用目的：",
+      "notes": ""
+    },
+    {
+      "key": "sitePurpose",
+      "zhHans": " 了解并改善本网站的访问情况",
+      "notes": "先頭の半角スペースを維持"
+    },
+    {
+      "key": "cookieBeforeOptOut",
+      "zhHans": "这些信息是通过 Cookie 收集的，但无法识别个人身份。您可以在浏览器设置中禁用 Cookie，或使用",
+      "notes": ""
+    },
+    {
+      "key": "optOutLink",
+      "zhHans": "Google Analytics（分析）停用浏览器附加组件",
+      "notes": ""
+    },
+    {
+      "key": "cookieBetweenLinks",
+      "zhHans": "来拒绝收集。关于 Google 处理数据的方式，请查看",
+      "notes": ""
+    },
+    {
+      "key": "googleDataLink",
+      "zhHans": "这里",
+      "notes": ""
+    },
+    {
+      "key": "cookieAfterLinks",
+      "zhHans": "。",
+      "notes": ""
+    },
+    {
+      "key": "contactFormHeading",
+      "zhHans": "关于意见、建议表单",
+      "notes": "中黒を頓号に変換"
+    },
+    {
+      "key": "contactFormBody",
+      "zhHans": "通过本网站的“建议”表单发送后，以下信息将会发送给开发者。",
+      "notes": ""
+    },
+    {
+      "key": "contactSentInfo",
+      "zhHans": " 称呼（可使用昵称）、建议内容、（仅限希望收到回复时）电子邮件地址，若从应用打开，则包含使用的操作系统（iOS / Android）与应用版本",
+      "notes": "先頭の半角スペースを维持"
+    },
+    {
+      "key": "storageLabel",
+      "zhHans": "发送至与保存位置：",
+      "notes": ""
+    },
+    {
+      "key": "contactStorage",
+      "zhHans": " 由开发者（c_cya）管理的 AWS 上的客服管理系统",
+      "notes": "先頭の半角スペースを維持"
+    },
+    {
+      "key": "contactPurpose",
+      "zhHans": " 回复建议以及作为改善应用的参考",
+      "notes": "先頭の半角スペースを維持"
+    },
+    {
+      "key": "emailNote",
+      "zhHans": "邮箱地址为选填项。即使您填写了，也仅用于回复您，不会提供给第三方。",
+      "notes": "「メールアドレス」は本土で一般的な「邮箱地址」としました。"
+    },
+    {
+      "key": "inquiryHeading",
+      "zhHans": "联系我们",
+      "notes": "一般的な「联系我们」としました。"
+    },
+    {
+      "key": "inquiryBeforeEmail",
+      "zhHans": "关于本隐私政策的咨询: ",
+      "notes": "末尾の半角スペースを残しました。"
+    },
+    {
+      "key": "revisionHeading",
+      "zhHans": "关于修订",
+      "notes": "特になし"
+    },
+    {
+      "key": "revisionBody",
+      "zhHans": "若修订本隐私政策，我们将更新本页面。",
+      "notes": "「本ポリシー」は「本隐私政策」としました。"
+    },
+    {
+      "key": "backToTop",
+      "zhHans": "← 回到 ねこ勤怠 首页",
+      "notes": "「ねこ勤怠」はそのまま残しました。"
+    }
+  ],
+  "termsAppliedFrom": "terms-zh-hans.json"
+}

@@ -5,12 +5,13 @@ import { resolve } from 'node:path'
 import { promisify } from 'node:util'
 
 const execFile = promisify(execFileCallback)
-// 使い方: node scripts/render-lp-localized-screenshots.mjs [en ko zh-TW] [--screens=home,week,month,shop]
+// 使い方: node scripts/render-lp-localized-screenshots.mjs [en ko zh-TW zh-Hans] [--screens=home,week,month,shop]
+// zh-Hans は撮影素材（docs/lp-screenshots/sources/zh-Hans/）がまだ無い。LP は撮れるまで zh-TW の画像を出している（assets/lp/i18n.mjs）
 const siteRoot = resolve(import.meta.dirname, '..')
 const appRoot = '/home/rikuto/git/nekokintai'
 const harikoUrl = process.env.HARIKO_URL ?? 'http://localhost:3014'
 const template = 'nekokintai-store-screenshot'
-const locales = ['en', 'ko', 'zh-TW']
+const locales = ['en', 'ko', 'zh-TW', 'zh-Hans']
 const screenshots = [
   { name: 'home', position: 1 },
   { name: 'week', position: 2 },

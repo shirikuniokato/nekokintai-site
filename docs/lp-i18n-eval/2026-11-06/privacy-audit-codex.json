@@ -1,0 +1,74 @@
+{
+  "generatedAt": "2026-11-05T15:47:48.254Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "zh-Hans"
+  ],
+  "summaryJapanese": "重大な意味欠落、責める表現、繁体字・台湾語彙・日本語の中黒・不適切な通貨表記はありません。中国本土向けとして不自然な表現、公式UI用語、用語揺れを9件指摘します。",
+  "issues": [
+    {
+      "locale": "zh-Hans",
+      "key": "notificationsBody",
+      "severity": "medium",
+      "replacement": "休息提醒等通知均通过设备的本地通知功能发送。发送通知无需与外部服务器通信。您可以随时在设备设置中关闭通知。",
+      "reasonJapanese": "「邀请休息」は日本語の直訳調で、中国本土では通知名として不自然です。「休息提醒」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "purchaseBody1",
+      "severity": "medium",
+      "replacement": "本应用提供用于支持开发的月度订阅（自动续订）。订阅期间，您可以选择特别的猫咪作为回馈。付款和购买状态均由 Apple / Google 的系统管理，开发者不会获取信用卡等信息。",
+      "reasonJapanese": "「包月方案」「在支持期间」「机制进行」は中国本土のアプリ内課金説明として不自然です。「月度订阅」「订阅期间」「系统管理」にすると意味が明確になります。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "purchaseBody2",
+      "severity": "medium",
+      "replacement": "本应用会向应用商店查询月度订阅的使用状态，并将其保存在设备中。购买信息不会发送至开发者的服务器。您可以在 Apple / Google 的订阅管理页面取消订阅或查看续订状态。",
+      "reasonJapanese": "「订阅状态会向商店查询」は主語と動作主体が不明瞭です。また、「确认续订状态」より「查看续订状态」が中国本土のUIとして自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "optOutLink",
+      "severity": "medium",
+      "replacement": "Google Analytics（分析）停用浏览器插件",
+      "reasonJapanese": "「附加组件」はこの製品名として中国本土では不自然です。Googleの簡体字UIで使われる「浏览器插件」に合わせる必要があります。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "contactFormBody",
+      "severity": "medium",
+      "replacement": "通过本网站的“建议”表单提交内容时，以下信息将发送给开发者。",
+      "reasonJapanese": "「通过……发送后，以下信息将会发送」は「送信」が重複した直訳調です。フォーム送信時の説明として自然な構文に直しています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "contactSentInfo",
+      "severity": "medium",
+      "replacement": " 称呼（可使用昵称）、建议内容、（仅在希望收到回复时）邮箱地址；如果从应用内打开表单，还会包含所用操作系统（iOS / Android）和应用版本",
+      "reasonJapanese": "同ページ内の「邮箱地址」に対して「电子邮件地址」と用語が揺れています。また、「若从应用打开」「使用的操作系统」は目的語が曖昧で不自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "storageLabel",
+      "severity": "medium",
+      "replacement": "接收方和保存位置：",
+      "reasonJapanese": "「发送至与保存位置」は文法的に不自然で、「送信先」と「保存場所」という二つの項目を正しく並列できていません。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "contactPurpose",
+      "severity": "medium",
+      "replacement": " 回复相关建议，并用于改进应用",
+      "reasonJapanese": "「作为改善应用的参考」は日本語の「改善の参考」の直訳で、中国本土では不自然です。利用目的として簡潔で自然な表現に直しています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "backToTop",
+      "severity": "medium",
+      "replacement": "← 返回ねこ勤怠首页",
+      "reasonJapanese": "「回到 ねこ勤怠 首页」は不要な空白を含み、中国本土の戻るリンクとして不自然です。「返回」を使うのが一般的です。"
+    }
+  ]
+}

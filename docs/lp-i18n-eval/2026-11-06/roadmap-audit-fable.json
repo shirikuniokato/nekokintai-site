@@ -1,0 +1,109 @@
+{
+  "generatedAt": "2026-11-05T15:52:31.293Z",
+  "reviewer": "claude-fable",
+  "model": "claude-fable-5",
+  "locales": [
+    "zh-Hans"
+  ],
+  "summaryJapanese": "簡体字中国語「アップデートのよてい」ページを監査しました。繁体字の混入、中黒「・」、「円／¥」表記、責める表現、猫語混入、「行／列」の誤用は見つかりませんでした。主な問題は用語揺れです。アプリ内の「ホーム」が「主页」と「主屏幕」で揺れており、端末のホーム画面（主屏幕）と混同されます。「月の画面／週の画面」が「月页面」と「月画面／周画面」で揺れ、「画面」は中国本土では台湾・日本寄りの語感です。iOS 26 の「色合い」は中国本土の iOS 公式表記「着色」が正しく、「修正」も他と同じ「修复」にそろえるべきです。「时数」「至设置中」は台湾寄りの語彙、「暂缓发布」は延期の含みがあり「見送り」の意味とずれます。「未来想做的事」と「接下来想做的事」の見出し揺れ、「联系页面」と「建议与反馈」の呼称揺れも修正を提案します。いずれも medium で、意味の重大な欠落はありません。付記として、ios210 以降の一部項目のみ文末に「。」が付いており、他の項目と不統一ですが、指定範囲外のため指摘には含めていません。",
+  "issues": [
+    {
+      "locale": "zh-Hans",
+      "key": "ios210Item1",
+      "severity": "medium",
+      "replacement": "现在可以在主页选择并播放\n3 首工作 BGM 了。",
+      "reasonJapanese": "アプリ内の「ホーム」は他項目（ios230Item2・ios251Item1・v250Item3 など）で「主页」と訳されており、「主屏幕」は端末のホーム画面（ウィジェット項目で使用）と混同されるため用語を統一します。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios201Item8",
+      "severity": "medium",
+      "replacement": "点击主页的老板，\n就可以一次性更改本周的休假日。",
+      "reasonJapanese": "アプリ内の「ホーム」は「主页」で統一されており、「主屏幕」は端末のホーム画面を指す別語として使われているため揺れを解消します。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios241Item4",
+      "severity": "medium",
+      "replacement": "修复在 iOS 26 将外观设为“透明”或\n“着色”时，小组件一片空白的问题",
+      "reasonJapanese": "iOS 26 の中国本土向け表記では「クリア」は「透明」、「色合い」は「着色」です。「色调」では該当する設定を見つけられません。また「修正」は他項目すべてで使われている「修复」にそろえます。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios110Item5",
+      "severity": "medium",
+      "replacement": "您可以随时从周页面\n“以图片分享上周”。",
+      "reasonJapanese": "「月の画面」が ios201Item2・ios201Item3・v241Item1 では「月页面」と訳されているのに対し、ここは「周画面」で揺れています。「画面」は中国本土では台湾・日本寄りの語感があるため「页面」にそろえます。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "android201Item2",
+      "severity": "medium",
+      "replacement": "修复了在月页面中，\n上个月的记录有时会显示在下个月的\n问题。",
+      "reasonJapanese": "iOS 側の同内容項目（ios201Item2）は「月页面」と訳されており、「月画面」との用語揺れを解消します。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "android200Item1",
+      "severity": "medium",
+      "replacement": "修复当“一周的开始”设为星期一的时候，\n月页面的日历\n无法正常切换的问题。",
+      "reasonJapanese": "iOS 側の同内容項目（ios201Item11）は「月页面」と訳されており、「月画面」との用語揺れを解消します。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "android202Item2",
+      "severity": "medium",
+      "replacement": "缩短并统一屏幕下方通知的显示时间，\n并可通过向下滑动\n来关闭。",
+      "reasonJapanese": "iOS 側の同内容（ios210Item6）は「屏幕下方通知」と訳されており、「画面下方」との揺れを解消します。中国本土のUIでは「屏幕」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "android110Item3",
+      "severity": "medium",
+      "replacement": "您可以用上周多努力的时间（时间存钱罐）\n来达成本周的目标了。",
+      "reasonJapanese": "「时数」は台湾寄りの語彙で、中国本土では「时间」「时长」が自然です。「当周」も「本周」のほうがUIとして一般的です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios201Note",
+      "severity": "medium",
+      "replacement": "您至今的记录将会原封不动地保留。\n只有浅色/深色外观的设置无法继承，\n因此使用深色外观的用户，请在更新后\n在设置中重新选择。",
+      "reasonJapanese": "「至设置中」の「至」は台湾寄りの書き言葉で、中国本土のUI文としては「在设置中」「前往设置」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "statusSkipped",
+      "severity": "medium",
+      "replacement": "跳过发布",
+      "reasonJapanese": "原文「こうかいみおくり」は 2.0.0 を公開せず 2.0.1 にまとめる意味ですが、「暂缓发布」は「いずれ公開する延期」の含みがあり、ios200When の説明とずれます。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios120Item7",
+      "severity": "medium",
+      "replacement": "您可以从设置中打开建议与反馈页面。",
+      "reasonJapanese": "お問い合わせページはフッターの contactLink・contactFormLink で「建议与反馈」と呼ばれており、「联系页面」では同じページだと伝わりません。呼称を統一します。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "jumpToFuture",
+      "severity": "medium",
+      "replacement": "查看 未来想做的事 ▾",
+      "reasonJapanese": "リンク先の見出し futureHeading は「未来想做的事」ですが、ジャンプリンクは「接下来想做的事」となっており、見出しと一致しません。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "android241Item3",
+      "severity": "medium",
+      "replacement": "因电池设置受限而无法打卡时，\n小组件会显示相应提示",
+      "reasonJapanese": "「显示该提示」の「该」が指す先が文中になく不自然です。また「当电池设置限制而」は主語と動詞の対応が崩れているため整えます。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "v240Item6",
+      "severity": "medium",
+      "replacement": "修复猫咪会自动变成其他猫咪、\n补班消失等问题",
+      "reasonJapanese": "「自己变成别只」は口語的すぎ、公式サイトの更新情報としてはくだけた印象になります。他項目の文体に合わせて整えます。"
+    }
+  ]
+}

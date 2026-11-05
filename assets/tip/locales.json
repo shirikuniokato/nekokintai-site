@@ -106,5 +106,32 @@
     "faqLink": "常見問題",
     "contactLink": "建議與回饋",
     "privacyLink": "隱私權政策"
+  },
+  "zh-Hans": {
+    "documentTitle": "支持开发 | ねこ勤怠",
+    "documentDescription": "您可以通过打赏来支持 ねこ勤怠 的开发。选择金额后将进入付款页面。应用未来也会继续免费提供。",
+    "heading": "支持开发",
+    "lead": "ねこ勤怠 是由个人开发的。\n您可以通过打赏来支持开发。",
+    "sub": "选择金额后将进入付款页面。\n应用今后也会继续免费，无论是否支持，使用起来都没有区别。",
+    "languageSelector": "语言",
+    "amountsAriaLabel": "支持金额",
+    "amount100Label": "一点点",
+    "amount300Label": "一瓶果汁",
+    "amount500Label": "一杯咖啡",
+    "amount1000Label": "猫咪的饭",
+    "customAmountBeforeLink": "如果想自行决定金额，请点击 ",
+    "customAmountLink": "这里",
+    "customAmountAfterLink": "。",
+    "customAmountRange": "（100～10,000 日元）",
+    "note1BeforeLink": "这是打赏，不会有答谢礼品或应用的额外功能。作为回报，我会为了收到的",
+    "note1Link": "建议与反馈",
+    "note1AfterLink": "而努力。",
+    "note2": "付款将使用与ねこ勤怠开发者 c_cya 的网店“ｼﾁｬのねこ屋さん”相同的支付系统。账单明细中会显示该网店名称。",
+    "note3": "可以使用信用卡、PayPay 等付款方式。信用卡号由支付公司处理，我不会收到您的卡号信息。",
+    "note4": "收到的每一份支持，都会成为我继续开发ねこ勤怠的动力。",
+    "backToTop": "← 返回 ねこ勤怠 页面",
+    "faqLink": "常见问题",
+    "contactLink": "建议与反馈",
+    "privacyLink": "隐私政策"
   }
 }

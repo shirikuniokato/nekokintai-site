@@ -4,7 +4,7 @@ import test from 'node:test'
 import { badgeCssDeclaration, measureBadgePadding, parseBadgeRules } from './lp-badge-padding.mjs'
 
 const siteRoot = new URL('../../', import.meta.url)
-const LOCALIZED_PLAY_BADGES = ['en', 'ko', 'zh-TW']
+const LOCALIZED_PLAY_BADGES = ['en', 'ko', 'zh-TW', 'zh-Hans']
 
 function readBadge(locale) {
   return readFileSync(new URL(`assets/badges/google-play-${locale}.png`, siteRoot))

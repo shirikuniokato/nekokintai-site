@@ -1,26 +1,33 @@
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { I18N_PAGES, SHARED_KEYS } from './lib/lp-i18n-pages.mjs'
+import { GOOD_JOB_SAVINGS, TRANSLATED_LOCALES } from './lib/lp-i18n-locales.mjs'
 
 const projectRoot = resolve(import.meta.dirname, '..')
-const translatedLocales = ['en', 'ko', 'zh-TW']
-const requiredTerms = {
-  en: 'Good Job Savings',
-  ko: '수고 저금',
-  'zh-TW': '辛苦撲滿',
-}
+const translatedLocales = TRANSLATED_LOCALES
+const requiredTerms = GOOD_JOB_SAVINGS
 const forbiddenTerms = {
   en: /(?:Hard Work Savings|Effort Savings|Bonus Bank)/u,
   ko: /(?:열심 저금|노력 저금)/u,
   'zh-TW': /(?:努力撲滿|努力存款|列表|點擊|應援)/u,
+  // 台湾寄りの語、日本語の中黒、通貨記号（簡体字では「日元」と書く）
+  'zh-Hans': /(?:努力存钱罐|辛苦存钱罐|喔|啰|囉|依照|作業|程式|資料|帳號|小舖|・|¥|円)/u,
 }
+// 簡体字の文に混じりやすい繁体字（よく出る字だけ。見つけたら字体の取りこぼし）
+const TRADITIONAL_ONLY_CHARACTERS = /[設記錄時間這們麼為於與會說應檔體讓請選擇開關後點擊畫貓計劃顯資訊訂閱購買過還個來發經變數據務線網頁問題幫擔]/u
 // 各言語に残ってよい日本語。ブランド名、そのまま出す固有名（構想中のアプリ名）、画面に実際に出た不具合の文字列
-const allowedJapanese = ['くろねこ勤怠', 'ねこ勤怠', 'ｼﾁｬのねこ屋さん', 'ねここここ', '繁體中文']
+const allowedJapanese = ['くろねこ勤怠', 'ねこ勤怠', 'ｼﾁｬのねこ屋さん', 'ねここここ', '繁體中文', '简体中文']
 
 function hasUnexpectedJapanese(locale, text) {
   const withoutBrand = allowedJapanese.reduce((rest, term) => rest.replaceAll(term, ''), text)
-  if (locale === 'zh-TW') return /[ぁ-んァ-ン]/u.test(withoutBrand)
+  if (locale.startsWith('zh')) return /[ぁ-んァ-ン]/u.test(withoutBrand)
   return /[ぁ-んァ-ン一-龯]/u.test(withoutBrand)
+}
+
+function hasTraditionalCharacters(locale, text) {
+  if (locale !== 'zh-Hans') return false
+  const withoutAllowed = allowedJapanese.reduce((rest, term) => rest.replaceAll(term, ''), text)
+  return TRADITIONAL_ONLY_CHARACTERS.test(withoutAllowed)
 }
 
 function readJson(path) {
@@ -53,6 +60,9 @@ function validateLocale(locales, locale, sourceKeys, { requireGoodJobSavings }) 
     }
     if (typeof text === 'string' && hasUnexpectedJapanese(locale, text)) {
       errors.push(`${key}: unexpected Japanese text`)
+    }
+    if (typeof text === 'string' && hasTraditionalCharacters(locale, text)) {
+      errors.push(`${key}: traditional Chinese character in Simplified Chinese text`)
     }
     if (typeof text === 'string' && forbiddenTerms[locale].test(text)) {
       errors.push(`${key}: forbidden term`)

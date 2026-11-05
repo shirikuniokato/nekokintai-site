@@ -18,6 +18,10 @@ export const LOCALIZED_DEMO_NAMES = {
     catName: '老闆',
     categories: ['影片剪輯', '繪圖', '商品包裝', '網站製作', '學習', '製作社群貼文'],
   },
+  'zh-Hans': {
+    catName: '老板',
+    categories: ['视频剪辑', '绘画', '商品打包', '网站制作', '学习', '制作社交媒体帖子'],
+  },
 }
 
 export const ALIGNMENTS = ['none', 'today', 'week']

@@ -24,7 +24,7 @@ git push origin main
 
 ## 言語ごとのページ
 
-日本語は `/`・`/qa/` などの今の URL のまま。英語・韓国語・繁体字は `/en/qa/` のように言語を前に付けた URL で、
+日本語は `/`・`/qa/` などの今の URL のまま。英語・韓国語・繁体字・簡体字は `/en/qa/`・`/zh-Hans/qa/` のように言語を前に付けた URL で、
 `npm run build` が `I18N_PAGES`（`scripts/lib/lp-i18n-pages.mjs`）の全ページを訳した静的な HTML として書き出す
 （`scripts/lib/build-localized-pages.mjs`）。hreflang・canonical・`sitemap.xml`・トップの構造化データもここで作るので、
 `sitemap.xml` は手で書かない。訳した HTML は repo に置かず、元の HTML と `locales.json` だけを直す。
@@ -32,6 +32,11 @@ git push origin main
 端末の言語では中身を切りかえない。検索エンジンは英語の端末としてページを読むため、切りかえると日本語のページが
 英語として登録される。言語を選んだことがない人には、ページの上に「〇〇語で見る」の帯を出す（`assets/lp/locale-suggestion.mjs`）。
 前に選んだ言語と `?lang=` は今までどおり効き、URL は `/en/` などのパスへ書きかわる。
+
+中国語は文字種で分ける（`assets/lp/locale.mjs`）。`zh-Hant` / `zh-TW` / `zh-HK` / `zh-MO` は繁体字（`zh-TW`）、
+`zh-Hans` / `zh-CN` / `zh-SG` / 地域なしの `zh` は簡体字（`zh-Hans`）。明示された文字種を地域より優先する（アプリと同じ）。
+簡体字の LP のアプリ画面は、簡体字のアプリから撮った素材がまだ無いので繁体字の画像を出している（`assets/lp/i18n.mjs` の
+`SCREENSHOT_FALLBACK_LOCALES`）。撮れたら `assets/lp/screenshots/zh-Hans/` に置いてこの表から消す。
 
 ## アプリの更新案内
 

@@ -1,0 +1,74 @@
+{
+  "generatedAt": "2026-11-05T15:46:17.611Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "zh-Hans"
+  ],
+  "summaryJapanese": "重大な問題はありません。用語の不統一、意味を機能要望に限定している箇所、中国本土向けUIとして不自然な表現、メールアドレス前後の不自然な文の組み立てを指摘します。繁体字、台湾寄りの語彙、日本語の中黒、通貨・行列に関する問題はありません。",
+  "issues": [
+    {
+      "locale": "zh-Hans",
+      "key": "documentTitle",
+      "severity": "medium",
+      "replacement": "意见与建议 | ねこ勤怠",
+      "reasonJapanese": "本文の「意见与建议」と用語が揺れています。中国本土で一般的な「意见与建议」に統一すると自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "documentDescription",
+      "severity": "high",
+      "replacement": "向ねこ勤怠提交意见与建议的表单。无论是想要的功能、使用中遇到的问题，还是关于猫咪的话题，我们都会认真阅读。",
+      "reasonJapanese": "「ねこ勤怠的意见与建议表单」は日本語の「〜への」を直訳したようで不自然です。また「我全部都会看」は公式サイトの説明文として口語的すぎます。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "heading",
+      "severity": "medium",
+      "replacement": "意见与建议",
+      "reasonJapanese": "同じページ内の「建议与反馈」「意见与建议」という用語揺れを解消するため、「意见与建议」に統一します。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "lead",
+      "severity": "high",
+      "replacement": "无论是想要的功能、使用中遇到的问题，还是关于猫咪的话题。\n我们都会认真阅读。",
+      "reasonJapanese": "「想要新功能」は原文より範囲を狭めています。また、列挙の接続と「我全部都会看」が中国本土向けの公式UIとしてやや不自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "messageLabel",
+      "severity": "medium",
+      "replacement": "意见与建议",
+      "reasonJapanese": "見出しや説明文と同じ概念に複数の訳語が使われています。「意见与建议」に統一します。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "messagePlaceholder",
+      "severity": "medium",
+      "replacement": "请随意填写",
+      "reasonJapanese": "「请自由填写」は日本語の直訳調です。入力欄の案内としては「请随意填写」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "errorBeforeEmail",
+      "severity": "medium",
+      "replacement": "如果稍后再试仍无法发送，请发邮件至 ",
+      "reasonJapanese": "現在の文はメールアドレスと結合すると「请发送到 メールアドレス」となり、何を送るのかが欠けた不自然なUI文になります。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "errorAfterEmail",
+      "severity": "medium",
+      "replacement": "。",
+      "reasonJapanese": "句点の前に半角空白が入るため、中国語の文章として不自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "backToTop",
+      "severity": "medium",
+      "replacement": "← 返回ねこ勤怠页面",
+      "reasonJapanese": "「回到 ねこ勤怠 页面」は語間の空白が不自然で、戻るリンクとしても「返回〜页面」のほうが中国本土のUIで自然です。"
+    }
+  ]
+}

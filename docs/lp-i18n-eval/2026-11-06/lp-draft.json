@@ -1,0 +1,212 @@
+{
+  "generatedAt": "2026-11-05T15:34:23.538Z",
+  "provider": "gemini",
+  "model": "gemini-3.1-pro-preview",
+  "page": "lp",
+  "locales": [
+    "zh-Hans"
+  ],
+  "sourceCount": 40,
+  "translations": [
+    {
+      "key": "documentTitle",
+      "zhHans": "ねこ勤怠 — 和猫咪一起，记录自己的工时。",
+      "notes": "ブランド名「ねこ勤怠」はそのまま保持しました。"
+    },
+    {
+      "key": "documentDescription",
+      "zhHans": "记录工作时间喵。和猫咪一起坚持下去，这是一款专属于你的工时记录应用。",
+      "notes": "「アプリ」は本土向けの「应用」としました。猫語の「喵」を使用しています。"
+    },
+    {
+      "key": "ogTitle",
+      "zhHans": "ねこ勤怠",
+      "notes": "ブランド名そのまま。"
+    },
+    {
+      "key": "ogDescription",
+      "zhHans": "记录工作时间喵。和猫咪一起，记录自己的工时。",
+      "notes": "猫語の「喵」を使用。"
+    },
+    {
+      "key": "languageSelector",
+      "zhHans": "语言",
+      "notes": ""
+    },
+    {
+      "key": "heroTitle",
+      "zhHans": "和猫咪一起，\n记录自己的工时。",
+      "notes": "改行位置を原文に合わせています。"
+    },
+    {
+      "key": "heroLead",
+      "zhHans": "记录工作时间喵。",
+      "notes": "猫語の「喵」を使用。"
+    },
+    {
+      "key": "appStoreAlt",
+      "zhHans": "从 App Store 下载",
+      "notes": ""
+    },
+    {
+      "key": "playStoreAlt",
+      "zhHans": "在 Google Play 获取",
+      "notes": ""
+    },
+    {
+      "key": "heroSpeechLeft",
+      "zhHans": "＼这就是成就感吗喵／",
+      "notes": "猫語の「喵」を使用。"
+    },
+    {
+      "key": "heroSpeechRight",
+      "zhHans": "＼一定是的／",
+      "notes": ""
+    },
+    {
+      "key": "walkingWhiteCatAlt",
+      "zhHans": "走路的白猫",
+      "notes": ""
+    },
+    {
+      "key": "weekScreenAlt",
+      "zhHans": "ねこ勤怠的周界面。庆祝达成目标的一周",
+      "notes": ""
+    },
+    {
+      "key": "sittingVanillaCatAlt",
+      "zhHans": "坐着的香草猫",
+      "notes": ""
+    },
+    {
+      "key": "featuresAriaLabel",
+      "zhHans": "推荐亮点",
+      "notes": ""
+    },
+    {
+      "key": "featuresLabel",
+      "zhHans": "特色",
+      "notes": ""
+    },
+    {
+      "key": "goodJobSavings",
+      "zhHans": "时间存钱罐",
+      "notes": "指定用語「时间存钱罐」を使用。"
+    },
+    {
+      "key": "goodJobSavingsDescription",
+      "zhHans": "休息日的那份时长，\n全部存进存钱罐里",
+      "notes": "改行位置を原文に合わせています。"
+    },
+    {
+      "key": "catWalks",
+      "zhHans": "猫咪走路",
+      "notes": ""
+    },
+    {
+      "key": "catWalksDescription",
+      "zhHans": "踏着步伐，走向目标",
+      "notes": ""
+    },
+    {
+      "key": "onDevice",
+      "zhHans": "全部都在设备里",
+      "notes": "「端末」は本土向けの「设备」としました。"
+    },
+    {
+      "key": "onDeviceDescription",
+      "zhHans": "免账号。无广告",
+      "notes": "「アカウント」は本土向けの「账号」としました。"
+    },
+    {
+      "key": "goalScreenTitle",
+      "zhHans": "朝着目标，\n和猫咪一起走吧。",
+      "notes": "改行位置を原文に合わせています。"
+    },
+    {
+      "key": "goalScreenAlt",
+      "zhHans": "首页。朝着目标走路的白猫",
+      "notes": ""
+    },
+    {
+      "key": "progressScreenTitle",
+      "zhHans": "每天的努力，\n都看得见。",
+      "notes": "改行位置を原文に合わせています。"
+    },
+    {
+      "key": "progressScreenAlt",
+      "zhHans": "月历。每天的努力会以颜色的深浅累积",
+      "notes": ""
+    },
+    {
+      "key": "shopScreenTitle",
+      "zhHans": "这里有\n好多猫咪。",
+      "notes": "台湾寄りの語気詞「喔」を省き、本土向けに自然な表現にしました。"
+    },
+    {
+      "key": "shopScreenAlt",
+      "zhHans": "ねこ屋さん。选择伙伴猫咪，长按即可随心所欲重新排序",
+      "notes": "指定用語「ねこ屋さん」を使用。"
+    },
+    {
+      "key": "makerLabel",
+      "zhHans": "开发者",
+      "notes": ""
+    },
+    {
+      "key": "makerBio",
+      "zhHans": "我喜欢猫咪。",
+      "notes": ""
+    },
+    {
+      "key": "makerCopyBeforeLink",
+      "zhHans": "制作这款应用不是为了严格监视时间，而是只想单纯数算自己确实有在工作这件事。我想要可爱的感觉和成就感。所以它非常简单！没有账号也没有广告。如果有任何建议，请通过 ",
+      "notes": "末尾の半角スペースを維持しています。"
+    },
+    {
+      "key": "contactForm",
+      "zhHans": "这个表单",
+      "notes": ""
+    },
+    {
+      "key": "makerCopyBeforeEmail",
+      "zhHans": "联系我。写信也可以（",
+      "notes": ""
+    },
+    {
+      "key": "makerCopyAfterEmail",
+      "zhHans": "）。",
+      "notes": ""
+    },
+    {
+      "key": "faqLink",
+      "zhHans": "常见问题",
+      "notes": ""
+    },
+    {
+      "key": "roadmapLink",
+      "zhHans": "更新计划",
+      "notes": ""
+    },
+    {
+      "key": "supportLink",
+      "zhHans": "支持开发",
+      "notes": ""
+    },
+    {
+      "key": "supportNote",
+      "zhHans": "这是赞助。应用未来也会保持免费，无论是否赞助，都能照常使用所有功能。",
+      "notes": ""
+    },
+    {
+      "key": "contactLink",
+      "zhHans": "建议与反馈",
+      "notes": ""
+    },
+    {
+      "key": "privacyLink",
+      "zhHans": "隐私政策",
+      "notes": ""
+    }
+  ]
+}

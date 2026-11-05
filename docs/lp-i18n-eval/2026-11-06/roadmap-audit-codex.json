@@ -1,0 +1,242 @@
+{
+  "generatedAt": "2026-11-05T15:52:24.585Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "zh-Hans"
+  ],
+  "summaryJapanese": "意味のずれ、用語揺れ、台湾寄りの語彙、本土向けUIとして不自然な表現を33件確認しました。意図しない繁体字、日本語の中黒、不適切な通貨表記、行・列の誤用、責める表現、通常UIへの猫語混入は見当たりません。",
+  "issues": [
+    {
+      "locale": "zh-Hans",
+      "key": "lead",
+      "severity": "high",
+      "replacement": "这里汇总了即将推出的内容和以往的更新，\n并按版本进行了整理。",
+      "reasonJapanese": "原文は現在このページに整理しているという説明ですが、「我将」は話者が今後整理するという未来の行為に変わっています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios230Item1",
+      "severity": "medium",
+      "replacement": "将支持英语、韩语和繁体中文。\n应用商店中的介绍也会\n分别支持这些语言",
+      "reasonJapanese": "中国本土の言語名としては「英文・韩文」より「英语・韩语」が自然です。「商店页面也会提供各语言版本」はアプリの別バージョンを提供する意味にも読めます。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios220Item5",
+      "severity": "medium",
+      "replacement": "修复跨日记录的修改\n无法保存时，页面也\n无法关闭的问题",
+      "reasonJapanese": "アプリ内の画面を指すUI語として「画面」は日本語由来で不自然です。ここでは「页面」が適切です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "v250Item1",
+      "severity": "medium",
+      "replacement": "可以在“专属猫咪”中\n创建自己喜欢颜色的猫咪\n（从猫咪小铺右上角的房子图标进入）",
+      "reasonJapanese": "「在“专属猫咪”创建」は場所を示す「中」が欠けており、中国本土のUI説明として不自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "v250Item3",
+      "severity": "high",
+      "replacement": "在主页将设备横过来，\n猫咪和时间就会放大显示",
+      "reasonJapanese": "原文の「端末」を「手机」に限定しており、iPadなどの端末が意味から欠落します。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios241Item5",
+      "severity": "medium",
+      "replacement": "主屏幕与锁定屏幕的小组件\n需要 iOS 17 或更高版本",
+      "reasonJapanese": "バージョン要件の「iOS 17 以上」は日本語式です。中国本土のUIでは「iOS 17 或更高版本」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "android241Item3",
+      "severity": "medium",
+      "replacement": "因电池设置限制而无法打卡时，\n小组件会显示相关提示",
+      "reasonJapanese": "「当电池设置限制而」は文法的に不自然です。制限が原因であることを「因…而」で明確にする必要があります。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "widgets240Item1",
+      "severity": "medium",
+      "replacement": "可以把小组件放到主屏幕。\n可点击“上班”“休息”和“下班”，\n猫咪会和今天的时间一起走",
+      "reasonJapanese": "「能按上班、休息、下班」はUI操作として不自然です。操作対象のラベルを引用し、「点击」を使うのが自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "android240Item2",
+      "severity": "medium",
+      "replacement": "“工作期间的通知”会显示\n工作时间",
+      "reasonJapanese": "同じ機能がandroid241Item2では「工作期间的通知」と訳されており、「工作中的通知」と用語が揺れています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "v240Item3",
+      "severity": "medium",
+      "replacement": "“至今的记录”中将新增\n全部记录的合计",
+      "reasonJapanese": "「全部期间的总计」は中国本土の集計UIとして不自然です。「全部记录的合计」の方が対象も明確です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "v240Item4",
+      "severity": "high",
+      "replacement": "取消补班每周最多 2 天的限制",
+      "reasonJapanese": "原文の制限単位は週2「日」ですが、「2 次」と回数に変わっています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "v240Item5",
+      "severity": "medium",
+      "replacement": "现在可以通过“添加记录”\n录入截至当前时刻的记录",
+      "reasonJapanese": "「输入到现在这一分钟」は現在の1分間だけを指すように読めます。原文は現在時刻までの記録を追加できるという意味です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "v240Item6",
+      "severity": "medium",
+      "replacement": "修复猫咪自行变成另一只、\n补班消失等问题",
+      "reasonJapanese": "「变成别只」は量詞を欠いた不自然な表現です。「变成另一只」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios210Item1",
+      "severity": "medium",
+      "replacement": "现在可以在主页选择并播放\n3 首工作 BGM 了。",
+      "reasonJapanese": "アプリ内の「ホーム」は他のキーで「主页」と訳されています。「主屏幕」はOSのホーム画面にも使われており、用語が混同されています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios201Item4",
+      "severity": "medium",
+      "replacement": "从夜晚持续到第二天的时段，\n也可以通过“添加记录”录入。",
+      "reasonJapanese": "記録の入力操作に「加入」を使うのは不自然で、「添加记录」という既存の機能名とも揺れています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios201Item8",
+      "severity": "medium",
+      "replacement": "点击主页的老板，\n就可以一次性更改本周的休假日。",
+      "reasonJapanese": "アプリ内の「ホーム」は「主页」で統一されています。「主屏幕」はOSのホーム画面を指す語として別に使われています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios201Item12",
+      "severity": "medium",
+      "replacement": "修复将“提醒休息的时间”调低至 1 小时后，\n无法再次调高的\n问题。",
+      "reasonJapanese": "「调降」は台湾寄りの語彙です。中国本土の設定UIでは「调低」「调高」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios201Item14",
+      "severity": "medium",
+      "replacement": "此外，也修复了记录功能\n和键盘显示方面的问题。",
+      "reasonJapanese": "「记录相关与键盘显示的问题」は「相关」の後に名詞がなく、中国本土向けの説明として不自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios201Note",
+      "severity": "medium",
+      "replacement": "以往的记录会完整保留。\n只有浅色/深色外观设置不会保留，\n使用深色外观的用户，请在更新后\n前往设置重新选择。",
+      "reasonJapanese": "「至设置中」は台湾寄りの構文です。また、一般ユーザー向けの設定説明では「无法继承」より「不会保留」の方が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios200When",
+      "severity": "medium",
+      "replacement": "2.0.0 将不再发布，相关内容计划合并到 2.0.1 后一并推出。",
+      "reasonJapanese": "「整合至」は台湾寄りで、中国本土では「合并到」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios110Item5",
+      "severity": "medium",
+      "replacement": "您可以随时从周页面\n将上周记录分享为图片。",
+      "reasonJapanese": "「周画面」は日本語由来の不自然なUI語です。また、「以图片分享上周」も中国本土では不自然な語順です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "android202Item2",
+      "severity": "medium",
+      "replacement": "缩短并统一屏幕下方通知的显示时间，\n并可通过向下滑动\n将其关闭。",
+      "reasonJapanese": "端末の表示領域を指す「画面下方」は日本語由来で、既存訳の「屏幕下方」とも揺れています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "android202Item3",
+      "severity": "medium",
+      "replacement": "添加新记录时，设定开始和结束时间后\n即可直接添加。\n开始或结束时间均可先输入。",
+      "reasonJapanese": "「从开始或结束时间任一方输入」は台湾寄りかつ不自然な表現です。原文はどちらの時刻から先に入力してもよいという意味です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "android201Item2",
+      "severity": "medium",
+      "replacement": "修复了月页面中\n上个月的记录有时看起来像是\n出现在下个月的问题。",
+      "reasonJapanese": "「月画面」は日本語由来のUI語で、他のキーで使われている「月页面」とも揺れています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "android200Item1",
+      "severity": "medium",
+      "replacement": "修复了将“一周的开始”设为星期一时，\n月页面的日历\n无法正常切换的问题。",
+      "reasonJapanese": "「月画面」は日本語由来のUI語で、他のキーで使われている「月页面」と統一されていません。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "android200Item2",
+      "severity": "medium",
+      "replacement": "修复了将“提醒休息的时间”调低至 1 小时后，\n无法再次调高的\n问题。",
+      "reasonJapanese": "「调降」は台湾寄りの語彙です。中国本土の設定UIでは「调低」「调高」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "android200Item5",
+      "severity": "medium",
+      "replacement": "此外，也修复了记录功能\n和键盘显示方面的问题。",
+      "reasonJapanese": "「记录相关与键盘显示的问题」は「相关」の後に名詞がなく、不自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "android110Item2",
+      "severity": "medium",
+      "replacement": "进入新的一周时会显示“上周回顾”，\n并可分享为图片卡片。",
+      "reasonJapanese": "「换周时」は中国本土の一般ユーザー向け文言として不自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "android110Item3",
+      "severity": "medium",
+      "replacement": "您可以使用上周努力积攒的时间（时间存钱罐）\n来完成本周目标。",
+      "reasonJapanese": "「时数」は台湾寄りの語彙です。指定用語「时间存钱罐」とも自然につながる「时间」が適切です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "future3",
+      "severity": "medium",
+      "replacement": "同时养多只猫咪（多只猫咪一起走）",
+      "reasonJapanese": "「散步」は屋外を散歩する意味を加えています。原文は複数の猫が一緒に歩く機能です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "future9",
+      "severity": "medium",
+      "replacement": "增加主题颜色和工作类别颜色",
+      "reasonJapanese": "UIで選択できる個別の色を指す場合、「主题色彩」「类别配色」は不自然で、配色テーマ全体を指すようにも読めます。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "futureNote",
+      "severity": "medium",
+      "replacement": "完成的项目会陆续移到\n本页面对应的版本区域中。",
+      "reasonJapanese": "「区块」は台湾寄りのUI語です。中国本土では「区域」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "jumpToFuture",
+      "severity": "medium",
+      "replacement": "查看未来想做的事 ▾",
+      "reasonJapanese": "同じセクション見出しがfutureHeadingでは「未来想做的事」なのに、ここだけ「接下来想做的事」となっており、用語が揺れています。また、中国語として不要な空白が入っています。"
+    }
+  ]
+}

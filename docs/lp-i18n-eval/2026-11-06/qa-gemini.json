@@ -1,0 +1,812 @@
+{
+  "generatedAt": "2026-11-05T15:38:24.897Z",
+  "provider": "gemini",
+  "model": "gemini-3.1-pro-preview",
+  "page": "qa",
+  "locales": [
+    "zh-Hans"
+  ],
+  "sourceCount": 160,
+  "translations": [
+    {
+      "key": "documentTitle",
+      "zhHans": "常见问题 | ねこ勤怠",
+      "notes": "ブランド名はそのまま"
+    },
+    {
+      "key": "documentDescription",
+      "zhHans": "大家对ねこ勤怠提出的常见问题与解答。记录的使用方法、可以做的事，以及我想做的事。",
+      "notes": ""
+    },
+    {
+      "key": "languageSelector",
+      "zhHans": "语言",
+      "notes": "固定訳"
+    },
+    {
+      "key": "heading",
+      "zhHans": "常见问题",
+      "notes": "固定訳"
+    },
+    {
+      "key": "lead",
+      "zhHans": "这是目前对大家反馈的解答。\n我每一条都有看。",
+      "notes": "改行位置を原文に合わせる"
+    },
+    {
+      "key": "howToOpen",
+      "zhHans": "点击你好奇的问题，就会展开解答。",
+      "notes": ""
+    },
+    {
+      "key": "roadmapLink",
+      "zhHans": "更新计划",
+      "notes": "固定訳"
+    },
+    {
+      "key": "searchLabel",
+      "zhHans": "搜索问题",
+      "notes": ""
+    },
+    {
+      "key": "searchPlaceholder",
+      "zhHans": "用关键词搜索",
+      "notes": ""
+    },
+    {
+      "key": "searchClear",
+      "zhHans": "清除",
+      "notes": ""
+    },
+    {
+      "key": "searchEmpty",
+      "zhHans": "找不到相符的问题。\n请换个说法再试一次。",
+      "notes": ""
+    },
+    {
+      "key": "investigatingIntroBeforeLink",
+      "zhHans": "更新的内容整理在",
+      "notes": ""
+    },
+    {
+      "key": "investigatingIntroAfterLink",
+      "zhHans": " 中。",
+      "notes": "先頭の半角スペースを保持"
+    },
+    {
+      "key": "investigating1NoteBeforeEmail",
+      "zhHans": "如果遇到相同情况，请将屏幕截图，以及设备名称、Android版本、关闭应用的方式发到 ",
+      "notes": "中黒を読点に変換。末尾の半角スペースを保持"
+    },
+    {
+      "key": "investigating1NoteAfterEmail",
+      "zhHans": " ，这会对我有很大的帮助。",
+      "notes": "先頭の半角スペースを保持"
+    },
+    {
+      "key": "investigatingLabel",
+      "zhHans": "目前正在调查的问题",
+      "notes": ""
+    },
+    {
+      "key": "investigating1Question",
+      "zhHans": "在Android重新打开应用时，猫咪和“今天的明细”会变成全黑。",
+      "notes": ""
+    },
+    {
+      "key": "investigating1Answer",
+      "zhHans": "在 2.0.2 的时候收到过一次，\n之后就没有再收到了。\n重新绘制的部分后来已经修好，\n目前的版本应该不会再发生。",
+      "notes": ""
+    },
+    {
+      "key": "howToLabel",
+      "zhHans": "可以做的事",
+      "notes": ""
+    },
+    {
+      "key": "howTo1Question",
+      "zhHans": "不知道怎么修改记录。",
+      "notes": ""
+    },
+    {
+      "key": "howTo1Answer",
+      "zhHans": "在“月”画面按下想修改的日期，\n然后打开“修改时间”。\n今天的记录也可以从首页的\n“修改时间”来进行修改。\n忘记记录的时间可以从“＋ 添加记录”\n加进去。\n新的记录只要设置好开始与结束，\n就会直接添加。\n修改现有记录时，\n请按右上角的“完成”来确认。",
+      "notes": "「月」「時間を直す」「記録を足す」の訳語を統一"
+    },
+    {
+      "key": "howTo1Note",
+      "zhHans": "按下时间就能以1分钟为单位输入。［−］［＋］会以10分钟为单位增减。如果在“月”画面无法按下日期，请试着将应用更新到最新版本。",
+      "notes": ""
+    },
+    {
+      "key": "howTo2Question",
+      "zhHans": "忘记按下班就睡着了。",
+      "notes": ""
+    },
+    {
+      "key": "howTo2Answer",
+      "zhHans": "第二天打开首页时，\n会显示那天还没按“下班”。\n你可以从里面的“修改时间”，\n修改前一天的记录。\n如果没有显示，请在“月”画面\n按下前一天来修改。",
+      "notes": ""
+    },
+    {
+      "key": "howTo2Note",
+      "zhHans": "上班的时间会保留在设备中，所以记录不会消失。也不需要重新安装应用。",
+      "notes": ""
+    },
+    {
+      "key": "howTo3Question",
+      "zhHans": "忘记按休息了。想事后补上休息时间。",
+      "notes": ""
+    },
+    {
+      "key": "howTo3Answer",
+      "zhHans": "在“修改时间”中，\n将记录分成休息前后两段就可以补上。\n把休息前记录的“结束”\n设为开始休息的时间，\n再用“＋ 添加记录”\n加上休息后的时间。\n这中间的时段就会从工作时间中扣除。",
+      "notes": ""
+    },
+    {
+      "key": "howTo4Question",
+      "zhHans": "在工作途中，想切换成不同的工作项目。",
+      "notes": ""
+    },
+    {
+      "key": "howTo4Answer",
+      "zhHans": "如果正在工作途中，\n只要在“正在做的事”\n点击下一个工作项目即可。\n从那个时间起，就会变成新工作的记录。\n下班后或休息中，\n也可以先选好下一个工作项目。",
+      "notes": "「いま やっていること」を「正在做的事」に統一"
+    },
+    {
+      "key": "howTo4Note",
+      "zhHans": "下班后无法切换工作项目的错误已经修复了。如果按了没有改变，请试着将应用更新到最新版本。",
+      "notes": ""
+    },
+    {
+      "key": "howTo5Question",
+      "zhHans": "如果工作跨越半夜怎么办？",
+      "notes": ""
+    },
+    {
+      "key": "howTo5Answer",
+      "zhHans": "直接按下班的话，\n记录会按日期分开记录。\n如果想把跨夜工作的时长算在同一天，\n请将设置中的“一天的切换时间”\n改为“早上4点”等时间。\n事后添加记录时，\n如果输入开始22:00、结束2:00，\n就会记录为第二天的时长。",
+      "notes": "「1日のきりかえ時刻」を「一天的切换时间」に統一。中黒を読点に変換"
+    },
+    {
+      "key": "howTo5Note",
+      "zhHans": "设置 → 一天的切换时间。可以在0点到中午12点之间更改。",
+      "notes": ""
+    },
+    {
+      "key": "howTo6Question",
+      "zhHans": "想重新排列工作分类。",
+      "notes": "「作業のカテゴリ」を「工作分类」に統一"
+    },
+    {
+      "key": "howTo6Answer",
+      "zhHans": "在首页的“正在做的事”中，\n长按分类\n就可以排成你喜欢的顺序。",
+      "notes": ""
+    },
+    {
+      "key": "howTo7Question",
+      "zhHans": "想事后更改猫咪的名字。",
+      "notes": ""
+    },
+    {
+      "key": "howTo7Answer",
+      "zhHans": "在设置的“猫咪商店”中，\n按下猫咪的名字就可以修改。\n如果留空并确认，\n就会恢复成原本的名字。",
+      "notes": "「ねこ屋さん」を「猫咪商店」に統一"
+    },
+    {
+      "key": "howTo24Question",
+      "zhHans": "想改变猫咪的毛色或眼睛颜色。",
+      "notes": ""
+    },
+    {
+      "key": "howTo24Answer",
+      "zhHans": "可以在“专属猫咪”里创建。\n从猫咪商店右上角的房子图标\n打开后，在“创建猫咪”中\n可以选择身体、花纹、轮廓、眼睛、项圈、肉球的颜色，\n三花、奶牛猫等花纹，\n以及短毛／长毛。\n名额是买断制，一个名额一只猫，\n同一个名额里的猫咪\n可以不限次数重新创建。",
+      "notes": "中黒を読点に変換。ハチワレは奶牛猫とする"
+    },
+    {
+      "key": "howTo24Note",
+      "zhHans": "2.5.0 起。订阅支持方案期间，另外可使用 1 个名额。",
+      "notes": ""
+    },
+    {
+      "key": "howTo8Question",
+      "zhHans": "息屏时记录还会继续吗？",
+      "notes": ""
+    },
+    {
+      "key": "howTo8Answer",
+      "zhHans": "会继续的。\n按下上班后，即使息屏\n或打开其他应用也没关系。\nねこ勤怠并不是一直在后台运行，\n而是记住你上班的时间，\n在下次打开时进行计算。",
+      "notes": "「息屏」「后台运行」など本土のIT用語を使用"
+    },
+    {
+      "key": "howTo9Question",
+      "zhHans": "无法点击上班按钮",
+      "notes": ""
+    },
+    {
+      "key": "howTo9Answer",
+      "zhHans": "如果没有任何工作分类，\n就无法打卡上班。\n请在设置的“工作分类”中\n通过“添加新工作”创建一个，\n就可以点击了。",
+      "notes": "「作業のカテゴリ」は「工作分类」、「あたらしい作業をふやす」は「添加新工作」としました"
+    },
+    {
+      "key": "howTo10Question",
+      "zhHans": "想看过去某天“从几点到几点”做了什么",
+      "notes": ""
+    },
+    {
+      "key": "howTo10Answer",
+      "zhHans": "在“月”页面点击日期，\n就能看到当天的总计，以及各项工作\n开始与结束的时间。",
+      "notes": ""
+    },
+    {
+      "key": "howTo11Question",
+      "zhHans": "换手机时可以转移记录吗？",
+      "notes": ""
+    },
+    {
+      "key": "howTo11Answer",
+      "zhHans": "可以从设置的“备份请点此”\n来进行转移。\n请先导出为文件，\n并保存到设备中。\n接着在新的设备上，\n同样到“备份请点此”\n读取该文件就完成了。",
+      "notes": "「バックアップはこちら」は「备份请点此」としました"
+    },
+    {
+      "key": "howTo11Note",
+      "zhHans": "未来希望能提供更方便的方法。",
+      "notes": ""
+    },
+    {
+      "key": "howTo12Question",
+      "zhHans": "可以临时决定今天休息吗？",
+      "notes": ""
+    },
+    {
+      "key": "howTo12Answer",
+      "zhHans": "可以的。\n在周页面点击该日期，\n就会出现“设为休息”按钮。\n点击首页的社长，\n也能一次性更改本周的休息日。\n之后也可以取消。",
+      "notes": "「お休みにする」は「设为休息」としました"
+    },
+    {
+      "key": "howTo13Question",
+      "zhHans": "日期切换的时间只能是半夜0点吗？",
+      "notes": ""
+    },
+    {
+      "key": "howTo13Answer",
+      "zhHans": "可以从设置中更改，\n范围是0点到中午12点。\n如果设为“早上4点”，深夜的工作\n也会算在同一天的记录里。",
+      "notes": ""
+    },
+    {
+      "key": "howTo13Note",
+      "zhHans": "设置 → 一天的切换时间",
+      "notes": "「1日のきりかえ時刻」は「一天的切换时间」としました"
+    },
+    {
+      "key": "howTo14Question",
+      "zhHans": "周目标和每日目标的总计必须一致吗？",
+      "notes": ""
+    },
+    {
+      "key": "howTo14Answer",
+      "zhHans": "不一致也没关系。\n周目标是一整周的总计，\n每日目标则是“今天大概做这些”的参考，\n两者是分开来看的。",
+      "notes": ""
+    },
+    {
+      "key": "howTo14Note",
+      "zhHans": "目标可从30分钟起，以30分钟为单位设定（2.5.0起）。即使工作日和休息日的工作时间不同，乘法算不上也没有问题。",
+      "notes": ""
+    },
+    {
+      "key": "howTo15Question",
+      "zhHans": "删除的工作分类可以恢复吗？",
+      "notes": ""
+    },
+    {
+      "key": "howTo15Answer",
+      "zhHans": "打开设置的“已删除的工作”，\n就可以恢复工作分类。\n不看列表时可以将其折叠。",
+      "notes": "「けした作業」は「已删除的工作」としました"
+    },
+    {
+      "key": "howTo15Note",
+      "zhHans": "有记录的工作会保留下来，以免影响总计。未来希望能让0小时的工作可以完全删除。",
+      "notes": ""
+    },
+    {
+      "key": "upcomingLabel",
+      "zhHans": "接下来的计划",
+      "notes": ""
+    },
+    {
+      "key": "upcoming2Question",
+      "zhHans": "想按星期、按周设定更详细的目标",
+      "notes": ""
+    },
+    {
+      "key": "upcoming2Answer",
+      "zhHans": "我希望能让每天的目标\n按星期分别设定。\n至于每周或每个工作分类，\n可能会比较困难。",
+      "notes": ""
+    },
+    {
+      "key": "upcoming2Note",
+      "zhHans": "我会小心开发，避免让“ねこ勤怠”因为设置太多而变得杂乱。",
+      "notes": ""
+    },
+    {
+      "key": "upcoming3Question",
+      "zhHans": "以后还会有更多猫咪吗？",
+      "notes": ""
+    },
+    {
+      "key": "upcoming3Answer",
+      "zhHans": "2.1.0新增了6只，\n免费猫咪变成15只了。\n加上支持方案限定的2只彩虹猫咪，\n总共有17只。\n2.5.0起可以在“专属猫咪”里\n创建喜欢颜色的猫咪\n（买断制名额，一个名额一只，最多10个）。\n之后也想一点一点慢慢增加。",
+      "notes": "「じぶんだけのねこ」は「专属猫咪」としました"
+    },
+    {
+      "key": "upcoming3Note",
+      "zhHans": "2只彩虹猫咪可以通过支持方案获得。像素图是我花时间一只一只画出来的。未来新增的猫咪可能会需要付费。",
+      "notes": "「おうえんプラン」は「支持方案」、「ドット絵」は「像素图」としました"
+    },
+    {
+      "key": "upcoming13Question",
+      "zhHans": "想养很多只猫",
+      "notes": ""
+    },
+    {
+      "key": "upcoming13Answer",
+      "zhHans": "在首页散步的，是伙伴那一只。\n“专属猫咪”的名额\n最多可以增加到10个，\n并用“和这只猫咪散步”来切换。\n让好几只猫咪一起散步，\n是我想做的事。",
+      "notes": "「このねこと歩く」は「和这只猫咪散步」としました"
+    },
+    {
+      "key": "upcoming5Question",
+      "zhHans": "想摸摸猫咪，或是给它们奖励",
+      "notes": ""
+    },
+    {
+      "key": "upcoming5Answer",
+      "zhHans": "我收到了许多这方面的建议。\n作者自己也很想尝试看看。\n不过目前会把修复错误\n摆在第一位。",
+      "notes": ""
+    },
+    {
+      "key": "upcoming5Note",
+      "zhHans": "摸摸、零食、玩具、换衣服。大家提供的点子我都有保留下来。",
+      "notes": ""
+    },
+    {
+      "key": "upcoming7Question",
+      "zhHans": "我想将记录导出为 CSV 文件。",
+      "notes": ""
+    },
+    {
+      "key": "upcoming7Answer",
+      "zhHans": "我会评估看看。\n不过，可能还需要一段时间。",
+      "notes": ""
+    },
+    {
+      "key": "upcoming9Question",
+      "zhHans": "我想要每隔固定时间的休息提醒，以及每天的提醒。",
+      "notes": ""
+    },
+    {
+      "key": "upcoming9Answer",
+      "zhHans": "重复的休息提醒我会评估看看。\n每天早上的通知，我希望能加进去。\n会设计成可以自由开关，\n不过可能要再等一段时间。",
+      "notes": ""
+    },
+    {
+      "key": "upcoming9Note",
+      "zhHans": "目前的“提醒休息的时间”与“休息时间长度”是从30分钟起，以30分钟为单位。",
+      "notes": "「休憩にさそう時間」は「提醒休息的时间」としました"
+    },
+    {
+      "key": "upcoming10Question",
+      "zhHans": "我想更改主题颜色和工作分类的颜色。",
+      "notes": ""
+    },
+    {
+      "key": "upcoming10Answer",
+      "zhHans": "我很想做。\n虽然还不知道会不会是\n大家想象中的样子，但我想让\n背景等也能够更换，\n重视视觉上的期待感。\n工作分类的颜色目前有12种\n可以选择。是否要再增加，\n我会一并评估。\n目前可以在设置页面右上角，\n切换“浅色”和“深色”。",
+      "notes": "「ライト」「ダーク」は「浅色」「深色」としました"
+    },
+    {
+      "key": "upcoming11Question",
+      "zhHans": "我也想在电脑或浏览器上使用。",
+      "notes": ""
+    },
+    {
+      "key": "upcoming11Answer",
+      "zhHans": "我收到了很多这方面的建议。\n目前也正在准备电脑版。",
+      "notes": ""
+    },
+    {
+      "key": "upcoming11Note",
+      "zhHans": "关于手机版的数据迁移与绑定等要如何处理，等方向确定后会再通知大家。",
+      "notes": "資料轉移 -> 数据迁移、連動 -> 绑定"
+    },
+    {
+      "key": "unlikelyLabel",
+      "zhHans": "可能比较困难的事",
+      "notes": ""
+    },
+    {
+      "key": "unlikely1Question",
+      "zhHans": "我想输入时薪，看看自己赚了多少钱。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely1Answer",
+      "zhHans": "很抱歉，目前没有这个计划。\n比起计算金钱，ねこ勤怠\n更重视“轻松计算自己的时间”\n这个理念。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely2Question",
+      "zhHans": "我想同时计算两项工作的时间。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely2Answer",
+      "zhHans": "目前的设定是同一个时间内，\n只能记录一项工作。\n因为我很重视简单易用的体验，\n所以目前没有更改的计划。",
+      "notes": "紀錄 -> 记录"
+    },
+    {
+      "key": "unlikely3Question",
+      "zhHans": "我想更改“上班”和“下班”的用词。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely3Answer",
+      "zhHans": "目前无法更改。\n因为也有人把它用在学习或兴趣上，\n所以我确实有想过让大家可以自己选择用词。",
+      "notes": "讀書 -> 学习"
+    },
+    {
+      "key": "unlikely4Question",
+      "zhHans": "我想在 iPhone 和 iPad 两台设备上使用相同的记录。",
+      "notes": "裝置 -> 设备"
+    },
+    {
+      "key": "unlikely4Answer",
+      "zhHans": "很抱歉，\n目前不支持同步功能。\n因为我的方针是将记录只留在设备内，\n所以并没有打算\n制作登录功能。",
+      "notes": "支援 -> 支持、登入 -> 登录"
+    },
+    {
+      "key": "unlikely4Note",
+      "zhHans": "虽然还要一段时间，但我希望能制作支持账号绑定的进阶版。",
+      "notes": "帳號 -> 账号"
+    },
+    {
+      "key": "unlikely5Question",
+      "zhHans": "想提前设置好未来的休假和排班",
+      "notes": "設定 -> 设置"
+    },
+    {
+      "key": "unlikely5Answer",
+      "zhHans": "如果是在本周内，\n可以提前设置。\n点击首页的社长（猫咪），\n就能一次更改本周的休假。\n但无法一次提前设置\n下周或下下周的休假。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely5Note",
+      "zhHans": "如果每周都固定在同一天休假，现在也可以从设置中指定。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely7Question",
+      "zhHans": "我也想要备忘录和待办清单。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely7Answer",
+      "zhHans": "大家的建议与反馈我都有看。\n我仔细评估过了，\n但觉得或许做成另一款应用\n会比较好。",
+      "notes": "應用程式 -> 应用"
+    },
+    {
+      "key": "unlikely7Note",
+      "zhHans": "我想制作一款能更详细管理工作的进阶版应用。会考虑在那款应用中加入这些功能。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely9Question",
+      "zhHans": "我想要番茄钟。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely9Answer",
+      "zhHans": "我还在烦恼。\n因为我自己不太常用，\n等我研究一下再决定……。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely9Note",
+      "zhHans": "我想开发一款专门用来专注于学习或兴趣的应用。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely11Question",
+      "zhHans": "希望有猫咪以外的动物（例如狗狗）。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely11Answer",
+      "zhHans": "因为我不太会画猫咪以外的动物，\n所以可能有点困难。\n就算要努力尝试，目前还是\n想先慢慢增加猫咪的种类。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely12Question",
+      "zhHans": "希望支持日文以外的语言。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely12Answer",
+      "zhHans": "目前也可以使用\n英文、韩文和繁体中文。\n会根据设备的语言自动切换，\n也可以在设置中选择。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely12Note",
+      "zhHans": "感谢所有主动提议协助翻译或提供建议的朋友们。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely13Question",
+      "zhHans": "可以在海外的商店下载吗？",
+      "notes": ""
+    },
+    {
+      "key": "unlikely13Answer",
+      "zhHans": "在 App Store 和 Google Play 上，\n所有的国家和地区\n都可以下载。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely14Question",
+      "zhHans": "希望能和公司或团队一起使用。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely14Answer",
+      "zhHans": "各位企业伙伴，\n期待收到你们的联系。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely14Note",
+      "zhHans": "请通过建议与反馈表单，或来信至 support@c-cya.com。",
+      "notes": ""
+    },
+    {
+      "key": "upcomingOutroBeforeLink",
+      "zhHans": "关于每次更新会推出什么内容，都整理在",
+      "notes": ""
+    },
+    {
+      "key": "upcomingOutroAfterLink",
+      "zhHans": " 中。",
+      "notes": "原文の先頭半角スペースを維持"
+    },
+    {
+      "key": "notFoundBeforeLink",
+      "zhHans": "如果找不到解答，请通过",
+      "notes": ""
+    },
+    {
+      "key": "contactFormLink",
+      "zhHans": "建议与反馈表单",
+      "notes": ""
+    },
+    {
+      "key": "notFoundAfterLink",
+      "zhHans": "告诉我。",
+      "notes": ""
+    },
+    {
+      "key": "backToTop",
+      "zhHans": "← 返回 ねこ勤怠 页面",
+      "notes": ""
+    },
+    {
+      "key": "contactLink",
+      "zhHans": "建议与反馈",
+      "notes": "サイト共通の固定訳"
+    },
+    {
+      "key": "privacyLink",
+      "zhHans": "隐私政策",
+      "notes": "サイト共通の固定訳"
+    },
+    {
+      "key": "unlikely1Note",
+      "zhHans": "我会评估是否能通过另一款进阶版应用提供这项功能。",
+      "notes": ""
+    },
+    {
+      "key": "unlikely3Note",
+      "zhHans": "我也想为努力学习的人开发一款应用，希望到时候能让大家自己选择用语。",
+      "notes": "アプリは「应用」"
+    },
+    {
+      "key": "upcoming10Note",
+      "zhHans": "可以从设置的“工作分类”中通过“更换颜色”来选择。",
+      "notes": "設定は「设置」、カテゴリは「分类」"
+    },
+    {
+      "key": "supporterLabel",
+      "zhHans": "关于支持方案",
+      "notes": "特になし"
+    },
+    {
+      "key": "supporter1Question",
+      "zhHans": "加入支持方案后会有什么改变？",
+      "notes": "特になし"
+    },
+    {
+      "key": "supporter1Answer",
+      "zhHans": "可以从两只彩虹猫中\n选一只当伙伴，\n还能使用一个\n“专属猫咪”的名额，\n用喜欢的颜色创建猫咪。\n功能上没有任何差异。\n无论您是否支持，\n能做的事情都是一样的。",
+      "notes": "行数8行"
+    },
+    {
+      "key": "supporter1Note",
+      "zhHans": "每月 300 日元。这是为了持续开发的一种支持方式。",
+      "notes": "円は「日元」"
+    },
+    {
+      "key": "supporter2Question",
+      "zhHans": "我已经加入支持方案了，但彩虹猫咪没有走路。",
+      "notes": "歩くは「走路」"
+    },
+    {
+      "key": "supporter2Answer",
+      "zhHans": "只有加入方案的话，伙伴\n是不会自动切换的。\n请在设置的“猫咪商店”中\n选择彩虹猫咪，\n然后按“设为伙伴”。",
+      "notes": "行数5行、ねこ屋さんは「猫咪商店」"
+    },
+    {
+      "key": "supporter2Note",
+      "zhHans": "在首页走路的只会有一只伙伴。",
+      "notes": "特になし"
+    },
+    {
+      "key": "supporter3Question",
+      "zhHans": "我换手机了。支持方案和买过的名额会怎么样？",
+      "notes": "特になし"
+    },
+    {
+      "key": "supporter3Answer",
+      "zhHans": "支持方案可以从支持画面的\n“恢复购买”来恢复。\n“专属猫咪”的名额，\n则从“专属猫咪”画面的\n“恢复已购买名额”来恢复。\n两者都需要相同的\nApple ID 或 Google 账号，\n而且要在相同的操作系统才能恢复\n（iPhone 换 iPhone、Android 换 Android）。",
+      "notes": "行数9行、アカウントは「账号」、OSは「操作系统」、中黒は「、」"
+    },
+    {
+      "key": "supporter3Note",
+      "zhHans": "猫咪的外观无法通过恢复购买来还原。外观存在“备份在这里”的文件里，请用备份来转移。",
+      "notes": "バックアップはこちらは「备份在这里」"
+    },
+    {
+      "key": "supporter4Question",
+      "zhHans": "如果取消支持，彩虹猫咪会怎么样呢？",
+      "notes": "特になし"
+    },
+    {
+      "key": "supporter4Answer",
+      "zhHans": "即使取消订阅，在当前周期\n结束前还是可以使用特权。\n周期结束后，免费猫咪会\n自动成为伙伴。\n支持方案名额里的猫咪\n会无法再使用，\n但配色设置会保留下来。",
+      "notes": "行数7行"
+    },
+    {
+      "key": "supporter4Note",
+      "zhHans": "记录和设置都不会有任何改变。",
+      "notes": "記録は「记录」"
+    },
+    {
+      "key": "howTo16Question",
+      "zhHans": "想从小组件打卡",
+      "notes": "ウィジェットは「小组件」"
+    },
+    {
+      "key": "howTo16Answer",
+      "zhHans": "可以把小组件放到主屏幕。\n不用打开应用，\n就能按上班、休息、下班，\n猫咪会和今天的时间一起走路。\n请长按主屏幕，从“小组件”\n搜索“ねこ勤怠”。",
+      "notes": "行数6行、ホーム画面は「主屏幕」、中黒は「、」"
+    },
+    {
+      "key": "howTo16Note",
+      "zhHans": "iPhone 需要 iOS 17 以上。工作期间，锁屏和 Apple Watch 也会显示时间和猫咪。Android 会在工作中的通知显示时间。请先打开一次应用。",
+      "notes": "ロック画面は「锁屏」"
+    },
+    {
+      "key": "howTo17Question",
+      "zhHans": "想在工作途中添加记录",
+      "notes": "足すは「添加」"
+    },
+    {
+      "key": "howTo17Answer",
+      "zhHans": "如果是同一天内，即使还在工作中，\n也能添加当前记录之前的时间。\n如果跨过日期还在工作中，\n请先按一次“下班”，再添加记录。",
+      "notes": "行数4行"
+    },
+    {
+      "key": "howTo18Question",
+      "zhHans": "想看目前为止工作时间的合计",
+      "notes": "特になし"
+    },
+    {
+      "key": "howTo18Answer",
+      "zhHans": "从“记录”画面右上角的按钮，\n可以看到全部期间的合计、记录的天数，\n以及各项工作的明细。",
+      "notes": "行数3行"
+    },
+    {
+      "key": "howTo22Question",
+      "zhHans": "总时间不想显示“6.9h”，想看“6小时54分”",
+      "notes": "特になし"
+    },
+    {
+      "key": "howTo22Answer",
+      "zhHans": "打开设置里的“目标与设置”，\n在每日目标下方的\n“时间显示方式”中\n选择“精确”。\n目标是否达成的判定，\n两种方式都一样。",
+      "notes": "行数6行"
+    },
+    {
+      "key": "howTo22Note",
+      "zhHans": "2.5.0 起可以选择。小组件和锁屏仍维持“6.9h”的格式。",
+      "notes": "特になし"
+    },
+    {
+      "key": "howTo23Question",
+      "zhHans": "想用横向画面",
+      "notes": "特になし"
+    },
+    {
+      "key": "howTo23Answer",
+      "zhHans": "在首页把设备横放，\n猫咪和时间就会放大显示。\n适合一边看着一边工作。\n上班、休息、下班，\n还有切换工作都可以操作。\n只有首页会变成横向，\n其他画面仍维持竖向。",
+      "notes": "行数7行、端末は「设备」、中黒は「、」"
+    },
+    {
+      "key": "howTo23Note",
+      "zhHans": "2.5.0 起。如果设备的屏幕自动旋转是关闭的，就不会变成横向。",
+      "notes": "特になし"
+    },
+    {
+      "key": "howTo19Question",
+      "zhHans": "小组件没有出现在列表里（iPhone）",
+      "notes": "一覧は「列表」"
+    },
+    {
+      "key": "howTo19Answer",
+      "zhHans": "主屏幕和锁屏的小组件\n需要 iOS 17 以上版本。\n应用可安装于 iOS 16.4 以上版本，\n但在 iOS 16 设备上，\n小组件不会出现在列表中。\n请前往 设置 → 通用 → 关于本机，\n确认 iOS 版本。",
+      "notes": "行数7行"
+    },
+    {
+      "key": "howTo19Note",
+      "zhHans": "小组件的名称是“时间与打卡”和“猫咪与这一周”。有时不会列在应用名称底下。",
+      "notes": "特になし"
+    },
+    {
+      "key": "howTo20Question",
+      "zhHans": "小组件的按钮没反应、时间一直是 0 分（Android）",
+      "notes": "中黒は「、」"
+    },
+    {
+      "key": "howTo20Answer",
+      "zhHans": "如果设备的电池设置把应用\n设为“受限制”，\n就无法从小组件打卡，\n时间也会一直停住。\n请到 设置 → 应用 → ねこ勤怠 → 电池\n打开，选择“受限制”\n以外的项目。",
+      "notes": "行数7行"
+    },
+    {
+      "key": "howTo20Note",
+      "zhHans": "依设备不同，可能叫做“后台限制”或“省电”。",
+      "notes": "バックグラウンドは「后台」"
+    },
+    {
+      "key": "howTo21Question",
+      "zhHans": "锁屏的猫咪不见了（iPhone）",
+      "notes": "特になし"
+    },
+    {
+      "key": "howTo21Answer",
+      "zhHans": "记录并没有消失。\n打开应用，或是下一次打卡，\n就会再出现。\n锁屏的显示根据 iPhone 的规则，\n工作一段时间后\n有时会自动消失。",
+      "notes": "行数6行"
+    },
+    {
+      "key": "howTo21Note",
+      "zhHans": "也可以自己把显示往左滑掉。这不会影响记录。",
+      "notes": "スワイプは「滑掉」"
+    },
+    {
+      "key": "upcoming12Question",
+      "zhHans": "小组件的时间停不下来、按钮没反应",
+      "notes": "中黒は「、」"
+    },
+    {
+      "key": "upcoming12Answer",
+      "zhHans": "小组件方面\n还有一些问题。\n像是在应用下班后时间仍继续增加、\nAndroid 上按休息、下班没反应等，\n我会处理这些\n小组件的问题。",
+      "notes": "行数6行"
+    },
+    {
+      "key": "upcoming12Note",
+      "zhHans": "部分 Android 设备的小组件列表里找不到，以及 iOS 26“透明”外观下没有变透明的问题，也在一并确认中。",
+      "notes": "特になし"
+    }
+  ]
+}

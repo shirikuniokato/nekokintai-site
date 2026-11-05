@@ -1,0 +1,95 @@
+{
+  "generatedAt": "2026-11-05T15:50:17.965Z",
+  "reviewer": "claude-fable",
+  "model": "claude-fable-5",
+  "locales": [
+    "zh-Hans"
+  ],
+  "summaryJapanese": "簡体字中国語版プライバシーポリシー46項目を監査。繁体字の混入、日本語中黒「・」、通貨表記、行/列の誤用、猫語の混入、責める表現はいずれも見当たらず、账号・打卡・应用内购买など大陸標準の用語が使われている。一方、課金関連の「包月方案」は台湾寄りの語彙で大陸では「包月订阅」が自然。通知文の「邀请休息」は直訳で不自然、見出し「意见、建议表单」の頓号、「客服管理系统」の意味ずれ、Google公式名称との不一致、「邮箱地址/电子邮件地址」の用語揺れ、コロンの全角半角不統一、「回到」の話し言葉的な表現など中程度の指摘が中心で、criticalは無し。なお contactFormBody が引用するフォーム名「建议」は、ごようぼうページの簡体字版見出しと照合できていないため、ファイル参照が可能な環境で整合を確認すること。",
+  "issues": [
+    {
+      "locale": "zh-Hans",
+      "key": "purchaseBody1",
+      "severity": "high",
+      "replacement": "本应用提供用于支持开发的包月订阅（自动续订）。支持期间，您可以选择特别的猫咪作为答谢。付款与购买状态均由 Apple / Google 的系统管理，开发者不会获取信用卡等信息。",
+      "reasonJapanese": "「包月方案」の「方案」はサブスクリプションのプランを指す台湾・香港寄りの語彙で、中国大陸のUIでは「包月订阅」「月度订阅」が一般的。「作为回馈」も大陸では「お礼」より「還元・フィードバック」の意味に寄るため「作为答谢」に修正。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "purchaseBody2",
+      "severity": "high",
+      "replacement": "包月订阅的使用状态通过向应用商店查询获取，并保存在设备中。购买信息不会发送至开发者的服务器。您可以在 Apple / Google 的订阅管理页面取消订阅或查看续订状态。",
+      "reasonJapanese": "purchaseBody1 と同様に台湾寄りの「包月方案」を「包月订阅」に統一。「向商店查询」は「商店」だけでは実店舗とも読めるため、大陸で一般的な「应用商店」に。「会向商店查询并保存」は主語が不明瞭で読みにくいため構文も整理。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "notificationsBody",
+      "severity": "medium",
+      "replacement": "休息提醒等通知均通过设备内的本地通知功能发送，不会为此与外部服务器通信。您可以随时在设备设置中关闭通知。",
+      "reasonJapanese": "「邀请休息」は「休憩のおさそい」の直訳で、中国語では「休息提醒」が自然。「是……进行的」構文もUI文としては冗長なため簡潔に整理。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "noTrackingBeforeLink",
+      "severity": "medium",
+      "replacement": "本应用不进行访问分析或行为追踪（关于本应用的介绍网站，请参阅“",
+      "reasonJapanese": "否定文の中で「访问分析、行为追踪」と頓号で並べると、両方を同時に行わないという意味に読めてしまう。「不进行……或……」の形が自然で、どちらも行わないことが明確になる。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "optOutLink",
+      "severity": "medium",
+      "replacement": "Google Analytics（分析）停用浏览器插件",
+      "reasonJapanese": "Google 公式の簡体字名称は「Google Analytics（分析）停用浏览器插件」。「附加组件」は特定ブラウザの用語で、リンク先の正式名称と一致させるのが望ましい。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "siteSentInfo",
+      "severity": "medium",
+      "replacement": " 浏览的页面、来源页面、浏览器及设备类型、大致地区等使用情况",
+      "reasonJapanese": "「参照元」を「来源」だけにすると何の来源か曖昧。「来源页面」で参照元ページであることを明示。「浏览器、设备类型」は「ブラウザ・端末の種類」の両方にかかる修飾として「浏览器及设备类型」の方が正確。先頭の半角スペースは維持。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "contactFormHeading",
+      "severity": "medium",
+      "replacement": "关于意见与建议表单",
+      "reasonJapanese": "見出しの複合名詞の内部に頓号「、」を置く「意见、建议表单」は不自然。「意见与建议表单」で一語としてまとまる。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "contactSentInfo",
+      "severity": "medium",
+      "replacement": " 称呼（可使用昵称）、建议内容、（仅限希望收到回复时）邮箱地址，若从应用打开，则包含使用的操作系统（iOS / Android）与应用版本",
+      "reasonJapanese": "同じ項目を contactSentInfo では「电子邮件地址」、emailNote では「邮箱地址」と呼んでおり用語揺れ。大陸UIで一般的な「邮箱地址」に統一。先頭の半角スペースは維持。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "storageLabel",
+      "severity": "medium",
+      "replacement": "发送对象与保存位置：",
+      "reasonJapanese": "「发送至与保存位置」は動詞句「发送至」と名詞「保存位置」を「与」でつないでおり文法的に不自然。名詞形の「发送对象」にするとラベルとして成立する。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "contactStorage",
+      "severity": "medium",
+      "replacement": " 由开发者（c_cya）管理、部署在 AWS 上的咨询管理系统",
+      "reasonJapanese": "「客服管理系统」はカスタマーサポート部門の管理システムという意味に寄り、原文の「問い合わせ管理システム」から意味がずれる。「咨询管理系统」で原義を保ちつつ、「的……的」の重なりも解消。先頭の半角スペースは維持。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "inquiryBeforeEmail",
+      "severity": "medium",
+      "replacement": "关于本隐私政策的咨询：",
+      "reasonJapanese": "同ページの他のラベル（发送至：、使用目的： など）はすべて全角コロンだが、ここだけ半角コロン＋スペースで不統一。全角コロンに揃えると後続のメールリンクとの間隔も自然になるため末尾スペースは不要。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "backToTop",
+      "severity": "medium",
+      "replacement": "← 返回 ねこ勤怠 首页",
+      "reasonJapanese": "「回到」は話し言葉的で、ナビゲーションリンクとしては「返回」が中国大陸のUIで標準的な表現。"
+    }
+  ]
+}

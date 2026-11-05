@@ -13,7 +13,13 @@ test('アプリと同じ優先順で対応言語を決める', () => {
   assert.equal(resolveSupportedLocale(['en-US']), 'en')
   assert.equal(resolveSupportedLocale(['ko-KR']), 'ko')
   assert.equal(resolveSupportedLocale(['zh-Hant-HK']), 'zh-TW')
-  assert.equal(resolveSupportedLocale(['zh-CN']), 'ja')
+  assert.equal(resolveSupportedLocale(['zh-CN']), 'zh-Hans')
+  assert.equal(resolveSupportedLocale(['zh-SG']), 'zh-Hans')
+  assert.equal(resolveSupportedLocale(['zh']), 'zh-Hans')
+  assert.equal(resolveSupportedLocale(['zh-Hans-TW']), 'zh-Hans', '文字種は地域より優先')
+  assert.equal(resolveSupportedLocale(['zh-HK']), 'zh-TW')
+  assert.equal(resolveSupportedLocale(['zh-MO']), 'zh-TW')
+  assert.equal(resolveSupportedLocale(['zh-Hant-CN']), 'zh-TW', '文字種は地域より優先')
 })
 
 test('URL指定、保存済み、開いているページの言語の順に言語を決める', () => {

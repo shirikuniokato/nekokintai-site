@@ -7,6 +7,7 @@ const SUGGESTION_COPY = {
   en: { link: 'View this page in English', close: 'Close' },
   ko: { link: '이 페이지를 한국어로 보기', close: '닫기' },
   'zh-TW': { link: '以繁體中文瀏覽此頁', close: '關閉' },
+  'zh-Hans': { link: '以简体中文查看此页', close: '关闭' },
 }
 
 const BAR_STYLE = [

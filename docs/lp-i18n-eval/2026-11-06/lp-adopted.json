@@ -1,0 +1,17 @@
+{
+  "draft": "lp-draft.json",
+  "audits": { "claude-fable": "lp-audit-fable.json", "gpt": "lp-audit-codex.json" },
+  "adopt": [
+    { "locale": "zh-Hans", "key": "goodJobSavingsDescription", "from": "claude-fable" },
+    { "locale": "zh-Hans", "key": "onDeviceDescription", "from": "claude-fable" },
+    { "locale": "zh-Hans", "key": "progressScreenAlt", "from": "gpt" },
+    { "locale": "zh-Hans", "key": "makerCopyBeforeLink", "from": "claude-fable" },
+    { "locale": "zh-Hans", "key": "makerCopyBeforeEmail", "from": "claude-fable" },
+    { "locale": "zh-Hans", "key": "supportNote", "from": "claude-fable" }
+  ],
+  "manual": [
+    { "locale": "zh-Hans", "key": "shopScreenAlt", "text": "猫咪小铺。选择伙伴猫咪，长按即可按喜欢的顺序重新排序" },
+    { "locale": "zh-Hans", "key": "weekScreenAlt", "text": "ねこ勤怠的周页面。达成目标那一周的庆祝" }
+  ],
+  "replace": []
+}

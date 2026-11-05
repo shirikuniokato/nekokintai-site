@@ -58,6 +58,7 @@
   html[lang="en"] .store-badges img[data-locale-badge="google-play"]{height:calc(var(--badge-height) * 250 / 168);margin:calc(var(--badge-height) * -41 / 168) calc(var(--badge-height) * -41 / 168);}
   html[lang="ko"] .store-badges img[data-locale-badge="google-play"]{height:calc(var(--badge-height) * 250 / 192);margin:calc(var(--badge-height) * -29 / 192) 0;}
   html[lang="zh-TW"] .store-badges img[data-locale-badge="google-play"]{height:calc(var(--badge-height) * 250 / 192);margin:calc(var(--badge-height) * -29 / 192) 0;}
+  html[lang="zh-Hans"] .store-badges img[data-locale-badge="google-play"]{height:calc(var(--badge-height) * 250 / 192);margin:calc(var(--badge-height) * -29 / 192) 0;}
   @keyframes nk-bob{0%,49%{transform:translateY(0)}50%,100%{transform:translateY(-4px)}}
   @keyframes nk-twinkle{0%,100%{opacity:.25}50%{opacity:1}}
   /* ボタン内のキラキラ用: 消えかけない浅い明滅 */
@@ -94,6 +95,7 @@
     <button type="button" data-locale="en" aria-pressed="false">English</button>
     <button type="button" data-locale="ko" aria-pressed="false">한국어</button>
     <button type="button" data-locale="zh-TW" aria-pressed="false">繁體中文</button>
+    <button type="button" data-locale="zh-Hans" aria-pressed="false">简体中文</button>
   </nav>
 
   <!-- ストアバッジは公式素材。規約上いかなる改変も不可なので、色・比率・枠に手を入れないこと -->
@@ -216,7 +218,7 @@
   // 言語が変わるたびに i18n.mjs が nekokintai:locale で知らせてくる。
   // App Store は175地域で配信中。パソコンのブラウザではパスの国コードでストアが決まるので、言語に合わせる（英語は米国）。
   // iPhone では端末の Apple ID の国のストアで開くので、国コードは効かない
-  const APP_STORE_COUNTRY = { ja: 'jp', en: 'us', ko: 'kr', 'zh-TW': 'tw' };
+  const APP_STORE_COUNTRY = { ja: 'jp', en: 'us', ko: 'kr', 'zh-TW': 'tw', 'zh-Hans': 'cn' };
   document.addEventListener('nekokintai:locale', (event) => {
     const appStore = document.querySelector('[data-store="app-store"]');
     if (appStore) appStore.setAttribute('href', `https://apps.apple.com/${APP_STORE_COUNTRY[event.detail.locale] ?? 'jp'}/app/id6801066427`);

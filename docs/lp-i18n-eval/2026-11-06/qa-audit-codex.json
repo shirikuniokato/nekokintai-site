@@ -1,0 +1,284 @@
+{
+  "generatedAt": "2026-11-05T15:56:51.113Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "zh-Hans"
+  ],
+  "summaryJapanese": "致命的な問題はありません。意味が変わっている箇所、簡体字として不自然な台湾・日本語寄りの表現、UI用語の揺れを中心に指摘しました。特に、翌日の時刻を「时长」とした箇所、ハチワレを「燕尾服」とした箇所、「悩んでいる」を「烦恼」とした箇所、横屏操作を端末の「横放」とした箇所は優先して修正が必要です。",
+  "issues": [
+    {
+      "locale": "zh-Hans",
+      "key": "lead",
+      "severity": "medium",
+      "replacement": "这是目前对大家反馈的答复。\n每一条我都认真看过。",
+      "reasonJapanese": "「我每一条都有看」は台湾寄りの語順で、中国本土の簡体字として不自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howToOpen",
+      "severity": "medium",
+      "replacement": "点击感兴趣的问题即可展开答案。",
+      "reasonJapanese": "「你好奇的问题」は直訳調で、FAQの操作案内として不自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo1Answer",
+      "severity": "medium",
+      "replacement": "在“月”页面点击想修改的日期，\n然后打开“修改时间”。\n今天的记录也可以在首页\n点击“修改时间”进行修改。\n漏记的时间可以通过“＋ 添加记录”\n补上。\n设置好开始和结束时间后，\n新记录会直接添加。\n修改现有记录后，\n请点击右上角的“完成”确认。",
+      "reasonJapanese": "アプリの画面を「画面」と呼ぶのは日本語寄りで、同ページ内の「页面」とも揺れています。操作表現も「按下」と「点击」が混在しています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo1Note",
+      "severity": "medium",
+      "replacement": "点击时间即可按1分钟为单位输入。［−］［＋］每次增减10分钟。如果在“月”页面无法点击日期，请尝试将应用更新到最新版本。",
+      "reasonJapanese": "「“月”画面」と「按下日期」は、中国本土向けUI説明として「页面」「点击」に統一するのが自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo2Answer",
+      "severity": "medium",
+      "replacement": "第二天打开首页时，\n会显示当天尚未点击“下班”。\n可以点击其中的“修改时间”，\n修改前一天的记录。\n如果没有显示，请在“月”页面\n点击前一天的日期进行修改。",
+      "reasonJapanese": "「画面」と「页面」、「按下」と「点击」が混在しています。「你」もこの箇所だけ唐突です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo4Question",
+      "severity": "medium",
+      "replacement": "工作过程中，想切换到其他工作项目。",
+      "reasonJapanese": "「在工作途中」は日本語の「途中」の直訳調で、中国本土の簡体字では「工作过程中」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo4Answer",
+      "severity": "medium",
+      "replacement": "如果正在工作，\n只需在“现在正在做的事”中\n点击下一个工作项目。\n从点击时起，就会开始记录新的工作项目。\n下班后或休息期间，\n也可以提前选好下一个工作项目。",
+      "reasonJapanese": "「正在工作途中」「从那个时间起，就会变成」は直訳調で、切替時点と記録内容が不明瞭です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo5Question",
+      "severity": "medium",
+      "replacement": "如果工作跨过零点怎么办？",
+      "reasonJapanese": "「跨越半夜」は中国本土で不自然です。ここで問題になる境界は「半夜」ではなく零時です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo5Answer",
+      "severity": "high",
+      "replacement": "直接点击“下班”后，\n记录会按日期分开。\n如果想把跨夜工作的时间算在同一天，\n请将设置中的“日期切换时间”\n改为“早上4点”等时间。\n事后添加记录时，\n如果输入开始22:00、结束2:00，\n结束时间会按第二天的2:00记录。",
+      "reasonJapanese": "原文の「翌日の時刻」を「第二天的时长」としており、時刻が勤務時間の長さに変わっています。また「一天的切换时间」はUI名として不自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo5Note",
+      "severity": "medium",
+      "replacement": "设置 → 日期切换时间。可以在0点到中午12点之间更改。",
+      "reasonJapanese": "「一天的切换时间」は日本語直訳調のUI名です。「日期切换时间」の方が機能を正確に表します。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo24Answer",
+      "severity": "high",
+      "replacement": "可以在“专属猫咪”中创建。\n从猫咪小铺右上角的房子图标\n进入后，在“创建猫咪”中\n可以选择身体、花纹、轮廓、眼睛、项圈、肉垫的颜色，\n三花、八字脸等花纹，\n以及短毛／长毛。\n名额需一次性购买，每个名额可创建1只猫，\n同一名额中的猫咪\n可以不限次数重新创建。",
+      "reasonJapanese": "「ハチワレ」を「燕尾服」としたのは別の毛柄への意味変更です。「肉球」「买断制」も日本語寄りで、中国本土では「肉垫」「一次性购买」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo11Answer",
+      "severity": "medium",
+      "replacement": "可以通过设置中的“备份在这里”\n转移记录。\n请先导出文件，\n并将其保存到设备中。\n然后在新设备上打开同一个\n“备份在这里”页面，\n导入该文件即可。",
+      "reasonJapanese": "バックアップファイルの取り込み操作を「读取」とするより、UI操作としては「导入」が明確です。「同样到」も不自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo12Answer",
+      "severity": "medium",
+      "replacement": "可以。\n在“周”页面点击当天，\n会出现“设为休假”按钮。\n点击首页的老板，\n也能一次性更改本周的休假日。\n之后也可以取消。",
+      "reasonJapanese": "「周页面」は画面名と一般名詞の境界が曖昧です。「“周”页面」とすれば「“月”页面」とも統一できます。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo13Note",
+      "severity": "medium",
+      "replacement": "设置 → 日期切换时间",
+      "reasonJapanese": "同じ設定が別箇所でも「一天的切换时间」と訳されており、不自然なUI名を統一する必要があります。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo14Note",
+      "severity": "high",
+      "replacement": "目标可从30分钟起，以30分钟为单位设定（2.5.0起）。即使工作日和休息日的工作时间不同，每日目标相加后与周目标不一致也没有问题。",
+      "reasonJapanese": "「乘法算不上」は中国語として成立しにくく、原文の「日ごとの時間から計算した値と週目標が一致しなくてもよい」という意味が伝わりません。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming2Question",
+      "severity": "medium",
+      "replacement": "想按星期几、按周设定更详细的目标",
+      "reasonJapanese": "「按星期」は「週単位」とも解釈でき、原文の「曜日ごと」が欠落しています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming3Answer",
+      "severity": "medium",
+      "replacement": "2.1.0新增了6只，\n免费猫咪增加到了15只。\n加上支持计划限定的2只彩虹猫咪，\n一共是17只。\n从2.5.0起，可以在“专属猫咪”中\n创建自己喜欢颜色的猫咪\n（名额需一次性购买，每个名额可创建1只，最多10个名额）。\n今后也想继续一点点增加。",
+      "reasonJapanese": "「买断制」は日本語寄りの購入用語です。「免费猫咪变成15只」「一点一点慢慢」も簡体字として不自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming13Answer",
+      "severity": "medium",
+      "replacement": "首页中行走的只有一只伙伴猫咪。\n“专属猫咪”的名额\n最多可增加到10个，\n可以通过“和这只猫咪一起走”切换伙伴。\n让多只猫咪一起散步，\n也是我希望今后实现的功能。",
+      "reasonJapanese": "「是伙伴那一只」「是我想做的事」は日本語の語順を引きずっており、機能説明として不自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming5Answer",
+      "severity": "medium",
+      "replacement": "收到了很多这方面的建议。\n作者也很想试试。\n不过目前会优先\n修复问题。",
+      "reasonJapanese": "同じ回答内で話者が「我」から「作者自己」へ切り替わっており、視点が揺れています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely1Answer",
+      "severity": "medium",
+      "replacement": "很抱歉，目前没有这个计划。\n比起计算收入，ねこ勤怠\n更重视“轻松记录自己的时间”\n这一点。",
+      "reasonJapanese": "「计算自己的时间」は中国語では時間の算術計算を意味しやすく、原文の「自分の時間を気軽に数える」という利用目的が不自然になっています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely7Answer",
+      "severity": "medium",
+      "replacement": "大家的建议和反馈我都认真看过。\n我仔细考虑过，\n但觉得或许做成另一款应用\n会比较好。",
+      "reasonJapanese": "「我都有看」は台湾寄りの表現です。また「评估过了」より「考虑过」の方が原文の意味に合います。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely9Answer",
+      "severity": "high",
+      "replacement": "我还在考虑。\n因为我自己很少使用，\n所以会先了解清楚再决定……。",
+      "reasonJapanese": "この文脈の「悩んでいます」は検討中・迷っているという意味で、「烦恼」では精神的に苦悩している意味になります。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely12Answer",
+      "severity": "medium",
+      "replacement": "目前还支持\n英语、韩语和繁体中文。\n会根据设备语言自动切换，\n也可以在设置中选择。",
+      "reasonJapanese": "中国本土では言語名に「英文」「韩文」より「英语」「韩语」を使うのが一般的です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely13Question",
+      "severity": "medium",
+      "replacement": "可以从海外的应用商店下载吗？",
+      "reasonJapanese": "「海外的商店」では一般の店舗にも読めます。App StoreとGoogle Playを指すUI文脈では「应用商店」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "supporter1Answer",
+      "severity": "medium",
+      "replacement": "可以从两只彩虹猫中\n选择一只作为伙伴，\n还可以使用一个\n“专属猫咪”名额，\n按喜欢的颜色创建猫咪。\n功能没有任何差异。\n无论是否加入支持计划，\n可使用的功能都相同。",
+      "reasonJapanese": "この箇所だけ「您」を使っており、他のFAQとの敬称が揺れています。「是否支持」もプラン加入の意味が曖昧です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "supporter2Answer",
+      "severity": "medium",
+      "replacement": "加入支持计划后，伙伴不会\n自动切换。\n请在设置的“猫咪小铺”中\n选择彩虹猫咪，\n然后点击“设为伙伴”。",
+      "reasonJapanese": "「支持计划」をこの箇所だけ「方案」と呼んでおり用語が揺れています。「只有加入方案的话」も日本語直訳調です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "supporter3Answer",
+      "severity": "medium",
+      "replacement": "支持计划可以在支持计划页面\n点击“恢复购买”来恢复。\n“专属猫咪”的名额\n可以在“专属猫咪”页面\n点击“恢复已购买名额”来恢复。\n两者都必须使用同一个\nApple ID 或 Google 账号，\n并且系统相同\n（iPhone 换 iPhone、Android 换 Android）。",
+      "reasonJapanese": "アプリ内ページを「画面」とするのは日本語寄りです。「支持画面」は特に意味が曖昧なため「支持计划页面」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "supporter4Question",
+      "severity": "medium",
+      "replacement": "如果取消支持计划，彩虹猫咪会怎么样？",
+      "reasonJapanese": "質問では「取消支持」、回答では「取消订阅」となっており、同じ操作の用語が揺れています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "supporter4Answer",
+      "severity": "medium",
+      "replacement": "即使取消订阅，在当前周期\n结束前仍可使用相关权益。\n周期结束后，伙伴会\n自动换回免费猫咪。\n支持计划名额中的猫咪\n将无法继续使用，\n但配色设置会保留。",
+      "reasonJapanese": "サブスクリプションの特典を中国本土向けUIで「特权」と呼ぶのは強すぎます。「权益」が一般的です。また、原文は伙伴が無料猫へ戻るのであり、無料猫が伙伴になるという主語ではありません。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo17Question",
+      "severity": "medium",
+      "replacement": "想在工作过程中添加记录",
+      "reasonJapanese": "「工作途中」は日本語直訳調です。「工作过程中」が中国本土の簡体字として自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo18Question",
+      "severity": "medium",
+      "replacement": "想查看截至目前的工作总时长",
+      "reasonJapanese": "「目前为止工作时间的合计」は日本語の「合計」をそのまま組み込んだ語順で、見出しとして不自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo18Answer",
+      "severity": "medium",
+      "replacement": "点击“记录”页面右上角的按钮，\n可以查看所有记录的总时长、记录天数，\n以及各项工作的明细。",
+      "reasonJapanese": "「“记录”画面」「全部期间的合计」は日本語直訳調です。中国本土向けUIでは「页面」「所有记录的总时长」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo23Question",
+      "severity": "medium",
+      "replacement": "想横屏使用",
+      "reasonJapanese": "端末の表示方向を中国本土向けUIで表す場合、「横向画面」より「横屏」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo23Answer",
+      "severity": "high",
+      "replacement": "在首页将设备转为横屏后，\n猫咪和时间会放大显示。\n适合工作时放在一旁查看。\n可以进行上班、休息、下班打卡，\n也可以切换工作项目。\n只有首页支持横屏，\n其他页面仍保持竖屏。",
+      "reasonJapanese": "「把设备横放」は端末を机上に寝かせる意味にもなり、画面回転の操作として誤解を招きます。「横向／竖向」と「画面」もUI用語として不自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo23Note",
+      "severity": "medium",
+      "replacement": "2.5.0 起。如果设备关闭了屏幕自动旋转，就无法切换为横屏。",
+      "reasonJapanese": "「不会变成横向」は対象が省略され、UI説明として不明瞭です。「切换为横屏」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo19Note",
+      "severity": "medium",
+      "replacement": "小组件的名称是“时间与打卡”和“猫咪与这一周”。有时不会显示在应用名称下面。",
+      "reasonJapanese": "位置を表す「底下」は台湾寄りです。中国本土では「下面」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo20Note",
+      "severity": "medium",
+      "replacement": "不同设备上的名称可能是“后台限制”或“省电”等。",
+      "reasonJapanese": "「依设备不同」は台湾寄りの構文です。中国本土では「不同设备上」などが自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo21Note",
+      "severity": "medium",
+      "replacement": "向左滑动这项显示也可以将其关闭，不会影响记录。",
+      "reasonJapanese": "「往左滑掉」は台湾寄りかつ口語的で、UI操作説明としては「向左滑动」「关闭」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming12Answer",
+      "severity": "medium",
+      "replacement": "小组件方面\n仍有一些问题。\n例如在应用内点击“下班”后时间仍会继续增加、\nAndroid 上点击“休息”或“下班”没有反应等，\n这些小组件问题\n都会继续处理。",
+      "reasonJapanese": "「在应用下班后」はアプリ自体が退勤するようにも読めます。ボタン操作であることを明示する必要があります。"
+    }
+  ]
+}

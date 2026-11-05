@@ -1,0 +1,632 @@
+{
+  "generatedAt": "2026-11-05T15:37:32.100Z",
+  "provider": "gemini",
+  "model": "gemini-3.1-pro-preview",
+  "page": "roadmap",
+  "locales": [
+    "zh-Hans"
+  ],
+  "sourceCount": 124,
+  "translations": [
+    {
+      "key": "documentTitle",
+      "zhHans": "更新计划 | ねこ勤怠",
+      "notes": "ブランド名はそのまま"
+    },
+    {
+      "key": "documentDescription",
+      "zhHans": "ねこ勤怠未来的更新计划与过去的更新内容。这里列出了 iOS 与 Android 各自的状况。",
+      "notes": "ブランド名はそのまま"
+    },
+    {
+      "key": "heading",
+      "zhHans": "更新计划",
+      "notes": "固定訳"
+    },
+    {
+      "key": "lead",
+      "zhHans": "我将未来即将推出的内容与过去的更新，\n按版本整理在这里。",
+      "notes": ""
+    },
+    {
+      "key": "sub",
+      "zhHans": "由于无法预测商店审核所需的时间，\n推出时间在 iOS 与 Android 上可能会有所不同",
+      "notes": ""
+    },
+    {
+      "key": "languageSelector",
+      "zhHans": "语言",
+      "notes": "固定訳"
+    },
+    {
+      "key": "showMore",
+      "zhHans": "查看其他 {{count}} 项更新内容",
+      "notes": "{{count}} はそのまま"
+    },
+    {
+      "key": "showLess",
+      "zhHans": "收起更新内容",
+      "notes": ""
+    },
+    {
+      "key": "iosPaneLabel",
+      "zhHans": "iOS 更新",
+      "notes": ""
+    },
+    {
+      "key": "ios231Item1",
+      "zhHans": "修复未购买支持方案时，\n仍会重复显示“无法在商店完成购买”\n的问题",
+      "notes": ""
+    },
+    {
+      "key": "ios230Item1",
+      "zhHans": "将支持英文、韩文与繁体中文。\n商店页面也会提供\n各语言版本",
+      "notes": "中黒は読点に変更"
+    },
+    {
+      "key": "ios230Item2",
+      "zhHans": "主页也会提示您，\n之前日期的记录可从“月”修改",
+      "notes": ""
+    },
+    {
+      "key": "ios230Item3",
+      "zhHans": "修复休息 1 分钟以上时，\n仍被计入工作时间的\n问题",
+      "notes": ""
+    },
+    {
+      "key": "ios220Item1",
+      "zhHans": "新增“支持方案”。\n通过每个月的赞助，可以支持\nねこ勤怠 的开发（每月 300 日元）",
+      "notes": "通貨は日元"
+    },
+    {
+      "key": "ios220Item2",
+      "zhHans": "在赞助期间，作为回报，\n会有 2 只彩虹猫咪加入ねこ屋さん",
+      "notes": "ねこ屋さんはそのまま"
+    },
+    {
+      "key": "ios220Item3",
+      "zhHans": "无论是否赞助，\n所有功能都能像以前一样正常使用",
+      "notes": ""
+    },
+    {
+      "key": "ios220Item4",
+      "zhHans": "下班时，工作 BGM\n将会自动停止",
+      "notes": ""
+    },
+    {
+      "key": "ios220Item5",
+      "zhHans": "修复跨日记录的修改\n无法保存时，画面会\n无法关闭的问题",
+      "notes": ""
+    },
+    {
+      "key": "ios220Item6",
+      "zhHans": "修复“已经走到一半了”的台词\n太早出现的问题",
+      "notes": "歩く比喩を残す"
+    },
+    {
+      "key": "ios220Item7",
+      "zhHans": "修复修改跨日记录后，\n状态可能会对不上的问题",
+      "notes": ""
+    },
+    {
+      "key": "statusPublished",
+      "zhHans": "已发布",
+      "notes": ""
+    },
+    {
+      "key": "statusInProgress",
+      "zhHans": "处理中",
+      "notes": ""
+    },
+    {
+      "key": "whenInProgress",
+      "zhHans": "已送审。发布后会在这里通知您",
+      "notes": ""
+    },
+    {
+      "key": "ios251Item1",
+      "zhHans": "调整了 iPad 上\n主页的显示方向",
+      "notes": ""
+    },
+    {
+      "key": "android251Item1",
+      "zhHans": "调整了“打卡与时间”\n小组件的大小",
+      "notes": "ウィジェットは小组件"
+    },
+    {
+      "key": "android251Item2",
+      "zhHans": "在小窗或分屏中，\n主页不再变成横向",
+      "notes": ""
+    },
+    {
+      "key": "v251Item1",
+      "zhHans": "修复了在休息时跨日，\n无法修改前一天记录的问题",
+      "notes": ""
+    },
+    {
+      "key": "v251Item2",
+      "zhHans": "修复了在调休工作日点击“设为休息”时，\n调休会消失的问题",
+      "notes": "振替の日は调休工作日"
+    },
+    {
+      "key": "v250Item1",
+      "zhHans": "可以在“专属猫咪”\n创建喜欢颜色的猫咪\n（从ねこ屋さん右上角的房子图标进入）",
+      "notes": "ねこ屋さんはそのまま"
+    },
+    {
+      "key": "v250Item2",
+      "zhHans": "订阅支持方案期间，\n可使用 1 个专属猫咪名额",
+      "notes": ""
+    },
+    {
+      "key": "v250Item3",
+      "zhHans": "在主页把手机横放，\n猫咪和时间就会放大显示",
+      "notes": ""
+    },
+    {
+      "key": "v250Item4",
+      "zhHans": "每日与每周目标可从 30 分钟起，\n以 30 分钟为单位设定",
+      "notes": ""
+    },
+    {
+      "key": "v250Item5",
+      "zhHans": "工作时间的显示方式\n可选择宽松（6.9h）\n或精确（6小时54分）",
+      "notes": ""
+    },
+    {
+      "key": "ios241Item1",
+      "zhHans": "修复下班后锁屏的时间\n仍持续增加的问题",
+      "notes": ""
+    },
+    {
+      "key": "ios241Item2",
+      "zhHans": "修复长时间工作时锁屏的猫咪\n消失后不再出现的问题",
+      "notes": ""
+    },
+    {
+      "key": "ios241Item3",
+      "zhHans": "从锁屏记录休息或下班时，\n需要先解锁设备",
+      "notes": ""
+    },
+    {
+      "key": "ios241Item4",
+      "zhHans": "修正在 iOS 26 将外观设为“透明”或\n“色调”时，小组件一片空白的问题",
+      "notes": "iOS 26は原文ママ"
+    },
+    {
+      "key": "ios241Item5",
+      "zhHans": "主屏幕与锁屏的小组件\n需要 iOS 17 以上",
+      "notes": ""
+    },
+    {
+      "key": "android241Item1",
+      "zhHans": "修复部分设备无法放置\n“猫咪与本周”小组件的问题",
+      "notes": ""
+    },
+    {
+      "key": "android241Item2",
+      "zhHans": "“工作期间的通知”现在可以和\n“接收通知”的设置分开开启",
+      "notes": ""
+    },
+    {
+      "key": "android241Item3",
+      "zhHans": "当电池设置限制而无法打卡时，\n小组件会显示该提示",
+      "notes": "ウィジェットは小组件"
+    },
+    {
+      "key": "v241Item1",
+      "zhHans": "可以从“月”页面把那一天\n“设为休息”（过去的日子也可以）",
+      "notes": "月は月、お休みにするは设为休息"
+    },
+    {
+      "key": "widgets240Item1",
+      "zhHans": "可以把小组件放到主屏幕。\n能按上班、休息、下班，\n猫咪会和今天的时间一起走",
+      "notes": "歩くは比喩として残す"
+    },
+    {
+      "key": "ios240Item2",
+      "zhHans": "锁屏页面也会显示工作时间\n和猫咪（Apple Watch 也会）",
+      "notes": "ロック画面は锁屏页面"
+    },
+    {
+      "key": "android240Item2",
+      "zhHans": "工作中的通知会显示\n工作时间",
+      "notes": ""
+    },
+    {
+      "key": "v240Item3",
+      "zhHans": "“至今的记录”新增\n全部期间的总计",
+      "notes": ""
+    },
+    {
+      "key": "v240Item4",
+      "zhHans": "取消调休一周最多 2 次的限制",
+      "notes": "振替は调休"
+    },
+    {
+      "key": "v240Item5",
+      "zhHans": "“添加记录”可以输入到\n现在这一分钟",
+      "notes": "記録を足すは添加记录"
+    },
+    {
+      "key": "v240Item6",
+      "zhHans": "修复猫咪自己变成别只、\n调休消失等问题",
+      "notes": "不具合を直すは修复...问题"
+    },
+    {
+      "key": "whenPublished",
+      "zhHans": "已发布。可能需要约 1 天才会在您的设备上显示更新。",
+      "notes": ""
+    },
+    {
+      "key": "ios210Item1",
+      "zhHans": "现在可以在主屏幕选择并播放\n3 首工作 BGM 了。",
+      "notes": ""
+    },
+    {
+      "key": "ios210Item2",
+      "zhHans": "新增了 6 只新猫咪，\n总共会有 15 只。",
+      "notes": ""
+    },
+    {
+      "key": "ios210Item3",
+      "zhHans": "在ねこ屋さん中长按猫咪，\n就可以将它们重新排列成喜欢的顺序。",
+      "notes": "ねこ屋さんはそのまま"
+    },
+    {
+      "key": "ios210Item4",
+      "zhHans": "大量新增了配合不同情境与工作时间的\n猫咪台词。",
+      "notes": ""
+    },
+    {
+      "key": "ios210Item5",
+      "zhHans": "确保添加与修改记录时\n都能正确保存。",
+      "notes": ""
+    },
+    {
+      "key": "ios210Item6",
+      "zhHans": "提升日语输入与\n屏幕下方通知的稳定性。",
+      "notes": ""
+    },
+    {
+      "key": "ios210Item7",
+      "zhHans": "改善休息中或跨日记录的\n修改功能。",
+      "notes": ""
+    },
+    {
+      "key": "ios210Item8",
+      "zhHans": "修复过长的分类名称\n与结转显示等问题。",
+      "notes": ""
+    },
+    {
+      "key": "ios201Item1",
+      "zhHans": "现在可以将“一天的切换时间”\n从 0 点到中午 12 点之间\n自由选择了。",
+      "notes": "1日のきりかえ時刻は一天的切换时间"
+    },
+    {
+      "key": "ios201Item2",
+      "zhHans": "修复月页面中，上个月的记录\n有时会显示在下个月的\n问题。",
+      "notes": ""
+    },
+    {
+      "key": "ios201Item3",
+      "zhHans": "在月页面点击日期，\n就可以在事后修改或添加\n当天的记录。",
+      "notes": ""
+    },
+    {
+      "key": "ios201Item4",
+      "zhHans": "从夜晚跨越到第二天的时间，\n也能通过“添加记录”来加入了。",
+      "notes": ""
+    },
+    {
+      "key": "ios201Item5",
+      "zhHans": "点击时间会打开数字面板，\n可以以 1 分钟为单位输入。\n［＋］与［－］则是以 10 分钟为单位。",
+      "notes": ""
+    },
+    {
+      "key": "ios201Item6",
+      "zhHans": "长按工作分类，\n就可以根据喜好调整顺序。",
+      "notes": "作業カテゴリは工作分类"
+    },
+    {
+      "key": "ios201Item7",
+      "zhHans": "即使在下班后或休息期间，\n也能重新选择其他的工作分类\n并“继续工作”了（问题修复）。",
+      "notes": ""
+    },
+    {
+      "key": "ios201Item8",
+      "zhHans": "点击主屏幕的老板，\n就可以一次性更改本周的休息日。",
+      "notes": ""
+    },
+    {
+      "key": "ios201Item9",
+      "zhHans": "您可以将“提醒休息的时间”\n与每日目标时间分开设置。",
+      "notes": "休憩にさそう時間は提醒休息的时间"
+    },
+    {
+      "key": "ios201Item10",
+      "zhHans": "当有新版本推出时，\n会在设置页面中通知您。",
+      "notes": ""
+    },
+    {
+      "key": "ios201Item11",
+      "zhHans": "修复当“一周的开始”设为星期一时，\n月页面的日历\n无法正常切换的问题。",
+      "notes": ""
+    },
+    {
+      "key": "ios201Item12",
+      "zhHans": "修复将“提醒休息的时间”调降至 1 小时后，\n就无法再次增加的\n问题。",
+      "notes": ""
+    },
+    {
+      "key": "ios201Item13",
+      "zhHans": "修复在打开“添加记录”的状态下\n按下“保存”时，输入内容会消失\n且未留下任何记录的问题。",
+      "notes": ""
+    },
+    {
+      "key": "ios201Item14",
+      "zhHans": "此外，也修复了记录相关\n与键盘显示的问题。",
+      "notes": ""
+    },
+    {
+      "key": "ios201Note",
+      "zhHans": "您至今的记录将会原封不动地保留。\n只有浅色/深色外观的设置无法继承，\n因此使用深色外观的用户，请在更新后\n至设置中重新选择。",
+      "notes": ""
+    },
+    {
+      "key": "statusSkipped",
+      "zhHans": "暂缓发布",
+      "notes": ""
+    },
+    {
+      "key": "ios200When",
+      "zhHans": "2.0.0 将不发布，预计将内容整合至 2.0.1 一并推出。",
+      "notes": ""
+    },
+    {
+      "key": "ios120Item1",
+      "zhHans": "您可以为每一只猫咪取名字。",
+      "notes": ""
+    },
+    {
+      "key": "ios120Item2",
+      "zhHans": "首次打开应用时，可以选择第一只猫咪。",
+      "notes": ""
+    },
+    {
+      "key": "ios120Item3",
+      "zhHans": "当休息时间过长时，\n猫咪会提醒您“休息结束”。",
+      "notes": ""
+    },
+    {
+      "key": "ios120Item4",
+      "zhHans": "修复了在日本以外的地区使用时，\n记录会变成日本时间的问题。",
+      "notes": ""
+    },
+    {
+      "key": "ios120Item5",
+      "zhHans": "您可以将已删除的工作列表折叠起来了。",
+      "notes": "けした作業は已删除的工作"
+    },
+    {
+      "key": "ios120Item6",
+      "zhHans": "目标时间的上限\n将变为每周168小时、每天24小时。",
+      "notes": "中黒を読点に変更"
+    },
+    {
+      "key": "ios120Item7",
+      "zhHans": "您可以从设置中打开联系页面。",
+      "notes": ""
+    },
+    {
+      "key": "ios110Item1",
+      "zhHans": "修改记录的流程已改为\n点击“保存”来确认。",
+      "notes": ""
+    },
+    {
+      "key": "ios110Item2",
+      "zhHans": "因误触而变得零碎的记录，\n将会合并为一条来计算。",
+      "notes": ""
+    },
+    {
+      "key": "ios110Item3",
+      "zhHans": "您可以从设置中恢复已删除的工作分类。\n也可以重新使用相同的名称。",
+      "notes": "作業カテゴリは「工作分类」"
+    },
+    {
+      "key": "ios110Item4",
+      "zhHans": "增加了2只长毛猫咪\n（蓬蓬黑猫、蓬蓬焦糖猫）",
+      "notes": "中黒を読点に変更"
+    },
+    {
+      "key": "ios110Item5",
+      "zhHans": "您可以随时从周画面\n“以图片分享上周”。",
+      "notes": ""
+    },
+    {
+      "key": "ios110Item6",
+      "zhHans": "即使在工作中，\n也能修改该次工作的“开始”时间。",
+      "notes": ""
+    },
+    {
+      "key": "ios100Item1",
+      "zhHans": "发布了与猫咪一起制作的应用。",
+      "notes": "アプリは「应用」"
+    },
+    {
+      "key": "androidPaneLabel",
+      "zhHans": "Android 更新",
+      "notes": ""
+    },
+    {
+      "key": "android202Item1",
+      "zhHans": "修复以日语输入名称或工作分类时，\n文字会重叠或错位的\n问题。",
+      "notes": ""
+    },
+    {
+      "key": "android202Item2",
+      "zhHans": "缩短并统一画面下方通知的显示时间，\n并可通过向下滑动\n来关闭。",
+      "notes": ""
+    },
+    {
+      "key": "android202Item3",
+      "zhHans": "添加新记录时，只要设定好开始与结束时间\n就会直接添加。\n从开始或结束时间任一方输入都可以。",
+      "notes": ""
+    },
+    {
+      "key": "android202Item4",
+      "zhHans": "修改现有记录时，\n将改为点击右上角的“完成”\n来确认更改。",
+      "notes": ""
+    },
+    {
+      "key": "android201Item1",
+      "zhHans": "现在可以将“一天的切换时间”\n设置在0点\n至中午12点之间了。",
+      "notes": "1日のきりかえ時刻は「一天的切换时间」"
+    },
+    {
+      "key": "android201Item2",
+      "zhHans": "修复了在月画面中，\n上个月的记录有时会显示在下个月的\n问题。",
+      "notes": ""
+    },
+    {
+      "key": "android200Item1",
+      "zhHans": "修复当“一周的开始”设为星期一的时候，\n月画面的日历\n无法正常切换的问题。",
+      "notes": ""
+    },
+    {
+      "key": "android200Item2",
+      "zhHans": "修复将“提醒休息的时间”调降至1小时后，\n就无法再次增加的\n问题。",
+      "notes": "休憩にさそう時間は「提醒休息的时间」"
+    },
+    {
+      "key": "android200Item3",
+      "zhHans": "修复在打开“添加记录”的状态下\n点击“保存”时，输入内容会消失\n且未留下任何记录的问题。",
+      "notes": "記録を足すは「添加记录」"
+    },
+    {
+      "key": "android200Item4",
+      "zhHans": "修复按下“返回”按钮时\n应用会关闭的问题。",
+      "notes": ""
+    },
+    {
+      "key": "android200Item5",
+      "zhHans": "此外，也修复了记录相关\n与键盘显示的问题。",
+      "notes": ""
+    },
+    {
+      "key": "android110Item1",
+      "zhHans": "增加了3只长毛猫咪\n（蓬蓬白猫、蓬蓬黑猫、蓬蓬焦糖猫）",
+      "notes": "中黒を読点に変更"
+    },
+    {
+      "key": "android110Item2",
+      "zhHans": "换周时会出现“上周回顾”，\n并能以图片卡片分享。",
+      "notes": ""
+    },
+    {
+      "key": "android110Item3",
+      "zhHans": "您可以使用上周努力的时数（时间存钱罐）\n来达成当周的目标了。",
+      "notes": "がんばった貯金は「时间存钱罐」"
+    },
+    {
+      "key": "futureHeading",
+      "zhHans": "未来想做的事",
+      "notes": ""
+    },
+    {
+      "key": "futureLead",
+      "zhHans": "这些是我想做的事，\n主要来自大家提供的建议与反馈。\n实现顺序尚未决定。",
+      "notes": ""
+    },
+    {
+      "key": "future3",
+      "zhHans": "饲养多只猫咪（一起散步）",
+      "notes": "歩くは比喩として残す"
+    },
+    {
+      "key": "future4",
+      "zhHans": "摸摸猫咪、给猫咪奖励",
+      "notes": ""
+    },
+    {
+      "key": "future6",
+      "zhHans": "通过 Apple Watch 打卡",
+      "notes": ""
+    },
+    {
+      "key": "future7",
+      "zhHans": "将记录导出为 CSV",
+      "notes": ""
+    },
+    {
+      "key": "future8",
+      "zhHans": "定期休息提醒与每日提醒",
+      "notes": "中黒を読点に変更"
+    },
+    {
+      "key": "future9",
+      "zhHans": "增加主题色彩与工作分类配色",
+      "notes": ""
+    },
+    {
+      "key": "future10",
+      "zhHans": "操作音效",
+      "notes": ""
+    },
+    {
+      "key": "future11",
+      "zhHans": "完全删除记录为0小时的“已删除的工作”",
+      "notes": "けした作業は「已删除的工作」"
+    },
+    {
+      "key": "futureNote",
+      "zhHans": "完成的项目会陆续移到\n这个页面的版本区块中。",
+      "notes": ""
+    },
+    {
+      "key": "wantMoreBeforeLink",
+      "zhHans": "如果有“我也想要这个”的想法，请通过",
+      "notes": ""
+    },
+    {
+      "key": "contactFormLink",
+      "zhHans": "建议与反馈表单",
+      "notes": ""
+    },
+    {
+      "key": "wantMoreAfterLink",
+      "zhHans": "告诉我。",
+      "notes": ""
+    },
+    {
+      "key": "backToTop",
+      "zhHans": "← 返回 ねこ勤怠 页面",
+      "notes": "ブランド名はそのまま"
+    },
+    {
+      "key": "faqLink",
+      "zhHans": "常见问题",
+      "notes": "固定訳"
+    },
+    {
+      "key": "contactLink",
+      "zhHans": "建议与反馈",
+      "notes": "固定译法"
+    },
+    {
+      "key": "privacyLink",
+      "zhHans": "隐私政策",
+      "notes": "固定译法"
+    },
+    {
+      "key": "koreanWeekShareFix",
+      "zhHans": "修复保存每周分享图片时，\n韩文文字无法正常显示\n的问题。",
+      "notes": "改行位置を原文に合わせました。"
+    },
+    {
+      "key": "jumpToFuture",
+      "zhHans": "查看 接下来想做的事 ▾",
+      "notes": "「そのさき」は「接下来」としました。"
+    }
+  ]
+}

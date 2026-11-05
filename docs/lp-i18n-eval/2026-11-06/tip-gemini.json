@@ -1,0 +1,137 @@
+{
+  "generatedAt": "2026-11-05T15:35:36.833Z",
+  "provider": "gemini",
+  "model": "gemini-3.1-pro-preview",
+  "page": "tip",
+  "locales": [
+    "zh-Hans"
+  ],
+  "sourceCount": 25,
+  "translations": [
+    {
+      "key": "documentTitle",
+      "zhHans": "支持开发 | ねこ勤怠",
+      "notes": "タイトル"
+    },
+    {
+      "key": "documentDescription",
+      "zhHans": "您可以通过打赏来支持 ねこ勤怠 的开发。选择金额后将进入付款页面。应用未来也会继续免费提供。",
+      "notes": "説明文"
+    },
+    {
+      "key": "heading",
+      "zhHans": "支持开发",
+      "notes": "固定訳"
+    },
+    {
+      "key": "lead",
+      "zhHans": "ねこ勤怠 是由个人开发的。\n您可以通过打赏来支持开发。",
+      "notes": "改行位置を原文に合わせました"
+    },
+    {
+      "key": "sub",
+      "zhHans": "选择金额后将进入付款页面。\n应用未来也会继续免费，无论是否支持，都能以相同的方式使用。",
+      "notes": "改行位置を原文に合わせました"
+    },
+    {
+      "key": "languageSelector",
+      "zhHans": "语言",
+      "notes": "固定訳"
+    },
+    {
+      "key": "amountsAriaLabel",
+      "zhHans": "支持金额",
+      "notes": ""
+    },
+    {
+      "key": "amount100Label",
+      "zhHans": "一点点",
+      "notes": ""
+    },
+    {
+      "key": "amount300Label",
+      "zhHans": "一瓶果汁",
+      "notes": ""
+    },
+    {
+      "key": "amount500Label",
+      "zhHans": "一杯咖啡",
+      "notes": ""
+    },
+    {
+      "key": "amount1000Label",
+      "zhHans": "猫咪的饭",
+      "notes": ""
+    },
+    {
+      "key": "customAmountBeforeLink",
+      "zhHans": "如果想自行决定金额，请点击 ",
+      "notes": "末尾の半角スペースを保持"
+    },
+    {
+      "key": "customAmountLink",
+      "zhHans": "这里",
+      "notes": ""
+    },
+    {
+      "key": "customAmountAfterLink",
+      "zhHans": "。",
+      "notes": ""
+    },
+    {
+      "key": "customAmountRange",
+      "zhHans": "（¥100〜¥10,000）",
+      "notes": "金額表記は原文のまま"
+    },
+    {
+      "key": "note1BeforeLink",
+      "zhHans": "这是一份打赏。不会有谢礼或应用的额外功能。相对地，我会为了收到的",
+      "notes": "中黒を削除"
+    },
+    {
+      "key": "note1Link",
+      "zhHans": "建议与反馈",
+      "notes": "固定訳"
+    },
+    {
+      "key": "note1AfterLink",
+      "zhHans": "而努力。",
+      "notes": ""
+    },
+    {
+      "key": "note2",
+      "zhHans": "付款会使用与 ねこ勤怠 开发者 c_cya 的线上商店“ｼﾁｬのねこ屋さん”相同的系统。账单明细会显示该商店名称。",
+      "notes": "中黒を削除、ブランド名はそのまま"
+    },
+    {
+      "key": "note3",
+      "zhHans": "可以使用信用卡、PayPay 等付款方式。信用卡号由支付公司处理，我不会收到您的卡号信息。",
+      "notes": "中黒を削除し、並列は「、」を使用"
+    },
+    {
+      "key": "note4",
+      "zhHans": "我会带着您给予的支持，继续为 ねこ勤怠 努力。",
+      "notes": "中黒を削除"
+    },
+    {
+      "key": "backToTop",
+      "zhHans": "← 返回 ねこ勤怠 页面",
+      "notes": ""
+    },
+    {
+      "key": "faqLink",
+      "zhHans": "常见问题",
+      "notes": "固定訳"
+    },
+    {
+      "key": "contactLink",
+      "zhHans": "建议与反馈",
+      "notes": "固定訳"
+    },
+    {
+      "key": "privacyLink",
+      "zhHans": "隐私政策",
+      "notes": "固定訳"
+    }
+  ]
+}

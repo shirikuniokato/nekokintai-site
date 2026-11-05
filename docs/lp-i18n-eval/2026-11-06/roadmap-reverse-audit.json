@@ -1,0 +1,53 @@
+{
+  "generatedAt": "2026-11-05T15:55:33.625Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "zh-Hans"
+  ],
+  "summaryJapanese": "6件の意味差があります。うち5件は、予定・将来の変更を実装済み・現在利用可能としている時制の変化です。残る1件は、問い合わせ先を提案・フィードバックに限定しています。その他は意味的に等価です。",
+  "issues": [
+    {
+      "locale": "zh-Hans",
+      "key": "ios210Item1",
+      "severity": "medium",
+      "backTranslationJapanese": "ホームで3曲の作業用BGMを選んで再生できるようになりました。",
+      "reasonJapanese": "原文は今後できるようになる予定ですが、訳文の「现在」「了」は現在すでに利用可能だと示しています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios210Item2",
+      "severity": "medium",
+      "backTranslationJapanese": "新しいねこが6匹追加されました。全部で15匹になります。",
+      "reasonJapanese": "原文では6匹増えることも今後の予定ですが、訳文はその追加だけを完了済みとしており、更新状況が変わっています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios210Item4",
+      "severity": "medium",
+      "backTranslationJapanese": "場面や作業時間に合わせたねこのセリフをたくさん追加しました。",
+      "reasonJapanese": "原文はこれから追加する予定ですが、訳文は追加済みとしています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios201Item1",
+      "severity": "medium",
+      "backTranslationJapanese": "今では「1日のきりかえ時刻」を0時から昼12時まで自由に選べるようになりました。",
+      "reasonJapanese": "原文は今後選べるようになる予定ですが、訳文は現在すでに選択可能だとしています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios201Item14",
+      "severity": "medium",
+      "backTranslationJapanese": "そのほか、記録機能とキーボード表示の不具合も修正しました。",
+      "reasonJapanese": "原文はこれから修正する予定ですが、訳文は修正済みとしています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios120Item7",
+      "severity": "medium",
+      "backTranslationJapanese": "設定から提案・フィードバックページを開けます。",
+      "reasonJapanese": "原文の「お問い合わせページ」は一般的な問い合わせを含みますが、訳文は提案・フィードバックに用途を限定しています。"
+    }
+  ]
+}

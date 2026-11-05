@@ -1,5 +1,5 @@
 export const FALLBACK_LOCALE = 'ja'
-export const SUPPORTED_LOCALES = ['ja', 'en', 'ko', 'zh-TW']
+export const SUPPORTED_LOCALES = ['ja', 'en', 'ko', 'zh-TW', 'zh-Hans']
 
 export function isSupportedLocale(value) {
   return SUPPORTED_LOCALES.includes(value)
@@ -29,9 +29,11 @@ export function resolveSupportedLocale(languageTags, fallback = FALLBACK_LOCALE)
     if (exact) return exact
 
     const [language, ...subtags] = normalized.split('-')
+    // 中国語は、明示された文字種（Hant / Hans）を地域より優先する。アプリの locale.ts と同じ順
     if (language === 'zh') {
-      if (subtags.includes('hant') || subtags.includes('tw')) return 'zh-TW'
-      continue
+      if (subtags.includes('hant')) return 'zh-TW'
+      if (subtags.includes('hans')) return 'zh-Hans'
+      return subtags.some((subtag) => ['tw', 'hk', 'mo'].includes(subtag)) ? 'zh-TW' : 'zh-Hans'
     }
 
     const baseLanguage = SUPPORTED_LOCALES.find((locale) => locale.toLowerCase() === language)

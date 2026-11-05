@@ -1,0 +1,24 @@
+{
+  "draft": "privacy-draft.json",
+  "audits": { "claude-fable": "privacy-audit-fable.json", "gpt": "privacy-audit-codex.json" },
+  "adopt": [
+    { "locale": "zh-Hans", "key": "purchaseBody1", "from": "claude-fable" },
+    { "locale": "zh-Hans", "key": "purchaseBody2", "from": "claude-fable" },
+    { "locale": "zh-Hans", "key": "notificationsBody", "from": "claude-fable" },
+    { "locale": "zh-Hans", "key": "noTrackingBeforeLink", "from": "claude-fable" },
+    { "locale": "zh-Hans", "key": "optOutLink", "from": "claude-fable" },
+    { "locale": "zh-Hans", "key": "siteSentInfo", "from": "claude-fable" },
+    { "locale": "zh-Hans", "key": "contactFormHeading", "from": "claude-fable" },
+    { "locale": "zh-Hans", "key": "contactSentInfo", "from": "claude-fable" },
+    { "locale": "zh-Hans", "key": "contactStorage", "from": "claude-fable" },
+    { "locale": "zh-Hans", "key": "inquiryBeforeEmail", "from": "claude-fable" },
+    { "locale": "zh-Hans", "key": "backToTop", "from": "claude-fable" },
+    { "locale": "zh-Hans", "key": "contactPurpose", "from": "gpt" }
+  ],
+  "manual": [
+    { "locale": "zh-Hans", "key": "recipientLabel", "text": "接收方：" },
+    { "locale": "zh-Hans", "key": "storageLabel", "text": "接收方与保存位置：" },
+    { "locale": "zh-Hans", "key": "contactFormBody", "text": "通过本网站的“建议与反馈”表单提交内容时，以下信息将发送给开发者。" }
+  ],
+  "replace": []
+}

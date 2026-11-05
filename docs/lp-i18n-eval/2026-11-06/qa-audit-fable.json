@@ -1,0 +1,249 @@
+{
+  "generatedAt": "2026-11-05T15:58:28.886Z",
+  "reviewer": "claude-fable",
+  "model": "claude-fable-5",
+  "locales": [
+    "zh-Hans"
+  ],
+  "summaryJapanese": "zh-Hans「よくあるしつもん」全141件を監査し、33件を指摘しました（high 2件、medium 31件、critical なし）。high は、howTo5Answer で「翌日の時刻」が「时长（時間の長さ）」と誤訳されている点と、howTo14Note の「かけ算が合わない」が「乘法算不上」と意味不明な訳になっている点です。medium の大半は、画面を指す語に台湾寄りの「画面」と大陸標準の「页面」が混在している用語揺れ（页面に統一）、横画面を「横向」とする不自然さ（横屏／竖屏に統一）、「都有看」「评估看看」「依设备」「方案」「烦恼」など台湾寄りの語法・語彙、不具合の訳が「错误」と「问题」で揺れている点、合计／总计の揺れ、您／你の混在、CSV 等の読み込みを「导入」に統一する点です。ハチワレを「燕尾服」としている箇所は模様の種類が異なる可能性があるため medium で指摘しましたが、アプリ本体の zh-Hans UI の呼称に合わせてください。繁体字の混入、中黒「・」の持ち込み、通貨表記（日元）、行／列の誤用はありませんでした。",
+  "issues": [
+    {
+      "locale": "zh-Hans",
+      "key": "lead",
+      "severity": "medium",
+      "replacement": "这是目前对大家反馈的解答。\n每一条我都看了。",
+      "reasonJapanese": "「都有看」は「有＋動詞」の台湾寄りの語法で、中国本土では不自然。「都看了」に直す。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howToOpen",
+      "severity": "medium",
+      "replacement": "点击想了解的问题，就会展开解答。",
+      "reasonJapanese": "「好奇的问题」は「気になるしつもん」の訳として不自然。UI 案内としては「想了解的问题」が自然。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "investigating1Question",
+      "severity": "medium",
+      "replacement": "在 Android 上重新打开应用时，猫咪和“今天的明细”会变成全黑",
+      "reasonJapanese": "「在Android重新打开」は「上」が欠けて文法的に不自然。他の質問文に合わせて末尾の句点も外す。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo1Answer",
+      "severity": "medium",
+      "replacement": "在“月”页面点击想修改的日期，\n然后打开“修改时间”。\n今天的记录也可以从首页的\n“修改时间”来进行修改。\n忘记记录的时间可以从“＋ 添加记录”\n加进去。\n新的记录只要设置好开始与结束，\n就会直接添加。\n修改现有记录时，\n请按右上角的“完成”来确认。",
+      "reasonJapanese": "画面を指す「画面」は台湾寄りで、同ページ内の howTo10・howTo12 などは「页面」を使っており用語揺れ。「页面」に統一し、日付の操作も他項目に合わせ「点击」にする。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo1Note",
+      "severity": "medium",
+      "replacement": "点击时间就能以1分钟为单位输入。［−］［＋］会以10分钟为单位增减。如果在“月”页面无法点击日期，请试着将应用更新到最新版本。",
+      "reasonJapanese": "「画面」を「页面」に統一し、タップ操作を「点击」に揃える（用語揺れ・台湾寄り）。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo2Answer",
+      "severity": "medium",
+      "replacement": "第二天打开首页时，\n会显示那天还没按“下班”。\n你可以从里面的“修改时间”，\n修改前一天的记录。\n如果没有显示，请在“月”页面\n点击前一天来修改。",
+      "reasonJapanese": "「画面」を「页面」に統一（用語揺れ・台湾寄り）。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo4Note",
+      "severity": "medium",
+      "replacement": "下班后无法切换工作项目的问题已经修复了。如果按了没有改变，请试着将应用更新到最新版本。",
+      "reasonJapanese": "「不具合」の訳が「错误」と「问题」（upcoming12Answer）で揺れている。本土で自然な「问题」に統一。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo5Answer",
+      "severity": "high",
+      "replacement": "直接按下班的话，\n记录会按日期分开记录。\n如果想把跨夜工作的时长算在同一天，\n请将设置中的“一天的切换时间”\n改为“早上4点”等时间。\n事后添加记录时，\n如果输入开始22:00、结束2:00，\n结束时间就会记录为第二天的时间。",
+      "reasonJapanese": "「翌日の時刻として記録されます」が「记录为第二天的时长（時間の長さ）」と誤訳されており、2:00 が翌日の時刻扱いになるという意味が伝わらない。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo11Answer",
+      "severity": "medium",
+      "replacement": "可以从设置的“备份在这里”\n来进行转移。\n请先导出为文件，\n并保存到设备中。\n接着在新的设备上，\n同样到“备份在这里”\n导入该文件就完成了。",
+      "reasonJapanese": "「書き出し」を「导出」としているので、対になる「読みこむ」は「读取」でなく「导入」が UI として自然。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo14Note",
+      "severity": "high",
+      "replacement": "目标可从30分钟起，以30分钟为单位设定（2.5.0起）。即使工作日和休假日的工作时间不同，每日目标乘以天数和周目标对不上也没有问题。",
+      "reasonJapanese": "「乘法算不上」は意味が通らず、「1日の目標×日数が週の目標と合わなくてもよい」という内容が欠落している。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo18Question",
+      "severity": "medium",
+      "replacement": "想看目前为止工作时间的总计",
+      "reasonJapanese": "「合計」の訳が「合计」と「总计」（howTo10・howTo14・howTo15）で揺れている。「总计」に統一。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo18Answer",
+      "severity": "medium",
+      "replacement": "从“记录”页面右上角的按钮，\n可以看到全部期间的总计、记录的天数，\n以及各项工作的明细。",
+      "reasonJapanese": "「画面」を「页面」に、「合计」を「总计」に統一（用語揺れ）。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo23Question",
+      "severity": "medium",
+      "replacement": "想横屏使用",
+      "reasonJapanese": "横画面は本土では「横屏」が定訳。「横向画面」は不自然。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo23Answer",
+      "severity": "medium",
+      "replacement": "在首页把设备横放，\n猫咪和时间就会放大显示。\n适合一边看着一边工作。\n上班、休息、下班，\n还有切换工作都可以操作。\n只有首页会变成横屏，\n其他页面仍然是竖屏。",
+      "reasonJapanese": "「横向／竖向」は「横屏／竖屏」が本土の定訳。「画面」も「页面」に統一。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo23Note",
+      "severity": "medium",
+      "replacement": "2.5.0 起。如果设备的屏幕自动旋转是关闭的，就不会变成横屏。",
+      "reasonJapanese": "「变成横向」を「变成横屏」に統一。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo24Answer",
+      "severity": "medium",
+      "replacement": "可以在“专属猫咪”里创建。\n从猫咪小铺右上角的房子图标\n打开后，在“创建猫咪”中\n可以选择身体、花纹、轮廓、眼睛、项圈、肉球的颜色，\n三花、八字脸等花纹，\n以及短毛／长毛。\n名额是买断制，一个名额一只猫，\n同一个名额里的猫咪\n可以不限次数重新创建。",
+      "reasonJapanese": "ハチワレは額が八の字に割れた模様で、「燕尾服」（胸白のタキシード柄）とは別物。本土では「八字脸」が通称。ただしアプリ本体の zh-Hans UI の呼称があればそちらに合わせること。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo19Note",
+      "severity": "medium",
+      "replacement": "小组件的名称是“时间与打卡”和“猫咪与这一周”。有时按应用名称搜索不到。",
+      "reasonJapanese": "「不会列在应用名称底下」は「アプリ名では並ばない」の意味が曖昧。アプリ名で探しても見つからないことがある、と明確にする。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo20Note",
+      "severity": "medium",
+      "replacement": "不同设备的叫法可能不同，例如“后台限制”或“省电”。",
+      "reasonJapanese": "「依设备不同」の「依」は台湾寄りの語彙。本土では「根据／不同设备」が自然。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming2Note",
+      "severity": "medium",
+      "replacement": "我会小心开发，避免让ねこ勤怠因为设置太多而变得杂乱。",
+      "reasonJapanese": "ブランド名を引用符で囲んでいるのはこの箇所だけで、他の項目と表記が揺れている。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming5Answer",
+      "severity": "medium",
+      "replacement": "我收到了许多这方面的建议。\n作者自己也很想尝试看看。\n不过目前会把修复问题\n摆在第一位。",
+      "reasonJapanese": "「不具合」の訳を「问题」に統一（howTo4Note・upcoming12Answer との用語揺れ）。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming5Note",
+      "severity": "medium",
+      "replacement": "摸摸、零食、玩具、换衣服。大家提供的点子我都保留着。",
+      "reasonJapanese": "「都有保留下来」は「有＋動詞」の台湾寄りの語法。「都保留着」に直す。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming7Answer",
+      "severity": "medium",
+      "replacement": "我会考虑的。\n不过，可能还需要一段时间。",
+      "reasonJapanese": "「评估看看」は台湾寄りの言い回し。「検討いたします」は本土では「我会考虑」が自然。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming9Answer",
+      "severity": "medium",
+      "replacement": "定时重复的休息提醒，我会考虑。\n每天早上的通知，我希望能加进去。\n会设计成可以自由开关，\n不过可能要再等一段时间。",
+      "reasonJapanese": "「评估看看」は台湾寄り。「考虑」に統一し、「重复的休息提醒」も「定时重复」として意味を明確にする。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming10Answer",
+      "severity": "medium",
+      "replacement": "我很想做。\n虽然还不知道会不会是\n大家想象中的样子，但我想让\n背景等也能够更换，\n重视视觉上的期待感。\n工作类别的颜色目前有12种\n可以选择。是否要再增加，\n我会一并考虑。\n目前可以在设置页面右上角，\n切换“浅色”和“深色”。",
+      "reasonJapanese": "「检討いたします」の訳を他項目と同じ「考虑」に統一（「评估」との用語揺れ）。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming12Answer",
+      "severity": "medium",
+      "replacement": "小组件方面\n还有一些问题。\n比如在应用下班后时间仍继续增加、\nAndroid 上按休息、下班没反应等，\n我会处理这些\n小组件的问题。",
+      "reasonJapanese": "例示の「像是」は台湾寄りの語彙。本土では「比如」が自然。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely1Note",
+      "severity": "medium",
+      "replacement": "我会考虑是否能通过另一款进阶版应用提供这项功能。",
+      "reasonJapanese": "「検討いたします」の訳を「考虑」に統一（用語揺れ）。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely2Answer",
+      "severity": "medium",
+      "replacement": "目前的设计是同一时间内，\n只能记录一项工作。\n因为我很重视简单易用的体验，\n所以目前没有更改的计划。",
+      "reasonJapanese": "「つくり」を「设定」とするのは台湾寄りで、本土では「设置」と紛らわしい。「设计」が自然。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely7Answer",
+      "severity": "medium",
+      "replacement": "大家的建议与反馈我都看了。\n我仔细考虑过了，\n但觉得或许做成另一款应用\n会比较好。",
+      "reasonJapanese": "「都有看」は台湾寄りの語法。「评估」も「考虑」に統一。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely9Answer",
+      "severity": "medium",
+      "replacement": "我还在犹豫。\n因为我自己不太常用，\n等我研究一下再决定……。",
+      "reasonJapanese": "「悩んでいます」を「烦恼」とするのは日本語の直訳で、中国語では「困っている」寄りのニュアンス。迷っている意味の「犹豫」が自然。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely13Question",
+      "severity": "medium",
+      "replacement": "可以在海外的应用商店下载吗？",
+      "reasonJapanese": "「商店」だけでは実店舗とも読める。「应用商店」と明示する。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "supporter1Answer",
+      "severity": "medium",
+      "replacement": "可以从两只彩虹猫咪中\n选一只当伙伴，\n还能使用一个\n“专属猫咪”的名额，\n用喜欢的颜色创建猫咪。\n功能上没有任何差异。\n无论你是否支持，\n能做的事情都是一样的。",
+      "reasonJapanese": "二人称が他項目は「你」なのにここだけ「您」で揺れている。「彩虹猫」も他項目の「彩虹猫咪」に統一。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "supporter2Answer",
+      "severity": "medium",
+      "replacement": "只是加入支持计划的话，伙伴\n是不会自动切换的。\n请在设置的“猫咪小铺”中\n选择彩虹猫咪，\n然后按“设为伙伴”。",
+      "reasonJapanese": "「方案」は台湾寄りの語彙で、ページ内で「支持计划」としているプラン名とも揺れている。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "supporter3Answer",
+      "severity": "medium",
+      "replacement": "支持计划可以从支持页面的\n“恢复购买”来恢复。\n“专属猫咪”的名额，\n则从“专属猫咪”页面的\n“恢复已购买名额”来恢复。\n两者都需要相同的\nApple ID 或 Google 账号，\n而且要在相同的操作系统才能恢复\n（iPhone 换 iPhone、Android 换 Android）。",
+      "reasonJapanese": "「画面」を「页面」に統一（用語揺れ・台湾寄り）。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "supporter4Answer",
+      "severity": "medium",
+      "replacement": "即使取消订阅，在当前周期\n结束前还是可以使用特权。\n周期结束后，伙伴会\n自动换回免费猫咪。\n支持计划名额里的猫咪\n会无法再使用，\n但配色设置会保留下来。",
+      "reasonJapanese": "「相棒は自動で無料の子にもどります」の「もどる」が抜け、「免费猫咪会自动成为伙伴」では切り替わる方向が不明瞭。「伙伴会自动换回免费猫咪」とする。"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-11-05T15:52:55.848Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "zh-Hans"
+  ],
+  "summaryJapanese": "全体として意味はほぼ等価です。1件のみ、原文にある「支援額に応じて頑張る」という比例のニュアンスが失われています。",
+  "issues": [
+    {
+      "locale": "zh-Hans",
+      "key": "note4",
+      "severity": "medium",
+      "backTranslationJapanese": "いただいた一つひとつの応援が、ねこ勤怠の開発を続ける原動力になります。",
+      "reasonJapanese": "原文は「いただいた分だけ」と、支援された分に応じて開発を頑張るという比例の意味を含みます。翻訳では「一つひとつの応援が原動力になる」に変わり、その意味が欠落しています。"
+    }
+  ]
+}

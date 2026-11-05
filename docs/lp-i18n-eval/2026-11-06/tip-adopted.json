@@ -1,0 +1,13 @@
+{
+  "draft": "tip-draft.json",
+  "audits": { "claude-fable": "tip-audit-fable.json", "gpt": "tip-audit-codex.json" },
+  "adopt": [
+    { "locale": "zh-Hans", "key": "sub", "from": "gpt" },
+    { "locale": "zh-Hans", "key": "customAmountRange", "from": "claude-fable" },
+    { "locale": "zh-Hans", "key": "note1BeforeLink", "from": "claude-fable" },
+    { "locale": "zh-Hans", "key": "note2", "from": "gpt" },
+    { "locale": "zh-Hans", "key": "note4", "from": "gpt" }
+  ],
+  "manual": [],
+  "replace": []
+}

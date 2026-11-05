@@ -54,10 +54,16 @@ export function resolveLocalesUrl(dataset = {}) {
   return typeof declared === 'string' && declared.length > 0 ? declared : DEFAULT_LOCALES_URL
 }
 
+/**
+ * 自分の言語で撮った画面がまだ無い言語は、いちばん近い言語の画面を出す。
+ * 簡体字は 2.5.2 のアプリから撮った素材が無いので、同じ漢字圏の繁体字の画面を借りる（撮れたらこの表から消す）
+ */
+const SCREENSHOT_FALLBACK_LOCALES = { 'zh-Hans': 'zh-TW' }
+
 export function localizedScreenshotPath(locale, screenshot) {
-  return locale === FALLBACK_LOCALE
-    ? null
-    : `/assets/lp/screenshots/${locale}/screen-${screenshot}.png`
+  if (locale === FALLBACK_LOCALE) return null
+  const screenshotLocale = SCREENSHOT_FALLBACK_LOCALES[locale] ?? locale
+  return `/assets/lp/screenshots/${screenshotLocale}/screen-${screenshot}.png`
 }
 
 export function localizedBadgePath(locale, badge) {
@@ -158,12 +164,13 @@ export function bindLocaleSwitcher(buttons, copies, onSelect = () => {}) {
  */
 export function warmLocalizedImages(currentLocale, createImage, defaultSources = []) {
   // 日本語以外で開いたときは、HTML に書かれた日本語の画像も読み込み途中で差し替えられている
-  const sources = [
+  // 画面を借りている言語（簡体字 → 繁体字）があるので、同じ画像は 1 回だけ読む
+  const sources = [...new Set([
     ...(currentLocale === FALLBACK_LOCALE ? [] : defaultSources),
     ...SUPPORTED_LOCALES
       .filter((locale) => locale !== currentLocale)
       .flatMap((locale) => localizedImageSources(locale)),
-  ]
+  ])]
   for (const source of sources) {
     const image = createImage()
     image.decoding = 'async'

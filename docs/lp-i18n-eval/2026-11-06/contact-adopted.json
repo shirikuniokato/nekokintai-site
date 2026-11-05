@@ -1,0 +1,16 @@
+{
+  "draft": "contact-draft.json",
+  "audits": { "claude-fable": "contact-audit-fable.json", "gpt": "contact-audit-codex.json" },
+  "adopt": [
+    { "locale": "zh-Hans", "key": "messagePlaceholder", "from": "gpt" },
+    { "locale": "zh-Hans", "key": "errorBeforeEmail", "from": "gpt" },
+    { "locale": "zh-Hans", "key": "errorAfterEmail", "from": "gpt" },
+    { "locale": "zh-Hans", "key": "doneReply", "from": "claude-fable" }
+  ],
+  "manual": [
+    { "locale": "zh-Hans", "key": "documentDescription", "text": "向 ねこ勤怠 提交建议与反馈的表单。想要的功能、使用中遇到的问题、关于猫咪的话题，我都会认真阅读。" },
+    { "locale": "zh-Hans", "key": "lead", "text": "想要的功能、使用中遇到的问题、关于猫咪的话题。\n我都会认真阅读。" },
+    { "locale": "zh-Hans", "key": "backToTop", "text": "← 返回 ねこ勤怠 页面" }
+  ],
+  "replace": []
+}

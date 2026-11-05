@@ -157,7 +157,7 @@ test('/en/ で日本語のボタンを押すと、本文も画面の画像も日
   await context.close()
 })
 
-for (const locale of ['en', 'ko', 'zh-TW']) {
+for (const locale of ['en', 'ko', 'zh-TW', 'zh-Hans']) {
   test(`/${locale}/contact/ を直接開いても、アプリの情報が出て送信できる`, async () => {
     const { context, tab, failures } = await openTab(`${locale}-XX`)
     const sent = []
