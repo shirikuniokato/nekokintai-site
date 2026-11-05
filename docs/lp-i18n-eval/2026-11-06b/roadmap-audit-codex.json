@@ -1,0 +1,182 @@
+{
+  "generatedAt": "2026-11-05T16:45:00.432Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "en",
+    "ko",
+    "zh-TW",
+    "zh-Hans"
+  ],
+  "summaryJapanese": "指定観点で24件（high 1件、medium 23件）を検出しました。主な問題は、台湾繁体字での「ホーム」の用語揺れ、韓国語の助詞、中国本土向けUI語、意味の単位違い、通貨表記、改行後も長すぎる英語です。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "ios231Item1",
+      "severity": "medium",
+      "replacement": "Fixes an issue where “The purchase couldn’t be completed\nin the store.” kept appearing even when\nthe Support plan hadn’t been purchased.",
+      "reasonJapanese": "利用者を主語にした「you hadn’t bought」は責めるように響く余地があり、1行目もUIとして長すぎます。非人称表現にして行長を整えます。"
+    },
+    {
+      "locale": "en",
+      "key": "ios230Item1",
+      "severity": "medium",
+      "replacement": "The app will support English, Korean,\nand Traditional Chinese. The store listing\nwill also be available in each language.",
+      "reasonJapanese": "現訳の1行目がUIとして不自然に長く、後続行との長さの差も大きいため、意味を保ったまま再配置します。"
+    },
+    {
+      "locale": "en",
+      "key": "ios230Item2",
+      "severity": "medium",
+      "replacement": "The Home screen will also point to the Month screen\nfor editing records from previous days.",
+      "reasonJapanese": "現訳の1行目がUIとして長すぎます。「前の日の記録をMonthから直せる」という意味を保って短くします。"
+    },
+    {
+      "locale": "en",
+      "key": "ios220Item1",
+      "severity": "medium",
+      "replacement": "Introducing the \"Support plan\".\nYour monthly support will help fund\nthe development of ねこ勤怠 (300 Japanese yen/month).",
+      "reasonJapanese": "通貨が「¥300」と記号だけで表記されています。対象地域が明確になるよう「Japanese yen」と明記します。"
+    },
+    {
+      "locale": "en",
+      "key": "android202Item2",
+      "severity": "medium",
+      "replacement": "Makes bottom-of-screen notifications shorter and consistent,\nand lets you dismiss them\nby swiping down.",
+      "reasonJapanese": "現訳の1行目がUIとして著しく長く、視認性を損ないます。表示時間の短縮・統一と下スワイプで閉じられる意味は維持しています。"
+    },
+    {
+      "locale": "ko",
+      "key": "sub",
+      "severity": "medium",
+      "replacement": "스토어 심사에 걸리는 시간을 예측하기 어려워,\niOS와 Android의 배포 시점이 다를 수 있어요.",
+      "reasonJapanese": "「도착하는 타이밍」は更新の公開時期を表す語として不自然です。UI・配信文脈で自然な「배포 시점」に置き換えます。"
+    },
+    {
+      "locale": "ko",
+      "key": "v250Item5",
+      "severity": "medium",
+      "replacement": "일한 시간 표시 방식을\n여유롭게(6.9h) 또는 정확하게(6시간 54분)\n표시하도록 고를 수 있어요",
+      "reasonJapanese": "副詞形の「여유롭게」に助詞「와」を直接付けた「여유롭게와」は不自然です。「또는」で選択肢を接続します。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios110Item5",
+      "severity": "medium",
+      "replacement": "주 화면에서 언제든지\n'지난주를 이미지로 공유하기'를 선택할 수 있어요.",
+      "reasonJapanese": "引用されたUI項目の直後に目的格助詞がなく、「공유하기'할 수 있어요」と不自然につながっています。「를 선택할 수 있어요」に直します。"
+    },
+    {
+      "locale": "ko",
+      "key": "future11",
+      "severity": "medium",
+      "replacement": "기록이 0시간인 '지운 작업'을 완전히 삭제하기",
+      "reasonJapanese": "目的語「'지운 작업'」に助詞「을」が欠落しています。"
+    },
+    {
+      "locale": "ko",
+      "key": "android110Item1",
+      "severity": "medium",
+      "replacement": "장모종 고양이가 3마리 늘었어요(복슬복슬 하얀 고양이,\n복슬복슬 까만 고양이, 복슬복슬 갈색 고양이)",
+      "reasonJapanese": "現訳は2行目だけが極端に長く、UI上で不自然です。改行数を保ったまま猫の名前を2行へ分散します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios230Item2",
+      "severity": "medium",
+      "replacement": "首頁也會提示您，\n之前日期的紀錄可從「月」修改。",
+      "reasonJapanese": "アプリ内の「ホーム」が「主畫面」と訳され、OSのホーム画面と区別できません。同じページ内のアプリ内ホーム表記「首頁」に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios251Item1",
+      "severity": "medium",
+      "replacement": "調整了 iPad 上\n首頁的顯示方向",
+      "reasonJapanese": "アプリ内ホームが「App 首頁」となっており、「首頁」と用語が揺れています。不要な「App」を除いて統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "android251Item2",
+      "severity": "medium",
+      "replacement": "在彈出視窗或分割畫面中，\n首頁不再變成橫向",
+      "reasonJapanese": "アプリ内ホームが「App 首頁」となっており、「首頁」と用語が揺れています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios210Item1",
+      "severity": "medium",
+      "replacement": "現在可以在首頁選擇並播放\n3 首工作 BGM 了。",
+      "reasonJapanese": "アプリ内の「ホーム」にOS側で使う「主畫面」を当てています。アプリ内画面の用語「首頁」に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios201Item8",
+      "severity": "medium",
+      "replacement": "點按首頁的老闆，\n就可以一次更改本週的休假日。",
+      "reasonJapanese": "アプリ内の「ホーム」に「主畫面」を使っており、OSのホーム画面との区別とページ内の用語統一が崩れています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "v240Item4",
+      "severity": "high",
+      "replacement": "取消補班每週最多 2 天的限制",
+      "reasonJapanese": "原文の制限単位は「週2日」ですが、現訳は「2次」と回数に変わっています。機能条件を誤解させる意味変更です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "future4",
+      "severity": "medium",
+      "replacement": "摸摸貓咪、給貓咪零食",
+      "reasonJapanese": "「ごほうび」は猫に与えるおやつを指しますが、「獎勵」では抽象的な報酬になり、具体的な機能内容が欠落します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "future11",
+      "severity": "medium",
+      "replacement": "完全刪除紀錄為 0 小時的「已刪除的作業」",
+      "reasonJapanese": "同じUI項目が別箇所では「已刪除的作業」と訳されているのに、ここだけ「已刪除的工作」になっています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios210Item4",
+      "severity": "medium",
+      "replacement": "新增大量适合不同场景和工作时长的\n猫咪台词。",
+      "reasonJapanese": "「情境」は台湾寄りで、中国本土の一般的なプロダクト文言では「场景」が自然です。「作业」等と同様の地域語彙混入を避けます。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "v251Item2",
+      "severity": "medium",
+      "replacement": "修复了在补班日点击“设为休息日”时，\n补班安排会消失的问题",
+      "reasonJapanese": "「设为休假」は中国本土の通常UIでは不自然です。固定の休日を設定する文脈に自然な「设为休息日」へ統一します。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "v241Item1",
+      "severity": "medium",
+      "replacement": "可以从“月”页面将某一天\n“设为休息日”（过去的日期也可以）",
+      "reasonJapanese": "UI操作名の「设为休假」は中国本土では不自然です。「设为休息日」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios201Item8",
+      "severity": "medium",
+      "replacement": "点击首页的老板，\n就可以一次性更改本周的休息日。",
+      "reasonJapanese": "「休假日」は台湾寄りに響き、中国本土の通常UIでは「休息日」が自然です。関連する操作名とも統一します。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "future4",
+      "severity": "medium",
+      "replacement": "摸摸猫咪、给猫咪零食",
+      "reasonJapanese": "原文の「ごほうび」は猫に与えるおやつですが、「奖励」では抽象的な報酬となり、機能内容が曖昧になります。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios120Item7",
+      "severity": "medium",
+      "replacement": "您可以从设置中打开联系我们页面。",
+      "reasonJapanese": "原文は問い合わせページ全般を指しますが、「建议与反馈页面」では要望・意見の送信に意味を狭めています。"
+    }
+  ]
+}

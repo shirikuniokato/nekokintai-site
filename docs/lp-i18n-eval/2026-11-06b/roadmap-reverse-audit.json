@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-11-05T16:47:05.249Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "en",
+    "ko",
+    "zh-TW",
+    "zh-Hans"
+  ],
+  "summaryJapanese": "全件を日本語へ逆翻訳して照合した結果、critical・high・mediumに該当する意味の欠落・追加・反転・世界観の変化は確認されませんでした。",
+  "issues": []
+}

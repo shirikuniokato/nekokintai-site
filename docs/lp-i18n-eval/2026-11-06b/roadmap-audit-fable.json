@@ -1,0 +1,161 @@
+{
+  "generatedAt": "2026-11-05T16:44:29.266Z",
+  "reviewer": "claude-fable",
+  "model": "claude-fable-5",
+  "locales": [
+    "en",
+    "ko",
+    "zh-TW",
+    "zh-Hans"
+  ],
+  "summaryJapanese": "4言語・各139キーを独立した母語編集者の視点で通読しました。全体として意味の欠落や責める表現、通常UIへの猫語混入、日本語の中黒「・」の持ち込み、通貨表記（繁体字は「日圓」、簡体字は「日元」で適切）、「行」「列」の誤用はいずれの言語にも見当たりません。簡体字中国語への繁体字混入、台湾寄り語彙（喔・啰・依照・作業・程式・資料・帳號）、中国本土で不自然なUI語も確認しましたが混入はなく、簡体字版は「可以以」の重複1件のみです。指摘は21件で、内訳は英語3件（アプリのホームを「Home tab」と「Home screen」で揺らしている2件、がんばった貯金の説明が「がんばった作業」の意味に読める1件＝high）、韓国語10件（「대응 중」の日本語直訳、助詞「를」の欠落と「만큼으로」の不自然な接続、2.4.1 系と韓国語共有画像の修正項目だけ합니다体で他の해요体と揃っていない7件）、繁体字中国語7件（アプリのホームが「主畫面」と「首頁」で揺れ、しかも「主畫面」は端末のホーム画面にも使っているため曖昧になる3件、「作業」「聯絡我」の用語揺れ2件、「可以以」の重複、「會顯示這件事」の直訳調）、簡体字中国語1件（「可以以」の重複）です。すべて改行数と語調は元のまま維持しており、critical はありません。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "ios251Item1",
+      "severity": "medium",
+      "replacement": "Adjusted how the Home screen handles\norientation on iPad",
+      "reasonJapanese": "アプリのホームを他のキーでは「Home screen」と呼んでいるのに、ここだけ「Home tab」になっており用語が揺れています。端末側の「Home Screen」（大文字S）とは区別したまま、アプリ側は「Home screen」に統一します。"
+    },
+    {
+      "locale": "en",
+      "key": "android251Item2",
+      "severity": "medium",
+      "replacement": "The Home screen no longer switches to landscape\nin pop-up or split-screen view",
+      "reasonJapanese": "ios251Item1 と同じく、アプリのホームが「Home tab」になっており、他のキーの「Home screen」と揺れています。"
+    },
+    {
+      "locale": "en",
+      "key": "android110Item3",
+      "severity": "high",
+      "replacement": "You can now reach your weekly goal\nusing the extra time you put in last week (Good Job Savings).",
+      "reasonJapanese": "「what you worked hard on last week」は「先週がんばった作業内容」の意味になり、「先週がんばったぶんの時間（貯金）」という原文の意味がずれています。余分に働いた時間を使って目標を達成できる、という内容に直します。"
+    },
+    {
+      "locale": "ko",
+      "key": "statusInProgress",
+      "severity": "medium",
+      "replacement": "진행 중",
+      "reasonJapanese": "「대응 중」は「対応中」の直訳で、韓国語では障害対応のような印象になり、ステータスバッジとしては不自然です。審査待ちの状態を示すラベルとしては「진행 중」が自然です。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios241Item1",
+      "severity": "medium",
+      "replacement": "퇴근한 뒤에도 잠금 화면의 시간이\n계속 늘어나던 문제를 고쳐요",
+      "reasonJapanese": "ページ全体が해요体なのに、2.4.1 の項目だけ「고칩니다」の합니다体になっており語調が揃っていません。文末だけを해요体に合わせます。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios241Item2",
+      "severity": "medium",
+      "replacement": "오래 일하면 잠금 화면의 고양이가\n사라진 채 돌아오지 않던 문제를 고쳐요",
+      "reasonJapanese": "他の項目と語調が揃っていない합니다体です。文末を해요体に合わせます。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios241Item4",
+      "severity": "medium",
+      "replacement": "iOS 26에서 홈 화면을 투명하게 하거나\n색을 입히면 위젯이 하얗던 문제를 고쳐요",
+      "reasonJapanese": "他の項目と語調が揃っていない합니다体です。文末を해요体に合わせます。"
+    },
+    {
+      "locale": "ko",
+      "key": "android241Item1",
+      "severity": "medium",
+      "replacement": "일부 기기에서 '고양이와 이번 주' 위젯을\n둘 수 없던 문제를 고쳐요",
+      "reasonJapanese": "합니다体で語調が揃っていないのに加え、引用符がここだけ曲線の「‘ ’」で他のキーの「' '」と揺れています。文末と引用符を揃えます。"
+    },
+    {
+      "locale": "ko",
+      "key": "android241Item2",
+      "severity": "medium",
+      "replacement": "'일하는 동안의 알림'을\n'알림 받기'와 별개로 켤 수 있게 해요",
+      "reasonJapanese": "「합니다」で語調が揃っておらず、引用符も曲線の「‘ ’」で他と揺れています。文末と引用符を揃えます。"
+    },
+    {
+      "locale": "ko",
+      "key": "android241Item3",
+      "severity": "medium",
+      "replacement": "배터리 설정의 제한으로 기록할 수 없을 때,\n그 사실을 위젯에 표시해요",
+      "reasonJapanese": "「표시합니다」の합니다体で他の項目と語調が揃っていません。文末を해요体に合わせます。"
+    },
+    {
+      "locale": "ko",
+      "key": "koreanWeekShareFix",
+      "severity": "medium",
+      "replacement": "주간 기록을 이미지로 저장할 때\n한글이 깨지는 문제를\n수정할게요.",
+      "reasonJapanese": "「수정할 예정입니다」だけ합니다体で、同じ「直します」系の項目（ios231Item1 などの「수정할게요」）と揃っていません。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios110Item5",
+      "severity": "medium",
+      "replacement": "주 화면에서 언제든지\n'지난주를 이미지로 공유하기'를 할 수 있어요.",
+      "reasonJapanese": "引用したボタン名の直後に「할 수 있어요」が続いており、目的格助詞「를」が抜けて不自然です。"
+    },
+    {
+      "locale": "ko",
+      "key": "android110Item3",
+      "severity": "medium",
+      "replacement": "지난주에 더 일한 만큼(수고 저금)을 써서\n이번 주 목표를 달성할 수 있게 돼요.",
+      "reasonJapanese": "「만큼(수고 저금)으로」は助詞の接続が不自然で、「〜のぶんで達成する」の意味が取りにくくなっています。「〜을 써서」で手段を明示します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios230Item2",
+      "severity": "medium",
+      "replacement": "首頁也會提示您，\n之前日期的紀錄可從「月」修改。",
+      "reasonJapanese": "アプリのホームを v250Item3・ios251Item1・android251Item2 では「首頁」と呼ぶ一方、ここでは「主畫面」になっており揺れています。さらに「主畫面」は ios241Item5・widgets240Item1 で端末のホーム画面を指しているため、アプリ側は「首頁」に統一して曖昧さをなくします。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios210Item1",
+      "severity": "medium",
+      "replacement": "現在可以在首頁選擇並播放\n3 首工作 BGM 了。",
+      "reasonJapanese": "ios230Item2 と同じく、アプリのホームが「主畫面」になっており、「首頁」と揺れています。端末のホーム画面を指す「主畫面」と区別するため「首頁」に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios201Item8",
+      "severity": "medium",
+      "replacement": "點按首頁的老闆，\n就可以一次更改本週的休假日。",
+      "reasonJapanese": "アプリのホームが「主畫面」になっており、「首頁」と揺れています。端末のホーム画面との区別のため「首頁」に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios201Item5",
+      "severity": "medium",
+      "replacement": "點按時間會開啟數字面板，\n能以 1 分鐘為單位輸入。\n［＋］與［－］則是以 10 分鐘為單位。",
+      "reasonJapanese": "「可以以 1 分鐘為單位」は「以」が重複しており、台湾の読者にも引っかかる不自然な表現です。「能以」に直します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios120Item5",
+      "severity": "medium",
+      "replacement": "您可以將已刪除的工作清單收合起來了。",
+      "reasonJapanese": "作業カテゴリは他のキーで「工作類別」「已刪除的工作」（future11）と訳しているのに、ここだけ「作業」になっており用語が揺れています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios120Item7",
+      "severity": "medium",
+      "replacement": "您可以從設定中開啟建議與回饋頁面。",
+      "reasonJapanese": "お問い合わせページは contactLink・contactFormLink で「建議與回饋」と呼んでいるのに、ここだけ「聯絡我的頁面」で揺れています。簡体字版と同じく「建議與回饋頁面」に揃えます。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "android241Item3",
+      "severity": "medium",
+      "replacement": "當電池設定限制而無法打卡時，\n小工具會顯示相關提示",
+      "reasonJapanese": "「會顯示這件事」は「そのことを出します」の直訳で、UI文として不自然です。簡体字版の「显示相关提示」と同様に「顯示相關提示」とします。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios201Item5",
+      "severity": "medium",
+      "replacement": "点击时间会打开数字面板，\n能以 1 分钟为单位输入。\n［＋］与［－］则是以 10 分钟为单位。",
+      "reasonJapanese": "「可以以 1 分钟为单位」は「以」が重複しており不自然です。「能以」に直します。"
+    }
+  ]
+}
