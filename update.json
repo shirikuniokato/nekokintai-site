@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "ios": {
-    "latestVersion": "2.5.1",
+    "latestVersion": "2.5.2",
     "storeUrl": "https://apps.apple.com/app/id6801066427",
     "notes": [
       "こまかな修正です。",
-      "iPad でのホームの向きを見直しました",
-      "休憩中に日をまたぐと、前の日の記録を直せなかったのを直しました"
+      "中国語（簡体字）に対応しました",
+      "ウィジェットやロック画面の表示を直しました"
     ]
   },
   "android": {
