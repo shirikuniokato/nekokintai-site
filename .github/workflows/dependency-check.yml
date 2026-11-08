@@ -1,0 +1,37 @@
+name: Dependency validation
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dependency-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  dependency-check:
+    name: Dependency validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Install browser for tests
+        run: npx playwright install --with-deps chromium
+      - name: Check translations
+        run: npm run check:i18n
+      - name: Test update and page generation logic
+        run: npm test
+      - name: Test pages in Chromium
+        run: npm run test:browser
+      - name: Generate production assets
+        run: npm run build
