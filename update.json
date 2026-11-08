@@ -10,12 +10,12 @@
     ]
   },
   "android": {
-    "latestVersion": "2.5.1",
+    "latestVersion": "2.5.2",
     "storeUrl": "https://play.google.com/store/apps/details?id=com.ccya.nekokintai",
     "notes": [
       "こまかな修正です。",
-      "「打刻と時間」のウィジェットの大きさを見直しました",
-      "小窓や分割画面で、ホームが横にならないようにしました"
+      "中国語（簡体字）に対応しました",
+      "ウィジェットや通知から退勤しても記録に入らないことがあったのを直しました"
     ]
   }
 }
