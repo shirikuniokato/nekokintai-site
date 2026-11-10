@@ -9,6 +9,7 @@ const publicEntries = [
   'art',
   'assets',
   'contact',
+  'icons',
   'privacy',
   'qa',
   'roadmap',
