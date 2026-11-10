@@ -12,3 +12,16 @@
 - `npm run check:i18n`: 合格
 
 languageSelector・faqLink・contactLink・privacyLink はトップLPの訳、backToTop は `/tip/` の訳をそのまま使っている。
+
+## 保存のまえの注意（terms* の 7 キー）を足したとき
+
+カードを押すと出る「保存のまえに」の箱の文（7 キー）を足して、ページ全体（21 キー）をもう一度監査した。
+
+- 初稿: 上と同じく Fable の直書き（`icons-terms-draft.json`）
+- 独立監査: Fable 4 件・Codex 3 件（どちらも medium だけ。`icons-terms-audit-fable.json` / `icons-terms-audit-codex.json`）
+- 採用（`icons-terms-adopted.json`）: 4 キー
+  - en の documentDescription に「SNS など」を補う（rule1 と同じ句）
+  - zh-TW の termsItem2 の「加工」→「修改」（rule2・termsItem1 とそろえる）
+  - zh-TW・zh-Hans の termsLead は Codex の文（「僅供個人欣賞與使用」／「仅供个人欣赏和使用」）
+- 見送り: ko の rule1・documentDescription（「개인적인 용도로」で個人利用の限定は伝わっている。前回の監査では指摘なし）
+- 逆翻訳の監査（`icons-terms-reverse-audit.json`）: 0 件

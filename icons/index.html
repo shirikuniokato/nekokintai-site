@@ -54,6 +54,24 @@
   .icon-card img{width:100%;height:auto;}
   .icon-save{font-size:clamp(11px,3.1vw,13px);line-height:1.6;}
   .icon-rules{margin:0;padding:0 0 0 1.2em;font-size:clamp(12px,3.2vw,13px);line-height:1.9;color:var(--muted);}
+
+  /* 保存のまえに出す決まりの箱。カードと同じ紙・線・ずらした影 */
+  .terms-dialog{
+    width:calc(100% - 40px);max-width:400px;margin:auto;
+    border:2px solid var(--ink);border-radius:12px;background:var(--paper);color:var(--ink);
+    padding:clamp(26px,7vw,34px) clamp(20px,6vw,30px) clamp(24px,6vw,30px);
+    box-shadow:6px 6px 0 var(--shadow);text-align:center;font:inherit;
+  }
+  .terms-dialog::backdrop{background:rgba(12,58,68,.5);}
+  .terms-title{font-size:clamp(18px,5vw,20px);font-weight:400;line-height:1.5;margin:0 0 16px;}
+  .terms-text{font-size:clamp(13px,3.5vw,14px);line-height:1.9;color:var(--deep);margin:0 0 16px;}
+  .terms-label{margin:0 0 4px;}
+  .terms-list{display:inline-block;margin:0 0 24px;padding:0 0 0 1.2em;text-align:left;font-size:clamp(13px,3.5vw,14px);line-height:1.9;}
+  .terms-agree{
+    border:2px solid var(--ink);border-radius:12px;background:var(--accent);color:var(--ink);
+    font:inherit;font-size:clamp(14px,3.8vw,15px);line-height:1.4;padding:12px 30px;cursor:pointer;
+  }
+  .terms-agree:focus-visible{outline:2px solid var(--deep);outline-offset:3px;}
 </style>
 </head>
 <body>
@@ -78,63 +96,63 @@
   </nav>
 
   <nav class="icon-grid" data-i18n-aria-label="iconsAriaLabel" aria-label="ダウンロードできるアイコン">
-    <a class="icon-card" href="/assets/icons/nekokintai-icon-white-circle-signed.png" download="nekokintai-icon-white.png" onclick="gtag('event','icon_download',{icon:'white'});">
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-white-circle-signed.png" download="nekokintai-icon-white.png" data-icon="white">
       <img src="/assets/icons/nekokintai-icon-white-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
       <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
     </a>
-    <a class="icon-card" href="/assets/icons/nekokintai-icon-kuro-circle-signed.png" download="nekokintai-icon-kuro.png" onclick="gtag('event','icon_download',{icon:'kuro'});">
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-kuro-circle-signed.png" download="nekokintai-icon-kuro.png" data-icon="kuro">
       <img src="/assets/icons/nekokintai-icon-kuro-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
       <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
     </a>
-    <a class="icon-card" href="/assets/icons/nekokintai-icon-mint-circle-signed.png" download="nekokintai-icon-mint.png" onclick="gtag('event','icon_download',{icon:'mint'});">
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-mint-circle-signed.png" download="nekokintai-icon-mint.png" data-icon="mint">
       <img src="/assets/icons/nekokintai-icon-mint-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
       <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
     </a>
-    <a class="icon-card" href="/assets/icons/nekokintai-icon-sakura-circle-signed.png" download="nekokintai-icon-sakura.png" onclick="gtag('event','icon_download',{icon:'sakura'});">
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-sakura-circle-signed.png" download="nekokintai-icon-sakura.png" data-icon="sakura">
       <img src="/assets/icons/nekokintai-icon-sakura-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
       <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
     </a>
-    <a class="icon-card" href="/assets/icons/nekokintai-icon-mike-circle-signed.png" download="nekokintai-icon-mike.png" onclick="gtag('event','icon_download',{icon:'mike'});">
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-mike-circle-signed.png" download="nekokintai-icon-mike.png" data-icon="mike">
       <img src="/assets/icons/nekokintai-icon-mike-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
       <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
     </a>
-    <a class="icon-card" href="/assets/icons/nekokintai-icon-fuwakoge-circle-signed.png" download="nekokintai-icon-fuwakoge.png" onclick="gtag('event','icon_download',{icon:'fuwakoge'});">
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-fuwakoge-circle-signed.png" download="nekokintai-icon-fuwakoge.png" data-icon="fuwakoge">
       <img src="/assets/icons/nekokintai-icon-fuwakoge-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
       <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
     </a>
-    <a class="icon-card" href="/assets/icons/nekokintai-icon-fuwashiro-circle-signed.png" download="nekokintai-icon-fuwashiro.png" onclick="gtag('event','icon_download',{icon:'fuwashiro'});">
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-fuwashiro-circle-signed.png" download="nekokintai-icon-fuwashiro.png" data-icon="fuwashiro">
       <img src="/assets/icons/nekokintai-icon-fuwashiro-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
       <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
     </a>
-    <a class="icon-card" href="/assets/icons/nekokintai-icon-hati2-circle-signed.png" download="nekokintai-icon-hati2.png" onclick="gtag('event','icon_download',{icon:'hati2'});">
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-hati2-circle-signed.png" download="nekokintai-icon-hati2.png" data-icon="hati2">
       <img src="/assets/icons/nekokintai-icon-hati2-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
       <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
     </a>
-    <a class="icon-card" href="/assets/icons/nekokintai-icon-cream-circle-signed.png" download="nekokintai-icon-cream.png" onclick="gtag('event','icon_download',{icon:'cream'});">
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-cream-circle-signed.png" download="nekokintai-icon-cream.png" data-icon="cream">
       <img src="/assets/icons/nekokintai-icon-cream-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
       <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
     </a>
-    <a class="icon-card" href="/assets/icons/nekokintai-icon-fuwakuro-circle-signed.png" download="nekokintai-icon-fuwakuro.png" onclick="gtag('event','icon_download',{icon:'fuwakuro'});">
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-fuwakuro-circle-signed.png" download="nekokintai-icon-fuwakuro.png" data-icon="fuwakuro">
       <img src="/assets/icons/nekokintai-icon-fuwakuro-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
       <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
     </a>
-    <a class="icon-card" href="/assets/icons/nekokintai-icon-hati1-circle-signed.png" download="nekokintai-icon-hati1.png" onclick="gtag('event','icon_download',{icon:'hati1'});">
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-hati1-circle-signed.png" download="nekokintai-icon-hati1.png" data-icon="hati1">
       <img src="/assets/icons/nekokintai-icon-hati1-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
       <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
     </a>
-    <a class="icon-card" href="/assets/icons/nekokintai-icon-gray-circle-signed.png" download="nekokintai-icon-gray.png" onclick="gtag('event','icon_download',{icon:'gray'});">
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-gray-circle-signed.png" download="nekokintai-icon-gray.png" data-icon="gray">
       <img src="/assets/icons/nekokintai-icon-gray-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
       <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
     </a>
-    <a class="icon-card" href="/assets/icons/nekokintai-icon-kijitora-circle-signed.png" download="nekokintai-icon-kijitora.png" onclick="gtag('event','icon_download',{icon:'kijitora'});">
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-kijitora-circle-signed.png" download="nekokintai-icon-kijitora.png" data-icon="kijitora">
       <img src="/assets/icons/nekokintai-icon-kijitora-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
       <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
     </a>
-    <a class="icon-card" href="/assets/icons/nekokintai-icon-sabatora-circle-signed.png" download="nekokintai-icon-sabatora.png" onclick="gtag('event','icon_download',{icon:'sabatora'});">
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-sabatora-circle-signed.png" download="nekokintai-icon-sabatora.png" data-icon="sabatora">
       <img src="/assets/icons/nekokintai-icon-sabatora-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
       <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
     </a>
-    <a class="icon-card" href="/assets/icons/nekokintai-icon-chatora-circle-signed.png" download="nekokintai-icon-chatora.png" onclick="gtag('event','icon_download',{icon:'chatora'});">
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-chatora-circle-signed.png" download="nekokintai-icon-chatora.png" data-icon="chatora">
       <img src="/assets/icons/nekokintai-icon-chatora-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
       <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
     </a>
@@ -154,6 +172,51 @@
   <p style="margin:24px 0 0;font-size:13px;"><a data-i18n="backToTop" href="/" style="border-bottom:2px dashed var(--shadow);">← ねこ勤怠のページへもどる</a></p>
 
 </main>
+
+<!-- 保存のまえに出す決まり。箱の外を押すか Esc でとじる（保存しない） -->
+<dialog class="terms-dialog" id="terms-dialog" aria-labelledby="terms-title">
+  <h2 class="terms-title" id="terms-title" data-i18n="termsTitle">保存のまえに</h2>
+  <p class="terms-text" data-i18n="termsLead">このアイコンは、個人で楽しんでいただくためにお配りしています。</p>
+  <p class="terms-text terms-label" data-i18n="termsListLabel">つぎのことはご遠慮ください</p>
+  <ul class="terms-list">
+    <li data-i18n="termsItem1">加工・再配布・転載</li>
+    <li data-i18n="termsItem2">AI での加工や学習への利用</li>
+    <li data-i18n="termsItem3">グッズ化や商用利用</li>
+  </ul>
+  <div><button type="button" class="terms-agree" id="terms-agree" data-i18n="termsAgree">同意して保存</button></div>
+</dialog>
+<script>
+  // カードを押したらすぐ保存せず、決まりを見せてから保存する。
+  // スクリプトが動かない環境では、カードのリンクがそのまま保存になる
+  (function(){
+    var dialog=document.getElementById('terms-dialog');
+    var agree=document.getElementById('terms-agree');
+    if(!dialog||!dialog.showModal)return;
+    var chosen=null;
+    document.querySelectorAll('.icon-card').forEach(function(card){
+      card.addEventListener('click',function(event){
+        event.preventDefault();
+        chosen=card;
+        dialog.showModal();
+      });
+    });
+    // 箱の外（backdrop）を押したらとじる
+    dialog.addEventListener('click',function(event){
+      if(event.target===dialog)dialog.close();
+    });
+    agree.addEventListener('click',function(){
+      dialog.close();
+      if(!chosen)return;
+      if(typeof gtag==='function')gtag('event','icon_download',{icon:chosen.dataset.icon});
+      var link=document.createElement('a');
+      link.href=chosen.getAttribute('href');
+      link.download=chosen.getAttribute('download');
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    });
+  })();
+</script>
 
 <footer style="margin-top:clamp(40px,7vw,64px);border-top:2px solid var(--border);padding:28px 20px 44px;font-size:13px;text-align:center;">
   <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;">

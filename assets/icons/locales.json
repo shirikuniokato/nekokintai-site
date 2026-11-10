@@ -13,11 +13,18 @@
     "backToTop": "← ねこ勤怠のページへもどる",
     "faqLink": "よくあるしつもん",
     "contactLink": "ごようぼう",
-    "privacyLink": "プライバシーポリシー"
+    "privacyLink": "プライバシーポリシー",
+    "termsTitle": "保存のまえに",
+    "termsLead": "このアイコンは、個人で楽しんでいただくためにお配りしています。",
+    "termsListLabel": "つぎのことはご遠慮ください",
+    "termsItem1": "加工・再配布・転載",
+    "termsItem2": "AI での加工や学習への利用",
+    "termsItem3": "グッズ化や商用利用",
+    "termsAgree": "同意して保存"
   },
   "en": {
     "documentTitle": "Free icons | ねこ勤怠",
-    "documentDescription": "Free round icons of the cats from ねこ勤怠. Feel free to use them as your profile picture, for personal use only.",
+    "documentDescription": "Free round icons of the cats from ねこ勤怠. Feel free to use them as your profile picture on social media and elsewhere, for personal use only.",
     "heading": "Free icons",
     "lead": "Round icons of the cats from ねこ勤怠.\nPick your favorite and save it.",
     "iconsAriaLabel": "Icons you can download",
@@ -29,7 +36,14 @@
     "backToTop": "← Back to the ねこ勤怠 page",
     "faqLink": "FAQ",
     "contactLink": "Requests",
-    "privacyLink": "Privacy Policy"
+    "privacyLink": "Privacy Policy",
+    "termsTitle": "Before you save",
+    "termsLead": "These icons are shared for your personal enjoyment.",
+    "termsListLabel": "Please do not:",
+    "termsItem1": "Edit, redistribute, or repost them",
+    "termsItem2": "Edit them with AI or use them to train AI",
+    "termsItem3": "Make merchandise or use them commercially",
+    "termsAgree": "Agree and save"
   },
   "ko": {
     "documentTitle": "무료 아이콘 | ねこ勤怠",
@@ -45,7 +59,14 @@
     "backToTop": "← ねこ勤怠 페이지로 돌아가기",
     "faqLink": "자주 묻는 질문",
     "contactLink": "건의 사항",
-    "privacyLink": "개인정보 처리방침"
+    "privacyLink": "개인정보 처리방침",
+    "termsTitle": "저장하기 전에",
+    "termsLead": "이 아이콘은 개인적으로 즐기실 수 있도록 나눠 드리고 있어요.",
+    "termsListLabel": "다음 사항은 삼가 주세요",
+    "termsItem1": "가공, 재배포, 무단 전재",
+    "termsItem2": "AI를 이용한 가공이나 AI 학습에 사용",
+    "termsItem3": "굿즈 제작이나 상업적 이용",
+    "termsAgree": "동의하고 저장하기"
   },
   "zh-TW": {
     "documentTitle": "免費頭貼 | ねこ勤怠",
@@ -61,7 +82,14 @@
     "backToTop": "← 返回 ねこ勤怠 頁面",
     "faqLink": "常見問題",
     "contactLink": "建議與回饋",
-    "privacyLink": "隱私權政策"
+    "privacyLink": "隱私權政策",
+    "termsTitle": "儲存之前",
+    "termsLead": "這些頭貼僅供個人欣賞與使用。",
+    "termsListLabel": "請勿進行以下行為",
+    "termsItem1": "修改、重新散布、轉載",
+    "termsItem2": "用 AI 修改或用於 AI 訓練",
+    "termsItem3": "製作周邊商品或用於商業用途",
+    "termsAgree": "同意並儲存"
   },
   "zh-Hans": {
     "documentTitle": "免费头像 | ねこ勤怠",
@@ -77,6 +105,13 @@
     "backToTop": "← 返回 ねこ勤怠 页面",
     "faqLink": "常见问题",
     "contactLink": "建议与反馈",
-    "privacyLink": "隐私政策"
+    "privacyLink": "隐私政策",
+    "termsTitle": "保存之前",
+    "termsLead": "这些头像仅供个人欣赏和使用。",
+    "termsListLabel": "请勿进行以下行为",
+    "termsItem1": "加工、二次分发、转载",
+    "termsItem2": "用 AI 加工或用于 AI 训练",
+    "termsItem3": "制作周边商品或用于商业用途",
+    "termsAgree": "同意并保存"
   }
 }

@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-11-10T19:29:08.802Z",
+  "reviewer": "claude-fable",
+  "model": "claude-fable-5",
+  "locales": [
+    "en",
+    "ko",
+    "zh-TW",
+    "zh-Hans"
+  ],
+  "summaryJapanese": "全84件を監査し、指摘は4件（すべて medium）です。critical/high はありません。en は documentDescription で原文の「SNS など」が落ちており、同じ文の rule1 と食い違っています。ko は「個人でつかう範囲で」の限定が rule1 と documentDescription の両方で弱く、en の \"only\"、中国語の「範圍內／范围内」と揃っていません。zh-TW は「加工」の訳が termsItem2 だけ「加工」で、rule2・termsItem1 の「修改」と揺れています。zh-Hans は指摘なしです。そのほかの観点（責める表現、通常UIへの猫語混入、韓国語の助詞、台湾向け繁体字への大陸寄りUI語の混入、簡体字への繁体字・台湾語彙の混入、中黒「・」の持ち込み、UIとして不自然な長さ）に問題は見当たりません。通貨表記と「行」「列」は該当箇所がありません。ブランド名「ねこ勤怠」は全言語で維持されています。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "documentDescription",
+      "severity": "medium",
+      "replacement": "Free round icons of the cats from ねこ勤怠. Feel free to use them as your profile picture on social media and elsewhere, for personal use only.",
+      "reasonJapanese": "原文の「SNS などの」が訳から落ちています。同じ文を訳した rule1 には \"on social media and elsewhere\" があり、ページ内でも食い違うため、rule1 と同じ句を補いました。"
+    },
+    {
+      "locale": "ko",
+      "key": "rule1",
+      "severity": "medium",
+      "replacement": "SNS 프로필 사진 등에, 개인적인 용도 내에서 자유롭게 사용해 주세요.",
+      "reasonJapanese": "原文の「個人でつかう範囲で」という限定が「개인적인 용도로 사용해 주세요」では弱まり、en の \"only\"、中国語の「範圍內／范围内」と揃っていません。「용도 내에서」で範囲を明示し、「どうぞ」の歓迎の調子は「자유롭게」で残しました。"
+    },
+    {
+      "locale": "ko",
+      "key": "documentDescription",
+      "severity": "medium",
+      "replacement": "ねこ勤怠 고양이들의 동그란 아이콘을 무료로 나눠 드려요. SNS 프로필 사진 등에, 개인적인 용도 내에서 자유롭게 사용해 주세요.",
+      "reasonJapanese": "rule1 と同じく「個人でつかう範囲で」の限定が弱まっています。rule1 の置換文と同じ文言に揃え、範囲の明示と「どうぞ」の調子を補いました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "termsItem2",
+      "severity": "medium",
+      "replacement": "用 AI 修改或用於 AI 訓練",
+      "reasonJapanese": "用語揺れです。原文の「加工」は rule2 と termsItem1 で「修改」と訳されていますが、ここだけ「加工」になっています。同じダイアログ内で並ぶ項目なので「修改」に統一しました。"
+    }
+  ]
+}
