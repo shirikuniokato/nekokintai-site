@@ -222,5 +222,91 @@
     if (appStore) appStore.setAttribute('href', `https://apps.apple.com/${APP_STORE_COUNTRY[event.detail.locale] ?? 'jp'}/app/id6801066427`);
   });
 </script>
+<!-- ｼﾁｬ 1周年のおしらせ。日本語のトップだけで、期間中（日本時間 11/19〜12/20）にぽこんと出す。
+     × か外を押してとじたら、その端末ではもう出さない。期間の前に見た目を確かめるときは ?anniversary-preview を付ける -->
+<style>
+  .anv-pop{
+    width:calc(100% - 40px);max-width:360px;margin:auto;padding:0;overflow:visible;
+    border:2px solid #5A3E1B;border-radius:16px;background:#FFFAEA;color:#5A3E1B;
+    box-shadow:6px 6px 0 #F8C94A;text-align:center;font:inherit;
+  }
+  .anv-pop[open]{animation:anv-pop-in .42s cubic-bezier(.34,1.56,.64,1);}
+  .anv-pop::backdrop{background:rgba(90,62,27,.45);}
+  .anv-pop:focus{outline:none;}
+  @keyframes anv-pop-in{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
+  @media (prefers-reduced-motion:reduce){.anv-pop[open]{animation:none;}}
+  .anv-head{background:#F8C94A;border-radius:13px 13px 0 0;padding:22px 16px 18px;}
+  .anv-eyebrow{margin:0;font-size:12px;letter-spacing:.12em;}
+  .anv-title{margin:4px 0 0;font-size:clamp(22px,6.4vw,26px);font-weight:400;line-height:1.4;}
+  .anv-body{padding:20px 20px 24px;}
+  .anv-gift{position:relative;display:inline-block;}
+  .anv-gift img{width:108px;height:auto;image-rendering:pixelated;display:block;}
+  .anv-gift span{position:absolute;left:50%;top:58%;transform:translate(-50%,-50%);color:#F8C94A;font-size:22px;line-height:1;}
+  .anv-date{display:inline-block;margin:14px 0 0;padding:4px 16px;border-radius:999px;background:#F8C94A;font-size:15px;line-height:1.6;}
+  .anv-text{margin:10px 0 0;font-size:14px;line-height:1.9;}
+  .anv-go{
+    display:inline-block;margin:18px 0 0;padding:11px 26px;border:2px solid #5A3E1B;border-radius:12px;
+    background:#FFFFFF;color:#5A3E1B;font-size:15px;line-height:1.4;box-shadow:3px 3px 0 #F8C94A;
+  }
+  .anv-go:hover{color:#5A3E1B;transform:translateY(-1px);}
+  .anv-close{
+    position:absolute;top:8px;right:8px;width:40px;height:40px;border:0;background:transparent;
+    color:#5A3E1B;font:inherit;font-size:22px;line-height:1;cursor:pointer;border-radius:50%;
+  }
+  .anv-close:focus-visible,.anv-go:focus-visible{outline:2px solid #5A3E1B;outline-offset:3px;}
+</style>
+<dialog class="anv-pop" id="anv-pop" aria-labelledby="anv-title" tabindex="-1">
+  <div style="position:relative;">
+    <div class="anv-head">
+      <p class="anv-eyebrow">c-cya. 1st Anniversary</p>
+      <h2 class="anv-title" id="anv-title">1周年のおいわい</h2>
+    </div>
+    <button type="button" class="anv-close" id="anv-close" aria-label="とじる">×</button>
+  </div>
+  <div class="anv-body">
+    <div class="anv-gift" aria-hidden="true"><img src="/assets/anniversary/gift-silhouette.png" width="27" height="15" alt="" loading="lazy"><span>?</span></div>
+    <div><span class="anv-date">11/19 〜 12/20</span></div>
+    <p class="anv-text">期間限定の とくべつな贈りものと、<br>新しいねこが 3匹やってきました。</p>
+    <a class="anv-go" href="/1st-anniversary/" onclick="gtag('event','anniversary_popup_click');">くわしく見る</a>
+  </div>
+</dialog>
+<script>
+  (function(){
+    var pop=document.getElementById('anv-pop');
+    if(!pop||!pop.showModal)return;
+    var STORAGE_KEY='nekokintai.anniversary1.dismissed';
+    // 日本時間の 11/19 0:00 から 12/20 23:59 まで
+    var START=Date.parse('2026-11-19T00:00:00+09:00');
+    var END=Date.parse('2026-12-21T00:00:00+09:00');
+    var preview=/[?&]anniversary-preview\b/.test(location.search);
+    function dismissed(){try{return localStorage.getItem(STORAGE_KEY)==='1';}catch(error){return false;}}
+    function remember(){try{localStorage.setItem(STORAGE_KEY,'1');}catch(error){}}
+    function shouldShow(){
+      if(document.documentElement.lang!=='ja')return false;
+      if(preview)return true;
+      var now=Date.now();
+      return now>=START&&now<END&&!dismissed();
+    }
+    function open(){
+      if(pop.open||!shouldShow())return;
+      pop.showModal();
+      // 焦点は箱そのものに置く。× に置くと、iPhone ではさわっただけで焦点の輪が出る
+      pop.focus();
+      if(typeof gtag==='function')gtag('event','anniversary_popup_view');
+    }
+    document.getElementById('anv-close').addEventListener('click',function(){pop.close();});
+    // 箱の外（backdrop）を押してもとじる
+    pop.addEventListener('click',function(event){if(event.target===pop)pop.close();});
+    // とじかた（× ・外・Esc・「くわしく見る」）にかかわらず、一度見たらもう出さない
+    pop.addEventListener('close',function(){if(!preview)remember();});
+    // 日本語以外へ切りかえたら引っこめる（行き先のページは日本語だけ）
+    document.addEventListener('nekokintai:locale',function(event){
+      if(event.detail.locale!=='ja'&&pop.open)pop.close();
+    });
+    // ページが落ちついてから出す
+    if(document.readyState==='complete')setTimeout(open,600);
+    else window.addEventListener('load',function(){setTimeout(open,600);});
+  })();
+</script>
 </body>
 </html>
