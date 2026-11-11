@@ -25,3 +25,7 @@ languageSelector・faqLink・contactLink・privacyLink はトップLPの訳、ba
   - zh-TW・zh-Hans の termsLead は Codex の文（「僅供個人欣賞與使用」／「仅供个人欣赏和使用」）
 - 見送り: ko の rule1・documentDescription（「개인적인 용도로」で個人利用の限定は伝わっている。前回の監査では指摘なし）
 - 逆翻訳の監査（`icons-terms-reverse-audit.json`）: 0 件
+
+## トップのボタン（iconsLink）
+
+トップLPに足した「フリーアイコン」のボタンの文（`iconsLink`）は、このページの `heading` の訳（監査済み）を 5 言語ともそのまま使っている。あわせてトップLPの `supportNote` は 5 言語から外した。
