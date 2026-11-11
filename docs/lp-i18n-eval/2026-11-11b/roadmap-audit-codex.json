@@ -1,0 +1,140 @@
+{
+  "generatedAt": "2026-11-11T14:57:37.618Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "en",
+    "ko",
+    "zh-TW",
+    "zh-Hans"
+  ],
+  "summaryJapanese": "監査対象のうち18件に問題がありました。主な問題は、英語の意味ずれ、韓国語の助詞欠落、繁体字中国語の台湾向け用語と画面名の不統一、簡体字中国語への台湾寄りの「设定」の混入です。critical相当の問題はありません。ブランド名と「がんばった貯金」の指定訳、通貨表記、行・列、中黒、通常UIへの猫語混入には問題を認めませんでした。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "v260Item1",
+      "severity": "high",
+      "replacement": "Siamese cat, Ragdoll cat, and Fluffy tuxedo cat\njoined the Cat shop (free)",
+      "reasonJapanese": "「はちわれねこ」を「black-cap cat」としており、猫の柄の意味がずれています。英語では「tuxedo cat」が自然です。"
+    },
+    {
+      "locale": "en",
+      "key": "ios251Item1",
+      "severity": "medium",
+      "replacement": "Adjusted the Home screen orientation\non iPad",
+      "reasonJapanese": "画面の向きの調整を「Home tab handles orientation」と表現しており、対象がタブの動作に変わっています。「Home screen」に統一する必要があります。"
+    },
+    {
+      "locale": "en",
+      "key": "android251Item2",
+      "severity": "medium",
+      "replacement": "The Home screen no longer switches to landscape\nin pop-up or split-screen view",
+      "reasonJapanese": "同じホーム画面をほかのキーでは「Home screen」としているのに、ここだけ「Home tab」になっています。画面方向を扱う対象としても「Home screen」が適切です。"
+    },
+    {
+      "locale": "en",
+      "key": "ios210Item8",
+      "severity": "medium",
+      "replacement": "Fixed issues with long category names\nand carry-over displays.",
+      "reasonJapanese": "現文は「長いカテゴリ名」自体を不具合の例として読めます。長い名前や繰り越し表示に関連する不具合だと分かる形にする必要があります。"
+    },
+    {
+      "locale": "en",
+      "key": "android110Item3",
+      "severity": "high",
+      "replacement": "You can now reach your weekly goal\nusing last week's Good Job Savings.",
+      "reasonJapanese": "「what you worked hard on」では、前週に貯めた時間を今週の目標に使う仕組みが伝わりません。指定用語「Good Job Savings」を機能名として明示します。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios110Item5",
+      "severity": "medium",
+      "replacement": "주 화면에서 언제든지\n지난주 기록을 이미지로 공유할 수 있어요.",
+      "reasonJapanese": "引用句の直後が「공유하기'할」となっており、必要な助詞がなく不自然です。文全体を自然な韓国語にすると助詞問題も解消できます。"
+    },
+    {
+      "locale": "ko",
+      "key": "android251Item1",
+      "severity": "high",
+      "replacement": "'출퇴근 기록과 시간' 위젯의\n크기를 조정했어요",
+      "reasonJapanese": "「시간과 기록」では「打刻」が単なる記録に一般化され、出退勤を記録する機能だと分かりません。「출퇴근 기록」で意味を補う必要があります。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "showMore",
+      "severity": "medium",
+      "replacement": "顯示其他 {{count}} 項更新內容",
+      "reasonJapanese": "台湾向けUIでは「查看」より「顯示」が自然です。中国大陸寄りの操作語を台湾で一般的な表現に置き換えます。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "showLess",
+      "severity": "medium",
+      "replacement": "收合更新內容",
+      "reasonJapanese": "台湾向けUIでは「收起」より「收合」が自然です。対になる展開・折りたたみ操作の用語としても適切です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios231Item1",
+      "severity": "medium",
+      "replacement": "修正未訂閱贊助方案時，\n仍會重複顯示「無法在商店完成購買。」\n的問題。",
+      "reasonJapanese": "同じ機能を本文では「贊助」としているのに、プラン名だけ「支持方案」になっています。台湾向け語彙と用語を「贊助方案」に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios220Item1",
+      "severity": "medium",
+      "replacement": "新增「贊助方案」。\n每月贊助即可支持\nねこ勤怠的開發（每月 300 日圓）。",
+      "reasonJapanese": "「支持方案」と「贊助」が同じ文中で混在しています。台湾向けのプラン名を「贊助方案」に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "v250Item2",
+      "severity": "medium",
+      "replacement": "訂閱贊助方案期間，\n可使用 1 個專屬貓咪名額",
+      "reasonJapanese": "ほかの贊助関連文言との用語統一が必要です。「支持方案」ではなく「贊助方案」とします。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios230Item2",
+      "severity": "medium",
+      "replacement": "首頁也會提示您，\n先前日期的紀錄可從「月」修改。",
+      "reasonJapanese": "アプリ内のホームが「首頁」「App 首頁」「主畫面」と揺れています。OSのホーム画面と区別し、アプリ内画面は「首頁」に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios210Item1",
+      "severity": "medium",
+      "replacement": "現在可以在首頁選擇並播放\n3 首工作 BGM 了。",
+      "reasonJapanese": "アプリ内ホームの名称が「主畫面」と「首頁」で揺れています。この文脈では「首頁」に統一するのが明確です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios201Item8",
+      "severity": "medium",
+      "replacement": "點按首頁的老闆，\n就可以一次更改本週的休假日。",
+      "reasonJapanese": "アプリ内ホームの用語がほかのキーと一致していません。OSの「主畫面」と区別して「首頁」に統一します。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "v250Item4",
+      "severity": "medium",
+      "replacement": "每日与每周目标可从 30 分钟起，\n以 30 分钟为单位设置",
+      "reasonJapanese": "「设定」は台湾寄りの語感があります。中国本土の通常UIでは「设置」が自然です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "android202Item3",
+      "severity": "medium",
+      "replacement": "添加新记录时，设置开始和结束时间后\n即可直接添加。\n开始或结束时间均可先输入。",
+      "reasonJapanese": "中国本土向けUIに台湾寄りの「设定」が混入しています。「设置」に置き換えます。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios120Item7",
+      "severity": "medium",
+      "replacement": "您可以从设置中打开“联系我们”页面。",
+      "reasonJapanese": "「お問い合わせ」を「建议与反馈」に限定しており、問い合わせ全般という原文の意味が狭くなっています。「联系我们」が中国本土のUIとして自然です。"
+    }
+  ]
+}
