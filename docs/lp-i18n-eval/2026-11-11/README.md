@@ -29,3 +29,12 @@ languageSelector・faqLink・contactLink・privacyLink はトップLPの訳、ba
 ## トップのボタン（iconsLink）
 
 トップLPに足した「フリーアイコン」のボタンの文（`iconsLink`）は、このページの `heading` の訳（監査済み）を 5 言語ともそのまま使っている。あわせてトップLPの `supportNote` は 5 言語から外した。
+
+## まとめて保存（saveAllLabel・saveFailed）を足したとき
+
+- 初稿: Fable の直書き（`icons-saveall-draft.json`）
+- 独立監査: Fable 3 件・Codex 1 件（どちらも medium だけ。`icons-saveall-audit-fable.json` / `icons-saveall-audit-codex.json`）
+- 採用（`icons-saveall-adopted.json`）
+  - zh-Hans の「加工」→「修改」（rule2・termsItem1・termsItem2。zh-TW とそろう）
+  - zh-Hans の saveAllLabel は「全部保存」。同じ理由で zh-TW も「全部儲存」にした
+- 逆翻訳の監査（`icons-saveall-reverse-audit.json`）: 0 件

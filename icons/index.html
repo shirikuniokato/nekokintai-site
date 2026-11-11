@@ -53,6 +53,14 @@
   .icon-card:hover{transform:translateY(-2px);box-shadow:4px 6px 0 var(--shadow);color:var(--deep);}
   .icon-card img{width:100%;height:auto;}
   .icon-save{font-size:clamp(11px,3.1vw,13px);line-height:1.6;}
+  .save-all{
+    border:2px solid var(--border);background:var(--paper);color:var(--deep);border-radius:12px;
+    font:inherit;font-size:clamp(13px,3.5vw,15px);line-height:1.4;padding:12px 26px;cursor:pointer;
+    box-shadow:4px 4px 0 var(--shadow);transition:transform .12s ease,box-shadow .12s ease;
+  }
+  .save-all:hover{transform:translateY(-2px);box-shadow:4px 6px 0 var(--shadow);}
+  .save-all:focus-visible{outline:2px solid var(--deep);outline-offset:3px;}
+  .save-failed{margin:12px 0 0;font-size:clamp(12px,3.2vw,13px);line-height:1.8;color:#B4472F;}
   .icon-rules{margin:0;padding:0 0 0 1.2em;font-size:clamp(12px,3.2vw,13px);line-height:1.9;color:var(--muted);}
 
   /* 保存のまえに出す決まりの箱。カードと同じ紙・線・ずらした影 */
@@ -159,6 +167,9 @@
     </a>
   </nav>
 
+  <p style="margin:clamp(14px,4vw,20px) 0 0;"><button type="button" class="save-all" id="save-all" data-i18n="saveAllLabel">ぜんぶまとめて保存</button></p>
+  <p class="save-failed" id="save-failed" role="status" data-i18n="saveFailed" hidden>保存できませんでした。通信をたしかめて、もういちどおためしください。</p>
+
   <section style="margin:30px 0 0;text-align:left;">
     <hr style="height:0;border:0;margin:0;border-top:2px solid var(--ink);">
     <div style="padding:18px 4px;">
@@ -192,16 +203,75 @@
   (function(){
     var dialog=document.getElementById('terms-dialog');
     var agree=document.getElementById('terms-agree');
-    if(!dialog||!dialog.showModal)return;
-    var chosen=null;
-    document.querySelectorAll('.icon-card').forEach(function(card){
+    var saveAll=document.getElementById('save-all');
+    var failed=document.getElementById('save-failed');
+    if(!dialog||!dialog.showModal){saveAll.hidden=true;return;}
+    var cards=Array.prototype.slice.call(document.querySelectorAll('.icon-card'));
+    // iPhone・iPad では、ふつうのダウンロードは「ファイル」に入って写真に並ばない。
+    // 共有シートに画像を渡すと「画像を保存」で写真に入るので、そちらを使う
+    var isAppleTouch=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+    var chosen=[];   // いま保存しようとしているカード
+    var openedByKeyboard=false;
+    var loading=null; // その画像の読みこみ（箱を見ているあいだに済ませておく）
+
+    function loadFile(card){
+      return fetch(card.getAttribute('href')).then(function(response){
+        if(!response.ok)throw new Error('icon fetch failed: '+response.status);
+        return response.blob();
+      }).then(function(blob){
+        return new File([blob],card.getAttribute('download'),{type:'image/png'});
+      });
+    }
+    function openTerms(targets,event){
+      chosen=targets;
+      // キーボードで押したとき（detail が 0）だけ、とじたあとに焦点を元のボタンへ戻す
+      openedByKeyboard=event.detail===0;
+      failed.hidden=true;
+      // 1 枚をふつうに保存するだけなら、先に読みこむ必要はない
+      loading=(isAppleTouch||targets.length>1)?Promise.all(targets.map(loadFile)):null;
+      if(loading)loading.catch(function(){});
+      dialog.showModal();
+      // ひらいた直後の焦点は箱そのものに置く。ボタンに置くと、iPhone ではさわっただけで焦点の輪がボタンに出る
+      dialog.focus();
+    }
+    function download(url,name){
+      var link=document.createElement('a');
+      link.href=url;
+      link.download=name;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    }
+    function downloadBlob(blob,name){
+      var url=URL.createObjectURL(blob);
+      download(url,name);
+      setTimeout(function(){URL.revokeObjectURL(url);},60000);
+    }
+    // 共有シートが使えないときの保存。1 枚はそのまま、まとめては zip にする
+    function saveAsFiles(files){
+      if(files.length===1){downloadBlob(files[0],files[0].name);return Promise.resolve();}
+      return makeZip(files).then(function(zip){downloadBlob(zip,'nekokintai-icons.zip');});
+    }
+    function save(files){
+      var canShare=isAppleTouch&&navigator.canShare&&navigator.canShare({files:files});
+      if(!canShare)return saveAsFiles(files);
+      return navigator.share({files:files}).catch(function(error){
+        // 共有シートを自分でとじたときは、なにもしない
+        if(error&&error.name==='AbortError')return;
+        return saveAsFiles(files);
+      });
+    }
+
+    cards.forEach(function(card){
       card.addEventListener('click',function(event){
         event.preventDefault();
-        chosen=card;
-        dialog.showModal();
-        // ひらいた直後の焦点は箱そのものに置く。ボタンに置くと、iPhone ではさわっただけで焦点の輪がボタンに出る
-        dialog.focus();
+        openTerms([card],event);
       });
+    });
+    saveAll.addEventListener('click',function(event){openTerms(cards,event);});
+    // 箱をとじるとブラウザが焦点を元のボタンへ戻す。指で押したときは、iPhone で焦点の輪が残るので外す
+    dialog.addEventListener('close',function(){
+      if(!openedByKeyboard&&document.activeElement)document.activeElement.blur();
     });
     // 箱の外（backdrop）を押したらとじる
     dialog.addEventListener('click',function(event){
@@ -209,15 +279,70 @@
     });
     agree.addEventListener('click',function(){
       dialog.close();
-      if(!chosen)return;
-      if(typeof gtag==='function')gtag('event','icon_download',{icon:chosen.dataset.icon});
-      var link=document.createElement('a');
-      link.href=chosen.getAttribute('href');
-      link.download=chosen.getAttribute('download');
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
+      if(!chosen.length)return;
+      var targets=chosen;
+      if(typeof gtag==='function')gtag('event','icon_download',{icon:targets.length>1?'all':targets[0].dataset.icon});
+      if(!loading){download(targets[0].getAttribute('href'),targets[0].getAttribute('download'));return;}
+      loading.then(save).catch(function(error){
+        console.error(error);
+        // 1 枚なら、読みこめなくてもリンクからの保存を試せる
+        if(targets.length===1){download(targets[0].getAttribute('href'),targets[0].getAttribute('download'));return;}
+        failed.hidden=false;
+      });
     });
+
+    // --- まとめて保存用の zip（無圧縮）。PNG はもう圧縮されているので、つめるだけでよい ---
+    var crcTable=null;
+    function crc32(bytes){
+      if(!crcTable){
+        crcTable=new Uint32Array(256);
+        for(var n=0;n<256;n++){
+          var c=n;
+          for(var k=0;k<8;k++)c=(c&1)?(0xEDB88320^(c>>>1)):(c>>>1);
+          crcTable[n]=c>>>0;
+        }
+      }
+      var crc=0xFFFFFFFF;
+      for(var i=0;i<bytes.length;i++)crc=crcTable[(crc^bytes[i])&0xFF]^(crc>>>8);
+      return (crc^0xFFFFFFFF)>>>0;
+    }
+    function header(size,fill){
+      var view=new DataView(new ArrayBuffer(size));
+      fill(view);
+      return new Uint8Array(view.buffer);
+    }
+    function makeZip(files){
+      return Promise.all(files.map(function(file){return file.arrayBuffer();})).then(function(buffers){
+        var encoder=new TextEncoder();
+        var parts=[],central=[],offset=0;
+        buffers.forEach(function(buffer,index){
+          var data=new Uint8Array(buffer);
+          var name=encoder.encode(files[index].name);
+          var crc=crc32(data);
+          // 共通のならび: 版 20・フラグ 0・無圧縮 0・時刻 0・日付 1980-01-01・CRC・サイズ 2 つ・名前の長さ・追加 0
+          function common(view,at){
+            view.setUint16(at,20,true);view.setUint16(at+2,0,true);view.setUint16(at+4,0,true);
+            view.setUint16(at+6,0,true);view.setUint16(at+8,0x21,true);
+            view.setUint32(at+10,crc,true);view.setUint32(at+14,data.length,true);view.setUint32(at+18,data.length,true);
+            view.setUint16(at+22,name.length,true);view.setUint16(at+24,0,true);
+          }
+          var local=header(30,function(view){view.setUint32(0,0x04034b50,true);common(view,4);});
+          central.push(header(46,function(view){
+            view.setUint32(0,0x02014b50,true);view.setUint16(4,20,true);common(view,6);
+            view.setUint32(42,offset,true);
+          }),name);
+          parts.push(local,name,data);
+          offset+=local.length+name.length+data.length;
+        });
+        var centralSize=central.reduce(function(sum,part){return sum+part.length;},0);
+        var end=header(22,function(view){
+          view.setUint32(0,0x06054b50,true);
+          view.setUint16(8,files.length,true);view.setUint16(10,files.length,true);
+          view.setUint32(12,centralSize,true);view.setUint32(16,offset,true);
+        });
+        return new Blob(parts.concat(central,[end]),{type:'application/zip'});
+      });
+    }
   })();
 </script>
 
