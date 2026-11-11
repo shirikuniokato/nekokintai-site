@@ -210,6 +210,7 @@
     // iPhone・iPad では、ふつうのダウンロードは「ファイル」に入って写真に並ばない。
     // 共有シートに画像を渡すと「画像を保存」で写真に入るので、そちらを使う
     var isAppleTouch=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+    var isAndroid=/Android/.test(navigator.userAgent);
     var chosen=[];   // いま保存しようとしているカード
     var openedByKeyboard=false;
     var loading=null; // その画像の読みこみ（箱を見ているあいだに済ませておく）
@@ -247,9 +248,17 @@
       download(url,name);
       setTimeout(function(){URL.revokeObjectURL(url);},60000);
     }
-    // 共有シートが使えないときの保存。1 枚はそのまま、まとめては zip にする
+    // 共有シートが使えないときの保存。1 枚はそのまま。まとめては、Android は 1 枚ずつ続けて、ほかは zip にする。
+    // Android では画像のまま落とすと「ダウンロード」のアルバムに並ぶが、zip だと展開のひと手間が要る
     function saveAsFiles(files){
       if(files.length===1){downloadBlob(files[0],files[0].name);return Promise.resolve();}
+      if(isAndroid)return files.reduce(function(done,file){
+        return done.then(function(){
+          downloadBlob(file,file.name);
+          // 一度に出すとブラウザが取りこぼすので、少しずつ間をあける
+          return new Promise(function(resolve){setTimeout(resolve,300);});
+        });
+      },Promise.resolve());
       return makeZip(files).then(function(zip){downloadBlob(zip,'nekokintai-icons.zip');});
     }
     function save(files){
