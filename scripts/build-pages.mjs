@@ -14,6 +14,7 @@ const publicEntries = [
   'qa',
   'roadmap',
   'tip',
+  '404.html',
   'favicon.png',
   'index.html',
   'ogp.png',
