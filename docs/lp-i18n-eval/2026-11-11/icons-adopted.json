@@ -1,0 +1,64 @@
+{
+  "adopted": [
+    {
+      "from": "claude-fable",
+      "locale": "en",
+      "key": "rule1",
+      "text": "Feel free to use them as your profile picture on social media and elsewhere, for personal use only."
+    },
+    {
+      "from": "claude-fable",
+      "locale": "zh-TW",
+      "key": "documentTitle",
+      "text": "免費頭貼 | ねこ勤怠"
+    },
+    {
+      "from": "claude-fable",
+      "locale": "zh-TW",
+      "key": "documentDescription",
+      "text": "免費提供ねこ勤怠貓咪們的圓形頭貼。歡迎在個人使用的範圍內，當作社群平台等的頭貼。"
+    },
+    {
+      "from": "claude-fable",
+      "locale": "zh-TW",
+      "key": "heading",
+      "text": "免費頭貼"
+    },
+    {
+      "from": "claude-fable",
+      "locale": "zh-TW",
+      "key": "lead",
+      "text": "ねこ勤怠貓咪們的圓形頭貼。\n選一隻喜歡的貓咪，儲存下來吧。"
+    },
+    {
+      "from": "claude-fable",
+      "locale": "zh-TW",
+      "key": "iconsAriaLabel",
+      "text": "可下載的頭貼"
+    },
+    {
+      "from": "claude-fable",
+      "locale": "zh-TW",
+      "key": "iconAlt",
+      "text": "貓咪頭貼"
+    },
+    {
+      "from": "claude-fable",
+      "locale": "zh-TW",
+      "key": "rule1",
+      "text": "歡迎在個人使用的範圍內，當作社群平台等的頭貼。"
+    },
+    {
+      "from": "claude-fable",
+      "locale": "zh-Hans",
+      "key": "documentDescription",
+      "text": "免费提供ねこ勤怠猫咪们的圆形头像。欢迎在个人使用的范围内，用作社交平台等的头像。"
+    },
+    {
+      "from": "gpt",
+      "locale": "zh-TW",
+      "key": "rule2",
+      "text": "請勿修改、重新散布或用於商業用途。"
+    }
+  ]
+}
