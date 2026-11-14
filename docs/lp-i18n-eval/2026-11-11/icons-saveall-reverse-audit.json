@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-11-11T08:05:32.489Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "en",
+    "ko",
+    "zh-TW",
+    "zh-Hans"
+  ],
+  "summaryJapanese": "全翻訳を日本語へ逆翻訳して確認しました。意味の欠落・追加・反転・世界観の変化に該当する問題はありません。",
+  "issues": []
+}

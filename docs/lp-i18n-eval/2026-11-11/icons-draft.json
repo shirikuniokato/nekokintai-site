@@ -1,0 +1,103 @@
+{
+  "note": "Gemini の残高切れ（402）のため、初稿は Fable の直書き",
+  "translations": [
+    {
+      "key": "documentTitle",
+      "en": "Free icons | ねこ勤怠",
+      "ko": "무료 아이콘 | ねこ勤怠",
+      "zhTW": "免費頭像 | ねこ勤怠",
+      "zhHans": "免费头像 | ねこ勤怠"
+    },
+    {
+      "key": "documentDescription",
+      "en": "Free round icons of the cats from ねこ勤怠. Feel free to use them as your profile picture, for personal use only.",
+      "ko": "ねこ勤怠 고양이들의 동그란 아이콘을 무료로 나눠 드려요. SNS 프로필 사진 등에 개인적인 용도로 사용해 주세요.",
+      "zhTW": "免費提供ねこ勤怠貓咪們的圓形頭像。歡迎在個人使用的範圍內，當作社群平台的頭像。",
+      "zhHans": "免费提供ねこ勤怠猫咪们的圆形头像。欢迎在个人使用的范围内，用作社交平台的头像。"
+    },
+    {
+      "key": "heading",
+      "en": "Free icons",
+      "ko": "무료 아이콘",
+      "zhTW": "免費頭像",
+      "zhHans": "免费头像"
+    },
+    {
+      "key": "lead",
+      "en": "Round icons of the cats from ねこ勤怠.\nPick your favorite and save it.",
+      "ko": "ねこ勤怠 고양이들의 동그란 아이콘이에요.\n마음에 드는 아이를 골라 저장해 주세요.",
+      "zhTW": "ねこ勤怠貓咪們的圓形頭像。\n選一隻喜歡的貓咪，儲存下來吧。",
+      "zhHans": "ねこ勤怠猫咪们的圆形头像。\n选一只喜欢的猫咪，保存下来吧。"
+    },
+    {
+      "key": "iconsAriaLabel",
+      "en": "Icons you can download",
+      "ko": "다운로드할 수 있는 아이콘",
+      "zhTW": "可下載的頭像",
+      "zhHans": "可下载的头像"
+    },
+    {
+      "key": "iconAlt",
+      "en": "Cat icon",
+      "ko": "고양이 아이콘",
+      "zhTW": "貓咪頭像",
+      "zhHans": "猫咪头像"
+    },
+    {
+      "key": "saveLabel",
+      "en": "Save",
+      "ko": "저장하기",
+      "zhTW": "儲存",
+      "zhHans": "保存"
+    },
+    {
+      "key": "rule1",
+      "en": "Feel free to use them as your profile picture on social media, for personal use only.",
+      "ko": "SNS 프로필 사진 등에 개인적인 용도로 사용해 주세요.",
+      "zhTW": "歡迎在個人使用的範圍內，當作社群平台等的頭像。",
+      "zhHans": "欢迎在个人使用的范围内，用作社交平台等的头像。"
+    },
+    {
+      "key": "rule2",
+      "en": "Please do not edit, redistribute, or use them commercially.",
+      "ko": "가공, 재배포, 상업적 이용은 삼가 주세요.",
+      "zhTW": "請勿加工、轉發散布或用於商業用途。",
+      "zhHans": "请勿加工、二次分发或用于商业用途。"
+    },
+    {
+      "key": "languageSelector",
+      "en": "Language",
+      "ko": "언어",
+      "zhTW": "語言",
+      "zhHans": "语言"
+    },
+    {
+      "key": "backToTop",
+      "en": "← Back to the ねこ勤怠 page",
+      "ko": "← ねこ勤怠 페이지로 돌아가기",
+      "zhTW": "← 返回 ねこ勤怠 頁面",
+      "zhHans": "← 返回 ねこ勤怠 页面"
+    },
+    {
+      "key": "faqLink",
+      "en": "FAQ",
+      "ko": "자주 묻는 질문",
+      "zhTW": "常見問題",
+      "zhHans": "常见问题"
+    },
+    {
+      "key": "contactLink",
+      "en": "Requests",
+      "ko": "건의 사항",
+      "zhTW": "建議與回饋",
+      "zhHans": "建议与反馈"
+    },
+    {
+      "key": "privacyLink",
+      "en": "Privacy Policy",
+      "ko": "개인정보 처리방침",
+      "zhTW": "隱私權政策",
+      "zhHans": "隐私政策"
+    }
+  ]
+}
