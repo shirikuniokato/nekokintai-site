@@ -43,15 +43,17 @@ jobs:
         run: npm run build
 
       - name: Deploy production site
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
+          wranglerVersion: "4.158.0"
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy .pages-dist/site --project-name=nekokintai --branch=main --commit-hash=${{ github.sha }}
 
       - name: Deploy legacy redirect
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
+          wranglerVersion: "4.158.0"
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy cloudflare/legacy-redirect --project-name=nekokintai-legacy --branch=main --commit-hash=${{ github.sha }}
