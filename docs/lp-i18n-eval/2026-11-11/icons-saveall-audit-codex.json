@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-11-11T08:04:20.822Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "en",
+    "ko",
+    "zh-TW",
+    "zh-Hans"
+  ],
+  "summaryJapanese": "簡体字中国語のUIラベルに1件、冗長で不自然な表現がありました。その他には、指定された観点で修正が必要な問題はありません。",
+  "issues": [
+    {
+      "locale": "zh-Hans",
+      "key": "saveAllLabel",
+      "severity": "medium",
+      "replacement": "全部保存",
+      "reasonJapanese": "「全部一起保存」は意味が重複しており、中国本土のUIラベルとして不自然です。「全部保存」が簡潔で一般的です。"
+    }
+  ]
+}

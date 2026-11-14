@@ -1,0 +1,7 @@
+{
+  "draft": "roadmap-draft.json",
+  "audits": { "claude-fable": "roadmap-audit-fable.json", "gpt": "roadmap-audit-codex.json" },
+  "adopt": [],
+  "manual": [],
+  "replace": []
+}

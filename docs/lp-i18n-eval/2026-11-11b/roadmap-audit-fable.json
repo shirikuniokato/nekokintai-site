@@ -1,0 +1,210 @@
+{
+  "generatedAt": "2026-11-11T14:55:30.389Z",
+  "reviewer": "claude-fable",
+  "model": "claude-fable-5",
+  "locales": [
+    "en",
+    "ko",
+    "zh-TW",
+    "zh-Hans"
+  ],
+  "summaryJapanese": "4言語とも致命的な誤訳・意味の大きな欠落はなく、ブランド名「ねこ勤怠」、がんばった貯金の定訳（Good Job Savings / 수고 저금 / 辛苦撲滿 / 时间存钱罐）、{{count}}、通貨表記（简体は「日元」）、中黒の持ち込み、行/列、猫語混入、簡体字への繁体字混入はいずれも問題ありませんでした。韓国語の「·」は韓国語本来の가운뎃점なので指摘していません。指摘は計26件（high 3 / medium 23）です。主な内容: (1) zh-TW でアプリ内の「ホーム」が端末の「主畫面」（iOS のホーム画面の正式訳）と同じ語になっており誤読されるキーが3件（high）。en・ko にも同種の揺れがあります。(2) ko は全体が해요体なのに 2.4.1 の項目と koreanWeekShareFix だけ합쇼体（〜습니다）になっている文体の揺れ、および引用ラベルの後ろの助詞欠落1件。(3) zh-TW の「作業／工作」の揺れ。(4) zh-TW・zh-Hans の v260Item3 だけ「你」が使われ（他は「您」）、やや指摘口調。(5) zh-TW・zh-Hans の ios201Item1 が文法的に不自然で、同じ原文の android201Item1 と訳が揃っていない。(6) zh-Hans の「已送审」は中国本土のアプリ文脈では「已提交审核」が自然。(7) en は1行目が70文字前後と長すぎる項目3件、意味がぼやける項目2件、record/log の揺れ1件。各言語の固有名（ねこの名前、ウィジェット名、iOS 26 の外観名など）はアプリ内表記を確認できないため指摘対象から外しています。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "ios231Item1",
+      "severity": "medium",
+      "replacement": "Fixes an issue where the message\n“The purchase couldn’t be completed in the store.”\nkept appearing even without buying the Support plan.",
+      "reasonJapanese": "1行目が約70文字あり、ほかの項目（40〜50文字前後）と比べてUIとして長すぎます。改行数はそのままに、引用メッセージを2行目に独立させて各行の長さをそろえました。"
+    },
+    {
+      "locale": "en",
+      "key": "ios230Item1",
+      "severity": "medium",
+      "replacement": "The app will also be available in English,\nKorean, and Traditional Chinese. The store listing\nwill be available in each language too.",
+      "reasonJapanese": "1行目が約76文字で、このページの中で最も長くスマホ幅では不自然に折り返します。同じ改行数のまま3行に均等に配分しました。原文の「でも」「も」のニュアンス（also / too）も補っています。"
+    },
+    {
+      "locale": "en",
+      "key": "ios230Item2",
+      "severity": "medium",
+      "replacement": "The Home tab will now also explain that records from\nprevious days can be edited from the Month screen.",
+      "reasonJapanese": "アプリ内の「ホーム」が Home screen / Home tab / Home と揺れており、端末のホーム画面を指す「Home Screen」（widgets240Item1・ios241Item5）と大文字小文字しか違わず紛らわしいです。ios251Item1・android251Item2 で使われている「Home tab」にそろえました。原文の「案内にも」の「も」（also）も補い、1行目の長さも調整しています。"
+    },
+    {
+      "locale": "en",
+      "key": "ios210Item1",
+      "severity": "medium",
+      "replacement": "You can now choose and play\n3 work BGMs on the Home tab.",
+      "reasonJapanese": "アプリ内の「ホーム」が「Home screen」になっており、端末のホーム画面（Home Screen）で BGM を流すように読めてしまいます。ほかのキーで使われている「Home tab」に統一しました。"
+    },
+    {
+      "locale": "en",
+      "key": "ios201Item8",
+      "severity": "medium",
+      "replacement": "Tapping the boss on the Home tab\nlets you change your days off for the week all at once.",
+      "reasonJapanese": "アプリ内の「ホーム」の訳語の揺れです。端末のホーム画面（Home Screen）と区別できるよう、ほかのキーと同じ「Home tab」に統一しました。"
+    },
+    {
+      "locale": "en",
+      "key": "v251Item1",
+      "severity": "medium",
+      "replacement": "Fixed an issue where you couldn't edit the previous day's\nrecords if a break carried over into the next day",
+      "reasonJapanese": "「記録」はほかのキーではすべて records と訳されていますが、ここだけ log になっている用語揺れです。records に統一し、あわせて61文字あった1行目を短くしました。"
+    },
+    {
+      "locale": "en",
+      "key": "v240Item5",
+      "severity": "medium",
+      "replacement": "\"Add a record\" now lets you enter\ntimes up to the current minute.",
+      "reasonJapanese": "「accepts the current minute」では原文の「いまの分まで入れられる」の「〜まで（up to）」が抜けており、何ができるようになるのかが伝わりにくいです。意味が欠けないように補いました。"
+    },
+    {
+      "locale": "en",
+      "key": "ios210Item8",
+      "severity": "medium",
+      "replacement": "Fixed bugs with long category names,\nthe carry-over display, and more.",
+      "reasonJapanese": "「bugs such as long category names」だと「長いカテゴリ名」そのものが不具合であるかのように読めてしまいます。原文は「長いカテゴリ名や繰りこし表示などに関する不具合」なので、bugs with … の形に直しました。"
+    },
+    {
+      "locale": "en",
+      "key": "android202Item2",
+      "severity": "medium",
+      "replacement": "Shortens notifications at the bottom of the screen\nto one consistent display time, and lets you\nclose them by swiping down too.",
+      "reasonJapanese": "1行目が約69文字と長く、2・3行目との差が大きくUIとして不自然です。同じ改行数のまま行の長さをそろえました。原文の「スワイプしても」の「も」（too）も補っています。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios230Item2",
+      "severity": "medium",
+      "replacement": "이전 날짜의 기록은 '월'에서 수정할 수 있다는\n안내를 홈에도 추가할게요.",
+      "reasonJapanese": "アプリ内の「ホーム」が「홈 화면」になっており、端末のホーム画面（widgets240Item1・ios241Item5 の「홈 화면」）と同じ語で紛らわしいです。ほかのキー（v250Item3・ios210Item1・ios201Item8）と同じ「홈」に統一しました。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios241Item1",
+      "severity": "medium",
+      "replacement": "퇴근한 뒤에도 잠금 화면의 시간이\n계속 늘어나던 문제를 고쳐요",
+      "reasonJapanese": "ページ全体が해요体（〜해요/〜할게요）なのに、ここだけ합쇼体の「고칩니다」になっている文体の揺れです。同じ系統の v240Item6「고쳐요」にそろえました。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios241Item2",
+      "severity": "medium",
+      "replacement": "오래 일하면 잠금 화면의 고양이가\n사라진 채 돌아오지 않던 문제를 고쳐요",
+      "reasonJapanese": "ページ全体が해요体なのに、ここだけ합쇼体の「고칩니다」になっている文体の揺れです。「고쳐요」にそろえました。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios241Item4",
+      "severity": "medium",
+      "replacement": "iOS 26에서 홈 화면을 투명하게 하거나\n색을 입히면 위젯이 하얗던 문제를 고쳐요",
+      "reasonJapanese": "ページ全体が해요体なのに、ここだけ합쇼体の「고칩니다」になっている文体の揺れです。「고쳐요」にそろえました。"
+    },
+    {
+      "locale": "ko",
+      "key": "android241Item1",
+      "severity": "medium",
+      "replacement": "일부 기기에서 ‘고양이와 이번 주’ 위젯을\n둘 수 없던 문제를 고쳐요",
+      "reasonJapanese": "ページ全体が해요体なのに、ここだけ합쇼体の「고칩니다」になっている文体の揺れです。「고쳐요」にそろえました。"
+    },
+    {
+      "locale": "ko",
+      "key": "android241Item2",
+      "severity": "medium",
+      "replacement": "‘일하는 동안의 알림’을\n‘알림 받기’와 별개로 켤 수 있게 해요",
+      "reasonJapanese": "ページ全体が해요体なのに、ここだけ합쇼体の「합니다」になっている文体の揺れです。「해요」にそろえました。"
+    },
+    {
+      "locale": "ko",
+      "key": "android241Item3",
+      "severity": "medium",
+      "replacement": "배터리 설정의 제한으로 기록할 수 없을 때,\n그 사실을 위젯에 표시해요",
+      "reasonJapanese": "ページ全体が해요体なのに、ここだけ합쇼体の「표시합니다」になっている文体の揺れです。「표시해요」にそろえました。"
+    },
+    {
+      "locale": "ko",
+      "key": "koreanWeekShareFix",
+      "severity": "medium",
+      "replacement": "주간 기록을 이미지로 저장할 때\n한글이 깨지는 문제를\n수정할게요.",
+      "reasonJapanese": "ここだけ합쇼体の「수정할 예정입니다」になっており、ほかの「直します」系の項目（수정할게요/고칠게요）と文体が揺れています。「수정할게요」にそろえました。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios110Item5",
+      "severity": "medium",
+      "replacement": "주 화면에서 언제든지\n'지난주를 이미지로 공유하기'를 할 수 있어요.",
+      "reasonJapanese": "引用したボタン名の直後に助詞なしで「할 수 있어요」が続いており、韓国語として助詞が抜けています。ios201Item7 の「'다시 일하기'를 할 수 있게 돼요」と同じく、目的格助詞「를」を補いました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios230Item2",
+      "severity": "high",
+      "replacement": "首頁也會提示您，\n之前日期的紀錄可從「月」修改。",
+      "reasonJapanese": "アプリ内の「ホーム」が「主畫面」と訳されていますが、台湾の iOS では「主畫面」は端末のホーム画面の正式名称で、同じページの ios241Item5・widgets240Item1 でもその意味で使われています。端末のホーム画面に案内が出ると誤読されるため、v250Item3 などと同じ「首頁」に統一しました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios210Item1",
+      "severity": "high",
+      "replacement": "現在可以在首頁選擇並播放\n3 首工作 BGM 了。",
+      "reasonJapanese": "アプリ内の「ホーム」が「主畫面」になっており、端末のホーム画面（主畫面）で BGM を選んで流せるように読めてしまいます。アプリ内のホームはほかのキーと同じ「首頁」に統一しました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios201Item8",
+      "severity": "high",
+      "replacement": "點按首頁的老闆，\n就可以一次更改本週的休假日。",
+      "reasonJapanese": "アプリ内の「ホーム」が「主畫面」になっており、端末のホーム画面を指す「主畫面」と区別がつきません。ほかのキーと同じ「首頁」に統一しました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios120Item5",
+      "severity": "medium",
+      "replacement": "您可以將已刪除的工作清單收合起來了。",
+      "reasonJapanese": "「けした作業」は future11 では「已刪除的工作」、作業カテゴリも「工作類別」と訳されていますが、ここだけ「作業」になっている用語揺れです。「工作」に統一しました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios110Item6",
+      "severity": "medium",
+      "replacement": "即使在工作中，\n也能修改該次工作的「開始」時間。",
+      "reasonJapanese": "ほかのキーでは「作業」を一貫して「工作」と訳しているのに、ここだけ「該次作業」になっている用語揺れです。「該次工作」に統一しました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "v260Item3",
+      "severity": "medium",
+      "replacement": "點選下班未打卡的提醒通知，\n就能直接修改時間",
+      "reasonJapanese": "ほかのキーはすべて「您」なのに、ここだけ「你」が使われています。また「提醒你還沒按『下班』」は利用者の押し忘れを指摘する口調に寄っています。人称を使わない中立的な「下班未打卡的提醒通知」に直しました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios201Item1",
+      "severity": "medium",
+      "replacement": "現在可以將「一天的切換時間」\n設定在 0 點\n到中午 12 點之間了。",
+      "reasonJapanese": "「將…從 0 點到中午 12 點之間自由選擇」は文の組み立てが崩れていて不自然です。同じ原文の android201Item1（設定在0點至中午12點之間）と訳も揃っていないため、同じ形に統一しました。原文にない「自由」も外しています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "v260Item3",
+      "severity": "medium",
+      "replacement": "点击下班未打卡的提醒通知，\n就能直接修改时间",
+      "reasonJapanese": "ほかのキーはすべて「您」なのに、ここだけ「你」が使われています。また「提醒你还没按“下班”」は利用者の押し忘れを指摘する口調に寄っています。人称を使わない中立的な「下班未打卡的提醒通知」に直しました。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios201Item1",
+      "severity": "medium",
+      "replacement": "现在可以将“一天的切换时间”\n设置在 0 点\n至中午 12 点之间了。",
+      "reasonJapanese": "「将…从 0 点到中午 12 点之间自由选择」は文の組み立てが崩れていて不自然です。同じ原文の android201Item1（设置在0点至中午12点之间）と訳も揃っていないため、同じ形に統一しました。原文にない「自由」も外しています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "whenInProgress",
+      "severity": "medium",
+      "replacement": "已提交审核。发布后会在这里通知您",
+      "reasonJapanese": "「已送审」は台湾寄りの言い方で、中国本土のアプリストア審査の文脈では「已提交审核」が一般的です。本土のUI表現として自然な形に直しました。"
+    }
+  ]
+}

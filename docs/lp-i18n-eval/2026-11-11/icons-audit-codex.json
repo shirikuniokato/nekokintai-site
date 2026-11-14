@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-11-10T17:18:53.840Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "en",
+    "ko",
+    "zh-TW",
+    "zh-Hans"
+  ],
+  "summaryJapanese": "全体として意味・トーン・用語・地域語彙は適切です。台湾繁体字の1件のみ、「轉發散布」が不自然な重複表現になっています。",
+  "issues": [
+    {
+      "locale": "zh-TW",
+      "key": "rule2",
+      "severity": "medium",
+      "replacement": "請勿修改、重新散布或用於商業用途。",
+      "reasonJapanese": "「轉發散布」は「転送」と「散布」を不自然に連結した表現です。また、画像に対する「加工」は台湾向けでは「修改」のほうが自然です。「再配布」の意味を明確に保つ表現へ置き換えます。"
+    }
+  ]
+}
