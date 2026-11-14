@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-11-11T15:00:08.565Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "en",
+    "ko",
+    "zh-TW",
+    "zh-Hans"
+  ],
+  "summaryJapanese": "全体として意味は概ね等価です。猫の柄の変更、表示対象の曖昧化、問い合わせ先の範囲変更にあたる4件を検出しました。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "v260Item1",
+      "severity": "medium",
+      "backTranslationJapanese": "しゃむねこ、らぐどーるねこ、ふわふわの黒い帽子柄のねこが、ねこ屋さんに加わりました（無料）",
+      "reasonJapanese": "「はちわれ」は顔の中央で毛色が分かれる柄ですが、「black-cap」は頭部が黒い帽子状の柄を指し、追加された猫の種類が変わっています。"
+    },
+    {
+      "locale": "en",
+      "key": "ios240Item2",
+      "severity": "medium",
+      "backTranslationJapanese": "あなたの時間とねこが、ロック画面にも表示されます（Apple Watchにも）。",
+      "reasonJapanese": "原文の「はたらいている時間」が単なる「your time」になり、表示されるのが勤務時間であるという重要な情報が曖昧になっています。"
+    },
+    {
+      "locale": "ko",
+      "key": "v260Item1",
+      "severity": "medium",
+      "backTranslationJapanese": "ねこ屋さんに、シャム猫、ラグドール猫、ふわふわの牛柄猫が来ました（無料）",
+      "reasonJapanese": "「はちわれ猫」が、白黒模様全般を指す「牛柄猫」に置き換わっています。顔の毛色が分かれた特定の柄という意味が失われています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios120Item7",
+      "severity": "medium",
+      "backTranslationJapanese": "設定から、提案・フィードバックページを開けます。",
+      "reasonJapanese": "原文は一般的な「お問い合わせページ」ですが、翻訳では用途が提案・フィードバックに限定されています。不具合や利用方法などの問い合わせも含む意味が欠落しています。"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "generatedAt": "2026-11-10T17:20:08.523Z",
+  "reviewer": "claude-fable",
+  "model": "claude-fable-5",
+  "locales": [
+    "en",
+    "ko",
+    "zh-TW",
+    "zh-Hans"
+  ],
+  "summaryJapanese": "全56件を監査し、10件（すべてmedium）を指摘します。critical/highはありません。\n\n【指摘の内訳】\n1. zh-TW「頭像」（7キー）: 台湾でも通じますが中国大陸寄りの語で、台湾ではプロフィール用の画像は「頭貼」が一般的です。用語揺れを避けるため、該当する7キーすべてを「頭貼」に統一した置換文を出しています。他ページからこのページへのリンク文言に「頭像」がある場合は、同じ語に揃えてください（リポジトリ内の他ページは今回確認していません）。\n2. zh-TW rule2「轉發散布」: 「轉發」は投稿の転送・リポストの意味で大陸寄りでもあり、「再配布」の意味からずれています。\n3. 「など」の欠落: zh-TW と zh-Hans の documentDescription は、同じ原文の rule1 にある「等」が抜けています。en の rule1 は「on social media」だけに狭まっており、他3言語と許諾範囲の書き方が揃っていません（en の documentDescription は SNS に限定していないので問題なし）。\n\n【問題なしと確認した点】\n- 責める表現、通常UIへの猫語混入はありません。\n- 日本語の中黒「・」の持ち込みはありません（rule2 は各言語とも読点・カンマで処理済み）。\n- zh-Hans への繁体字混入、台湾寄り語彙（喔・啰・依照・作業・程式・資料・帳號 など）の混入はありません。\n- 韓国語はブランド名の直後に助詞を付けない書き方になっており、助詞の問題はありません。\n- ブランド名「ねこ勤怠」は全言語でそのまま保たれています。\n- UIとして不自然に長い文言はありません。\n- 通貨表記、「行」「列」、がんばった貯金の訳語は、このページには該当箇所がありません。\n\n置換文はすべて元のキーと改行数を守っています（lead のみ改行1つ、他は改行なし）。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "rule1",
+      "severity": "medium",
+      "replacement": "Feel free to use them as your profile picture on social media and elsewhere, for personal use only.",
+      "reasonJapanese": "原文の「SNS など」の「など」が落ち、使える場所が SNS だけに狭まっています。利用ルールの文なので、他3言語と同じく SNS 以外も含む書き方に揃えます。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "documentTitle",
+      "severity": "medium",
+      "replacement": "免費頭貼 | ねこ勤怠",
+      "reasonJapanese": "「頭像」は中国大陸寄りの語です。台湾ではプロフィール用の画像は「頭貼」が一般的で、配布素材も「免費頭貼」と呼ぶのが自然です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "documentDescription",
+      "severity": "medium",
+      "replacement": "免費提供ねこ勤怠貓咪們的圓形頭貼。歡迎在個人使用的範圍內，當作社群平台等的頭貼。",
+      "reasonJapanese": "「頭像」は中国大陸寄りの語なので「頭貼」に統一します。あわせて、原文「SNS など」の「など」が抜けているため、同じ原文の rule1 と同じく「等」を補います。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "heading",
+      "severity": "medium",
+      "replacement": "免費頭貼",
+      "reasonJapanese": "「頭像」は中国大陸寄りの語です。台湾向けには「頭貼」が自然で、ページ内の他のキーと同じ語に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "lead",
+      "severity": "medium",
+      "replacement": "ねこ勤怠貓咪們的圓形頭貼。\n選一隻喜歡的貓咪，儲存下來吧。",
+      "reasonJapanese": "「頭像」は中国大陸寄りの語です。台湾向けには「頭貼」が自然で、ページ内の他のキーと同じ語に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "iconsAriaLabel",
+      "severity": "medium",
+      "replacement": "可下載的頭貼",
+      "reasonJapanese": "「頭像」は中国大陸寄りの語です。台湾向けには「頭貼」が自然で、ページ内の他のキーと同じ語に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "iconAlt",
+      "severity": "medium",
+      "replacement": "貓咪頭貼",
+      "reasonJapanese": "「頭像」は中国大陸寄りの語です。台湾向けには「頭貼」が自然で、ページ内の他のキーと同じ語に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "rule1",
+      "severity": "medium",
+      "replacement": "歡迎在個人使用的範圍內，當作社群平台等的頭貼。",
+      "reasonJapanese": "「頭像」は中国大陸寄りの語です。台湾向けには「頭貼」が自然で、ページ内の他のキーと同じ語に統一します。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "rule2",
+      "severity": "medium",
+      "replacement": "請勿加工、重新散布或用於商業用途。",
+      "reasonJapanese": "「轉發」は投稿の転送・リポストを指す大陸寄りの語で、ファイルを配り直す「再配布」の意味からずれています。「重新散布」にすると禁止している行為が正しく伝わります。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "documentDescription",
+      "severity": "medium",
+      "replacement": "免费提供ねこ勤怠猫咪们的圆形头像。欢迎在个人使用的范围内，用作社交平台等的头像。",
+      "reasonJapanese": "原文「SNS など」の「など」が抜けています。同じ原文の rule1 は「社交平台等的头像」としているので、同じ書き方に揃えます。"
+    }
+  ]
+}

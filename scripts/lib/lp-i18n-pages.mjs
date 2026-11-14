@@ -15,6 +15,7 @@ export const I18N_PAGES = {
   },
   contact: { html: 'contact/index.html', locales: 'assets/contact/locales.json', label: 'ごようぼう' },
   privacy: { html: 'privacy/index.html', locales: 'assets/privacy/locales.json', label: 'プライバシーポリシー' },
+  icons: { html: 'icons/index.html', locales: 'assets/icons/locales.json', label: 'フリーアイコン' },
 }
 
 export const DEFAULT_PAGE = 'lp'
@@ -55,6 +56,12 @@ export const SHARED_KEYS = {
   },
   privacy: {
     languageSelector: 'languageSelector',
+  },
+  icons: {
+    languageSelector: 'languageSelector',
+    faqLink: 'faqLink',
+    contactLink: 'contactLink',
+    privacyLink: 'privacyLink',
   },
 }
 

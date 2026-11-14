@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-11-10T19:31:29.644Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "en",
+    "ko",
+    "zh-TW",
+    "zh-Hans"
+  ],
+  "summaryJapanese": "指定基準に該当する medium の問題が3件あります。韓国語を含むその他の翻訳には、指摘対象となる問題はありません。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "documentDescription",
+      "severity": "medium",
+      "replacement": "Free round icons of the cats from ねこ勤怠. For personal use only, feel free to use them as profile pictures on social media and other platforms.",
+      "reasonJapanese": "複数のアイコンを単数の「your profile picture」で受けており不自然です。また、原文の「SNS など」に相当する利用先が欠落しています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "termsLead",
+      "severity": "medium",
+      "replacement": "這些頭貼僅供個人欣賞與使用。",
+      "reasonJapanese": "「讓大家個人欣賞使用」は「大家」と「個人」の修飾関係が曖昧で、個人利用に限るという意味が明確に伝わりません。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "termsLead",
+      "severity": "medium",
+      "replacement": "这些头像仅供个人欣赏和使用。",
+      "reasonJapanese": "「让大家个人欣赏使用」は中国本土向けのUI文として語順が不自然で、個人利用に限るという意味も不明瞭です。"
+    }
+  ]
+}

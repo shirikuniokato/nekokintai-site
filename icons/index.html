@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="ja" data-i18n-source="/assets/icons/locales.json">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="documentTitle">フリーアイコン | ねこ勤怠</title>
+<meta name="description" data-i18n-content="documentDescription" content="ねこ勤怠のねこたちの、まるいアイコンを無料で配っています。SNS などのアイコンに、個人でつかう範囲でどうぞ。">
+<link rel="canonical" href="https://nekokintai.com/icons/">
+<link rel="icon" type="image/png" href="/favicon.png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2J5J902MFE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2J5J902MFE');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+<script type="module" src="/assets/lp/i18n.mjs"></script>
+<style>
+  :root{
+    --ink:#0C3A44; --bg:#EAF4F7; --paper:#FFFFFF; --border:#DCEDF2;
+    --muted:#7FA6AF; --deep:#155C69; --accent:#FFDE59; --shadow:#C3E4EE;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"DotGothic16",system-ui,sans-serif;font-weight:400;line-height:1.9;text-align:center;}
+  a{color:var(--deep);text-decoration:none;}
+  a:hover{color:var(--ink);}
+  a:focus-visible{outline:2px solid var(--deep);outline-offset:3px;}
+  img{display:block;}
+  /* 翻訳文の改行（\n）をそのまま表示する。トップLPと同じ約束 */
+  .lp-copy-multiline{white-space:pre-line;}
+  .locale-switcher{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin:18px 0 0;}
+  .locale-switcher button{border:1px solid var(--border);border-radius:999px;background:var(--paper);color:var(--deep);font:inherit;font-size:11px;line-height:1.2;padding:6px 9px;cursor:pointer;}
+  .locale-switcher button[aria-pressed="true"]{border-color:var(--ink);background:var(--accent);color:var(--ink);}
+  .locale-switcher button:focus-visible{outline:2px solid var(--deep);outline-offset:3px;}
+  @keyframes nk-twinkle{0%,100%{opacity:.25}50%{opacity:1}}
+  @media (prefers-reduced-motion:reduce){*{animation:none !important}}
+
+  /* アイコンの棚。カードは「開発をおうえんする」の金額ボタンと同じ様式。スマホは 3 列、広い画面は 5 列 */
+  .icon-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,2.6vw,14px);margin:26px 0 0;}
+  @media (min-width:520px){.icon-grid{grid-template-columns:repeat(5,minmax(0,1fr));}}
+  .icon-card{
+    display:flex;flex-direction:column;align-items:center;gap:6px;
+    border:2px solid var(--border);background:var(--paper);color:var(--deep);border-radius:12px;
+    padding:clamp(8px,2.4vw,12px) clamp(6px,2vw,10px) clamp(6px,2vw,10px);
+    box-shadow:4px 4px 0 var(--shadow);
+    transition:transform .12s ease,box-shadow .12s ease;
+  }
+  .icon-card:hover{transform:translateY(-2px);box-shadow:4px 6px 0 var(--shadow);color:var(--deep);}
+  .icon-card img{width:100%;height:auto;}
+  .icon-save{font-size:clamp(11px,3.1vw,13px);line-height:1.6;}
+  .save-all{
+    border:2px solid var(--border);background:var(--paper);color:var(--deep);border-radius:12px;
+    font:inherit;font-size:clamp(13px,3.5vw,15px);line-height:1.4;padding:12px 26px;cursor:pointer;
+    box-shadow:4px 4px 0 var(--shadow);transition:transform .12s ease,box-shadow .12s ease;
+  }
+  .save-all:hover{transform:translateY(-2px);box-shadow:4px 6px 0 var(--shadow);}
+  .save-all:focus-visible{outline:2px solid var(--deep);outline-offset:3px;}
+  .save-failed{margin:12px 0 0;font-size:clamp(12px,3.2vw,13px);line-height:1.8;color:#B4472F;}
+  .icon-rules{margin:0;padding:0 0 0 1.2em;font-size:clamp(12px,3.2vw,13px);line-height:1.9;color:var(--muted);}
+
+  /* 保存のまえに出す決まりの箱。カードと同じ紙・線・ずらした影 */
+  .terms-dialog{
+    width:calc(100% - 40px);max-width:400px;margin:auto;
+    border:2px solid var(--ink);border-radius:12px;background:var(--paper);color:var(--ink);
+    padding:clamp(26px,7vw,34px) clamp(20px,6vw,30px) clamp(24px,6vw,30px);
+    box-shadow:6px 6px 0 var(--shadow);text-align:center;font:inherit;
+  }
+  .terms-dialog:focus{outline:none;}
+  .terms-dialog::backdrop{background:rgba(12,58,68,.5);}
+  .terms-title{font-size:clamp(18px,5vw,20px);font-weight:400;line-height:1.5;margin:0 0 16px;}
+  .terms-text{font-size:clamp(13px,3.5vw,14px);line-height:1.9;color:var(--deep);margin:0 0 16px;}
+  .terms-label{margin:0 0 4px;}
+  .terms-list{display:inline-block;margin:0 0 24px;padding:0 0 0 1.2em;text-align:left;font-size:clamp(13px,3.5vw,14px);line-height:1.9;}
+  .terms-agree{
+    border:2px solid var(--ink);border-radius:12px;background:var(--accent);color:var(--ink);
+    font:inherit;font-size:clamp(14px,3.8vw,15px);line-height:1.4;padding:12px 30px;cursor:pointer;
+  }
+  .terms-agree:focus-visible{outline:2px solid var(--deep);outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<main style="max-width:560px;margin:0 auto;padding:clamp(40px,8vw,72px) clamp(14px,4vw,20px) 0;">
+
+  <p style="font-size:13px;letter-spacing:.5em;text-indent:.5em;color:var(--muted);margin:0;"><a href="/" style="color:inherit;">NEKO KINTAI</a></p>
+  <div style="position:relative;">
+    <span aria-hidden="true" style="position:absolute;left:6%;top:0;font-size:30px;color:var(--accent);animation:nk-twinkle 2.6s ease-in-out infinite;">＋</span>
+    <span aria-hidden="true" style="position:absolute;right:8%;top:18%;font-size:22px;color:var(--shadow);animation:nk-twinkle 3.1s ease-in-out .8s infinite;">＋</span>
+    <h1 data-i18n="heading" style="position:relative;font-size:clamp(28px,7vw,40px);font-weight:400;line-height:1.5;letter-spacing:.04em;margin:12px 0 8px;">フリーアイコン</h1>
+  </div>
+  <p class="lp-copy-multiline" data-i18n="lead" style="font-size:clamp(14px,3.5vw,16px);color:var(--deep);margin:0 0 8px;">ねこ勤怠のねこたちの、まるいアイコンです。
+すきな子をえらんで、保存してください。</p>
+
+  <nav class="locale-switcher" data-i18n-aria-label="languageSelector" aria-label="言語" style="margin:14px 0 0;">
+    <button type="button" data-locale="ja" aria-pressed="true">日本語</button>
+    <button type="button" data-locale="en" aria-pressed="false">English</button>
+    <button type="button" data-locale="ko" aria-pressed="false">한국어</button>
+    <button type="button" data-locale="zh-TW" aria-pressed="false">繁體中文</button>
+    <button type="button" data-locale="zh-Hans" aria-pressed="false">简体中文</button>
+  </nav>
+
+  <nav class="icon-grid" data-i18n-aria-label="iconsAriaLabel" aria-label="ダウンロードできるアイコン">
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-white-circle-signed.png" download="nekokintai-icon-white.png" data-icon="white">
+      <img src="/assets/icons/nekokintai-icon-white-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
+      <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
+    </a>
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-kuro-circle-signed.png" download="nekokintai-icon-kuro.png" data-icon="kuro">
+      <img src="/assets/icons/nekokintai-icon-kuro-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
+      <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
+    </a>
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-mint-circle-signed.png" download="nekokintai-icon-mint.png" data-icon="mint">
+      <img src="/assets/icons/nekokintai-icon-mint-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
+      <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
+    </a>
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-sakura-circle-signed.png" download="nekokintai-icon-sakura.png" data-icon="sakura">
+      <img src="/assets/icons/nekokintai-icon-sakura-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
+      <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
+    </a>
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-mike-circle-signed.png" download="nekokintai-icon-mike.png" data-icon="mike">
+      <img src="/assets/icons/nekokintai-icon-mike-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
+      <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
+    </a>
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-fuwakoge-circle-signed.png" download="nekokintai-icon-fuwakoge.png" data-icon="fuwakoge">
+      <img src="/assets/icons/nekokintai-icon-fuwakoge-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
+      <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
+    </a>
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-fuwashiro-circle-signed.png" download="nekokintai-icon-fuwashiro.png" data-icon="fuwashiro">
+      <img src="/assets/icons/nekokintai-icon-fuwashiro-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
+      <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
+    </a>
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-hati2-circle-signed.png" download="nekokintai-icon-hati2.png" data-icon="hati2">
+      <img src="/assets/icons/nekokintai-icon-hati2-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
+      <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
+    </a>
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-cream-circle-signed.png" download="nekokintai-icon-cream.png" data-icon="cream">
+      <img src="/assets/icons/nekokintai-icon-cream-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
+      <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
+    </a>
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-fuwakuro-circle-signed.png" download="nekokintai-icon-fuwakuro.png" data-icon="fuwakuro">
+      <img src="/assets/icons/nekokintai-icon-fuwakuro-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
+      <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
+    </a>
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-hati1-circle-signed.png" download="nekokintai-icon-hati1.png" data-icon="hati1">
+      <img src="/assets/icons/nekokintai-icon-hati1-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
+      <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
+    </a>
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-gray-circle-signed.png" download="nekokintai-icon-gray.png" data-icon="gray">
+      <img src="/assets/icons/nekokintai-icon-gray-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
+      <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
+    </a>
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-kijitora-circle-signed.png" download="nekokintai-icon-kijitora.png" data-icon="kijitora">
+      <img src="/assets/icons/nekokintai-icon-kijitora-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
+      <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
+    </a>
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-sabatora-circle-signed.png" download="nekokintai-icon-sabatora.png" data-icon="sabatora">
+      <img src="/assets/icons/nekokintai-icon-sabatora-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
+      <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
+    </a>
+    <a class="icon-card" href="/assets/icons/nekokintai-icon-chatora-circle-signed.png" download="nekokintai-icon-chatora.png" data-icon="chatora">
+      <img src="/assets/icons/nekokintai-icon-chatora-circle-signed.png" width="1024" height="1024" loading="lazy" data-i18n-alt="iconAlt" alt="ねこのアイコン">
+      <span class="icon-save" data-i18n="saveLabel">ほぞんする</span>
+    </a>
+  </nav>
+
+  <p style="margin:clamp(14px,4vw,20px) 0 0;"><button type="button" class="save-all" id="save-all" data-i18n="saveAllLabel">ぜんぶまとめて保存</button></p>
+  <p class="save-failed" id="save-failed" role="status" data-i18n="saveFailed" hidden>保存できませんでした。通信をたしかめて、もういちどおためしください。</p>
+
+  <section style="margin:30px 0 0;text-align:left;">
+    <hr style="height:0;border:0;margin:0;border-top:2px solid var(--ink);">
+    <div style="padding:18px 4px;">
+      <ul class="icon-rules">
+        <li data-i18n="rule1">SNS などのアイコンに、個人でつかう範囲でどうぞ！</li>
+        <li data-i18n="rule2">加工・再配布・商用利用はごえんりょください。</li>
+      </ul>
+    </div>
+    <hr style="height:0;border:0;margin:0;border-top:2px solid var(--ink);">
+  </section>
+
+  <p style="margin:24px 0 0;font-size:13px;"><a data-i18n="backToTop" href="/" style="border-bottom:2px dashed var(--shadow);">← ねこ勤怠のページへもどる</a></p>
+
+</main>
+
+<!-- 保存のまえに出す決まり。箱の外を押すか Esc でとじる（保存しない） -->
+<dialog class="terms-dialog" id="terms-dialog" aria-labelledby="terms-title" tabindex="-1">
+  <h2 class="terms-title" id="terms-title" data-i18n="termsTitle">保存のまえに</h2>
+  <p class="terms-text" data-i18n="termsLead">このアイコンは、個人で楽しんでいただくためにお配りしています。</p>
+  <p class="terms-text terms-label" data-i18n="termsListLabel">つぎのことはご遠慮ください</p>
+  <ul class="terms-list">
+    <li data-i18n="termsItem1">加工・再配布・転載</li>
+    <li data-i18n="termsItem2">AI での加工や学習への利用</li>
+    <li data-i18n="termsItem3">グッズ化や商用利用</li>
+  </ul>
+  <div><button type="button" class="terms-agree" id="terms-agree" data-i18n="termsAgree">同意して保存</button></div>
+</dialog>
+<script>
+  // カードを押したらすぐ保存せず、決まりを見せてから保存する。
+  // スクリプトが動かない環境では、カードのリンクがそのまま保存になる
+  (function(){
+    var dialog=document.getElementById('terms-dialog');
+    var agree=document.getElementById('terms-agree');
+    var saveAll=document.getElementById('save-all');
+    var failed=document.getElementById('save-failed');
+    if(!dialog||!dialog.showModal){saveAll.hidden=true;return;}
+    var cards=Array.prototype.slice.call(document.querySelectorAll('.icon-card'));
+    // iPhone・iPad では、ふつうのダウンロードは「ファイル」に入って写真に並ばない。
+    // 共有シートに画像を渡すと「画像を保存」で写真に入るので、そちらを使う
+    var isAppleTouch=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+    var isAndroid=/Android/.test(navigator.userAgent);
+    var chosen=[];   // いま保存しようとしているカード
+    var openedByKeyboard=false;
+    var loading=null; // その画像の読みこみ（箱を見ているあいだに済ませておく）
+
+    function loadFile(card){
+      return fetch(card.getAttribute('href')).then(function(response){
+        if(!response.ok)throw new Error('icon fetch failed: '+response.status);
+        return response.blob();
+      }).then(function(blob){
+        return new File([blob],card.getAttribute('download'),{type:'image/png'});
+      });
+    }
+    function openTerms(targets,event){
+      chosen=targets;
+      // キーボードで押したとき（detail が 0）だけ、とじたあとに焦点を元のボタンへ戻す
+      openedByKeyboard=event.detail===0;
+      failed.hidden=true;
+      // 1 枚をふつうに保存するだけなら、先に読みこむ必要はない
+      loading=(isAppleTouch||targets.length>1)?Promise.all(targets.map(loadFile)):null;
+      if(loading)loading.catch(function(){});
+      dialog.showModal();
+      // ひらいた直後の焦点は箱そのものに置く。ボタンに置くと、iPhone ではさわっただけで焦点の輪がボタンに出る
+      dialog.focus();
+    }
+    function download(url,name){
+      var link=document.createElement('a');
+      link.href=url;
+      link.download=name;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    }
+    function downloadBlob(blob,name){
+      var url=URL.createObjectURL(blob);
+      download(url,name);
+      setTimeout(function(){URL.revokeObjectURL(url);},60000);
+    }
+    // 共有シートが使えないときの保存。1 枚はそのまま。まとめては、Android は 1 枚ずつ続けて、ほかは zip にする。
+    // Android では画像のまま落とすと「ダウンロード」のアルバムに並ぶが、zip だと展開のひと手間が要る
+    function saveAsFiles(files){
+      if(files.length===1){downloadBlob(files[0],files[0].name);return Promise.resolve();}
+      if(isAndroid)return files.reduce(function(done,file){
+        return done.then(function(){
+          downloadBlob(file,file.name);
+          // 一度に出すとブラウザが取りこぼすので、少しずつ間をあける
+          return new Promise(function(resolve){setTimeout(resolve,300);});
+        });
+      },Promise.resolve());
+      return makeZip(files).then(function(zip){downloadBlob(zip,'nekokintai-icons.zip');});
+    }
+    function save(files){
+      var canShare=isAppleTouch&&navigator.canShare&&navigator.canShare({files:files});
+      if(!canShare)return saveAsFiles(files);
+      return navigator.share({files:files}).catch(function(error){
+        // 共有シートを自分でとじたときは、なにもしない
+        if(error&&error.name==='AbortError')return;
+        return saveAsFiles(files);
+      });
+    }
+
+    cards.forEach(function(card){
+      card.addEventListener('click',function(event){
+        event.preventDefault();
+        openTerms([card],event);
+      });
+    });
+    saveAll.addEventListener('click',function(event){openTerms(cards,event);});
+    // 箱をとじるとブラウザが焦点を元のボタンへ戻す。指で押したときは、iPhone で焦点の輪が残るので外す
+    dialog.addEventListener('close',function(){
+      if(!openedByKeyboard&&document.activeElement)document.activeElement.blur();
+    });
+    // 箱の外（backdrop）を押したらとじる
+    dialog.addEventListener('click',function(event){
+      if(event.target===dialog)dialog.close();
+    });
+    agree.addEventListener('click',function(){
+      dialog.close();
+      if(!chosen.length)return;
+      var targets=chosen;
+      if(typeof gtag==='function')gtag('event','icon_download',{icon:targets.length>1?'all':targets[0].dataset.icon});
+      if(!loading){download(targets[0].getAttribute('href'),targets[0].getAttribute('download'));return;}
+      loading.then(save).catch(function(error){
+        console.error(error);
+        // 1 枚なら、読みこめなくてもリンクからの保存を試せる
+        if(targets.length===1){download(targets[0].getAttribute('href'),targets[0].getAttribute('download'));return;}
+        failed.hidden=false;
+      });
+    });
+
+    // --- まとめて保存用の zip（無圧縮）。PNG はもう圧縮されているので、つめるだけでよい ---
+    var crcTable=null;
+    function crc32(bytes){
+      if(!crcTable){
+        crcTable=new Uint32Array(256);
+        for(var n=0;n<256;n++){
+          var c=n;
+          for(var k=0;k<8;k++)c=(c&1)?(0xEDB88320^(c>>>1)):(c>>>1);
+          crcTable[n]=c>>>0;
+        }
+      }
+      var crc=0xFFFFFFFF;
+      for(var i=0;i<bytes.length;i++)crc=crcTable[(crc^bytes[i])&0xFF]^(crc>>>8);
+      return (crc^0xFFFFFFFF)>>>0;
+    }
+    function header(size,fill){
+      var view=new DataView(new ArrayBuffer(size));
+      fill(view);
+      return new Uint8Array(view.buffer);
+    }
+    function makeZip(files){
+      return Promise.all(files.map(function(file){return file.arrayBuffer();})).then(function(buffers){
+        var encoder=new TextEncoder();
+        var parts=[],central=[],offset=0;
+        buffers.forEach(function(buffer,index){
+          var data=new Uint8Array(buffer);
+          var name=encoder.encode(files[index].name);
+          var crc=crc32(data);
+          // 共通のならび: 版 20・フラグ 0・無圧縮 0・時刻 0・日付 1980-01-01・CRC・サイズ 2 つ・名前の長さ・追加 0
+          function common(view,at){
+            view.setUint16(at,20,true);view.setUint16(at+2,0,true);view.setUint16(at+4,0,true);
+            view.setUint16(at+6,0,true);view.setUint16(at+8,0x21,true);
+            view.setUint32(at+10,crc,true);view.setUint32(at+14,data.length,true);view.setUint32(at+18,data.length,true);
+            view.setUint16(at+22,name.length,true);view.setUint16(at+24,0,true);
+          }
+          var local=header(30,function(view){view.setUint32(0,0x04034b50,true);common(view,4);});
+          central.push(header(46,function(view){
+            view.setUint32(0,0x02014b50,true);view.setUint16(4,20,true);common(view,6);
+            view.setUint32(42,offset,true);
+          }),name);
+          parts.push(local,name,data);
+          offset+=local.length+name.length+data.length;
+        });
+        var centralSize=central.reduce(function(sum,part){return sum+part.length;},0);
+        var end=header(22,function(view){
+          view.setUint32(0,0x06054b50,true);
+          view.setUint16(8,files.length,true);view.setUint16(10,files.length,true);
+          view.setUint32(12,centralSize,true);view.setUint32(16,offset,true);
+        });
+        return new Blob(parts.concat(central,[end]),{type:'application/zip'});
+      });
+    }
+  })();
+</script>
+
+<footer style="margin-top:clamp(40px,7vw,64px);border-top:2px solid var(--border);padding:28px 20px 44px;font-size:13px;text-align:center;">
+  <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;">
+    <a href="https://shop.c-cya.com" target="_blank" rel="noopener" style="border-bottom:2px dashed var(--shadow);">Online shop</a>
+    <a href="https://www.instagram.com/c_cya__/" target="_blank" rel="noopener" style="border-bottom:2px dashed var(--shadow);">Instagram</a>
+    <a data-i18n="faqLink" href="/qa/" style="border-bottom:2px dashed var(--shadow);">よくあるしつもん</a>
+    <a data-i18n="contactLink" href="/contact/" style="border-bottom:2px dashed var(--shadow);">ごようぼう</a>
+    <a data-i18n="privacyLink" href="/privacy/" style="border-bottom:2px dashed var(--shadow);">プライバシーポリシー</a>
+  </div>
+  <div style="color:var(--muted);font-size:12px;margin-top:20px;">© c_cya.</div>
+</footer>
+</body>
+</html>
