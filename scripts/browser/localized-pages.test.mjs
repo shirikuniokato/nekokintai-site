@@ -159,7 +159,7 @@ test('/en/ で日本語のボタンを押すと、本文も画面の画像も日
 
 for (const locale of ['en', 'ko', 'zh-TW', 'zh-Hans']) {
   test(`/${locale}/contact/ を直接開いても、アプリの情報が出て送信できる`, async () => {
-    const { context, tab, failures } = await openTab(`${locale}-XX`)
+    const { context, tab, failures } = await openTab(locale)
     const sent = []
     // 本番の受付へは送らず、ここで受けて中身だけ確かめる
     await tab.route('https://api.c-cya.com/contact', async (route) => {
