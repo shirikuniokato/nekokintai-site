@@ -241,7 +241,7 @@
   .anv-body{padding:20px 20px 24px;}
   .anv-gift{position:relative;display:inline-block;}
   .anv-gift img{width:108px;height:auto;image-rendering:pixelated;display:block;}
-  .anv-gift span{position:absolute;left:50%;top:58%;transform:translate(-50%,-50%);color:#F8C94A;font-size:22px;line-height:1;}
+  .anv-gift span{position:absolute;left:58%;top:58%;transform:translate(-50%,-50%);color:#F8C94A;font-size:22px;line-height:1;}
   .anv-date{display:inline-block;margin:14px 0 0;padding:4px 16px;border-radius:999px;background:#F8C94A;font-size:15px;line-height:1.6;}
   .anv-text{margin:10px 0 0;font-size:14px;line-height:1.9;}
   .anv-go{
@@ -279,8 +279,20 @@
     var START=Date.parse('2026-11-19T18:00:00+09:00');
     var END=Date.parse('2026-12-21T00:00:00+09:00');
     var preview=/[?&]anniversary-preview\b/.test(location.search);
-    function dismissed(){try{return localStorage.getItem(STORAGE_KEY)==='1';}catch(error){return false;}}
-    function remember(){try{localStorage.setItem(STORAGE_KEY,'1');}catch(error){}}
+    // うっかり閉じた人のために、× などで閉じたら次の日にもう一度だけ出す。「くわしく見る」を押したか、2 回閉じたらもう出さない
+    var SNOOZE_KEY='nekokintai.anniversary1.closedOn';
+    function today(){return new Date(Date.now()+9*3600*1000).toISOString().slice(0,10);}
+    function read(key){try{return localStorage.getItem(key);}catch(error){return null;}}
+    function write(key,value){try{localStorage.setItem(key,value);}catch(error){}}
+    function dismissed(){
+      if(read(STORAGE_KEY)==='1')return true;
+      var closedOn=read(SNOOZE_KEY);
+      return closedOn!==null&&closedOn>=today();
+    }
+    function remember(){
+      if(read(SNOOZE_KEY)===null)write(SNOOZE_KEY,today());
+      else write(STORAGE_KEY,'1');
+    }
     function shouldShow(){
       if(document.documentElement.lang!=='ja')return false;
       if(preview)return true;
@@ -297,8 +309,10 @@
     document.getElementById('anv-close').addEventListener('click',function(){pop.close();});
     // 箱の外（backdrop）を押してもとじる
     pop.addEventListener('click',function(event){if(event.target===pop)pop.close();});
-    // とじかた（× ・外・Esc・「くわしく見る」）にかかわらず、一度見たらもう出さない
+    // × ・外・Esc で閉じたら、1 回目は次の日にもう一度、2 回目からはもう出さない
     pop.addEventListener('close',function(){if(!preview)remember();});
+    // 「くわしく見る」を押した人には、もう出さない
+    document.querySelector('.anv-go').addEventListener('click',function(){if(!preview)write(STORAGE_KEY,'1');});
     // 日本語以外へ切りかえたら引っこめる（行き先のページは日本語だけ）
     document.addEventListener('nekokintai:locale',function(event){
       if(event.detail.locale!=='ja'&&pop.open)pop.close();
