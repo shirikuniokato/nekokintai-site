@@ -77,9 +77,6 @@
   .mystery{position:relative;width:fit-content;margin:22px auto 18px;}
   .mystery img{width:clamp(150px,42vw,190px);animation:an-bob 2.8s ease-in-out infinite;}
   .mystery span{position:absolute;animation:an-twinkle 2.6s ease-in-out infinite;}
-  .revealed img{width:clamp(150px,42vw,190px);margin:22px auto 18px;}
-  .gift.ended > .mystery,.gift.ended > .text{display:none;}
-  .gift.ended > .revealed{display:block;}
   .mystery .q{left:50%;top:38%;translate:-50% 0;font-size:clamp(26px,7vw,32px);color:var(--mimosa);animation:none;}
 
   /* 新しいねこ 3匹。足もとをそろえて、同じドット倍率で並べる */
@@ -132,13 +129,6 @@
 受けとった贈りものは、期間がすぎても
 ずっとつかえます。
 <span class="must">この期間に必ず受け取ってね！！</span></p>
-      <!-- 期間がおわったら、隠していた中身（花冠をかぶったひら）を見せて、おわったことを書く -->
-      <div class="revealed" hidden>
-        <img class="pixel" src="/assets/anniversary/hira-crown-sit.png" width="27" height="18" alt="花冠をかぶったひら">
-        <p class="text">ひらと花冠の配布はおわりました。
-受けとった贈りものは、期間がすぎても
-ずっとつかえます。</p>
-      </div>
     </div>
   </section>
 
@@ -187,17 +177,6 @@
   </section>
 
 </main>
-<script>
-  // 日本時間の 12/21 0:00 からは、贈りものの欄を「おわりました」に切りかえる（トップのおしらせが消えるのと同じ時刻）。
-  // 期間の前に見た目を確かめるときは ?anniversary-ended を付ける
-  (function(){
-    var END=Date.parse('2026-12-21T00:00:00+09:00');
-    var preview=/[?&]anniversary-ended\b/.test(location.search);
-    if(!preview&&Date.now()<END)return;
-    var gift=document.querySelector('.gift');
-    if(gift)gift.classList.add('ended');
-  })();
-</script>
 
 <footer style="border-top:2px solid var(--line);padding:28px 20px 44px;text-align:center;">
   <div class="links">
