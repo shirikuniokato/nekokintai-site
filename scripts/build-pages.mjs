@@ -6,6 +6,7 @@ import { writeLocalizedPages } from './lib/build-localized-pages.mjs'
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const outputDirectory = resolve(projectRoot, '.pages-dist/site')
 const publicEntries = [
+  '1st-anniversary',
   'art',
   'assets',
   'contact',
