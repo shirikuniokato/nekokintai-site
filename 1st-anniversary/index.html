@@ -2,6 +2,16 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
+<script>
+  // 公開は日本時間の 11/19 18:00（ｼﾁｬ の記念サイトと同じ時刻）。それより前に URL で来た人はトップへ戻す。
+  // 見た目の確認は ?anniversary-preview を付ける（トップのおしらせと同じ合図）
+  (function(){
+    var START=Date.parse('2026-11-19T18:00:00+09:00');
+    if(Date.now()>=START||/[?&]anniversary-preview\b/.test(location.search))return;
+    document.documentElement.style.display='none';
+    location.replace('/');
+  })();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>作者の活動1周年記念 | ねこ勤怠</title>
 <meta name="description" content="ねこ勤怠の作者の活動1周年を記念して、11/19〜12/20 のあいだ、ねこ屋さんに期間限定のとくべつな贈りものが届きます。新しいねこも 3匹やってきました。">
