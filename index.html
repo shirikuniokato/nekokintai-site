@@ -275,8 +275,8 @@
     var pop=document.getElementById('anv-pop');
     if(!pop||!pop.showModal)return;
     var STORAGE_KEY='nekokintai.anniversary1.dismissed';
-    // 日本時間の 11/19 0:00 から 12/20 23:59 まで
-    var START=Date.parse('2026-11-19T00:00:00+09:00');
+    // 日本時間の 11/19 18:00 から 12/20 23:59 まで。出しはじめはアプリの公開（16 時）と ｼﾁｬ の記念サイトの公開（18 時）にそろえる
+    var START=Date.parse('2026-11-19T18:00:00+09:00');
     var END=Date.parse('2026-12-21T00:00:00+09:00');
     var preview=/[?&]anniversary-preview\b/.test(location.search);
     function dismissed(){try{return localStorage.getItem(STORAGE_KEY)==='1';}catch(error){return false;}}
