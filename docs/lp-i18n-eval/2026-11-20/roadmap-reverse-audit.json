@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-11-19T20:26:21.200Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "en",
+    "ko",
+    "zh-TW",
+    "zh-Hans"
+  ],
+  "summaryJapanese": "全体として意味はよく保たれています。意味の具体性や対象範囲が変わる箇所を3件確認しました。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "ios240Item2",
+      "severity": "medium",
+      "backTranslationJapanese": "あなたの時間とねこも、ロック画面に表示されます（Apple Watchにも）。",
+      "reasonJapanese": "「はたらいている時間」が曖昧な「あなたの時間」になり、表示されるのが勤務時間である情報が欠落しています。"
+    },
+    {
+      "locale": "ko",
+      "key": "android252Item1",
+      "severity": "medium",
+      "backTranslationJapanese": "ウィジェットや通知で退勤を押しても、記録されなかった問題を直しました。",
+      "reasonJapanese": "原文の「記録に入らないことがあった」という断続的な不具合が、常に記録されなかったようにも読める表現になっています。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios120Item7",
+      "severity": "medium",
+      "backTranslationJapanese": "設定から、提案・フィードバックのページを開けます。",
+      "reasonJapanese": "原文の「お問い合わせページ」が「提案・フィードバックページ」に限定され、問い合わせ全般から要望・意見の受付へ対象範囲が狭まっています。"
+    }
+  ]
+}

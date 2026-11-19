@@ -1,0 +1,224 @@
+{
+  "generatedAt": "2026-11-19T20:24:12.071Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "en",
+    "ko",
+    "zh-TW",
+    "zh-Hans"
+  ],
+  "summaryJapanese": "監査の結果、30件（high 9件、medium 21件）を指摘します。主な問題は、意味のずれ・欠落、アプリ内画面名や機能名の用語揺れ、韓国語の助詞欠落、台湾向け用語の不統一、中国本土向けUIへの台湾寄りの語彙、利用者を責めるように読める表現、英語の不自然に長い行です。ブランド名と「がんばった貯金」の指定訳は守られています。通常UIへの猫語、簡体字への繁体字、日本語の中黒、簡体字の通貨表記、行・列の問題はありません。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "ios231Item1",
+      "severity": "medium",
+      "replacement": "Fixes an issue where the message\n“The purchase couldn’t be completed in the store.”\nkept appearing without buying the Support plan.",
+      "reasonJapanese": "1行目が極端に長く、UI上で不自然に折り返されます。改行数を保ったまま、引用メッセージを独立させました。"
+    },
+    {
+      "locale": "en",
+      "key": "ios230Item1",
+      "severity": "medium",
+      "replacement": "The app will also be available in English,\nKorean, and Traditional Chinese. The store listing\nwill be available in each language too.",
+      "reasonJapanese": "1行目が極端に長く、残りの行との長さも不均衡です。原文の「でも」「も」も保ちながら行を均等にしました。"
+    },
+    {
+      "locale": "en",
+      "key": "v260Item1",
+      "severity": "high",
+      "replacement": "Siamese cat, Ragdoll cat, and Fluffy tuxedo cat\njoined the Cat shop (free)",
+      "reasonJapanese": "「はちわれねこ」を black-cap cat としており、猫の柄の意味がずれています。英語では tuxedo cat が自然です。"
+    },
+    {
+      "locale": "en",
+      "key": "ios251Item1",
+      "severity": "medium",
+      "replacement": "Adjusted the Home screen orientation\non iPad",
+      "reasonJapanese": "Home tab が「向きを扱う」という表現になり、画面そのものの向きを見直した原文から意味がずれています。"
+    },
+    {
+      "locale": "en",
+      "key": "android251Item1",
+      "severity": "high",
+      "replacement": "Adjusted the size of the\n\"Clocking & Time\" widget",
+      "reasonJapanese": "ウィジェット名の「打刻」が punch になり、語順も原文と逆です。機能名として自然で、出退勤記録を示せる表現に直しました。"
+    },
+    {
+      "locale": "en",
+      "key": "android251Item2",
+      "severity": "medium",
+      "replacement": "The Home screen no longer switches to landscape\nin pop-up or split-screen view",
+      "reasonJapanese": "同じアプリ内画面が Home tab と Home screen で揺れています。画面の向きについて述べるため Home screen が適切です。"
+    },
+    {
+      "locale": "en",
+      "key": "v251Item1",
+      "severity": "medium",
+      "replacement": "Fixed an issue where you couldn't edit the previous day's\nrecords if a break carried over into the next day",
+      "reasonJapanese": "「記録」はほかの項目で records と訳されていますが、ここだけ log になっています。用語を統一し、長すぎる1行目も調整しました。"
+    },
+    {
+      "locale": "en",
+      "key": "v240Item5",
+      "severity": "high",
+      "replacement": "\"Add a record\" now lets you enter\ntimes up to the current minute.",
+      "reasonJapanese": "accepts the current minute では「現在の1分だけを受け付ける」と読めます。原文は現在時刻まで入力できるという意味です。"
+    },
+    {
+      "locale": "en",
+      "key": "ios210Item8",
+      "severity": "medium",
+      "replacement": "Fixed issues with long category names\nand carry-over displays.",
+      "reasonJapanese": "現文では「長いカテゴリ名」そのものが不具合であるように読めます。原文は長いカテゴリ名や繰り越し表示に関する不具合です。"
+    },
+    {
+      "locale": "en",
+      "key": "android202Item2",
+      "severity": "medium",
+      "replacement": "Shortens notifications at the bottom of the screen\nto one consistent display time, and lets you\nclose them by swiping down too.",
+      "reasonJapanese": "1行目だけが極端に長く、UI上の折り返しが不自然です。原文の「スワイプしても」に当たる too も補いました。"
+    },
+    {
+      "locale": "en",
+      "key": "android110Item3",
+      "severity": "high",
+      "replacement": "You can now reach your weekly goal\nusing last week's Good Job Savings.",
+      "reasonJapanese": "what you worked hard on では、前週に貯めた時間を今週の目標に使う機能だと伝わりません。指定された機能名を中心に意味を明確にしました。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios230Item2",
+      "severity": "medium",
+      "replacement": "이전 날짜의 기록은 '월'에서 수정할 수 있다는\n안내를 홈에도 추가할게요.",
+      "reasonJapanese": "アプリ内の「ホーム」が、端末のホーム画面を表す 홈 화면 と同じ訳になっています。ほかのアプリ内ホームと同じ 홈 に統一しました。"
+    },
+    {
+      "locale": "ko",
+      "key": "android252Item1",
+      "severity": "medium",
+      "replacement": "위젯이나 알림에서 퇴근하기를 눌러도\n가끔 기록되지 않던 문제를 고쳤어요",
+      "reasonJapanese": "原文の「ことがあった」に当たる「ときどき」が欠け、常に記録されなかった不具合のように読めます。"
+    },
+    {
+      "locale": "ko",
+      "key": "android251Item1",
+      "severity": "high",
+      "replacement": "'출퇴근 기록과 시간' 위젯의\n크기를 조정했어요",
+      "reasonJapanese": "시간과 기록 では「打刻」が一般的な記録に変わり、出退勤を記録する機能名だと分かりません。語順も原文に合わせました。"
+    },
+    {
+      "locale": "ko",
+      "key": "ios110Item5",
+      "severity": "medium",
+      "replacement": "주 화면에서 언제든지\n지난주 기록을 이미지로 공유할 수 있어요.",
+      "reasonJapanese": "공유하기 の直後に助詞なしで 할 수 있어요 が続いており、韓国語として不自然です。自然な動詞構文に直しました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios231Item1",
+      "severity": "medium",
+      "replacement": "修正未訂閱贊助方案時，\n仍會重複顯示「無法在商店完成購買。」\n的問題。",
+      "reasonJapanese": "同じ機能の行為を「贊助」としている一方、プラン名だけ「支持方案」になっています。台湾向けの「贊助方案」に統一しました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios220Item1",
+      "severity": "medium",
+      "replacement": "新增「贊助方案」。\n每月贊助即可支持\nねこ勤怠的開發（每月 300 日圓）。",
+      "reasonJapanese": "同じ文中で「支持方案」と「贊助」が混在しています。台湾向けの用語を「贊助方案／贊助」に統一しました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "v250Item2",
+      "severity": "medium",
+      "replacement": "訂閱贊助方案期間，\n可使用 1 個專屬貓咪名額",
+      "reasonJapanese": "同じプランが「支持方案」と「贊助方案」に分かれないよう、ほかの贊助関連文言と統一しました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios230Item2",
+      "severity": "high",
+      "replacement": "首頁也會提示您，\n先前日期的紀錄可從「月」修改。",
+      "reasonJapanese": "アプリ内のホームを「主畫面」としており、台湾のiOSで端末のホーム画面を指す正式用語と衝突します。アプリ内画面は「首頁」に統一しました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios210Item1",
+      "severity": "high",
+      "replacement": "現在可以在首頁選擇並播放\n3 首工作 BGM 了。",
+      "reasonJapanese": "アプリ内のホームを「主畫面」としたため、端末のホーム画面でBGMを操作するように読めます。「首頁」に統一しました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios201Item8",
+      "severity": "high",
+      "replacement": "點按首頁的老闆，\n就可以一次更改本週的休假日。",
+      "reasonJapanese": "アプリ内のホームが端末のホーム画面を表す「主畫面」になっています。ほかのアプリ内画面と同じ「首頁」に統一しました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "android251Item1",
+      "severity": "high",
+      "replacement": "調整了「打卡與時間」\n小工具的大小",
+      "reasonJapanese": "固有のウィジェット名「打刻と時間」の語順が「時間與打卡」と逆になっています。画面上の名称として原文どおりにそろえる必要があります。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "v260Item3",
+      "severity": "medium",
+      "replacement": "點選下班未打卡的提醒通知，\n就能直接修改時間",
+      "reasonJapanese": "ほかの項目は「您」なのにここだけ「你」が使われ、利用者の押し忘れを直接指摘する責める口調になっています。人称を使わない中立表現にしました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios120Item5",
+      "severity": "medium",
+      "replacement": "您可以將已刪除的工作清單收合起來了。",
+      "reasonJapanese": "同じ「作業」をほかでは「工作」「工作類別」としているのに、ここだけ「作業」になっています。「工作」に統一しました。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios110Item6",
+      "severity": "medium",
+      "replacement": "即使在工作中，\n也能修改該次工作的「開始」時間。",
+      "reasonJapanese": "ほかの項目では「作業」を「工作」と訳していますが、ここだけ「該次作業」になっています。用語を統一しました。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "v260Item3",
+      "severity": "medium",
+      "replacement": "点击下班未打卡的提醒通知，\n就能直接修改时间",
+      "reasonJapanese": "ほかの項目は「您」なのにここだけ「你」が使われ、利用者の押し忘れを直接指摘する口調になっています。人称を使わない中立表現にしました。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "whenInProgress",
+      "severity": "medium",
+      "replacement": "已提交审核。发布后会在这里通知您",
+      "reasonJapanese": "「已送审」は中国本土のアプリ審査UIではやや不自然です。一般的な「已提交审核」に置き換えました。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "v250Item4",
+      "severity": "medium",
+      "replacement": "每日与每周目标可从 30 分钟起，\n以 30 分钟为单位设置",
+      "reasonJapanese": "UI操作の動詞として「设定」は台湾寄りです。中国本土で一般的な「设置」に直しました。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "android202Item3",
+      "severity": "medium",
+      "replacement": "添加新记录时，设置开始和结束时间后\n即可直接添加。\n开始或结束时间均可先输入。",
+      "reasonJapanese": "中国本土向けUIに台湾寄りの「设定」が混入しています。「设置」に置き換えました。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios120Item7",
+      "severity": "medium",
+      "replacement": "您可以从设置中打开“联系我们”页面。",
+      "reasonJapanese": "「お問い合わせ」を「建议与反馈」に限定しており、問い合わせ全般という原文の意味が狭くなっています。中国本土のUIで自然な「联系我们」に直しました。"
+    }
+  ]
+}
