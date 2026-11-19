@@ -13,7 +13,11 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-2J5J902MFE');
+  // アプリが添える失敗の情報（errorCode など）は、本人が「おくる」を押すまで外へ出さない。
+  // 何もしないと、ページを開いた時点の URL がそのまま計測へ送られる
+  var nkPageUrl = new URL(window.location.href);
+  ['errorCode', 'errorAt', 'errorDetail'].forEach(function(name){ nkPageUrl.searchParams.delete(name); });
+  gtag('config', 'G-2J5J902MFE', { page_location: nkPageUrl.href });
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,6 +68,7 @@
   }
   .nk-app-context-label{display:block;font-size:12px;color:var(--muted);}
   .nk-app-context-value{margin:2px 0 0;font-size:15px;}
+  .nk-app-context-failure{margin:4px 0 0;font-size:12px;overflow-wrap:anywhere;}
   .nk-app-context-note{display:block;margin-top:2px;font-size:11px;color:var(--muted);}
   .nk-send{
     display:inline-flex;align-items:center;justify-content:center;gap:10px;
@@ -147,6 +152,7 @@
       <p class="nk-app-context-value">
         <span id="nk-app-platform"></span><span id="nk-app-version-part"><span data-i18n="appVersionPrefix"> / アプリ </span><span id="nk-app-version"></span></span>
       </p>
+      <p id="nk-app-failure" class="nk-app-context-failure" hidden></p>
       <small class="nk-app-context-note" data-i18n="appContextNote">この情報もいっしょに送られます</small>
     </div>
 
@@ -205,7 +211,7 @@
 </footer>
 
 <script type="module">
-import { appendAppContext, parseAppContext } from '/contact/app-context.mjs'; // /en/contact/ などから読んでも同じファイルを指すよう絶対パス
+import { appendAppContext, describeFailure, parseAppContext } from '/contact/app-context.mjs'; // /en/contact/ などから読んでも同じファイルを指すよう絶対パス
 
 (function(){
   var form = document.getElementById('nk-form');
@@ -221,6 +227,12 @@ import { appendAppContext, parseAppContext } from '/contact/app-context.mjs'; //
       document.getElementById('nk-app-version').textContent = appContext.appVersion;
     } else {
       document.getElementById('nk-app-version-part').hidden = true;
+    }
+    // アプリで直近に出た想定外の失敗。送る内容と同じものを見せる
+    if (appContext.failure) {
+      var failureEl = document.getElementById('nk-app-failure');
+      failureEl.textContent = describeFailure(appContext.failure);
+      failureEl.hidden = false;
     }
     document.getElementById('nk-app-context').hidden = false;
   }
