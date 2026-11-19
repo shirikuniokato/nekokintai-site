@@ -1,3 +1,5 @@
+import { FALLBACK_LOCALE } from '../../assets/lp/locale.mjs'
+import { renderLocalizedPage } from './localized-pages.mjs'
 import { markPublishedRoadmapVersions } from './roadmap-release.mjs'
 import { formatManifest, mergePublishedUpdates } from './store-update-manifest.mjs'
 
@@ -46,4 +48,18 @@ export function createAtomicCommitInput({
       })),
     },
   }
+}
+
+/**
+ * 本番の /roadmap/ に出るはずの HTML。公開ファイルの書き出し（build-pages.mjs）は日本語のページにも
+ * hreflang などを足すので、リポジトリの roadmap/index.html と本番をそのまま比べると一致しない（2026-11-04〜）。
+ * 書き出しと同じ変換を通してから比べる
+ */
+export function publicRoadmapHtml(roadmapHtml) {
+  return renderLocalizedPage(roadmapHtml, {
+    htmlPath: 'roadmap/index.html',
+    locale: FALLBACK_LOCALE,
+    copy: {},
+    sitePagePaths: [],
+  })
 }

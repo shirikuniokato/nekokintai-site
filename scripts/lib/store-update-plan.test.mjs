@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { createAtomicCommitInput, createStoreUpdatePlan } from './store-update-plan.mjs'
+import { createAtomicCommitInput, createStoreUpdatePlan, publicRoadmapHtml } from './store-update-plan.mjs'
 
 const currentManifest = {
   schemaVersion: 1,
@@ -76,4 +76,23 @@ test('差分なしの空コミットは拒否する', () => {
       }),
     /コミットするファイルがありません/,
   )
+})
+
+test('本番の roadmap と比べる HTML は、書き出しと同じく日本語のページにも hreflang を足したものになる', async () => {
+  const { readFile } = await import('node:fs/promises')
+  const { writeLocalizedPages } = await import('./build-localized-pages.mjs')
+  const { mkdtemp, rm } = await import('node:fs/promises')
+  const { tmpdir } = await import('node:os')
+  const { join, resolve } = await import('node:path')
+  const projectRoot = resolve(import.meta.dirname, '../..')
+  const outputDirectory = await mkdtemp(join(tmpdir(), 'roadmap-build-'))
+  try {
+    await writeLocalizedPages({ projectRoot, outputDirectory })
+    const source = await readFile(resolve(projectRoot, 'roadmap/index.html'), 'utf8')
+    const built = await readFile(join(outputDirectory, 'roadmap/index.html'), 'utf8')
+    assert.notEqual(source, built)
+    assert.equal(publicRoadmapHtml(source), built)
+  } finally {
+    await rm(outputDirectory, { recursive: true, force: true })
+  }
 })

@@ -13,7 +13,7 @@ import {
   parseAppleAppStorePage,
   parseGooglePlayPage,
 } from './lib/store-update-manifest.mjs'
-import { createAtomicCommitInput, createStoreUpdatePlan } from './lib/store-update-plan.mjs'
+import { createAtomicCommitInput, createStoreUpdatePlan, publicRoadmapHtml } from './lib/store-update-plan.mjs'
 
 const APPLE_APP_STORE_URL = 'https://apps.apple.com/jp/app/id6801066427'
 const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.ccya.nekokintai&hl=ja&gl=JP'
@@ -108,7 +108,8 @@ async function commitRepositoryFiles(token, expectedHeadOid, files) {
   throw new Error(`GitHubの同期コミットを作成できませんでした${detail ? `: ${detail}` : ''}`)
 }
 
-async function waitForPublicFiles(expectedManifest, expectedRoadmap) {
+async function waitForPublicFiles(expectedManifest, roadmapSource) {
+  const expectedRoadmap = publicRoadmapHtml(roadmapSource)
   for (let attempt = 0; attempt < PUBLICATION_WAIT_ATTEMPTS; attempt += 1) {
     if (attempt > 0) await new Promise((resolve) => setTimeout(resolve, 5_000))
     const [manifestResponse, roadmapResponse] = await Promise.all([
