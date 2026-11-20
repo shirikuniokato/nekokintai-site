@@ -1,0 +1,231 @@
+{
+  "generatedAt": "2026-11-20T08:29:56.953Z",
+  "reviewer": "claude-fable",
+  "model": "claude-fable-5",
+  "locales": [
+    "en",
+    "ko",
+    "zh-TW",
+    "zh-Hans"
+  ],
+  "summaryJapanese": "4言語とも重大な誤訳はなく、critical/high はありません。指摘は medium の31件です（en 2、ko 4、zh-TW 10、zh-Hans 15）。アプリ内の実際のUI文言とは照合できていないため、カギ括弧内のラベルは現行訳のまま残しています。\n\n- en: ほぼ問題なし。セクション見出しの大文字表記だけ揺れています（Title Case が2つ、文頭のみ大文字が3つ）。\n- ko: 助詞は断片キーの連結や「ねこ勤怠」の後ろも含めて問題なし。「合計」の訳が 총합／합계 で揺れているのと、howTo14Note の「곱셈이 맞지 않은 채로 두어도」が直訳で分かりにくい点を直しました。\n- zh-TW: 大陸寄りのUI語の混入はなし。總計／合計 の揺れ、howTo9Answer の接続語の欠け、「乘法算不攏」の不自然さ、「報告」の欠落、howTo10Question の意味のずれ、一人称の途中で「作者自己」に変わる箇所、日本語式の「……。」を直しました。\n- zh-Hans: 繁体字の混入、日本語の中黒、通貨表記（日元）は問題なし。リンク・メールアドレスの後ろの断片に余分な半角スペースがある3件、台湾寄りの語法（有想过・尝试看看）、howTo20Answer の崩れた構文、howTo19Note の意味のずれ、总计／合计 と 日文／日语 の揺れ、原文の最長行（全角約22字）を大きく超える2行を直しました。\n\n「行」「列」の使用、猫語の混入、責める表現は全言語で見当たりません。指定範囲外なので issues には入れていませんが、韓国語は 합니다体と 해요体が同じ回答内で混在しており、各言語で質問文末の句点の有無も不統一です。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "howToLabel",
+      "severity": "medium",
+      "replacement": "What you can do",
+      "reasonJapanese": "セクション見出しの表記揺れ。「Looking ahead」「Things that might be difficult」「About the Support plan」は文頭のみ大文字なのに、ここだけ Title Case になっている。"
+    },
+    {
+      "locale": "en",
+      "key": "investigatingLabel",
+      "severity": "medium",
+      "replacement": "Currently investigating",
+      "reasonJapanese": "セクション見出しの表記揺れ。ほかの見出しは文頭のみ大文字なので、それにそろえる。"
+    },
+    {
+      "locale": "ko",
+      "key": "howTo10Answer",
+      "severity": "medium",
+      "replacement": "'월' 화면에서 날짜를 누르면,\n그날의 합계와 작업별\n시작과 끝 시각을 볼 수 있어요.",
+      "reasonJapanese": "用語揺れ。「合計」が howTo15Note・howTo18 では「합계」、ここでは「총합」になっている。「합계」にそろえる。"
+    },
+    {
+      "locale": "ko",
+      "key": "howTo14Question",
+      "severity": "medium",
+      "replacement": "주 목표와 하루 목표는 합계를 맞춰야 하나요?",
+      "reasonJapanese": "用語揺れ。「合計」の訳をほかの項目と同じ「합계」にそろえる。"
+    },
+    {
+      "locale": "ko",
+      "key": "howTo14Answer",
+      "severity": "medium",
+      "replacement": "맞추지 않아도 괜찮아요.\n주 목표는 일주일 전체의 합계이고,\n하루 목표는 '오늘은 이 정도'라는 기준이라서\n각각 다른 것으로 보고 있어요.",
+      "reasonJapanese": "用語揺れ。「合計」の訳をほかの項目と同じ「합계」にそろえる。"
+    },
+    {
+      "locale": "ko",
+      "key": "howTo14Note",
+      "severity": "medium",
+      "replacement": "목표는 30분부터 30분 단위로 정할 수 있어요(2.5.0부터). 평일과 휴일의 일하는 시간이 달라서 하루 목표를 곱한 값이 주 목표와 맞지 않아도 문제없어요.",
+      "reasonJapanese": "「곱셈이 맞지 않은 채로 두어도」は直訳で、何のかけ算なのか伝わらない。「달라도, …두어도」と -어도 が重なるのも不自然。1日の目標を掛けた値が週の目標と合わなくてもよい、という意味が分かる形にした。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "investigating1Answer",
+      "severity": "medium",
+      "replacement": "2.0.2 的時候收到過一次回報，\n之後就沒有再收到了。\n重新繪製的部分後來已經修好，\n目前的版本應該不會再發生。",
+      "reasonJapanese": "意味の欠落。原文の「報告」が訳出されておらず、「收到過一次」に目的語がなく何を受け取ったのか分からない。「回報」を補った。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo9Answer",
+      "severity": "medium",
+      "replacement": "如果沒有任何工作類別，\n就無法打卡上班。\n請到設定的「工作類別」，\n用「新增工作項目」建立一個，\n就可以按了。",
+      "reasonJapanese": "「…中「新增工作項目」建立一個」は2つのラベルをつなぐ語（用／透過）が抜けていて、文として成立していない。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo10Question",
+      "severity": "medium",
+      "replacement": "我想看過去某天是「從幾點做到幾點」",
+      "reasonJapanese": "意味のずれ。原文は「何時から何時までやったか」を見たいという質問だが、「做了什麼」だと作業の内容を見たい意味になる。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo14Note",
+      "severity": "medium",
+      "replacement": "目標可從 30 分鐘起，以 30 分鐘為單位設定（2.5.0 起）。即使平日和假日的工作時間不同，每日目標乘以天數和週目標對不上也沒有問題。",
+      "reasonJapanese": "「乘法算不攏」は台湾華語として不自然で、何のかけ算かも伝わらない。1日の目標×日数が週の目標と合わなくてもよい、と分かる表現にした。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo15Note",
+      "severity": "medium",
+      "replacement": "記錄過時間的工作會保留下來，以免影響總計。刪除時可以選擇是否將時間保留在總計中。沒有記錄時間的工作，可以從「已刪除的工作」完全刪除（2.6.1 起）。",
+      "reasonJapanese": "用語揺れ。同じ注記の中で「總計」と「合計」が混在している。howTo10・howTo14 で使っている「總計」にそろえる。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo18Question",
+      "severity": "medium",
+      "replacement": "想看目前為止工作時間的總計",
+      "reasonJapanese": "用語揺れ。howTo10・howTo14 では「總計」、ここでは「合計」になっている。「總計」にそろえる。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo18Answer",
+      "severity": "medium",
+      "replacement": "在「紀錄」畫面最上方的\n「目前為止的紀錄」，\n可以看到全部期間的總計和記錄的天數。\n點一下，就會展開各項工作的明細。",
+      "reasonJapanese": "用語揺れ。「合計」をほかの項目と同じ「總計」にそろえる。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming5Answer",
+      "severity": "medium",
+      "replacement": "我收到了許多這方面的建議。\n我自己也很想試試看。\n不過目前會把修復錯誤\n擺在第一位。",
+      "reasonJapanese": "人称の揺れ。直前まで「我」で語っているのに「作者自己」と三人称になり、別人の話に読める。unlikely9Answer では同じ「作者」を「我自己」と訳している。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "unlikely9Answer",
+      "severity": "medium",
+      "replacement": "我還在煩惱。\n因為我自己不太常用，\n等我研究一下再決定……",
+      "reasonJapanese": "日本語の約物の持ち込み。中国語では刪節號「……」の後ろに句点「。」を重ねない。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "upcoming12Answer",
+      "severity": "medium",
+      "replacement": "小工具方面\n還有一些問題。\n像是在應用程式裡下班後時間仍繼續增加、\nAndroid 上按休息、下班沒反應等，\n我會處理這些\n小工具的問題。",
+      "reasonJapanese": "「在應用程式下班後」は方位詞（裡）が抜けていて不自然。「アプリで退勤しても」の意味が取りにくい。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "investigatingIntroAfterLink",
+      "severity": "medium",
+      "replacement": "中。",
+      "reasonJapanese": "先頭に日本語原文由来の半角スペースが残っている。連結すると「整理在更新计划 中。」となり、リンクの後ろだけ空く。繁体字版と同じくスペースなしにする。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcomingOutroAfterLink",
+      "severity": "medium",
+      "replacement": "中。",
+      "reasonJapanese": "先頭に半角スペースが残っている。連結すると「…都整理在更新计划 中。」となり、リンクの後ろだけ空く。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "investigating1NoteAfterEmail",
+      "severity": "medium",
+      "replacement": "，这会对我有很大的帮助。",
+      "reasonJapanese": "全角読点「，」の前に半角スペースがあり、連結すると「support@c-cya.com ，这会…」になる。簡体字の組版として不自然。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "investigating1Answer",
+      "severity": "medium",
+      "replacement": "在 2.0.2 的时候收到过一次反馈，\n之后就没有再收到了。\n重新绘制的部分后来已经修好，\n目前的版本应该不会再发生。",
+      "reasonJapanese": "意味の欠落。原文の「報告」が訳出されておらず、「收到过一次」に目的語がない。「反馈」を補った。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo10Question",
+      "severity": "medium",
+      "replacement": "想看过去某天是“从几点做到几点”",
+      "reasonJapanese": "意味のずれ。原文は「何時から何時までやったか」を見たいという質問だが、「做了什么」だと作業の内容を見たい意味になる。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo15Note",
+      "severity": "medium",
+      "replacement": "记录过时间的工作会保留下来，以免影响总计。删除时可以选择是否把时间保留在总计中。没有记录时间的工作，可以从“已删除的工作”中彻底删除（从2.6.1起）。",
+      "reasonJapanese": "用語揺れ。同じ注記の中で「总计」と「合计」が混在している。ほかの項目（howTo10・howTo14・howTo18）は「总计」なのでそろえる。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo24Answer",
+      "severity": "medium",
+      "replacement": "可以在“专属猫咪”里创建。\n从设置最上方的“专属猫咪”，\n或猫咪小铺最上方的卡片\n打开后，在“创建猫咪”中\n可以选择身体、花纹、轮廓、\n眼睛、项圈、肉球的颜色，\n三花、燕尾服等花纹，以及短毛／长毛。\n名额是买断制，一个名额一只猫，\n同一个名额里的猫咪\n可以不限次数重新创建。",
+      "reasonJapanese": "5行目が全角約25字あり、原文の最長行（約22字）を超えて画面で折り返しやすい。行数は10行のまま、繁体字版と同じ位置で切り直した。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming3Answer",
+      "severity": "medium",
+      "replacement": "2.1.0新增了6只，2.6.0又新增了3只，\n免费猫咪增加到了18只。\n加上支持计划限定的2只彩虹猫咪，\n一共是20只。\n从2.5.0起，可以在“专属猫咪”中\n创建自己喜欢颜色的猫咪\n（买断制名额，每个名额1只，最多10个）。\n今后也想继续一点点增加。",
+      "reasonJapanese": "7行目の括弧書きが全角約28字あり、UIの1行として長すぎる。「名额」が3回出て冗長でもある。howTo24Answer の「买断制」に合わせて短くした。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming5Answer",
+      "severity": "medium",
+      "replacement": "我收到了许多这方面的建议。\n我自己也很想试试看。\n不过目前会把修复问题\n放在第一位。",
+      "reasonJapanese": "直前まで「我」なのに「作者自己」と三人称になっている。「尝试看看」「摆在第一位」は台湾寄りの言い回しなので、中国本土で自然な「试试看」「放在第一位」にした。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely3Answer",
+      "severity": "medium",
+      "replacement": "目前无法更改。\n因为也有人把它用在学习或兴趣上，\n所以我确实想让大家可以自己选择用词。",
+      "reasonJapanese": "「有想过」は台湾華語の「有＋動詞」の語法で、中国本土では不自然。「選べるようにしたい気持ちはあります」が「考えたことがある」に弱まってもいる。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely9Answer",
+      "severity": "medium",
+      "replacement": "我还在犹豫。\n因为我自己不太常用，\n等我研究一下再决定……",
+      "reasonJapanese": "日本語の約物の持ち込み。中国語では省略号「……」の後ろに句点「。」を重ねない。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "unlikely12Question",
+      "severity": "medium",
+      "replacement": "希望支持日语以外的语言",
+      "reasonJapanese": "用語揺れ。回答は「英语」「韩语」なのに、質問だけ「日文」になっている。「日语」にそろえる。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo19Note",
+      "severity": "medium",
+      "replacement": "小组件的名称是“时间与打卡”和“猫咪与这一周”。有时不会列在应用名称下。",
+      "reasonJapanese": "意味のずれ。原文は「アプリ名では並ばないことがある」だが、「按应用名称搜索不到」は検索しても見つからない意味になる。「ねこ勤怠」をさがすよう案内している howTo16Answer とも食い違う。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo20Answer",
+      "severity": "medium",
+      "replacement": "如果设备的电池设置把应用\n设为“受限制”，\n就无法从小组件打卡，\n时间也会一直停住。\n请打开 设置 → 应用 → ねこ勤怠 → 电池，\n选择“受限制”\n以外的选项。",
+      "reasonJapanese": "「请到 …电池\\n打开，选择…」は日本語の語順を引きずり、文が崩れている。「请打开 …，选择…」の形に直し、「项目」も設定画面の語として自然な「选项」にした。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "upcoming12Answer",
+      "severity": "medium",
+      "replacement": "小组件方面\n还有一些问题。\n比如在应用里下班后时间仍继续增加、\nAndroid 上按休息、下班没反应等，\n我会处理这些\n小组件的问题。",
+      "reasonJapanese": "「在应用下班后」は方位詞（里）が抜けていて不自然。「アプリで退勤しても」の意味が取りにくい。"
+    }
+  ]
+}

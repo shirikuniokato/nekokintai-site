@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-11-20T08:25:52.699Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "en",
+    "ko",
+    "zh-TW",
+    "zh-Hans"
+  ],
+  "summaryJapanese": "9件の修正候補があります。重大な意味の欠落、責める表現、通常UIへの猫語混入、ブランド名の誤訳、韓国語の助詞問題、繁体字・簡体字の混入、通貨表記、行・列の用法には問題を確認できませんでした。主な問題は、台湾向け繁体字での中国大陸寄りの「點按」、簡体字中国語の不正確な設定名、英語UIラベルの長さです。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "upcoming9Note",
+      "severity": "medium",
+      "replacement": "Currently, \"Time until break prompt\" and \"Break length\" start at 30 minutes and can be set in 30-minute increments.",
+      "reasonJapanese": "「Time before a break invitation」はUIラベルとして不自然に長く、英語としても説明調です。「Time until break prompt」なら意味を保ったまま短くできます。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howToOpen",
+      "severity": "medium",
+      "replacement": "點一下想了解的問題，就會展開解答。",
+      "reasonJapanese": "「點按」は中国大陸のUIで使われる「点按」を繁体字化した印象が強く、台湾向けなら「點一下」が自然です。「您好奇的問題」も台湾華語として不自然です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo4Answer",
+      "severity": "medium",
+      "replacement": "如果正在工作途中，\n只要在「目前正在做的事」\n點一下下一個工作項目即可。\n從那個時間起，就會變成新工作的紀錄。\n下班後或休息中，\n也可以先選好下一個工作項目。",
+      "reasonJapanese": "操作表現の「點按」は中国大陸寄りです。台湾向けの「點一下」にそろえる必要があります。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo10Answer",
+      "severity": "medium",
+      "replacement": "在「月」畫面點一下日期，\n就能看到當天的總計，\n以及各項工作的開始與結束時間。",
+      "reasonJapanese": "「點按日期」は中国大陸寄りのUI表現です。台湾では「點一下日期」が自然です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "howTo12Answer",
+      "severity": "medium",
+      "replacement": "可以的。\n在週畫面點一下該日期，\n就會出現「設為休假」按鈕。\n點選首頁的社長，\n也能一次更改本週的休假。\n之後也可以取消。",
+      "reasonJapanese": "「點按」は台湾向けUIでは不自然で、中国大陸の「点按」を繁体字化した表現に見えます。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo5Answer",
+      "severity": "high",
+      "replacement": "直接按下班的话，\n记录会按日期分开记录。\n如果想把跨夜工作的时长算在同一天，\n请在设置的“每周与每天的分界”中，\n将“一天的切换时间”\n设为“早上4点”等时间。\n事后添加记录时，\n如果输入开始22:00、结束2:00，\n结束时间就会记录为第二天的时间。",
+      "reasonJapanese": "「每周与每天的起始设置」は原文の「週と1日のくぎり」と意味が異なり、中国本土向けUI名としても不自然です。設定画面を探せなくなるため重要度が高い問題です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo5Note",
+      "severity": "high",
+      "replacement": "设置 → 每周与每天的分界 → 一天的切换时间。可以在0点到中午12点之间更改。",
+      "reasonJapanese": "ナビゲーション中の「每周与每天的起始设置」が誤訳です。「起始设置」ではなく、週と日の境界を示す「分界」が適切です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo13Note",
+      "severity": "high",
+      "replacement": "设置 → 每周与每天的分界 → 一天的切换时间",
+      "reasonJapanese": "設定項目名の「每周与每天的起始设置」は意味がずれており、実際の項目を見つけにくくします。「每周与每天的分界」に統一する必要があります。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "howTo24Answer",
+      "severity": "medium",
+      "replacement": "可以在“专属猫咪”里创建。\n从设置最上方的“专属猫咪”，\n或猫咪小铺最上方的卡片\n打开后，在“创建猫咪”中\n可以选择身体、花纹、轮廓、眼睛、项圈、肉球的颜色，\n三花、八字脸等花纹，\n以及短毛／长毛。\n名额是买断制，一个名额一只猫，\n同一个名额里的猫咪\n可以不限次数重新创建。",
+      "reasonJapanese": "「燕尾服」を単独で猫の柄名として使うのは中国本土では不自然で、「ハチワレ」の意味も伝わりにくくなっています。「八字脸」が地域的に自然です。"
+    }
+  ]
+}
