@@ -1,0 +1,161 @@
+{
+  "generatedAt": "2026-11-21T12:02:39.674Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "en",
+    "ko",
+    "zh-TW",
+    "zh-Hans"
+  ],
+  "summaryJapanese": "重大度 critical / high の問題はありません。意味の精度、責めない表現、用語統一、韓国語の接続、中国本土・台湾それぞれのUI語彙、通貨表記、改行位置を含む表示上の長さについて、medium 21件を指摘します。記載のない翻訳は、この監査条件では置換不要です。",
+  "issues": [
+    {
+      "locale": "en",
+      "key": "ios230Item1",
+      "severity": "medium",
+      "replacement": "English, Korean, and Traditional Chinese\nwill be available in the app and\nin each language's store listing.",
+      "reasonJapanese": "1行目がUI文として不自然に長いためです。意味と改行数を保ちながら、3行の長さを均しました。"
+    },
+    {
+      "locale": "en",
+      "key": "ios220Item1",
+      "severity": "medium",
+      "replacement": "Introducing the \"Support plan\".\nYour monthly support will help fund\nthe development of ねこ勤怠 (JPY 300/month).",
+      "reasonJapanese": "「¥300」は通貨が曖昧です。英語では日本円だと明示できる「JPY 300」が適切です。"
+    },
+    {
+      "locale": "en",
+      "key": "v260Item1",
+      "severity": "medium",
+      "replacement": "Siamese cat, Ragdoll cat, and Fluffy tuxedo cat\njoined the Cat shop (free)",
+      "reasonJapanese": "「black-cap cat」は「はちわれねこ」を正しく表す一般的な英語名ではありません。「tuxedo cat」のほうが柄を自然に伝えられます。"
+    },
+    {
+      "locale": "en",
+      "key": "ios251Item1",
+      "severity": "medium",
+      "replacement": "Adjusted how the Home screen handles\norientation on iPad",
+      "reasonJapanese": "同じ「ホーム」を他の箇所では「Home screen」としており、「Home tab」だけ用語が揺れています。"
+    },
+    {
+      "locale": "en",
+      "key": "android251Item1",
+      "severity": "medium",
+      "replacement": "Adjusted the size of the\n\"Clocking & Time\" widget",
+      "reasonJapanese": "「punch」はこの文脈のUI名として不自然で、他の箇所の「clock in/out」とも揺れています。"
+    },
+    {
+      "locale": "en",
+      "key": "android251Item2",
+      "severity": "medium",
+      "replacement": "The Home screen no longer switches to landscape\nin pop-up or split-screen view",
+      "reasonJapanese": "アプリ内の同じ画面を「Home screen」と「Home tab」で呼び分けており、用語が揺れています。"
+    },
+    {
+      "locale": "en",
+      "key": "widgets240Item1",
+      "severity": "medium",
+      "replacement": "You can add a widget to your Home Screen.\nClock in, take a break, or clock out,\nwhile your cat walks alongside today's time.",
+      "reasonJapanese": "現訳の冒頭は名詞句だけで、「ウィジェットを置ける」という意味が欠落しています。"
+    },
+    {
+      "locale": "en",
+      "key": "v240Item5",
+      "severity": "medium",
+      "replacement": "\"Add a record\" now lets you enter time\nup to the present.",
+      "reasonJapanese": "「accepts the current minute」は英語UIとして不自然で、「現在時刻まで入力できる」という意味も伝わりにくくなっています。"
+    },
+    {
+      "locale": "en",
+      "key": "ios210Item8",
+      "severity": "medium",
+      "replacement": "Fixed display issues with long category names\nand carry-over information.",
+      "reasonJapanese": "現訳は「長いカテゴリ名そのものが不具合」と読めます。問題なのは長い名前や繰り越し情報の表示です。"
+    },
+    {
+      "locale": "en",
+      "key": "ios110Item2",
+      "severity": "medium",
+      "replacement": "Fragmented records created by accidental taps\nwill be combined and counted as one.",
+      "reasonJapanese": "「misclicks」は利用者の操作ミスを責める響きがあり、タッチUIの表現としても不適切です。"
+    },
+    {
+      "locale": "en",
+      "key": "android110Item3",
+      "severity": "medium",
+      "replacement": "You can now reach your weekly goal\nusing last week's saved time (Good Job Savings).",
+      "reasonJapanese": "「what you worked hard on」では、前週の時間を貯金として使う機能だと伝わりません。指定用語「Good Job Savings」は維持しています。"
+    },
+    {
+      "locale": "ko",
+      "key": "android251Item1",
+      "severity": "medium",
+      "replacement": "'출퇴근과 시간' 위젯의\n크기를 조정했어요",
+      "reasonJapanese": "「시간과 기록」では「打刻」が一般的な記録全般に変わり、出退勤操作という意味が欠落しています。"
+    },
+    {
+      "locale": "ko",
+      "key": "v250Item5",
+      "severity": "medium",
+      "replacement": "일한 시간 표시를\n'여유롭게(6.9h)' 또는 '정확하게(6시간 54분)'로\n고를 수 있어요",
+      "reasonJapanese": "現訳の「여유롭게…와 정확하게… 중에서」は、副詞形の選択肢と助詞の接続が不自然です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios230Item2",
+      "severity": "medium",
+      "replacement": "首頁也會加入說明，\n前一天的紀錄可從「月」修改。",
+      "reasonJapanese": "アプリ内の「ホーム」を端末のホーム画面を指す「主畫面」としており、他の「首頁」と用語が揺れています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios210Item1",
+      "severity": "medium",
+      "replacement": "現在可以在首頁選擇並播放\n3 首工作 BGM 了。",
+      "reasonJapanese": "ここでの「ホーム」はアプリ内の首頁です。「主畫面」は端末のホーム画面にも使われるため、UI上の区別が崩れています。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios201Item8",
+      "severity": "medium",
+      "replacement": "點按首頁的老闆，\n就可以一次更改本週的休假日。",
+      "reasonJapanese": "アプリ内画面の名称が「主畫面」と「首頁」で揺れています。台湾向けでは端末の主畫面と区別して「首頁」に統一するのが明確です。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios120Item5",
+      "severity": "medium",
+      "replacement": "您可以將已刪除的工作清單收合起來了。",
+      "reasonJapanese": "作業カテゴリを他の箇所では「工作」としているため、ここだけ「作業」にすると同じ機能の用語が揺れます。"
+    },
+    {
+      "locale": "zh-TW",
+      "key": "ios110Item6",
+      "severity": "medium",
+      "replacement": "即使在工作中，\n也能修改該次工作的「開始」時間。",
+      "reasonJapanese": "同じ勤務・作業概念に「工作」と「作業」が混在しています。周辺で使われている「工作」に統一します。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios210Item4",
+      "severity": "medium",
+      "replacement": "新增了许多符合不同场景和工作时长的\n猫咪台词。",
+      "reasonJapanese": "「情境」は台湾寄りの語彙です。中国本土向けでは「场景」が自然で、「工作时间」もここでは所要時間を示す「工作时长」のほうが明確です。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "v240Item3",
+      "severity": "medium",
+      "replacement": "“历史记录”中将新增\n所有记录的总时长",
+      "reasonJapanese": "「至今的记录」は中国本土のUIラベルとして不自然です。また、時間の合計なので「合计」だけでなく「总时长」と明示する必要があります。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios110Item5",
+      "severity": "medium",
+      "replacement": "您可以随时在“周”页面使用\n“将上周记录分享为图片”功能。",
+      "reasonJapanese": "「以图片分享上周」は台湾寄りの構文で、中国本土のUIとして不自然です。「将…分享为图片」が自然です。"
+    }
+  ]
+}

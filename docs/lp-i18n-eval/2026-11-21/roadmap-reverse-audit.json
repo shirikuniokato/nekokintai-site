@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-11-21T12:07:27.708Z",
+  "reviewer": "gpt",
+  "model": "gpt-5.6-sol",
+  "locales": [
+    "en",
+    "ko",
+    "zh-TW",
+    "zh-Hans"
+  ],
+  "summaryJapanese": "全体として意味はほぼ等価です。発生頻度の一般化と、問い合わせページの用途を狭めた訳の2件を検出しました。",
+  "issues": [
+    {
+      "locale": "ko",
+      "key": "android252Item1",
+      "severity": "medium",
+      "backTranslationJapanese": "ウィジェットや通知で退勤を押しても、記録されなかった問題を直しました。",
+      "reasonJapanese": "原文の「記録に入らないことがあった」という断続的な発生を示す意味が抜け、常に記録されなかった問題のように読めます。"
+    },
+    {
+      "locale": "zh-Hans",
+      "key": "ios120Item7",
+      "severity": "medium",
+      "backTranslationJapanese": "設定から提案・フィードバックページを開けます。",
+      "reasonJapanese": "原文の「お問い合わせページ」は質問やサポート連絡も含む広い意味ですが、「建议与反馈」は提案・フィードバックに用途を狭めています。"
+    }
+  ]
+}
