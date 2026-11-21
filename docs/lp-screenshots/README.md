@@ -85,3 +85,14 @@ fixture データ・既定順・prod-internal の APK `608e3e5`）をそのま�
 `screen-home.png` は LP 用に別に選んだ絵（8月29日・6時間7分・休憩中）で、ストア 1 枚目（2 時間・勤務中）とは違うので、作り直したものは使わず元のまま。
 rebuild スクリプトはホームも上書きするので、次に使うときはホームを戻すこと。
 本番への反映は両ストアで 2.5.0 が公開されてから（QA と同じ `qa/2.5.0` ブランチ）。
+
+## 2026-11-21: 2.6.1 の週・月・ねこ屋さんを差し替え
+
+2.6.1 で週・月・ねこ屋さんの見た目が変わったので（#360 #361、ねこ屋さんの家のマークは「じぶんだけのねこ」の段になった）、この 3 枚を 4 言語とも作り直した。
+素材は **ストア画像の撮影素材**（`~/git/nekokintai` の `docs/store/screenshots/2.6.1/<locale>/sources/final-2・3・4.png`。提出断面 `67b243d` の prod-internal、fixture の日付 2026-12-26）をそのまま使い、LP 用デモデータで撮り直していない。
+
+- en / ko / zh-TW: `sources/<locale>/screen-{week,month,shop}.png` に置いて `npm run render:lp-localized-screenshots -- en ko zh-TW --screens=week,month,shop`
+- ja: `rebuild-lp-screenshots.sh` と同じ切り出し（952x1626+171+551 → 684x1164 → 角丸 → `screen-month.png` の外枠の +12+20）を、ストアの `ja/final-2・3・4.png` に当てた。スクリプトはホームも上書きするので使っていない
+- ホームは 2.6.1 で見た目が変わっていないので、4 言語とも元のまま（日本語は LP 用に選んだ 8月29日の絵）
+- 週は「6h 達成した日 2日・貯金 2h・26h / 25h・たっせい」。前の LP（4日・3.9h）とは数字が違うが、実アプリの表示そのもの
+- zh-Hans は従来どおり zh-TW の画像を出す

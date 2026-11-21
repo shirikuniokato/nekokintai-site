@@ -14,19 +14,19 @@
         "renderId": "c3a10556-4ca0-4ad9-af04-a18fc6e78ded"
       },
       "week": {
-        "screenAssetId": "a5ecc87d-1180-4554-bc57-8a0372ed3fed",
-        "renderGroup": "f16b471f-182c-44b1-b79b-1b71885e2f5e",
-        "renderId": "84133f4b-d26d-49f1-a4d3-93f7789530ca"
+        "screenAssetId": "8bc9a2c8-4614-497d-8c27-eab4a0513d62",
+        "renderGroup": "17e33b07-419e-4e61-9b6d-79169ae83437",
+        "renderId": "bfd551db-5c23-4cac-afa9-2d59200b48ae"
       },
       "month": {
-        "screenAssetId": "e7a0847f-c84f-4a3c-b68d-d92d7b8c309a",
-        "renderGroup": "e9673ad0-1be9-4cb3-8ee9-5c87968117de",
-        "renderId": "0b1b799c-46ca-4010-9524-f39c3cf5061b"
+        "screenAssetId": "234c5383-fb9e-406d-b5df-6c3dfe717fb4",
+        "renderGroup": "7e48a907-3cc4-4bbd-a79b-6adc13e90f60",
+        "renderId": "2c5efccb-6dd1-4824-9ca3-15cebed47a05"
       },
       "shop": {
-        "screenAssetId": "4e9eb75e-e736-40b8-9047-0eefaf85f7a0",
-        "renderGroup": "3fcd96d2-16e3-4838-b6be-f04d713f85ed",
-        "renderId": "a9a37135-bb1d-4e3f-895f-8e75bff1f4de"
+        "screenAssetId": "339b3e87-7306-41f8-b193-9dc77e49a1b3",
+        "renderGroup": "929846e3-571e-4dca-a2e4-9b58ca4b5529",
+        "renderId": "9644002f-f8a8-4708-b7d1-dce56c9e130c"
       }
     },
     "ko": {
@@ -36,19 +36,19 @@
         "renderId": "b52e6d46-b30f-4c25-8607-d9c010a51cdc"
       },
       "week": {
-        "screenAssetId": "087d4345-68d5-4a25-a7a9-1d96b8f88f21",
-        "renderGroup": "43d78195-d065-471f-b234-4a8f121a943e",
-        "renderId": "8a2c8cf8-902f-473c-b757-758b4fe49d6c"
+        "screenAssetId": "340bbb45-e14a-4769-95b5-7b987b05e22a",
+        "renderGroup": "52b37f22-05e3-44cc-9097-61e42ded809e",
+        "renderId": "e49d9255-3426-486c-b54e-02c89475c73b"
       },
       "month": {
-        "screenAssetId": "369b566f-4405-4100-bec1-2614964f67a1",
-        "renderGroup": "f264d714-a735-4f7e-9ff6-321b60e46a23",
-        "renderId": "689ff8f8-8907-4539-83fb-2fe83ba6515a"
+        "screenAssetId": "0279c0a8-0721-4e51-80e0-f56cd9de7435",
+        "renderGroup": "12a7354c-6a35-4d67-a5c5-e9e6ef4845fa",
+        "renderId": "ac612928-e359-493a-8533-b1354e0a19ba"
       },
       "shop": {
-        "screenAssetId": "a4590edd-885f-44dd-9ae7-82c8363e48a5",
-        "renderGroup": "a51af144-0162-49fc-9d65-7da503131e95",
-        "renderId": "025d83d2-4789-4013-bff1-22eb44039025"
+        "screenAssetId": "43bf185c-1a6e-4586-9ac3-250ebba0c06d",
+        "renderGroup": "70107c61-813c-4ee9-b0b7-3a9310350562",
+        "renderId": "44f1ed95-4ad2-4210-89c6-96f91876a2fe"
       }
     },
     "zh-TW": {
@@ -58,19 +58,19 @@
         "renderId": "3785df44-4fac-4b43-829f-ee4513baabfd"
       },
       "week": {
-        "screenAssetId": "2dab3d8d-4c26-4015-8c72-46f2e123f3d1",
-        "renderGroup": "1d27c9d7-e84f-45f1-b8c1-36526ee2b08b",
-        "renderId": "5db9946e-b343-493e-b967-db0cdb6316ba"
+        "screenAssetId": "2471c4e6-3e02-4cdf-97c4-d7844448857e",
+        "renderGroup": "dedd6e26-003e-40ed-93cb-71cb3d473bd3",
+        "renderId": "43f62c9d-aa4e-400a-883c-1438d8b60d3e"
       },
       "month": {
-        "screenAssetId": "14bb3510-0117-496d-8b69-a11ad185cb49",
-        "renderGroup": "493b5ac4-ce21-4e0f-85fe-c5307495285d",
-        "renderId": "9aa99f9a-c15a-4c9f-95b9-c65fdefcc344"
+        "screenAssetId": "2d215c86-3306-486e-9fae-d2be9110b859",
+        "renderGroup": "9fce2b10-d4b0-47f4-89ed-3f29df07c946",
+        "renderId": "fde44373-e6ac-4b1f-9b86-09cd2d522181"
       },
       "shop": {
-        "screenAssetId": "b93e2f02-43bd-442c-90ed-aeedf75cde98",
-        "renderGroup": "a1a5a6c5-4ee1-4035-8af9-22c033cd2943",
-        "renderId": "aa281f4c-437b-489b-b0d4-881affd490d6"
+        "screenAssetId": "1f56d470-ee29-4717-8074-5358c987cb39",
+        "renderGroup": "5d54e508-4695-4df6-b946-2f35448f0595",
+        "renderId": "c8095b74-c241-4ff4-af34-3635c124665c"
       }
     }
   }
